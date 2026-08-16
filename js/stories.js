@@ -3638,6 +3638,92 @@ const Stories = {
         'Beri Nilai Dulu Sebelum Meminta Bayaran (Endorse Gratis): Membantu bisnis orang lain bertumbuh tanpa pamrih di awal adalah investasi reputasi paling ampuh yang membuka jalan rezeki eksponensial.',
         '12 Bulan Bisa Mengubah Hidup 180 Derajat: Dari minus Rp 1 miliar ke plus miliaran rupiah — waktu yang dibutuhkan untuk bangkit seringkali jauh lebih singkat dari waktu yang kita habiskan untuk meratap.'
       ]
+    },
+    {
+      id: 'ekanugraha',
+      featured: false,
+      name: 'Eka Nugraha',
+      tagline: 'Dari Utang Rp 350 Miliar Akibat Ekspansi Telekomunikasi Terlalu Cepat, Bangkit Bersama SyaREA World & Pangkas Separuh Utang dalam 1 Tahun',
+      title: 'Dari Utang Rp 350 Miliar, Kini Berkembang Tanpa Beban',
+      subtitle: 'Pengusaha Telekomunikasi, Bogor — Membangun Bisnis Sehat & Mandiri Tanpa Ketergantungan Utang Bank',
+      origin: 'Bogor, Jawa Barat',
+      ageAtRebound: '40-an Thn',
+      categories: ['debt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 350 Miliar',
+      badge: 'SyaREA World — Pangkas 50% Utang 1 Tahun',
+      theme: 'indigo',
+      accentColor: '#4338CA',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: 'Rp 350 Miliar (Ekspansi Telekomunikasi)',
+        age: '40-an Tahun',
+        lowest: 'Arus Kas Macet, Utang Menumpuk Rp 350 M, Bisnis Seperti Rumah Kartu',
+        action: 'Bergabung SyaREA World + Stop Utang Bank + Restrukturisasi Arus Kas Murni',
+        result: 'Pangkas 50% Utang dalam 1 Tahun, Bisnis Tumbuh Sehat Tanpa Utang Perbankan'
+      },
+      timeline: [
+        { year: 'Fase Ekspansi Cepat', text: 'Mengembangkan bisnis telekomunikasi di Bogor dengan keyakinan bahwa utang bank adalah bahan bakar utama untuk memperluas cabang dan proyek besar.' },
+        { year: 'Puncak Beban Rp 350 Miliar', text: 'Ekspansi agresif tanpa arus kas yang sehat menjadi bumerang. Utang membengkak hingga Rp 350 miliar dan mengancam kelangsungan usaha.' },
+        { year: 'Titik Balik — SyaREA World', text: 'Bergabung dengan Keluarga Besar SyaREA World untuk mendapatkan pendampingan dan merombak total paradigma tata kelola bisnis.' },
+        { year: '1 Tahun Pemulihan', text: 'Menghentikan ketergantungan utang bank, merampingkan biaya, dan melunasi sekitar separuh dari total utang dalam waktu 12 bulan.' },
+        { year: 'Hari Ini — Tumbuh Mandiri', text: 'Menjalankan bisnis telekomunikasi yang sehat, tenang, dan kokoh tanpa terbebani bunga pinjaman perbankan.' }
+      ],
+      quote: 'Modal pertama pengusaha hebat bukan uang, tetapi ketenangan dan kepercayaan. Pertumbuhan sejati diukur dari seberapa sehat bisnis mampu bertahan.',
+      quoteAuthor: 'Eka Nugraha, pengusaha telekomunikasi Bogor',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pengusaha yang Terlalu Cepat Berlari',
+          paragraphs: [
+            'Bogor, Jawa Barat. Eka Nugraha adalah seorang pengusaha di bidang infrastruktur dan jasa telekomunikasi yang memiliki visi besar. Di era ledakan kebutuhan data dan jaringan nirkabel, ia bergerak agresif merebut pangsa pasar.',
+            'Seperti jamaknya pelaku usaha korporasi, ia meyakini doktrin bahwa utang perbankan adalah bahan bakar wajib pertumbuhan. Semakin besar plafon kredit yang dicairkan, semakin cepat ia bisa membuka cabang, menumpuk persediaan material jaringan, dan memenangkan tender proyek bernilai puluhan miliar.',
+            'Namun di balik deretan kantor cabang dan kontrak proyek yang prestisius, sebuah fondasi yang rapuh perlahan terbentuk.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 350 Miliar yang Menggunung dan Mengancam',
+          paragraphs: [
+            'Kecepatan ekspansi Eka ternyata tidak diimbangi oleh kesehatan arus kas operasional (operational cashflow). Piutang proyek menumpuk sementara beban bunga pinjaman bank terus berjalan tanpa kompromi.',
+            'Akumulasi utang yang semula diniatkan sebagai instrumen percepatan berbalik menjadi monster finansial seberat Rp 350 miliar. Setiap awal bulan menjadi masa yang mencekam untuk memenuhi kewajiban pokok dan bunga.',
+            'Perusahaannya yang megah di mata publik kini terasa rapuh laksana rumah kartu yang siap ambruk hanya dengan satu hembusan angin kencang.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Titik Balik di SyaREA World: Ketenangan di Atas Modal',
+          paragraphs: [
+            'Di tengah kebuntuan likuiditas dan tekanan psikologis yang intens, Eka memutuskan untuk mengambil jeda dan mengevaluasi total arah hidupnya. Ia bergabung dengan Keluarga Besar SyaREA World.',
+            'Di wadah pembinaan bisnis syariah tersebut, Eka disadarkan pada prinsip dasar yang sempat ia abaikan: "Modal pertama seorang pengusaha hebat bukanlah kucuran dana pinjaman, melainkan ketenangan batin, kepercayaan, dan kepatuhan pada prinsip bebas riba."',
+            'Ia mengambil keputusan berani untuk menghentikan seluruh pengajuan utang perbankan baru dan menyusun peta jalan penyelesaian kewajiban berbasis efisiensi internal.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Setahun yang Mengubah Segalanya: Pangkas Separuh Utang',
+          paragraphs: [
+            'Dengan disiplin restrukturisasi yang ketat, Eka membedah setiap pos pengeluaran proyek, melepas aset yang tidak produktif, dan memfokuskan arus kas masuk murni untuk mencicil pokok utang.',
+            'Dalam kurun waktu hanya satu tahun yang penuh perjuangan, hasil nyata terlihat: total utang Rp 350 miliar berhasil dipangkas hingga sekitar separuhnya (berkurang sekitar Rp 175 miliar).',
+            'Beban yang semula menekan dada kini berkurang drastis, memberikan ruang bernapas yang lega bagi jajaran manajemen dan seluruh karyawan.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Pertumbuhan Sehat Tanpa Ketergantungan Bank',
+          paragraphs: [
+            'Hari ini, perusahaan telekomunikasi milik Eka Nugraha beroperasi dengan paradigma baru: mengutamakan likuiditas nyata dan profitabilitas murni daripada sekadar mengejar angka omzet semu.',
+            'Bisnisnya tetap berkembang secara kompetitif di industri telekomunikasi nasional tanpa lagi bergantung pada suntikan pinjaman berbunga dari sektor perbankan.',
+            'Kisah Eka Nugraha mengajarkan bahwa kejayaan bisnis sejati tidak dinilai dari seberapa banyak cabang yang dibuka atau seberapa besar tender yang dimenangkan, melainkan dari ketenangan jiwa pemiliknya dan ketahanan arus kas yang mandiri.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Omzet Besar dan Banyak Cabang Bukan Bukti Bisnis Sehat: Jangan tertipu oleh skala fisik perusahaan jika arus kas operasional tidak mampu menutupi beban utang bulanan.',
+        'Ketenangan Jiwa Adalah Aset Finansial Terbesar: Bebas dari teror bunga bank membebaskan energi mental pengusaha untuk merancang strategi jangka panjang yang jernih.',
+        'Pangkas Utang Raksasa dengan Disiplin Restrukturisasi Kas: Eka membuktikan utang ratusan miliar bisa berkurang 50% dalam setahun melalui pemangkasan biaya dan fokus likuiditas.',
+        'Tumbuh Organik Tanpa Utang Bank Adalah Pilihan Nyata: Bisnis teknologi dan infrastruktur tetap bisa memenangkan pasar melalui kemitraan strategis dan pengelolaan laba ditahan yang disiplin.'
+      ]
     }
   ],
 
