@@ -1926,6 +1926,92 @@ const Stories = {
         'Self Healing Sebelum Re-Start Bisnis: Luka psikologis dari kegagalan dan perceraian yang belum sembuh akan terus menyabotase langkah selanjutnya. Pulihkan diri dulu.',
         'Pemasaran Digital Tanpa Biaya: Facebook, Instagram, dan Twitter bisa menjadi mesin penjualan gratis jika konten konsisten dan produk memiliki kualitas yang bisa direkomendasikan dari mulut ke mulut.'
       ]
+    },
+    {
+      id: 'syaikhul',
+      featured: false,
+      name: 'Syaikhul Hadi',
+      tagline: 'Dari 800 Cek Kosong & Utang Miliaran Menjadi Pemilik Pabrik Benih dan Pupuk PT Keraton Agri Ponorogo',
+      title: 'Berhenti Berutang adalah Keberanian Terbesar',
+      subtitle: 'CEO PT Keraton Agri Ponorogo — Distributor Benih & Pupuk yang Bangkit sebagai Produsen',
+      origin: 'Ponorogo, Jawa Timur',
+      ageAtRebound: '40-an Thn',
+      categories: ['debt', 'bankrupt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Miliaran + 800 Cek Kosong',
+      badge: 'Pemilik Pabrik Benih & Pupuk Sendiri',
+      theme: 'teal',
+      accentColor: '#0F766E',
+      bgLight: '#F0FDFA',
+      borderLight: '#CCFBF1',
+      stats: {
+        debt: 'Miliaran Rupiah + 800 Cek Kosong',
+        age: '40-an Tahun',
+        lowest: 'Ekspansi 55 Perusahaan, Pikiran Tidak Tenang, Tagihan Menumpuk',
+        action: 'Berhenti Berutang 2018 — Jual Stok & Aset',
+        result: 'Pabrik Benih & Pupuk Sendiri, Utang Lunas'
+      },
+      timeline: [
+        { year: 'Awal Usaha', text: 'Merintis sebagai distributor benih dan pupuk pertanian di Ponorogo, Jawa Timur.' },
+        { year: 'Ekspansi Agresif', text: 'Mendistribusikan produk dari sekitar 55 perusahaan, membuka cabang di berbagai daerah, meminjam dana perbankan dalam jumlah miliaran.' },
+        { year: 'Titik Kritis', text: '800 cek kosong beredar di pasaran. Utang miliaran rupiah menghantui. Pikiran tidak pernah tenang antara ingin ekspansi dan kewajiban membayar.' },
+        { year: '2018 — Titik Balik', text: 'Bergabung dengan komunitas syariah (kini SyaREA World). Memutuskan berhenti berutang, menjual stok dan aset, membayar semua tagihan bertahap.' },
+        { year: 'Hari Ini — Rebound', text: 'Tidak lagi sekadar agen — kini pemilik pabrik benih dan pupuk pertanian sendiri. Utang lunas. Bisnis lebih sehat dan terstruktur.' }
+      ],
+      quote: 'Dan saat itu, saya berhenti untuk utang. Dan membayar semua tagihan bertahap.',
+      quoteAuthor: 'Syaikhul Hadi, CEO PT Keraton Agri Ponorogo',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pengusaha yang Terlalu Cepat',
+          paragraphs: [
+            'Ponorogo, Jawa Timur. Syaikhul Hadi adalah seorang distributor benih dan pupuk pertanian yang sedang berada di puncak karirnya. Ia memiliki mimpi besar: mengembangkan usahanya ke seluruh penjuru tanah air. Dengan semangat membara, ia berekspansi tanpa henti.',
+            'Ia mendistribusikan produk dari sekitar 55 perusahaan dan membuka cabang di berbagai daerah. Setiap hari, ia menandatangani kontrak baru. Setiap minggu, ia membuka cabang baru. Setiap bulan, ia meminjam dana baru dari perbankan. "Aku sedang membangun kerajaan," pikirnya.',
+            'Tapi di balik gemerlap ekspansi itu, ada sesuatu yang mulai rapuh. Bukan karena produknya buruk atau pasarnya sempit — tapi karena arus kas yang tidak mampu mengimbangi kecepatan pertumbuhannya. Ia berlari terlalu cepat, jauh melampaui fondasi yang ia bangun.'
+          ]
+        },
+        {
+          num: 2,
+          title: '800 Cek Kosong yang Menghantui',
+          paragraphs: [
+            'Ekspansi yang terlalu agresif mulai menunjukkan dampaknya. Pinjaman dari perbankan menumpuk. Bunga berbunga. Satu tagihan menyusul tagihan lainnya. Dan yang paling mengkhawatirkan — ia memiliki 800 cek kosong yang beredar di pasaran.',
+            '"800 cek kosong," bisiknya dalam hati. Angka itu menghantuinya setiap malam. Pikirannya tidak pernah tenang. Di satu sisi, ia ingin terus mengembangkan usaha. Di sisi lain, kewajiban utang yang menggunung tak kunjung usai.',
+            'Syaikhul duduk di ruang kerjanya, memandangi tumpukan tagihan. Sebagai distributor 55 perusahaan, namanya dikenal luas — tapi di balik reputasi itu, ia menyembunyikan kecemasan yang semakin dalam. "Bagaimana caraku keluar dari sini?" tanya batinnya setiap malam.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Keputusan di Tahun 2018',
+          paragraphs: [
+            'Tahun 2018 menjadi titik balik dalam hidup Syaikhul Hadi. Ia bergabung dengan komunitas syariah yang kini bernama SyaREA World. Di sanalah ia mendapatkan pencerahan — bahwa utang bukanlah satu-satunya jalan menuju kesuksesan, dan bahwa terus menumpuk kewajiban sambil berharap keadaan membaik sendiri adalah jebakan yang akan menghancurkan semuanya.',
+            '"Dan saat itu, saya berhenti untuk utang," katanya tegas. Ia mengambil keputusan yang menyakitkan namun perlu: menjual stok dan aset. Ia merelakan apa yang telah ia bangun selama bertahun-tahun demi membebaskan diri dari jeratan utang.',
+            '"Saya membayar semua tagihan bertahap," ujarnya. Bukan sekaligus, bukan ajaib — tapi dengan disiplin, satu cicilan demi satu cicilan, satu kreditur demi satu kreditur. Ia menghadapi mereka satu per satu dengan kepala tegak dan niat yang jelas.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Bangkit dari Reruntuhan — Dari Agen Menjadi Produsen',
+          paragraphs: [
+            'Setelah seluruh kewajibannya lunas, Syaikhul tidak berhenti. Ia memulai kembali dari nol. Tapi kali ini, ia membangun dengan fondasi yang jauh lebih kuat — tanpa utang perbankan yang mengimpit, tanpa cek kosong yang beredar, dan tanpa beban pikiran yang tidak pernah tenang.',
+            'Ia tidak lagi menjadi agen yang mendistribusikan produk orang lain dari 55 perusahaan berbeda. Ia menjadi produsen — pemilik pabrik benih dan pupuk pertanian sendiri. PT Keraton Agri Ponorogo tumbuh bukan dari pinjaman agresif, tapi dari kepercayaan yang dibangun kembali satu demi satu.',
+            'Dari seorang pengusaha yang nyaris tenggelam dalam utang dan 800 cek kosong, kini ia adalah pemilik pabrik yang produknya dipercaya oleh para petani. Bukan agen lagi — tapi sang produsen.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Pelajaran dari Sebuah Keberanian untuk Berhenti',
+          paragraphs: [
+            'Kisah Syaikhul Hadi mengajarkan satu hal yang sederhana namun dalam: kadang, kita harus berhenti berlari untuk bisa melangkah lebih jauh. Ekspansi boleh jadi penting. Tapi tanpa pengelolaan arus kas yang bijak, ekspansi bisa menjadi bumerang yang menghancurkan.',
+            'Syaikhul memilih untuk mengerem — di saat banyak orang justru terus menggeber gas. Ia memilih untuk berhenti berutang, menjual aset, dan membangun kembali dari nol. Bukan karena ia menyerah, tapi karena ia cukup bijak untuk mengenali batas antara keberanian dan keserakahan.',
+            'Dan kini, ia berdiri sebagai bukti bahwa keberanian untuk berhenti terkadang adalah langkah terpenting menuju kesuksesan sejati. Berhenti bukan tanda lemah — berhenti pada waktu yang tepat adalah tanda kebijaksanaan seorang pemimpin bisnis yang matang.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Ekspansi Tanpa Arus Kas Kuat adalah Bunuh Diri Pelan-Pelan: Mendistribusikan 55 produk dan membuka cabang di mana-mana terdengar heroik, tapi tanpa kas yang cukup, itu hanya mempercepat keruntuhan.',
+        'Cek Kosong adalah Tanda Bahaya Merah: Jika sudah ada cek kosong beredar, itu bukan sekadar masalah teknis keuangan — itu sinyal darurat bahwa arus kas sudah kritis dan harus segera ditangani.',
+        'Keberanian Terbesar adalah Berhenti Berutang: Ketika utang sudah di luar kendali, keputusan paling berani bukan meminjam lagi untuk menambal — melainkan berhenti, menjual aset, dan membayar bertahap.',
+        'Naik Kelas dari Agen ke Produsen: Setelah bebas utang, jangan kembali ke model bisnis yang sama. Gunakan pengalaman pahit itu sebagai modal membangun usaha yang lebih mandiri dan bernilai lebih tinggi.'
+      ]
     }
   ],
 
