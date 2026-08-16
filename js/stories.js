@@ -3552,6 +3552,92 @@ const Stories = {
         'Manajemen Kedaluwarsa & Penyusutan Barang: Daripada membuang barang rusak, ubah barang mendekati expired menjadi program promo apresiasi pelanggan untuk menjaga likuiditas kas.',
         'Bisnis yang Berkah Membuka Lapangan Kerja Bagi Lingkungan: Dari tidak mampu makan sendiri, kini Ahmad menggaji puluhan staf dengan nilai Rp 60–65 juta per bulan.'
       ]
+    },
+    {
+      id: 'devyanastasia',
+      featured: false,
+      name: 'Devy Anastasia',
+      tagline: 'Dari Tekanan Utang Rp 1 Miliar di Panggung MasterChef Indonesia, Bangkit Lewat Negosiasi Jujur & Endorse Gratis Hingga Jadi Jutawan dalam 1 Tahun',
+      title: 'Dari Utang Rp 1 Miliar di MasterChef, Kini Jutawan dalam Setahun',
+      subtitle: 'Finalis MasterChef Indonesia S9, Influencer & Pengusaha Kuliner — Lunas Rp 1 Miliar & Berbalik Jadi Miliarder dalam 12 Bulan',
+      origin: 'Jakarta, Indonesia',
+      ageAtRebound: '20-an Thn',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 1 M Saat MasterChef',
+      badge: 'Lunas 1 Tahun — MasterChef Season 9',
+      theme: 'amber',
+      accentColor: '#B45309',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Nyaris Rp 1 Miliar',
+        age: '20-an Tahun',
+        lowest: 'Tersiksa Pikiran di Galeri MasterChef, Terjebak Menyalahkan Diri Sendiri',
+        action: 'Negosiasi Jujur 1-by-1 + Berani Buka Jasa Endorsement Gratis di Instagram',
+        result: 'Lunas Penuh dalam 1 Tahun, Berbalik Memiliki Tabungan & Aset Miliaran'
+      },
+      timeline: [
+        { year: '2022 — MasterChef Season 9', text: 'Berkompetisi di dapur televisi nasional dengan beban batin utang nyaris Rp 1 miliar yang menumpuk.' },
+        { year: 'Titik Balik — Pola Pikir', text: 'Berhenti menyalahkan diri sendiri. Mengubah fokus dari "kapan masalah selesai" menjadi "bagaimana cara menyelesaikannya".' },
+        { year: 'Langkah 1: Negosiasi Jujur', text: 'Mencatat seluruh daftar kreditur dan menghubungi mereka satu per satu secara transparan untuk menyepakati skema cicilan.' },
+        { year: 'Langkah 2: Endorse Gratis (Juni 2022)', text: 'Mengambil langkah berani menawarkan jasa promosi brand secara cuma-cuma untuk membangun reputasi dan trust.' },
+        { year: 'Hari Ini — Berbalik Miliaran', text: 'Penjualan brand meledak, tawaran berbayar mengalir deras. Seluruh utang Rp 1 miliar lunas dalam 1 tahun dan berbalik memiliki aset miliaran.' }
+      ],
+      quote: 'Awalnya punya utang Rp 1 miliar, tapi bisa berbalik punya miliaran hanya dalam setahun. Kuncinya berhenti menyalahkan diri sendiri dan mulai fokus pada solusi.',
+      quoteAuthor: 'Devy Anastasia, Finalis MasterChef Indonesia S9 & Pengusaha Kuliner',
+      chapters: [
+        {
+          num: 1,
+          title: 'Di Balik Senyum Galeri MasterChef: Beban Rp 1 Miliar',
+          paragraphs: [
+            'Tahun 2022. Devy Anastasia berdiri di panggung kompetisi kuliner paling bergengsi di Indonesia: MasterChef Season 9. Di hadapan dewan juri ternama dan jutaan pasang mata pemirsa televisi, ia menyajikan hidangan dengan presisi dan senyuman penuh pesona.',
+            'Namun di balik sorot lampu studio yang gemerlap, batinnya tertekan oleh beban rahasia yang teramat berat: jeratan utang yang nyaris menyentuh angka Rp 1 miliar.',
+            'Setiap kali jeda syuting, benaknya dihantui oleh daftar tagihan yang mendekati jatuh tempo. Di sela-sela memotong bahan masakan, ia terus terjebak dalam pertanyaan pasif: "Kapan semua penderitaan ini akan berakhir?"'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Titik Balik: Mengubah "Kapan" Menjadi "Bagaimana"',
+          paragraphs: [
+            'Suatu malam, Devy mengalami pergolakan batin yang mendalam. Ia menyadari bahwa menanyakan "kapan" hanya melahirkan rasa kasihan pada diri sendiri (self-pity) yang melumpuhkan tindakan.',
+            'Ia harus mengubah pertanyaannya menjadi "bagaimana caraku menyelesaikannya hari ini?". Pergeseran paradigma dari menyalahkan keadaan menjadi pencari solusi aktif adalah kunci pembuka pintu rezekinya.',
+            '"Berhenti menyalahkan diri sendiri dan mulai bertindak mencari solusi nyata," menjadi mantra kebangkitan yang ia pegang teguh.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Mencatat Kreditur dan Bernegosiasi Tanpa Rasa Takut',
+          paragraphs: [
+            'Langkah pertama yang ia lakukan sangat berani: mengambil secarik kertas dan menuliskan seluruh nama orang serta institusi yang ia pinjami uang tanpa ada yang disembunyikan.',
+            'Satu per satu ia telepon dan datangi secara jujur. Ia tidak mencari alasan palsu atau berkelit, melainkan memaparkan kondisi keuangannya apa adanya dan menawarkan komitmen jadwal cicilan yang masuk akal.',
+            'Kejujuran dan iktikad baik itu meluluhkan para kreditur. Mereka memberinya kelonggaran waktu dan ketenangan mental untuk fokus bekerja mencari uang tanpa teror penagihan harian.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Strategi Gila: Endorse Gratis yang Membuka Keran Rezeki',
+          paragraphs: [
+            'Pada Juni 2022, pasca kompetisi MasterChef, Devy mengambil keputusan berani yang dianggap tidak lazim bagi seorang figur publik: membuka tawaran jasa endorsement gratis di akun Instagram miliknya.',
+            '"Siapa juga yang rugi? Waktu itu aku hanya ingin berubah, belajar, dan memberikan manfaat nyata bagi pemilik usaha UMKM," ujarnya.',
+            'Ia mengulas produk-produk kuliner dan lifestyle dengan tulus serta kreatif. Hasilnya luar biasa: brand-brand yang dipromosikannya mengalami lonjakan omzet drastis. Portofolio keberhasilan itu menyebar cepat di kalangan pemilik brand nasional.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas dalam Setahun dan Berbalik Jadi Miliarder',
+          paragraphs: [
+            'Dari promosi gratis, tawaran endorsement profesional berbayar mahal mulai membanjiri jadwalnya. Ia diundang menjadi konsultan menu kuliner, brand ambassador, dan membangun lini bisnis kulinernya sendiri.',
+            'Arus kas yang masuk dialokasikan secara disiplin untuk melunasi seluruh cicilan utang pokok terlebih dahulu. Dalam waktu 12 bulan yang luar biasa, seluruh utang Rp 1 miliar dinyatakan lunas tuntas.',
+            'Bahkan di tahun berikutnya, posisi keuangannya berbalik 180 derajat: dari minus Rp 1 miliar menjadi pemilik aset dan tabungan miliaran rupiah. Devy Anastasia membuktikan bahwa ketika kita fokus memberi nilai bagi orang lain dan berani menghadapi kenyataan, badai finansial sebesar apa pun dapat ditundukkan dalam hitungan bulan.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Ubah Pola Pikir dari "Kapan Berakhir" Menjadi "Bagaimana Solusinya": Rasa kasihan pada diri sendiri tidak menghasilkan uang. Fokuskan seluruh energi otak untuk mencari jalan keluar teknis.',
+        'Hadapi Kreditur dengan Transparansi Penuh: Mencatat utang dan menghubungi kreditur secara jujur akan menghilangkan kecemasan batin dan mengamankan kelonggaran waktu pembayaran.',
+        'Beri Nilai Dulu Sebelum Meminta Bayaran (Endorse Gratis): Membantu bisnis orang lain bertumbuh tanpa pamrih di awal adalah investasi reputasi paling ampuh yang membuka jalan rezeki eksponensial.',
+        '12 Bulan Bisa Mengubah Hidup 180 Derajat: Dari minus Rp 1 miliar ke plus miliaran rupiah — waktu yang dibutuhkan untuk bangkit seringkali jauh lebih singkat dari waktu yang kita habiskan untuk meratap.'
+      ]
     }
   ],
 
