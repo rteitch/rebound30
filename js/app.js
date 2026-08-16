@@ -2,6 +2,10 @@
 // MAIN APP
 // ============================================================
 const App = {
+  refreshIcons() {
+    // Pure inline SVGs are rendered natively by the browser at 0ms.
+    // Safe no-op hook for backward compatibility.
+  },
   state: null,
   currentScreen: 'dashboard',
   
