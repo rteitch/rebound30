@@ -3380,6 +3380,92 @@ const Stories = {
         'Peluang B2B Perlengkapan Usaha yang Resilien: Menyediakan infrastruktur bagi toko kelontong/minimarket (rak & display) adalah ceruk bisnis yang selalu dibutuhkan seiring tumbuhnya sektor ritel mikro.',
         'Kualitas dan Kejujuran Menembus Batas Geografis: Produk buatan tangan dari Nganjuk bisa menembus hingga ke Papua murni karena reputasi dan kepuasan pelanggan.'
       ]
+    },
+    {
+      id: 'ridwanghany',
+      featured: false,
+      name: 'Ridwan Ghany',
+      tagline: 'Dari Rumah Impian & Utang Rp 5 Miliar Akibat Pandemi COVID-19, Ikhlas Jual Seluruh Aset demi Memulai Kembali dari Titik Nol',
+      title: 'Dari Rumah Impian dan Utang Rp 5 Miliar, Kini Memulai dari Nol',
+      subtitle: 'Aktor & Presenter Indonesia — Melepas Rumah & Mobil demi Bebas Utang Rp 5 Miliar dengan Dukungan Istri',
+      origin: 'Jakarta, Indonesia',
+      ageAtRebound: '30-an Thn',
+      categories: ['debt', 'zero', 'indonesia'],
+      categoryLabel: 'Utang Rp 5 M Akibat Pandemi',
+      badge: 'Bebas Utang — Mulai dari Nol',
+      theme: 'amber',
+      accentColor: '#B45309',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Kurang Lebih Rp 5 Miliar',
+        age: '30-an Tahun',
+        lowest: 'Bisnis Ibu Kolaps, Pensiun Macet, Menjual Rumah Impian & Mobil, Naik Mobil Sewa',
+        action: 'Jual Rumah Hasil Kerja Keras + Jual Mobil + Ikhlas Total + Dukungan Setia Istri',
+        result: 'Utang Rp 5 M Lunas — Memulai Hidup Baru dengan Ketenangan Jiwa'
+      },
+      timeline: [
+        { year: 'Sebelum Pandemi', text: 'Karir aktor dan presenter gemilang. Membangun rumah impian, memiliki mobil keluarga, dan finansial stabil.' },
+        { year: '2020 — Pandemi Datang', text: 'Bisnis keluarga ibunda bangkrut total, diperparah macetnya dana pensiun mertua. Utang menggunung sekitar Rp 5 miliar.' },
+        { year: 'Keputusan Menyakitkan', text: 'Memilih melunasi seluruh kewajiban dengan menjual mobil dan menyewa kendaraan untuk operasional sehari-hari.' },
+        { year: 'Rumah Impian Terjual', text: 'Rumah impian hasil keringat bertahun-tahun terjual tepat sepulang dari umrah. Air mata menetes saat tak sengaja melintas di depannya.' },
+        { year: 'Hari Ini — Mulai dari Nol', text: 'Didampingi istri tercinta (Adithya Putri), hidup tenang bebas dari jeratan utang dan membangun kembali impian dari titik nol.' }
+      ],
+      quote: 'Mobil lepas, nggak pakai mobil kita sewa. Rumah impian terjual sepulang umrah. Pas ngelepas rasanya enteng, tapi saat lewat di depannya saya nangis di mobil sendirian. Namun hidup harus terus berjalan.',
+      quoteAuthor: 'Ridwan Ghany, aktor dan presenter',
+      chapters: [
+        {
+          num: 1,
+          title: 'Kehidupan yang Tampak Sempurna',
+          paragraphs: [
+            'Di layar kaca, Ridwan Ghany dikenal luas sebagai sosok aktor dan presenter dengan senyum ramah dan karir gemilang. Hasil jerih payah bertahun-tahun di industri hiburan tanah air telah mewujud nyata: rumah impian yang nyaman, kendaraan pribadi, dan keluarga kecil yang harmonis.',
+            'Semuanya tampak tertata rapi sesuai rencana masa depan. Namun tidak ada yang kebal dari gelombang krisis global.',
+            'Ketika pandemi COVID-19 melanda tanpa aba-aba, industri hiburan berhenti berputar dan badai finansial menimpa keluarganya secara beruntun.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Pandemi yang Menghancurkan Dua Pilar Keluarga',
+          paragraphs: [
+            'Pukulan telak datang bukan dari gaya hidup konsumtif, melainkan kolapsnya lini usaha penopang keluarga. Bisnis milik ibunda tercinta mengalami kebangkrutan parah akibat pembatasan sosial.',
+            'Pada saat yang hampir bersamaan, dana pensiun dari pihak keluarga istri turut mengalami kemacetan total. Arus kas keluarga seketika terhenti, sementara beban kewajiban yang timbul membengkak hingga menyentuh angka sekitar Rp 5 miliar.',
+            '"Utangnya itu sampai miliaranlah, nggak sampai puluhan miliar, cuma ya Rp 5 miliar kurang lebih," kenang Ridwan menghadapi angka yang mengancam seluruh fondasi masa depannya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Keputusan Melepas Rumah Impian dan Mobil',
+          paragraphs: [
+            'Menghadapi tanggung jawab moral yang teramat berat, Ridwan tidak memilih lari atau menunda-nunda pembayaran. Bersama istrinya, Adithya Putri, ia mengambil keputusan paling radikal dalam hidup mereka: menjual seluruh aset utama.',
+            'Mobil pribadi dilepas untuk menutup utang mendesak, membuat mereka harus beralih menggunakan mobil sewaan untuk mobilitas harian.',
+            'Puncaknya, rumah impian yang dibangun bata demi bata dari hasil syuting bertahun-tahun diputuskan untuk dijual. Momen penjualan itu terjadi tepat saat ia baru saja pulang dari ibadah umrah di Tanah Suci — sebuah ketetapan takdir yang ia terima dengan lapang dada.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Air Mata di Dalam Mobil dan Ikhlas yang Sebenarnya',
+          paragraphs: [
+            'Melepaskan aset di atas kertas notaris terasa enteng karena didorong niat melunasi utang. Namun rasa sakit batin manusiawi tak bisa disembunyikan.',
+            'Suatu hari, saat tanpa sengaja mengemudi melintasi jalan di depan rumah lamanya yang kini dihuni orang lain, bendungan emosinya runtuh seketika.',
+            '"Pas ngelepas rumah itu enteng banget, tapi pas aku ngelewatin rumah itu nggak sengaja, itu aku nangis di mobil sendirian," ungkap Ridwan dengan mata berkaca-kaca. Air mata itu adalah bukti betapa besar cinta dan pengorbanan yang telah ia curahkan untuk menjaga kehormatan keluarganya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Kesetiaan Istri dan Memulai Langkah Baru dari Titik Nol',
+          paragraphs: [
+            'Di titik nol tersebut, pahlawan sejati dalam hidup Ridwan adalah sang istri, Adithya Putri. Meski merasakan lelah dan beratnya ujian, ia tetap berdiri kokoh di samping suaminya tanpa keluhan.',
+            'Kini, seluruh beban utang Rp 5 miliar telah tuntas terbayar. Tidak ada lagi teror tagihan, tidak ada lagi kecemasan saat tidur malam.',
+            'Dari seorang bintang yang rela kehilangan segalanya demi martabat dan ketenangan keluarga, Ridwan Ghany membuktikan bahwa harta materi bisa dicari kembali, namun integritas dan keharmonisan rumah tangga adalah kekayaan sejati yang tak ternilai harganya.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Ikhlas Melepas Aset Demi Kehormatan dan Ketenangan Jiwa: Ridwan tidak ragu menjual rumah dan mobil demi melunasi Rp 5 Miliar utang keluarga. Rumah bisa dibangun lagi, tapi nama baik dan ketenangan hidup tidak bisa dibeli.',
+        'Menerima Rasa Sedih sebagai Bagian dari Proses: Menangis sendirian di mobil saat melihat rumah lama bukan tanda lemah, melainkan katarsis alami manusia sebelum melangkah maju.',
+        'Keluarga yang Solid Adalah Aset Termahal di Dunia: Dukungan setia pasangan di saat mobil dan rumah hilang adalah benteng pertahanan terbaik melawan depresi finansial.',
+        'Mulai Dari Nol Bukan Akhir, Melainkan Lembaran Baru: Bebas dari utang memberikan ruang mental yang lapang untuk berkarya dan membangun kembali kekayaan secara lebih kokoh.'
+      ]
     }
   ],
 
