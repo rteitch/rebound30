@@ -1,12 +1,18 @@
 // Rebound 30 — Offline Service Worker
-const CACHE_NAME = 'rebound30-v1';
+const CACHE_NAME = 'rebound30-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
   '/favicon.svg',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
-  'https://unpkg.com/lucide@latest'
+  '/css/styles.css',
+  '/js/icons.js',
+  '/js/helpers.js',
+  '/js/store.js',
+  '/js/engine.js',
+  '/js/stories.js',
+  '/js/app.js',
+  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'
 ];
 
 self.addEventListener('install', (event) => {
