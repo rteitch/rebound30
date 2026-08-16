@@ -552,6 +552,111 @@ const Stories = {
       ]
     },
     {
+      id: 'bonzor',
+      featured: false,
+      name: 'Bonzor',
+      tagline: 'Dari Utang Rp 15 Miliar & Nyaris Tewas Minum Racun Menjadi Makelar Besi, Lunas 40 Hari & Pengasuh 37 Anak Yatim',
+      title: 'Dari Racun dan Utang Rp 15 Miliar, Kini Pengasuh 37 Anak Yatim',
+      subtitle: 'Pendiri Komunitas Rezeki Jalur Langit, Kalimantan Barat',
+      origin: 'Kalimantan Barat',
+      ageAtRebound: 'Lahir 1984',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 15 M & Jalur Langit',
+      badge: 'Lunas 40 Hari & 37 Anak Yatim',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Rp 15 Miliar (Gagal Usaha 2020)',
+        age: 'Pria Kelahiran 1984',
+        lowest: 'Minum Racun Serangga & Kritis di Rumah Sakit',
+        action: 'Makelar Besi Modal Rp 50 Jt & Sedekah Rp 2,5 M',
+        result: 'Lunas 40 Hari, Komunitas Jalur Langit & 37 Anak Yatim'
+      },
+      timeline: [
+        { year: '2020 — Keruntuhan Rp 15 Miliar', text: 'Bisnis hancur menyisakan utang Rp 15 miliar, dijauhi keluarga, dan difitnah rekan bisnis.' },
+        { year: 'Titik Terendah Menenggak Racun', text: 'Putus asa hebat hingga mencoba mengakhiri hidup dengan racun serangga; nyawanya terselamatkan di rumah sakit.' },
+        { year: 'Taubat & Perintah Sedekah', text: 'Mengubah arah hidup total, bertaubat nasuha, dan berpegang teguh pada amalan sedekah di masa sempit.' },
+        { year: 'Makelar Besi Modal Rp 50 Juta', text: 'Kenalan tak terduga memberi modal Rp 50 juta; ia bertindak sebagai perantara transaksi besi dan meraih komisi Rp 3,5 miliar.' },
+        { year: 'Sedekah Rp 2,5 M & Lunas 40 Hari', text: 'Menyedekahkan Rp 2,5 miliar dari komisi pertamanya; gelombang rezeki terbuka hingga utang Rp 15 miliar lunas dalam 40 hari.' },
+        { year: 'Hari Ini — Pengasuh 37 Anak Yatim', text: 'Memimpin gerakan spiritual Rezeki Jalur Langit dan menafkahi puluhan anak yatim secara penuh.' }
+      ],
+      quote: 'Di balik gelapnya keputusasaan, selalu ada cahaya pertolongan Tuhan jika kita memilih berdoa, berikhtiar tanpa gengsi, dan bersedekah secara ekstrem. Jangan pelit berbagi di masa sempit.',
+      quoteAuthor: 'Bonzor, pendiri komunitas Rezeki Jalur Langit',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pria yang Terpuruk di Tahun 2020',
+          paragraphs: [
+            'Tahun 2020 menjadi periode paling kelam dalam hidup Bonzor, pria kelahiran Kalimantan Barat tahun 1984. Usaha yang telah ia bangun dengan cucuran keringat bertahun-tahun mengalami kegagalan total.',
+            'Keruntuhan itu tidak hanya menyisakan rasa malu, melainkan jeratan utang bernilai fantastis: Rp 15 miliar. Tekanan datang bertubi-tubi tanpa jeda; para penagih utang mengejar, kerabat menjauh, dan ia menjadi sasaran fitnah dari orang-orang yang dulu ia bantu.',
+            '"Bayangkan, di tengah kondisi terlilit utang belasan miliar dan dikucilkan semua orang, saya merasa dunia sudah runtuh sepenuhnya. Tidak ada jalan keluar yang terlihat," kenang Bonzor dengan mata berkaca-kaca.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Kritis dan Kesempatan Kedua',
+          paragraphs: [
+            'Di puncak keputusasaan yang menghimpit batinnya pada suatu malam yang sunyi, Bonzor mengambil keputusan paling fatal: ia menenggak racun serangga untuk mengakhiri hidupnya.',
+            'Ia terkapar tak sadarkan diri selama berjam-jam dengan kondisi fisik yang kritis. Namun takdir Tuhan berkehendak lain; paramedis rumah sakit berhasil memompa lambungnya dan menyelamatkan nyawanya tepat di ambang batas kematian.',
+            'Ketika membuka mata di ruang perawatan, kesadaran mendalam merasuk ke dalam jiwanya: ini adalah kesempatan hidup kedua. Tuhan masih menginginkannya untuk hidup dan membayar lunas segala tanggung jawabnya di dunia.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Titik Balik Spiritual dan Perintah Bersedekah',
+          paragraphs: [
+            'Dari ranjang rumah sakit, Bonzor melakukan transformasi batin 180 derajat. Ia menunaikan salat taubat nasuha, menumpahkan air mata penyesalan, dan berserah diri secara mutlak kepada Sang Pencipta.',
+            'Dalam perenungan spiritualnya, sebuah keyakinan kuat tertanam dalam dadanya untuk mengamalkan sedekah secara ekstrem sebagai pembuka pintu pertolongan ilahi.',
+            'Walau tidak memiliki uang tunai, Bonzor mulai berbagi apa saja yang dimilikinya—tenaga, waktu, senyuman, hingga makanan terakhir—kepada orang-orang yang lebih membutuhkan di sekitarnya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Keajaiban Modal Rp 50 Juta dan Makelar Besi',
+          paragraphs: [
+            'Keajaiban takdir mulai bergerak dari arah yang sama sekali tak terduga. Seorang kenalan lama yang ia duga akan datang untuk menagih utang, justru datang menghampirinya dengan membawa uang tunai Rp 50 juta.',
+            '"Pakailah modal ini untuk memulai kembali usahamu. Saya percaya kamu orang baik yang sedang diuji," ujar sang kenalan.',
+            'Dengan modal kepercayaan tersebut, Bonzor bertindak sebagai perantara dagang (makelar) besi bekas dan material konstruksi proyek skala besar. Keberanian negosiasi dan kejujurannya membuahkan kesepakatan raksasa: dari transaksi pertamanya sebagai perantara besi, ia mengantongi komisi bersih sebesar Rp 3,5 miliar!'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Sedekah Rp 2,5 Miliar di Tengah Krisis',
+          paragraphs: [
+            'Bagi kebanyakan orang yang sedang terlilit utang Rp 15 miliar, uang Rp 3,5 miliar pasti akan langsung dipakai untuk mencicil utang bank. Namun Bonzor memilih jalur yang berbeda.',
+            'Mengingat janji sucinya kepada Tuhan, Bonzor segera mengeluarkan Rp 2,5 miliar dari komisi tersebut untuk disedekahkan kepada fakir miskin, anak yatim, dan pembangunan sarana ibadah.',
+            '"Kalau mau mendapatkan pertolongan besar dari Allah, jangan pelit bersedekah. Jangan hanya 2,5%, bila perlu keluarkan 30% hingga 70% dari rezeki yang kita dapatkan," tegasnya.'
+          ]
+        },
+        {
+          num: 6,
+          title: '40 Hari yang Mengubah Takdir Finansial',
+          paragraphs: [
+            'Keputusan sedekah ekstrem itu menjadi pemantik gelombang keberlimpahan yang di luar nalar logika manusia. Rantai proyek-proyek perantara komoditas lainnya mengalir deras bertubi-tubi ke tangan Bonzor.',
+            'Setiap keuntungan yang masuk dikelola dengan amanah untuk melunasi kreditur. Dan sebuah mukjizat nyata terjadi: dalam kurun waktu hanya 40 hari sejak ia bangkit, seluruh utang Rp 15 miliar lunas 100% tanpa sisa!',
+            'Hari di mana surat pelunasan terakhir ditandatangani, Bonzor bersujud syukur di atas lantai dengan linangan air mata haru.'
+          ]
+        },
+        {
+          num: 7,
+          title: 'Menghidupi 37 Anak Yatim',
+          paragraphs: [
+            'Hari ini, Bonzor mendedikasikan sisa hidupnya sebagai motivator spiritual dan pendiri komunitas "Rezeki Jalur Langit" untuk membantu ribuan orang keluar dari keputusasaan utang.',
+            'Sebagai wujud rasa syukur atas kehidupan keduanya, Bonzor kini mengasuh dan menanggung seluruh biaya hidup serta pendidikan dari 37 anak yatim piatu.',
+            'Kisah hidupnya menjadi monumen abadi bahwa tidak peduli seberapa pekat kegelapan malam dan racun keputusasaan yang pernah kita teguk, fajar kemenangan selalu siap menyambut mereka yang mau bersujud, bertindak, dan memuliakan sesama.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Harapan Selalu Ada di Balik Titik Nadir: Jangan pernah mengakhiri hidup; kesempatan kedua selalu tersedia bagi jiwa yang tulus bertaubat dan berani bertanggung jawab.',
+        'Kekuatan Sedekah Ekstrem (*Jalur Langit*): Mengeluarkan porsi sedekah dalam jumlah besar di masa krisis membalikkan energi ketakutan menjadi keberkahan berlipat ganda.',
+        'Bisnis Perantara (*Brokerage*) Minim Aset Tetap: Menjadi makelar transaksi komoditas bernilai tinggi mampu menghasilkan arus kas miliaran rupiah tanpa beban investasi pabrik.',
+        'Mendedikasikan Hidup Memuliakan Anak Yatim: Kekayaan finansial sejati adalah ketika hidup kita bertransformasi menjadi payung pelindung bagi anak-anak yatim dan dhuafa.'
+      ]
+    },
+    {
       id: 'kangarif',
       featured: false,
       name: 'Arif Sanyoto (Kang Arif)',
