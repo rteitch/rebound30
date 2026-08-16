@@ -146,6 +146,15 @@ const App = {
     } else {
       this.showApp();
     }
+
+    // Smart Virtual Keyboard Focus Centering
+    document.addEventListener('focusin', (e) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) {
+        setTimeout(() => {
+          e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 280);
+      }
+    });
   },
   
   save() {

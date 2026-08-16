@@ -3091,3 +3091,21 @@ html, body {
   border-color: var(--slate-200) !important;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
 }
+
+
+/* ============================================================
+   VIRTUAL KEYBOARD VISIBILITY SHIELD & INPUT COMFORT
+   ============================================================ */
+.form-input, .form-select, textarea, input[type="text"], input[type="number"], input[type="date"], input[type="search"] {
+  font-size: 16px !important; /* Prevents iOS auto-zoom distortion */
+  -webkit-text-size-adjust: 100%;
+}
+
+.modal {
+  padding-bottom: max(60px, env(safe-area-inset-bottom)) !important;
+  scroll-padding-bottom: 80px;
+}
+
+.modal-content {
+  scroll-padding-bottom: 80px;
+}
