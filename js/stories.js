@@ -1,34 +1,47 @@
-// ============================================================
-// REBOUND 30 — KISAH BANGKIT (SCALABLE EDITORIAL ENGINE)
-// Data-Driven Master-Detail Magazine Reader
-// ============================================================
+// ============================================================================
+// REBOUND 30 — KISAH BANGKIT (MODERN STORY LIBRARY & DEDICATED READER)
+// Architecture: Catalog Shelf -> Dedicated Fullscreen Editorial Reader
+// Includes: Problem Categories, Search, Bookmarks, Journey Timeline, & Mission Bridge
+// ============================================================================
 
 const Stories = {
+  viewMode: 'library', // 'library' | 'reader'
   activeId: 'shao',
   searchQuery: '',
   selectedCategory: 'all',
+  bookmarks: [],
 
   DATA: [
     {
       id: 'shao',
-      category: 'global',
+      featured: true,
       name: 'Shao Baoling (邵宝玲)',
+      tagline: 'Dari Ratu Koper Rp 220 Miliar Menjadi Pemilik 3 Toko Bakpao',
       title: 'Dari Reruntuhan, Ia Tumbuh Kembali',
       subtitle: 'Mantan "Ratu Koper" Asal Yiwu, Tiongkok',
-      tag: 'Kisah #1 · Yiwu, Tiongkok',
+      origin: '🇨🇳 Yiwu, Tiongkok',
+      ageAtRebound: '61 Tahun',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'global'],
+      categoryLabel: 'Bangkit dari Utang Besar',
       badge: 'Aktif Membuka 3 Cabang',
       theme: 'teal',
       accentColor: '#0F766E',
       bgLight: '#F0FDFA',
       borderLight: '#CCFBF1',
-      iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>',
-      summary: 'Ratu Koper berutang Rp 220 Miliar & didiagnosis kanker, bangkit di usia 61 tahun dengan warung bakpao 5 Yuan.',
       stats: {
-        debt: '> 100 Juta Yuan (~Rp 220 M)',
-        cause: 'Penjaminan Kredit Silang & Krisis 2014',
-        lowest: 'Usia 61 Thn (Bangkrut & Vonis Kanker)',
-        firstStep: 'Jual Bakpao 5 Yuan (Rp 11.000)'
+        debt: '> Rp 220 Miliar (100 Juta Yuan)',
+        age: '61 Tahun',
+        lowest: 'Bangkrut & Vonis Kanker',
+        action: 'Jual Bakpao 5 Yuan (Rp 11.000)',
+        result: 'Omset 3 Juta Yuan/thn (12 Karyawan)'
       },
+      timeline: [
+        { year: 'Puncak Kejayaan', text: 'Memimpin pabrik koper ekspor Yiwu bernilai miliaran rupiah dengan ratusan karyawan.' },
+        { year: '2014 — Krisis', text: 'Terjebak penjaminan kredit silang usaha rekan bisnis. Pabrik berhenti, utang membengkak 100 juta Yuan.' },
+        { year: 'Titik Terendah', text: 'Didiagnosis kanker, kehilangan seluruh tabungan dan aset, duduk terdiam dalam keputusasaan.' },
+        { year: 'Usia 61 Tahun', text: 'Menolak menyerah. Mulai bangun jam 3 pagi mengulen adonan dan membuka warung bakpao 5 Yuan.' },
+        { year: 'Hari Ini — Rebound', text: 'Berkembang menjadi 3 cabang toko dengan omset 3 juta Yuan per tahun dan 12 karyawan.' }
+      ],
       quote: 'Kalau masih bisa berpikir jernih, buatlah bakpao. Kalau sudah tak kuasa berpikir, loncatlah dari sini.',
       quoteAuthor: 'Shao Baoling, saat kerabat mencibir keputusannya memulai usaha di usia senja',
       chapters: [
@@ -72,29 +85,45 @@ const Stories = {
         { num: 1, text: '<strong>Buang Ego & Romantisme Masa Lalu:</strong> Kejayaan lama tidak akan membayar cicilan hari ini. Akui kejatuhan tanpa rasa malu dan mulailah dari pekerjaan paling mendasar yang menghasilkan uang nyata.' },
         { num: 2, text: '<strong>Kekuatan Arus Kas Harian:</strong> Setiap pemasukan kecil (5 Yuan / Rp 10.000) adalah setetes air yang akan menghentikan kepanikan finansial dan membangun kembali martabat hidup.' },
         { num: 3, text: '<strong>Tindakan Mengalahkan Rasa Takut:</strong> Bangun jam 3 pagi dan mengeksekusi misi harian tanpa menunda adalah satu-satunya obat penawar dari depresi utang.' }
-      ]
+      ],
+      missionBridge: {
+        lesson: 'Shao Baoling mulai dari adonan 1 bakpao jam 3 pagi untuk menghasilkan uang tunai pertama.',
+        actionText: 'Cari 1 sumber pemasukan kecil atau tawarkan keahlianmu hari ini.',
+        targetScreen: 'income',
+        buttonText: 'Mulai Cari Pemasukan Hari Ini →'
+      }
     },
 
     {
       id: 'tang',
-      category: 'global',
+      featured: false,
       name: 'Tang Jian (唐健)',
+      tagline: 'Dari Raja Restoran Mewah Rp 100 Miliar Menjadi Om Sosis Panggang',
       title: 'Dari Raja Kuliner Menuju Om Sosis Panggang',
       subtitle: 'Mantan Pengusaha Restoran Mewah Qingdao, Tiongkok',
-      tag: 'Kisah #2 · Qingdao, Tiongkok',
+      origin: '🇨🇳 Qingdao, Tiongkok',
+      ageAtRebound: '57 Tahun',
+      categories: ['debt', 'bankrupt', 'business', 'global'],
+      categoryLabel: 'Bangkit dari Utang Agresif',
       badge: 'Target Lunas Total 2027',
       theme: 'amber',
       accentColor: '#D97706',
       bgLight: '#FFFBEB',
       borderLight: '#FEF3C7',
-      iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
-      summary: 'Raja Kuliner terlilit utang Rp 100 Miliar karena ekspansi, bangkit di usia 57 tahun dengan kios sosis 25 m².',
       stats: {
-        debt: '46 Juta Yuan (~Rp 100 Miliar)',
-        cause: 'Ekspansi Berlebihan & Jeratan Rentenir',
-        lowest: 'Usia 57 Thn (Rumah Disita & Cerai)',
-        firstStep: 'Kios Sosis Panggang 25 m² di Trotoar'
+        debt: 'Rp 100 Miliar (46 Juta Yuan)',
+        age: '57 Tahun',
+        lowest: 'Rumah & Mobil Disita, Dicerai',
+        action: 'Kios Sosis Panggang 25 m² di Trotoar',
+        result: 'Pabrik Sosis Sendiri (Target Lunas 2027)'
       },
+      timeline: [
+        { year: 'Puncak Kejayaan', text: 'Mantan pengawas ATC yang mendirikan 3 restoran mewah beromset > 30 juta Yuan/tahun.' },
+        { year: 'Kejatuhan Fatal', text: 'Nafsu ekspansi berlebihan dengan utang berbunga tinggi dan rentenir. Restoran kolaps total.' },
+        { year: 'Titik Terendah', text: 'Utang 46 juta Yuan, digugat cerai, aset disita, mengasingkan diri di Gunung Laoshan hampir bunuh diri.' },
+        { year: 'Usia 57 Tahun', text: 'Bangkit dan melepas gengsi: membuka gerobak sosis panggang pinggir jalan dengan faktur daging jujur.' },
+        { year: 'Hari Ini — Rebound', text: 'Viral 400 juta tayangan, memiliki pabrik sosis sendiri, perputaran kas kios 25 m² kalahkan resto 1.300 m² miliknya dulu.' }
+      ],
       quote: 'Penyesalan tidak mengubah apa-apa. Yang mengubah segalanya adalah tindakan. Setiap hari, aku bangun pagi, menyalakan panggangan, dan mulai bekerja. Itu saja.',
       quoteAuthor: 'Tang Jian ("Om Sosis Panggang Qingdao")',
       chapters: [
@@ -136,29 +165,45 @@ const Stories = {
         { num: 1, text: '<strong>Jangan Gandakan Risiko Saat Terpuruk:</strong> Jauhi rentenir, pinjaman gali lubang tutup lubang, atau perjudian saat sedang jatuh. Itu adalah jurang yang mempercepat kehancuran.' },
         { num: 2, text: '<strong>Ukuran Fisik Bukan Penentu Keberhasilan:</strong> Kios 25 m² yang efisien dan fokus pada margin bersih jauh lebih menyelamatkan daripada bisnis mewah 1.300 m² yang digerogoti utang operasional.' },
         { num: 3, text: '<strong>Miliki Rencana Pelunasan yang Jelas:</strong> Menghadapi utang puluhan miliar membutuhkan rencana realistis multi-tahun (seperti roadmap 2027 milik Tang Jian), dimulai dari disiplin 30 hari pertama.' }
-      ]
+      ],
+      missionBridge: {
+        lesson: 'Tang Jian berhenti gali lubang tutup lubang dan memetakan rencana pelunasan realistis.',
+        actionText: 'Evaluasi daftar utang dan susun strategi pelunasan di menu Utang.',
+        targetScreen: 'debts',
+        buttonText: 'Petakan Prioritas Utang Sekarang →'
+      }
     },
 
     {
       id: 'hendra',
-      category: 'indonesia',
+      featured: false,
       name: 'M. Taufik Hendradinata (Hendra)',
+      tagline: 'Dari Gelandangan di Teras Masjid Menuju Pemilik Pabrik Skincare Sendiri',
       title: 'Gelandangan yang Kini Punya Pabrik',
       subtitle: 'Owner Salina Herbal — Indonesia',
-      tag: 'Kisah #3 · Indonesia',
+      origin: '🇮🇩 Indonesia',
+      ageAtRebound: 'Usia Dewasa',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkit dari Titik Nol Mutlak',
       badge: 'Utang Lunas 100%',
       theme: 'indigo',
       accentColor: '#4F46E5',
       bgLight: '#EEF2FF',
       borderLight: '#E0E7FF',
-      iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
-      summary: 'Mantan Raja Laundry terlilit utang Rp 2,2 Miliar & menggelandang di teras masjid, kini pemilik pabrik skincare.',
       stats: {
         debt: 'Rp 2,2 Miliar',
-        cause: 'Penipuan Waralaba Rp 800 Jt & Gali Lubang',
-        lowest: 'Sisa Rp 700rb, Tinggal di Teras Masjid',
-        firstStep: 'Rintis Skincare Salina Herbal dari Titik Nol'
+        age: 'Usia Produktif',
+        lowest: 'Sisa Uang Rp 700rb & Tidur di Masjid',
+        action: 'Rintis Skincare Salina Herbal dari Nol',
+        result: 'Pabrik Sendiri & Utang Lunas 100%'
       },
+      timeline: [
+        { year: '2007 — Sukses Awal', text: 'Memiliki 3 cabang usaha laundry dan 15 agen aktif dengan arus kas lancar.' },
+        { year: '2010 — Tertipu Investor', text: 'Investasi Rp 800 juta pada waralaba pendidikan lenyap dibawa kabur investor.' },
+        { year: 'Titik Terendah', text: 'Terjebak gali lubang hingga utang Rp 2,2 M. Jual rumah dan mobil, tidur menggelandang di teras masjid.' },
+        { year: 'Merintis dari Nol', text: 'Memulai formulasi skincare skala mikro, mengantar pesanan sendiri, dan menabung setiap rupiah keuntungan.' },
+        { year: 'Hari Ini — Rebound', text: 'Memiliki pabrik manufaktur Salina Herbal sendiri, mempekerjakan puluhan staf, dan utang Rp 2,2 M lunas total.' }
+      ],
       quote: 'Kalau dengan dipenjarakan utangnya lunas, silakan penjarakan saya. Yang ada tinggal tubuh ini saja. Selama napas masih ada, selama tangan masih mau bekerja, tidak ada yang benar-benar hilang.',
       quoteAuthor: 'M. Taufik Hendradinata, saat menghadapi intimidasi debt collector',
       chapters: [
@@ -201,29 +246,45 @@ const Stories = {
         { num: 1, text: '<strong>Waspadai Tawaran Investasi Tanpa Kendali:</strong> Menaruh dana besar pada pihak ketiga tanpa kontrol operasional adalah jalan tercepat menuju kerugian fatal. Lindungi bisnis inti Anda.' },
         { num: 2, text: '<strong>Hentikan Gali Lubang Tutup Lubang Seketika:</strong> Pinjaman baru untuk menutup cicilan lama hanya mempercepat kehancuran. Hadapi kenyataan dan restrukturisasi pokoknya.' },
         { num: 3, text: '<strong>Aset Terhebat Adalah Daya Juang Sendiri:</strong> Ketika rumah, kendaraan, dan tabungan habis, kesehatan fisik dan tekad untuk bekerja keras dari nol adalah modal utama untuk mencapai status LUNAS.' }
-      ]
+      ],
+      missionBridge: {
+        lesson: 'Hendra bertahan hidup saat uang tersisa Rp 700.000 dengan memotong semua pos non-esensial.',
+        actionText: 'Audit pengeluaran bocor halus dan kendalikan anggaran hari ini.',
+        targetScreen: 'expenses',
+        buttonText: 'Pangkas Pengeluaran Non-Esensial →'
+      }
     },
 
     {
       id: 'suryo',
-      category: 'indonesia',
+      featured: false,
       name: 'Suryo Hadi Pranoto (Kacunk Motor)',
+      tagline: 'Dari TKI Pabrik di Taiwan Menuju Pemilik Showroom 1.000 Mobil Bekas',
       title: 'Dari Nol di Taiwan Menuju Seribu Mobil',
       subtitle: 'Pendiri Kacunk Motor — Bisnis Mobil Bekas Terbesar',
-      tag: 'Kisah #4 · Indonesia / Taiwan',
+      origin: '🇮🇩 Indonesia / 🇹🇼 Taiwan',
+      ageAtRebound: 'Usia Dewasa',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkit dari Kebangkrutan & Ditinggalkan',
       badge: '1.000 Armada Mobil',
       theme: 'rose',
       accentColor: '#E11D48',
       bgLight: '#FFF1F2',
       borderLight: '#FFE4E6',
-      iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 10.8 2 11 2 11.2V16c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>',
-      summary: 'Bangkrut total, aset lenyap, dan ditinggal pasangan, nekat jadi TKI di Taiwan untuk lunasi utang, kini punya 1.000 mobil.',
       stats: {
-        debt: 'Utang Bank & Bisnis Menumpuk',
-        cause: 'Kurang Pengalaman & Tekanan Utang Bank',
-        lowest: 'Kehilangan Semua Aset & Ditinggal Pasangan',
-        firstStep: 'Nekat Jadi TKI Taiwan & Jual Mobil Timor Rp 33 Jt'
+        debt: 'Utang Bank Menumpuk (Bangkrut Total)',
+        age: 'Usia Produktif',
+        lowest: 'Semua Aset Habis & Ditinggal Pasangan',
+        action: 'TKI Pabrik di Taiwan & Modal Mobil Timor Rp 33 Jt',
+        result: 'Showroom 1.000 Mobil Tanpa Utang Bank'
       },
+      timeline: [
+        { year: '2010 — Runtuh Total', text: 'Usaha komoditas dan motor bangkrut akibat kurang pengalaman dan utang bank. Kehilangan semua aset dan ditinggalkan pasangan.' },
+        { year: 'Nekat ke Taiwan', text: 'Meminjam Rp 25 juta untuk bekal berangkat menjadi buruh pabrik di Taiwan demi melunasi seluruh utang.' },
+        { year: '1 Tahun Lebih', text: 'Bekerja keras dan hidup hemat ekstrem. Gaji dikirim ke Indonesia hingga seluruh utang bank lunas tanpa sisa.' },
+        { year: 'Modal Rp 70 Juta', text: 'Pulang membawa tabungan Rp 70 juta. Beli sedan Timor bekas Rp 33 juta, dipoles, dijual dengan laba Rp 4 juta.' },
+        { year: 'Hari Ini — Rebound', text: 'Mendirikan Kacunk Motor yang kini memiliki armada lebih dari 1.000 unit mobil bekas tanpa bergantung utang bank.' }
+      ],
       quote: 'Di negeri orang, aku hanya punya satu pilihan: terus bergerak dan melunasi utang. Jangan biarkan rasa malu membunuh masa depanmu.',
       quoteAuthor: 'Suryo Hadi Pranoto, saat mengenang masa-masa awal berjuang di Taiwan',
       chapters: [
@@ -268,29 +329,45 @@ const Stories = {
         { num: 1, text: '<strong>Kesiapan Bekerja Apa Saja Demi Melunasi Utang:</strong> Suryo tidak gengsi menjadi TKI pabrik di luar negeri demi menunaikan kewajiban utangnya sampai tuntas.' },
         { num: 2, text: '<strong>Mulai Kembali dari Unit Terkecil (Modal Rp 33 Juta):</strong> Rebound tidak butuh modal ratusan juta sekaligus. Mobil bekas Timor seharga Rp 33 juta dengan laba Rp 4 juta sudah cukup menjadi batu pijakan pertama.' },
         { num: 3, text: '<strong>Disiplin Menggulung Arus Kas:</strong> Keuntungan bisnis tidak langsung dipakai untuk foya-foya, melainkan diputar kembali menjadi stok mobil hingga mencapai 1.000 unit.' }
-      ]
+      ],
+      missionBridge: {
+        lesson: 'Suryo menjual dan memutar aset aman untuk melunasi utang dan membangun modal usaha.',
+        actionText: 'Inventarisir barang atau aset yang bisa dicairkan di menu Aset.',
+        targetScreen: 'assets',
+        buttonText: 'Cek Daftar Aset Aman Dijual →'
+      }
     },
 
     {
       id: 'suprianto',
-      category: 'indonesia',
+      featured: false,
       name: 'Suprianto (Siomay Wondes)',
+      tagline: 'Dari Kursi Bos Kantor ke Gerobak Pinggir Jalan Menuju Dapur Mesin Modern',
       title: 'Dari Meja Kantor ke Pinggir Jalan',
       subtitle: 'Pendiri Siomay Wondes — Indonesia',
-      tag: 'Kisah #5 · Indonesia',
-      badge: 'Dapur Produksi Mesin & Lunas 100%',
+      origin: '🇮🇩 Indonesia',
+      ageAtRebound: 'Usia Dewasa',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkit dari Utang Medis & Kartu Kredit',
+      badge: 'Dapur Mesin Semi-Modern & Lunas',
       theme: 'emerald',
       accentColor: '#059669',
       bgLight: '#ECFDF5',
       borderLight: '#A7F3D0',
-      iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-7.54 16.58L3 22l3.42-1.46A10 10 0 1 0 12 2z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>',
-      summary: 'Mantan karyawan kantoran terjerat utang ratusan juta akibat biaya medis kartu kredit, bangkit jualan siomay di pinggir jalan hingga punya dapur mesin sendiri.',
       stats: {
         debt: 'Ratusan Juta Rupiah (Bunga Kartu Kredit)',
-        cause: 'Biaya Rawat RS Rp 40 Jt & Bisnis Gagal',
-        lowest: 'Tekanan Keluarga & Tak Sanggup Bayar Cicilan',
-        firstStep: 'Resign Kantor & Jual Siomay di Depan Gereja Tiap Minggu'
+        age: 'Usia Produktif',
+        lowest: 'Tekanan Keluarga & Bisnis Gagal',
+        action: 'Resign & Jual Siomay di Depan Gereja Tiap Minggu',
+        result: 'Dapur Produksi Mesin & Brand Dikenal Luas'
       },
+      timeline: [
+        { year: 'Masa Mapan', text: 'Karyawan kantoran tertib finansial yang tidak pernah berutang dan memimpin banyak staf.' },
+        { year: 'Musibah Medis', text: 'Jatuh sakit parah dengan biaya RS Rp 40 juta. Digesek kartu kredit $\to$ bunga menumpuk jadi ratusan juta.' },
+        { year: 'Titik Terendah', text: 'Buka usaha sampingan untuk tutup lubang tapi gagal. Tekanan keluarga besar dan cicilan macet.' },
+        { year: 'Doa & Pasrah', text: 'Shalat malam rutin. Piutang lama tak terduga cair, gaji tertunda dibayarkan, utang ratusan juta lunas.' },
+        { year: 'Hari Ini — Rebound', text: 'Resign dari kantor, jualan siomay gerobak tiap Minggu pagi, kini punya dapur produksi semi-modern dengan mesin penggiling ikan & mixer.' }
+      ],
       quote: 'Dulu saya kerja kantoran, suruh-suruh anak buah. Sekarang saya sendiri yang dagang di pinggir jalan. Selama produk kita jujur dan berkualitas, tidak ada yang perlu dimalukan.',
       quoteAuthor: 'Suprianto, saat memulai usaha gerobak siomay di pinggir jalan',
       chapters: [
@@ -344,12 +421,45 @@ const Stories = {
         { num: 1, text: '<strong>Waspadai Gesek Kartu Kredit untuk Dana Darurat:</strong> Membayar biaya medis besar dengan kartu kredit berbunga tinggi tanpa mitigasi darurat adalah jebakan utang ratusan juta. Siapkan pos dana darurat cair.' },
         { num: 2, text: '<strong>Buang Gengsi Status Pekerjaan:</strong> Pindah dari bos kantoran menjadi penjual gerobak pinggir jalan bukanlah kemunduran, melainkan langkah awal membangun kebebasan finansial sejati.' },
         { num: 3, text: '<strong>Kualitas Produk Adalah Pemasaran Terbaik:</strong> Siomay dengan bahan baku jujur (ikan tenggiri asli & labu siam muda) akan menciptakan pelanggan setia yang mengembangkan bisnis secara organik.' }
-      ]
+      ],
+      missionBridge: {
+        lesson: 'Suprianto memulai usaha baru dengan kualitas produk terbaik dan fokus pada tindakan nyata.',
+        actionText: 'Buka panduan misi harian hari ini dan selesaikan 1 tindakan nyata.',
+        targetScreen: 'missions',
+        buttonText: 'Buka Misi Harian Hari Ini →'
+      }
     }
   ],
 
   init() {
+    // Load bookmarks from localStorage
+    try {
+      const saved = localStorage.getItem('rebound30_bookmarks');
+      this.bookmarks = saved ? JSON.parse(saved) : [];
+    } catch {
+      this.bookmarks = [];
+    }
     this.render();
+  },
+
+  toggleBookmark(storyId, e) {
+    if (e) e.stopPropagation();
+    const idx = this.bookmarks.indexOf(storyId);
+    if (idx !== -1) {
+      this.bookmarks.splice(idx, 1);
+      if (typeof App !== 'undefined' && App.toast) App.toast('Dihapus dari kisah tersimpan', 'info');
+    } else {
+      this.bookmarks.push(storyId);
+      if (typeof App !== 'undefined' && App.toast) App.toast('Kisah disimpan ke bookmark! 🔖', 'success');
+    }
+    try {
+      localStorage.setItem('rebound30_bookmarks', JSON.stringify(this.bookmarks));
+    } catch {}
+    this.render();
+  },
+
+  isBookmarked(storyId) {
+    return this.bookmarks.includes(storyId);
   },
 
   setCategory(cat) {
@@ -362,25 +472,36 @@ const Stories = {
     this.render();
   },
 
-  selectStory(storyId) {
+  openReader(storyId) {
     this.activeId = storyId;
+    this.viewMode = 'reader';
     this.render();
-    
-    // Smooth scroll to top of story reader
-    const readerEl = document.getElementById('story-reader-anchor');
-    if (readerEl) {
-      readerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  closeReader() {
+    this.viewMode = 'library';
+    this.render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
   getFilteredData() {
     return this.DATA.filter(item => {
-      const matchCat = (this.selectedCategory === 'all') || (item.category === this.selectedCategory);
+      let matchCat = true;
+      if (this.selectedCategory === 'all') {
+        matchCat = true;
+      } else if (this.selectedCategory === 'bookmarks') {
+        matchCat = this.isBookmarked(item.id);
+      } else {
+        matchCat = (item.categories || []).includes(this.selectedCategory);
+      }
+
       const matchSearch = !this.searchQuery || 
         item.name.toLowerCase().includes(this.searchQuery) ||
         item.title.toLowerCase().includes(this.searchQuery) ||
-        item.subtitle.toLowerCase().includes(this.searchQuery) ||
-        item.summary.toLowerCase().includes(this.searchQuery);
+        item.tagline.toLowerCase().includes(this.searchQuery) ||
+        item.subtitle.toLowerCase().includes(this.searchQuery);
+
       return matchCat && matchSearch;
     });
   },
@@ -389,168 +510,298 @@ const Stories = {
     const container = document.getElementById('stories-root');
     if (!container) return;
 
-    const filtered = this.getFilteredData();
-    const activeStory = this.DATA.find(s => s.id === this.activeId) || this.DATA[0];
-    const currentIndex = this.DATA.findIndex(s => s.id === activeStory.id);
-    const prevStory = currentIndex > 0 ? this.DATA[currentIndex - 1] : null;
-    const nextStory = currentIndex < this.DATA.length - 1 ? this.DATA[currentIndex + 1] : null;
+    if (this.viewMode === 'reader') {
+      this.renderReader(container);
+    } else {
+      this.renderLibrary(container);
+    }
+  },
 
-    // 1. Shelf Cards HTML
+  renderLibrary(container) {
+    const filtered = this.getFilteredData();
+    const featuredStory = this.DATA.find(s => s.featured) || this.DATA[0];
+
+    // Problem-based category chips
+    const categories = [
+      { id: 'all', label: `Semua (${this.DATA.length})` },
+      { id: 'debt', label: '💸 Terlilit Utang' },
+      { id: 'bankrupt', label: '💥 Bangkrut' },
+      { id: 'zero', label: '🏚️ Mulai dari Nol' },
+      { id: 'business', label: '🚀 Bangkit Bisnis' },
+      { id: 'indonesia', label: '🇮🇩 Indonesia' },
+      { id: 'global', label: '🌏 Global' },
+      { id: 'bookmarks', label: `🔖 Tersimpan (${this.bookmarks.length})` },
+    ];
+
+    const categoryChipsHtml = categories.map(cat => `
+      <button class="story-category-chip ${this.selectedCategory === cat.id ? 'active' : ''}" onclick="Stories.setCategory('${cat.id}')">
+        ${cat.label}
+      </button>
+    `).join('');
+
+    // Teaser Cards (2 columns on desktop, 1 on mobile)
     const cardsHtml = filtered.map(item => {
-      const isActive = item.id === activeStory.id;
+      const isSaved = this.isBookmarked(item.id);
       return `
-        <div class="story-shelf-card ${isActive ? 'active' : ''} theme-${item.theme}" onclick="Stories.selectStory('${item.id}')">
-          <div class="shelf-card-top">
-            <div class="shelf-card-avatar" style="background:${item.bgLight};color:${item.accentColor};">
-              ${item.iconSvg}
+        <div class="story-catalog-card" onclick="Stories.openReader('${item.id}')">
+          <div class="catalog-card-header">
+            <div class="catalog-origin-tag">${item.origin} · ${item.ageAtRebound}</div>
+            <button class="bookmark-btn ${isSaved ? 'active' : ''}" onclick="Stories.toggleBookmark('${item.id}', event)" title="${isSaved ? 'Hapus bookmark' : 'Simpan kisah'}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            </button>
+          </div>
+
+          <h3 class="catalog-card-name">${H.escHtml(item.name)}</h3>
+          <p class="catalog-card-tagline">${H.escHtml(item.tagline)}</p>
+
+          <!-- 3 Micro Metrics -->
+          <div class="catalog-micro-stats">
+            <div class="micro-stat-item">
+              <span class="micro-stat-label">Beban Utang:</span>
+              <span class="micro-stat-val" style="color:var(--red-600);">${H.escHtml(item.stats.debt)}</span>
             </div>
-            <div style="flex:1;min-width:0;">
-              <span class="story-tag" style="background:${item.bgLight};color:${item.accentColor};font-size:10px;padding:2px 6px;">${H.escHtml(item.tag)}</span>
-              <div class="shelf-card-name">${H.escHtml(item.name)}</div>
+            <div class="micro-stat-item">
+              <span class="micro-stat-label">Titik Terendah:</span>
+              <span class="micro-stat-val">${H.escHtml(item.stats.lowest)}</span>
             </div>
           </div>
-          <div class="shelf-card-summary">${H.escHtml(item.summary)}</div>
-          <div class="shelf-card-badge">
-            <strong>Fakta:</strong> ${H.escHtml(item.badge)}
+
+          <div class="catalog-card-footer">
+            <span class="badge" style="background:${item.bgLight};color:${item.accentColor};border:1px solid ${item.borderLight};font-size:11px;padding:3px 8px;">
+              ${H.escHtml(item.categoryLabel)}
+            </span>
+            <span class="read-more-link" style="color:${item.accentColor};">
+              Baca Kisah →
+            </span>
           </div>
         </div>
       `;
-    }).join('') || '<div style="padding:var(--space-6);color:var(--color-text-muted);text-align:center;grid-column:1/-1;">Tidak ada kisah yang cocok dengan pencarian.</div>';
+    }).join('') || `
+      <div style="grid-column:1/-1;text-align:center;padding:var(--space-8);background:var(--color-surface);border-radius:var(--radius-xl);border:1px dashed var(--color-border);">
+        <div style="font-size:32px;margin-bottom:8px;">📖</div>
+        <div style="font-weight:700;color:var(--color-text-primary);margin-bottom:4px;">Tidak ada kisah yang cocok</div>
+        <div style="font-size:13px;color:var(--color-text-muted);">Coba ubah kata kunci pencarian atau pilih kategori lain.</div>
+      </div>
+    `;
 
-    // 2. Active Reader HTML
-    const chaptersHtml = activeStory.chapters.map(ch => `
-      <div class="chapter-block">
-        <div class="chapter-header">
-          <div class="chapter-badge" style="background:${activeStory.bgLight};color:${activeStory.accentColor};">${ch.num}</div>
-          <h3 class="chapter-title">${H.escHtml(ch.title)}</h3>
+    container.innerHTML = `
+      <div class="stories-library-view fade-in">
+        <!-- Page Header -->
+        <div class="page-header" style="margin-bottom:var(--space-5);">
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--teal-50);border:1px solid var(--teal-200);border-radius:20px;color:var(--teal-800);font-size:12px;font-weight:700;margin-bottom:var(--space-2);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+            Perpustakaan Kisah Nyata (${this.DATA.length} Tokoh)
+          </div>
+          <h1 class="page-title">Kisah Bangkit: Dari Titik Nol Menuju Pulih</h1>
+          <div class="page-subtitle">Belajar dari orang-orang nyata yang pernah berada di jurang utang terdalam dan menemukan jalan keluar melalui tindakan disiplin.</div>
         </div>
-        <div class="chapter-body">
+
+        <!-- Search Bar -->
+        <div style="margin-bottom:var(--space-4);position:relative;">
+          <input type="text" class="form-input" placeholder="🔍 Cari nama tokoh, nominal utang, atau kata kunci..." value="${H.escHtml(this.searchQuery)}" oninput="Stories.setSearch(this.value)" style="width:100%;padding:10px 16px;border-radius:var(--radius-lg);font-size:13.5px;">
+        </div>
+
+        <!-- Category Scrollable Filter Chips -->
+        <div class="story-category-bar" style="margin-bottom:var(--space-6);">
+          ${categoryChipsHtml}
+        </div>
+
+        <!-- Featured Story Banner (Only show if viewing 'all' and no search) -->
+        ${(this.selectedCategory === 'all' && !this.searchQuery && featuredStory) ? `
+          <div class="featured-story-banner" onclick="Stories.openReader('${featuredStory.id}')" style="border-left:5px solid ${featuredStory.accentColor};">
+            <div class="featured-badge-pill">⭐ KISAH PILIHAN MINGGU INI</div>
+            <div class="grid grid-2" style="gap:var(--space-4);align-items:center;">
+              <div>
+                <div style="font-size:12px;color:var(--teal-700);font-weight:700;text-transform:uppercase;margin-bottom:4px;">${featuredStory.origin} · ${featuredStory.ageAtRebound}</div>
+                <h2 style="font-size:1.5rem;font-weight:800;color:var(--color-text-primary);margin-bottom:6px;">${H.escHtml(featuredStory.name)}</h2>
+                <p style="font-size:13.5px;color:var(--color-text-secondary);line-height:1.5;margin-bottom:var(--space-3);">${H.escHtml(featuredStory.tagline)}</p>
+                <div class="featured-stat-tags">
+                  <span class="fstat-tag"><strong>Utang:</strong> ${H.escHtml(featuredStory.stats.debt)}</span>
+                  <span class="fstat-tag"><strong>Modal Awal:</strong> ${H.escHtml(featuredStory.stats.action)}</span>
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <button class="btn btn-primary" style="padding:10px 20px;font-size:13px;border-radius:var(--radius-md);">
+                  Baca Kisah Lengkap →
+                </button>
+              </div>
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Section Label -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-4);margin-top:var(--space-5);">
+          <div style="font-size:14px;font-weight:800;color:var(--color-text-primary);">Daftar Kisah (${filtered.length})</div>
+          <div style="font-size:12px;color:var(--color-text-muted);">Pilih salah satu kisah untuk membuka mode membaca</div>
+        </div>
+
+        <!-- 2-Column Catalog Grid (1 Col Mobile) -->
+        <div class="story-catalog-grid">
+          ${cardsHtml}
+        </div>
+      </div>
+    `;
+  },
+
+  renderReader(container) {
+    const story = this.DATA.find(s => s.id === this.activeId) || this.DATA[0];
+    const currentIndex = this.DATA.findIndex(s => s.id === story.id);
+    const prevStory = currentIndex > 0 ? this.DATA[currentIndex - 1] : null;
+    const nextStory = currentIndex < this.DATA.length - 1 ? this.DATA[currentIndex + 1] : null;
+    const isSaved = this.isBookmarked(story.id);
+
+    // Render Timeline Items
+    const timelineHtml = (story.timeline || []).map(tl => `
+      <div class="story-timeline-item">
+        <div class="story-timeline-dot" style="background:${story.accentColor};"></div>
+        <div class="story-timeline-content">
+          <div class="story-timeline-year" style="color:${story.accentColor};">${H.escHtml(tl.year)}</div>
+          <div class="story-timeline-desc">${H.escHtml(tl.text)}</div>
+        </div>
+      </div>
+    `).join('');
+
+    // Render Narrative Chapters
+    const chaptersHtml = (story.chapters || []).map(ch => `
+      <div class="reader-chapter-box">
+        <div class="reader-chapter-num" style="background:${story.bgLight};color:${story.accentColor};">
+          BAB ${ch.num}
+        </div>
+        <h3 class="reader-chapter-title">${H.escHtml(ch.title)}</h3>
+        <div class="reader-chapter-body">
           ${ch.paragraphs.map(p => `<p>${H.escHtml(p)}</p>`).join('')}
         </div>
       </div>
     `).join('');
 
-    const takeawaysHtml = activeStory.takeaways.map(t => `
+    // Render Takeaways
+    const takeawaysHtml = (story.takeaways || []).map(t => `
       <div class="takeaway-item">
-        <div class="takeaway-num" style="background:${activeStory.accentColor};color:#fff;">${t.num}</div>
+        <div class="takeaway-num" style="background:${story.accentColor};color:#fff;">${t.num}</div>
         <div class="takeaway-text">${t.text}</div>
       </div>
     `).join('');
 
-    const paginationHtml = `
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:var(--space-6);padding-top:var(--space-5);border-top:1px solid var(--color-border);flex-wrap:wrap;">
-        ${prevStory ? `
-          <button class="btn btn-outline btn-sm" onclick="Stories.selectStory('${prevStory.id}')" style="font-size:12px;">
-            ← ${H.escHtml(prevStory.name)}
-          </button>
-        ` : '<div></div>'}
-        
-        <div style="font-size:12px;color:var(--color-text-muted);">
-          Kisah ${currentIndex + 1} dari ${this.DATA.length} Tokoh
-        </div>
-
-        ${nextStory ? `
-          <button class="btn btn-primary btn-sm" onclick="Stories.selectStory('${nextStory.id}')" style="font-size:12px;">
-            ${H.escHtml(nextStory.name)} →
-          </button>
-        ` : '<div></div>'}
-      </div>
-    `;
-
     container.innerHTML = `
-      <!-- Page Header -->
-      <div class="page-header" style="margin-bottom:var(--space-5);">
-        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--teal-50);border:1px solid var(--teal-200);border-radius:20px;color:var(--teal-800);font-size:12px;font-weight:700;margin-bottom:var(--space-2);">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          Ruang Inspirasi & Refleksi (${this.DATA.length} Tokoh Nyata)
-        </div>
-        <h1 class="page-title">Kisah Nyata: Dari Titik Nol Menuju Bangkit</h1>
-        <div class="page-subtitle">Pelajaran nyata bahwa sebesar apa pun badai utang, selalu ada jalan keluar bagi mereka yang berani melangkah hari ini.</div>
-      </div>
-
-      <!-- Controls: Category & Search -->
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:var(--space-4);">
-        <!-- Category Filter Tabs -->
-        <div class="tabs" style="margin-bottom:0;display:flex;gap:6px;">
-          <button class="tab-btn ${this.selectedCategory === 'all' ? 'active' : ''}" onclick="Stories.setCategory('all')" style="padding:6px 14px;font-size:12.5px;">Semua Tokoh (${this.DATA.length})</button>
-          <button class="tab-btn ${this.selectedCategory === 'indonesia' ? 'active' : ''}" onclick="Stories.setCategory('indonesia')" style="padding:6px 14px;font-size:12.5px;">🇮🇩 Indonesia</button>
-          <button class="tab-btn ${this.selectedCategory === 'global' ? 'active' : ''}" onclick="Stories.setCategory('global')" style="padding:6px 14px;font-size:12.5px;">🌏 Global / Asia</button>
+      <div class="story-reader-view fade-in">
+        <!-- Reader Top Nav -->
+        <div class="reader-top-bar">
+          <button class="btn btn-outline btn-sm" onclick="Stories.closeReader()" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;">
+            ← Kembali ke Semua Kisah
+          </button>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button class="bookmark-btn ${isSaved ? 'active' : ''}" onclick="Stories.toggleBookmark('${story.id}', event)" style="padding:6px 12px;border-radius:20px;border:1px solid var(--color-border);display:inline-flex;align-items:center;gap:6px;font-size:12px;background:var(--color-surface);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+              ${isSaved ? 'Tersimpan' : 'Simpan Kisah'}
+            </button>
+          </div>
         </div>
 
-        <!-- Search input -->
-        <div style="position:relative;width:220px;">
-          <input type="text" class="form-input" placeholder="Cari nama tokoh..." value="${H.escHtml(this.searchQuery)}" oninput="Stories.setSearch(this.value)" style="padding:6px 12px;font-size:12.5px;border-radius:20px;">
-        </div>
-      </div>
-
-      <!-- Scalable Story Shelf Grid -->
-      <div class="story-shelf-grid" style="margin-bottom:var(--space-6);">
-        ${cardsHtml}
-      </div>
-
-      <div id="story-reader-anchor"></div>
-
-      <!-- Active Story Reader -->
-      <div class="story-reader-wrap fade-in">
-        <!-- Hero Card -->
-        <div class="story-hero-card" style="border-top:4px solid ${activeStory.accentColor};">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+        <!-- Editorial Hero Card -->
+        <div class="reader-hero-card" style="border-top:5px solid ${story.accentColor};">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:var(--space-3);">
             <div>
-              <div style="font-size:12px;font-weight:700;color:${activeStory.accentColor};text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Laporan Fakta & Narasi Inspiratif</div>
-              <h2 style="font-size:1.6rem;font-weight:800;color:var(--color-text-primary);margin:0 0 4px 0;">${H.escHtml(activeStory.title)}</h2>
-              <div style="font-size:13.5px;color:var(--color-text-secondary);">Perjalanan Nyata ${H.escHtml(activeStory.name)} — ${H.escHtml(activeStory.subtitle)}</div>
+              <div style="font-size:12px;font-weight:700;color:${story.accentColor};text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">${story.origin} · ${story.ageAtRebound}</div>
+              <h1 class="reader-main-title">${H.escHtml(story.name)}</h1>
+              <div class="reader-main-sub">${H.escHtml(story.tagline)}</div>
             </div>
-            <span class="badge" style="padding:6px 12px;font-size:12px;border-radius:20px;background:${activeStory.bgLight};color:${activeStory.accentColor};border:1px solid ${activeStory.borderLight};font-weight:700;">
-              ${H.escHtml(activeStory.badge)}
+            <span class="badge" style="background:${story.bgLight};color:${story.accentColor};border:1px solid ${story.borderLight};padding:6px 14px;font-size:12px;font-weight:700;border-radius:20px;">
+              ${H.escHtml(story.badge)}
             </span>
           </div>
 
-          <!-- Quick Stats Grid -->
-          <div class="story-stats-grid">
-            <div class="story-stat-box">
-              <div class="stat-box-label">Beban Utang Awal</div>
-              <div class="stat-box-val" style="color:var(--red-600);">${H.escHtml(activeStory.stats.debt)}</div>
+          <!-- 4 Fact Boxes -->
+          <div class="reader-stats-grid">
+            <div class="rstat-box">
+              <div class="rstat-label">Beban Utang Awal</div>
+              <div class="rstat-val" style="color:var(--red-600);">${H.escHtml(story.stats.debt)}</div>
             </div>
-            <div class="story-stat-box">
-              <div class="stat-box-label">Penyebab Kejatuhan</div>
-              <div class="stat-box-val">${H.escHtml(activeStory.stats.cause)}</div>
+            <div class="rstat-box">
+              <div class="rstat-label">Titik Terendah</div>
+              <div class="rstat-val">${H.escHtml(story.stats.lowest)}</div>
             </div>
-            <div class="story-stat-box">
-              <div class="stat-box-label">Titik Terendah</div>
-              <div class="stat-box-val">${H.escHtml(activeStory.stats.lowest)}</div>
+            <div class="rstat-box">
+              <div class="rstat-label">Langkah Rebound</div>
+              <div class="rstat-val">${H.escHtml(story.stats.action)}</div>
             </div>
-            <div class="story-stat-box">
-              <div class="stat-box-label">Langkah Rebound</div>
-              <div class="stat-box-val">${H.escHtml(activeStory.stats.firstStep)}</div>
+            <div class="rstat-box">
+              <div class="rstat-label">Pencapaian Hari Ini</div>
+              <div class="rstat-val" style="color:var(--teal-700);">${H.escHtml(story.stats.result || story.badge)}</div>
             </div>
           </div>
 
-          <!-- Golden Quote -->
-          <div class="story-quote-box" style="background:${activeStory.bgLight};border-color:${activeStory.accentColor};">
-            <div class="story-quote-text" style="color:var(--slate-900);">
-              "${H.escHtml(activeStory.quote)}"
+          <!-- Golden Quote Box -->
+          <div class="reader-quote-box" style="background:${story.bgLight};border-left:4px solid ${story.accentColor};">
+            <div class="reader-quote-text" style="color:var(--slate-900);">
+              "${H.escHtml(story.quote)}"
             </div>
-            <div class="story-quote-author" style="color:${activeStory.accentColor};">
-              — ${H.escHtml(activeStory.quoteAuthor)}
+            <div class="reader-quote-author" style="color:${story.accentColor};">
+              — ${H.escHtml(story.quoteAuthor)}
             </div>
           </div>
         </div>
 
-        <!-- Narrative Chapters -->
-        <div class="story-narrative-card">
+        <!-- Vertical Journey Timeline -->
+        <div class="reader-timeline-card">
+          <div class="reader-section-heading">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:${story.accentColor};"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Garis Waktu Perjalanan Rebound (${H.escHtml(story.name)})
+          </div>
+          <div class="story-timeline-wrap">
+            ${timelineHtml}
+          </div>
+        </div>
+
+        <!-- Narrative Reading Chapters -->
+        <div class="reader-narrative-card">
+          <div class="reader-section-heading" style="margin-bottom:var(--space-6);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:${story.accentColor};"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Narasi Lengkap Perjuangan
+          </div>
+
           ${chaptersHtml}
 
           <!-- Blueprint Takeaways -->
-          <div class="takeaways-box" style="border-top:3px solid ${activeStory.accentColor};">
-            <div class="takeaways-title" style="color:${activeStory.accentColor === '#0F766E' ? 'var(--teal-400)' : activeStory.accentColor};">
+          <div class="takeaways-box" style="border-top:3px solid ${story.accentColor};margin-top:var(--space-6);">
+            <div class="takeaways-title" style="color:${story.accentColor === '#0F766E' ? 'var(--teal-400)' : story.accentColor};">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-              Pelajaran Finansial Rebound 30 dari ${H.escHtml(activeStory.name)}:
+              Pelajaran Finansial Rebound 30 dari ${H.escHtml(story.name)}:
             </div>
             ${takeawaysHtml}
           </div>
 
-          <!-- Next / Prev Pagination -->
-          ${paginationHtml}
+          <!-- Mission Bridge Box (Direct Action for Reader) -->
+          ${story.missionBridge ? `
+            <div class="reader-mission-bridge-box">
+              <div style="font-size:12px;font-weight:700;color:var(--teal-700);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">🎯 Ambil Pelajaran & Mulai Bertindak</div>
+              <h3 style="font-size:1.15rem;font-weight:800;color:var(--color-text-primary);margin-bottom:6px;">Jangan Berhenti di Membaca — Ambil 1 Tindakan Nyata Hari Ini</h3>
+              <p style="font-size:13.5px;color:var(--slate-600);line-height:1.5;margin-bottom:var(--space-4);">
+                ${H.escHtml(story.missionBridge.lesson)} ${H.escHtml(story.missionBridge.actionText)}
+              </p>
+              <button class="btn btn-primary" onclick="App.navigate('${story.missionBridge.targetScreen}')" style="font-size:13px;padding:10px 18px;border-radius:var(--radius-md);">
+                ${H.escHtml(story.missionBridge.buttonText)}
+              </button>
+            </div>
+          ` : ''}
+
+          <!-- Prev & Next Pagination -->
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:var(--space-8);padding-top:var(--space-5);border-top:1px solid var(--color-border);flex-wrap:wrap;">
+            ${prevStory ? `
+              <button class="btn btn-outline btn-sm" onclick="Stories.openReader('${prevStory.id}')" style="font-size:12.5px;">
+                ← ${H.escHtml(prevStory.name)}
+              </button>
+            ` : '<div></div>'}
+
+            <button class="btn btn-secondary btn-sm" onclick="Stories.closeReader()" style="font-size:12px;">
+              Daftar Semua Kisah
+            </button>
+
+            ${nextStory ? `
+              <button class="btn btn-primary btn-sm" onclick="Stories.openReader('${nextStory.id}')" style="font-size:12.5px;">
+                ${H.escHtml(nextStory.name)} →
+              </button>
+            ` : '<div></div>'}
+          </div>
         </div>
       </div>
     `;
