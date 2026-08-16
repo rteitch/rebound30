@@ -1,0 +1,3950 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebound 30 — Pemulihan Finansial 30 Hari</title>
+<meta name="description" content="Aplikasi pendamping pemulihan finansial untuk 30 hari pertama. Petakan utang, bangun cashflow, dan ambil kembali kendali atas hidup finansialmu.">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0D9488">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Rebound 30">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN SYSTEM — REBOUND 30
+   ============================================================ */
+:root {
+  /* Primary Palette */
+  --teal-50:  #F0FDFA;
+  --teal-100: #CCFBF1;
+  --teal-200: #99F6E4;
+  --teal-400: #2DD4BF;
+  --teal-500: #14B8A6;
+  --teal-600: #0D9488;
+  --teal-700: #0F766E;
+  --teal-800: #115E59;
+  --teal-900: #134E4A;
+
+  /* Amber (Alert/Priority) */
+  --amber-50:  #FFFBEB;
+  --amber-100: #FEF3C7;
+  --amber-400: #FBBF24;
+  --amber-500: #F59E0B;
+  --amber-600: #D97706;
+  --amber-700: #B45309;
+
+  /* Red (Critical/Danger) */
+  --red-50:  #FFF1F2;
+  --red-100: #FFE4E6;
+  --red-400: #F87171;
+  --red-500: #EF4444;
+  --red-600: #DC2626;
+  --red-700: #B91C1C;
+
+  /* Green (Success) */
+  --green-50:  #F0FDF4;
+  --green-100: #DCFCE7;
+  --green-500: #22C55E;
+  --green-600: #16A34A;
+  --green-700: #15803D;
+
+  /* Blue (Info) */
+  --blue-50:  #EFF6FF;
+  --blue-500: #3B82F6;
+  --blue-600: #2563EB;
+
+  /* Neutral */
+  --slate-50:  #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+
+  /* Semantic */
+  --color-primary: var(--teal-600);
+  --color-primary-light: var(--teal-500);
+  --color-primary-dark: var(--teal-700);
+  --color-primary-bg: var(--teal-50);
+  --color-accent: var(--amber-600);
+  --color-danger: var(--red-600);
+  --color-success: var(--green-600);
+  --color-warning: var(--amber-500);
+
+  --color-bg: var(--slate-50);
+  --color-surface: #FFFFFF;
+  --color-border: var(--slate-200);
+  --color-text: var(--slate-800);
+  --color-text-secondary: var(--slate-500);
+  --color-text-muted: var(--slate-400);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04);
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --nav-height: 64px;
+  --sidebar-width: 240px;
+  --content-max: 800px;
+}
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, select, textarea { font-family: inherit; font-size: var(--text-base); }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+img { max-width: 100%; }
+
+/* ---- Utilities ---- */
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.w-full { width: 100%; }
+.text-center { text-align: center; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- Typography ---- */
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-danger { color: var(--color-danger); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+
+/* ============================================================
+   APP LAYOUT
+   ============================================================ */
+#app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar — Desktop */
+#sidebar {
+  width: var(--sidebar-width);
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-logo {
+  padding: var(--space-6) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+.sidebar-logo .logo-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.logo-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: var(--text-sm);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+.logo-text { font-weight: 700; font-size: var(--text-base); color: var(--color-text); }
+.logo-tagline { font-size: var(--text-xs); color: var(--color-text-secondary); }
+
+.sidebar-day-badge {
+  margin: var(--space-4) var(--space-5);
+  background: var(--teal-50);
+  border: 1px solid var(--teal-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+}
+.sidebar-day-badge .day-label { font-size: var(--text-xs); color: var(--teal-600); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+.sidebar-day-badge .day-number { font-size: var(--text-xl); font-weight: 800; color: var(--teal-700); }
+
+.sidebar-nav {
+  flex: 1;
+  padding: var(--space-2) var(--space-3);
+  overflow-y: auto;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-1);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.nav-item:hover { background: var(--slate-100); color: var(--color-text); }
+.nav-item.active {
+  background: var(--teal-50);
+  color: var(--teal-700);
+  font-weight: 600;
+}
+.nav-item .nav-icon { width: 20px; font-size: 18px; flex-shrink: 0; text-align: center; }
+
+.sidebar-footer {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Main content area */
+#main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Top bar */
+#topbar {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--space-6);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+.topbar-title { font-weight: 700; font-size: var(--text-lg); }
+.topbar-actions { display: flex; gap: var(--space-2); align-items: center; }
+
+/* Page content */
+#content {
+  flex: 1;
+  padding: var(--space-6);
+  max-width: calc(var(--content-max) + var(--space-12));
+  width: 100%;
+}
+
+/* Bottom Navigation — Mobile */
+#bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  z-index: 100;
+  padding: var(--space-2) 0 max(var(--space-2), env(safe-area-inset-bottom));
+}
+.bottom-nav-items {
+  display: flex;
+  justify-content: space-around;
+}
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+  background: none;
+  min-width: 48px;
+}
+.bottom-nav-item .bnav-icon { font-size: 22px; line-height: 1; }
+.bottom-nav-item.active { color: var(--teal-600); }
+.bottom-nav-item.active .bnav-icon { transform: scale(1.1); }
+
+/* Mobile header */
+#mobile-header {
+  display: none;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-5);
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+.mobile-logo { display: flex; align-items: center; gap: var(--space-2); }
+.mobile-logo .logo-icon { width: 30px; height: 30px; font-size: var(--text-xs); }
+.mobile-page-title { font-weight: 700; font-size: var(--text-base); }
+
+/* Responsive — Mobile */
+@media (max-width: 768px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding-bottom: 80px; }
+  #topbar { display: none; }
+  #mobile-header { display: flex; }
+  #bottom-nav { display: block; }
+  #content { padding: var(--space-4); }
+}
+
+/* ============================================================
+   SCREENS
+   ============================================================ */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ============================================================
+   ONBOARDING
+   ============================================================ */
+#screen-onboarding {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  z-index: 200;
+  overflow-y: auto;
+}
+#screen-onboarding.active { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+
+.onboarding-container {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5) var(--space-16);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.onboarding-progress {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-8);
+}
+.progress-dot {
+  height: 4px;
+  flex: 1;
+  background: var(--slate-200);
+  border-radius: var(--radius-full);
+  transition: background 0.3s;
+}
+.progress-dot.done { background: var(--teal-500); }
+.progress-dot.current { background: var(--teal-400); }
+
+.onboarding-step { display: none; flex: 1; flex-direction: column; }
+.onboarding-step.active { display: flex; }
+
+.step-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
+.step-title { font-size: var(--text-2xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-2); line-height: 1.2; }
+.step-subtitle { color: var(--color-text-secondary); margin-bottom: var(--space-8); line-height: 1.6; }
+
+.onboarding-actions {
+  margin-top: auto;
+  display: flex;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+}
+
+/* Welcome screen */
+.welcome-card {
+  background: linear-gradient(135deg, var(--teal-600), var(--teal-800));
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-6);
+  color: white;
+  margin-bottom: var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+.welcome-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 160px; height: 160px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+.welcome-app-name { font-size: var(--text-3xl); font-weight: 800; letter-spacing: -0.5px; margin-bottom: var(--space-2); }
+.welcome-tagline { font-size: var(--text-base); opacity: 0.85; line-height: 1.6; }
+
+.welcome-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.welcome-feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+}
+.welcome-feature-icon { font-size: 1.5rem; width: 36px; text-align: center; flex-shrink: 0; }
+.welcome-feature-text { font-size: var(--text-sm); color: var(--color-text-secondary); }
+.welcome-feature-text strong { color: var(--color-text); display: block; }
+
+/* ============================================================
+   CARDS & COMPONENTS
+   ============================================================ */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+.card-sm {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.card-title { font-weight: 700; font-size: var(--text-base); }
+.card-subtitle { font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: var(--space-1); }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--teal-600);
+  color: white;
+}
+.btn-primary:hover { background: var(--teal-700); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-primary:active { transform: translateY(0); }
+.btn-secondary {
+  background: var(--slate-100);
+  color: var(--color-text);
+}
+.btn-secondary:hover { background: var(--slate-200); }
+.btn-outline {
+  background: transparent;
+  color: var(--teal-600);
+  border: 1.5px solid var(--teal-500);
+}
+.btn-outline:hover { background: var(--teal-50); }
+.btn-danger {
+  background: var(--red-600);
+  color: white;
+}
+.btn-danger:hover { background: var(--red-700); }
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+.btn-ghost:hover { background: var(--slate-100); color: var(--color-text); }
+.btn-sm { padding: var(--space-2) var(--space-3); font-size: var(--text-xs); border-radius: var(--radius-md); }
+.btn-lg { padding: var(--space-4) var(--space-8); font-size: var(--text-base); border-radius: var(--radius-xl); }
+.btn-full { width: 100%; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+/* ---- Badges / Pills ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge-critical { background: var(--red-100); color: var(--red-700); }
+.badge-high { background: var(--amber-100); color: var(--amber-700); }
+.badge-medium { background: var(--blue-50); color: var(--blue-600); }
+.badge-low { background: var(--slate-100); color: var(--slate-600); }
+.badge-success { background: var(--green-100); color: var(--green-700); }
+.badge-primary { background: var(--teal-100); color: var(--teal-700); }
+
+/* ---- Form Controls ---- */
+.form-group { margin-bottom: var(--space-4); }
+.form-label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.form-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+.form-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--teal-500);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+.form-input::placeholder { color: var(--color-text-muted); }
+.form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394A3B8' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+.form-textarea { min-height: 80px; resize: vertical; }
+.input-prefix-group { position: relative; }
+.input-prefix {
+  position: absolute;
+  left: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  pointer-events: none;
+}
+.input-prefix + .form-input { padding-left: 48px; }
+
+/* Option cards (radio-style) */
+.option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+.option-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.option-card {
+  padding: var(--space-3) var(--space-3);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  user-select: none;
+}
+.option-card:hover { border-color: var(--teal-400); color: var(--teal-600); background: var(--teal-50); }
+.option-card.selected { border-color: var(--teal-500); background: var(--teal-50); color: var(--teal-700); font-weight: 600; }
+.option-card .option-icon { font-size: 1.5rem; margin-bottom: var(--space-1); display: block; }
+
+/* Skill tags */
+.skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.skill-tag {
+  padding: var(--space-2) var(--space-3);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--color-text-secondary);
+  user-select: none;
+}
+.skill-tag:hover { border-color: var(--teal-400); color: var(--teal-600); }
+.skill-tag.selected { border-color: var(--teal-500); background: var(--teal-50); color: var(--teal-700); font-weight: 600; }
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+.dashboard-header {
+  background: linear-gradient(135deg, var(--teal-600) 0%, var(--teal-800) 100%);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  color: white;
+  margin-bottom: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+.dashboard-header::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 180px; height: 180px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+.dashboard-meta { font-size: var(--text-sm); opacity: 0.8; margin-bottom: var(--space-1); }
+.dashboard-greeting { font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-5); line-height: 1.3; }
+
+.score-ring-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+.score-ring {
+  position: relative;
+  width: 88px; height: 88px;
+  flex-shrink: 0;
+}
+.score-ring svg { transform: rotate(-90deg); }
+.score-ring-track { fill: none; stroke: rgba(255,255,255,0.2); stroke-width: 8; }
+.score-ring-fill {
+  fill: none;
+  stroke: white;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease;
+}
+.score-ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+}
+.score-number { font-size: var(--text-2xl); font-weight: 800; }
+.score-label { font-size: 10px; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.score-details { flex: 1; }
+.score-tag { font-size: var(--text-xs); background: rgba(255,255,255,0.15); border-radius: var(--radius-full); padding: 3px 10px; display: inline-block; margin-bottom: var(--space-2); }
+.score-focus { font-size: var(--text-sm); opacity: 0.9; line-height: 1.4; }
+
+/* Phase indicator */
+.phase-strip {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.phase-item {
+  flex: 1;
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  transition: all 0.3s;
+}
+.phase-item.current {
+  border-color: var(--teal-500);
+  background: var(--teal-50);
+  color: var(--teal-700);
+}
+.phase-item.done {
+  border-color: var(--green-500);
+  background: var(--green-50);
+  color: var(--green-700);
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+.stat-label { font-size: var(--text-xs); color: var(--color-text-secondary); font-weight: 500; margin-bottom: var(--space-1); }
+.stat-value { font-size: var(--text-lg); font-weight: 700; color: var(--color-text); }
+.stat-value.positive { color: var(--green-600); }
+.stat-value.negative { color: var(--red-600); }
+.stat-value.warning { color: var(--amber-600); }
+.stat-sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
+
+/* ============================================================
+   MISSIONS
+   ============================================================ */
+.mission-card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+.mission-card.completed {
+  opacity: 0.6;
+  background: var(--slate-50);
+}
+.mission-card.priority-critical { border-left: 4px solid var(--red-500); }
+.mission-card.priority-high { border-left: 4px solid var(--amber-500); }
+.mission-card.priority-medium { border-left: 4px solid var(--blue-500); }
+.mission-card.priority-low { border-left: 4px solid var(--slate-300); }
+
+.mission-header { display: flex; align-items: flex-start; gap: var(--space-3); }
+.mission-check {
+  width: 24px; height: 24px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  margin-top: 2px;
+}
+.mission-check:hover { border-color: var(--teal-500); background: var(--teal-50); }
+.mission-card.completed .mission-check {
+  background: var(--teal-500);
+  border-color: var(--teal-500);
+  color: white;
+}
+.mission-content { flex: 1; }
+.mission-type-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+.mission-title { font-weight: 600; color: var(--color-text); line-height: 1.4; }
+.mission-description { font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: var(--space-1); }
+
+/* Streak display */
+.streak-banner {
+  background: linear-gradient(135deg, var(--amber-50), var(--amber-100));
+  border: 1px solid var(--amber-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.streak-icon { font-size: 2rem; }
+.streak-text .streak-days { font-size: var(--text-xl); font-weight: 800; color: var(--amber-700); }
+.streak-text .streak-label { font-size: var(--text-sm); color: var(--amber-600); }
+
+/* ============================================================
+   DEBT MANAGEMENT
+   ============================================================ */
+.debt-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s;
+}
+.debt-card:hover { box-shadow: var(--shadow-md); }
+.debt-card-header {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.debt-card.expanded .debt-card-header { border-color: var(--color-border); }
+.debt-name { font-weight: 700; margin-bottom: 2px; }
+.debt-creditor { font-size: var(--text-xs); color: var(--color-text-secondary); }
+.debt-amount { font-size: var(--text-xl); font-weight: 800; color: var(--color-text); }
+.debt-amount-label { font-size: var(--text-xs); color: var(--color-text-muted); text-align: right; }
+.debt-card-body { padding: var(--space-4) var(--space-5); display: none; }
+.debt-card.expanded .debt-card-body { display: block; }
+
+.debt-meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-bottom: var(--space-4); }
+.debt-meta-item { }
+.debt-meta-label { font-size: var(--text-xs); color: var(--color-text-secondary); }
+.debt-meta-value { font-size: var(--text-sm); font-weight: 600; }
+
+.illegal-flag {
+  background: var(--red-50);
+  border: 1px solid var(--red-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--red-700);
+  display: flex;
+  gap: var(--space-2);
+}
+
+.debt-progress-bar {
+  height: 6px;
+  background: var(--slate-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+.debt-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(to right, var(--teal-500), var(--teal-600));
+  transition: width 0.5s ease;
+}
+
+/* Negotiation tracker */
+.negotiation-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+.neg-NOT_CONTACTED { background: var(--slate-100); color: var(--slate-600); }
+.neg-CONTACTED { background: var(--blue-50); color: var(--blue-600); }
+.neg-NEGOTIATING { background: var(--amber-100); color: var(--amber-700); }
+.neg-AGREED { background: var(--green-100); color: var(--green-700); }
+.neg-REJECTED { background: var(--red-100); color: var(--red-700); }
+.neg-FOLLOW_UP { background: var(--amber-50); color: var(--amber-600); }
+
+/* ============================================================
+   INCOME TRACKER
+   ============================================================ */
+.income-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+.income-icon-bg {
+  width: 44px; height: 44px;
+  background: var(--green-50);
+  border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.income-info { flex: 1; }
+.income-source { font-weight: 600; }
+.income-meta { font-size: var(--text-xs); color: var(--color-text-secondary); margin-top: 2px; }
+.income-amount { font-weight: 700; font-size: var(--text-lg); color: var(--green-700); }
+.recurring-badge {
+  font-size: var(--text-xs);
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border: 1px solid var(--teal-200);
+  border-radius: var(--radius-full);
+  padding: 1px 8px;
+  margin-top: 3px;
+  display: inline-block;
+}
+
+/* Opportunity tracker */
+.opportunity-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+.opp-status { }
+.opp-SAVED { color: var(--slate-500); }
+.opp-APPLIED { color: var(--blue-600); }
+.opp-INTERVIEW { color: var(--amber-600); }
+.opp-NEGOTIATION { color: var(--teal-600); }
+.opp-WON { color: var(--green-600); }
+.opp-LOST { color: var(--red-500); }
+.opp-CANCELLED { color: var(--slate-400); }
+
+/* ============================================================
+   EXPENSE TRACKER
+   ============================================================ */
+.expense-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.expense-donut-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================================
+   REPORTS
+   ============================================================ */
+.report-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.report-before {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+}
+.report-after {
+  background: var(--teal-50);
+  border: 1px solid var(--teal-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+}
+.report-label { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: var(--space-3); }
+.report-row { margin-bottom: var(--space-2); }
+.report-row-label { font-size: var(--text-xs); color: var(--color-text-secondary); }
+.report-row-value { font-size: var(--text-base); font-weight: 700; }
+
+/* Score breakdown bars */
+.score-breakdown { }
+.score-bar-row { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+.score-bar-label { font-size: var(--text-xs); color: var(--color-text-secondary); width: 120px; flex-shrink: 0; }
+.score-bar-track { flex: 1; height: 8px; background: var(--slate-100); border-radius: var(--radius-full); overflow: hidden; }
+.score-bar-fill { height: 100%; border-radius: var(--radius-full); background: linear-gradient(to right, var(--teal-400), var(--teal-600)); transition: width 0.8s ease; }
+.score-bar-value { font-size: var(--text-xs); font-weight: 700; color: var(--teal-700); width: 30px; text-align: right; }
+
+/* ============================================================
+   ACHIEVEMENTS / BADGES
+   ============================================================ */
+.achievements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.achievement-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  text-align: center;
+  transition: all 0.2s;
+}
+.achievement-card.earned { border-color: var(--amber-300); background: var(--amber-50); }
+.achievement-card.locked { opacity: 0.4; filter: grayscale(1); }
+.achievement-icon { font-size: 2rem; margin-bottom: var(--space-2); }
+.achievement-name { font-size: var(--text-xs); font-weight: 600; color: var(--color-text); }
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 300;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.modal-backdrop.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--space-6);
+  padding-bottom: max(var(--space-8), env(safe-area-inset-bottom));
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.modal-backdrop.open .modal { transform: translateY(0); }
+.modal-handle { width: 40px; height: 4px; background: var(--slate-200); border-radius: var(--radius-full); margin: 0 auto var(--space-5); }
+.modal-title { font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-5); }
+
+@media (min-width: 768px) {
+  .modal-backdrop { align-items: center; }
+  .modal { border-radius: var(--radius-2xl); max-height: 80vh; }
+  .modal-backdrop.open .modal { transform: none; }
+}
+
+/* ============================================================
+   TOAST NOTIFICATIONS
+   ============================================================ */
+#toast-container {
+  position: fixed;
+  top: var(--space-5);
+  right: var(--space-5);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  pointer-events: none;
+}
+.toast {
+  background: var(--slate-800);
+  color: white;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-xl);
+  animation: toastIn 0.3s ease;
+  max-width: 300px;
+  pointer-events: all;
+}
+.toast.success { background: var(--green-700); }
+.toast.warning { background: var(--amber-600); }
+.toast.error { background: var(--red-700); }
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-state {
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  color: var(--color-text-secondary);
+}
+.empty-state-icon { font-size: 3rem; margin-bottom: var(--space-4); }
+.empty-state-title { font-size: var(--text-lg); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2); }
+.empty-state-text { font-size: var(--text-sm); line-height: 1.6; }
+
+/* ============================================================
+   BACKUP BANNER
+   ============================================================ */
+.backup-banner {
+  background: var(--amber-50);
+  border: 1px solid var(--amber-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.backup-icon { font-size: 1.5rem; flex-shrink: 0; }
+.backup-text { flex: 1; }
+.backup-text strong { display: block; font-size: var(--text-sm); color: var(--amber-800); }
+.backup-text span { font-size: var(--text-xs); color: var(--amber-700); }
+
+/* ============================================================
+   EMERGENCY MODE
+   ============================================================ */
+.emergency-banner {
+  background: linear-gradient(135deg, var(--red-600), var(--red-800));
+  color: white;
+  border-radius: var(--radius-2xl);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-5);
+}
+.emergency-banner h3 { font-size: var(--text-lg); font-weight: 800; margin-bottom: var(--space-1); }
+.emergency-banner p { font-size: var(--text-sm); opacity: 0.9; }
+
+/* ============================================================
+   SECTION HEADERS
+   ============================================================ */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.section-title { font-size: var(--text-lg); font-weight: 700; }
+.section-subtitle { font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: 2px; }
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+.divider { height: 1px; background: var(--color-border); margin: var(--space-4) 0; }
+.divider-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.divider-label::before, .divider-label::after { content: ''; flex: 1; height: 1px; background: var(--color-border); }
+
+/* ============================================================
+   MISC ANIMATIONS
+   ============================================================ */
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes celebrateIn { 0% { transform: scale(0.5) rotate(-10deg); opacity: 0; } 70% { transform: scale(1.1) rotate(3deg); } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+
+.fade-in { animation: fadeInUp 0.4s ease forwards; }
+.celebrate { animation: celebrateIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* Interest warning flag */
+.interest-legal { color: var(--green-600); font-size: var(--text-xs); }
+.interest-illegal { color: var(--red-600); font-size: var(--text-xs); }
+
+/* ============================================================
+   SETTINGS PAGE
+   ============================================================ */
+.settings-section { margin-bottom: var(--space-6); }
+.settings-section-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+.settings-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+.settings-item-label { font-weight: 500; font-size: var(--text-sm); }
+.settings-item-sub { font-size: var(--text-xs); color: var(--color-text-secondary); margin-top: 2px; }
+
+/* Toggle switch */
+.toggle {
+  position: relative;
+  width: 44px; height: 24px;
+  flex-shrink: 0;
+}
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: var(--slate-300);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  left: 3px; top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: var(--shadow-sm);
+}
+.toggle input:checked + .toggle-slider { background: var(--teal-500); }
+.toggle input:checked + .toggle-slider::before { transform: translateX(20px); }
+
+/* ============================================================
+   PLAN VIEW
+   ============================================================ */
+.plan-day-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-2);
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.plan-day-number {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--slate-100);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+.plan-day-card.today .plan-day-number {
+  background: var(--teal-600);
+  color: white;
+}
+.plan-day-card.completed-day .plan-day-number {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+.plan-day-content { flex: 1; }
+.plan-day-phase { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: 2px; }
+.plan-day-objective { font-weight: 600; font-size: var(--text-sm); }
+
+/* ============================================================
+   INTEREST ACCRUED WIDGET
+   ============================================================ */
+.interest-widget {
+  background: var(--red-50);
+  border: 1px solid var(--red-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-5);
+}
+.interest-widget-title { font-size: var(--text-xs); font-weight: 600; color: var(--red-700); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
+.interest-widget-amount { font-size: var(--text-2xl); font-weight: 800; color: var(--red-700); }
+.interest-widget-sub { font-size: var(--text-xs); color: var(--red-600); margin-top: 2px; }
+
+/* ============================================================
+   RIGHTS INFO
+   ============================================================ */
+.rights-card {
+  background: var(--blue-50);
+  border: 1px solid var(--blue-500);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+.rights-card h4 { font-weight: 700; color: var(--blue-600); margin-bottom: var(--space-3); }
+.rights-list { }
+.rights-item { font-size: var(--text-sm); color: var(--slate-700); margin-bottom: var(--space-2); padding-left: var(--space-4); position: relative; }
+.rights-item::before { content: '\2713'; position: absolute; left: 0; color: var(--blue-500); font-weight: 700; }
+.rights-contact { margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--blue-200); font-size: var(--text-sm); color: var(--blue-700); font-weight: 500; }
+
+/* ============================================================
+   LOADING / SPLASH
+   ============================================================ */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: var(--teal-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: opacity 0.5s;
+}
+#splash.fade-out { opacity: 0; pointer-events: none; }
+.splash-content { text-align: center; color: white; }
+.splash-logo-big { width: 72px; height: 72px; background: rgba(255,255,255,0.15); border-radius: var(--radius-2xl); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-5); font-weight: 900; font-size: var(--text-3xl); letter-spacing: -2px; backdrop-filter: blur(4px); }
+.splash-name { font-size: var(--text-2xl); font-weight: 800; letter-spacing: -0.5px; }
+.splash-sub { font-size: var(--text-sm); opacity: 0.8; margin-top: var(--space-2); }
+
+/* ============================================================
+   MISC PAGE-LEVEL STYLES
+   ============================================================ */
+.page-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+.page-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.total-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-5);
+}
+.total-bar-label { font-size: var(--text-sm); color: var(--color-text-secondary); }
+.total-bar-value { font-size: var(--text-xl); font-weight: 800; }
+
+/* Fullscreen button */
+.fullscreen-btn {
+  background: var(--slate-100);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.15s;
+}
+.fullscreen-btn:hover { background: var(--slate-200); }
+
+/* Responsive desktop improvements */
+@media (min-width: 1200px) {
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .achievements-grid { grid-template-columns: repeat(5, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- Splash Screen -->
+<div id="splash">
+  <div class="splash-content">
+    <div class="splash-logo-big">R30</div>
+    <div class="splash-name">Rebound 30</div>
+    <div class="splash-sub">Pemulihan Finansial 30 Hari</div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- ONBOARDING -->
+<div id="screen-onboarding">
+  <div class="onboarding-container">
+    <div class="onboarding-progress" id="ob-progress"></div>
+
+    <!-- Step 0: Welcome -->
+    <div class="onboarding-step active" id="ob-step-0">
+      <div class="welcome-card">
+        <div class="welcome-app-name">Rebound 30</div>
+        <div class="welcome-tagline">
+          Kita tidak akan menyelesaikan semuanya hari ini.<br>
+          Kita akan mencari langkah pertama.
+        </div>
+      </div>
+      <div class="welcome-features">
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon">🗺️</div>
+          <div class="welcome-feature-text">
+            <strong>Petakan kondisi finansial</strong>
+            Ketahui angka pasti sebelum bertindak
+          </div>
+        </div>
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon">🎯</div>
+          <div class="welcome-feature-text">
+            <strong>Misi harian yang konkret</strong>
+            3–5 tindakan per hari sesuai kondisimu
+          </div>
+        </div>
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon">📈</div>
+          <div class="welcome-feature-text">
+            <strong>Pantau perkembangan</strong>
+            Rebound Score mengukur kemajuanmu
+          </div>
+        </div>
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon">🔒</div>
+          <div class="welcome-feature-text">
+            <strong>Data hanya di perangkatmu</strong>
+            Tidak ada data yang dikirim ke server
+          </div>
+        </div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-primary btn-full btn-lg" onclick="App.ob.next()">Mulai Rebound →</button>
+      </div>
+    </div>
+
+    <!-- Step 1: Employment Status -->
+    <div class="onboarding-step" id="ob-step-1">
+      <div class="step-emoji">💼</div>
+      <div class="step-title">Apa status pekerjaanmu saat ini?</div>
+      <div class="step-subtitle">Ini membantu kami menyusun misi yang relevan untukmu.</div>
+      <div class="option-grid" id="ob-employment-grid">
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'tidak_bekerja', this)">
+          <span class="option-icon">🚫</span>Tidak bekerja
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'baru_phk', this)">
+          <span class="option-icon">📋</span>Baru kehilangan pekerjaan
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'freelance', this)">
+          <span class="option-icon">💻</span>Freelance
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'pekerja_harian', this)">
+          <span class="option-icon">🔧</span>Pekerja harian
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'usaha_kecil', this)">
+          <span class="option-icon">🏪</span>Usaha kecil
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'bekerja_kurang', this)">
+          <span class="option-icon">📉</span>Bekerja tapi pemasukan tidak cukup
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'lainnya', this)">
+          <span class="option-icon">✦</span>Lainnya
+        </div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Monthly Income -->
+    <div class="onboarding-step" id="ob-step-2">
+      <div class="step-emoji">💵</div>
+      <div class="step-title">Berapa pemasukan per bulan?</div>
+      <div class="step-subtitle">Estimasi saja — ini bisa diperbarui nanti. Masukkan 0 jika tidak ada.</div>
+      <div class="form-group">
+        <label class="form-label">Total Pemasukan Bulanan</label>
+        <div class="input-prefix-group">
+          <span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ob-income" placeholder="0" min="0">
+        </div>
+        <div class="form-hint">Gabungkan semua sumber pemasukan (gaji, freelance, usaha, dll.)</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Frekuensi Pemasukan</label>
+        <select class="form-input form-select" id="ob-income-freq">
+          <option value="bulanan">Bulanan</option>
+          <option value="mingguan">Mingguan</option>
+          <option value="harian">Harian</option>
+          <option value="tidak_tetap">Tidak tetap</option>
+        </select>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Essential Expenses -->
+    <div class="onboarding-step" id="ob-step-3">
+      <div class="step-emoji">🏠</div>
+      <div class="step-title">Pengeluaran pokok per bulan?</div>
+      <div class="step-subtitle">Hanya yang benar-benar esensial. Perkiraan sudah cukup.</div>
+      <div class="form-group">
+        <label class="form-label">Makanan & Minuman</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-food" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sewa / Cicilan Tempat Tinggal</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-housing" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Listrik + Air</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-utilities" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Transportasi</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-transport" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Komunikasi (HP/internet)</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-comm" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tanggungan keluarga / lainnya</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-other" placeholder="0"></div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Debts -->
+    <div class="onboarding-step" id="ob-step-4">
+      <div class="step-emoji">📋</div>
+      <div class="step-title">Tambahkan utang pertamamu</div>
+      <div class="step-subtitle">Tambahkan setidaknya satu utang. Kamu bisa menambah lebih banyak nanti di menu Utang.</div>
+      <div id="ob-debts-list" style="margin-bottom: var(--space-4);"></div>
+      <button class="btn btn-outline btn-full" onclick="App.ob.showAddDebt()">+ Tambah Utang</button>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()" id="ob-debt-next">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 5: Assets -->
+    <div class="onboarding-step" id="ob-step-5">
+      <div class="step-emoji">💰</div>
+      <div class="step-title">Berapa uang tunai yang tersedia?</div>
+      <div class="step-subtitle">Termasuk uang di dompet, rekening bank, e-wallet. Tidak termasuk aset seperti motor atau HP.</div>
+      <div class="form-group">
+        <label class="form-label">Uang Tunai & Saldo Bank / E-Wallet</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-cash" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Aset yang bisa dijual (estimasi nilai)</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-assets-value" placeholder="0"></div>
+        <div class="form-hint">Motor, elektronik, perhiasan, dll. Kamu bisa detail nanti di menu Aset.</div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 6: Skills -->
+    <div class="onboarding-step" id="ob-step-6">
+      <div class="step-emoji">🛠️</div>
+      <div class="step-title">Apa skill yang kamu miliki?</div>
+      <div class="step-subtitle">Pilih semua yang relevan. Ini membantu misi pemasukan yang tepat.</div>
+      <div class="skill-tags" id="ob-skills-grid">
+        <div class="skill-tag" onclick="App.ob.toggleSkill('programming', this)">💻 Programming</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('design', this)">🎨 Design</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('video', this)">🎬 Video Editing</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('photography', this)">📸 Fotografi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('writing', this)">✍️ Menulis</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('translation', this)">🌐 Terjemahan</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('admin', this)">📁 Administrasi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('teaching', this)">📚 Mengajar</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('repair', this)">🔧 Servis/Reparasi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('sales', this)">🛒 Penjualan</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('cooking', this)">🍳 Memasak</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('driving', this)">🚗 Mengemudi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('social_media', this)">📱 Media Sosial</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('finance', this)">📊 Akuntansi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('other', this)">✦ Lainnya</div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 7: Goals -->
+    <div class="onboarding-step" id="ob-step-7">
+      <div class="step-emoji">🎯</div>
+      <div class="step-title">Apa tujuan utamamu dalam 30 hari?</div>
+      <div class="step-subtitle">Pilih yang paling mendesak sekarang.</div>
+      <div class="option-grid" id="ob-goals-grid">
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'pemasukan_pertama', this)">
+          <span class="option-icon">💵</span>Pemasukan pertama
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'dapat_kerja', this)">
+          <span class="option-icon">💼</span>Dapat pekerjaan
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'kurangi_utang', this)">
+          <span class="option-icon">📉</span>Kurangi utang
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'pemasukan_rutin', this)">
+          <span class="option-icon">🔄</span>Pemasukan rutin
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'bantu_keluarga', this)">
+          <span class="option-icon">👨‍👩‍👧</span>Bantu keluarga
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'semuanya', this)">
+          <span class="option-icon">✨</span>Semuanya
+        </div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.finish()" id="ob-finish-btn">Mulai Hari 1 🚀</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app">
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">
+        <div class="logo-icon">R30</div>
+        <div>
+          <div class="logo-text">Rebound 30</div>
+          <div class="logo-tagline">Pemulihan Finansial</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-day-badge">
+      <div class="day-label">Hari ke</div>
+      <div class="day-number" id="sidebar-day">1 / 30</div>
+    </div>
+    <div class="sidebar-nav">
+      <button class="nav-item active" onclick="App.navigate('dashboard')" id="nav-dashboard">
+        <span class="nav-icon">🏠</span> Dashboard
+      </button>
+      <button class="nav-item" onclick="App.navigate('missions')" id="nav-missions">
+        <span class="nav-icon">🎯</span> Misi Harian
+      </button>
+      <button class="nav-item" onclick="App.navigate('debts')" id="nav-debts">
+        <span class="nav-icon">📋</span> Utang
+      </button>
+      <button class="nav-item" onclick="App.navigate('income')" id="nav-income">
+        <span class="nav-icon">💵</span> Pemasukan
+      </button>
+      <button class="nav-item" onclick="App.navigate('expenses')" id="nav-expenses">
+        <span class="nav-icon">🧾</span> Pengeluaran
+      </button>
+      <button class="nav-item" onclick="App.navigate('assets')" id="nav-assets">
+        <span class="nav-icon">💰</span> Aset
+      </button>
+      <button class="nav-item" onclick="App.navigate('plan')" id="nav-plan">
+        <span class="nav-icon">📅</span> Rencana 30 Hari
+      </button>
+      <button class="nav-item" onclick="App.navigate('reports')" id="nav-reports">
+        <span class="nav-icon">📊</span> Laporan
+      </button>
+      <button class="nav-item" onclick="App.navigate('settings')" id="nav-settings">
+        <span class="nav-icon">⚙️</span> Pengaturan
+      </button>
+    </div>
+    <div class="sidebar-footer">
+      Data tersimpan di browser ini saja.<br>
+      Gunakan Export di Pengaturan untuk backup.
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div id="main">
+    <!-- Mobile Header -->
+    <header id="mobile-header">
+      <div class="mobile-logo">
+        <div class="logo-icon">R30</div>
+        <div class="mobile-page-title" id="mobile-title">Dashboard</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <div id="mobile-day-badge" style="font-size:12px;font-weight:700;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-200);border-radius:20px;padding:4px 10px;">Hari 1</div>
+        <button class="fullscreen-btn" onclick="App.toggleFullscreen()" title="Fullscreen">⛶</button>
+      </div>
+    </header>
+
+    <!-- Desktop Topbar -->
+    <div id="topbar">
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-actions">
+        <div id="topbar-day" style="font-size:13px;font-weight:700;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-200);border-radius:20px;padding:4px 14px;"></div>
+        <button class="fullscreen-btn" onclick="App.toggleFullscreen()" title="Fullscreen">⛶</button>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div id="content">
+
+      <!-- === DASHBOARD === -->
+      <div class="screen active" id="screen-dashboard">
+        <div id="backup-banner-container"></div>
+        <div class="dashboard-header">
+          <div class="dashboard-meta" id="dash-date"></div>
+          <div class="dashboard-greeting" id="dash-greeting"></div>
+          <div class="score-ring-container">
+            <div class="score-ring">
+              <svg width="88" height="88" viewBox="0 0 88 88">
+                <circle class="score-ring-track" cx="44" cy="44" r="36"/>
+                <circle class="score-ring-fill" id="score-ring-fill" cx="44" cy="44" r="36"
+                  stroke-dasharray="226.2"
+                  stroke-dashoffset="226.2"/>
+              </svg>
+              <div class="score-ring-text">
+                <div class="score-number" id="dash-score">0</div>
+                <div class="score-label">SKOR</div>
+              </div>
+            </div>
+            <div class="score-details">
+              <div class="score-tag" id="dash-phase-badge">Phase 1</div>
+              <div class="score-focus" id="dash-focus">Memulai pemetaan finansial...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-strip" id="phase-strip"></div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">💵 Uang Tunai</div>
+            <div class="stat-value" id="stat-cash">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">📈 Pemasukan/Bln</div>
+            <div class="stat-value positive" id="stat-income">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">🧾 Pengeluaran/Bln</div>
+            <div class="stat-value warning" id="stat-expenses">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">📋 Total Utang</div>
+            <div class="stat-value negative" id="stat-debt">Rp 0</div>
+            <div class="stat-sub" id="stat-runway"></div>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <div class="section-title">Misi Hari Ini</div>
+            <div class="section-subtitle" id="missions-progress-text"></div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="App.navigate('missions')">Semua →</button>
+        </div>
+        <div id="dash-missions"></div>
+
+        <div class="section-header" style="margin-top:var(--space-6)">
+          <div class="section-title">Pencapaian Terbaru</div>
+        </div>
+        <div id="dash-achievements" style="display:flex;gap:var(--space-3);flex-wrap:wrap;"></div>
+      </div>
+
+      <!-- === MISSIONS === -->
+      <div class="screen" id="screen-missions">
+        <div class="page-title">Misi Harian</div>
+        <div class="page-subtitle" id="missions-date-subtitle"></div>
+        <div id="streak-container"></div>
+        <div id="missions-list"></div>
+        <div class="section-header" style="margin-top:var(--space-6)">
+          <div class="section-title">Riwayat Kemarin</div>
+        </div>
+        <div id="missions-history"></div>
+      </div>
+
+      <!-- === DEBTS === -->
+      <div class="screen" id="screen-debts">
+        <div class="section-header">
+          <div>
+            <div class="page-title">Utang</div>
+            <div class="page-subtitle">Peta seluruh kewajibanmu</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="App.debts.showAdd()">+ Tambah</button>
+        </div>
+
+        <div id="debt-interest-widget"></div>
+
+        <div class="total-bar">
+          <div>
+            <div class="total-bar-label">Total Utang Tersisa</div>
+            <div style="font-size:11px;color:var(--color-text-muted)" id="debt-count-text"></div>
+          </div>
+          <div class="total-bar-value negative" id="debt-total-value">Rp 0</div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
+          <div style="font-size:13px;font-weight:600;color:var(--color-text-secondary);">Strategi:</div>
+          <select class="form-input form-select" id="debt-strategy-select" style="width:auto;padding:8px 28px 8px 12px;" onchange="App.debts.setStrategy(this.value)">
+            <option value="risk_first">Risk First (Risiko Tertinggi)</option>
+            <option value="avalanche">Avalanche (Bunga Tertinggi)</option>
+            <option value="snowball">Snowball (Saldo Terkecil)</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+
+        <div id="debts-list"></div>
+
+        <div style="margin-top:var(--space-6)">
+          <div class="rights-card">
+            <h4>⚖️ Hak-hak Kamu sebagai Debitur</h4>
+            <div class="rights-list">
+              <div class="rights-item">Penagihan hanya boleh antara 08.00–20.00 waktu setempat</div>
+              <div class="rights-item">Tidak boleh ada ancaman, intimidasi, atau penyebaran data</div>
+              <div class="rights-item">Kamu berhak mengajukan restrukturisasi (perpanjang tenor, turunkan bunga)</div>
+              <div class="rights-item">Ajukan restrukturisasi secara tertulis (email) sebelum macet bayar</div>
+              <div class="rights-item">Pinjol wajib lapor ke SLIK OJK sejak Juli 2025</div>
+            </div>
+            <div class="rights-contact">
+              📞 Pengaduan: OJK 157 / WhatsApp 081-157-157-157<br>
+              🌐 AFPI: afpi.or.id | Siber: patrolisiber.id
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === INCOME === -->
+      <div class="screen" id="screen-income">
+        <div class="section-header">
+          <div>
+            <div class="page-title">Pemasukan</div>
+            <div class="page-subtitle">Lacak semua sumber pemasukan</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="App.income.showAdd()">+ Catat</button>
+        </div>
+
+        <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
+          <div class="stat-card">
+            <div class="stat-label">Bulan Ini</div>
+            <div class="stat-value positive" id="income-month-total">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">🔄 Pemasukan Rutin/Bln</div>
+            <div class="stat-value" id="income-recurring-total">Rp 0</div>
+          </div>
+        </div>
+
+        <div class="divider-label">Riwayat Pemasukan</div>
+        <div id="income-list"></div>
+
+        <div class="section-header" style="margin-top:var(--space-6)">
+          <div>
+            <div class="section-title">🎯 Peluang & Lamaran</div>
+            <div class="section-subtitle">Lacak calon klien dan lamaran kerja</div>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="App.income.showAddOpp()">+ Tambah</button>
+        </div>
+        <div id="opportunities-list"></div>
+      </div>
+
+      <!-- === EXPENSES === -->
+      <div class="screen" id="screen-expenses">
+        <div class="section-header">
+          <div>
+            <div class="page-title">Pengeluaran</div>
+            <div class="page-subtitle">Kontrol aliran keluar uangmu</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="App.expenses.showAdd()">+ Catat</button>
+        </div>
+
+        <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
+          <div class="stat-card">
+            <div class="stat-label">Esensial Bulan Ini</div>
+            <div class="stat-value" id="exp-essential-total">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Non-Esensial Bulan Ini</div>
+            <div class="stat-value warning" id="exp-nonessential-total">Rp 0</div>
+          </div>
+        </div>
+
+        <div id="exp-warning-banner" style="display:none;" class="backup-banner" style="background:var(--amber-50);border-color:var(--amber-200);">
+          <div class="backup-icon">⚠️</div>
+          <div class="backup-text">
+            <strong>Pengeluaran non-esensial cukup besar bulan ini</strong>
+            <span>Kita perlu mencari sumber kebocoran terbesar.</span>
+          </div>
+        </div>
+
+        <div class="divider-label">Semua Pengeluaran</div>
+        <div id="expenses-list"></div>
+      </div>
+
+      <!-- === ASSETS === -->
+      <div class="screen" id="screen-assets">
+        <div class="section-header">
+          <div>
+            <div class="page-title">Aset</div>
+            <div class="page-subtitle">Inventaris kekayaanmu</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="App.assets.showAdd()">+ Tambah</button>
+        </div>
+
+        <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
+          <div class="stat-card">
+            <div class="stat-label">Total Nilai Aset</div>
+            <div class="stat-value" id="asset-total-value">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Dapat Dijual</div>
+            <div class="stat-value positive" id="asset-liquid-value">Rp 0</div>
+          </div>
+        </div>
+
+        <div id="assets-list"></div>
+      </div>
+
+      <!-- === PLAN === -->
+      <div class="screen" id="screen-plan">
+        <div class="page-title">Rencana 30 Hari</div>
+        <div class="page-subtitle">Panduan harianmu menuju pemulihan finansial</div>
+        <div id="plan-list"></div>
+      </div>
+
+      <!-- === REPORTS === -->
+      <div class="screen" id="screen-reports">
+        <div class="page-title">Laporan</div>
+        <div class="page-subtitle">Pantau perkembanganmu</div>
+
+        <div class="section-header">
+          <div class="section-title">Rebound Report: Hari 1 vs Sekarang</div>
+        </div>
+        <div class="report-compare" id="report-compare"></div>
+
+        <div style="margin-top:var(--space-6)">
+          <div class="section-title" style="margin-bottom:var(--space-4)">Breakdown Rebound Score</div>
+          <div class="card">
+            <div class="score-breakdown" id="score-breakdown"></div>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-6)">
+          <div class="section-title" style="margin-bottom:var(--space-4)">Pencapaian 🏆</div>
+          <div class="achievements-grid" id="achievements-grid"></div>
+        </div>
+      </div>
+
+      <!-- === SETTINGS === -->
+      <div class="screen" id="screen-settings">
+        <div class="page-title">Pengaturan</div>
+
+        <div class="settings-section">
+          <div class="settings-section-title">Data & Backup</div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Export Data (JSON)</div>
+              <div class="settings-item-sub" id="last-export-text">Belum pernah di-export</div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="App.settings.exportData()">Export</button>
+          </div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Import Data (JSON)</div>
+              <div class="settings-item-sub">Pulihkan dari file backup</div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="App.settings.importData()">Import</button>
+          </div>
+          <input type="file" id="import-file-input" accept=".json" style="display:none" onchange="App.settings.handleImport(event)">
+        </div>
+
+        <div class="settings-section">
+          <div class="settings-section-title">Pengingat Backup</div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Aktifkan pengingat backup</div>
+              <div class="settings-item-sub">Notifikasi jika belum backup selama X hari</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="backup-reminder-toggle" onchange="App.settings.toggleBackupReminder(this.checked)">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="settings-item" id="backup-days-setting">
+            <div>
+              <div class="settings-item-label">Ingatkan setiap</div>
+            </div>
+            <select class="form-input form-select" id="backup-days-select" style="width:auto;padding:8px 28px 8px 12px;" onchange="App.settings.setBackupDays(this.value)">
+              <option value="3">3 hari</option>
+              <option value="7" selected>7 hari</option>
+              <option value="14">14 hari</option>
+              <option value="30">30 hari</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <div class="settings-section-title">Info Aplikasi</div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Rebound 30</div>
+              <div class="settings-item-sub">Versi 1.0.0 — Data tersimpan lokal di browser ini</div>
+            </div>
+          </div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Hak Pengguna & Regulasi</div>
+              <div class="settings-item-sub">Informasi hak debitur berdasarkan OJK & POJK 22/2023</div>
+            </div>
+            <button class="btn btn-ghost btn-sm" onclick="App.settings.showRights()">Lihat →</button>
+          </div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Reset Semua Data</div>
+              <div class="settings-item-sub">Hapus semua data dan mulai ulang</div>
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="App.settings.resetData()">Reset</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+</div><!-- /app -->
+
+<!-- Bottom Navigation (Mobile) -->
+<nav id="bottom-nav">
+  <div class="bottom-nav-items">
+    <button class="bottom-nav-item active" onclick="App.navigate('dashboard')" id="bnav-dashboard">
+      <span class="bnav-icon">🏠</span>Home
+    </button>
+    <button class="bottom-nav-item" onclick="App.navigate('missions')" id="bnav-missions">
+      <span class="bnav-icon">🎯</span>Misi
+    </button>
+    <button class="bottom-nav-item" onclick="App.navigate('debts')" id="bnav-debts">
+      <span class="bnav-icon">📋</span>Utang
+    </button>
+    <button class="bottom-nav-item" onclick="App.navigate('income')" id="bnav-income">
+      <span class="bnav-icon">💵</span>Income
+    </button>
+    <button class="bottom-nav-item" onclick="App.navigate('settings')" id="bnav-settings">
+      <span class="bnav-icon">⚙️</span>Setting
+    </button>
+  </div>
+</nav>
+
+<!-- Modals -->
+<div class="modal-backdrop" id="modal-backdrop" onclick="App.closeModal(event)">
+  <div class="modal" id="modal-content">
+    <div class="modal-handle"></div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT — REBOUND 30 ENGINE
+     ============================================================ -->
+<script>
+'use strict';
+
+// ============================================================
+// STORAGE LAYER
+// ============================================================
+const Store = {
+  KEY: 'rebound30_v1',
+  
+  get() {
+    try {
+      const raw = localStorage.getItem(this.KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch { return null; }
+  },
+  
+  save(data) {
+    try {
+      localStorage.setItem(this.KEY, JSON.stringify(data));
+    } catch(e) {
+      console.error('Storage error:', e);
+    }
+  },
+  
+  defaultState() {
+    return {
+      meta: {
+        startDate: new Date().toISOString().split('T')[0],
+        onboardingDone: false,
+        lastBackupReminder: null,
+        snapshotDay1: null,
+      },
+      profile: {
+        employment: null,
+        monthlyIncome: 0,
+        incomeFrequency: 'bulanan',
+        cash: 0,
+        skills: [],
+        goal: null,
+      },
+      expenses: {
+        essential: { food: 0, housing: 0, utilities: 0, transport: 0, comm: 0, other: 0 },
+        records: [],
+      },
+      debts: [],
+      incomes: [],
+      opportunities: [],
+      assets: [],
+      missions: {},
+      achievements: [],
+      settings: {
+        backupReminderEnabled: true,
+        backupReminderDays: 7,
+        lastExport: null,
+        debtStrategy: 'risk_first',
+      },
+    };
+  }
+};
+
+// ============================================================
+// HELPERS
+// ============================================================
+const H = {
+  formatRp(n) {
+    const num = Math.round(Number(n) || 0);
+    if (num >= 1_000_000_000) return `Rp ${(num/1_000_000_000).toFixed(1)}M`;
+    if (num >= 1_000_000) return `Rp ${(num/1_000_000).toFixed(1)}jt`;
+    if (num >= 1_000) return `Rp ${num.toLocaleString('id')}`;
+    return `Rp ${num}`;
+  },
+  
+  parseRp(s) { return parseInt((s || '').replace(/\D/g, '')) || 0; },
+  
+  uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,7); },
+  
+  today() { return new Date().toISOString().split('T')[0]; },
+  
+  formatDate(iso) {
+    if (!iso) return '';
+    const d = new Date(iso + 'T00:00:00');
+    return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+  },
+  
+  daysBetween(a, b) {
+    const da = new Date(a), db = new Date(b);
+    return Math.floor((db - da) / 86400000);
+  },
+  
+  currentDay(startDate) {
+    const d = H.daysBetween(startDate, H.today()) + 1;
+    return Math.min(Math.max(d, 1), 30);
+  },
+  
+  getPhase(day) {
+    if (day <= 4) return { id: 0, name: 'Survive', emoji: '🛡️', days: '1–4' };
+    if (day <= 14) return { id: 1, name: 'Create Cash', emoji: '💵', days: '5–14' };
+    if (day <= 21) return { id: 2, name: 'Stabilize', emoji: '⚖️', days: '15–21' };
+    return { id: 3, name: 'Debt Attack', emoji: '⚔️', days: '22–30' };
+  },
+  
+  priorityOrder: { CRITICAL: 0, HIGH: 1, MEDIUM: 2, LOW: 3 },
+  
+  escHtml(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  },
+  
+  monthStart() {
+    const d = new Date(); 
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-01`;
+  },
+  
+  isThisMonth(dateStr) {
+    if (!dateStr) return false;
+    return dateStr >= H.monthStart();
+  },
+};
+
+// ============================================================
+// SCORE ENGINE
+// ============================================================
+const ScoreEngine = {
+  calculate(state) {
+    const components = {};
+    
+    // 1. Financial Visibility (20) — how much data is filled
+    let vis = 0;
+    if (state.debts.length > 0) vis += 40;
+    if (Object.values(state.expenses.essential).some(v => v > 0)) vis += 25;
+    if (state.assets.length > 0 || state.profile.cash > 0) vis += 20;
+    if (state.profile.skills.length > 0) vis += 15;
+    components.visibility = Math.min(vis, 100);
+    
+    // 2. Cashflow (20) — income vs expenses
+    const totalIncome = state.profile.monthlyIncome + 
+      state.incomes.filter(i => H.isThisMonth(i.date)).reduce((s,i) => s + i.amount, 0);
+    const essentialBurn = Object.values(state.expenses.essential).reduce((s,v) => s+v, 0);
+    const debtPayments = state.debts.reduce((s,d) => s + (d.minPayment||0), 0);
+    const cashflow = totalIncome - essentialBurn - debtPayments;
+    
+    if (totalIncome === 0) components.cashflow = 5;
+    else if (cashflow >= 0) components.cashflow = Math.min(80 + (cashflow / totalIncome * 20), 100);
+    else components.cashflow = Math.max(5, 50 + (cashflow / essentialBurn * 50));
+    
+    // 3. Income Activity (20) — missions done + income recorded
+    const today = H.today();
+    const todayMissions = state.missions[today] || [];
+    const incomeMissions = todayMissions.filter(m => 
+      ['CLIENT_OUTREACH','JOB_APPLICATION','INCOME_TASK','FOLLOW_UP'].includes(m.type) && m.completed
+    ).length;
+    const recentIncome = state.incomes.filter(i => H.isThisMonth(i.date)).length;
+    components.income_activity = Math.min((incomeMissions * 20) + (recentIncome * 10), 100);
+    
+    // 4. Debt Control (15)
+    const activeNeg = state.debts.filter(d => 
+      d.negotiations && d.negotiations.some(n => ['NEGOTIATING','AGREED','CONTACTED'].includes(n.status))
+    ).length;
+    const debtPaysMade = state.debts.filter(d => d.payments && d.payments.length > 0).length;
+    components.debt_control = state.debts.length === 0 ? 60 :
+      Math.min((activeNeg * 25) + (debtPaysMade * 20) + 20, 100);
+    
+    // 5. Expense Control (15)
+    const essTotal = essentialBurn;
+    const nonEss = state.expenses.records.filter(e => H.isThisMonth(e.date) && !e.essential).reduce((s,e)=>s+e.amount,0);
+    if (essTotal === 0 && nonEss === 0) components.expense_control = 60;
+    else {
+      const ratio = nonEss / Math.max(essTotal, 1);
+      components.expense_control = ratio > 0.5 ? 20 : ratio > 0.3 ? 40 : ratio > 0.1 ? 70 : 90;
+    }
+    
+    // 6. Consistency (10) — streak
+    const streak = ScoreEngine.getStreak(state);
+    components.consistency = Math.min(streak * 14, 100);
+    
+    const weights = { visibility: 0.20, cashflow: 0.20, income_activity: 0.20, debt_control: 0.15, expense_control: 0.15, consistency: 0.10 };
+    let score = 0;
+    for (const [k,w] of Object.entries(weights)) score += (components[k] || 0) * w;
+    
+    return { score: Math.round(score), components };
+  },
+  
+  getStreak(state) {
+    let streak = 0;
+    const today = H.today();
+    for (let i = 0; i < 30; i++) {
+      const d = new Date(today);
+      d.setDate(d.getDate() - i);
+      const key = d.toISOString().split('T')[0];
+      const missions = state.missions[key] || [];
+      if (missions.length === 0 && i === 0) break;
+      if (missions.length === 0) break;
+      const done = missions.filter(m => m.completed).length;
+      if (done === 0 && i > 0) break;
+      streak++;
+    }
+    return Math.max(streak - 1, 0);
+  },
+  
+  getFocus(components) {
+    const lowest = Object.entries(components).sort((a,b) => a[1]-b[1])[0];
+    const map = {
+      visibility: 'Lengkapi pemetaan finansial kamu',
+      cashflow: 'Fokus meningkatkan cashflow bulanan',
+      income_activity: 'Perbanyak tindakan mencari pemasukan',
+      debt_control: 'Ambil tindakan terhadap utang',
+      expense_control: 'Kendalikan pengeluaran non-esensial',
+      consistency: 'Jaga konsistensi misi harian',
+    };
+    return map[lowest[0]] || 'Terus lakukan tindakan harian';
+  }
+};
+
+// ============================================================
+// REBOUND ENGINE — Daily Mission Generator
+// ============================================================
+const ReboundEngine = {
+  MISSION_TEMPLATES: {
+    CLIENT_OUTREACH: { title: 'Hubungi 3 calon klien atau pelanggan', desc: 'Tawarkan skill atau jasamu. Mulai dari kontak terdekat.', type: 'CLIENT_OUTREACH' },
+    JOB_APPLICATION: { title: 'Kirim 5 lamaran pekerjaan yang relevan', desc: 'Cari lowongan di platform online. Fokus pada yang bisa langsung menghasilkan.', type: 'JOB_APPLICATION' },
+    FOLLOW_UP: { title: 'Follow-up 2 prospek atau lamaran yang belum direspons', desc: 'Follow-up bukan opsional — ini bagian dari proses.', type: 'FOLLOW_UP' },
+    CUT_EXPENSE: { title: 'Identifikasi 1 pengeluaran yang bisa dipangkas hari ini', desc: 'Tunda atau hilangkan satu pengeluaran non-esensial.', type: 'CUT_EXPENSE' },
+    TRACK_EXPENSE: { title: 'Catat semua pengeluaran hari ini', desc: 'Tidak perlu jumlah yang besar — yang penting tercatat.', type: 'TRACK_EXPENSE' },
+    DEBT_REVIEW: { title: 'Review prioritas utang dan jatuh tempo terdekat', desc: 'Ketahui utang mana yang paling mendesak minggu ini.', type: 'DEBT_REVIEW' },
+    DEBT_PAYMENT: { title: 'Bayar cicilan minimum utang prioritas', desc: 'Bayar sesuai kemampuan, bukan rasa bersalah.', type: 'DEBT_PAYMENT' },
+    NEGOTIATION: { title: 'Hubungi kreditur untuk minta restrukturisasi', desc: 'Ajukan permohonan tertulis (email). Jelaskan kondisi secara jujur.', type: 'NEGOTIATION' },
+    INCOME_TASK: { title: 'Ambil pekerjaan atau tugas yang bisa menghasilkan HARI INI', desc: 'Ojol, jual barang, ambil project kecil — utamakan kecepatan.', type: 'INCOME_TASK' },
+    SELL_ASSET: { title: 'Pasang 1 barang untuk dijual di marketplace', desc: 'Mulai dari aset yang tidak kamu pakai dan bukan alat kerja.', type: 'SELL_ASSET' },
+    SKILL_BUILDING: { title: 'Perbarui profil di platform freelance', desc: 'Update portofolio atau kirim proposal ke platform lokal.', type: 'SKILL_BUILDING' },
+    BUILD_RECURRING: { title: 'Kontak klien/atasan untuk jadwal rutin berikutnya', desc: 'Ubah pekerjaan satu kali menjadi pemasukan berulang.', type: 'BUILD_RECURRING' },
+    NO_NEW_DEBT: { title: 'Jangan ambil utang konsumtif baru hari ini', desc: 'Bukan soal moral — supaya angka keuangan tidak berubah saat dipetakan.', type: 'NO_NEW_DEBT' },
+    MAP_FINANCES: { title: 'Lengkapi pemetaan utang dan pengeluaran', desc: 'Ketahui angka pasti sebelum bertindak. Kurangi ambiguitas.', type: 'MAP_FINANCES' },
+  },
+  
+  generate(state) {
+    const today = H.today();
+    const existing = state.missions[today];
+    if (existing && existing.length > 0) return existing;
+    
+    const day = H.currentDay(state.meta.startDate);
+    const phase = H.getPhase(day);
+    const missions = [];
+    const add = (type, priority) => {
+      const tmpl = this.MISSION_TEMPLATES[type];
+      if (!tmpl) return;
+      missions.push({
+        id: H.uid(), date: today, type, priority,
+        title: tmpl.title, desc: tmpl.desc, completed: false, notes: ''
+      });
+    };
+    
+    const income = state.profile.monthlyIncome + 
+      state.incomes.filter(i=>H.isThisMonth(i.date)).reduce((s,i)=>s+i.amount,0);
+    const essential = Object.values(state.expenses.essential).reduce((s,v)=>s+v,0);
+    const cash = state.profile.cash;
+    const cashRunway = essential > 0 ? cash / essential * 30 : 999;
+    const debtsDue7 = state.debts.filter(d => {
+      if (!d.dueDate) return false;
+      return H.daysBetween(today, d.dueDate) <= 7 && H.daysBetween(today, d.dueDate) >= 0;
+    });
+    const hasRepeatClient = state.incomes.some(i => i.recurring);
+    const needsFinancialMap = state.debts.length === 0 || essential === 0;
+    const hasOppFollowUp = state.opportunities.filter(o => 
+      o.status === 'APPLIED' || o.status === 'INTERVIEW'
+    ).length > 0;
+    
+    // Phase-based + condition-based rules
+    if (cashRunway < 7) add('INCOME_TASK', 'CRITICAL');
+    if (needsFinancialMap && day <= 4) add('MAP_FINANCES', 'HIGH');
+    
+    if (income === 0) {
+      add('CLIENT_OUTREACH', 'HIGH');
+      add('JOB_APPLICATION', 'HIGH');
+    } else if (income < essential) {
+      add('CLIENT_OUTREACH', 'HIGH');
+    }
+    
+    if (essential > 0 && income > 0 && income < essential) add('CUT_EXPENSE', 'HIGH');
+    if (debtsDue7.length > 0) add('DEBT_REVIEW', 'HIGH');
+    if (hasOppFollowUp) add('FOLLOW_UP', 'HIGH');
+    
+    if (phase.id >= 1) {
+      if (income === 0) add('SELL_ASSET', 'MEDIUM');
+      if (state.profile.skills.length > 0) add('SKILL_BUILDING', 'MEDIUM');
+    }
+    
+    if (phase.id >= 2 && hasRepeatClient) add('BUILD_RECURRING', 'HIGH');
+    if (phase.id >= 2 && state.debts.filter(d => !d.negotiations || d.negotiations.length === 0).length > 0) {
+      add('NEGOTIATION', 'MEDIUM');
+    }
+    if (phase.id >= 3 && state.debts.length > 0) add('DEBT_PAYMENT', 'MEDIUM');
+    
+    // Always: track expenses + no new debt
+    if (missions.every(m => m.type !== 'TRACK_EXPENSE')) add('TRACK_EXPENSE', 'MEDIUM');
+    if (phase.id <= 1) add('NO_NEW_DEBT', 'LOW');
+    
+    // Limit to 5, sort by priority
+    const sorted = missions
+      .filter((m,i,a) => a.findIndex(x=>x.type===m.type)===i) // dedupe
+      .sort((a,b) => H.priorityOrder[a.priority] - H.priorityOrder[b.priority])
+      .slice(0, 5);
+    
+    state.missions[today] = sorted;
+    return sorted;
+  }
+};
+
+// ============================================================
+// ACHIEVEMENTS
+// ============================================================
+const Achievements = {
+  DEFINITIONS: [
+    { id: 'first_cash', name: 'Uang Pertama', icon: '💵', desc: 'Catat pemasukan pertama' },
+    { id: 'first_client', name: 'Klien Pertama', icon: '🤝', desc: 'Tambah peluang pertama' },
+    { id: 'first_followup', name: 'Follow-up', icon: '📞', desc: 'Selesaikan misi follow-up' },
+    { id: 'streak_3', name: '3 Hari Beruntun', icon: '🔥', desc: 'Misi 3 hari berturut-turut' },
+    { id: 'streak_7', name: '7 Hari Beruntun', icon: '⚡', desc: 'Misi 7 hari berturut-turut' },
+    { id: 'first_debt_review', name: 'Peta Utang', icon: '🗺️', desc: 'Review utang pertama kali' },
+    { id: 'first_negotiation', name: 'Negosiator', icon: '⚖️', desc: 'Hubungi kreditur pertama kali' },
+    { id: 'expense_control', name: 'Hemat Cermat', icon: '✂️', desc: 'Selesaikan misi potong pengeluaran' },
+    { id: 'first_debt_payment', name: 'Bayar Utang', icon: '📉', desc: 'Catat pembayaran utang pertama' },
+    { id: 'day_30', name: 'Rebound 30!', icon: '🏆', desc: 'Selesaikan 30 hari' },
+    { id: 'financial_map', name: 'Peta Lengkap', icon: '📋', desc: 'Lengkapi semua data finansial' },
+    { id: 'first_recurring', name: 'Pemasukan Rutin', icon: '🔄', desc: 'Tandai pemasukan berulang' },
+  ],
+  
+  check(state) {
+    const earned = new Set(state.achievements || []);
+    const newOnes = [];
+    
+    if (state.incomes.length > 0 && !earned.has('first_cash')) newOnes.push('first_cash');
+    if (state.opportunities.length > 0 && !earned.has('first_client')) newOnes.push('first_client');
+    
+    const streak = ScoreEngine.getStreak(state);
+    if (streak >= 3 && !earned.has('streak_3')) newOnes.push('streak_3');
+    if (streak >= 7 && !earned.has('streak_7')) newOnes.push('streak_7');
+    
+    const allMissions = Object.values(state.missions).flat();
+    const completedTypes = new Set(allMissions.filter(m=>m.completed).map(m=>m.type));
+    if (completedTypes.has('FOLLOW_UP') && !earned.has('first_followup')) newOnes.push('first_followup');
+    if (completedTypes.has('DEBT_REVIEW') && !earned.has('first_debt_review')) newOnes.push('first_debt_review');
+    if (completedTypes.has('NEGOTIATION') && !earned.has('first_negotiation')) newOnes.push('first_negotiation');
+    if (completedTypes.has('CUT_EXPENSE') && !earned.has('expense_control')) newOnes.push('expense_control');
+    if (completedTypes.has('DEBT_PAYMENT') && !earned.has('first_debt_payment')) newOnes.push('first_debt_payment');
+    
+    if (state.incomes.some(i=>i.recurring) && !earned.has('first_recurring')) newOnes.push('first_recurring');
+    if (H.currentDay(state.meta.startDate) >= 30 && !earned.has('day_30')) newOnes.push('day_30');
+    
+    const hasDebt = state.debts.length > 0;
+    const hasExp = Object.values(state.expenses.essential).some(v=>v>0);
+    const hasCash = state.profile.cash > 0 || state.assets.length > 0;
+    if (hasDebt && hasExp && hasCash && !earned.has('financial_map')) newOnes.push('financial_map');
+    
+    return newOnes;
+  }
+};
+
+// ============================================================
+// MAIN APP
+// ============================================================
+const App = {
+  state: null,
+  currentScreen: 'dashboard',
+  
+  init() {
+    let stored = Store.get();
+    if (!stored) {
+      this.state = Store.defaultState();
+    } else {
+      this.state = stored;
+    }
+    
+    // Hide splash after short delay
+    setTimeout(() => {
+      document.getElementById('splash').classList.add('fade-out');
+      setTimeout(() => document.getElementById('splash').remove(), 500);
+    }, 1200);
+    
+    if (!this.state.meta.onboardingDone) {
+      this.showOnboarding();
+    } else {
+      this.showApp();
+    }
+  },
+  
+  save() {
+    // Check new achievements
+    const newAch = Achievements.check(this.state);
+    if (newAch.length > 0) {
+      this.state.achievements = [...(this.state.achievements || []), ...newAch];
+      newAch.forEach(id => {
+        const def = Achievements.DEFINITIONS.find(d=>d.id===id);
+        if (def) this.toast(`${def.icon} Pencapaian: ${def.name}`, 'success');
+      });
+    }
+    Store.save(this.state);
+  },
+  
+  showOnboarding() {
+    document.getElementById('screen-onboarding').classList.add('active');
+    document.getElementById('app').style.display = 'none';
+    document.getElementById('bottom-nav').style.display = 'none';
+    this.ob.renderProgress();
+  },
+  
+  showApp() {
+    document.getElementById('screen-onboarding').classList.remove('active');
+    document.getElementById('app').style.display = '';
+    document.getElementById('bottom-nav').style.display = '';
+    this.navigate('dashboard');
+  },
+  
+  navigate(screen) {
+    this.currentScreen = screen;
+    
+    // Hide all screens
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-' + screen).classList.add('active');
+    
+    // Update nav
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + screen);
+    if (navEl) navEl.classList.add('active');
+    document.querySelectorAll('.bottom-nav-item').forEach(n => n.classList.remove('active'));
+    const bnavEl = document.getElementById('bnav-' + screen);
+    if (bnavEl) bnavEl.classList.add('active');
+    
+    const titles = {
+      dashboard: 'Dashboard', missions: 'Misi Harian', debts: 'Utang',
+      income: 'Pemasukan', expenses: 'Pengeluaran', assets: 'Aset',
+      plan: 'Rencana 30 Hari', reports: 'Laporan', settings: 'Pengaturan',
+    };
+    const title = titles[screen] || screen;
+    const el1 = document.getElementById('topbar-title');
+    const el2 = document.getElementById('mobile-title');
+    if (el1) el1.textContent = title;
+    if (el2) el2.textContent = title;
+    
+    // Update day badges
+    const day = H.currentDay(this.state.meta.startDate);
+    const dayText = `Hari ${day} / 30`;
+    const el3 = document.getElementById('sidebar-day');
+    const el4 = document.getElementById('mobile-day-badge');
+    const el5 = document.getElementById('topbar-day');
+    if (el3) el3.textContent = dayText;
+    if (el4) el4.textContent = `Hari ${day}`;
+    if (el5) el5.textContent = dayText;
+    
+    // Render the screen
+    const renders = {
+      dashboard: () => this.renderDashboard(),
+      missions: () => this.renderMissions(),
+      debts: () => this.debts.render(),
+      income: () => this.income.render(),
+      expenses: () => this.expenses.render(),
+      assets: () => this.assets.render(),
+      plan: () => this.renderPlan(),
+      reports: () => this.renderReports(),
+      settings: () => this.renderSettings(),
+    };
+    if (renders[screen]) renders[screen]();
+    
+    window.scrollTo(0, 0);
+  },
+  
+  // ---- DASHBOARD ----
+  renderDashboard() {
+    const s = this.state;
+    const day = H.currentDay(s.meta.startDate);
+    const phase = H.getPhase(day);
+    const { score, components } = ScoreEngine.calculate(s);
+    
+    // Header
+    const today = new Date();
+    const dateStr = today.toLocaleDateString('id-ID', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+    document.getElementById('dash-date').textContent = dateStr;
+    
+    const greetings = ['Hari ke', 'Rebound'];
+    document.getElementById('dash-greeting').innerHTML = `Hari ke-${day} dari 30 &nbsp;${phase.emoji} ${phase.name}`;
+    
+    // Score ring
+    document.getElementById('dash-score').textContent = score;
+    const circumference = 226.2;
+    const offset = circumference - (score / 100) * circumference;
+    document.getElementById('score-ring-fill').style.strokeDashoffset = offset;
+    document.getElementById('dash-phase-badge').textContent = `${phase.emoji} ${phase.name}`;
+    document.getElementById('dash-focus').textContent = ScoreEngine.getFocus(components);
+    
+    // Phase strip
+    const phases = [
+      { name: 'Survive', days: '1–4' },
+      { name: 'Cash', days: '5–14' },
+      { name: 'Stabilize', days: '15–21' },
+      { name: 'Attack', days: '22–30' },
+    ];
+    document.getElementById('phase-strip').innerHTML = phases.map((p,i) => `
+      <div class="phase-item ${i < phase.id ? 'done' : i === phase.id ? 'current' : ''}">
+        ${i < phase.id ? '✓' : ''} ${p.name}<br>
+        <span style="font-size:10px;font-weight:400">${p.days}</span>
+      </div>
+    `).join('');
+    
+    // Stats
+    const income = s.profile.monthlyIncome + s.incomes.filter(i=>H.isThisMonth(i.date)).reduce((a,i)=>a+i.amount,0);
+    const essential = Object.values(s.expenses.essential).reduce((a,v)=>a+v,0);
+    const totalDebt = s.debts.reduce((a,d)=>a+d.remaining,0);
+    const cash = s.profile.cash;
+    const runway = essential > 0 ? Math.round(cash / essential * 30) : null;
+    
+    document.getElementById('stat-cash').textContent = H.formatRp(cash);
+    document.getElementById('stat-income').textContent = H.formatRp(income);
+    const expEl = document.getElementById('stat-expenses');
+    expEl.textContent = H.formatRp(essential);
+    expEl.className = 'stat-value ' + (income > 0 && essential > income ? 'negative' : 'warning');
+    document.getElementById('stat-debt').textContent = H.formatRp(totalDebt);
+    const runwayEl = document.getElementById('stat-runway');
+    if (runway !== null && income === 0) {
+      runwayEl.textContent = `Runway: ${runway} hari`;
+    } else { runwayEl.textContent = ''; }
+    
+    // Missions preview
+    const todayMissions = ReboundEngine.generate(s);
+    this.save();
+    const done = todayMissions.filter(m=>m.completed).length;
+    document.getElementById('missions-progress-text').textContent = `${done} / ${todayMissions.length} selesai`;
+    
+    document.getElementById('dash-missions').innerHTML = todayMissions.slice(0,3).map(m => `
+      <div class="mission-card ${m.completed?'completed':''} priority-${m.priority.toLowerCase()}" id="dash-m-${m.id}">
+        <div class="mission-header">
+          <div class="mission-check" onclick="App.toggleMission('${m.id}')">
+            ${m.completed ? '✓' : ''}
+          </div>
+          <div class="mission-content">
+            <div class="mission-type-label">${this.missionTypeLabel(m.type)} · <span class="badge badge-${m.priority.toLowerCase()}">${m.priority}</span></div>
+            <div class="mission-title">${H.escHtml(m.title)}</div>
+          </div>
+        </div>
+      </div>
+    `).join('') || '<div class="empty-state"><div class="empty-state-icon">🎉</div><div class="empty-state-title">Semua misi selesai!</div></div>';
+    
+    // Achievements
+    const earned = (s.achievements || []);
+    const earnedDefs = Achievements.DEFINITIONS.filter(d=>earned.includes(d.id));
+    document.getElementById('dash-achievements').innerHTML = earnedDefs.slice(0,5).map(d=>`
+      <div class="card-sm" style="text-align:center;padding:var(--space-3);min-width:80px;">
+        <div style="font-size:1.5rem">${d.icon}</div>
+        <div style="font-size:10px;font-weight:600;color:var(--color-text-secondary);margin-top:4px">${d.name}</div>
+      </div>
+    `).join('') || '<div style="font-size:13px;color:var(--color-text-muted)">Selesaikan misi untuk mendapatkan pencapaian 🏅</div>';
+    
+    // Backup banner
+    this.checkBackupBanner();
+  },
+  
+  checkBackupBanner() {
+    const container = document.getElementById('backup-banner-container');
+    if (!container) return;
+    const s = this.state.settings;
+    if (!s.backupReminderEnabled) { container.innerHTML = ''; return; }
+    const lastExport = s.lastExport;
+    const days = s.backupReminderDays || 7;
+    const needsBanner = !lastExport || H.daysBetween(lastExport, H.today()) >= days;
+    if (!needsBanner) { container.innerHTML = ''; return; }
+    const daysSince = lastExport ? H.daysBetween(lastExport, H.today()) : null;
+    const msg = daysSince ? `Terakhir backup ${daysSince} hari yang lalu.` : `Kamu belum pernah backup data.`;
+    container.innerHTML = `
+      <div class="backup-banner">
+        <div class="backup-icon">💾</div>
+        <div class="backup-text">
+          <strong>Saatnya backup data</strong>
+          <span>${msg} Export sekarang agar data tidak hilang jika browser dibersihkan.</span>
+        </div>
+        <button class="btn btn-sm btn-primary" onclick="App.settings.exportData()">Export</button>
+      </div>
+    `;
+  },
+  
+  missionTypeLabel(type) {
+    const map = {
+      CLIENT_OUTREACH:'Cari Klien', JOB_APPLICATION:'Lamaran', FOLLOW_UP:'Follow-up',
+      CUT_EXPENSE:'Hemat', TRACK_EXPENSE:'Catat', DEBT_REVIEW:'Review Utang',
+      DEBT_PAYMENT:'Bayar Utang', NEGOTIATION:'Negosiasi', INCOME_TASK:'Cari Income',
+      SELL_ASSET:'Jual Aset', SKILL_BUILDING:'Tingkatkan Skill', BUILD_RECURRING:'Income Rutin',
+      NO_NEW_DEBT:'Jangan Berutang', MAP_FINANCES:'Petakan Finansial',
+    };
+    return map[type] || type;
+  },
+  
+  toggleMission(id) {
+    const today = H.today();
+    const missions = this.state.missions[today] || [];
+    const m = missions.find(x=>x.id===id);
+    if (m) {
+      m.completed = !m.completed;
+      this.save();
+      if (m.completed) this.toast('Misi selesai! ✓', 'success');
+      if (this.currentScreen === 'dashboard') this.renderDashboard();
+      else if (this.currentScreen === 'missions') this.renderMissions();
+    }
+  },
+  
+  // ---- MISSIONS ----
+  renderMissions() {
+    const s = this.state;
+    const today = H.today();
+    const todayFmt = new Date().toLocaleDateString('id-ID', { weekday:'long', day:'numeric', month:'long' });
+    document.getElementById('missions-date-subtitle').textContent = todayFmt;
+    
+    const missions = ReboundEngine.generate(s);
+    this.save();
+    
+    // Streak
+    const streak = ScoreEngine.getStreak(s);
+    const streakContainer = document.getElementById('streak-container');
+    if (streak > 0) {
+      streakContainer.innerHTML = `
+        <div class="streak-banner">
+          <div class="streak-icon">🔥</div>
+          <div class="streak-text">
+            <div class="streak-days">${streak} Hari Beruntun</div>
+            <div class="streak-label">Teruskan konsistensimu!</div>
+          </div>
+        </div>
+      `;
+    } else { streakContainer.innerHTML = ''; }
+    
+    document.getElementById('missions-list').innerHTML = missions.map(m => `
+      <div class="mission-card ${m.completed?'completed':''} priority-${m.priority.toLowerCase()} fade-in" id="m-${m.id}">
+        <div class="mission-header">
+          <div class="mission-check" onclick="App.toggleMission('${m.id}')">
+            ${m.completed ? '✓' : ''}
+          </div>
+          <div class="mission-content" style="flex:1">
+            <div class="mission-type-label">${this.missionTypeLabel(m.type)} · <span class="badge badge-${m.priority.toLowerCase()}">${m.priority}</span></div>
+            <div class="mission-title">${H.escHtml(m.title)}</div>
+            <div class="mission-description">${H.escHtml(m.desc)}</div>
+          </div>
+        </div>
+      </div>
+    `).join('') || '<div class="empty-state"><div class="empty-state-icon">🎉</div><div class="empty-state-title">Semua misi selesai hari ini!</div><div class="empty-state-text">Luar biasa! Kembali lagi besok untuk misi baru.</div></div>';
+    
+    // History (yesterday)
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate()-1);
+    const yKey = yesterday.toISOString().split('T')[0];
+    const yMissions = s.missions[yKey] || [];
+    document.getElementById('missions-history').innerHTML = yMissions.length ? yMissions.map(m=>`
+      <div class="mission-card ${m.completed?'completed':''}" style="opacity:0.7">
+        <div class="mission-header">
+          <div class="mission-check" style="cursor:default">${m.completed?'✓':''}</div>
+          <div class="mission-content">
+            <div class="mission-title">${H.escHtml(m.title)}</div>
+          </div>
+        </div>
+      </div>
+    `).join('') : '<div style="font-size:13px;color:var(--color-text-muted);padding:var(--space-3)">Belum ada data kemarin.</div>';
+  },
+  
+  // ---- PLAN ----
+  renderPlan() {
+    const s = this.state;
+    const currentDay = H.currentDay(s.meta.startDate);
+    const planData = [
+      { days: [1,2,3,4], phase: 'Survive 🛡️', objective: 'Petakan kondisi finansial secara akurat', tasks: ['Catat semua utang', 'Catat pengeluaran esensial', 'Inventaris aset', 'Hitung cashflow bersih'] },
+      { days: [5,6,7,8,9,10,11,12,13,14], phase: 'Create Cash 💵', objective: 'Hasilkan pemasukan pertama', tasks: ['Hubungi calon klien/pelanggan', 'Kirim lamaran pekerjaan', 'Jual aset aman', 'Follow-up prospek'] },
+      { days: [15,16,17,18,19,20,21], phase: 'Stabilize ⚖️', objective: 'Bangun pola pemasukan berulang', tasks: ['Identifikasi klien yang bisa jadi rutin', 'Hubungi kreditur untuk restrukturisasi', 'Susun jadwal kerja', 'Kurangi aktivitas tidak menghasilkan'] },
+      { days: [22,23,24,25,26,27,28,29,30], phase: 'Debt Attack ⚔️', objective: 'Eksekusi strategi pelunasan utang', tasks: ['Tentukan prioritas utang', 'Bayar cicilan sesuai kemampuan', 'Track outstanding tiap pembayaran', 'Mulai susun rencana 90 hari'] },
+    ];
+    
+    let html = '';
+    planData.forEach(group => {
+      group.days.forEach(d => {
+        const isToday = d === currentDay;
+        const isDone = d < currentDay;
+        html += `
+          <div class="plan-day-card ${isToday?'today':''} ${isDone?'completed-day':''}">
+            <div class="plan-day-number">${isDone?'✓':d}</div>
+            <div class="plan-day-content">
+              <div class="plan-day-phase">${group.phase}</div>
+              <div class="plan-day-objective">${group.objective}</div>
+              ${isToday ? `<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">${group.tasks.map(t=>`<span class="badge badge-primary">${t}</span>`).join('')}</div>` : ''}
+            </div>
+          </div>
+        `;
+      });
+    });
+    document.getElementById('plan-list').innerHTML = html;
+  },
+  
+  // ---- REPORTS ----
+  renderReports() {
+    const s = this.state;
+    const { score, components } = ScoreEngine.calculate(s);
+    const snap = s.meta.snapshotDay1;
+    
+    // Compare: Day 1 vs Now
+    const totalDebt = s.debts.reduce((a,d)=>a+d.remaining,0);
+    const origDebt = s.debts.reduce((a,d)=>a+d.original,0);
+    const income = s.profile.monthlyIncome + s.incomes.filter(i=>H.isThisMonth(i.date)).reduce((a,i)=>a+i.amount,0);
+    const recurringIncome = s.incomes.filter(i=>i.recurring).reduce((a,i)=>a+i.amount,0);
+    
+    document.getElementById('report-compare').innerHTML = `
+      <div class="report-before">
+        <div class="report-label">Hari 1</div>
+        <div class="report-row">
+          <div class="report-row-label">Pemasukan/bln</div>
+          <div class="report-row-value">${snap ? H.formatRp(snap.income) : '—'}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Total Utang</div>
+          <div class="report-row-value">${snap ? H.formatRp(snap.debt) : H.formatRp(origDebt)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Uang Tunai</div>
+          <div class="report-row-value">${snap ? H.formatRp(snap.cash) : '—'}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Rebound Score</div>
+          <div class="report-row-value">${snap ? snap.score : '—'}</div>
+        </div>
+      </div>
+      <div class="report-after">
+        <div class="report-label" style="color:var(--teal-700)">Sekarang ✨</div>
+        <div class="report-row">
+          <div class="report-row-label">Pemasukan/bln</div>
+          <div class="report-row-value" style="color:var(--green-600)">${H.formatRp(income)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Total Utang</div>
+          <div class="report-row-value" style="color:var(--red-600)">${H.formatRp(totalDebt)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Uang Tunai</div>
+          <div class="report-row-value">${H.formatRp(s.profile.cash)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Rebound Score</div>
+          <div class="report-row-value" style="color:var(--teal-700);font-size:1.3rem">${score}/100</div>
+        </div>
+      </div>
+    `;
+    
+    // Score breakdown
+    const labels = { visibility:'Peta Finansial', cashflow:'Cashflow', income_activity:'Aktivitas Income', debt_control:'Kontrol Utang', expense_control:'Kontrol Pengeluaran', consistency:'Konsistensi' };
+    document.getElementById('score-breakdown').innerHTML = Object.entries(components).map(([k,v])=>`
+      <div class="score-bar-row">
+        <div class="score-bar-label">${labels[k]||k}</div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:${v}%"></div></div>
+        <div class="score-bar-value">${Math.round(v)}</div>
+      </div>
+    `).join('');
+    
+    // Achievements
+    const earned = new Set(s.achievements || []);
+    document.getElementById('achievements-grid').innerHTML = Achievements.DEFINITIONS.map(d=>`
+      <div class="achievement-card ${earned.has(d.id)?'earned':'locked'}">
+        <div class="achievement-icon">${d.icon}</div>
+        <div class="achievement-name">${d.name}</div>
+      </div>
+    `).join('');
+  },
+  
+  // ---- SETTINGS ----
+  renderSettings() {
+    const s = this.state.settings;
+    document.getElementById('backup-reminder-toggle').checked = s.backupReminderEnabled;
+    document.getElementById('backup-days-select').value = String(s.backupReminderDays || 7);
+    document.getElementById('last-export-text').textContent = s.lastExport 
+      ? `Terakhir export: ${H.formatDate(s.lastExport)}`
+      : 'Belum pernah di-export';
+  },
+  
+  // ---- MODALS ----
+  openModal(html) {
+    document.getElementById('modal-body').innerHTML = html;
+    document.getElementById('modal-backdrop').classList.add('open');
+  },
+  
+  closeModal(e) {
+    if (!e || e.target === document.getElementById('modal-backdrop')) {
+      document.getElementById('modal-backdrop').classList.remove('open');
+    }
+  },
+  
+  // ---- TOAST ----
+  toast(msg, type='') {
+    const el = document.createElement('div');
+    el.className = `toast ${type}`;
+    el.textContent = msg;
+    document.getElementById('toast-container').appendChild(el);
+    setTimeout(() => el.remove(), 3000);
+  },
+  
+  // ---- FULLSCREEN ----
+  toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(()=>{});
+    } else {
+      document.exitFullscreen().catch(()=>{});
+    }
+  },
+  
+  // ============================================================
+  // ONBOARDING
+  // ============================================================
+  ob: {
+    step: 0,
+    totalSteps: 8,
+    tempDebt: null,
+    pendingDebts: [],
+    selectedSkills: [],
+    selectedEmployment: null,
+    selectedGoal: null,
+    
+    renderProgress() {
+      const el = document.getElementById('ob-progress');
+      let html = '';
+      for (let i = 0; i < this.totalSteps; i++) {
+        const cls = i < this.step ? 'done' : i === this.step ? 'current' : '';
+        html += `<div class="progress-dot ${cls}"></div>`;
+      }
+      el.innerHTML = html;
+    },
+    
+    showStep(n) {
+      document.querySelectorAll('.onboarding-step').forEach(s => s.classList.remove('active'));
+      const el = document.getElementById('ob-step-' + n);
+      if (el) el.classList.add('active');
+      this.step = n;
+      this.renderProgress();
+    },
+    
+    next() {
+      this.saveCurrentStep();
+      if (this.step < this.totalSteps - 1) this.showStep(this.step + 1);
+    },
+    
+    prev() {
+      if (this.step > 0) this.showStep(this.step - 1);
+    },
+    
+    saveCurrentStep() {
+      const s = App.state;
+      if (this.step === 1 && this.selectedEmployment) s.profile.employment = this.selectedEmployment;
+      if (this.step === 2) {
+        s.profile.monthlyIncome = parseInt(document.getElementById('ob-income').value) || 0;
+        s.profile.incomeFrequency = document.getElementById('ob-income-freq').value;
+      }
+      if (this.step === 3) {
+        s.expenses.essential = {
+          food: parseInt(document.getElementById('ob-exp-food').value) || 0,
+          housing: parseInt(document.getElementById('ob-exp-housing').value) || 0,
+          utilities: parseInt(document.getElementById('ob-exp-utilities').value) || 0,
+          transport: parseInt(document.getElementById('ob-exp-transport').value) || 0,
+          comm: parseInt(document.getElementById('ob-exp-comm').value) || 0,
+          other: parseInt(document.getElementById('ob-exp-other').value) || 0,
+        };
+      }
+      if (this.step === 5) {
+        s.profile.cash = parseInt(document.getElementById('ob-cash').value) || 0;
+        const assetVal = parseInt(document.getElementById('ob-assets-value').value) || 0;
+        if (assetVal > 0 && !s.assets.find(a=>a.name==='Aset Lainnya (estimasi)')) {
+          s.assets.push({ id: H.uid(), name: 'Aset Lainnya (estimasi)', category: 'other', value: assetVal, liquidatable: true, keepForWork: false, notes: '' });
+        }
+      }
+      if (this.step === 6) s.profile.skills = [...this.selectedSkills];
+      if (this.step === 7 && this.selectedGoal) s.profile.goal = this.selectedGoal;
+      App.save();
+    },
+    
+    selectOption(field, value, el) {
+      el.closest('.option-grid').querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      if (field === 'employment') this.selectedEmployment = value;
+      if (field === 'goal') this.selectedGoal = value;
+    },
+    
+    toggleSkill(skill, el) {
+      el.classList.toggle('selected');
+      if (this.selectedSkills.includes(skill)) {
+        this.selectedSkills = this.selectedSkills.filter(s=>s!==skill);
+      } else {
+        this.selectedSkills.push(skill);
+      }
+    },
+    
+    showAddDebt() {
+      App.openModal(`
+        <div class="modal-title">+ Tambah Utang</div>
+        <div class="form-group">
+          <label class="form-label">Nama / Label Utang</label>
+          <input class="form-input" id="ob-debt-name" placeholder="mis. KPR BCA, Pinjol Kredivo, KTA Mandiri">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nama Kreditur</label>
+          <input class="form-input" id="ob-debt-creditor" placeholder="mis. Bank BCA">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Sisa Utang Sekarang</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ob-debt-remaining" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Cicilan/Pembayaran Minimum/Bulan</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ob-debt-minpay" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Bunga (% per bulan)</label>
+          <input type="number" step="0.01" class="form-input" id="ob-debt-interest" placeholder="mis. 2.5">
+          <div class="form-hint">Batas legal OJK 2026: maks 3%/bulan (konsumtif) atau 2%/bulan (produktif)</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jatuh Tempo Berikutnya</label>
+          <input type="date" class="form-input" id="ob-debt-due">
+        </div>
+        <div style="display:flex;gap:var(--space-3);margin-top:var(--space-4)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.ob.saveDebt()">Simpan</button>
+        </div>
+      `);
+    },
+    
+    saveDebt() {
+      const name = document.getElementById('ob-debt-name').value.trim();
+      if (!name) { App.toast('Nama utang tidak boleh kosong', 'error'); return; }
+      const debt = {
+        id: H.uid(),
+        name,
+        creditor: document.getElementById('ob-debt-creditor').value.trim(),
+        original: parseInt(document.getElementById('ob-debt-remaining').value) || 0,
+        remaining: parseInt(document.getElementById('ob-debt-remaining').value) || 0,
+        interestMonthly: parseFloat(document.getElementById('ob-debt-interest').value) || 0,
+        dueDate: document.getElementById('ob-debt-due').value,
+        minPayment: parseInt(document.getElementById('ob-debt-minpay').value) || 0,
+        collateral: '',
+        status: 'ACTIVE',
+        notes: '',
+        payments: [],
+        negotiations: [],
+        riskLevel: 'MEDIUM',
+      };
+      App.state.debts.push(debt);
+      App.save();
+      App.closeModal();
+      this.renderDebtList();
+      App.toast('Utang ditambahkan ✓', 'success');
+    },
+    
+    renderDebtList() {
+      const debts = App.state.debts;
+      document.getElementById('ob-debts-list').innerHTML = debts.map(d=>`
+        <div class="card-sm" style="margin-bottom:var(--space-2);display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:600;font-size:14px">${H.escHtml(d.name)}</div>
+            <div style="font-size:12px;color:var(--color-text-secondary)">${H.formatRp(d.remaining)}</div>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="App.removeDebt('${d.id}')">✕</button>
+        </div>
+      `).join('');
+    },
+    
+    finish() {
+      this.saveCurrentStep();
+      App.state.meta.onboardingDone = true;
+      // Snapshot Day 1
+      const { score } = ScoreEngine.calculate(App.state);
+      App.state.meta.snapshotDay1 = {
+        income: App.state.profile.monthlyIncome,
+        debt: App.state.debts.reduce((a,d)=>a+d.remaining,0),
+        cash: App.state.profile.cash,
+        score,
+        date: H.today(),
+      };
+      // Generate today's missions
+      ReboundEngine.generate(App.state);
+      App.save();
+      App.showApp();
+      App.toast('Selamat datang di Rebound 30! 🚀', 'success');
+    }
+  },
+  
+  removeDebt(id) {
+    this.state.debts = this.state.debts.filter(d=>d.id!==id);
+    this.save();
+    this.ob.renderDebtList();
+    if (this.currentScreen === 'debts') this.debts.render();
+  },
+  
+  // ============================================================
+  // DEBT MANAGEMENT
+  // ============================================================
+  debts: {
+    render() {
+      const s = App.state;
+      const debts = [...s.debts];
+      const strategy = s.settings.debtStrategy || 'risk_first';
+      document.getElementById('debt-strategy-select').value = strategy;
+      
+      // Sort by strategy
+      const sorted = this.sortDebts(debts, strategy);
+      
+      const total = sorted.reduce((a,d)=>a+d.remaining,0);
+      document.getElementById('debt-total-value').textContent = H.formatRp(total);
+      document.getElementById('debt-count-text').textContent = `${sorted.length} utang aktif`;
+      
+      // Interest widget
+      const thisMonthInterest = s.expenses.records
+        .filter(e => e.isInterest && H.isThisMonth(e.date))
+        .reduce((a,e)=>a+e.amount,0);
+      const widget = document.getElementById('debt-interest-widget');
+      if (thisMonthInterest > 0) {
+        widget.innerHTML = `
+          <div class="interest-widget">
+            <div class="interest-widget-title">💸 Total Bunga Terbayar Bulan Ini</div>
+            <div class="interest-widget-amount">${H.formatRp(thisMonthInterest)}</div>
+            <div class="interest-widget-sub">Ini biaya "waktu" untuk menyelesaikan utang — bukan pokok.</div>
+          </div>
+        `;
+      } else { widget.innerHTML = ''; }
+      
+      if (sorted.length === 0) {
+        document.getElementById('debts-list').innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">🎉</div>
+            <div class="empty-state-title">Belum ada utang tercatat</div>
+            <div class="empty-state-text">Tambahkan utangmu untuk mulai memetakan kewajiban.</div>
+          </div>
+        `;
+        return;
+      }
+      
+      document.getElementById('debts-list').innerHTML = sorted.map((d,i) => {
+        const paidPct = d.original > 0 ? Math.round((1 - d.remaining/d.original)*100) : 0;
+        const interestPerDay = d.interestMonthly / 30;
+        const isIllegal = interestPerDay > 0.1;
+        const daysUntilDue = d.dueDate ? H.daysBetween(H.today(), d.dueDate) : null;
+        const negStatus = d.negotiations && d.negotiations.length > 0
+          ? d.negotiations[d.negotiations.length-1].status : 'NOT_CONTACTED';
+        
+        return `
+          <div class="debt-card" id="debt-card-${d.id}">
+            <div class="debt-card-header" onclick="App.debts.toggleCard('${d.id}')">
+              <div>
+                <div class="debt-name">${H.escHtml(d.name)} ${strategy !== 'custom' ? `<span style="font-size:11px;background:var(--slate-100);padding:2px 6px;border-radius:10px;color:var(--slate-600)">#${i+1}</span>` : ''}</div>
+                <div class="debt-creditor">${H.escHtml(d.creditor || '—')} · <span class="negotiation-status neg-${negStatus}">${this.negLabel(negStatus)}</span></div>
+                ${daysUntilDue !== null && daysUntilDue <= 7 && daysUntilDue >= 0
+                  ? `<div class="badge badge-critical" style="margin-top:4px">Jatuh tempo ${daysUntilDue===0?'hari ini':`${daysUntilDue} hari lagi`}</div>` 
+                  : daysUntilDue !== null && daysUntilDue < 0 
+                    ? `<div class="badge badge-critical" style="margin-top:4px">Sudah melewati jatuh tempo</div>` : ''}
+              </div>
+              <div style="text-align:right">
+                <div class="debt-amount">${H.formatRp(d.remaining)}</div>
+                <div class="debt-amount-label">tersisa ${paidPct>0?`· ${paidPct}% lunas`:''}</div>
+              </div>
+            </div>
+            <div class="debt-card-body">
+              <div class="debt-progress-bar"><div class="debt-progress-fill" style="width:${paidPct}%"></div></div>
+              ${isIllegal ? `
+                <div class="illegal-flag">
+                  ⚠️ <strong>Perhatian:</strong> Bunga ${d.interestMonthly}%/bln melebihi batas legal OJK (maks 3%/bln konsumtif). 
+                  Kemungkinan ini pinjol ilegal. Verifikasi di ojk.go.id sebelum membayar lebih.
+                </div>` : ''}
+              <div class="debt-meta-grid">
+                <div class="debt-meta-item">
+                  <div class="debt-meta-label">Cicilan Min/Bln</div>
+                  <div class="debt-meta-value">${H.formatRp(d.minPayment)}</div>
+                </div>
+                <div class="debt-meta-item">
+                  <div class="debt-meta-label">Bunga/Bln</div>
+                  <div class="debt-meta-value ${isIllegal?'interest-illegal':'interest-legal'}">${d.interestMonthly}%</div>
+                </div>
+                <div class="debt-meta-item">
+                  <div class="debt-meta-label">Jatuh Tempo</div>
+                  <div class="debt-meta-value">${d.dueDate ? H.formatDate(d.dueDate) : '—'}</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;">
+                <button class="btn btn-sm btn-outline" onclick="App.debts.showPayment('${d.id}')">💳 Catat Pembayaran</button>
+                <button class="btn btn-sm btn-secondary" onclick="App.debts.showNegotiation('${d.id}')">✍️ Negosiasi</button>
+                <button class="btn btn-sm btn-ghost" onclick="App.debts.showEdit('${d.id}')">✏️ Edit</button>
+                <button class="btn btn-sm btn-ghost" style="color:var(--red-500)" onclick="App.removeDebt('${d.id}')">🗑</button>
+              </div>
+              ${d.negotiations && d.negotiations.length > 0 ? `
+                <div style="margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-border)">
+                  <div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);margin-bottom:var(--space-2)">Riwayat Negosiasi</div>
+                  ${d.negotiations.map(n=>`
+                    <div style="font-size:12px;padding:var(--space-2);background:var(--slate-50);border-radius:var(--radius-md);margin-bottom:4px">
+                      <span class="negotiation-status neg-${n.status}">${this.negLabel(n.status)}</span>
+                      ${H.escHtml(n.offer||'')} — ${H.formatDate(n.date)}
+                      ${n.followUp ? `<div style="color:var(--amber-600)">Follow-up: ${H.formatDate(n.followUp)}</div>` : ''}
+                    </div>
+                  `).join('')}
+                </div>
+              ` : ''}
+              ${d.payments && d.payments.length > 0 ? `
+                <div style="margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-border)">
+                  <div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);margin-bottom:var(--space-2)">Pembayaran Terakhir</div>
+                  ${d.payments.slice(-2).map(p=>`
+                    <div style="font-size:12px;color:var(--green-700);font-weight:600">${H.formatRp(p.amount)} — ${H.formatDate(p.date)}</div>
+                  `).join('')}
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    },
+    
+    sortDebts(debts, strategy) {
+      if (strategy === 'avalanche') return [...debts].sort((a,b)=>b.interestMonthly-a.interestMonthly);
+      if (strategy === 'snowball') return [...debts].sort((a,b)=>a.remaining-b.remaining);
+      if (strategy === 'risk_first') {
+        return [...debts].sort((a,b)=>{
+          const riskA = a.dueDate ? H.daysBetween(H.today(), a.dueDate) : 999;
+          const riskB = b.dueDate ? H.daysBetween(H.today(), b.dueDate) : 999;
+          return riskA - riskB;
+        });
+      }
+      return debts;
+    },
+    
+    negLabel(status) {
+      const map = { NOT_CONTACTED:'Belum dihubungi', CONTACTED:'Sudah dihubungi', NEGOTIATING:'Negosiasi', AGREED:'Setuju', REJECTED:'Ditolak', FOLLOW_UP:'Follow-up' };
+      return map[status] || status;
+    },
+    
+    toggleCard(id) {
+      document.getElementById('debt-card-'+id).classList.toggle('expanded');
+    },
+    
+    setStrategy(val) {
+      App.state.settings.debtStrategy = val;
+      App.save();
+      this.render();
+    },
+    
+    showAdd() {
+      App.openModal(`
+        <div class="modal-title">+ Tambah Utang</div>
+        <div class="form-group">
+          <label class="form-label">Nama / Label Utang *</label>
+          <input class="form-input" id="d-name" placeholder="mis. KPR, Pinjol Kredivo">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nama Kreditur</label>
+          <input class="form-input" id="d-creditor" placeholder="mis. Bank BCA">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jumlah Awal</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="d-original" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Sisa Utang Sekarang *</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="d-remaining" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Bunga (% per bulan)</label>
+          <input type="number" step="0.01" class="form-input" id="d-interest" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Cicilan Minimum/Bulan</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="d-minpay" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jatuh Tempo Berikutnya</label>
+          <input type="date" class="form-input" id="d-due">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Agunan / Jaminan</label>
+          <input class="form-input" id="d-collateral" placeholder="mis. BPKB Motor, KTP">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Catatan</label>
+          <textarea class="form-input form-textarea" id="d-notes"></textarea>
+        </div>
+        <div style="display:flex;gap:var(--space-3);margin-top:var(--space-2)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.debts.saveNew()">Simpan</button>
+        </div>
+      `);
+    },
+    
+    saveNew() {
+      const name = document.getElementById('d-name').value.trim();
+      if (!name) { App.toast('Nama utang wajib diisi', 'error'); return; }
+      const remaining = parseInt(document.getElementById('d-remaining').value) || 0;
+      App.state.debts.push({
+        id: H.uid(), name,
+        creditor: document.getElementById('d-creditor').value.trim(),
+        original: parseInt(document.getElementById('d-original').value) || remaining,
+        remaining,
+        interestMonthly: parseFloat(document.getElementById('d-interest').value) || 0,
+        minPayment: parseInt(document.getElementById('d-minpay').value) || 0,
+        dueDate: document.getElementById('d-due').value,
+        collateral: document.getElementById('d-collateral').value.trim(),
+        notes: document.getElementById('d-notes').value.trim(),
+        payments: [], negotiations: [], status: 'ACTIVE',
+      });
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Utang ditambahkan ✓', 'success');
+    },
+    
+    showPayment(id) {
+      App.openModal(`
+        <div class="modal-title">💳 Catat Pembayaran</div>
+        <div class="form-group">
+          <label class="form-label">Jumlah Dibayar</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="pay-amount" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal</label>
+          <input type="date" class="form-input" id="pay-date" value="${H.today()}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Dari jumlah itu, berapa bunga?</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="pay-interest" placeholder="0"></div>
+          <div class="form-hint">Digunakan untuk menghitung "total bunga terbayar bulan ini"</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Catatan</label>
+          <input class="form-input" id="pay-notes">
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.debts.savePayment('${id}')">Simpan</button>
+        </div>
+      `);
+    },
+    
+    savePayment(id) {
+      const amount = parseInt(document.getElementById('pay-amount').value) || 0;
+      if (!amount) { App.toast('Masukkan jumlah pembayaran', 'error'); return; }
+      const interest = parseInt(document.getElementById('pay-interest').value) || 0;
+      const date = document.getElementById('pay-date').value;
+      const debt = App.state.debts.find(d=>d.id===id);
+      if (!debt) return;
+      const principal = amount - interest;
+      debt.remaining = Math.max(0, debt.remaining - principal);
+      debt.payments = debt.payments || [];
+      debt.payments.push({ id: H.uid(), amount, interest, date, notes: document.getElementById('pay-notes').value });
+      // Track interest as expense
+      if (interest > 0) {
+        App.state.expenses.records.push({ id: H.uid(), description: `Bunga utang: ${debt.name}`, amount: interest, date, category: 'debt_interest', essential: true, isInterest: true });
+      }
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast(`Pembayaran ${H.formatRp(amount)} dicatat ✓`, 'success');
+    },
+    
+    showNegotiation(id) {
+      App.openModal(`
+        <div class="modal-title">✍️ Catat Negosiasi</div>
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select class="form-input form-select" id="neg-status">
+            <option value="CONTACTED">Sudah dihubungi</option>
+            <option value="NEGOTIATING">Sedang negosiasi</option>
+            <option value="AGREED">Setuju/Deal</option>
+            <option value="REJECTED">Ditolak</option>
+            <option value="FOLLOW_UP">Perlu follow-up</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tawaran / Permintaan Restrukturisasi</label>
+          <select class="form-input form-select" id="neg-offer-select" onchange="App.debts.fillOffer(this.value)">
+            <option value="">— Pilih template —</option>
+            <option value="Permohonan perpanjangan tenor">Perpanjangan tenor</option>
+            <option value="Permohonan penurunan bunga">Penurunan bunga</option>
+            <option value="Permohonan penghapusan denda keterlambatan">Hapus denda keterlambatan</option>
+            <option value="Permohonan penundaan pokok 3 bulan">Tunda pokok 3 bulan</option>
+            <option value="Permohonan penundaan pokok 6 bulan">Tunda pokok 6 bulan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Detail</label>
+          <textarea class="form-input form-textarea" id="neg-offer" placeholder="Jelaskan situasimu secara jujur..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal Kontak</label>
+          <input type="date" class="form-input" id="neg-date" value="${H.today()}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal Follow-up Berikutnya</label>
+          <input type="date" class="form-input" id="neg-followup">
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.debts.saveNegotiation('${id}')">Simpan</button>
+        </div>
+      `);
+    },
+    
+    fillOffer(val) {
+      if (val) document.getElementById('neg-offer').value = val;
+    },
+    
+    saveNegotiation(id) {
+      const debt = App.state.debts.find(d=>d.id===id);
+      if (!debt) return;
+      debt.negotiations = debt.negotiations || [];
+      debt.negotiations.push({
+        id: H.uid(),
+        status: document.getElementById('neg-status').value,
+        offer: document.getElementById('neg-offer').value.trim(),
+        date: document.getElementById('neg-date').value,
+        followUp: document.getElementById('neg-followup').value,
+      });
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Negosiasi dicatat ✓', 'success');
+    },
+    
+    showEdit(id) {
+      const d = App.state.debts.find(x=>x.id===id);
+      if (!d) return;
+      App.openModal(`
+        <div class="modal-title">✏️ Edit Utang</div>
+        <div class="form-group">
+          <label class="form-label">Nama Utang</label>
+          <input class="form-input" id="ed-name" value="${H.escHtml(d.name)}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Sisa Utang Sekarang</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ed-remaining" value="${d.remaining}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Bunga %/bln</label>
+          <input type="number" step="0.01" class="form-input" id="ed-interest" value="${d.interestMonthly}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Cicilan Min/Bln</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ed-minpay" value="${d.minPayment}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jatuh Tempo</label>
+          <input type="date" class="form-input" id="ed-due" value="${d.dueDate||''}">
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.debts.saveEdit('${id}')">Simpan</button>
+        </div>
+      `);
+    },
+    
+    saveEdit(id) {
+      const d = App.state.debts.find(x=>x.id===id);
+      if (!d) return;
+      d.name = document.getElementById('ed-name').value.trim() || d.name;
+      d.remaining = parseInt(document.getElementById('ed-remaining').value) || d.remaining;
+      d.interestMonthly = parseFloat(document.getElementById('ed-interest').value) || 0;
+      d.minPayment = parseInt(document.getElementById('ed-minpay').value) || 0;
+      d.dueDate = document.getElementById('ed-due').value;
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Utang diperbarui ✓', 'success');
+    },
+  },
+  
+  // ============================================================
+  // INCOME TRACKER
+  // ============================================================
+  income: {
+    render() {
+      const s = App.state;
+      const monthIncome = s.incomes.filter(i=>H.isThisMonth(i.date));
+      const totalMonth = monthIncome.reduce((a,i)=>a+i.amount,0);
+      const recurring = s.incomes.filter(i=>i.recurring).reduce((a,i)=>a+i.amount,0);
+      document.getElementById('income-month-total').textContent = H.formatRp(totalMonth);
+      document.getElementById('income-recurring-total').textContent = H.formatRp(recurring) + '/bln';
+      
+      const sorted = [...s.incomes].sort((a,b)=>b.date.localeCompare(a.date));
+      document.getElementById('income-list').innerHTML = sorted.length ? sorted.map(i => `
+        <div class="income-card">
+          <div class="income-icon-bg">${this.catIcon(i.category)}</div>
+          <div class="income-info">
+            <div class="income-source">${H.escHtml(i.source)}</div>
+            <div class="income-meta">${H.formatDate(i.date)} · ${i.category}</div>
+            ${i.recurring ? '<div class="recurring-badge">🔄 Rutin</div>' : ''}
+          </div>
+          <div style="text-align:right">
+            <div class="income-amount">${H.formatRp(i.amount)}</div>
+            <button class="btn btn-ghost btn-sm" onclick="App.income.remove('${i.id}')">✕</button>
+          </div>
+        </div>
+      `).join('') : '<div class="empty-state"><div class="empty-state-icon">💵</div><div class="empty-state-title">Belum ada pemasukan</div><div class="empty-state-text">Catat setiap pemasukan, sekecil apapun.</div></div>';
+      
+      // Opportunities
+      const opps = [...s.opportunities].sort((a,b)=>b.dateApplied?.localeCompare(a.dateApplied||''));
+      document.getElementById('opportunities-list').innerHTML = opps.length ? opps.map(o=>`
+        <div class="opportunity-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <div style="font-weight:600">${H.escHtml(o.title)}</div>
+              <div style="font-size:12px;color:var(--color-text-secondary)">${H.escHtml(o.company||'')} · ${o.type}</div>
+            </div>
+            <div style="text-align:right">
+              <div class="opp-${o.status}" style="font-size:12px;font-weight:700">${this.oppStatusLabel(o.status)}</div>
+              ${o.expectedIncome ? `<div style="font-size:12px;color:var(--green-600);font-weight:600">${H.formatRp(o.expectedIncome)}</div>` : ''}
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-2);margin-top:var(--space-3)">
+            <select class="form-input form-select" style="font-size:12px;padding:6px 24px 6px 8px;flex:1" onchange="App.income.updateOppStatus('${o.id}',this.value)">
+              ${['SAVED','APPLIED','INTERVIEW','NEGOTIATION','WON','LOST','CANCELLED'].map(st=>`<option value="${st}" ${o.status===st?'selected':''}>${this.oppStatusLabel(st)}</option>`).join('')}
+            </select>
+            <button class="btn btn-ghost btn-sm" onclick="App.income.removeOpp('${o.id}')">✕</button>
+          </div>
+          ${o.followUpDate ? `<div style="font-size:11px;color:var(--amber-600);margin-top:4px">⏰ Follow-up: ${H.formatDate(o.followUpDate)}</div>` : ''}
+        </div>
+      `).join('') : '<div style="font-size:13px;color:var(--color-text-muted);padding:var(--space-4)">Catat lamaran kerja atau calon klien di sini.</div>';
+    },
+    
+    catIcon(cat) {
+      const map = { job:'💼', freelance:'💻', client:'🤝', business:'🏪', daily:'⚒️', commission:'📊', asset_sale:'📦', other:'💵' };
+      return map[cat] || '💵';
+    },
+    
+    oppStatusLabel(st) {
+      const map = { SAVED:'Tersimpan', APPLIED:'Dilamar', INTERVIEW:'Interview', NEGOTIATION:'Negosiasi', WON:'Berhasil ✓', LOST:'Tidak jadi', CANCELLED:'Dibatalkan' };
+      return map[st] || st;
+    },
+    
+    showAdd() {
+      App.openModal(`
+        <div class="modal-title">+ Catat Pemasukan</div>
+        <div class="form-group">
+          <label class="form-label">Sumber / Deskripsi *</label>
+          <input class="form-input" id="i-source" placeholder="mis. Freelance desain, Gaji harian, Jual HP lama">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="i-cat">
+            <option value="job">Pekerjaan</option>
+            <option value="freelance">Freelance</option>
+            <option value="client">Klien</option>
+            <option value="business">Usaha</option>
+            <option value="daily">Kerja Harian</option>
+            <option value="commission">Komisi</option>
+            <option value="asset_sale">Jual Aset</option>
+            <option value="other">Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jumlah *</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="i-amount" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal</label>
+          <input type="date" class="form-input" id="i-date" value="${H.today()}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Klien / Pemberi Kerja</label>
+          <input class="form-input" id="i-client" placeholder="Opsional">
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-4)">
+          <div><div class="settings-item-label">Pemasukan Berulang?</div><div class="settings-item-sub">Tandai jika ini pemasukan rutin</div></div>
+          <label class="toggle"><input type="checkbox" id="i-recurring"><span class="toggle-slider"></span></label>
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.income.saveNew()">Simpan</button>
+        </div>
+      `);
+    },
+    
+    saveNew() {
+      const source = document.getElementById('i-source').value.trim();
+      const amount = parseInt(document.getElementById('i-amount').value) || 0;
+      if (!source || !amount) { App.toast('Isi sumber dan jumlah', 'error'); return; }
+      App.state.incomes.push({
+        id: H.uid(), source, amount,
+        category: document.getElementById('i-cat').value,
+        date: document.getElementById('i-date').value,
+        client: document.getElementById('i-client').value.trim(),
+        recurring: document.getElementById('i-recurring').checked,
+        status: 'RECEIVED', notes: '',
+      });
+      // Update profile income estimate
+      App.state.profile.monthlyIncome = App.state.incomes
+        .filter(i => H.isThisMonth(i.date))
+        .reduce((a,i)=>a+i.amount, 0);
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast(`${H.formatRp(amount)} dicatat ✓`, 'success');
+    },
+    
+    remove(id) {
+      App.state.incomes = App.state.incomes.filter(i=>i.id!==id);
+      App.save(); this.render();
+    },
+    
+    showAddOpp() {
+      App.openModal(`
+        <div class="modal-title">+ Tambah Peluang / Lamaran</div>
+        <div class="form-group">
+          <label class="form-label">Posisi / Proyek *</label>
+          <input class="form-input" id="o-title" placeholder="mis. Desainer UI Freelance, Admin Toko Online">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Perusahaan / Klien</label>
+          <input class="form-input" id="o-company" placeholder="Opsional">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tipe</label>
+          <select class="form-input form-select" id="o-type">
+            <option value="Pekerjaan Tetap">Pekerjaan Tetap</option>
+            <option value="Freelance">Freelance</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Gig/Ojol">Gig / Ojol</option>
+            <option value="Proyek Langsung">Proyek Langsung</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kanal</label>
+          <select class="form-input form-select" id="o-channel">
+            <option>Direct / Kontak Langsung</option>
+            <option>Projects.co.id</option>
+            <option>Sribulancer</option>
+            <option>Upwork</option>
+            <option>Fiverr</option>
+            <option>LinkedIn</option>
+            <option>Jobstreet</option>
+            <option>Ojol / Gojek / Grab</option>
+            <option>Marketplace (Tokopedia/Shopee)</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimasi Pemasukan</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="o-income" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal Lamar / Hubungi</label>
+          <input type="date" class="form-input" id="o-date" value="${H.today()}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal Follow-up</label>
+          <input type="date" class="form-input" id="o-followup">
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.income.saveOpp()">Simpan</button>
+        </div>
+      `);
+    },
+    
+    saveOpp() {
+      const title = document.getElementById('o-title').value.trim();
+      if (!title) { App.toast('Isi nama posisi/proyek', 'error'); return; }
+      App.state.opportunities.push({
+        id: H.uid(), title,
+        company: document.getElementById('o-company').value.trim(),
+        type: document.getElementById('o-type').value,
+        channel: document.getElementById('o-channel').value,
+        expectedIncome: parseInt(document.getElementById('o-income').value) || 0,
+        dateApplied: document.getElementById('o-date').value,
+        followUpDate: document.getElementById('o-followup').value,
+        status: 'APPLIED', notes: '',
+      });
+      App.save(); App.closeModal(); this.render();
+      App.toast('Peluang ditambahkan ✓', 'success');
+    },
+    
+    updateOppStatus(id, status) {
+      const o = App.state.opportunities.find(x=>x.id===id);
+      if (o) { o.status = status; App.save(); this.render(); }
+    },
+    
+    removeOpp(id) {
+      App.state.opportunities = App.state.opportunities.filter(o=>o.id!==id);
+      App.save(); this.render();
+    },
+  },
+  
+  // ============================================================
+  // EXPENSE TRACKER
+  // ============================================================
+  expenses: {
+    render() {
+      const s = App.state;
+      const records = s.expenses.records || [];
+      const thisMonth = records.filter(e => H.isThisMonth(e.date));
+      const essential = thisMonth.filter(e=>e.essential).reduce((a,e)=>a+e.amount,0);
+      const nonEssential = thisMonth.filter(e=>!e.essential).reduce((a,e)=>a+e.amount,0);
+      
+      document.getElementById('exp-essential-total').textContent = H.formatRp(essential);
+      document.getElementById('exp-nonessential-total').textContent = H.formatRp(nonEssential);
+      
+      const warnEl = document.getElementById('exp-warning-banner');
+      if (essential > 0 && nonEssential / essential > 0.3) {
+        warnEl.style.display = 'flex';
+      } else {
+        warnEl.style.display = 'none';
+      }
+      
+      const sorted = [...records].sort((a,b)=>b.date.localeCompare(a.date));
+      document.getElementById('expenses-list').innerHTML = sorted.length ? sorted.map(e=>`
+        <div class="income-card" style="border-left: 3px solid ${e.essential?'var(--teal-400)':'var(--amber-400)'}">
+          <div class="income-icon-bg" style="background:${e.essential?'var(--teal-50)':'var(--amber-50)'}">
+            ${this.catIcon(e.category)}
+          </div>
+          <div class="income-info">
+            <div class="income-source">${H.escHtml(e.description)}</div>
+            <div class="income-meta">${H.formatDate(e.date)} · ${e.essential?'Esensial':'Non-esensial'}</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:700;color:var(--red-600)">${H.formatRp(e.amount)}</div>
+            <button class="btn btn-ghost btn-sm" onclick="App.expenses.remove('${e.id}')">✕</button>
+          </div>
+        </div>
+      `).join('') : '<div class="empty-state"><div class="empty-state-icon">🧾</div><div class="empty-state-title">Belum ada pengeluaran tercatat</div><div class="empty-state-text">Catat pengeluaran harian untuk kontrol cashflow.</div></div>';
+    },
+    
+    catIcon(cat) {
+      const m = { food:'🍛', housing:'🏠', utilities:'⚡', transport:'🚗', comm:'📱', debt_interest:'💸', entertainment:'🎮', shopping:'🛒', eating_out:'🍜', other:'💳' };
+      return m[cat] || '💳';
+    },
+    
+    showAdd() {
+      App.openModal(`
+        <div class="modal-title">+ Catat Pengeluaran</div>
+        <div class="form-group">
+          <label class="form-label">Deskripsi *</label>
+          <input class="form-input" id="exp-desc" placeholder="mis. Makan siang, Bensin, Netflix">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jumlah *</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="exp-amount" placeholder="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="exp-cat">
+            <optgroup label="Esensial">
+              <option value="food">Makanan & Minuman</option>
+              <option value="housing">Tempat Tinggal</option>
+              <option value="utilities">Listrik & Air</option>
+              <option value="transport">Transportasi</option>
+              <option value="comm">Komunikasi</option>
+              <option value="health">Kesehatan</option>
+            </optgroup>
+            <optgroup label="Non-esensial">
+              <option value="entertainment">Hiburan</option>
+              <option value="shopping">Belanja</option>
+              <option value="eating_out">Makan di Luar</option>
+              <option value="subscription">Langganan</option>
+              <option value="other">Lainnya</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal</label>
+          <input type="date" class="form-input" id="exp-date" value="${H.today()}">
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-4)">
+          <div><div class="settings-item-label">Pengeluaran Esensial?</div></div>
+          <label class="toggle"><input type="checkbox" id="exp-essential" checked><span class="toggle-slider"></span></label>
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.expenses.saveNew()">Simpan</button>
+        </div>
+      `);
+    },
+    
+    saveNew() {
+      const desc = document.getElementById('exp-desc').value.trim();
+      const amount = parseInt(document.getElementById('exp-amount').value) || 0;
+      if (!desc || !amount) { App.toast('Isi deskripsi dan jumlah', 'error'); return; }
+      if (!App.state.expenses.records) App.state.expenses.records = [];
+      App.state.expenses.records.push({
+        id: H.uid(), description: desc, amount,
+        category: document.getElementById('exp-cat').value,
+        date: document.getElementById('exp-date').value,
+        essential: document.getElementById('exp-essential').checked,
+      });
+      App.save(); App.closeModal(); this.render();
+      App.toast(`${H.formatRp(amount)} dicatat ✓`, 'success');
+    },
+    
+    remove(id) {
+      App.state.expenses.records = (App.state.expenses.records||[]).filter(e=>e.id!==id);
+      App.save(); this.render();
+    },
+  },
+  
+  // ============================================================
+  // ASSET INVENTORY
+  // ============================================================
+  assets: {
+    render() {
+      const s = App.state;
+      const assets = s.assets || [];
+      const total = assets.reduce((a,x)=>a+x.value,0);
+      const liquid = assets.filter(x=>x.liquidatable && !x.keepForWork).reduce((a,x)=>a+x.value,0);
+      document.getElementById('asset-total-value').textContent = H.formatRp(total);
+      document.getElementById('asset-liquid-value').textContent = H.formatRp(liquid);
+      
+      document.getElementById('assets-list').innerHTML = assets.length ? assets.map(a=>`
+        <div class="income-card">
+          <div class="income-icon-bg">${this.catIcon(a.category)}</div>
+          <div class="income-info">
+            <div class="income-source">${H.escHtml(a.name)}</div>
+            <div class="income-meta">${a.category} ${a.keepForWork ? '· 🔧 Alat kerja' : ''}</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:700">${H.formatRp(a.value)}</div>
+            <div style="font-size:11px;color:${a.liquidatable&&!a.keepForWork?'var(--green-600)':'var(--slate-400)'}">${a.liquidatable&&!a.keepForWork?'Bisa dijual':'—'}</div>
+            <button class="btn btn-ghost btn-sm" onclick="App.assets.remove('${a.id}')">✕</button>
+          </div>
+        </div>
+      `).join('') : '<div class="empty-state"><div class="empty-state-icon">💰</div><div class="empty-state-title">Belum ada aset</div><div class="empty-state-text">Catat aset untuk mengetahui apa yang bisa dijual saat darurat.</div></div>';
+    },
+    
+    catIcon(cat) {
+      const m = { cash:'💵', bank:'🏦', vehicle:'🏍️', electronics:'📱', property:'🏠', business:'🏪', jewelry:'💍', other:'📦' };
+      return m[cat] || '📦';
+    },
+    
+    showAdd() {
+      App.openModal(`
+        <div class="modal-title">+ Tambah Aset</div>
+        <div class="form-group">
+          <label class="form-label">Nama Aset *</label>
+          <input class="form-input" id="a-name" placeholder="mis. HP Samsung A54, Motor Beat 2019">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="a-cat">
+            <option value="electronics">Elektronik</option>
+            <option value="vehicle">Kendaraan</option>
+            <option value="property">Properti</option>
+            <option value="cash">Uang Tunai</option>
+            <option value="jewelry">Perhiasan</option>
+            <option value="business">Peralatan Usaha</option>
+            <option value="other">Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimasi Nilai</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="a-value" placeholder="0"></div>
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-2)">
+          <div><div class="settings-item-label">Bisa dijual?</div></div>
+          <label class="toggle"><input type="checkbox" id="a-liquid" checked><span class="toggle-slider"></span></label>
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-4)">
+          <div><div class="settings-item-label">🔧 Dipakai untuk bekerja?</div><div class="settings-item-sub">Jika ya, tidak akan direkomendasikan untuk dijual</div></div>
+          <label class="toggle"><input type="checkbox" id="a-work"><span class="toggle-slider"></span></label>
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.assets.saveNew()">Simpan</button>
+        </div>
+      `);
+    },
+    
+    saveNew() {
+      const name = document.getElementById('a-name').value.trim();
+      if (!name) { App.toast('Nama aset wajib diisi', 'error'); return; }
+      App.state.assets.push({
+        id: H.uid(), name, value: parseInt(document.getElementById('a-value').value)||0,
+        category: document.getElementById('a-cat').value,
+        liquidatable: document.getElementById('a-liquid').checked,
+        keepForWork: document.getElementById('a-work').checked,
+        notes: '',
+      });
+      App.save(); App.closeModal(); this.render();
+      App.toast('Aset ditambahkan ✓', 'success');
+    },
+    
+    remove(id) {
+      App.state.assets = App.state.assets.filter(a=>a.id!==id);
+      App.save(); this.render();
+    },
+  },
+  
+  // ============================================================
+  // SETTINGS
+  // ============================================================
+  settings: {
+    exportData() {
+      const data = JSON.stringify(App.state, null, 2);
+      const blob = new Blob([data], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `rebound30-backup-${H.today()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      App.state.settings.lastExport = H.today();
+      App.save();
+      document.getElementById('last-export-text').textContent = `Terakhir export: ${H.formatDate(H.today())}`;
+      App.toast('Data berhasil di-export ✓', 'success');
+      App.checkBackupBanner && App.checkBackupBanner();
+    },
+    
+    importData() {
+      document.getElementById('import-file-input').click();
+    },
+    
+    handleImport(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (!data.meta || !data.profile) throw new Error('Format tidak valid');
+          if (confirm('Import akan menggantikan SEMUA data yang ada. Lanjutkan?')) {
+            App.state = data;
+            App.save();
+            App.navigate('dashboard');
+            App.toast('Data berhasil di-import ✓', 'success');
+          }
+        } catch {
+          App.toast('File tidak valid. Gunakan file backup Rebound 30.', 'error');
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = '';
+    },
+    
+    toggleBackupReminder(val) {
+      App.state.settings.backupReminderEnabled = val;
+      App.save();
+    },
+    
+    setBackupDays(val) {
+      App.state.settings.backupReminderDays = parseInt(val);
+      App.save();
+    },
+    
+    showRights() {
+      App.openModal(`
+        <div class="modal-title">⚖️ Hak-hak Kamu sebagai Debitur</div>
+        <div class="rights-card" style="margin-bottom:0">
+          <h4>Aturan Penagihan (POJK 22/2023 & SEOJK 19/2023)</h4>
+          <div class="rights-list">
+            <div class="rights-item">Penagihan hanya boleh antara <strong>08.00 – 20.00</strong> waktu setempat</div>
+            <div class="rights-item">Penagih wajib bersertifikasi AFPI dan membawa surat tugas resmi</div>
+            <div class="rights-item">Tidak boleh menghubungi orang lain (kontak HP, keluarga) tanpa persetujuanmu</div>
+            <div class="rights-item">Dilarang: ancaman, kekerasan, kata kasar, penyebaran data, cyberbullying</div>
+            <div class="rights-item">Bunga + biaya total tidak boleh melebihi 100% dari pokok pinjaman</div>
+            <div class="rights-item">Kamu berhak mengajukan restrukturisasi: perpanjang tenor, kurangi bunga, tunda pokok</div>
+            <div class="rights-item">Ajukan secara tertulis (email) sebelum benar-benar macet bayar</div>
+          </div>
+          <div class="rights-contact">
+            📞 OJK: 157 atau WhatsApp 081-157-157-157<br>
+            🌐 AFPI: afpi.or.id<br>
+            🚨 Ancaman/pemerasan: patrolisiber.id
+          </div>
+        </div>
+        <div style="margin-top:var(--space-4);padding:var(--space-3);background:var(--slate-50);border-radius:var(--radius-md);font-size:12px;color:var(--color-text-secondary)">
+          Info ini bersumber dari OJK dan peraturan yang berlaku. Ini bukan nasihat hukum profesional.
+        </div>
+        <button class="btn btn-primary btn-full" style="margin-top:var(--space-4)" onclick="App.closeModal()">Mengerti</button>
+      `);
+    },
+    
+    resetData() {
+      if (confirm('YAKIN? Semua data akan DIHAPUS PERMANEN dan tidak bisa dipulihkan.\n\nSarankan export dulu sebelum reset.')) {
+        if (confirm('Ini tidak bisa dibatalkan. Reset sekarang?')) {
+          localStorage.removeItem(Store.KEY);
+          location.reload();
+        }
+      }
+    },
+  },
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => App.init());
+} else {
+  App.init();
+}
+// Register Service Worker for PWA / Offline use
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').catch(function(err) {
+      console.log('SW registration error: ', err);
+    });
+  });
+}
+</script>
+</body>
+</html>
