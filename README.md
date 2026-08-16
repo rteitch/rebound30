@@ -53,7 +53,20 @@
 - **Pelunasan Sebelum Hari ke-30**: Otomatis membuka lencana prestasi **`🏆 Bebas Utang Total`**, memaksimalkan skor kesehatan finansial ($100/100$), dan mengalihkan rekomendasi ke pembentukan dana darurat 3–6 bulan.
 - **Perjalanan Pasca-30 Hari (`Hari 31+`)**: Aplikasi tidak kadaluarsa, bertransisi otomatis ke **Fase Pemeliharaan & Akumulasi Aset (*Maintenance & Growth*)** untuk pembiasaan disiplin finansial seumur hidup.
 
-### 6. 📚 Perpustakaan 20 Kisah Nyata Bangkit dari Utang (*20 Real-Life Recovery Stories*)
+### 6. 🧠 Matriks Keputusan Adaptif Multi-Variabel (*Adaptive Decision Engine*)
+Sistem mengolah 3 keputusan profil awal secara terpadu tanpa *gap* logika melalui 960 permutasi pengujian:
+- **Status Pekerjaan (*Employment Baseline*)**:
+  - *Tidak Bekerja / PHK*: Memacu misi `JOB_APPLICATION` dan `CLIENT_OUTREACH` kilat, mengunci pangan keluarga (`CUT_EXPENSE`).
+  - *Freelance / Usaha Kecil*: Memacu penawaran 3 prospek harian dan program langganan bulanan (`BUILD_RECURRING`).
+  - *Pekerja Harian*: Mendorong pesanan harian dan peningkatan keterampilan (`SKILL_BUILDING`).
+  - *Bekerja Kurang*: Mendorong *side-income* lepas dan restrukturisasi tenor cicilan (`NEGOTIATION`).
+- **Keahlian (*Skills Intangible Assets*)**:
+  - Menyuntikkan nama keahlian (Desain, Programming, Servis, Kuliner, dll.) langsung ke dalam draf instruksi tugas harian dan template chat WhatsApp siap salin.
+  - Memberikan bobot **+15 Poin Visibility** pada Rebound Score.
+- **Target Utama 30 Hari (*Primary Goal Driver*)**:
+  - Mengarahkan prioritas `CRITICAL` ke misi yang sesuai target (`Pemasukan Pertama`, `Dapat Kerja`, `Kurangi Utang`, `Pemasukan Rutin`, atau `Bantu Keluarga`).
+
+### 7. 📚 Perpustakaan 20 Kisah Nyata Bangkit dari Utang (*20 Real-Life Recovery Stories*)
 Arsip kurasi 20 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian:
 1. **Shao Baoling (邵宝玲)** — Ratu Koper Yiwu $\to$ Pemilik 3 Toko Bakpao (Utang > Rp 220 M)
 2. **Tang Jian (唐健)** — Raja Restoran Qingdao $\to$ Kios Sosis Panggang 25 m² (Utang Rp 100 M)
@@ -76,7 +89,7 @@ Arsip kurasi 20 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazin
 19. **Arif Sanyoto (Kang Arif)** — Bangkrut Kerugian Rp 1,5 Miliar & Modal Terakhir Rp 108.000 $\to$ Lumpia Sortalok 5.000 Pcs/Hari & Penulis Buku 27 Hari Bebas Utang
 20. **Bonzor** — Utang Rp 15 Miliar & Selamat dari Racun Serangga $\to$ Makelar Besi, Sedekah Rp 2,5 M, Lunas 40 Hari & Pengasuh 37 Anak Yatim
 
-### 7. 🛡️ 100% Privasi & Offline-First (PWA Service Worker v3)
+### 8. 🛡️ 100% Privasi & Offline-First (PWA Service Worker v4 & Self-Hosted Fonts)
 - Seluruh data transaksi, utang, pengeluaran, dan jurnal tersimpan secara lokal di browser (`localStorage`).
 - *Service Worker v3* menyaring skema protokol ekstensi browser (*Chrome/Firefox extensions*) untuk memastikan *caching* aman tanpa error.
 - Tersedia fitur Ekspor/Impor JSON dengan verifikasi skema untuk pencadangan manual.
