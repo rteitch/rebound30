@@ -2530,6 +2530,93 @@ const Stories = {
         'Nama Bisnis Bisa Menjadi Jangkar Mental: Mengganti nama dari "Gunung Raya" ke "Bangket Sejati" bukan sekadar rebranding — itu adalah ritual psikologis yang membantu Maimun menegaskan identitas barunya sebagai orang yang telah bangkit.',
         'Pinjaman Tanpa Bunga dari Lembaga Sosial adalah Opsi Nyata: Rp 4,5 juta dari rumah zakat tanpa bunga adalah contoh nyata bahwa lembaga zakat dan sosial bisa menjadi sumber modal mikro di saat darurat — sesuatu yang sering dilupakan oleh pengusaha kecil.'
       ]
+    },
+    {
+      id: 'fauzi',
+      featured: false,
+      name: 'Fauzi Priambodo',
+      tagline: 'Dari "Adiktif Utang" Rp 140 Miliar & Tender Proyek Macet 2020, Jual 20 Toko & Bergabung SyaREA World untuk Bangkit',
+      title: 'Dari Kecanduan Utang Rp 140 Miliar, Kini Bebas dan Bangkit',
+      subtitle: 'CEO PT Inspirasi Prima Nusantara — Melunasi Utang Rp 140 Miliar dengan Menjual 20 Toko',
+      origin: 'Indonesia',
+      ageAtRebound: '40-an Thn',
+      categories: ['debt', 'bankrupt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 140 M',
+      badge: 'Lunas — 20 Toko Dilepas demi Kebebasan',
+      theme: 'indigo',
+      accentColor: '#4338CA',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: 'Rp 140 Miliar',
+        age: '40-an Tahun',
+        lowest: 'Tender Proyek Raksasa Macet 2020, Dana Mengalir Keluar Tanpa Pemasukan',
+        action: 'Jual 20 Toko + Bergabung Komunitas SyaREA World',
+        result: 'Lunas Rp 140 M — Bebas dari Lingkaran Kecanduan Utang'
+      },
+      timeline: [
+        { year: 'Awal Ekspansi', text: 'Mulai meminjam Rp 1–2 miliar untuk ekspansi bisnis. Setiap pinjaman terasa seperti solusi — padahal sedang membangun gunung utang.' },
+        { year: 'Adiktif Utang', text: 'Pinjaman terus bertambah tanpa perhitungan matang. Total utang membengkak hingga Rp 140 miliar.' },
+        { year: '2020 — Tender Macet', text: 'Mendapat tender proyek besar yang tidak berjalan sesuai rencana. Dana keluar, pemasukan macet, keuangan perusahaan tertekan ekstrem.' },
+        { year: 'Titik Balik — SyaREA World', text: 'Bergabung dengan komunitas SyaREA World. Mendapat pandangan baru: ada cara berkembang tanpa jebakan utang.' },
+        { year: 'Jual 20 Toko', text: 'Mengambil keputusan menyakitkan: melepas 20 toko yang dibangun dengan susah payah untuk menutup seluruh utang.' },
+        { year: 'Hari Ini — Lunas', text: 'Seluruh utang Rp 140 miliar berhasil dilunasi. Membangun bisnis baru dengan fondasi yang lebih hati-hati dan bijak.' }
+      ],
+      quote: 'Utang bisa menjadi bahan bakar pertumbuhan bisnis sekaligus jebakan yang mematikan.',
+      quoteAuthor: 'Fauzi Priambodo, CEO PT Inspirasi Prima Nusantara',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pengusaha yang Terlalu Cepat Berlari',
+          paragraphs: [
+            'Fauzi Priambodo adalah seorang pengusaha dengan ambisi besar. Perusahaannya, PT Inspirasi Prima Nusantara, bergerak cepat. Ekspansi demi ekspansi ia lakukan. Toko-toko baru dibuka. Proyek-proyek besar ia kejar. Setiap pertumbuhan terasa seperti bukti bahwa ia berada di jalur yang benar.',
+            'Untuk membiayai semua itu, ia mulai meminjam. Awalnya hanya Rp 1 miliar. Lalu Rp 2 miliar. Lalu terus bertambah, karena setiap toko baru butuh modal, setiap proyek baru butuh dana talangan, dan setiap ekspansi butuh leverage.',
+            '"Saya sudah adiktif utang," akunya kemudian. Ia tidak menyadari bahwa ia sedang berjalan di atas jurang. Setiap pinjaman baru terasa seperti solusi — padahal, itu hanya menambah beban yang suatu hari akan menghantamnya dengan kekuatan yang jauh lebih besar dari semua keuntungan yang pernah ia raih.'
+          ]
+        },
+        {
+          num: 2,
+          title: '2020 — Tender yang Menjadi Bumerang',
+          paragraphs: [
+            'Tahun 2020 datang dengan mimpi besar. Fauzi mendapatkan tender proyek raksasa. Ia yakin ini adalah langkahnya menuju puncak. Ia mengeluarkan dana besar. Ia mempersiapkan segalanya dengan antusias.',
+            'Tapi proyek itu tidak berjalan sesuai rencana. Dana yang sudah dikeluarkan mengalami kemacetan. Tidak ada pemasukan yang masuk untuk menutup arus kas yang terus keluar. Sementara utang-utang lama terus berbunga.',
+            'Fauzi duduk di ruang kerjanya, memandangi tumpukan tagihan yang kini totalnya mencapai Rp 140 miliar. Sebuah angka yang dulu terasa seperti ukuran ambisi, kini terasa seperti rantai yang mengikat kedua tangannya. "Bagaimana caraku keluar dari sini?" tanya batinnya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Titik Balik di Komunitas SyaREA World',
+          paragraphs: [
+            'Di titik terendah itulah, Fauzi menemukan jalan. Ia bergabung dengan komunitas SyaREA World — sebuah wadah bagi para pengusaha yang ingin menjalankan bisnis sesuai prinsip syariah dan keluar dari jebakan utang konvensional.',
+            'Di sana, ia mendapatkan pandangan baru. Ia belajar bahwa utang bukanlah satu-satunya jalan untuk berkembang. Bahwa ada cara lain — lebih lambat, mungkin, tapi jauh lebih kokoh dan bebas dari lingkaran setan yang selama ini memenjarakannya.',
+            '"Saya berhenti untuk utang," katanya — sebuah keputusan yang terdengar sederhana, tapi membutuhkan keberanian luar biasa dari seseorang yang sudah puluhan miliar terjerat di dalamnya. Komunitas itu memberinya keberanian untuk mengambil langkah yang selama ini ia takuti.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Menjual 20 Toko untuk Kebebasan',
+          paragraphs: [
+            'Fauzi mengambil keputusan yang menyakitkan namun perlu: menjual 20 tokonya. Dua puluh toko. Dua puluh tempat yang ia bangun dengan susah payah selama bertahun-tahun. Dua puluh bukti nyata dari ambisi dan kerja kerasnya.',
+            'Ia harus melepaskan semuanya. Tapi ia tahu, ini adalah harga yang harus ia bayar untuk kebebasan. Satu per satu, toko-toko itu ia lepas. Uangnya ia gunakan untuk menutup utang — bukan untuk ekspansi baru, bukan untuk proyek baru, tapi untuk melunasi setiap kewajiban yang pernah ia buat.',
+            'Perlahan, beban Rp 140 miliar yang dulu terasa seperti gunung yang mustahil didaki, mulai terkikis. Sedikit demi sedikit. Dengan setiap pelepasan aset, ia bukan hanya membayar utang — ia juga membayar tunai pelajaran paling mahal dalam hidupnya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Bebas dari Kecanduan, Membangun Ulang dengan Bijak',
+          paragraphs: [
+            'Hari ini, Fauzi Priambodo bukan lagi pengusaha yang terjerat utang Rp 140 miliar. Ia telah bangkit. Ia telah bebas. Dari pengalaman pahitnya, ia belajar satu hal yang sederhana namun dalam: ekspansi tanpa perhitungan adalah jalan menuju kehancuran.',
+            '"Utang bisa menjadi bahan bakar pertumbuhan bisnis sekaligus jebakan yang mematikan," demikian pesan yang ia sampaikan kepada para pengusaha lain. Ia tidak lagi "adiktif utang". Ia membangun bisnisnya dengan lebih hati-hati, lebih bijak, dan lebih sesuai dengan prinsip yang ia yakini.',
+            'Dari seorang pengusaha yang hampir tenggelam dalam utang Rp 140 miliar, kini ia berdiri sebagai bukti bahwa kadang, kita harus rela melepas untuk bisa bertahan — dan dari sana, kebangkitan sejati dimulai. Bukan dengan lebih banyak pinjaman. Bukan dengan lebih banyak toko. Tapi dengan lebih banyak kebijaksanaan.'
+          ]
+        }
+      ],
+      takeaways: [
+        '"Adiktif Utang" adalah Jebakan Nyata — Bukan Metafora: Fauzi mengakui kecanduan pinjaman seperti mengakui adiksi. Setiap kali bisnis butuh modal, refleks pertama harus bukan "pinjam dari mana?" tapi "apakah ini benar-benar dibutuhkan sekarang?"',
+        'Tender Besar Tanpa Analisis Risiko = Bom Waktu: Proyek besar yang tidak berjalan sesuai rencana menjadi pemicu krisis final. Selalu sisihkan dana cadangan minimum 20–30% dari nilai tender sebelum menerima proyek besar.',
+        'Melepas Aset adalah Strategi, Bukan Kekalahan: Menjual 20 toko terasa seperti menyerah, tapi itu adalah strategi terbaik yang menyelamatkan nama baik dan kebebasan finansial Fauzi. Aset bisa dibangun ulang — reputasi lebih sulit diperbaiki.',
+        'Komunitas yang Tepat Bisa Mengubah Cara Pandang: Bergabung dengan SyaREA World memberi Fauzi perspektif baru yang tidak bisa ia temukan sendiri. Di saat paling bingung, komunitas yang tepat adalah navigator terbaik.'
+      ]
     }
   ],
 
