@@ -2,7 +2,7 @@
 
 [![Live App](https://img.shields.io/badge/Live-rebound30.vercel.app-teal?style=for-the-badge&logo=vercel)](https://rebound30.vercel.app/)
 [![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-110%2F110%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
-[![Tests](https://img.shields.io/badge/Automated%20Tests-363%2F363%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Tests](https://img.shields.io/badge/Automated%20Tests-395%2F395%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Gap Audit](https://img.shields.io/badge/Decision%20Matrix-1440%20Permutasi%20%C2%B7%200%20Gap-blueviolet?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
@@ -170,6 +170,7 @@ d:\Project\ui\
     ├── timezone_integrity.js      # Regresi tanggal lintas zona waktu (WIB/WITA/WIT + kontrol)
     ├── features_test.js           # Prioritas utang, DTI, pengingat, laporan bulanan, review, 90 hari
     ├── search_test.js             # Pencarian Kisah: kontrak DOM (fokus input), cakupan, padanan kata
+    ├── layout_test.js             # Target sentuh 44px, urutan cascade, grid, lebar dropdown, label
     └── deep_gap_audit.js          # Sapuan 1.440 permutasi matriks keputusan tanpa gap
 ```
 
@@ -188,6 +189,7 @@ Seluruh logika perhitungan finansial, alur fase pemulihan, dan antarmuka aplikas
 | **Timezone Integrity** | Regresi tanggal pada 6 zona waktu (WIB, WITA, WIT, UTC+14, UTC-8, UTC+5:45) di 7 jam rawan per zona. | **132/132 PASSED (100%)** |
 | **Fitur Pemulihan Lanjutan** | Prioritas utang berbasis agunan & risiko hukum, rasio DTI, status `NO_INCOME`, pengingat follow-up, laporan bulanan, review mingguan, rencana 90 hari, integritas ekspor CSV. | **82/82 PASSED (100%)** |
 | **Pencarian Kisah Bangkit** | Kontrak DOM (mengetik tidak boleh membangun ulang kotak pencarian), cakupan field termasuk kota, pencocokan banyak kata (AND), dan padanan kosakata sehari-hari. | **39/39 PASSED (100%)** |
+| **Tata Letak & Target Sentuh** | Minimum 44px pada perangkat sentuh beserta urutan cascade-nya, grid statistik bebas pemaksaan `!important`, lebar dropdown, panjang label opsi, dan label kategori berbahasa Indonesia. | **32/32 PASSED (100%)** |
 | **Decision Matrix Gap Audit** | Sapuan 1.440 permutasi variabel (Pekerjaan × Target × Keahlian × Hari × Kondisi Keuangan), 11 kaidah per permutasi. | **0 GAP / 100% COVERED** |
 
 Untuk menjalankan seluruh pengujian sekaligus:
@@ -204,6 +206,7 @@ node tests/data_integrity.js
 node tests/timezone_integrity.js
 node tests/features_test.js
 node tests/search_test.js
+node tests/layout_test.js
 node tests/deep_gap_audit.js
 ```
 
@@ -218,6 +221,8 @@ Tiga aturan berikut mudah dilanggar kembali tanpa disadari, sehingga masing-masi
 5. **Bahasa aplikasi tidak menghakimi.** Peringatan pengeluaran dan catatan review mingguan diuji otomatis agar bebas dari kata seperti "boros", "gagal", atau "buruk" (PRD §7.4 No Shame). Dijaga oleh `features_test.js`.
 6. **Setiap berkas skrip baru wajib ikut diaudit.** `audit_all_buttons.js` membandingkan daftar `<script>` di `index.html` dengan daftar yang dimuatnya dan gagal bila ada yang terlewat.
 7. **Handler input tidak boleh membangun ulang elemen input itu sendiri.** Menulis ulang `innerHTML` induk saat pengguna mengetik akan menghancurkan node input dan membuang fokus keyboard — pengguna hanya bisa mengetik satu huruf. Perbarui hanya bagian yang berubah. Dijaga oleh `search_test.js`.
+8. **Nilai dasar CSS ditulis sebelum blok media query yang menimpanya.** Kekhususan selektor yang sama membuat aturan terakhir menang; menaruh `.btn-sm { min-height: 38px }` setelah blok `pointer: coarse` diam-diam mengembalikan tombol ponsel ke ukuran kecil. Dijaga oleh `layout_test.js`.
+9. **`!important` tidak dipakai untuk memaksa jumlah kolom grid.** `!important` mengalahkan style inline, sehingga halaman yang sengaja memakai dua kartu ikut diperas mengikuti tata letak halaman lain. Dijaga oleh `layout_test.js`.
 
 ---
 

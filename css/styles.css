@@ -1526,7 +1526,6 @@ img { max-width: 100%; }
 @media (min-width: 1200px) {
   .stats-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--space-3);
   margin-bottom: var(--space-5);
 }
@@ -2724,7 +2723,6 @@ img { max-width: 100%; }
   }
   .stats-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--space-3);
   margin-bottom: var(--space-5);
 }
@@ -2944,7 +2942,6 @@ html, body {
   }
   .stats-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--space-3);
   margin-bottom: var(--space-5);
 }
@@ -3645,16 +3642,17 @@ ul li, ol li {
 /* ============================================================
    RESPONSIVE 5-PILLAR STATS GRID
    ============================================================ */
-@media (min-width: 1100px) {
-  .stats-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-  }
-}
-@media (max-width: 1099px) and (min-width: 769px) {
-  .stats-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-}
+/* CATATAN PERBAIKAN
+   Aturan lama memaksa `.stats-grid` menjadi 5 kolom dengan !important di
+   layar lebar. Karena !important mengalahkan style inline, layar
+   Pengeluaran dan Aset — yang sengaja menulis `repeat(2,1fr)` karena hanya
+   punya DUA kartu — ikut dipaksa jadi 5 kolom. Setiap kartu menyusut ke
+   ~112px sehingga nominal seperti "Rp 2.750.000" (butuh ~130px) terpotong
+   di desktop.
+
+   Sekarang di layar lebar setiap halaman menentukan jumlah kolomnya
+   sendiri; pemaksaan hanya dilakukan saat layar menyempit, di mana
+   meruntuhkan kolom memang perlu agar angka tetap terbaca. */
 @media (max-width: 768px) and (min-width: 481px) {
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -4202,3 +4200,186 @@ body.modal-open { overflow: hidden; }
   padding: 5px 13px; font-size: 12px; font-weight: 700; cursor: pointer;
 }
 .story-suggest-chip:hover { background: var(--teal-100); border-color: var(--teal-500); }
+
+
+/* ============================================================
+   TARGET SENTUH & KENYAMANAN MOBILE (PRD §47)
+   ============================================================
+   Audit menemukan 40 kejadian target sentuh di bawah 44px: seluruh
+   .btn-sm hanya setinggi 34px, tombol tutup pengingat 30px, dan chip
+   kategori Kisah 32px. Untuk aplikasi yang dipakai orang di bawah
+   tekanan — sering sambil berdiri, satu tangan — tombol yang meleset
+   bukan gangguan kecil.
+
+   URUTAN PENTING: nilai dasar ditulis lebih dulu, lalu penimpaan untuk
+   perangkat sentuh. Bila dibalik, aturan dasar yang muncul belakangan
+   akan mengalahkan blok sentuh karena kekhususannya sama. */
+
+/* --- Dasar (desktop dengan tetikus) --- */
+.btn-sm { min-height: 38px; }
+.story-category-chip { min-height: 38px; }
+.bookmark-btn { width: 38px; height: 38px; }
+.notif-dismiss { width: 36px; height: 36px; }
+
+/* --- Perangkat sentuh & layar sempit: minimum 44px --- */
+@media (max-width: 900px), (pointer: coarse) {
+  .btn { min-height: 46px; padding-block: var(--space-3); }
+  .btn-sm { min-height: 44px; padding: 10px 14px; font-size: 12.5px; }
+
+  .form-input,
+  .form-select,
+  select.form-input,
+  input.form-input { min-height: 46px; font-size: 15px; }
+  textarea.form-input { min-height: 88px; font-size: 15px; }
+
+  .toggle { min-width: 48px; min-height: 28px; }
+  .notif-dismiss { width: 44px; height: 44px; font-size: 22px; }
+  .story-category-chip { min-height: 44px; padding-block: 9px; }
+  .story-suggest-chip { min-height: 40px; padding: 9px 15px; }
+  .bookmark-btn { width: 44px; height: 44px; }
+  .mission-check { min-width: 34px; min-height: 34px; }
+  .debt-reorder .btn { min-height: 44px; padding: 8px 16px; }
+
+  .settings-item { gap: var(--space-3); }
+  .settings-item .btn-sm { flex-shrink: 0; }
+}
+
+/* Pada layar sangat sempit, tombol aksi kartu melebar penuh supaya
+   tidak berimpitan dan mudah dituju. */
+@media (max-width: 400px) {
+  .mission-card .btn-sm,
+  .debt-card-body .btn-sm { flex: 1 1 auto; justify-content: center; }
+}
+
+/* ============================================================
+   DROPDOWN — LEBAR & KETERBACAAN
+   ============================================================
+   Audit menemukan 15 dropdown lebih sempit daripada teks opsi
+   terpanjangnya, sehingga pilihan yang sedang aktif terpotong.
+   Contoh: pemilih strategi utang 238px padahal butuh ~285px. */
+.form-select,
+select.form-input {
+  width: 100%;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  padding-right: 38px; /* ruang untuk tanda panah */
+}
+
+@media (max-width: 640px) {
+  .settings-item { flex-wrap: wrap; }
+  .settings-item > .form-select,
+  .settings-item > select.form-input { width: 100% !important; }
+
+  .mr-toolbar { flex-direction: column; align-items: stretch; }
+  .mr-toolbar select { width: 100% !important; }
+  .mr-toolbar .btn { width: 100%; }
+
+  .debt-strategy-row { flex-direction: column; align-items: stretch !important; gap: 8px !important; }
+  .debt-strategy-row select { width: 100% !important; }
+}
+
+/* Statistik mikro pada kartu kisah: biarkan membungkus ke baris kedua
+   ketimbang memotong nominal jadi "Rp 220 M (100 Jt Y…" yang kehilangan
+   makna. Angka utang adalah inti kartunya. */
+@media (max-width: 480px) {
+  .micro-stat-item { flex-wrap: wrap; }
+  .micro-stat-val { white-space: normal; overflow: visible; text-align: left; }
+}
+
+/* ============================================================
+   KARTU UTANG — TATA LETAK LAYAR SEMPIT
+   ============================================================
+   Header kartu memakai dua kolom berdampingan. Di layar 320–360px
+   kolom kanan ("Sisa dari Rp 12.000.000 (38% terbayar)") memaksa
+   kolom kiri menyempit, sehingga nama utang terpecah di tengah dan
+   badge nomor urut tersangkut di antara barisnya. Di lebar sempit
+   dua kolom itu ditumpuk supaya keduanya terbaca utuh. */
+@media (max-width: 420px) {
+  .debt-card-header {
+    flex-direction: column;
+    gap: 8px;
+    padding: var(--space-4);
+  }
+  .debt-card-header > div:last-child { text-align: left !important; }
+  .debt-amount { font-size: 20px; }
+  .debt-progress-text { font-size: 11.5px; }
+  .debt-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .debt-creditor {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .negotiation-status { white-space: nowrap; }
+  .debt-why, .debt-reorder { padding-inline: var(--space-4); }
+  .debt-card-body { padding: var(--space-4); }
+  .debt-meta-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   KEJELASAN TOMBOL & AREA SENTUH AKSI UTAMA
+   ============================================================ */
+
+/* Tombol ghost tanpa latar dan tanpa garis tepi terbaca seperti teks
+   biasa, sehingga pengguna ragu apakah bisa ditekan. Di perangkat
+   sentuh (tanpa hover untuk memberi petunjuk) beri garis tepi halus. */
+@media (max-width: 900px), (pointer: coarse) {
+  .btn-ghost {
+    border: 1.5px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  .btn-ghost:active { background: var(--slate-100); }
+}
+
+/* Lingkaran centang misi adalah aksi utama layar Misi, tetapi lingkaran
+   visualnya hanya 34px. Area sentuhnya diperluas ke 44px lewat elemen
+   semu sehingga tetap terlihat ringkas namun mudah dituju. */
+.mission-check { position: relative; }
+.mission-check::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 44px; height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+/* Umpan balik sentuh: tanpa hover, pengguna butuh tanda bahwa
+   ketukannya diterima. */
+@media (pointer: coarse) {
+  .btn:active { transform: scale(0.97); }
+  .stat-card-clickable:active { background: var(--slate-50); }
+  .mission-card:active { background: var(--slate-50); }
+  .story-catalog-card:active { transform: scale(0.99); }
+}
+
+/* Bilah kategori Kisah bisa digeser mendatar — beri petunjuk visual
+   bahwa masih ada isi di sebelah kanan. */
+.story-category-bar {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.story-category-bar::-webkit-scrollbar { display: none; }
+
+/* Placeholder pencarian: pada layar sangat sempit ukuran huruf sedikit
+   diturunkan agar seluruh petunjuknya terbaca, bukan terpotong. */
+@media (max-width: 380px) {
+  .story-search-input::placeholder { font-size: 13px; }
+}
+
+/* Bilah kategori Kisah dapat digeser mendatar. Tanpa petunjuk apa pun,
+   pengguna mengira daftar kategorinya hanya sebanyak yang terlihat.
+   Gradien tipis di tepi kanan menandakan masih ada isi berikutnya. */
+.story-category-bar {
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%);
+}
+@media (min-width: 1100px) {
+  /* Di layar lebar seluruh chip muat, jadi petunjuk tidak diperlukan. */
+  .story-category-bar { -webkit-mask-image: none; mask-image: none; }
+}

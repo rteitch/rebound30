@@ -609,13 +609,13 @@
           <div class="total-bar-value negative" id="debt-total-value">Rp 0</div>
         </div>
 
-        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
-          <div style="font-size:13px;font-weight:600;color:var(--color-text-secondary);">Strategi:</div>
-          <select class="form-input form-select" id="debt-strategy-select" style="width:auto;padding:8px 28px 8px 12px;" onchange="App.debts.setStrategy(this.value)">
-            <option value="risk_first">Risk First (Risiko Tertinggi)</option>
-            <option value="avalanche">Avalanche (Bunga Tertinggi)</option>
-            <option value="snowball">Snowball (Saldo Terkecil)</option>
-            <option value="custom">Custom</option>
+        <div class="debt-strategy-row" style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
+          <label style="font-size:13px;font-weight:600;color:var(--color-text-secondary);flex-shrink:0;" for="debt-strategy-select">Strategi:</label>
+          <select class="form-input form-select" id="debt-strategy-select" style="flex:1;min-width:0;" onchange="App.debts.setStrategy(this.value)">
+            <option value="risk_first">Risk First — Risiko Tertinggi</option>
+            <option value="avalanche">Avalanche — Bunga Tertinggi</option>
+            <option value="snowball">Snowball — Saldo Terkecil</option>
+            <option value="custom">Custom — Urutan Sendiri</option>
           </select>
         </div>
 
@@ -876,11 +876,11 @@
             <label class="form-label">Status Pekerjaan Saat Ini</label>
             <select class="form-input form-select" id="settings-profile-employment">
               <option value="tidak_bekerja">Tidak bekerja</option>
-              <option value="baru_phk">Baru kehilangan pekerjaan / PHK</option>
+              <option value="baru_phk">Baru kehilangan pekerjaan</option>
               <option value="freelance">Freelance / Pekerja Lepas</option>
-              <option value="pekerja_harian">Pekerja harian / Gig worker</option>
-              <option value="usaha_kecil">Pemilik Usaha Kecil / Dagang</option>
-              <option value="bekerja_kurang">Bekerja tapi pemasukan tidak cukup</option>
+              <option value="pekerja_harian">Pekerja harian / Gig</option>
+              <option value="usaha_kecil">Pemilik Usaha Kecil</option>
+              <option value="bekerja_kurang">Bekerja, pemasukan kurang</option>
               <option value="lainnya">Lainnya</option>
             </select>
             <div class="form-hint">Jika kamu baru mendapat pekerjaan atau beralih profesi, perbarui di sini agar misi harian menyesuaikan secara otomatis.</div>
@@ -898,11 +898,11 @@
           <div class="form-group" style="margin-bottom:14px;">
             <label class="form-label">Target Utama 30 Hari</label>
             <select class="form-input form-select" id="settings-profile-goal">
-              <option value="pemasukan_pertama">Pemasukan Pertama (Cash Velocity 24–48 Jam)</option>
+              <option value="pemasukan_pertama">Pemasukan Pertama (24–48 Jam)</option>
               <option value="dapat_kerja">Dapat Pekerjaan Baru</option>
               <option value="kurangi_utang">Kurangi & Negosiasi Utang</option>
-              <option value="pemasukan_rutin">Bangun Pemasukan Rutin / Retainer</option>
-              <option value="bantu_keluarga">Bantu Keluarga & Stabilkan Arus Kas</option>
+              <option value="pemasukan_rutin">Bangun Pemasukan Rutin</option>
+              <option value="bantu_keluarga">Bantu Keluarga & Arus Kas</option>
             </select>
             <div class="form-hint">Mengarahkan prioritas misi paling mendesak yang perlu kamu selesaikan.</div>
           </div>
@@ -991,7 +991,7 @@
             <div>
               <div class="settings-item-label">Ingatkan setiap</div>
             </div>
-            <select class="form-input form-select" id="backup-days-select" style="width:auto;padding:8px 28px 8px 12px;" onchange="App.settings.setBackupDays(this.value)">
+            <select class="form-input form-select" id="backup-days-select" style="min-width:120px;" onchange="App.settings.setBackupDays(this.value)">
               <option value="3">3 hari</option>
               <option value="7" selected>7 hari</option>
               <option value="14">14 hari</option>

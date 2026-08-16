@@ -337,7 +337,12 @@ const App = {
     if (this.notifications) this.notifications.updateBadge();
 
     this.refreshIcons();
-    window.scrollTo(0, 0);
+
+    // Pindah layar harus terasa seketika. Tanpa `behavior:'instant'`,
+    // aturan global `html { scroll-behavior: smooth }` membuat halaman
+    // panjang ikut beranimasi menggulir ke atas setiap kali menekan menu —
+    // isi layar tampak berkelebat sebelum berhenti.
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   },
   
   // ---- DASHBOARD ----
@@ -2039,7 +2044,7 @@ const App = {
           <div class="income-icon-bg">${this.catIcon(i.category)}</div>
           <div class="income-info">
             <div class="income-source">${H.escHtml(i.source)}</div>
-            <div class="income-meta">${H.formatDate(i.date)} · ${i.category}</div>
+            <div class="income-meta">${H.formatDate(i.date)} · ${H.escHtml(H.catLabel(i.category))}</div>
             ${i.recurring ? '<div class="recurring-badge">Rutin</div>' : ''}
           </div>
           <div style="text-align:right">
@@ -2065,7 +2070,7 @@ const App = {
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <div>
               <div style="font-weight:700;color:var(--slate-900);">${H.escHtml(o.title)}</div>
-              <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px;">${H.escHtml(o.company||'')} · ${o.type}</div>
+              <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px;">${H.escHtml(o.company||'')} · ${H.escHtml(H.catLabel(o.type))}</div>
             </div>
             <div style="text-align:right">
               <div class="opp-${o.status}" style="font-size:12px;font-weight:700">${this.oppStatusLabel(o.status)}</div>
@@ -2379,7 +2384,7 @@ const App = {
           <div class="income-icon-bg" style="background:#fee2e2;color:#dc2626;">${this.catIcon(e.category)}</div>
           <div class="income-info">
             <div class="income-source">${H.escHtml(e.description)}</div>
-            <div class="income-meta">${H.formatDate(e.date)} · ${e.category}</div>
+            <div class="income-meta">${H.formatDate(e.date)} · ${H.escHtml(H.catLabel(e.category))}</div>
           </div>
           <div style="text-align:right">
             <div style="font-weight:700;color:var(--red-600)">-${H.formatRp(e.amount)}</div>
@@ -2630,7 +2635,7 @@ const App = {
           <div class="income-icon-bg">${this.catIcon(a.category)}</div>
           <div class="income-info">
             <div class="income-source">${H.escHtml(a.name)}</div>
-            <div class="income-meta">${a.category} ${a.keepForWork ? '· Alat kerja' : ''}</div>
+            <div class="income-meta">${H.escHtml(H.catLabel(a.category))}${a.keepForWork ? ' · Alat kerja' : ''}</div>
           </div>
           <div style="text-align:right">
             <div style="font-weight:700">${H.formatRp(a.value)}</div>

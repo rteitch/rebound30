@@ -3,7 +3,7 @@
 // PENTING: naikkan CACHE_NAME setiap kali daftar berkas atau isi berkas
 // berubah. Tanpa itu, service worker lama terus menyajikan JS versi
 // sebelumnya dari cache dan pengguna tidak pernah menerima perbaikan.
-const CACHE_NAME = 'rebound30-v6';
+const CACHE_NAME = 'rebound30-v7';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

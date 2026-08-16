@@ -82,6 +82,37 @@ const H = {
     return Math.min(Math.max(n, 0), 1000);
   },
 
+  /**
+   * Label kategori berbahasa Indonesia.
+   *
+   * Beberapa daftar menampilkan `item.category` mentah, sehingga kunci
+   * internal seperti "eating_out", "asset_sale", dan "debt_interest"
+   * bocor ke antarmuka dan terbaca sebagai istilah asing oleh pengguna.
+   */
+  CATEGORY_LABELS: {
+    // Pemasukan
+    freelance: 'Freelance / Proyek', client: 'Klien Baru', job: 'Gaji / Pekerjaan',
+    business: 'Bisnis / Usaha', daily: 'Kerja Harian', commission: 'Komisi',
+    asset_sale: 'Jual Aset',
+    // Pengeluaran
+    food: 'Makan', housing: 'Tempat Tinggal', utilities: 'Listrik & Air',
+    transport: 'Transportasi', comm: 'Komunikasi', eating_out: 'Makan di Luar',
+    entertainment: 'Hiburan', shopping: 'Belanja', health: 'Kesehatan',
+    debt_interest: 'Bunga Utang',
+    // Aset
+    electronics: 'Elektronik', vehicle: 'Kendaraan', property: 'Properti',
+    cash: 'Uang Tunai', jewelry: 'Perhiasan',
+    // Jenis peluang
+    part_time: 'Paruh Waktu',
+    // Umum
+    other: 'Lainnya',
+  },
+
+  catLabel(key) {
+    if (!key) return 'Lainnya';
+    return H.CATEGORY_LABELS[key] || String(key).replace(/_/g, ' ');
+  },
+
   uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); },
 
   // ---- TANGGAL (LOKAL, BUKAN UTC) ----

@@ -18,6 +18,7 @@ const SUITES = [
   ['timezone_integrity.js',    'Integritas tanggal lintas zona waktu'],
   ['features_test.js',         'Fitur baru: prioritas utang, DTI, pengingat, laporan'],
   ['search_test.js',           'Pencarian Kisah: fokus input, cakupan, padanan kata'],
+  ['layout_test.js',           'Tata letak: target sentuh, grid, dropdown, label'],
   ['deep_gap_audit.js',        'Matriks keputusan — audit gap menyeluruh'],
 ];
 
