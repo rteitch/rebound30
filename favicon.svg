@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Rounded Rect -->
+  <rect width="512" height="512" rx="128" fill="url(#grad)"/>
+  
+  <!-- Stylized Letter R / Rebound Arrow -->
+  <!-- Stem -->
+  <path d="M160 360V152h110c48 0 82 32 82 76s-34 76-82 76h-110" 
+        stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Leg / Upward diagonal bounce -->
+  <path d="M260 304l88 96" 
+        stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Rebound accent dot / pulse -->
+  <circle cx="372" cy="180" r="24" fill="#FBBF24"/>
+</svg>
