@@ -1752,6 +1752,93 @@ const Stories = {
         'Diversifikasi Arus Kas di Komunitas: Menggabungkan produksi kerajinan dengan keagenan transaksi (AgenBRILink) memperkuat stabilitas kas harian.',
         'Kekuatan Niat Tulus Orang Tua demi Pendidikan Anak: Keteguhan hati seorang ibu untuk tidak menyerah menjadi bahan bakar tak terbatas untuk bangkit dari titik terendah.'
       ]
+    },
+    {
+      id: 'catur',
+      featured: false,
+      name: 'Muhammad Catur Gunandi (Mister Catur)',
+      tagline: 'Dari Utang Rp 2,5 Miliar & Tidur di Masjid Menjadi Pemilik CG Corporation — 20 Unit Bisnis, Omzet Triliunan',
+      title: 'Cireng di Tangan Lulusan ITB yang Tidur di Masjid',
+      subtitle: 'Pendiri & Pemilik CG Corporation, Bandung — Lulusan Teknik Penerbangan ITB 2006',
+      origin: 'Bandung, Jawa Barat',
+      ageAtRebound: '25 Thn',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 2,5 M',
+      badge: 'CG Corporation — 20+ Unit Bisnis',
+      theme: 'indigo',
+      accentColor: '#4338CA',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: 'Rp 2,5 Miliar (Usia 25 Thn)',
+        age: '25 Tahun',
+        lowest: 'Tidur di Masjid & Berpuasa karena Tak Ada Uang Makan',
+        action: 'Cireng Bumbu Rujak < Rp 1 Juta',
+        result: 'CG Corporation — 20+ Unit Bisnis, Omzet Triliunan'
+      },
+      timeline: [
+        { year: 'SD–SMA', text: 'Jiwa bisnis tumbuh sejak kecil — menjual kelereng hasil kemenangan, berjualan fotokopi saat SMP dan SMA.' },
+        { year: '2006 — ITB', text: 'Lulus dari Teknik Penerbangan ITB. Sebelum wisuda, sudah diterima bekerja di Astra untuk belajar langsung dunia bisnis.' },
+        { year: 'Usia 25 Thn — Kejatuhan', text: 'Rekan bisnis tidak amanah, kabur meninggalkan utang Rp 2,5 miliar. Rumah, mobil, tabungan — semua habis terjual.' },
+        { year: 'Titik Terendah', text: 'Tidur di masjid karena tidak punya tempat tinggal. Berpuasa bukan karena ibadah, tapi karena tidak punya uang untuk makan.' },
+        { year: 'Bangkit — Cireng < Rp 1 Juta', text: 'Bersama teman lama, memulai usaha cireng bumbu rujak dengan modal kurang dari Rp 1 juta. Konsistensi dan sedekah menjadi prinsip utama.' },
+        { year: 'Hari Ini — Rebound', text: 'Memimpin CG Corporation dengan lebih dari 20 unit bisnis lintas sektor — dari konsultan syariah, migas, hingga LNG mini pertama di Indonesia. Omzet triliunan rupiah.' }
+      ],
+      quote: 'Saya selalu bilang ke tim, bisnis ini bukan hanya untuk kita, tapi untuk umat. Kalau rezeki kita titipkan lewat sedekah, maka manfaatnya lebih luas.',
+      quoteAuthor: 'Muhammad Catur Gunandi, pendiri CG Corporation',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Bandung yang Berjualan Sejak SD',
+          paragraphs: [
+            'Bandung, 1984. Muhammad Catur Gunandi lahir dari keluarga kelas menengah. Sejak kecil, ia sudah memiliki jiwa bisnis yang menggeliat. Di bangku Sekolah Dasar, setiap kali ia menang bermain kelereng, ia menjual hasil kemenangannya kepada teman-teman. Saat SMP dan SMA, ia mulai berjualan fotokopi materi pelajaran.',
+            '"Saya memang senang cari tambahan uang. Dari SD sampai kuliah selalu ada yang saya jual," kenangnya kemudian.',
+            'Setelah lulus dari Teknik Penerbangan ITB pada 2006, Catur hijrah ke Jakarta. Bahkan sebelum resmi menyelesaikan studinya, ia sudah diterima bekerja di perusahaan ternama, Astra. Di sana ia belajar banyak tentang dunia bisnis — dari pengembangan produk hingga manajemen pemasok. Tapi Catur tidak ingin menjadi karyawan selamanya. "Saya sengaja kerja, bukan karena ingin jadi karyawan, tapi untuk belajar. Karena ilmu itu tidak bisa kita dapat hanya dari membaca buku, tapi dari pengalaman langsung," ujarnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 2,5 Miliar di Usia 25 Tahun',
+          paragraphs: [
+            'Sambil bekerja, Catur merintis bisnis. Salah satunya adalah perusahaan konstruksi. Perusahaan itu berkembang. Catur merasa berada di jalur yang benar. Tapi nasib berkata lain.',
+            'Rekan bisnisnya tidak amanah. Uang yang seharusnya dibayarkan ke supplier, dipakai untuk trading. Lalu rekannya kabur — meninggalkan Catur dengan beban yang tak terbayangkan: Rp 2,5 miliar utang.',
+            '"Saat itu usia saya 25 tahun, anak baru lahir, untung istri mendukung saya. Jadi jual apa pun yang bisa dijual untuk menutup utang," kenangnya. Ia menjual rumah, menjual mobil, menjual tabungan, menjual semua yang ia miliki. Tapi tetap tidak cukup. "Bayangkan, saya punya utang Rp 2,5 miliar, sementara uang di tangan tidak ada. Anak baru lahir, istri butuh biaya, tapi saya tidak bisa apa-apa. Rasanya seperti dunia runtuh," ujarnya dengan suara berat.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Tidur di Masjid, Berpuasa Tanpa Makan',
+          paragraphs: [
+            'Catur kehilangan segalanya. Termasuk tempat tinggal. Ia tidur di masjid — bukan karena ingin mendekatkan diri, tapi karena tidak punya tempat lain.',
+            'Untuk makan, ia bergantung pada belas kasih orang lain. Bahkan, ada kalanya ia berpuasa bukan karena ibadah, tapi karena tak punya uang untuk makan. Kadang berbuka hanya dengan air putih. "Itu masa yang paling berat dalam hidup saya," ujarnya.',
+            'Di titik terendah itu, ia sempat merasa putus asa. Tapi istrinya selalu berada di sisinya. "Istri saya selalu bilang, jangan menyerah, kita masih punya Allah. Kalimat itu yang membuat saya tetap kuat," kenang Catur. Dalam kegelapan itu, ia memilih untuk tidak lari. Ia memilih untuk bertahan dan mencari celah sekecil apa pun untuk bangkit.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Cireng Bumbu Rujak dan Modal Kurang dari Rp 1 Juta',
+          paragraphs: [
+            'Kebangkitan Mister Catur dimulai dari langkah yang sangat sederhana. Ia menggandeng teman lamanya untuk memulai usaha cireng bumbu rujak. Modal awalnya? Kurang dari Rp 1 juta.',
+            '"Tapi saya jalani dengan serius, tidak main-main. Dari situlah saya belajar bahwa rezeki bisa datang dari pintu yang tidak kita sangka," jelasnya. Ia juga menerapkan prinsip yang menjadi kunci bangkitnya: konsistensi, berbagi rezeki lewat sedekah, dan menjalankan bisnis sesuai syariat Islam.',
+            '"Saya belajar, setiap kali saya sisihkan minimal 10% dari omzet untuk sedekah, justru Allah lipatgandakan rezeki saya. Jadi saya jadikan itu prinsip hidup," katanya. Usaha cirengnya berkembang pesat. Dari sekadar jualan makanan ringan, ia mulai merambah sektor lain — satu demi satu, dengan modal yang terus berputar dan kepercayaan yang dibangun dari nol.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'CG Corporation dan Omzet Triliunan',
+          paragraphs: [
+            'Hari ini, Mister Catur bukan lagi pemuda yang tidur di masjid dengan utang Rp 2,5 miliar. Ia memimpin CG Corporation — sebuah perusahaan yang menaungi lebih dari 20 unit bisnis. Mulai dari konsultan syariah, distribusi bahan bakar, material komposit, retail, pertambangan, migas, logistik, hingga memiliki LNG mini pertama di Indonesia.',
+            'Jaringan usahanya sudah menembus pasar internasional. Omzetnya mencapai triliunan rupiah. "Alhamdulillah, saya tidak pernah menyangka bisa sampai di titik ini. Dulu saya hanya ingin bisa makan tiga kali sehari. Sekarang Allah titipkan bisnis besar. Itu semua bukan karena saya hebat, tapi karena pertolongan Allah," ungkapnya dengan rendah hati.',
+            'Meski sukses besar, Mister Catur tidak melupakan pengalaman pahit di masa lalu. Ia menjadikannya pengingat untuk tetap rendah hati dan tidak serakah. Bahkan, sebagian unit usahanya ia serahkan sepenuhnya untuk kegiatan sosial. "Saya ingin pengalaman saya menjadi pelajaran. Bahwa jatuh itu biasa, tapi bangkit dan bermanfaat, itu yang luar biasa," tutupnya.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Pilih Mitra Bisnis dengan Amanah: Pengkhianatan rekan bisnis adalah jebakan paling mahal. Uji karakter calon mitra sebelum mempercayakan uang dan nama baikmu.',
+        'Modal Kecil & Mulai Sekarang: Cireng di bawah Rp 1 juta membuktikan bahwa bukan besarnya modal yang menentukan, melainkan kecepatan eksekusi dan konsistensi harian.',
+        'Sedekah Minimal 10% dari Omzet sebagai Sistem: Menjadikan sedekah bukan opsi tapi kewajiban tetap membuat bisnis terasa lebih ringan dan rezeki lebih terbuka.',
+        'Dukungan Keluarga adalah Bahan Bakar Bertahan: Di titik paling gelap, satu kalimat penguatan dari orang terdekat bisa menjadi sumber tenaga untuk bangkit.'
+      ]
     }
   ],
 
