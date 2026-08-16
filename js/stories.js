@@ -3216,6 +3216,93 @@ const Stories = {
         '"Berserah" Berbeda dengan "Menyerah": Menyerah adalah berhenti berusaha; berserah adalah mengerahkan seluruh daya upaya lalu memasrahkan hasil akhir kepada Tuhan.',
         'Karakter Teruji Melahirkan Kepedulian Sosial Nyata: Rasa sakit masa lalu Tommy menjadi bahan bakar untuk membantu anak-anak jalanan di Manggarai agar memiliki masa depan.'
       ]
+    },
+    {
+      id: 'denilukman',
+      featured: false,
+      name: 'Deni Lukman',
+      tagline: 'Dari Sales Garuda Food & Utang Rp 1 Miliar ke Supplier, Bangkit Lewat Negosiasi, Pengorbanan Istri & Prinsip Syariah Jadi Bos Ritel Pacitan',
+      title: 'Dari Sales dan Utang Rp 1 Miliar, Kini Bos Ritel di Pacitan',
+      subtitle: 'Pendiri Madani Distribusi, Madani Grosir Snack & Toko Tenang, Pacitan — Dari Kolaps Rp 1 Miliar ke Omzet Ratusan Juta Tanpa Riba',
+      origin: 'Pacitan, Jawa Timur',
+      ageAtRebound: '30-an Thn',
+      categories: ['debt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 1 M ke Supplier',
+      badge: 'Madani Distribusi & Toko Tenang Pacitan',
+      theme: 'emerald',
+      accentColor: '#065F46',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Hampir Rp 1 Miliar (Supplier FMCG)',
+        age: '30-an Tahun',
+        lowest: 'Ekspansi Agresif Tanpa Kontrol, Manajemen Stok Hancur, Keuangan Kritis Nyaris Kolaps',
+        action: 'Negosiasi Kreditur + Jual Aset + Pengorbanan Tabungan & Emas Istri + Mudharabah Syariah',
+        result: 'Lunas Total — CV Teman Den Bagus Berkah, Digitalisasi SOP, Omzet Ratusan Juta/Bulan'
+      },
+      timeline: [
+        { year: '2012 — Awal Sales', text: 'Mengawali karir sebagai sales Garuda Food di Pacitan. Belajar rantai pasok dan membangun jaringan relasi toko.' },
+        { year: 'Merintis Distribusi', text: 'Mendirikan Madani Distribusi, Madani Grosir Snack, dan Toko Tenang. Bisnis berkembang pesat.' },
+        { year: 'Kejatuhan — Rp 1 Miliar', text: 'Ekspansi terlalu cepat tanpa perhitungan. Manajemen stok dan administrasi berantakan, menumpuk utang supplier hampir Rp 1 miliar.' },
+        { year: 'Dukungan & Negosiasi', text: 'Istri menyerahkan tabungan & perhiasannya. Negosiasi kelonggaran waktu dengan supplier dan jual aset pribadi.' },
+        { year: 'Hijrah & Digitalisasi', text: 'Menolak utang bank, beralih ke akad syariah mudharabah. Membentuk CV Teman Den Bagus Berkah & digitalisasi sistem Toko Tenang.' },
+        { year: 'Hari Ini — Bos Ritel', text: 'Memiliki omzet stabil ratusan juta rupiah per bulan dengan jaringan distribusi FMCG kokoh di Pacitan.' }
+      ],
+      quote: 'Konsistensi pada prinsip syariah dan pengelolaan yang disiplin adalah kunci keberkahan bisnis.',
+      quoteAuthor: 'Deni Lukman, pendiri Madani Distribusi & Toko Tenang Pacitan',
+      chapters: [
+        {
+          num: 1,
+          title: 'Sales yang Berani Bermimpi',
+          paragraphs: [
+            'Pacitan, 2012. Deni Lukman mengawali hari-harinya sebagai seorang sales lapangan di Garuda Food. Setiap hari ia memacu motor menyusuri pelosok Pacitan, membawa katalog produk, dan mencatat pesanan dari warung ke warung.',
+            'Dari lapangan itulah Deni menyerap ilmu distribusi secara nyata: ia paham ritme perputaran barang cepat (FMCG), psikologi pemilik toko grosir, hingga titik-titik lemah rantai pasok.',
+            '"Suatu hari nanti, aku akan punya jaringan distribusiku sendiri," tekadnya dalam hati. Bermodal pengalaman lapangan dan kepercayaan pasar, ia memberanikan diri mendirikan Madani Distribusi, Madani Grosir Snack, dan Toko Tenang.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Ekspansi yang Menjadi Bumerang Rp 1 Miliar',
+          paragraphs: [
+            'Keberhasilan awal membuat roda bisnisnya melaju kencang. Namun, euforia pertumbuhan membuatnya berekspansi terlalu agresif tanpa diimbangi sistem pengendalian internal yang matang.',
+            'Stok barang menumpuk tanpa rotasi jelas, pencatatan piutang pelanggan berantakan, dan tagihan supplier terus mengalir masuk. Dalam sekejap, struktur keuangannya mengalami kebocoran parah.',
+            'Kenyataan pahit menghantam ketika total tagihan supplier macet mencapai angka hampir Rp 1 miliar. Kondisi likuiditas kritis, modal kerja terkunci pada piutang tak tertagih, dan bisnisnya berada di bibir jurang kebangkrutan total.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Pengorbanan Istri dan Benteng Keluarga',
+          paragraphs: [
+            'Di tengah kepungan penagihan yang mencekam, Deni menemukan kekuatan terbesarnya di dalam rumah: sang istri dan kakaknya.',
+            'Melihat suaminya berjuang mempertahankan kehormatan keluarga dan bisnis, sang istri tanpa ragu menyerahkan seluruh tabungan pribadi beserta perhiasan emasnya untuk dicairkan demi menambal pembayaran mendesak.',
+            'Pengorbanan tulus itu menjadi cambuk moral yang membakar kembali semangat Deni. Ia bersumpah tidak akan menyia-nyiakan kepercayaan orang-orang tercinta yang rela berkorban di masa tergelapnya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Negosiasi, Pembenahan Stok, dan Prinsip Anti-Riba',
+          paragraphs: [
+            'Deni segera mengambil tindakan proaktif. Alih-alih menghindar, ia mendatangi satu per satu supplier principal untuk menegosiasikan restrukturisasi jadwal pembayaran secara transparan.',
+            'Ia menjual aset non-produktif untuk mencicil pokok utang dan merombak total sistem pergudangan serta administrasi stok barang. Yang paling krusial, ia menolak opsi pinjaman bank berbunga dan memilih skema bagi hasil syariah (mudharabah) dengan investor lokal yang saling percaya.',
+            '"Saya tidak ingin memadamkan api utang dengan bensin riba yang akan membakar lebih besar," tegasnya memegang prinsip hijrah.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Digitalisasi Toko Tenang dan Kebangkitan Sejati',
+          paragraphs: [
+            'Setelah badai utang berhasil dilewati dan seluruh kewajiban supplier terselesaikan, Deni melancarkan transformasi digital melalui pembentukan payung hukum CV Teman Den Bagus Berkah.',
+            'Toko Tenang yang semula dikelola secara tradisional oleh kakaknya dirombak dengan sistem POS terkomputerisasi, SOP pergudangan ketat, serta pemasaran digital yang mendominasi pasar Pacitan.',
+            'Kini, usahanya mengantongi omzet stabil ratusan juta rupiah per bulan secara sehat dan mandiri. Keuntungan yang didapat diputar murni untuk reinvestasi infrastruktur dan peningkatan kesejahteraan tim, membuktikan bahwa bisnis berkah tanpa riba mampu tumbuh lebih kokoh dan menenangkan.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Ekspansi Tanpa Kontrol Stok = Bom Waktu FMCG: Di bisnis distribusi ritel, manajemen inventory dan piutang toko adalah nadi utama. Pertumbuhan omzet tanpa tata kelola stok yang rapi akan langsung menenggelamkan likuiditas.',
+        'Hadapi Kreditur dengan Kejujuran dan Rencana Konkret: Deni tidak kabur saat utang Rp 1 Miliar jatuh tempo; ia bernegosiasi secara transparan dan menunjukkan iktikad baik lewat pencairan aset.',
+        'Dukungan Keluarga adalah Jangkar Terkuat di Titik Nol: Pengorbanan tabungan dan emas istri menjadi katalisator kebangkitan moral yang tak ternilai harganya.',
+        'Digitalisasi dan Reinvestasi Laba untuk Pertumbuhan Berkelanjutan: Mengganti sistem manual dengan komputerisasi dan memutar laba untuk scale-up (bukan gaya hidup) menjamin bisnis tetap lincah dan berdaya saing.'
+      ]
     }
   ],
 
