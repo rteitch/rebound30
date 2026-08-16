@@ -3735,6 +3735,92 @@ const Stories = {
         'Pangkas Utang Raksasa dengan Disiplin Restrukturisasi Kas: Eka membuktikan utang ratusan miliar bisa berkurang 50% dalam setahun melalui pemangkasan biaya dan fokus likuiditas.',
         'Tumbuh Organik Tanpa Utang Bank Adalah Pilihan Nyata: Bisnis teknologi dan infrastruktur tetap bisa memenangkan pasar melalui kemitraan strategis dan pengelolaan laba ditahan yang disiplin.'
       ]
+    },
+    {
+      id: 'yasasinggih',
+      featured: false,
+      name: 'Yasa Singgih',
+      tagline: 'Dari Kedai Kopi Bangkrut Rp 150 Jt & Utang Rp 1,5 Miliar Men\'s Republic, Bangkit Hingga Masuk Forbes 30 Under 30 Asia & Rebranding Jadi Republic',
+      title: 'Dari Utang Rp 1,5 Miliar dan Stres Berat, Kini Masuk Forbes di Usia 20 Tahun',
+      subtitle: 'Pendiri Republic (Men\'s Republic), Bekasi / Jakarta — Forbes 30 Under 30 Asia yang Menaklukkan Utang Rp 1,5 Miliar',
+      origin: 'Bekasi / Jakarta',
+      ageAtRebound: '20-an Thn',
+      categories: ['debt', 'bankrupt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 1,5 M & Forbes 30 Under 30',
+      badge: 'Forbes 30 Under 30 Asia — Republic',
+      theme: 'indigo',
+      accentColor: '#4338CA',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: 'Rp 1,5 Miliar (Stok Macet & Arus Kas Warung)',
+        age: '20 Tahun (Forbes) / 25 Tahun (Lunas)',
+        lowest: 'Stres Berat, Berat Badan Turun Drastis, Uang Mati di Gudang & Tagihan Menumpuk',
+        action: 'Pembenahan Manajemen Arus Kas + Rebranding Republic + Disiplin Finansial',
+        result: 'Lunas Total Awal 2020, Masuk Forbes 30 Under 30 Asia, Visi LVMH Indonesia'
+      },
+      timeline: [
+        { year: 'Usia 15–18 Tahun', text: 'Jualan kaos Tanah Abang & lampu hias online. Buka kedai kopi "Ini Teh Kopi" saat SMA lalu bangkrut rugi Rp 150 juta.' },
+        { year: '2014 — Men\'s Republic', text: 'Melanjutkan brand pakaian dalam pria ayahnya dengan modal barang konsinyasi Tanah Abang, berkembang ke fashion pria.' },
+        { year: '2016 — Forbes 30 Under 30', text: 'Masuk daftar Forbes 30 Under 30 Asia kategori Retail & E-commerce di usia 20 tahun saat omzet menembus miliaran.' },
+        { year: '2017–2018 — Jeratan Utang', text: 'Manajemen kas buruk ala warung dan marketing keliru membuat stok menumpuk. Terlilit utang Rp 1,5 miliar & stres berat hingga berat badan turun.' },
+        { year: '2020 — Lunas & Rebranding', text: 'Awal 2020 seluruh utang Rp 1,5 M lunas. Rebranding menjadi "Republic" dengan visi menjadi LVMH versi Indonesia.' }
+      ],
+      quote: 'Never too young to become a Billionaire. Bisnis beromzet miliaran akan hancur jika dikelola dengan manajemen kas ala warung. Kuncinya disiplin dan belajar dari kegagalan.',
+      quoteAuthor: 'Yasa Singgih, pendiri Republic (Men\'s Republic)',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Sepatu yang Tumbuh di Antara Kulit dan Sol',
+          paragraphs: [
+            'Bekasi, 1995. Seorang anak laki-laki lahir di tengah keluarga bersahaja. Namanya Yasa Paramita Singgih. Ayahnya adalah seorang pekerja keras yang mendedikasikan 25 tahun hidupnya di industri persepatuan — bergulat dengan aroma kulit samak, sol karet, dan deru mesin jahit sepatu.',
+            '"Gue hidup, makan, dan sekolah sama kakak-kakak gue karena sepatu," kenang Yasa. Namun saat ayahnya mengalami serangan jantung dan membutuhkan operasi pasang ring berbiaya besar, sang ayah memilih menunda tindakan medis demi mengutamakan biaya sekolah anak-anaknya.',
+            'Pengorbanan itu menancap dalam di sanubari Yasa remaja: ia bertekad mandiri secara finansial secepat mungkin agar tidak lagi menjadi beban orang tua.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Jatuh Bangun Sejak SMA: Dari Kaos ke Rugi Kopi Rp 150 Juta',
+          paragraphs: [
+            'Naluri bisnisnya menyala sejak belia. Di usia 15 tahun ia mulai berjualan lampu hias online, lalu mengambil kaos di Pasar Tanah Abang untuk dijual kembali lewat internet.',
+            'Namun batu sandungan pertama datang saat kelas 3 SMA. Ia mendirikan kedai kopi "Ini Teh Kopi" di Kebon Jeruk dan Mall Ambassador. Usaha itu hanya bertahan 10 bulan dan gulung tikar dengan kerugian Rp 150 juta.',
+            '"Bagi anak kelas 3 SMA saat itu, Rp 150 juta adalah angka yang luar biasa besar dan menghancurkan rasa percaya diri," ucapnya. Namun alih-alih trauma, ia memetik pelajaran berharga tentang pentingnya fokus dan manajemen biaya operasional.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Men\'s Republic dan Pengakuan Forbes 30 Under 30 Asia',
+          paragraphs: [
+            'Tahun 2014, di usia 19 tahun, Yasa membangkitkan kembali brand rintisan ayahnya: Men\'s Republic. Bermodalkan sistem konsinyasi dengan perajin sepatu lokal, ia memposisikan brand-nya sebagai solusi gaya hidup pria modern dengan harga terjangkau.',
+            'Inovasi produk dari sepatu kulit kasual, jaket, hingga perlengkapan pria meledak dahsyat di pasar online dan diekspor ke berbagai negara. Omzetnya melesat ke angka miliaran rupiah.',
+            'Puncaknya pada tahun 2016, di usia baru menginjak 20 tahun, Yasa Singgih dinobatkan dalam daftar prestisius Forbes 30 Under 30 Asia kategori Retail & E-commerce, disejajarkan dengan para inovator muda terbaik di benua Asia.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Rp 1,5 Miliar yang Menghantui dan Manajemen Kas "Warung"',
+          paragraphs: [
+            'Namun gemerlap penghargaan menutupi borok tata kelola di balik layar. Pertumbuhan omzet yang terlalu cepat tidak diimbangi manajemen perputaran persediaan (*inventory turnover*) yang sehat.',
+            'Uang perusahaan mati di tumpukan stok gudang yang tidak bergerak, sementara kewajiban kepada supplier dan vendor menumpuk hingga Rp 1,5 miliar. "Pernah omzet miliaran tapi ngelolanya seperti warung. Yang penting ada omzet dan bisa bayar gaji, tanpa kontrol arus kas," aku Yasa.',
+            'Tekanan likuiditas itu membuatnya stres berat hingga berat badannya merosot drastis dan ia mengalami *mental block* yang melumpuhkan produktivitasnya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Bangkit, Lunas 2020, dan Visi Besar Menjadi LVMH Indonesia',
+          paragraphs: [
+            'Didukung oleh keluarga dan tekad untuk bertanggung jawab penuh, Yasa merombak total struktur keuangannya sepanjang 2018–2019. Ia melikuidasi dead-stock, memangkas overhead, dan menerapkan kontrol arus kas profesional.',
+            'Pada awal tahun 2020, kabar gembira itu tiba: seluruh utang Rp 1,5 miliar dinyatakan lunas tuntas. Pada November 2020, ia mengambil langkah berani dengan merebranding Men\'s Republic menjadi "Republic".',
+            'Visinya kini melesat lebih jauh: menjadikan Republic sebagai konglomerasi multi-brand (house of brands) seperti LVMH versi Indonesia yang menaungi dan membesarkan berbagai brand lokal ke panggung global. Yasa membuktikan bahwa usia muda bukanlah batasan untuk mencetak rekor, dan kejatuhan hanyalah ruang kelas untuk menjadi pemimpin yang lebih matang.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Omzet Miliaran Hancur Tanpa Manajemen Kas & Inventory yang Benar: Uang yang terkunci di tumpukan stok mati (*dead stock*) sama bahayanya dengan kerugian langsung.',
+        'Jangan Kelola Bisnis Skala Besar dengan Mindset "Warung": Pisahkan kas, pantau perputaran piutang/utang secara ketat, dan jangan hanya fokus pada angka penjualan semata.',
+        'Forbes Bukan Jaminan Kebal Krisis Finansial: Prestasi dan popularitas publik harus dibarengi disiplin operasional di dapur bisnis sehari-hari.',
+        'Rebranding dan Evolusi Visi (House of Brands): Dari sekadar jualan produk pakaian dalam, berevolusi menjadi ekosistem brand lokal berkelas global.'
+      ]
     }
   ],
 
