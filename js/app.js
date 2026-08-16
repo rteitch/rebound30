@@ -288,8 +288,8 @@ const App = {
           <h3 class="mindset-theme">${H.escHtml(mindsetAnchor.theme)}</h3>
           <p class="mindset-principle">${H.escHtml(mindsetAnchor.principle)}</p>
           <div class="mindset-quote-box">
-            <span>"${H.escHtml(mindsetAnchor.quote)}"</span>
-            <strong style="color:var(--teal-300);margin-left:auto;white-space:nowrap;">— ${H.escHtml(mindsetAnchor.author)}</strong>
+            <p class="mindset-quote-text">"${H.escHtml(mindsetAnchor.quote)}"</p>
+            <div class="mindset-quote-author">— ${H.escHtml(mindsetAnchor.author)}</div>
           </div>
         </div>
       `;
@@ -452,8 +452,8 @@ const App = {
           <h3 class="mindset-theme">${H.escHtml(mindsetAnchor.theme)}</h3>
           <p class="mindset-principle">${H.escHtml(mindsetAnchor.principle)}</p>
           <div class="mindset-quote-box">
-            <span>"${H.escHtml(mindsetAnchor.quote)}"</span>
-            <strong style="color:var(--teal-300);margin-left:auto;white-space:nowrap;">— ${H.escHtml(mindsetAnchor.author)}</strong>
+            <p class="mindset-quote-text">"${H.escHtml(mindsetAnchor.quote)}"</p>
+            <div class="mindset-quote-author">— ${H.escHtml(mindsetAnchor.author)}</div>
           </div>
         </div>
       `;
