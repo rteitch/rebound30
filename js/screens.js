@@ -23,6 +23,97 @@
 Object.assign(App, {
 
   // ==========================================================
+  // PEMBARUAN APLIKASI
+  // ==========================================================
+  // Pengguna tidak seharusnya perlu tahu cara membersihkan cache browser
+  // untuk mendapatkan versi terbaru. Modul ini memantau service worker,
+  // dan begitu versi baru siap, menawarkan tombol muat ulang.
+  sw: {
+    _reg: null,
+    versi: null,
+
+    pantau(reg) {
+      App.sw._reg = reg;
+      App.sw.bacaVersi();
+
+      // Versi baru sudah terpasang dan menunggu giliran.
+      if (reg.waiting && navigator.serviceWorker.controller) {
+        App.sw.tawarkan();
+      }
+
+      reg.addEventListener('updatefound', function () {
+        const baru = reg.installing;
+        if (!baru) return;
+        baru.addEventListener('statechange', function () {
+          // `controller` yang sudah ada menandakan ini pembaruan, bukan
+          // pemasangan pertama. Pemasangan pertama tidak perlu ditawari
+          // muat ulang karena pengguna baru saja membuka halamannya.
+          if (baru.state === 'installed' && navigator.serviceWorker.controller) {
+            App.sw.tawarkan();
+          }
+        });
+      });
+    },
+
+    /** Ambil nomor versi dari service worker untuk ditampilkan di Pengaturan. */
+    bacaVersi() {
+      const aktif = navigator.serviceWorker && navigator.serviceWorker.controller;
+      if (!aktif || typeof MessageChannel === 'undefined') return;
+      try {
+        const ch = new MessageChannel();
+        ch.port1.onmessage = function (e) {
+          App.sw.versi = (e.data && e.data.version) || null;
+          const el = document.getElementById('app-version-text');
+          if (el && App.sw.versi) el.textContent = 'Versi ' + App.sw.versi;
+        };
+        aktif.postMessage({ type: 'GET_VERSION' }, [ch.port2]);
+      } catch (e) { /* tidak kritis */ }
+    },
+
+    tawarkan() {
+      if (document.getElementById('update-banner')) return;
+
+      const bar = document.createElement('div');
+      bar.id = 'update-banner';
+      bar.setAttribute('data-update-banner', '');
+      bar.setAttribute('role', 'status');
+      bar.innerHTML = `
+        <div class="update-banner-teks">
+          <strong>Versi baru tersedia</strong>
+          <span>Muat ulang untuk memakai perbaikan terbaru. Datamu tidak terpengaruh.</span>
+        </div>
+        <div class="update-banner-aksi">
+          <button class="btn btn-primary btn-sm" onclick="App.sw.terapkan()">Muat Ulang</button>
+          <button class="btn btn-ghost btn-sm" onclick="App.sw.tunda()">Nanti</button>
+        </div>`;
+      document.body.appendChild(bar);
+      requestAnimationFrame(() => bar.classList.add('tampil'));
+      App.a11y && App.a11y.announce('Versi baru aplikasi tersedia');
+    },
+
+    terapkan() {
+      const reg = App.sw._reg;
+      const btn = document.querySelector('#update-banner .btn-primary');
+      if (btn) { btn.disabled = true; btn.textContent = 'Memuat…'; }
+
+      if (reg && reg.waiting) {
+        // Service worker baru akan mengambil alih, lalu pendengar
+        // `controllerchange` di app.js memuat ulang halaman satu kali.
+        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+        // Jaring pengaman bila pergantian tidak terjadi.
+        setTimeout(function () { window.location.reload(); }, 2500);
+      } else {
+        window.location.reload();
+      }
+    },
+
+    tunda() {
+      const bar = document.getElementById('update-banner');
+      if (bar) { bar.classList.remove('tampil'); setTimeout(() => bar.remove(), 250); }
+    },
+  },
+
+  // ==========================================================
   // PUSAT PENGINGAT (PRD §27)
   // ==========================================================
   notifications: {

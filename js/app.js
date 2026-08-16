@@ -2999,11 +2999,41 @@ if (document.readyState === 'loading') {
 } else {
   App.init();
 }
-// Register Service Worker for PWA / Offline use
+// ============================================================
+// SERVICE WORKER — PENDAFTARAN & PEMBARUAN
+// ============================================================
+// Sebelumnya pendaftaran dilakukan tanpa memantau pembaruan sama sekali.
+// Ketika versi baru dirilis, pengguna harus menutup dan membuka aplikasi
+// berulang kali sampai kebetulan mendapat versi terbaru — tanpa satu pun
+// petunjuk di layar bahwa pembaruan tersedia.
+//
+// Sekarang: begitu service worker baru selesai terpasang dan menunggu,
+// aplikasi menampilkan tawaran "Muat Ulang". Pengguna tidak perlu tahu
+// apa pun soal cache browser.
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').catch(function(err) {
-      console.log('SW registration error: ', err);
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').then(function (reg) {
+      App.sw.pantau(reg);
+
+      // Periksa pembaruan saat aplikasi kembali difokuskan. Tanpa ini,
+      // aplikasi yang dibiarkan terbuka berhari-hari di HP tidak pernah
+      // memeriksa versi baru.
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'visible') reg.update().catch(function () {});
+      });
+      window.addEventListener('online', function () { reg.update().catch(function () {}); });
+      setInterval(function () { reg.update().catch(function () {}); }, 60 * 60 * 1000);
+    }).catch(function (err) {
+      console.warn('Pendaftaran service worker gagal:', err);
+    });
+
+    // Saat service worker baru mengambil alih, muat ulang SATU kali agar
+    // seluruh halaman memakai kode versi yang sama, tidak campur aduk.
+    var sudahMuatUlang = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (sudahMuatUlang) return;
+      sudahMuatUlang = true;
+      window.location.reload();
     });
   });
 }

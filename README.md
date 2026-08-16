@@ -2,7 +2,7 @@
 
 [![Live App](https://img.shields.io/badge/Live-rebound30.vercel.app-teal?style=for-the-badge&logo=vercel)](https://rebound30.vercel.app/)
 [![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-110%2F110%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
-[![Tests](https://img.shields.io/badge/Automated%20Tests-395%2F395%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Tests](https://img.shields.io/badge/Automated%20Tests-425%2F425%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Gap Audit](https://img.shields.io/badge/Decision%20Matrix-1440%20Permutasi%20%C2%B7%200%20Gap-blueviolet?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
@@ -171,6 +171,7 @@ d:\Project\ui\
     ├── features_test.js           # Prioritas utang, DTI, pengingat, laporan bulanan, review, 90 hari
     ├── search_test.js             # Pencarian Kisah: kontrak DOM (fokus input), cakupan, padanan kata
     ├── layout_test.js             # Target sentuh 44px, urutan cascade, grid, lebar dropdown, label
+    ├── pwa_update_test.js         # Strategi cache, tawaran muat ulang, ketahanan pemasangan luring
     └── deep_gap_audit.js          # Sapuan 1.440 permutasi matriks keputusan tanpa gap
 ```
 
@@ -190,6 +191,7 @@ Seluruh logika perhitungan finansial, alur fase pemulihan, dan antarmuka aplikas
 | **Fitur Pemulihan Lanjutan** | Prioritas utang berbasis agunan & risiko hukum, rasio DTI, status `NO_INCOME`, pengingat follow-up, laporan bulanan, review mingguan, rencana 90 hari, integritas ekspor CSV. | **82/82 PASSED (100%)** |
 | **Pencarian Kisah Bangkit** | Kontrak DOM (mengetik tidak boleh membangun ulang kotak pencarian), cakupan field termasuk kota, pencocokan banyak kata (AND), dan padanan kosakata sehari-hari. | **39/39 PASSED (100%)** |
 | **Tata Letak & Target Sentuh** | Minimum 44px pada perangkat sentuh beserta urutan cascade-nya, grid statistik bebas pemaksaan `!important`, lebar dropdown, panjang label opsi, dan label kategori berbahasa Indonesia. | **32/32 PASSED (100%)** |
+| **Pembaruan PWA & Luring** | Strategi jaringan-dulu untuk kode aplikasi, cache-dulu untuk font, ketahanan pemasangan terhadap berkas gagal, tawaran muat ulang, dan header hosting `sw.js`. | **30/30 PASSED (100%)** |
 | **Decision Matrix Gap Audit** | Sapuan 1.440 permutasi variabel (Pekerjaan × Target × Keahlian × Hari × Kondisi Keuangan), 11 kaidah per permutasi. | **0 GAP / 100% COVERED** |
 
 Untuk menjalankan seluruh pengujian sekaligus:
@@ -207,6 +209,7 @@ node tests/timezone_integrity.js
 node tests/features_test.js
 node tests/search_test.js
 node tests/layout_test.js
+node tests/pwa_update_test.js
 node tests/deep_gap_audit.js
 ```
 
@@ -235,6 +238,38 @@ Cukup buka file `index.html` langsung di browser modern (Google Chrome, Microsof
 1. Buka tautan [https://rebound30.vercel.app/](https://rebound30.vercel.app/) di browser HP.
 2. Klik tombol **"Install Aplikasi"** atau menu browser `⋮` $\to$ **"Tambahkan ke Layar Utama" / "Add to Home Screen"**.
 3. Aplikasi akan terpasang di menu utama HP dan dapat digunakan 100% tanpa internet.
+
+---
+
+## 🔄 Cara Merilis Pembaruan (Penting)
+
+Aplikasi ini adalah PWA dengan service worker, jadi pembaruan tidak otomatis terlihat seperti situs biasa.
+
+### Yang perlu dilakukan saat rilis
+1. Naikkan `APP_VERSION` di **`sw.js`** — satu tempat saja, `CACHE_NAME` mengikuti otomatis.
+2. Bila ada berkas JS/CSS **baru**, tambahkan ke `ASSETS_TO_CACHE` di `sw.js` agar mode luring tetap lengkap.
+3. Jalankan `node tests/run_all.js` sebelum deploy. `pwa_update_test.js` akan menolak bila ada berkas skrip halaman yang lupa didaftarkan.
+
+### Apa yang dialami pengguna
+Sejak versi 2.1.0, kode aplikasi memakai strategi **jaringan lebih dulu, cache sebagai cadangan**:
+
+- Saat **daring**, pengguna mendapat kode terbaru pada pembukaan berikutnya — bahkan bila `APP_VERSION` lupa dinaikkan.
+- Saat **luring**, aplikasi tetap berjalan penuh dari cache.
+- Ketika versi baru siap, muncul tawaran **"Versi baru tersedia — Muat Ulang"**. Pengguna tidak perlu tahu apa pun soal cache browser.
+
+Sebelum perubahan ini, pengujian di browser sungguhan dengan latensi seluler menunjukkan pengguna harus membuka aplikasi **empat kali** sebelum melihat versi baru — dan **tidak pernah** melihatnya bila `CACHE_NAME` lupa dinaikkan.
+
+### Bila pengguna tetap terlihat memakai versi lama
+Minta mereka membuka **Pengaturan → Info Aplikasi** dan menyebutkan nomor versinya. Urutan langkah dari yang paling ringan:
+
+| Perangkat | Langkah |
+| :--- | :--- |
+| **Semua** | Tutup penuh aplikasi/tab, lalu buka kembali. Biasanya sudah cukup. |
+| **Chrome Android** | Menu ⋮ → **Setelan** → **Setelan situs** → **Data tersimpan** → pilih situsnya → **Hapus & setel ulang** |
+| **Safari iOS** | **Pengaturan** iOS → **Safari** → **Lanjutan** → **Data Situs Web** → pilih situs → **Hapus** |
+| **PWA terpasang di layar utama** | Hapus ikonnya, buka lagi lewat browser, lalu pasang ulang |
+
+> ⚠️ **Peringatan penting:** seluruh data keuangan pengguna tersimpan di `localStorage` pada origin yang sama dengan cache. Langkah "Hapus & setel ulang" pada tabel di atas **akan ikut menghapus catatan keuangan mereka**. Selalu minta pengguna melakukan **Pengaturan → Export Data (JSON)** lebih dulu, lalu Import kembali setelahnya.
 
 ---
 

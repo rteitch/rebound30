@@ -19,6 +19,7 @@ const SUITES = [
   ['features_test.js',         'Fitur baru: prioritas utang, DTI, pengingat, laporan'],
   ['search_test.js',           'Pencarian Kisah: fokus input, cakupan, padanan kata'],
   ['layout_test.js',           'Tata letak: target sentuh, grid, dropdown, label'],
+  ['pwa_update_test.js',       'Pembaruan PWA: strategi cache, tawaran muat ulang, luring'],
   ['deep_gap_audit.js',        'Matriks keputusan — audit gap menyeluruh'],
 ];
 
