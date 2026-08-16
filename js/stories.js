@@ -3908,6 +3908,94 @@ const Stories = {
         'Target Pasar yang Tepat Mengubah Produk yang Ditolak Menjadi Emas: Telur ayam negeri ditolak warga lokal karena belum terbiasa, namun menjadi komoditas bernilai tinggi di tangan komunitas ekspatriat Kemang.',
         'Konsistensi Nilai & Kualitas di Atas Ekspansi Membabi Buta: Filosofi Om Bob yang mempertahankan Kem Chicks eksklusif di Kemang membuktikan bahwa reputasi mutu produk premium lebih abadi daripada sekadar mengejar jumlah gerai.'
       ]
+    },
+    {
+      id: 'jusufhamka',
+      featured: false,
+      name: 'Mohammad Jusuf Hamka (Babah Alun)',
+      tagline: 'Dari Jual Es Mambo, Rugi Ratusan Juta Dolar Dalam 3 Jam Krismon 1998 & 2 Minggu Tak Bisa Makan — Bangkit di Atas Sajadah Jadi Raja Jalan Tol CMNP',
+      title: 'Dari Dua Minggu Tak Bisa Makan, Kini Raja Jalan Tol Indonesia',
+      subtitle: 'Pemilik PT Citra Marga Nusaphala Persada Tbk (CMNP) — Konglomerat Mualaf & Filantropis Pembangun 1.000 Masjid',
+      origin: 'Pasar Baru, Jakarta Pusat',
+      ageAtRebound: '41 Thn (Tahun 1998)',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Rugi Ratusan Juta Dolar & Tol CMNP',
+      badge: 'Raja Jalan Tol — Pemilik PT CMNP Tbk',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Rugi Ratusan Juta Dolar AS (> Rp 6 Triliun)',
+        age: '41 Tahun (Krisis 1998)',
+        lowest: 'Kekayaan Lenyap dalam 3 Jam, 2 Minggu Tak Bisa Makan, Usaha Anjlok Parah',
+        action: 'Doa Ikhlas di Atas Sajadah + Dukungan Istri + Bangkit dari Nol Membangun Tol',
+        result: 'Pemilik PT CMNP Tbk (Tol Cawang-Priok & Desari), Target Bangun 1.000 Masjid'
+      },
+      timeline: [
+        { year: 'Akhir 1960-an — Penjual Es Mambo', text: 'Anak dosen dan guru di Pasar Baru. Di usia 15 tahun jualan es mambo termos & kacang goreng di Istiqlal demi 120 perak.' },
+        { year: '1981 — Mualaf Bimbingan Buya Hamka', text: 'Masuk Islam di usia 24 tahun di bawah bimbingan ulama besar Buya Hamka dan menyandang nama belakang Hamka.' },
+        { year: '1998 — Krisis Moneter Menghantam', text: 'Kekayaan ratusan juta dolar AS lenyap dalam 3 jam. Bangkrut total dan sempat 2 minggu tidak bisa makan.' },
+        { year: 'Sujud di Atas Sajadah', text: 'Memeluk istri, meminta maaf dan bersujud ikhlas: "Ya Allah, aku ikhlas. Berikan aku kesempatan dan kesehatan, aku akan kembali."' },
+        { year: 'Dukungan Sang "Malaikat"', text: 'Sang istri mendampingi setia: "Pa, tidak usah disesali, kita mulai lagi dari awal."' },
+        { year: 'Hari Ini — Raja Jalan Tol', text: 'Pemilik PT CMNP Tbk pengelola ruas tol strategis nasional, dermawan sosial, dan membangun Masjid Babah Alun di kolong tol.' }
+      ],
+      quote: 'Kalau kita menyalahkan orang lain, kita tidak akan berpikir untuk maju. Semua kegagalan adalah kita yang buat. Kesuksesan juga kita yang ciptakan. Saya tidak minta harta saat bangkrut, saya hanya minta kesehatan dan kesempatan.',
+      quoteAuthor: 'Mohammad Jusuf Hamka (Babah Alun), bos PT Citra Marga Nusaphala Persada Tbk',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Pasar Baru yang Berjualan Es Mambo demi 120 Perak',
+          paragraphs: [
+            'Jakarta, akhir era 1960-an. Seorang anak laki-laki lincah bernama Alun (nama kecil Jusuf Hamka) tumbuh di kawasan Pasar Baru, Jakarta Pusat. Ayahnya seorang dosen dan ibunya guru sekolah, namun uang saku hariannya serba terbatas.',
+            'Di usia 15 tahun, Jusuf sudah berkeliling memanggul termos es mambo dan menjajakan kacang tanah goreng di seputaran halaman Masjid Istiqlal. Dari cucuran keringat harian itu, ia mengantongi uang 120 perak.',
+            '"Gengsi itu memakan biaya hidup," tegas Jusuf mengenang masa mudanya. "Buat apa malu atau gengsi? Selama kita tidak mencuri dan tidak menipu, apa pun yang halal harus kita kerjakan dengan bangga."',
+            'Di sela-sela berdagang, ia melahap buku-buku pengembangan diri dan memupuk impian besar untuk kelak menjadi pengusaha sukses berhati mulia.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Menemukan Cahaya Islam dan Bimbingan Buya Hamka',
+          paragraphs: [
+            'Rasa ketertarikannya pada ajaran Islam bermula saat melihat ketenangan rekan-rekan sebayanya saat menunaikan salat berjamaah.',
+            'Pada usia 24 tahun (1981), ia memantapkan hati memeluk Islam di bawah bimbingan langsung ulama kharismatik Indonesia, Prof. Dr. Buya Hamka. Sebagai bentuk kasih sayang dan pengangkatan anak ideologis, nama "Hamka" disematkan di belakang namanya menjadi Mohammad Jusuf Hamka.',
+            'Nilai-nilai integritas, tawakal, dan kedermawanan yang diajarkan Buya Hamka menjadi kompas moral dalam setiap langkah bisnis yang ia rintis hingga menjadi pengusaha mapan berskala nasional.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Tiga Jam yang Menghancurkan Ratusan Juta Dolar AS',
+          paragraphs: [
+            'Tahun 1998, badai krisis finansial Asia melanda Indonesia dengan dahsyat. Nilai tukar rupiah rontok, suku bunga melonjak gila-gilaan, dan pasar modal ambruk.',
+            'Dalam kurun waktu hanya tiga jam, seluruh portofolio bisnis dan kekayaan yang ia bangun berpuluh tahun hancur lebur. Jusuf menelan kerugian fantastis hingga ratusan juta dolar AS (setara triliunan rupiah).',
+            'Kejatuhan itu begitu telak hingga ia jatuh miskin mendadak. Usahanya macet total dan ia bahkan sempat dua minggu tidak bisa makan karena tak memegang uang sepeser pun. Dunia yang semula gemerlap mendadak gulita.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Air Mata di Atas Sajadah dan Doa Seorang Hamba yang Ikhlas',
+          paragraphs: [
+            'Di tengah jurang keputusasaan, Jusuf tidak mencari kambing hitam. Ia memeluk istrinya dengan linangan air mata, meminta maaf atas musibah yang menimpa keluarga mereka.',
+            'Ia lalu membentangkan sajadah dan bersujud panjang dalam kepasrahan mutlak: "Ya Allah, aku terima musibah ini. Harta yang Engkau titipkan, Engkau ambil kembali, aku ikhlas lillahi ta\'ala. Namun tolong ya Allah, berikan aku kesempatan, kesehatan, dan akal sehat yang jernih. Insya Allah, aku akan kembali berdiri."',
+            'Jusuf tidak meminta uang jatuh dari langit; ia hanya memohon kesehatan fisik dan ketajaman pikiran untuk kembali bertarung dari titik nol.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Ketegaran Sang Istri dan Kebangkitan Sang Raja Jalan Tol',
+          paragraphs: [
+            'Di masa terkelam itu, sang istri bertindak laksana malaikat penopang. Tanpa sepatah kata keluhan, istrinya menguatkan: "Pa, sudah tidak usah disesali. Apa yang hilang biarlah pergi, kita mulai lagi semuanya bersama-sama."',
+            'Berbekal doa, restu keluarga, dan reputasi integritasnya yang tak ternoda, Jusuf bangkit merintis kembali peluang di sektor infrastruktur transportasi.',
+            'Kerja keras dan tangan dinginnya mengantarkannya memimpin PT Citra Marga Nusaphala Persada Tbk (CMNP), menguasai pengelolaan jalan tol vital seperti Tol Cawang–Tanjung Priok dan Depok–Antasari (Desari). Hari ini, Babah Alun dikenal bukan hanya sebagai Raja Jalan Tol, melainkan filantropis sejati yang mendirikan deretan Masjid Babah Alun berarsitektur Tionghoa-Islam di berbagai pelosok ibu kota.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Ikhlas Melepaskan Kehilangan Finansial Raksasa: Menerima musibah secara lapang dada menghentikan kepanikan batin dan membuka ruang akal sehat untuk bangkit.',
+        'Minta Kesehatan & Kesempatan, Bukan Keajaiban Instan: Jusuf membuktikan bahwa modal pemulihan terhebat adalah tubuh yang sehat dan pikiran yang tajam untuk bekerja kembali.',
+        'Jangan Menyalahkan Siapapun Atas Kegagalan: Sikap ksatria mengambil tanggung jawab penuh adalah pintu utama menuju pertumbuhan karakter dan kesuksesan sejati.',
+        'Dukungan Pasangan Adalah Pilar Kekuatan Krisis: Ketenangan dan ketegaran keluarga di masa sulit melipatgandakan daya lenting (*resilience*) untuk memulai dari nol.'
+      ]
     }
   ],
 
