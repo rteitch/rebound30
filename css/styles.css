@@ -3267,3 +3267,11 @@ ul li, ol li {
     font-size: 1.35rem !important;
   }
 }
+
+
+.badge {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}

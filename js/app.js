@@ -675,19 +675,28 @@ const App = {
         const isToday = d === currentDay;
         const isDone = d < currentDay;
         const statusBadge = isDone 
-          ? '<span class="badge badge-success" style="font-size:10.5px;">Telah Dilalui</span>'
+          ? `<span class="badge badge-success" style="font-size:11px;white-space:nowrap;flex-shrink:0;padding:3px 9px;display:inline-flex;align-items:center;gap:4px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Telah Dilalui</span>
+            </span>`
           : isToday 
-            ? '<span class="badge badge-primary" style="font-size:10.5px;animation:pulse 2s infinite;">Hari Ini</span>'
-            : '<span class="badge badge-secondary" style="font-size:10.5px;opacity:0.75;">⏳ Mendatang</span>';
+            ? `<span class="badge badge-primary" style="font-size:11px;white-space:nowrap;flex-shrink:0;padding:3px 9px;display:inline-flex;align-items:center;gap:4px;animation:pulse 2s infinite;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Hari Ini</span>
+              </span>`
+            : `<span class="badge badge-secondary" style="font-size:11px;white-space:nowrap;flex-shrink:0;padding:3px 9px;display:inline-flex;align-items:center;gap:4px;color:var(--slate-600);background:var(--slate-100);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span>Mendatang</span>
+              </span>`;
 
         html += `
-          <div class="card" style="padding:12px 14px;border:1.5px solid ${isToday ? 'var(--teal-500)' : isDone ? 'var(--slate-200)' : 'var(--slate-200)'};background:${isToday ? 'var(--teal-50)' : '#fff'};border-radius:var(--radius-lg);transition:all 0.2s ease;">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;">
-              <div style="display:flex;align-items:center;gap:8px;">
-                <div style="width:26px;height:26px;border-radius:50%;background:${isDone ? 'var(--green-600)' : isToday ? 'var(--teal-600)' : 'var(--slate-200)'};color:${isDone||isToday?'#fff':'var(--slate-600)'};font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <div class="card" style="padding:14px 16px;border:1.5px solid ${isToday ? 'var(--teal-500)' : 'var(--slate-200)'};background:${isToday ? 'var(--teal-50)' : '#fff'};border-radius:var(--radius-xl);transition:all 0.2s ease;box-shadow:0 1px 2px rgba(0,0,0,0.03);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px;">
+              <div style="display:flex;align-items:flex-start;gap:10px;flex:1;min-width:0;">
+                <div style="width:26px;height:26px;border-radius:50%;background:${isDone ? 'var(--green-600)' : isToday ? 'var(--teal-600)' : 'var(--slate-200)'};color:${isDone||isToday?'#fff':'var(--slate-600)'};font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
                   ${isDone ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><polyline points="20 6 9 17 4 12"/></svg>' : d}
                 </div>
-                <div style="font-size:13px;font-weight:800;color:var(--color-text-primary);">
+                <div style="font-size:13px;font-weight:800;color:var(--color-text-primary);line-height:1.45;flex:1;">
                   Hari ke-${d}: ${item.focus}
                 </div>
               </div>
@@ -695,9 +704,9 @@ const App = {
             </div>
 
             <!-- Rincian Tugas Harian -->
-            <div style="margin-left:34px;font-size:12px;color:var(--slate-600);line-height:1.5;">
-              <ul style="margin:0;padding-left:14px;">
-                ${item.tasks.map(t => `<li style="margin-bottom:2px;">${t}</li>`).join('')}
+            <div style="margin-left:36px;font-size:12px;color:var(--slate-600);line-height:1.55;">
+              <ul style="margin:0;padding-left:16px;">
+                ${item.tasks.map(t => `<li style="margin-bottom:3px;">${t}</li>`).join('')}
               </ul>
             </div>
           </div>
