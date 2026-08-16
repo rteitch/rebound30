@@ -2791,6 +2791,94 @@ const Stories = {
         'Komunitas dan Media Sosial adalah Modal Gratis yang Sering Diabaikan: Tanpa modal besar, Fepto membangun bisnis lewat komunitas dan media sosial. Jangkauan organik yang dibangun dengan konsistensi bisa menggantikan iklan berbayar senilai ratusan juta.',
         'Usia Muda adalah Keuntungan, Bukan Hambatan: Terpuruk di usia 20 dan lunas dalam 3 bulan, lalu ekspansi ke Asia di usia yang masih sangat muda — Fepto membuktikan bahwa kesalahan di usia muda adalah investasi pengalaman terbaik jika direspons dengan benar.'
       ]
+    },
+    {
+      id: 'ican',
+      featured: false,
+      name: 'Ican Suherlan (Coach Ican)',
+      tagline: 'Kehilangan Ibu dalam Perampokan di Usia 24, Penyakit Langka + Utang Rp 10 M di Usia 34, Hampir Bunuh Diri — Bangkit dengan Cariilmu & IBJ Group',
+      title: 'Dari Kehilangan Ibu dan Utang Rp 10 Miliar, Kini Membantu 200.000 Peserta',
+      subtitle: 'Pendiri Cariilmu & IBJ Group, Bandung — Lulusan ITB yang Bangkit dari Titik Tergelap dengan Modal Rp 100 Juta',
+      origin: 'Bandung, Jawa Barat',
+      ageAtRebound: '34 Thn',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 10 M (Sakit Setahun)',
+      badge: 'Cariilmu 200.000+ Peserta — IBJ Group',
+      theme: 'emerald',
+      accentColor: '#065F46',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Rp 10 Miliar (Tidak Ada Penghasilan 1 Tahun)',
+        age: '34 Tahun',
+        lowest: 'Penyakit Langka 1 Tahun di RS, Kehilangan Kerja & Penghasilan, Sempat Ingin Bunuh Diri',
+        action: 'Cariilmu (Platform Training Online) + Modal Rp 100 Jt dari Pesangon & BPJS',
+        result: '200.000+ Peserta Prakerja, SUAI Skincare, Buatizin.id, IBJ Group'
+      },
+      timeline: [
+        { year: '2005 — Lulus ITB', text: 'Lulus dari ITB dan mulai membangun karir profesional.' },
+        { year: '2007 — Tragedi', text: 'Di usia 24 tahun, ibunya menjadi korban perampokan dan meninggal di rumah sendiri. Pelaku tak pernah ditemukan.' },
+        { year: '2018 — Penyakit Langka Kambuh', text: 'Periodic Paralysis Hypokalemia kambuh. Terbaring di rumah sakit selama 1 tahun. Kehilangan pekerjaan dan penghasilan.' },
+        { year: 'Utang Rp 10 M & Krisis Mental', text: 'Utang menumpuk hingga Rp 10 miliar. Frustasi dan sempat ingin bunuh diri. Memutuskan konseling ke psikolog.' },
+        { year: 'Titik Balik — Passion Mengajar', text: 'Seorang teman menyarankan untuk mengikuti passion mengajar. Modal dari pesangon & BPJS: Rp 100 juta.' },
+        { year: 'Cariilmu & IBJ Group', text: 'Mendirikan Cariilmu — platform training online untuk Kartu Prakerja. Pernah jual mobil untuk bayar THR karyawan. Tidak pernah menyerah.' },
+        { year: 'Hari Ini', text: '200.000+ peserta. SUAI Skincare, Buatizin.id. Semua di bawah PT Ican Berkah Jaya (IBJ Group).' }
+      ],
+      quote: 'Mengajar adalah passion-ku. Dan dari passion itu, aku membangun segalanya kembali.',
+      quoteAuthor: 'Ican Suherlan (Coach Ican), pendiri Cariilmu & IBJ Group',
+      chapters: [
+        {
+          num: 1,
+          title: 'Malam yang Mengubah Segalanya',
+          paragraphs: [
+            'Bandung, 2007. Ican Suherlan baru berusia 24 tahun. Hidupnya masih terasa normal — seperti pemuda lulusan ITB yang baru saja mulai merintis karir. Tapi takdir berbicara lain pada suatu malam.',
+            'Ia terbangun dari tidurnya karena suara gaduh yang berasal dari kamar orang tuanya. Dengan hati berdebar, ia bergegas ke sana. Dan apa yang ia lihat membuat dunianya runtuh dalam sekejap. Ibunya terbaring bersimbah darah. Tidak bernyawa. Korban perampokan yang terjadi di rumah mereka sendiri.',
+            'Ican mengejar pelaku. Tapi ia tidak berhasil menangkapnya. Hingga hari ini, pelaku tak kunjung ditemukan dan polisi sudah menutup kasusnya. Luka itu tidak pernah benar-benar sembuh — hanya ia belajar untuk terus hidup meski membawanya setiap hari.'
+          ]
+        },
+        {
+          num: 2,
+          title: '2018 — Penyakit Langka yang Merebut Segalanya',
+          paragraphs: [
+            'Bertahun-tahun berlalu. Ican berusaha melanjutkan hidup dan membangun kariernya. Tapi pada 2018, badai datang lagi — kali ini dari dalam tubuhnya sendiri. Penyakit langka masa kecilnya, Periodic Paralysis Hypokalemia, kambuh. Penyakit yang menyebabkan pelemahan otot rangka secara periodik ini memaksanya terbaring di rumah sakit.',
+            'Bukan beberapa minggu. Bukan beberapa bulan. Satu tahun penuh. Ia kehilangan pekerjaan. Ia kehilangan penghasilan. Dan yang lebih parah, biaya rumah sakit dan kebutuhan hidup selama setahun membuat utang menumpuk hingga Rp 10 miliar.',
+            'Ican frustasi. Pikirannya gelap. "Aku sudah kehilangan ibu. Aku kehilangan pekerjaan. Aku kehilangan segalanya. Masih adakah jalan untukku?" Di titik tergelap hidupnya, ia sempat ingin mengakhiri semuanya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Konseling dan Satu Saran yang Mengubah Hidup',
+          paragraphs: [
+            'Di titik terendah itulah, Ican mengambil keputusan yang menyelamatkan hidupnya. Ia memutuskan untuk melakukan konseling dan konsultasi ke psikolog. Bukan hal yang mudah — dibutuhkan keberanian untuk mengakui bahwa ia membutuhkan bantuan.',
+            'Dari proses konseling itu, perlahan, ia mulai menemukan cahaya. Dan kemudian, seorang teman memberinya saran berharga yang sederhana namun mengubah arah hidupnya: ikuti passion-mu.',
+            'Passion Ican adalah mengajar. Sejak lama ia sudah merasakannya — kesenangan ketika bisa menjelaskan sesuatu dengan jelas, kepuasan ketika orang lain memahami sesuatu yang baru. "Mengajar? Dengan utang Rp 10 miliar dan kondisi tubuh yang baru pulih?" Tapi ia memutuskan untuk mencoba. Karena tidak mencoba pun bukan pilihan.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Modal Rp 100 Juta dan Platform Cariilmu',
+          paragraphs: [
+            'Ican memulai bisnisnya dengan modal dari pesangon dan BPJS sebesar Rp 100 juta. Ia mendirikan Cariilmu — sebuah platform training online interaktif dan berkualitas tinggi, di mana peserta bisa memilih materi untuk mendukung perjalanan mereka sebagai karyawan, freelancer, atau pengusaha.',
+            'Perjalanan tidak mulus. Banyak yang meragukannya — rekan dan kerabat memandang sinis pada seorang yang baru keluar dari rumah sakit setelah setahun, dengan utang Rp 10 miliar, kini ingin mendirikan platform pendidikan online. Bahkan ia sampai harus menjual mobil pribadinya hanya untuk membayar THR karyawan.',
+            'Tapi Ican tidak pernah menyerah. Setiap penolakan ia jadikan bahan bakar. Setiap keraguan ia jadikan motivasi untuk membuktikan yang sebaliknya.'
+          ]
+        },
+        {
+          num: 5,
+          title: '200.000 Peserta, IBJ Group, dan Warisan untuk Indonesia',
+          paragraphs: [
+            'Kerja keras Ican membuahkan hasil yang melampaui ekspektasinya sendiri. Cariilmu berkembang pesat dan menjadi salah satu pelatihan terbaik di Program Kartu Prakerja — program pemerintah yang menjangkau jutaan masyarakat Indonesia. Hingga kini, ia telah membantu lebih dari 200.000 peserta di seluruh Indonesia.',
+            'Ia tidak berhenti di situ. Ia menciptakan brand-brand lain: SUAI Skincare dan Buatizin.id — diversifikasi bisnis yang menunjukkan bahwa visinya bukan sekadar satu platform, tapi sebuah ekosistem. Semua brand dan programnya kini berada di bawah naungan PT Ican Berkah Jaya (IBJ Group).',
+            'Dari seorang pemuda yang kehilangan ibunya dalam tragedi di usia 24, dari seorang pria yang terbaring di rumah sakit selama setahun dengan utang Rp 10 miliar, dari seseorang yang sempat ingin mengakhiri hidupnya — kini Ican berdiri sebagai pengusaha sukses yang telah mengubah hidup ratusan ribu orang Indonesia.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kesehatan Mental adalah Investasi, Bukan Kelemahan: Keputusan Ican untuk konseling ke psikolog di titik tergelap hidupnya adalah yang menyelamatkan segalanya. Jangan tunda minta bantuan profesional saat pikiran mulai gelap.',
+        'Passion Bisa Menjadi Bisnis — dengan Struktur yang Tepat: Dari sekadar hobi mengajar, Ican membangun platform yang membantu 200.000+ orang. Passion tanpa sistem hanya hobi — passion dengan sistem dan tekad bisa menjadi bisnis yang bermakna.',
+        'Modal Kecil + Kreativitas + Ketekunan > Modal Besar + Tanpa Arah: Dari Rp 100 juta pesangon dan BPJS, Ican membangun IBJ Group. Jumlah modal awal bukan penentu — bagaimana modal itu digunakan yang menentukan.',
+        'Diversifikasi Brand dari Satu Core Competency: Dari Cariilmu (edukasi), Ican berkembang ke SUAI Skincare dan Buatizin.id. Satu keahlian inti — dalam kasus Ican adalah memahami kebutuhan pasar — bisa melahirkan banyak brand yang saling menguatkan.'
+      ]
     }
   ],
 
