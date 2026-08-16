@@ -2271,6 +2271,92 @@ const Stories = {
         'Diversifikasi Sumber Pendapatan dari Satu Keahlian: Les, jual perlengkapan online, ruang teh — semuanya berakar dari satu keahlian kaligrafi. Satu keahlian bisa menghasilkan banyak arus pendapatan.',
         'Bukti adalah Jawaban Terbaik atas Keraguan: Chen tidak berdebat dengan orang tuanya tentang masa depan kaligrafi — ia membuktikannya dengan melunasi 20 juta Yuan. Hasil nyata mengakhiri semua perdebatan.'
       ]
+    },
+    {
+      id: 'syakir',
+      featured: false,
+      name: 'Syakir Daulay',
+      tagline: 'Di Usia 20 Tahun, Utang Rp 5 Miliar untuk Produksi Film — Nyaris Diviralkan, Lunas dalam Hitungan Jam',
+      title: 'Di Usia 20 Tahun, Ia Harus Melunasi Rp 5 Miliar',
+      subtitle: 'Aktor & Penyanyi Indonesia — Melunasi Utang Rp 5 Miliar di Usia 20 Tahun Berkat Kepercayaan Gurunya',
+      origin: 'Indonesia',
+      ageAtRebound: '20 Thn',
+      categories: ['debt', 'zero', 'indonesia'],
+      categoryLabel: 'Utang Rp 5 M (Usia 20 Thn)',
+      badge: 'Lunas Tepat Waktu — Amanah Terpenuhi',
+      theme: 'teal',
+      accentColor: '#0F766E',
+      bgLight: '#F0FDFA',
+      borderLight: '#CCFBF1',
+      stats: {
+        debt: 'Rp 5 Miliar (Usia 20 Tahun)',
+        age: '20 Tahun',
+        lowest: 'Nyaris Diviralkan, Pasrah, Hanya Bisa Berdoa',
+        action: 'Investasi Rp 2M dari Habib Hasan + Amanah Dakwah',
+        result: 'Lunas Selang Beberapa Jam Sebelum Diviralkan'
+      },
+      timeline: [
+        { year: 'Usia 20 Tahun', text: 'Memberanikan diri memproduksi film sendiri. Meminjam dana besar untuk mewujudkan mimpinya.' },
+        { year: 'Tekanan Tagihan', text: 'Utang Rp 5 miliar ditagih lebih cepat dari jadwal. Ancaman diviralkan di media sosial membayangi.' },
+        { year: 'Titik Terendah', text: 'Pasrah sepenuhnya. Mendatangi Habib Hasan bin Ja\'far Assegaf — bukan minta uang, tapi minta doa dan solusi.' },
+        { year: 'Bantuan Tak Terduga', text: 'Habib Hasan menyuntikkan investasi Rp 2 miliar dengan syarat: keuntungannya untuk dakwah dan kegiatan keagamaan.' },
+        { year: 'Lunas — Beberapa Jam Sebelum Viral', text: 'Seluruh utang Rp 5 miliar lunas tepat waktu, selang beberapa jam sebelum ancaman viral menjadi kenyataan.' }
+      ],
+      quote: 'Namanya Syakir anggap beliau ayah, beliau juga anggap Syakir udah kayak anak sendiri.',
+      quoteAuthor: 'Syakir Daulay, mengenang kepercayaan Habib Hasan bin Ja\'far Assegaf',
+      chapters: [
+        {
+          num: 1,
+          title: 'Mimpi Besar di Usia Muda',
+          paragraphs: [
+            'Syakir Daulay masih sangat muda. Di usianya yang baru menginjak 20 tahun, ia sudah berani bermimpi besar. Ia adalah seorang aktor dan penyanyi yang mulai dikenal. Tapi Syakir tidak puas hanya tampil di depan kamera. Ia ingin menciptakan karyanya sendiri — sebuah film yang ia produksi dari awal hingga akhir.',
+            '"Ini adalah langkah besarku," pikirnya. Tapi langkah besar membutuhkan biaya besar. Dan Syakir, di usianya yang masih sangat belia, harus mengambil keputusan yang berisiko: berutang.',
+            'Rp 5 miliar. Angka yang sangat besar untuk seorang pemuda seusianya. Bukan angka yang bisa ditanggung dengan tenang oleh siapa pun di usia 20 tahun. Tapi Syakir memilihnya — karena ia percaya pada mimpinya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Ketika Utang Menjadi Ancaman Viral',
+          paragraphs: [
+            'Produksi film berjalan. Tapi di balik layar, Syakir mulai merasakan beratnya beban yang ia pikul. Utang Rp 5 miliar bukanlah angka main-main. Tekanan mulai datang. Dan yang terburuk: ada pihak yang menagih lebih cepat dari jadwal yang disepakati.',
+            'Syakir kebingungan. Ia tidak punya dana talangan sebesar itu dalam waktu singkat. Ancaman mulai menghantuinya — ia akan diviralkan di media sosial karena belum melunasi utangnya.',
+            '"Sudah tinggal selang beberapa jam, akhirnya enggak jadi (diviralkan) karena terbayarkan," kenangnya kemudian. Bayangkan detik-detik menjelang kehancuran reputasi itu. Seorang pemuda berusia 20 tahun, yang seharusnya menikmati masa mudanya, justru harus bergulat dengan ancaman dan tekanan yang luar biasa.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Pasrah dan Datang Meminta Doa',
+          paragraphs: [
+            'Di titik terendah itulah, Syakir melakukan satu hal yang mungkin selama ini ia abaikan: ia pasrah sepenuhnya. Ia mendatangi gurunya, almarhum Habib Hasan bin Ja\'far Assegaf. Bukan untuk meminta uang, tapi untuk meminta doa dan solusi.',
+            '"Ya Allah, di situ kayak, \'Bib, Syakir minta doa aja, solusi dari Habib\'. Memang apa-apa cerita dan saat itu udah pasrah aja, curhat saja," tutur Syakir. Ia tidak datang dengan permintaan yang terstruktur. Ia tidak datang dengan proposal atau rencana bisnis.',
+            'Ia datang dengan kerendahan hati seorang anak yang sedang dalam kesulitan — dan meletakkan segalanya di depan seorang guru yang ia percaya. Terkadang, itulah keberanian terbesar yang bisa dilakukan seseorang.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Bantuan Tak Terduga — Investasi Berbalut Amanah',
+          paragraphs: [
+            'Dan kemudian, bantuan datang dari arah yang tak terduga. Habib Hasan memberikan dana sebesar Rp 2 miliar dalam bentuk investasi. Tapi ada syaratnya — dan syarat ini bukan tentang bunga atau jaminan aset.',
+            'Syaratnya: keuntungan dari investasi itu harus digunakan untuk dakwah dan kegiatan keagamaan. "Gue inves kalau ada untungnya, lo pakai buat dakwah majelis. Kalaupun gue nggak ada, ya gue titip anak-anak gue," kenang Syakir menirukan kata-kata gurunya.',
+            'Bukan sekadar uang. Itu adalah kepercayaan. Itu adalah amanah. Itu adalah kasih sayang seorang guru pada muridnya yang diperlakukan layaknya anak kandung. "Namanya Syakir anggap beliau ayah, beliau juga anggap Syakir udah kayak anak sendiri," kenangnya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas dan Amanah yang Terus Dipegang',
+          paragraphs: [
+            'Dengan bantuan itu, Syakir berhasil melunasi seluruh utang Rp 5 miliar-nya tepat waktu — selang beberapa jam sebelum ancaman viral menjadi kenyataan. "Pernah (punya utang) tapi utang bisnis. Sekarang sudah beres, Alhamdulillah," ungkapnya.',
+            'Film yang ia produksi pun berjalan lancar. Dan yang terpenting, ia mendapatkan pelajaran berharga yang tidak bisa dibeli di bangku mana pun tentang dunia bisnis, kepercayaan, dan amanah.',
+            'Dari seorang pemuda yang hampir dihancurkan oleh utang di usia 20 tahun, kini ia berdiri sebagai bukti bahwa di tengah kesulitan, selalu ada jalan — terutama bagi mereka yang tidak pernah berhenti berdoa, tidak malu untuk meminta pertolongan, dan tidak melupakan amanah yang diberikan. Keuntungan dari investasi Habib Hasan ia gunakan untuk dakwah dan kegiatan keagamaan — sebuah komitmen yang ia pegang teguh.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kalau Tidak Mampu Bayar, Jangan Diam — Komunikasikan: Syakir hampir diviralkan karena tagihan menumpuk tanpa komunikasi yang baik. Proaktif menghubungi kreditur dan negosiasi jadwal adalah langkah pertama yang wajib.',
+        'Pasrah Bukan Lemah — Itu Titik Balik: Ketika Syakir berhenti berusaha sendiri dan memilih untuk pasrah dan meminta doa, itulah saat pertolongan tak terduga datang. Kadang ego yang terlalu besar menghalangi bantuan masuk.',
+        'Bantuan Datang Bukan Selalu dalam Bentuk yang Kita Harapkan: Rp 2 miliar dari Habib Hasan bukan hibah — itu investasi dengan amanah dakwah. Bersedia menerima bantuan dalam bentuk apa pun, dengan syarat apa pun yang terhormat, adalah kematangan jiwa.',
+        'Risiko Bisnis di Usia Muda Harus Disertai Pemahaman Arus Kas: Produksi film memang mahal, tapi tanpa manajemen pembayaran yang jelas kepada kreditur, mimpi besar bisa berakhir di media sosial sebagai berita viral yang memalukan.'
+      ]
     }
   ],
 
