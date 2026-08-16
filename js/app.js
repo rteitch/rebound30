@@ -357,23 +357,54 @@ const App = {
       </div>
     `).join('');
     
-    // Stats
-    const income = s.profile.monthlyIncome + s.incomes.filter(i=>H.isThisMonth(i.date)).reduce((a,i)=>a+i.amount,0);
-    const essential = Object.values(s.expenses.essential).reduce((a,v)=>a+v,0);
-    const totalDebt = s.debts.reduce((a,d)=>a+d.remaining,0);
-    const cash = s.profile.cash;
-    const runway = essential > 0 ? Math.round(cash / essential * 30) : null;
+    // Stats (Sinkronisasi Dinamis 100% Real-Time)
+    const baseIncome = s.profile.monthlyIncome || 0;
+    const extraIncome = s.incomes.filter(i=>H.isThisMonth(i.date)).reduce((a,i)=>a+i.amount, 0);
+    const totalIncome = baseIncome + extraIncome;
+
+    const essential = Object.values(s.expenses.essential || {}).reduce((a,v)=>a+v, 0);
+    const nonEssential = (s.expenses.records || []).filter(e=>H.isThisMonth(e.date)).reduce((a,e)=>a+e.amount, 0);
+    const totalExpenses = essential + nonEssential;
+
+    const totalDebt = (s.debts || []).reduce((a,d)=>a+d.remaining, 0);
+    const cash = s.profile.cash || 0;
+    const monthlyBurn = totalExpenses > 0 ? totalExpenses : essential;
+    const runway = monthlyBurn > 0 ? Math.round((cash / monthlyBurn) * 30) : 999;
+    const netCashflow = totalIncome - totalExpenses;
     
-    document.getElementById('stat-cash').textContent = H.formatRp(cash);
-    document.getElementById('stat-income').textContent = H.formatRp(income);
+    // 1. Kas Tunai
+    const statCashEl = document.getElementById('stat-cash');
+    if (statCashEl) statCashEl.textContent = H.formatRp(cash);
+    
+    // 2. Pemasukan
+    const statIncomeEl = document.getElementById('stat-income');
+    if (statIncomeEl) {
+      statIncomeEl.textContent = H.formatRp(totalIncome);
+    }
+    
+    // 3. Pengeluaran
     const expEl = document.getElementById('stat-expenses');
-    expEl.textContent = H.formatRp(essential);
-    expEl.className = 'stat-value ' + (income > 0 && essential > income ? 'negative' : 'warning');
-    document.getElementById('stat-debt').textContent = H.formatRp(totalDebt);
+    if (expEl) {
+      expEl.textContent = H.formatRp(totalExpenses);
+      expEl.className = 'stat-value ' + (totalIncome > 0 && totalExpenses > totalIncome ? 'negative' : 'warning');
+    }
+    
+    // 4. Total Utang & Runway Subtext
+    const statDebtEl = document.getElementById('stat-debt');
+    if (statDebtEl) {
+      statDebtEl.textContent = totalDebt === 0 ? 'Rp 0 (Lunas)' : H.formatRp(totalDebt);
+    }
+    
     const runwayEl = document.getElementById('stat-runway');
-    if (runway !== null && income === 0) {
-      runwayEl.textContent = `Runway: ${runway} hari`;
-    } else { runwayEl.textContent = ''; }
+    if (runwayEl) {
+      if (totalDebt === 0) {
+        runwayEl.innerHTML = '<span style="color:var(--green-600);font-weight:700;">Bebas Utang Total</span>';
+      } else if (netCashflow < 0) {
+        runwayEl.innerHTML = `<span style="color:var(--red-600);">Defisit ${H.formatRp(Math.abs(netCashflow))}/bln (Runway: ${runway} hr)</span>`;
+      } else {
+        runwayEl.innerHTML = `<span style="color:var(--green-600);">Surplus +${H.formatRp(netCashflow)}/bln</span>`;
+      }
+    }
     
     // Missions preview
     const todayMissions = ReboundEngine.generate(s);
@@ -1567,10 +1598,12 @@ const App = {
       if (interest > 0) {
         App.state.expenses.records.push({ id: H.uid(), description: `Bunga utang: ${debt.name}`, amount: interest, date, category: 'debt_interest', essential: true, isInterest: true });
       }
+      App.state.profile.cash = Math.max(0, (App.state.profile.cash || 0) - amount);
       App.save();
       App.closeModal();
       this.render();
-      App.toast(`Pembayaran ${H.formatRp(amount)} dicatat ✓`, 'success');
+      App.renderDashboard && App.renderDashboard();
+      App.toast(`Pembayaran ${H.formatRp(amount)} dicatat & saldo kas terpotong ✓`, 'success');
     },
     
     showNegotiation(id) {
@@ -1855,10 +1888,12 @@ const App = {
         recurring: document.getElementById('inc-recurring').checked,
         notes: '',
       });
+      App.state.profile.cash = (App.state.profile.cash || 0) + amount;
       App.save();
       App.closeModal();
       this.render();
-      App.toast(`Pemasukan ${H.formatRp(amount)} dicatat ✓`, 'success');
+      App.renderDashboard && App.renderDashboard();
+      App.toast(`Pemasukan ${H.formatRp(amount)} dicatat & kas bertambah ✓`, 'success');
     },
 
     showEdit(id) {
@@ -1912,15 +1947,18 @@ const App = {
       if (!source) { App.toast('Sumber pemasukan wajib diisi', 'error'); return; }
       if (!amount || amount <= 0) { App.toast('Masukkan nominal pemasukan valid (> Rp 0)', 'error'); return; }
 
+      const diff = amount - inc.amount;
       inc.source = source;
       inc.amount = amount;
       inc.category = document.getElementById('ed-inc-cat').value;
       inc.date = document.getElementById('ed-inc-date').value || H.today();
       inc.recurring = document.getElementById('ed-inc-recurring').checked;
+      App.state.profile.cash = Math.max(0, (App.state.profile.cash || 0) + diff);
 
       App.save();
       App.closeModal();
       this.render();
+      App.renderDashboard && App.renderDashboard();
       App.toast('Pemasukan berhasil diperbarui ✓', 'success');
     },
     
@@ -1935,10 +1973,12 @@ const App = {
         type: 'danger'
       });
       if (ok) {
+        if (inc) App.state.profile.cash = Math.max(0, (App.state.profile.cash || 0) - inc.amount);
         App.state.incomes = App.state.incomes.filter(i=>i.id!==id);
         App.save();
         this.render();
-        App.toast('Pemasukan dihapus', 'info');
+        App.renderDashboard && App.renderDashboard();
+        App.toast('Pemasukan dihapus & saldo kas disesuaikan', 'info');
       }
     },
     
@@ -2166,10 +2206,12 @@ const App = {
         date: document.getElementById('exp-date').value || H.today(),
         essential: false,
       });
+      App.state.profile.cash = Math.max(0, (App.state.profile.cash || 0) - amount);
       App.save();
       App.closeModal();
       this.render();
-      App.toast(`Pengeluaran ${H.formatRp(amount)} dicatat ✓`, 'success');
+      App.renderDashboard && App.renderDashboard();
+      App.toast(`Pengeluaran ${H.formatRp(amount)} dicatat & saldo kas terpotong ✓`, 'success');
     },
 
     showEdit(id) {
@@ -2217,14 +2259,17 @@ const App = {
       if (!desc) { App.toast('Deskripsi pengeluaran wajib diisi', 'error'); return; }
       if (!amount || amount <= 0) { App.toast('Masukkan nominal pengeluaran valid (> Rp 0)', 'error'); return; }
 
+      const diff = amount - exp.amount;
       exp.description = desc;
       exp.amount = amount;
       exp.category = document.getElementById('ed-exp-cat').value;
       exp.date = document.getElementById('ed-exp-date').value || H.today();
+      App.state.profile.cash = Math.max(0, (App.state.profile.cash || 0) - diff);
 
       App.save();
       App.closeModal();
       this.render();
+      App.renderDashboard && App.renderDashboard();
       App.toast('Pengeluaran berhasil diperbarui ✓', 'success');
     },
     
@@ -2239,10 +2284,12 @@ const App = {
         type: 'danger'
       });
       if (ok) {
+        if (exp) App.state.profile.cash = (App.state.profile.cash || 0) + exp.amount;
         App.state.expenses.records = App.state.expenses.records.filter(e=>e.id!==id);
         App.save();
         this.render();
-        App.toast('Pengeluaran dihapus', 'info');
+        App.renderDashboard && App.renderDashboard();
+        App.toast('Pengeluaran dihapus & saldo kas dikembalikan', 'info');
       }
     },
   },
