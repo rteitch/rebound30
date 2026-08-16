@@ -969,13 +969,15 @@ const App = {
     
     saveDebt() {
       const name = document.getElementById('ob-debt-name').value.trim();
-      if (!name) { App.toast('Nama utang tidak boleh kosong', 'error'); return; }
+      if (!name) { App.toast('Nama utang wajib diisi', 'error'); return; }
+      const remaining = parseInt(document.getElementById('ob-debt-remaining').value) || 0;
+      if (remaining <= 0) { App.toast('Masukkan sisa utang yang valid (> Rp 0)', 'error'); return; }
       const debt = {
         id: H.uid(),
         name,
         creditor: document.getElementById('ob-debt-creditor').value.trim(),
-        original: parseInt(document.getElementById('ob-debt-remaining').value) || 0,
-        remaining: parseInt(document.getElementById('ob-debt-remaining').value) || 0,
+        original: remaining,
+        remaining: remaining,
         interestMonthly: parseFloat(document.getElementById('ob-debt-interest').value) || 0,
         dueDate: document.getElementById('ob-debt-due').value,
         minPayment: parseInt(document.getElementById('ob-debt-minpay').value) || 0,
@@ -990,7 +992,7 @@ const App = {
       App.save();
       App.closeModal();
       this.renderDebtList();
-      App.toast('Utang ditambahkan ✓', 'success');
+      App.toast('Utang berhasil ditambahkan ✓', 'success');
     },
     
     renderDebtList() {
@@ -1234,13 +1236,15 @@ const App = {
       const name = document.getElementById('d-name').value.trim();
       if (!name) { App.toast('Nama utang wajib diisi', 'error'); return; }
       const remaining = parseInt(document.getElementById('d-remaining').value) || 0;
+      if (remaining <= 0) { App.toast('Sisa utang harus lebih besar dari Rp 0', 'error'); return; }
+      const original = parseInt(document.getElementById('d-original').value) || remaining;
       App.state.debts.push({
         id: H.uid(), name,
         creditor: document.getElementById('d-creditor').value.trim(),
-        original: parseInt(document.getElementById('d-original').value) || remaining,
+        original: original > 0 ? original : remaining,
         remaining,
-        interestMonthly: parseFloat(document.getElementById('d-interest').value) || 0,
-        minPayment: parseInt(document.getElementById('d-minpay').value) || 0,
+        interestMonthly: Math.max(0, parseFloat(document.getElementById('d-interest').value) || 0),
+        minPayment: Math.max(0, parseInt(document.getElementById('d-minpay').value) || 0),
         dueDate: document.getElementById('d-due').value,
         collateral: document.getElementById('d-collateral').value.trim(),
         notes: document.getElementById('d-notes').value.trim(),
@@ -1249,7 +1253,7 @@ const App = {
       App.save();
       App.closeModal();
       this.render();
-      App.toast('Utang ditambahkan ✓', 'success');
+      App.toast('Utang berhasil dicatat ✓', 'success');
     },
     
     showPayment(id) {
@@ -1524,12 +1528,13 @@ const App = {
     
     saveNew() {
       const source = document.getElementById('i-source').value.trim();
+      if (!source) { App.toast('Sumber pemasukan wajib diisi', 'error'); return; }
       const amount = parseInt(document.getElementById('i-amount').value) || 0;
-      if (!source || !amount) { App.toast('Isi sumber dan jumlah', 'error'); return; }
+      if (!amount || amount <= 0) { App.toast('Masukkan nominal pemasukan yang valid (> Rp 0)', 'error'); return; }
       App.state.incomes.push({
         id: H.uid(), source, amount,
         category: document.getElementById('i-cat').value,
-        date: document.getElementById('i-date').value,
+        date: document.getElementById('i-date').value || H.today(),
         client: document.getElementById('i-client').value.trim(),
         recurring: document.getElementById('i-recurring').checked,
         status: 'RECEIVED', notes: '',
@@ -1541,7 +1546,7 @@ const App = {
       App.save();
       App.closeModal();
       this.render();
-      App.toast(`${H.formatRp(amount)} dicatat ✓`, 'success');
+      App.toast(`Pemasukan ${H.formatRp(amount)} dicatat ✓`, 'success');
     },
     
     remove(id) {
@@ -1726,17 +1731,18 @@ const App = {
     
     saveNew() {
       const desc = document.getElementById('exp-desc').value.trim();
+      if (!desc) { App.toast('Deskripsi pengeluaran wajib diisi', 'error'); return; }
       const amount = parseInt(document.getElementById('exp-amount').value) || 0;
-      if (!desc || !amount) { App.toast('Isi deskripsi dan jumlah', 'error'); return; }
+      if (!amount || amount <= 0) { App.toast('Masukkan nominal pengeluaran yang valid (> Rp 0)', 'error'); return; }
       if (!App.state.expenses.records) App.state.expenses.records = [];
       App.state.expenses.records.push({
         id: H.uid(), description: desc, amount,
         category: document.getElementById('exp-cat').value,
-        date: document.getElementById('exp-date').value,
+        date: document.getElementById('exp-date').value || H.today(),
         essential: document.getElementById('exp-essential').checked,
       });
       App.save(); App.closeModal(); this.render();
-      App.toast(`${H.formatRp(amount)} dicatat ✓`, 'success');
+      App.toast(`Pengeluaran ${H.formatRp(amount)} dicatat ✓`, 'success');
     },
     
     remove(id) {
@@ -1820,15 +1826,17 @@ const App = {
     saveNew() {
       const name = document.getElementById('a-name').value.trim();
       if (!name) { App.toast('Nama aset wajib diisi', 'error'); return; }
+      const val = parseInt(document.getElementById('a-value').value) || 0;
+      if (!val || val <= 0) { App.toast('Masukkan estimasi nilai aset yang valid (> Rp 0)', 'error'); return; }
       App.state.assets.push({
-        id: H.uid(), name, value: parseInt(document.getElementById('a-value').value)||0,
+        id: H.uid(), name, value: val,
         category: document.getElementById('a-cat').value,
         liquidatable: document.getElementById('a-liquid').checked,
         keepForWork: document.getElementById('a-work').checked,
         notes: '',
       });
       App.save(); App.closeModal(); this.render();
-      App.toast('Aset ditambahkan ✓', 'success');
+      App.toast('Aset berhasil dicatat ✓', 'success');
     },
     
     remove(id) {
