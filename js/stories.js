@@ -3466,6 +3466,92 @@ const Stories = {
         'Keluarga yang Solid Adalah Aset Termahal di Dunia: Dukungan setia pasangan di saat mobil dan rumah hilang adalah benteng pertahanan terbaik melawan depresi finansial.',
         'Mulai Dari Nol Bukan Akhir, Melainkan Lembaran Baru: Bebas dari utang memberikan ruang mental yang lapang untuk berkarya dan membangun kembali kekayaan secara lebih kokoh.'
       ]
+    },
+    {
+      id: 'ahmadnasai',
+      featured: false,
+      name: 'Ahmad Nasa\'i',
+      tagline: 'Dari Dicap Gelandangan & Kesulitan Beli Beras Pasca Bangkrut, Bangkit Membangun Mitraku — Toko Sembako & Bahan Kue Terbesar di Ciamis (800 Pelanggan/Hari)',
+      title: 'Dari Dicap Gelandangan, Kini CEO Toko Sembako Terbesar di Ciamis',
+      subtitle: 'Pendiri & CEO Mitraku, Ciamis — Dari Nol Beras ke Pusat Bahan Kue & Kemasan Kuliner Melayani 800 Pelanggan/Hari',
+      origin: 'Ciamis, Jawa Barat',
+      ageAtRebound: '30-an Thn',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkrut & Dicap Gelandangan',
+      badge: 'Mitraku Ciamis — 800 Pelanggan/Hari',
+      theme: 'emerald',
+      accentColor: '#065F46',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Bangkrut Total & Tabungan Nol',
+        age: '30-an Tahun',
+        lowest: 'Dicap Gelandangan oleh Warga, Sulit Membeli Beras Makan Harian',
+        action: 'Riset Peluang Kemasan Modern Kuliner + Mendirikan Mitraku 2012',
+        result: '700–800 Pelanggan/Hari, Gaji Karyawan Rp 60–65 Jt/Bulan'
+      },
+      timeline: [
+        { year: 'Masa Kecil — Jiwa Dagang', text: 'Sejak SD berjualan mercon, majalah bekas saat SMA, hingga menjajakan makanan ringan di Alun-Alun Ciamis.' } ,
+        { year: 'Titik Terendah — Bangkrut', text: 'Setelah menikah, bisnisnya bangkrut total. Kesulitan membeli beras sehari-hari hingga dicap seperti gelandangan oleh warga sekitar.' },
+        { year: '2012 — Lahirnya Mitraku', text: 'Melihat sulitnya UMKM Ciamis mencari kemasan makanan modern & bahan kue berkualitas. Mendirikan Mitraku di sebuah ruko sederhana.' },
+        { year: 'Manajemen Kerugian', text: 'Menghadapi kebocoran transaksi Rp 1–5 juta/bulan, berbenah dengan diskon barang mendekati kedaluwarsa & perbaikan SOP.' },
+        { year: 'Hari Ini — CEO Terbesar', text: 'Melayani 700–800 pelanggan setiap hari dengan total gaji puluhan karyawan mencapai Rp 60–65 juta per bulan.' }
+      ],
+      quote: 'Saya pernah dianggap seperti orang gelandangan. Untuk makan sehari-hari saja sulit. Namun, dari kondisi itulah saya bersumpah harus bangkit.',
+      quoteAuthor: 'Ahmad Nasa\'i, pendiri & CEO Mitraku Ciamis',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Kecil yang Berjualan Sejak SD',
+          paragraphs: [
+            'Ciamis, Jawa Barat. Jiwa dagang telah mengalir deras dalam diri Ahmad Nasa\'i sejak belia. Saat anak-anak seusianya asyik bermain di bangku Sekolah Dasar, Ahmad kecil sudah sibuk menjajakan petasan mercon.',
+            'Menginjak bangku SMA, ia beralih menjual majalah bekas, hingga pernah menggelar lapak makanan ringan di sekitar Alun-Alun Ciamis.',
+            'Dari setiap recehan dan interaksi langsung dengan pembeli di jalanan, Ahmad mengasah insting niaga, pemahaman karakter konsumen, dan ketahanan mental menghadapi penolakan.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Jatuh ke Titik Terendah dan Cap Gelandangan',
+          paragraphs: [
+            'Setelah berumah tangga, Ahmad memberanikan diri terjun total sebagai wirausahawan mandiri. Namun realitas bisnis menghantamnya tanpa ampun: usahanya kolaps dan ia mengalami kebangkrutan total.',
+            'Perekonomian keluarganya hancur sampai pada titik paling memilukan — ia kesulitan membeli sekilo beras untuk makan anak dan istrinya.',
+            'Melihat kondisinya yang kumal dan terlunta-lunta, beberapa orang di lingkungan sekitarnya bahkan melabelinya dengan sebutan "gelandangan". Luka batin itu teramat pedih, namun di balik air matanya tersimpan sumpah baja untuk membalikkan nasib.'
+          ]
+        },
+        {
+          num: 3,
+          title: '2012 — Menangkap Peluang Kemasan Kuliner Modern',
+          paragraphs: [
+            'Tahun 2012 menjadi titik balik kebangkitan Ahmad. Ia mengamati tren menjamurnya kafe dan UMKM kuliner kekinian di Ciamis yang kesulitan memperoleh bahan baku kue serta packaging makanan modern yang estetik.',
+            'Kala itu pedagang lokal masih terjebak menggunakan bungkus plastik kresek atau daun pisang seadanya. Ahmad menangkap ceruk pasar ini dengan cepat: mendirikan gerai sembako, bahan kue, dan kemasan modern bernama "Mitraku".',
+            'Ia memposisikan tokonya bukan sekadar penjual bahan, melainkan mitra sejati bagi para perintis usaha kuliner lokal agar produk mereka naik kelas.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Belajar Mengelola Risiko dan Menekan Kerugian',
+          paragraphs: [
+            'Mengelola perputaran ribuan SKU barang bukanlah perkara gampang. Pada tahun-tahun awal, Mitraku kerap mengalami kebocoran stok dan kesalahan pencatatan transaksi senilai Rp 1 juta hingga Rp 5 juta per bulan.',
+            'Alih-alih panik, Ahmad menjadikannya bahan evaluasi sistemik. Barang-barang yang mendekati tanggal kedaluwarsa segera dibundel promo diskon khusus sebagai bentuk apresiasi bagi pelanggan setia.',
+            'Dengan pembenahan SOP pergudangan dan kontrol kas harian, kebocoran berhasil ditekan drastis hingga di bawah Rp 800 ribu per bulan.'
+          ]
+        },
+        {
+          num: 5,
+          title: '700–800 Pelanggan Per Hari dan Payung Rezeki Karyawan',
+          paragraphs: [
+            'Kini, Mitraku telah menjelma menjadi destinasi kuliner dan sembako terbesar serta terlengkap di Ciamis. Setiap hari, gerainya dipadati 700 hingga 800 pelanggan setia yang 60% di antaranya adalah pemilik kafe dan pengusaha kuliner milenial.',
+            'Ahmad kini mempekerjakan puluhan karyawan lokal dengan total alokasi penggajian mencapai Rp 60 juta hingga Rp 65 juta per bulan.',
+            'Dari seorang pria yang pernah dihina sebagai gelandangan dan kelaparan mencari sesuap beras, Ahmad Nasa\'i membuktikan bahwa kehinaan masa lalu dapat diubah menjadi kemuliaan yang menafkahi puluhan keluarga di tanah kelahirannya.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Ejekan dan Penghinaan adalah Bahan Bakar Paling Murni: Dicap gelandangan dan tidak mampu beli beras menjadi pelecut semangat Ahmad untuk membuktikan nilainya lewat kerja nyata.',
+        'Peka Menangkap Pergeseran Kebutuhan Pasar Lokal: Mitraku sukses karena Ahmad melihat gap kebutuhan kemasan modern bagi UMKM kuliner di Ciamis yang belum terlayani toko tradisional.',
+        'Manajemen Kedaluwarsa & Penyusutan Barang: Daripada membuang barang rusak, ubah barang mendekati expired menjadi program promo apresiasi pelanggan untuk menjaga likuiditas kas.',
+        'Bisnis yang Berkah Membuka Lapangan Kerja Bagi Lingkungan: Dari tidak mampu makan sendiri, kini Ahmad menggaji puluhan staf dengan nilai Rp 60–65 juta per bulan.'
+      ]
     }
   ],
 
