@@ -30,14 +30,15 @@ const H = {
   dayNumber(startDate) { return this.currentDay(startDate); },
   currentDay(startDate) {
     const d = H.daysBetween(startDate, H.today()) + 1;
-    return Math.min(Math.max(d, 1), 30);
+    return Math.max(d, 1);
   },
   
   getPhase(day) {
     if (day <= 4) return { id: 0, name: 'Survive', emoji: 'Shield', days: '1–4' };
     if (day <= 14) return { id: 1, name: 'Create Cash', emoji: 'Cash', days: '5–14' };
     if (day <= 21) return { id: 2, name: 'Stabilize', emoji: 'Scale', days: '15–21' };
-    return { id: 3, name: 'Debt Attack', emoji: 'Attack', days: '22–30' };
+    if (day <= 30) return { id: 3, name: 'Debt Attack', emoji: 'Attack', days: '22–30' };
+    return { id: 3, name: 'Maintenance & Growth', emoji: 'Growth', days: '30+' };
   },
   
   priorityOrder: { CRITICAL: 0, HIGH: 1, MEDIUM: 2, LOW: 3 },

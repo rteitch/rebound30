@@ -656,7 +656,8 @@ const Achievements = {
     { id: 'first_negotiation', name: 'Negosiator', icon: 'scale', desc: 'Hubungi kreditur pertama kali' },
     { id: 'expense_control', name: 'Hemat Cermat', icon: 'scissors', desc: 'Selesaikan misi potong pengeluaran' },
     { id: 'first_debt_payment', name: 'Bayar Utang', icon: 'trending-down', desc: 'Catat pembayaran utang pertama' },
-    { id: 'day_30', name: 'Rebound 30!', icon: 'trophy', desc: 'Selesaikan 30 hari' },
+    { id: 'debt_free', name: 'Bebas Utang Total', icon: 'award', desc: 'Lunasi seluruh utang terdaftar' },
+    { id: 'day_30', name: 'Rebound 30!', icon: 'trophy', desc: 'Selesaikan 30 hari program' },
     { id: 'financial_map', name: 'Peta Lengkap', icon: 'clipboard-check', desc: 'Lengkapi semua data finansial' },
     { id: 'first_recurring', name: 'Pemasukan Rutin', icon: 'repeat', desc: 'Tandai pemasukan berulang' },
   ],
@@ -681,6 +682,7 @@ const Achievements = {
     if (completedTypes.has('DEBT_PAYMENT') && !earned.has('first_debt_payment')) newOnes.push('first_debt_payment');
     
     if (state.incomes.some(i=>i.recurring) && !earned.has('first_recurring')) newOnes.push('first_recurring');
+    if (state.debts.length > 0 && state.debts.every(d => d.remaining === 0) && !earned.has('debt_free')) newOnes.push('debt_free');
     if (H.currentDay(state.meta.startDate) >= 30 && !earned.has('day_30')) newOnes.push('day_30');
     
     const hasDebt = state.debts.length > 0;
