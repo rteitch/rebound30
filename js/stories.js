@@ -2617,6 +2617,103 @@ const Stories = {
         'Melepas Aset adalah Strategi, Bukan Kekalahan: Menjual 20 toko terasa seperti menyerah, tapi itu adalah strategi terbaik yang menyelamatkan nama baik dan kebebasan finansial Fauzi. Aset bisa dibangun ulang — reputasi lebih sulit diperbaiki.',
         'Komunitas yang Tepat Bisa Mengubah Cara Pandang: Bergabung dengan SyaREA World memberi Fauzi perspektif baru yang tidak bisa ia temukan sendiri. Di saat paling bingung, komunitas yang tepat adalah navigator terbaik.'
       ]
+    },
+    {
+      id: 'susi',
+      featured: false,
+      name: 'Susilowati (Ibu Susi)',
+      tagline: 'Dari Bakso Keliling & Utang Bank Rp 300 Juta Pasca Kolaps 2018, Bangkit Lewat Limbah Kayu & TikTok Hingga Ekspor & Haji 2023',
+      title: 'Dari Penjual Bakso dan Utang Rp 300 Juta, Kini Tembus Pasar Ekspor',
+      subtitle: 'Pemilik SR Handicraft, Blitar — Dari Limbah Kayu Kendang ke Pasar Dunia Lewat TikTok',
+      origin: 'Blitar, Jawa Timur',
+      ageAtRebound: '40-an Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Bank Rp 300 Jt',
+      badge: 'Ekspor + Haji 2023 — Berkat Limbah Kayu & TikTok',
+      theme: 'amber',
+      accentColor: '#92400E',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Lebih dari Rp 300 Juta (Bank)',
+        age: '40-an Tahun',
+        lowest: 'Kerajinan Kayu Kolaps 2018, Tanah & Mobil Terjual, Pembayaran China & Korea Macet',
+        action: 'Limbah Kayu → Gelas Kayu + Belajar TikTok/Shopee/Facebook Otodidak',
+        result: 'Rp 50–100 Jt/Bulan dari TikTok, Ekspor, 20 Karyawan, Haji 2023'
+      },
+      timeline: [
+        { year: 'Awal — Bakso Keliling', text: 'Berjualan bakso dengan sepeda ontel warisan bersama suami. Modal Rp 5 juta untuk merintis kerajinan kayu pertama.' },
+        { year: '2016 — Puncak', text: 'Kendang jimbe meledak — kontrak supplier China, omzet miliaran, satu kontainer dikirim tiap minggu.' },
+        { year: '2018 — Kolaps', text: 'Bahan baku lokal menurun kualitas. Pembayaran China & Korea macet total. Utang bank menumpuk lebih dari Rp 300 juta.' },
+        { year: 'Jual Aset', text: 'Tanah dan mobil terpaksa dijual untuk menutup utang. Masih belum cukup.' },
+        { year: 'Pandemi — Limbah Kayu', text: 'Menemukan peluang di limbah kayu kendang. Otodidak berjualan di Shopee, Facebook, TikTok. Produk baru: gelas kayu.' },
+        { year: 'Nekat Umrah', text: 'Di tengah kesulitan, menggunakan sisa uang untuk umrah — "aku ingin mengejar akhirat biar dunia mengikuti."' },
+        { year: '2023 — Haji & Ekspor', text: 'TikTok menghasilkan Rp 50–100 juta/bulan. Produk tembus ekspor. 20 karyawan (80% saudara & tetangga). Dipanggil haji tanpa antre.' }
+      ],
+      quote: 'Segenap sesuatu kalau kita pasrahkan, pasti akan kembali kepada kita lebih baik. Di jalan Allah pasti nanti dikasih jalan.',
+      quoteAuthor: 'Susilowati (Ibu Susi), pemilik SR Handicraft Blitar',
+      chapters: [
+        {
+          num: 1,
+          title: 'Bakso Keliling dan Sepeda Ontel',
+          paragraphs: [
+            'Blitar, tahun 2000-an. Susilowati — yang akrab disapa Ibu Susi — dan suaminya memulai hari sebelum matahari terbit. Mereka bukan pengusaha besar. Mereka hanya sepasang suami istri yang berjualan bakso keliling dengan sepeda ontel warisan. Setiap hari, kaki mereka mengayuh pedal, menembus panas dan hujan, menawarkan semangkuk bakso hangat kepada para pelanggan.',
+            'Tapi di balik kesederhanaan itu, ada mimpi yang terus menyala. Suaminya memiliki keahlian di bidang pertukangan. Dengan modal Rp 5 juta, mereka memberanikan diri merintis usaha kerajinan kayu. Kecil. Sederhana. Tapi itu adalah awal dari segalanya.',
+            'Tidak ada jalan pintas. Tidak ada investor. Hanya sepasang tangan yang terampil, sebuah tekad, dan modal yang nyaris tidak ada.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Puncak yang Begitu Cepat — Satu Kontainer Tiap Minggu',
+          paragraphs: [
+            'Tahun 2016. Mimpi mereka mulai menjadi kenyataan. Produk andalan mereka — kendang jimbe — meledak di pasaran. Kontrak besar dari supplier China mengalir deras. Omzet mencapai miliaran rupiah. Setiap minggu, satu kontainer penuh kendang jimbe dikirim ke luar negeri.',
+            'Ibu Susi berdiri di tengah pabriknya yang ramai. Mesin-mesin berbunyi. Puluhan tangan bekerja. Dari sepeda ontel dan bakso keliling, kini ia memimpin bisnis ekspor bernilai miliaran.',
+            'Tapi ia tidak tahu bahwa badai sedang mengintai di balik cakrawala yang tampak cerah itu.'
+          ]
+        },
+        {
+          num: 3,
+          title: '2018 — Ketika Segalanya Runtuh',
+          paragraphs: [
+            'Tahun 2018 datang dengan pukulan bertubi-tubi. Kualitas bahan baku dari supplier lokal menurun drastis. Sementara itu, pembayaran dari pembeli di China dan Korea macet total — uang yang seharusnya masuk tidak pernah datang.',
+            'Produksi terhenti. Pesanan batal. Utang menumpuk. Ibu Susi duduk di sudut ruang kerjanya yang mulai sepi. Di depannya, tagihan bank yang menggunung lebih dari Rp 300 juta.',
+            'Ia menjual tanah. Menjual mobil. Menjual hampir semua yang ia miliki untuk menutup lubang yang semakin dalam. "Bagaimana caraku keluar dari sini?" tanyanya, di malam-malam yang terasa sangat panjang.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Limbah Kayu, TikTok, dan Sebuah Keberanian Otodidak',
+          paragraphs: [
+            'Di titik terendah itulah, di masa pandemi ketika semua orang berhenti, Ibu Susi justru mulai bergerak. Ia melihat tumpukan limbah kayu kendang yang selama ini terbuang begitu saja. "Kenapa tidak kuolah menjadi sesuatu yang baru?" pikirnya.',
+            'Ia belajar berjualan secara otodidak di platform digital — Shopee, Facebook, dan TikTok. Tidak ada mentor. Tidak ada kursus mahal. Hanya tekad dan kemauan untuk belajar hal baru di usia yang tidak lagi muda. Dari limbah kayu itu, ia menciptakan produk baru: gelas kayu. Sederhana. Elegan. Dan ternyata, pasar menyukainya.',
+            'Satu per satu video TikTok ia unggah. Satu per satu pesanan masuk. Perlahan, cahaya mulai tampak di ujung terowongan yang selama ini gelap.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Nekat Umrah di Tengah Kesulitan',
+          paragraphs: [
+            'Yang membuat kisah Ibu Susi unik adalah sebuah keputusan yang dianggap "nekat" oleh banyak orang. Di tengah kesulitan ekonomi pasca-bangkrut, dengan utang yang belum sepenuhnya lunas, ia menggunakan sisa uang penjualan aset untuk berangkat umrah.',
+            '"Aku mau umrah dulu saja, aku ingin mengejar akhirat biar dunia mengikuti," ujarnya. Bukan karena ia kaya. Bukan karena ia sudah punya segalanya. Tapi karena ia percaya — percaya bahwa ketika kita mendahulukan Tuhan, dunia akan mengikuti.',
+            'Dan keyakinannya terbukti.'
+          ]
+        },
+        {
+          num: 6,
+          title: 'Dari Rp 300 Juta Menuju Pasar Dunia — dan Haji 2023',
+          paragraphs: [
+            'Hari ini, Ibu Susi bukan lagi perempuan yang terpuruk dengan utang Rp 300 juta. Dari TikTok saja, omzetnya mencapai Rp 50 juta hingga Rp 100 juta per bulan. Produk gelas kayunya telah menembus pasar ekspor. Dan yang paling membanggakan: usahanya kini memberdayakan sekitar 20 orang, dengan 80 persen di antaranya adalah saudara dan tetangga yang juga butuh pekerjaan.',
+            'Pada 2023, ia dan suami mendapat panggilan haji tanpa antre — sebuah keberkahan yang datang setelah mereka kembali sukses berbisnis. Dari bakso keliling, ke pabrik ekspor, lalu kolaps, lalu bangkit lagi dari limbah kayu dan TikTok, lalu ke Tanah Suci.',
+            '"Segenap sesuatu kalau kita pasrahkan, pasti akan kembali kepada kita lebih baik. Di jalan Allah pasti nanti dikasih jalan," pesannya. Sebuah filosofi yang lahir bukan dari teori, tapi dari perjalanan panjang seorang perempuan Blitar yang tidak pernah berhenti mencoba.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Limbah adalah Peluang yang Belum Dilihat: Ibu Susi melihat tumpukan limbah kayu sebagai bahan baku produk baru, bukan sampah. Selalu tanya: "Apa yang masih bisa dimanfaatkan dari yang sudah tidak terpakai?"',
+        'Belajar Platform Digital Otodidak itu Mungkin: Tanpa mentor, tanpa kursus, Ibu Susi berhasil menguasai TikTok, Shopee, dan Facebook hingga omzet Rp 50–100 juta/bulan. Usia dan latar belakang bukan penghalang.',
+        'Diversifikasi Pembeli Mencegah Krisis Piutang Macet: Ketergantungan pada satu supplier China dan Korea menjadi penyebab kolaps. Jangan biarkan lebih dari 30% pendapatan bergantung pada satu pembeli.',
+        'Mendahulukan Keyakinan Spiritual di Saat Sulit adalah Pilihan yang Sah: Keputusan umrah di tengah krisis finansial mungkin tidak masuk di akal bisnis konvensional, tapi bagi Ibu Susi itu adalah sumber kekuatan mental yang membuka jalan-jalan yang tidak terduga.'
+      ]
     }
   ],
 
