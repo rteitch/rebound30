@@ -3996,6 +3996,93 @@ const Stories = {
         'Jangan Menyalahkan Siapapun Atas Kegagalan: Sikap ksatria mengambil tanggung jawab penuh adalah pintu utama menuju pertumbuhan karakter dan kesuksesan sejati.',
         'Dukungan Pasangan Adalah Pilar Kekuatan Krisis: Ketenangan dan ketegaran keluarga di masa sulit melipatgandakan daya lenting (*resilience*) untuk memulai dari nol.'
       ]
+    },
+    {
+      id: 'ciputra',
+      featured: false,
+      name: 'Ir. Ciputra (Tjie Tjin Hoan)',
+      tagline: 'Dari Anak Melarat Sulawesi, Utang Membengkak Rp 1 Triliun Krismon 1998 & 3 Anak Usaha Ditutup — Bangkit Restrukturisasi Hingga Aset Rp 84,5 Triliun',
+      title: 'Dari Utang Rp 1 Triliun dan Tangis di Meja Makan, Kini Kerajaan Rp 84 Triliun',
+      subtitle: 'Pendiri Ciputra Group, Jaya Group & Metropolitan Group — Maestro Properti Indonesia Berprinsip IPE (Integritas, Profesionalisme, Entrepreneurship)',
+      origin: 'Parigi, Sulawesi Tengah / Jakarta',
+      ageAtRebound: '67 Thn (Tahun 1998)',
+      categories: ['debt', 'bankrupt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 1 Triliun & Ciputra Group',
+      badge: 'Maestro Properti — Aset Rp 84,5 Triliun',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Rp 1 Triliun (US$ 100 Juta Akibat Kurs Krismon 1998)',
+        age: '67 Tahun (Krisis 1998) / Lunas 2004 (73 Thn)',
+        lowest: 'Utang Melonjak 4x Lipat, Bank & Asuransi Ditutup, Menangis di Kamar Mandi',
+        action: 'Prinsip IPE (Integritas, Profesional, Entrepreneur) + Negosiasi Restrukturisasi Perbankan',
+        result: 'Restrukturisasi Tuntas 2004, Kerajaan Properti Aset Rp 84,5 Triliun'
+      },
+      timeline: [
+        { year: '1931–1950-an — Masa Sulit', text: 'Lahir di Sulawesi Tengah. Masa kecil melarat, ayah wafat di penjara kolonial, berjuang keras menempuh pendidikan arsitektur ITB.' },
+        { year: '1960–1980-an — Membangun Jaya & Metropolitan', text: 'Mendirikan Jaya Group (Ancol), Metropolitan Group (Pondok Indah & BSD), dan Ciputra Group.' },
+        { year: '1997–1998 — Utang US$ 100 Juta', text: 'Krisis moneter menghantam; utang valas melonjak dari Rp 245 miliar menjadi Rp 1 triliun. Pendapatan rupiah tak mampu menutupi utang dolar.' },
+        { year: 'Titik Terendah — Penutupan 3 Perusahaan', text: 'Bank Ciputra & Asuransi Ciputra Allstate ditutup. Ciputra menangis di meja makan dan kamar mandi bersama karyawan.' },
+        { year: '1998–2004 — Restrukturisasi Berprinsip IPE', text: 'Berpegang pada "Hutang Wajib Dibayar". Negosiasi terbuka dan transparan ke bank hingga tercapai kesepakatan restrukturisasi tuntas.' },
+        { year: 'Puncak Kejayaan — Rp 84,5 Triliun', text: 'Ciputra Group bangkit membangun kota mandiri se-Indonesia & Asia Tenggara, mencapai aset Rp 84,5 triliun di akhir hayatnya.' }
+      ],
+      quote: 'Yang utama begini, perusahaan itu harus punya prinsip: Integritas (kejujuran), Profesionalisme (keahlian), dan Entrepreneurship (inovasi). Hutang itu bukan untuk dihindari, melainkan harus dihadapi dan dibayar.',
+      quoteAuthor: 'Ir. Ciputra, pendiri Ciputra Group',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Melarat dari Sulawesi yang Mengubah Gurun Jadi Kota',
+          paragraphs: [
+            'Parigi, Sulawesi Tengah, 1931. Seorang anak laki-laki bernama Tjie Tjin Hoan (kelak dikenal sebagai Ir. Ciputra) lahir dalam kemiskinan yang mencekik. Masa kecilnya penuh luka batin: ayahnya ditangkap dan meninggal di dalam penjara pada era pendudukan, memaksa keluarganya bertahan hidup serba kekurangan hingga kesulitan memperoleh air minum bersih.',
+            'Namun penderitaan itu menjadi kawah candradimuka yang menempanya. Ciputra muda bertekad mengubah nasib melalui pendidikan hingga berhasil lulus dari Jurusan Arsitektur Institut Teknologi Bandung (ITB).',
+            'Dengan visi kewirausahaan yang tajam, ia memelopori pembangunan proyek-proyek mahakarya Indonesia: Taman Impian Jaya Ancol bersama Jaya Group, kawasan elit Pondok Indah dan kota mandiri Bumi Serpong Damai (BSD) bersama Metropolitan Group, hingga mendirikan imperium bisnis properti Ciputra Group.'
+          ]
+        },
+        {
+          num: 2,
+          title: '1998: Badai Kurs Dolar dan Utang Rp 1 Triliun',
+          paragraphs: [
+            'Keberhasilan puluhan tahun mendadak terancam musnah ketika badai krisis moneter Asia 1997–1998 menghantam perekonomian Indonesia tanpa ampun.',
+            'Ciputra Group memiliki pinjaman luar negeri senilai US$ 100 juta yang semula diambil dengan perhitungan kurs wajar sekitar Rp 2.400 per dolar AS (senilai Rp 245 miliar). Namun saat nilai tukar rupiah terjun bebas menembus Rp 15.000 hingga Rp 16.000 per dolar, beban utang tersebut membengkak hampir lima kali lipat menjadi lebih dari Rp 1 triliun dalam hitungan bulan.',
+            'Seluruh arus kas proyek properti yang masuk dalam mata uang rupiah lumpuh seketika dan tak sanggup lagi melayani cicilan utang berdenominasi valas.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Air Mata di Meja Makan dan Penutupan Tiga Perusahaan',
+          paragraphs: [
+            'Pukulan terberat datang dari sektor keuangan grup usahanya. Tiga institusi andalannya — Bank Ciputra, Asuransi Jiwa Ciputra Allstate, dan sebagian lini aset grup — terpaksa dilikuidasi dan ditutup oleh pemerintah.',
+            'Ribuan karyawan kehilangan mata pencaharian dan menangis histeris. Di balik ketenangannya memimpin, pria tangguh yang telah berusia 67 tahun itu luluh lantak batinnya. Air matanya tumpah di atas meja makan dan di sudut kamar mandi rumahnya saat memikirkan nasib ribuan keluarga yang menggantungkan hidup padanya.',
+            '"Ini adalah keterpurukan terdalam dalam hidup saya," kenang Ciputra. Namun di tengah keputusasaan itu, ia menolak untuk lari atau mencari perlindungan hukum pailit.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Tiga Pilar Penyelamat: Integritas, Profesionalisme, dan Entrepreneurship',
+          paragraphs: [
+            'Ciputra mengumpulkan seluruh jajaran pimpinan dan menetapkan mandat moral yang tak bisa ditawar: "Hutang itu harus dibayar. Kita tidak boleh lari."',
+            'Ia menghadapi konsorsium perbankan kreditur dengan keterbukaan total (*Integritas*), membuktikan bahwa seluruh dana pinjaman murni tertanam pada aset fisik perusahaan tanpa disalahgunakan untuk kepentingan pribadi sepeser pun.',
+            'Didukung kemampuan teknis yang mumpuni (*Profesionalisme*), ia menyusun proposal restrukturisasi bertahap. Bersamaan dengan itu, ia menyalakan semangat *Entrepreneurship* dengan merancang skema pembayaran inovatif, melepas aset non-inti secara terhormat, dan memberi kebebasan penuh bagi karyawan untuk bertahan atau berkarier di tempat lain.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Restrukturisasi 2004 dan Warisan Abadi Rp 84,5 Triliun',
+          paragraphs: [
+            'Proses perundingan berlangsung alot dan membutuhkan kesabaran luar biasa selama bertahun-tahun. Ketulusan integritas Ciputra membuahkan kepercayaan: pihak perbankan menyetujui pemotongan bunga dan penjadwalan ulang tenor cicilan yang akhirnya tuntas terselesaikan sepenuhnya pada tahun 2004.',
+            'Dari abu krisis moneter 1998, Ciputra Group bangkit melipatgandakan skalanya, berekspansi membangun puluhan proyek kota mandiri terintegrasi di seluruh pelosok Nusantara hingga ke Vietnam dan Kamboja.',
+            'Saat Ir. Ciputra berpulang pada 27 November 2019 di usia 88 tahun, Ciputra Group telah menjelma menjadi raksasa properti dengan total aset menembus Rp 84,5 triliun — membuktikan bahwa integritas moral saat krisis adalah fondasi terkuat bagi kejayaan abadi.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Prinsip Integritas Tanpa Kompromi di Hadapan Kreditur: Keterbukaan membuktikan dana utang murni untuk aset perusahaan menumbuhkan empati dan kepercayaan perbankan dalam restrukturisasi.',
+        'Mitigasi Risiko Utang Mata Uang Asing (*Currency Mismatch*): Menghasilkan pendapatan dalam rupiah namun berutang dalam valuta asing adalah risiko fatal saat terjadi krisis kurs makro.',
+        'Hadapi Masalah Satu Per Satu dengan Kesabaran Panjang: Restrukturisasi utang triliunan rupiah tidak selesai dalam semalam, melainkan butuh komitmen negosiasi bertahun-tahun (1998–2004).',
+        'Tiga Pilar IPE (Integritas, Profesionalisme, Entrepreneurship): Integritas menjaga kepercayaan, profesionalisme menjamin kualitas solusi, dan entrepreneurship melahirkan inovasi penyelamat krisis.'
+      ]
     }
   ],
 
