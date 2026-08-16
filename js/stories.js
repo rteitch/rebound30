@@ -552,6 +552,93 @@ const Stories = {
       ]
     },
     {
+      id: 'yosep',
+      featured: false,
+      name: 'Yosep',
+      tagline: 'Dari Utang Modal Rp 700 Juta Usia 24 Tahun & Kerupuk Hancur Kehujanan Menjadi Bos 3 Pabrik Omset Miliaran',
+      title: 'Dari Utang Rp 700 Juta di Usia 24 Tahun, Kini Punya Tiga Pabrik',
+      subtitle: 'Pemilik Pabrik Kerupuk Sehati, Ciamis, Jawa Barat',
+      origin: 'Ciamis, Jawa Barat',
+      ageAtRebound: 'Pemuda Usia 24 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 700 Jt & 3 Pabrik',
+      badge: '3 Pabrik Kerupuk & 65 Karyawan',
+      theme: 'amber',
+      accentColor: '#EA580C',
+      bgLight: '#FFF7ED',
+      borderLight: '#FFEDD5',
+      stats: {
+        debt: 'Rp 700 Juta (Pinjaman Modal Pabrik)',
+        age: 'Usia 24 Tahun (Kini 29 Tahun)',
+        lowest: 'Ditinggal Pacar & Setengah Ton Kerupuk Kehujanan',
+        action: 'Jual Desain 99Designs, Oven Pengering & Door-to-Door',
+        result: 'Lunas 100%, 3 Pabrik & Omset Miliaran/Bulan'
+      },
+      timeline: [
+        { year: 'Usia 24 Tahun — Beban Usaha', text: 'Mengambil alih usaha kerupuk orang tua yang sepuh di Ciamis dan meminjam Rp 700 juta untuk beli tanah dan mesin.' },
+        { year: 'Cobaan Bertubi-tubi', text: 'Ditinggal pacar, HP jatuh ke sawah, dan setengah ton adonan kerupuk hancur basah tersiram hujan malam tahun baru.' },
+        { year: 'Kejujuran & Desain 99Designs', text: 'Pemasok memberi pinjaman bahan tanpa jaminan karena jujur; ia tidak mengambil gaji pabrik dan hidup dari freelance desain grafis.' },
+        { year: 'Inovasi Oven & Door-to-Door', text: 'Mengganti jemur matahari dengan mesin oven agar kebal cuaca, serta menjajakan kerupuk dari pasar ke pasar hingga luar kota.' },
+        { year: 'Pelunasan Utang Rp 700 Juta', text: 'Brand kerupuk "Sehati" meledak di pasar Jawa Barat & Jawa Tengah; seluruh utang keluarga lunas terbayar tuntas.' },
+        { year: 'Hari Ini — 3 Pabrik di Usia 29 Thn', text: 'Memiliki 3 pabrik kerupuk dengan 65 karyawan, mencetak omset miliaran rupiah per bulan, dan tetap hidup bersahaja.' }
+      ],
+      quote: 'Di usia 24 tahun punya utang Rp 700 juta rasanya seperti mimpi buruk. Tapi modal kejujuran, kerja keras pintu ke pintu, dan inovasi mesin oven membuktikan bahwa anak muda tidak boleh menyerah pada keadaan.',
+      quoteAuthor: 'Yosep, pemilik Pabrik Kerupuk Sehati Ciamis',
+      chapters: [
+        {
+          num: 1,
+          title: 'Periuk Nasi yang Tak Terduga',
+          paragraphs: [
+            'Yosep tidak pernah bermimpi menjadi juragan kerupuk. Pemuda asal Ciamis ini mulanya ingin menikmati masa mudanya dengan kuliah dan berkarier modern selayaknya rekan-rekan sebayanya.',
+            'Namun garis takdir keluarga menuntut pengorbanan besar. Orang tuanya yang dulu berjualan kerupuk di Blitar dengan hasil serba pas-pasan telah pindah ke Ciamis dalam kondisi fisik yang kian renta. Dari tiga bersaudara, hanya Yosep anak kedua yang bisa diandalkan untuk menopang dapur keluarga.',
+            '"Anak bapak saya ada tiga. Yang pertama di Purwokerto, anak bungsu masih kuliah. Jadi yang diminta pegang usaha kerupuk ya cuma saya saja," tutur Yosep mengingat awal mula tanggung jawab berat itu mampir di pundaknya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 700 Juta yang Menghantui',
+          paragraphs: [
+            'Akhir tahun 2017, di usianya yang baru menginjak 24 tahun, Yosep memutuskan merintis pabrik kerupuk dari nol. Membangun fondasi pabrik, membeli tanah, dan mendatangkan mesin produksi menuntut modal yang tidak sedikit.',
+            'Dengan mempertaruhkan nama baik keluarga, Yosep meminjam uang dari kerabat senilai Rp 700 juta. "Di usia 24 tahun menanggung utang Rp 700 juta rasanya seperti mimpi buruk. Tiap malam saya memandang atap kamar sambil bingung: bagaimana cara memulangkan uang sebanyak itu?" kenangnya.',
+            'Ujian mental belum berhenti di situ. Di tengah tekanan utang yang menumpuk, kekasihnya memilih pergi meninggalkannya, telepon genggam satu-satunya jatuh ke lumpur sawah, dan puncaknya saat malam tahun baru: hampir setengah ton adonan kerupuk yang sedang dijemur hancur lebur tersiram hujan badai. Di tengah tumpukan adonan basah yang tak bernilai, Yosep menahan tangis dan bersumpah pantang menyerah.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Modal Kejujuran & Desain 99Designs',
+          paragraphs: [
+            'Di titik nadir tersebut, Yosep menyadari bahwa modal terhebat seorang wirausahawan adalah integritas. Sikapnya yang santun, jujur, dan bertanggung jawab membuat salah seorang pemasok bahan baku tepung percaya penuh padanya—memberinya suplai bahan baku bernilai puluhan juta rupiah secara kredit tanpa jaminan sepeser pun.',
+            'Demi menjaga kelangsungan arus kas pabrik yang masih rapuh, Yosep mengambil keputusan disiplin: ia tidak mengambil gaji sepeser pun dari pabrik kerupuk.',
+            'Untuk memenuhi biaya makan harian dan operasional pribadinya, pemuda kreatif ini bekerja paruh waktu menjual karya desain grafis dan logo di situs internasional 99Designs. Dari pundi-pundi dolar desain itulah ia bertahan hidup tanpa membebani keuangan pabrik.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Inovasi Mesin Oven dan Penjualan Pintu ke Pintu',
+          paragraphs: [
+            'Trauma atas kerupuk yang hancur kehujanan mendorong Yosep berinovasi. Ia mendesain dan membangun ruang mesin pengering (oven) mandiri, sehingga proses produksi kerupuknya tidak lagi bergantung pada terik sinar matahari dan kebal terhadap musim penghujan.',
+            'Setiap subuh, Yosep mengangkut sendiri kerupuk produksinya, menjajakannya dari pintu ke pintu ke pasar-pasar tradisional di Tasikmalaya, Ciamis, hingga ke luar kota di Jawa Barat dan Jawa Tengah.',
+            'Rasa kerupuknya yang renyah, gurih konsisten, dan ketersediaan stok yang stabil sepanjang musim membuat pesanan melesat dahsyat. Pabrik yang ia beri nama "Sehati" mulai kebanjiran permintaan agen grosir.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Miliarder Muda yang Tetap Bersahaja',
+          paragraphs: [
+            'Hasil dari keringat dan kedisiplinan itu membuahkan pemulihan spektakuler. Dalam kurun waktu singkat, seluruh beban utang Rp 700 juta di masa lalu berhasil dilunasi 100% tuntas.',
+            'Alih-alih berfoya-foya membeli barang mewah, Yosep memutar seluruh laba bersih untuk memperluas ekspansi. Hari ini, di usianya yang menginjak 29 tahun, Yosep telah memiliki 3 pabrik kerupuk modern di Ciamis dengan mempekerjakan 65 orang karyawan dan menghasilkan omzet miliaran rupiah per bulan.',
+            'Yosep membuktikan bahwa usia muda bukanlah halangan untuk menanggung amanah besar; dengan modal kejujuran, inovasi tanpa henti, dan kedisiplinan hidup, siapapun mampu mengubah beban utang menjadi mahakarya kejayaan.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Disiplin Memisahkan Keuangan Pribadi & Bisnis: Bertahan hidup dari keahlian sampingan (freelance desain) mencegah kebocoran kas modal usaha yang sedang bertumbuh.',
+        'Integritas Kejujuran Sebagai Modal Pokok: Reputasi pribadi yang amanah membuka kepercayaan pasokan bahan baku dari mitra tanpa perlu jaminan fisik.',
+        'Inovasi Tepat Guna Mengatasi Risiko Cuaca: Mengganti metode jemur matahari tradisional dengan mesin oven menjamin kapasitas produksi stabil sepanjang tahun.',
+        'Re-Investasi Laba untuk Pertumbuhan: Jangan terjebak gaya hidup konsumtif dini; putar keuntungan untuk memperluas pabrik dan membuka lapangan kerja bagi sesama.'
+      ]
+    },
+    {
       id: 'heppy',
       featured: false,
       name: 'Heppy Trenggono',
