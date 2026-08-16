@@ -4345,6 +4345,92 @@ const Stories = {
         'Dukungan Moral Pasangan Melipatgandakan Keberanian Bangkit: Kekuatan kata-kata penyemangat istri menghindarkan pengusaha muda dari keputusasaan mental.',
         'Percepat Pelunasan Lewat Peningkatan Kualitas Eksekusi: Utang Rp 500 juta yang semula ditargetkan 5 tahun dapat lunas dalam 2 tahun saat operasional berjalan pada efisiensi puncak.'
       ]
+    },
+    {
+      id: 'iwanseptianus',
+      featured: false,
+      name: 'Iwan Septianus',
+      tagline: 'Dari Peternakan Ayam Musnah Akibat Wabah & Aset Terjual — Bangkit Modal KUR Rp 5 Juta Beli 35 Liter Bensin Jadi Raja BBM & LPG Malinau Kaltara',
+      title: 'Dari Peternakan yang Runtuh, Kini Raja Distribusi BBM & LPG Pedalaman Kalimantan',
+      subtitle: 'Pengusaha Distribusi Energi Desa Respen Tubu, Malinau Utara — Bangkit dari Nol dengan KUR Mikro Menjadi Pangkalan 720 Tabung LPG',
+      origin: 'Malinau, Kalimantan Utara',
+      ageAtRebound: 'Tahun 2015',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Wabah Peternakan & Modal KUR Rp 5 Jt',
+      badge: 'Raja Energi Pedalaman — Pangkalan LPG & BBM',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FEF3C7',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Aset Terjual & Seluruh Tabungan Ludes Pasca Wabah 2015',
+        age: 'Tahun 2015 (Bangkit Usia Produktif)',
+        lowest: 'Peternakan Ayam Habis Terkena Wabah Penyakit, Jual Seluruh Aset untuk Melunasi Utang',
+        action: 'Ambil KUR Rp 5 Juta (Beli 35L Bensin) + Disiplin Catat Keuangan + Berekspansi ke 720 Tabung LPG',
+        result: 'Distribusi 500L BBM/Minggu, Pangkalan Resmi 720 Tabung Gas LPG & Buka Lapangan Kerja Desa'
+      },
+      timeline: [
+        { year: '2015 — Badai Wabah Penyakit', text: 'Usaha peternakan ayam di Desa Respen Tubu musnah total diterjang wabah penyakit. Seluruh tabungan habis dan aset dijual demi melunasi utang.' },
+        { year: '2015 — Modal KUR Rp 5 Juta', text: 'Mengajukan KUR mikro BRI Rp 5 juta, membeli 35 liter bensin dan membuka kios eceran BBM sederhana di depan rumah.' },
+        { year: 'Edukasi & Tata Kelola Keuangan', text: 'Menerapkan bimbingan pencatatan transaksi rapi dan memisahkan uang pribadi dengan uang kas operasional kios.' },
+        { year: '2016 — Naik ke 500 Liter/Minggu', text: 'Mengambil pinjaman tahap kedua Rp 15 juta untuk memperbesar jeriken drum, melayani hingga ke desa-desa tetangga.' },
+        { year: '2018 — Pangkalan 720 Tabung LPG', text: 'Mengambil KUR Rp 129 juta untuk mendirikan pangkalan resmi 720 tabung gas LPG pertama di kecamatannya.' },
+        { year: 'Hari Ini — Penggerak Ekonomi Desa', text: 'Menjamin ketersediaan energi terjangkau bagi warga pedalaman Kalimantan Utara dan membuka lapangan kerja bagi pemuda desa.' }
+      ],
+      quote: 'Saya tidak menyangka akan mendapatkan pinjaman secepat itu. Modal kecil Rp 5 juta benar-benar memberikan harapan baru bagi saya untuk membangun kembali hidup dari nol. Kegagalan bukan akhir asalkan kita mau belajar dan menerima bantuan.',
+      quoteAuthor: 'Iwan Septianus, pengusaha BBM & LPG Desa Respen Tubu Malinau',
+      chapters: [
+        {
+          num: 1,
+          title: 'Peternak Ayam yang Kehilangan Segalanya dalam Semalam',
+          paragraphs: [
+            'Tahun 2015, di Desa Respen Tubu, pedalaman Kecamatan Malinau Utara, Kalimantan Utara, Iwan Septianus menggantungkan masa depan keluarganya pada usaha peternakan ayam pedaging.',
+            'Namun bencana datang tiba-tiba. Wabah penyakit unggas menyerang tanpa ampun, mematikan ribuan ayam ternaknya hanya dalam kurun hitungan minggu hingga tak bersisa.',
+            'Modal kerja ludes seketika, tabungan keluarga terkuras habis, dan aset-aset penting terpaksa dilego untuk melunasi utang pakan. Iwan jatuh ke titik terendah dan sempat kehilangan arah masa depan.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Secercah Harapan dari Pinjaman KUR Rp 5 Juta',
+          paragraphs: [
+            'Di tengah kebuntuan finansial, seorang sahabat menyarankannya untuk mengajukan Kredit Usaha Rakyat (KUR) mikro di bank pelat merah terdekat.',
+            'Meskipun awalnya diliputi rasa ragu dan minder karena statusnya sebagai pengusaha yang baru saja bangkrut, ia memberanikan diri menyusun proposal sederhana.',
+            'Permohonan pinjaman modal kerja sebesar Rp 5 juta disetujui, memberinya napas kedua untuk memulai ikhtiar bisnis baru dari titik nol.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Kios 35 Liter Bensin dan Solusi Energi Warga Desa',
+          paragraphs: [
+            'Dengan modal Rp 5 juta tersebut, Iwan mengamati kebutuhan paling krusial di desanya: warga harus menempuh jarak puluhan kilometer ke kota hanya untuk membeli bensin dan bahan bakar mesin pertanian.',
+            'Ia membelanjakan modal awalnya untuk 35 liter bensin eceran dan beberapa jeriken penampung, mendirikan kios mini di teras depan rumahnya.',
+            'Kebutuhan bahan bakar yang tinggi di pelosok membuat pasokan bensinnya laris manis diserbu warga dan petani lokal setiap hari.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Disiplin Finansial: Memisahkan Dompet Pribadi dan Kas Usaha',
+          paragraphs: [
+            'Belajar dari kejatuhan masa lalunya, Iwan menerapkan disiplin tata kelola keuangan yang ketat: mencatat setiap liter penjualan harian dan pantang mencampuradukkan uang belanja dapur dengan uang kas perputaran BBM.',
+            'Volume penjualannya meroket dari 35 liter per minggu menjadi 500 liter per minggu. Pada tahun 2016, kelancaran riwayat kreditnya membuatnya dipercaya menambah plafon pembiayaan menjadi Rp 15 juta untuk memperluas tangki drum penyimpanan.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Pangkalan Resmi 720 Tabung LPG dan Pemberdayaan Pemuda',
+          paragraphs: [
+            'Tahun 2018, Iwan membaca peluang besar kelangkaan gas elpiji yang kerap melanda pedalaman Malinau. Dengan reputasi bisnis yang kokoh, ia mengakses fasilitas KUR sebesar Rp 129 juta untuk mendirikan pangkalan resmi LPG Pertamina.',
+            'Ia mendatangkan 720 tabung gas LPG bersubsidi langsung ke desa, memangkas biaya transportasi warga yang biasanya harus membeli gas mahal di kota kabupaten.',
+            'Usaha distribusinya kini menyerap tenaga kerja pemuda desa setempat untuk bagian armada logistik dan administrasi gudang — membuktikan bahwa modal mikro yang dikelola dengan kejujuran dan ketekunan sanggup menyalakan lentera ekonomi daerah 3T (Terdepan, Terluar, Tertinggal).'
+          ]
+        }
+      ],
+      takeaways: [
+        'Manfaatkan Fasilitas Pembiayaan Mikro Resmi Pemerintah: Program KUR berbunga rendah adalah jembatan likuiditas penyelamat bagi wirausahawan yang baru bangkrut.',
+        'Pilih Usaha Berbasis Kebutuhan Pokok yang Defisit Pasokan (*Inelastic Demand*): Distribusi BBM dan LPG di kawasan pelosok menjamin perputaran kas harian yang cepat (*fast cash turnover*).',
+        'Disiplin Mutlak Pemisahan Arus Kas Pribadi vs Bisnis: Pencatatan rinci dan pemisahan dompet kas adalah fondasi utama kelayakan peningkatan plafon perbankan.',
+        'Menciptakan Dampak Sosial bagi Komunitas Lokal: Usaha yang memecahkan kesulitan masyarakat sekitar akan selalu didukung dan dijaga oleh warga lingkungannya.'
+      ]
     }
   ],
 
