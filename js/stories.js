@@ -4258,6 +4258,93 @@ const Stories = {
         'Keahlian Menyehatkan Aset Sakit (*Turnaround Specialist*): Mengakuisisi bank bermasalah dan merevitalisasinya menjadi institusi laba adalah keunggulan strategis pembeda.',
         'Visi Infrastruktur Jangka Panjang: Mengembangkan kawasan SCBD membuktikan pentingnya kepemilikan aset properti strategis sebagai pilar ketahanan konglomerasi multi-dekade.'
       ]
+    },
+    {
+      id: 'mulyoko',
+      featured: false,
+      name: 'Mulyoko',
+      tagline: 'Dari Kambing Mati, Pindah Kandang 3 Kali & Utang Rp 500 Juta di Usia 25 — Bangkit Riset Formula Pakan, Lunas 2 Tahun & Jual Ribuan Domba',
+      title: 'Dari Utang Rp 500 Juta di Usia 25 Tahun, Kini Sukses Jual Ribuan Kambing',
+      subtitle: 'Pengusaha Peternakan Kambing & Domba Modern — Menaklukkan Utang Setengah Miliar Lewat Inovasi Formula Pakan & Semangat Istri',
+      origin: 'Indonesia',
+      ageAtRebound: '25 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 500 Jt & Ribuan Ternak',
+      badge: 'Peternak Modern — Ribuan Kambing & Domba',
+      theme: 'emerald',
+      accentColor: '#10B981',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Rp 500 Juta (Ternak Mati & Modal Macet)',
+        age: '25 Tahun (Lunas Usia 27 Tahun)',
+        lowest: 'Kambing Mati Massal, Pembayaran Macet, Diusir Pindah Kandang 3 Kali, Nyaris Berhenti Total',
+        action: 'Belajar ke Peternak Sukses Bogor & Surabaya + Inovasi Formula Pakan + Manajemen Sanitasi',
+        result: 'Target 5 Tahun Lunas dalam 2 Tahun, Penjualan Ribuan Ekor Kambing & Domba'
+      },
+      timeline: [
+        { year: 'Usia Awal 20-an', text: 'Memulai usaha peternakan kambing dengan modal nekat, namun minim ilmu nutrisi pakan dan manajemen kandang.' },
+        { year: 'Usia 25 — Cobaan Bertubi-tubi', text: 'Kambing mati satu per satu, piutang macet, dan dipaksa pindah tempat usaha 3 kali akibat komplain warga.' },
+        { year: 'Titik Terendah — Rp 500 Juta', text: 'Menanggung utang Rp 500 juta dan nyaris putus asa berhenti beternak domba selamanya.' },
+        { year: 'Semangat Istri & Belajar ke Ahli', text: 'Dikuatkan istri; berkelana ke Bogor dan Surabaya untuk menimba ilmu langsung dari peternak senior yang sukses.' },
+        { year: 'Inovasi Formulasi Pakan', text: 'Menemukan komposisi pakan bergizi seimbang, memperbaiki sanitasi, dan menerapkan disiplin waktu pemeliharaan.' },
+        { year: '2 Tahun Lunas — Ribuan Ternak', text: 'Seluruh utang Rp 500 juta lunas dalam 2 tahun (dari target 5 tahun), kini sukses menyuplai ribuan kambing dan domba.' }
+      ],
+      quote: 'Kalau kita jatuh, jangan malu untuk belajar dari orang yang sudah lebih dulu berhasil. Kegagalan berkali-kali menemukan titik kuncinya di komposisi pakan dan manajemen disiplin. Semangat dari istri adalah bahan bakar kebangkitan saya.',
+      quoteAuthor: 'Mulyoko, pengusaha peternakan kambing & domba',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pemuda yang Berani Bermimpi di Jalur Peternakan',
+          paragraphs: [
+            'Di usianya yang masih sangat muda, Mulyoko telah memilih jalur wirausaha peternakan — sebuah bidang usaha yang menuntut ketahanan fisik, modal kerja intensif, dan risiko kematian hewan yang tinggi.',
+            'Bermodalkan tekad kuat, ia merintis kandang pembiakan dan penggemukan kambing/domba. Hari-harinya dihabiskan menyabit rumput, membersihkan kotoran kandang, dan merawat ternaknya.',
+            'Ia memimpikan masa depan mandiri sebagai juragan peternakan modern yang mampu membuka lapangan kerja bagi masyarakat sekitarnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Cobaan Bertubi-tubi: Ternak Mati dan Pindah Kandang Tiga Kali',
+          paragraphs: [
+            'Namun minimnya pengalaman ilmiah mengenai nutrisi dan biosafety segera menuai bencana. Hewan ternaknya terserang penyakit pencernaan dan mati lemas satu demi satu.',
+            'Di saat yang sama, pembeli dan mitra pedagang daging menunggak pembayaran hingga arus kas operasionalnya macet total. Tekanan bertambah runcing ketika warga sekitar melayangkan protes polusi bau yang memaksanya membongkar dan memindahkan lokasi kandang hingga 3 kali berturut-turut.',
+            'Setiap kali pindah lokasi, modal terkuras untuk sewa lahan baru dan mendirikan ulang rangka kandang, mengakumulasikan beban utang hingga mencapai Rp 500 juta di usianya yang baru 25 tahun.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Utang Setengah Miliar dan Cahaya Doa Sang Istri',
+          paragraphs: [
+            'Menanggung utang setengah miliar rupiah di usia muda membuat mental Mulyoko terpukul hebat. Rasa bersalah dan kelelahan fisik membuatnya sempat ingin melempar handuk dan bersumpah berhenti dari dunia peternakan selamanya.',
+            'Namun di saat paling terpuruk, sang istri hadir sebagai oase ketenangan. Tanpa pernah mencela atau menuntut berlebihan, istrinya terus menguatkannya: "Jangan menyerah Mas, mari kita evaluasi apa yang salah. Kita belajar lagi dari nol bersama-sama."',
+            'Dukungan penuh cinta itu menyalakan kembali api semangat di dadanya untuk mencari tahu letak kesalahan mendasar dalam metode peternakannya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Rendah Hati Menimba Ilmu ke Bogor dan Surabaya',
+          paragraphs: [
+            'Membuang rasa gengsi dan anggapan sok tahu, Mulyoko menempuh perjalanan jauh berguru ke sentra-sentra peternakan kambing modern percontohan di Bogor, Jawa Barat dan Surabaya, Jawa Timur.',
+            'Ia mengamati bagaimana para peternak sukses meracik pakan fermentasi konsentrat tinggi, mengatur sirkulasi udara kandang panggung, serta menerapkan jadwal pemberian vaksin dan sanitasi berkala.',
+            '"Titik balik terpenting saya temukan pada formula komposisi pakan. Kualitas nutrisi pakan menentukan kecepatan bobot panen dan ketahanan imunitas hewan terhadap penyakit," simpul Mulyoko.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Formula Pakan Ajaib, Lunas 2 Tahun, dan Ribuan Ekor Kambing',
+          paragraphs: [
+            'Menerapkan formulasi pakan barunya di kandang, tingkat kematian kambingnya merosot drastis mendekati nol, sementara laju pertambahan bobot harian meningkat pesat.',
+            'Efisiensi biaya pakan dan kualitas daging yang prima membuat pembeli grosir, restoran aqiqah, dan pedagang hewan kurban berebut memesan. Dari target semula 5 tahun pelunasan, seluruh beban utang Rp 500 juta berhasil dilunasi lunas tuntas hanya dalam tempo 2 tahun.',
+            'Hari ini, peternakan Mulyoko berkembang pesat menjual ribuan ekor kambing dan domba setiap tahunnya — membuktikan bahwa kemauan untuk rendah hati belajar dari orang lain sanggup mengubah kehancuran menjadi kesuksesan gemilang.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Rendah Hati Belajar dari Praktisi yang Sudah Terbukti: Jangan berlama-lama meratapi kegagalan metode lama; cari mentor dan peternak sukses di luar kota untuk menyerap ilmu terbaik.',
+        'Kuasai Variabel Kunci Bisnis (*Core Business Variable*): Dalam peternakan, formulasi nutrisi pakan dan biosafety adalah penentu hidup matinya margin dan arus kas.',
+        'Dukungan Moral Pasangan Melipatgandakan Keberanian Bangkit: Kekuatan kata-kata penyemangat istri menghindarkan pengusaha muda dari keputusasaan mental.',
+        'Percepat Pelunasan Lewat Peningkatan Kualitas Eksekusi: Utang Rp 500 juta yang semula ditargetkan 5 tahun dapat lunas dalam 2 tahun saat operasional berjalan pada efisiensi puncak.'
+      ]
     }
   ],
 
