@@ -163,25 +163,59 @@ const App = {
     this.refreshIcons();
   },
   
+  toggleMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    const backdrop = document.getElementById('mobile-drawer-backdrop');
+    if (drawer && backdrop) {
+      const isOpen = drawer.classList.contains('open');
+      if (isOpen) {
+        this.closeMobileDrawer();
+      } else {
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  },
+  
+  closeMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    const backdrop = document.getElementById('mobile-drawer-backdrop');
+    if (drawer && backdrop) {
+      drawer.classList.remove('open');
+      backdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  },
+
   navigate(screen) {
     this.currentScreen = screen;
+    this.closeMobileDrawer();
     
     // Hide all screens
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('screen-' + screen).classList.add('active');
+    const targetScreen = document.getElementById('screen-' + screen);
+    if (targetScreen) targetScreen.classList.add('active');
     
-    // Update nav
+    // Update nav in sidebar
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     const navEl = document.getElementById('nav-' + screen);
     if (navEl) navEl.classList.add('active');
+    
+    // Update nav in bottom bar
     document.querySelectorAll('.bottom-nav-item').forEach(n => n.classList.remove('active'));
     const bnavEl = document.getElementById('bnav-' + screen);
     if (bnavEl) bnavEl.classList.add('active');
+
+    // Update nav in mobile drawer
+    document.querySelectorAll('.drawer-nav-item').forEach(n => n.classList.remove('active'));
+    const dnavEl = document.getElementById('dnav-' + screen);
+    if (dnavEl) dnavEl.classList.add('active');
     
     const titles = {
-      dashboard: 'Dashboard', missions: 'Misi Harian', debts: 'Utang',
+      dashboard: 'Dashboard', missions: 'Misi Harian', debts: 'Audit Utang',
       income: 'Pemasukan', expenses: 'Pengeluaran', assets: 'Aset',
-      plan: 'Rencana 30 Hari', reports: 'Laporan', reports: 'Laporan', stories: 'Kisah Bangkit', settings: 'Pengaturan',
+      plan: 'Rencana 30 Hari', reports: 'Laporan', stories: 'Kisah Bangkit', settings: 'Pengaturan',
     };
     const title = titles[screen] || screen;
     const el1 = document.getElementById('topbar-title');
@@ -195,9 +229,11 @@ const App = {
     const el3 = document.getElementById('sidebar-day');
     const el4 = document.getElementById('mobile-day-badge');
     const el5 = document.getElementById('topbar-day');
+    const el6 = document.getElementById('drawer-day-badge');
     if (el3) el3.textContent = dayText;
     if (el4) el4.textContent = `Hari ${day}`;
     if (el5) el5.textContent = dayText;
+    if (el6) el6.textContent = `Hari ${day} / 30 · ${this.state.meta.currentPhase || 'Pemulihan'}`;
     
     // Render the screen
     const renders = {
