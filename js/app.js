@@ -62,8 +62,12 @@ const App = {
       this.breathingActive = true;
       this.breathingStep = 0;
       this.breathingSecondsLeft = 4;
-      const btn = document.getElementById('btn-toggle-breathing');
-      if (btn) btn.textContent = 'Hentikan Latihan';
+      const label = document.getElementById('btn-toggle-breathing-label');
+      if (label) label.textContent = 'Hentikan Latihan';
+      else {
+        const btn = document.getElementById('btn-toggle-breathing');
+        if (btn) btn.textContent = 'Hentikan Latihan';
+      }
       this.runBreathingStep();
     },
 
@@ -76,10 +80,14 @@ const App = {
       }
       const textEl = document.getElementById('breathing-instruction');
       const timerEl = document.getElementById('breathing-timer');
-      const btn = document.getElementById('btn-toggle-breathing');
+      const label = document.getElementById('btn-toggle-breathing-label');
       if (textEl) textEl.textContent = 'Tarik Napas...';
       if (timerEl) timerEl.textContent = '4s';
-      if (btn) btn.textContent = 'Mulai Latihan (Box Breathing 4-4-4-4)';
+      if (label) label.textContent = 'Mulai Latihan (Box Breathing 4-4-4-4)';
+      else {
+        const btn = document.getElementById('btn-toggle-breathing');
+        if (btn) btn.textContent = 'Mulai Latihan (Box Breathing 4-4-4-4)';
+      }
     },
 
     runBreathingStep() {

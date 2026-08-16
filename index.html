@@ -973,45 +973,66 @@
 <script src="js/app.js"></script>
 
 
-  <!-- MODAL: SOS / FIRST AID MENTAL & HUKUM -->
+  <!-- MODAL: SOS / FIRST AID MENTAL & HUKUM (CENTERED POPUP & 100% SVG) -->
   <div class="modal-overlay" id="modal-sos" style="display:none;" onclick="App.sos.closeOverlay(event)">
-    <div class="modal-content" style="max-width:640px;padding:0;overflow:hidden;border-radius:var(--radius-2xl);">
-      <div style="background:linear-gradient(135deg, #BE123C 0%, #881337 100%);color:#fff;padding:var(--space-5) var(--space-6);position:relative;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div class="modal-content" style="max-width:580px;padding:0;overflow:hidden;border-radius:var(--radius-2xl);">
+      <div style="background:linear-gradient(135deg, #BE123C 0%, #881337 100%);color:#fff;padding:18px 20px;position:relative;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
           <div>
-            <div style="font-size:11.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#FECDD3;margin-bottom:4px;">PERTOLONGAN PERTAMA KRISIS & PANIK</div>
-            <h2 style="font-size:1.35rem;font-weight:900;color:#fff;margin:0;">🚨 Pusat Bantuan Mental & Hak Hukum</h2>
+            <div style="font-size:11px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;color:#FECDD3;margin-bottom:4px;display:flex;align-items:center;gap:6px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Pertolongan Pertama Krisis & Panik
+            </div>
+            <h2 style="font-size:1.25rem;font-weight:900;color:#fff;margin:0;display:flex;align-items:center;gap:8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;color:#FECDD3;flex-shrink:0;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              Pusat Bantuan Mental & Hak Hukum
+            </h2>
           </div>
-          <button onclick="App.sos.close()" style="background:rgba(255,255,255,0.2);border:none;color:#fff;font-size:18px;width:32px;height:32px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+          <button onclick="App.sos.close()" style="background:rgba(255,255,255,0.2);border:none;color:#fff;font-size:16px;width:30px;height:30px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;" aria-label="Tutup">✕</button>
         </div>
-        <div style="font-size:13px;color:#FFE4E6;margin-top:6px;">Kamu tidak sendirian. Tarik napas, tenangkan pikiran, dan lindungi hakmu dengan kepala tegak.</div>
+        <div style="font-size:12.5px;color:#FFE4E6;margin-top:6px;line-height:1.45;">Kamu tidak sendirian. Tarik napas, tenangkan pikiran, dan lindungi hakmu dengan kepala tegak.</div>
       </div>
 
-      <!-- SOS Tabs -->
-      <div style="display:flex;border-bottom:1px solid var(--color-border);background:var(--slate-50);padding:0 var(--space-4);">
-        <button class="sos-tab-btn active" id="sos-tab-breathing" onclick="App.sos.switchTab('breathing')">💨 Pernapasan Anti-Panik</button>
-        <button class="sos-tab-btn" id="sos-tab-legal" onclick="App.sos.switchTab('legal')">⚖️ Skrip Lawan Teror DC</button>
-        <button class="sos-tab-btn" id="sos-tab-triage" onclick="App.sos.switchTab('triage')">🛡️ Protokol Uang Minus</button>
+      <!-- SOS Tabs with SVG Icons -->
+      <div style="display:flex;border-bottom:1px solid var(--color-border);background:var(--slate-50);padding:0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;">
+        <button class="sos-tab-btn active" id="sos-tab-breathing" onclick="App.sos.switchTab('breathing')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
+          <span>Pernapasan</span>
+        </button>
+        <button class="sos-tab-btn" id="sos-tab-legal" onclick="App.sos.switchTab('legal')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+          <span>Skrip Lawan Teror DC</span>
+        </button>
+        <button class="sos-tab-btn" id="sos-tab-triage" onclick="App.sos.switchTab('triage')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Protokol Uang Minus</span>
+        </button>
       </div>
 
-      <div style="padding:var(--space-6);max-height:70vh;overflow-y:auto;">
+      <div style="padding:18px 20px;max-height:65vh;overflow-y:auto;">
         <!-- TAB 1: BREATHING -->
         <div id="sos-view-breathing">
-          <div style="text-align:center;padding:var(--space-4) 0;">
-            <div id="breathing-circle-wrap" style="position:relative;width:180px;height:180px;margin:0 auto var(--space-5);">
-              <div id="breathing-circle" class="breathing-circle">
-                <div id="breathing-instruction" style="font-size:15px;font-weight:800;color:var(--teal-800);">Tarik Napas...</div>
-                <div id="breathing-timer" style="font-size:24px;font-weight:900;color:var(--teal-600);margin-top:4px;">4s</div>
+          <div style="text-align:center;padding:10px 0 16px;">
+            <div id="breathing-circle-wrap" style="position:relative;width:150px;height:150px;margin:0 auto 16px;">
+              <div id="breathing-circle" class="breathing-circle" style="width:150px;height:150px;">
+                <div id="breathing-instruction" style="font-size:14px;font-weight:800;color:var(--teal-800);">Tarik Napas...</div>
+                <div id="breathing-timer" style="font-size:22px;font-weight:900;color:var(--teal-600);margin-top:4px;">4s</div>
               </div>
             </div>
-            <div style="display:flex;justify-content:center;gap:10px;margin-bottom:var(--space-5);">
-              <button class="btn btn-primary btn-sm" id="btn-toggle-breathing" onclick="App.sos.toggleBreathing()">Mulai Latihan (Box Breathing 4-4-4-4)</button>
+            <div style="display:flex;justify-content:center;gap:10px;margin-bottom:16px;">
+              <button class="btn btn-primary btn-sm" id="btn-toggle-breathing" onclick="App.sos.toggleBreathing()" style="display:inline-flex;align-items:center;gap:6px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span id="btn-toggle-breathing-label">Mulai Latihan (Box Breathing 4-4-4-4)</span>
+              </button>
             </div>
           </div>
 
-          <div style="background:var(--teal-50);border:1px solid var(--teal-200);border-radius:var(--radius-lg);padding:var(--space-4);margin-bottom:var(--space-4);">
-            <div style="font-size:12px;font-weight:800;color:var(--teal-800);margin-bottom:4px;">🌟 3 PENGINGAT DARURAT SAAT PANIK:</div>
-            <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--slate-700);line-height:1.6;">
+          <div style="background:var(--teal-50);border:1px solid var(--teal-200);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:12px;">
+            <div style="font-size:12px;font-weight:800;color:var(--teal-800);margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;color:var(--teal-700);"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              3 PENGINGAT DARURAT SAAT PANIK:
+            </div>
+            <ul style="margin:0;padding-left:18px;font-size:12.5px;color:var(--slate-700);line-height:1.55;">
               <li><strong>Utang adalah Masalah Perdata:</strong> Tidak ada undang-undang di Indonesia yang bisa memenjarakan seseorang karena tidak mampu membayar utang (Pasal 19 Ayat 2 UU HAM No. 39/1999).</li>
               <li><strong>Uang Bisa Dicari Lagi:</strong> Kesehatan fisik dan mentalmu adalah aset nomor 1 yang tidak boleh kamu korbankan.</li>
               <li><strong>Fokus pada Hari Ini:</strong> Jangan cemaskan 1 tahun ke depan, cukup selesaikan 1 hari ini dengan selamat.</li>
@@ -1021,9 +1042,12 @@
 
         <!-- TAB 2: LEGAL DC SCRIPT -->
         <div id="sos-view-legal" style="display:none;">
-          <div style="background:var(--amber-50);border:1px solid var(--amber-200);border-radius:var(--radius-lg);padding:var(--space-4);margin-bottom:var(--space-4);">
-            <div style="font-size:12.5px;font-weight:800;color:var(--amber-900);margin-bottom:4px;">⚖️ HAK DEBITUR SESUAI POJK NO. 22/POJK.04/2023:</div>
-            <ul style="margin:0;padding-left:18px;font-size:12.5px;color:var(--amber-950);line-height:1.5;">
+          <div style="background:var(--amber-50);border:1px solid var(--amber-200);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:14px;">
+            <div style="font-size:12px;font-weight:800;color:var(--amber-900);margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;color:var(--amber-700);"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+              HAK DEBITUR SESUAI POJK NO. 22/POJK.04/2023:
+            </div>
+            <ul style="margin:0;padding-left:18px;font-size:12px;color:var(--amber-950);line-height:1.5;">
               <li>Dilarang menagih di luar jam 08:00 - 20:00 waktu setempat.</li>
               <li>Dilarang mengancam, memaki, atau menggunakan kekerasan verbal/fisik.</li>
               <li>Dilarang menghubungi kontak darurat atau keluarga selain debitur yang bersangkutan.</li>
@@ -1031,12 +1055,18 @@
             </ul>
           </div>
 
-          <div style="margin-bottom:var(--space-4);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-              <span style="font-size:12.5px;font-weight:800;color:var(--color-text-primary);">📱 Skrip Balasan WhatsApp Resmi untuk Penagih:</span>
-              <button class="btn btn-secondary btn-sm" onclick="App.copyText(document.getElementById('sos-legal-script').innerText)" style="font-size:11.5px;padding:4px 10px;">📋 Salin Teks</button>
+          <div style="margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:8px;">
+              <span style="font-size:12px;font-weight:800;color:var(--color-text-primary);display:flex;align-items:center;gap:6px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;color:var(--color-text-secondary);"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Skrip Balasan Resmi untuk Penagih:
+              </span>
+              <button class="btn btn-secondary btn-sm" onclick="App.copyText(document.getElementById('sos-legal-script').innerText)" style="font-size:11.5px;padding:4px 10px;display:inline-flex;align-items:center;gap:4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                Salin Teks
+              </button>
             </div>
-            <pre id="sos-legal-script" style="background:var(--slate-900);color:#E2E8F0;padding:var(--space-4);border-radius:var(--radius-md);font-size:12px;line-height:1.6;white-space:pre-wrap;font-family:monospace;">Selamat pagi/siang Bapak/Ibu penagih.
+            <pre id="sos-legal-script" style="background:var(--slate-900);color:#E2E8F0;padding:12px 14px;border-radius:var(--radius-md);font-size:11.5px;line-height:1.55;white-space:pre-wrap;font-family:monospace;">Selamat pagi/siang Bapak/Ibu penagih.
 
 Saya menyatakan bahwa saya memiliki itikad baik untuk menyelesaikan kewajiban saya. Namun saat ini saya sedang dalam proses restrukturisasi arus kas keuangan keluarga.
 
@@ -1052,41 +1082,44 @@ Terima kasih atas pengertiannya.</pre>
 
         <!-- TAB 3: TRIAGE PROTOCOL -->
         <div id="sos-view-triage" style="display:none;">
-          <div style="background:var(--rose-50);border:1px solid var(--rose-200);border-radius:var(--radius-lg);padding:var(--space-4);margin-bottom:var(--space-4);">
-            <div style="font-size:12.5px;font-weight:800;color:var(--rose-900);margin-bottom:4px;">🚨 HIERARKI KELANGSUNGAN HIDUP (SURVIVAL TRIAGE):</div>
-            <div style="font-size:12.5px;color:var(--rose-950);line-height:1.5;">Jika uang tunai kamu sangat terbatas hari ini, ikuti urutan prioritas mutlak ini:</div>
+          <div style="background:var(--rose-50);border:1px solid var(--rose-200);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:14px;">
+            <div style="font-size:12px;font-weight:800;color:var(--rose-900);margin-bottom:4px;display:flex;align-items:center;gap:6px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;color:var(--rose-700);"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+              HIERARKI KELANGSUNGAN HIDUP (SURVIVAL TRIAGE):
+            </div>
+            <div style="font-size:12px;color:var(--rose-950);line-height:1.5;">Jika uang tunai kamu sangat terbatas hari ini, ikuti urutan prioritas mutlak ini:</div>
           </div>
 
-          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:var(--space-4);">
-            <div style="display:flex;gap:12px;align-items:flex-start;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);">
-              <div style="width:28px;height:28px;border-radius:50%;background:var(--red-600);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:12px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:12px 14px;">
+              <div style="width:26px;height:26px;border-radius:50%;background:var(--red-600);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
               <div>
-                <div style="font-size:13.5px;font-weight:800;color:var(--color-text-primary);">Pangan & Tempat Tinggal Keluarga (Prioritas Mutlak)</div>
-                <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.4;">Beli beras dan amankan sewa tempat berteduh. Jangan bayar cicilan jika anakmu kelaparan!</div>
+                <div style="font-size:13px;font-weight:800;color:var(--color-text-primary);">Pangan & Tempat Tinggal Keluarga (Prioritas Mutlak)</div>
+                <div style="font-size:11.5px;color:var(--color-text-secondary);line-height:1.4;">Beli beras dan amankan sewa tempat berteduh. Jangan bayar cicilan jika anakmu kelaparan!</div>
               </div>
             </div>
 
-            <div style="display:flex;gap:12px;align-items:flex-start;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);">
-              <div style="width:28px;height:28px;border-radius:50%;background:var(--amber-600);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+            <div style="display:flex;gap:12px;align-items:flex-start;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:12px 14px;">
+              <div style="width:26px;height:26px;border-radius:50%;background:var(--amber-600);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
               <div>
-                <div style="font-size:13.5px;font-weight:800;color:var(--color-text-primary);">Kesehatan & Energi untuk Bekerja</div>
-                <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.4;">Jaga fisikmu agar tidak jatuh sakit. Tanpa kesehatan, kamu tidak bisa bekerja menjemput rezeki.</div>
+                <div style="font-size:13px;font-weight:800;color:var(--color-text-primary);">Kesehatan & Energi untuk Bekerja</div>
+                <div style="font-size:11.5px;color:var(--color-text-secondary);line-height:1.4;">Jaga fisikmu agar tidak jatuh sakit. Tanpa kesehatan, kamu tidak bisa bekerja menjemput rezeki.</div>
               </div>
             </div>
 
-            <div style="display:flex;gap:12px;align-items:flex-start;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);">
-              <div style="width:28px;height:28px;border-radius:50%;background:var(--teal-600);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+            <div style="display:flex;gap:12px;align-items:flex-start;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:12px 14px;">
+              <div style="width:26px;height:26px;border-radius:50%;background:var(--teal-600);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
               <div>
-                <div style="font-size:13.5px;font-weight:800;color:var(--color-text-primary);">Pelunasan Pokok Utang (Setelah Arus Kas Aman)</div>
-                <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.4;">Bayar pokok utang dari sisa surplus kas, bukan dengan mengorbankan kelangsungan hidup dasar.</div>
+                <div style="font-size:13px;font-weight:800;color:var(--color-text-primary);">Pelunasan Pokok Utang (Setelah Arus Kas Aman)</div>
+                <div style="font-size:11.5px;color:var(--color-text-secondary);line-height:1.4;">Bayar pokok utang dari sisa surplus kas, bukan dengan mengorbankan kelangsungan hidup dasar.</div>
               </div>
             </div>
           </div>
         </div>
       </div>
       
-      <div style="background:var(--slate-100);padding:var(--space-4) var(--space-6);border-top:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-size:12px;color:var(--color-text-muted);">Rebound 30 — Sahabat Pemulihan Finansialmu</span>
+      <div style="background:var(--slate-100);padding:12px 18px;border-top:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:11.5px;color:var(--color-text-muted);">Rebound 30 — Sahabat Pemulihan Finansialmu</span>
         <button class="btn btn-secondary btn-sm" onclick="App.sos.close()">Tutup Bantuan</button>
       </div>
     </div>
