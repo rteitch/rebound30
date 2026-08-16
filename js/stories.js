@@ -1,23 +1,38 @@
 // ============================================================
-// REBOUND 30 — KISAH BANGKIT (REAL RECOVERY STORIES)
+// REBOUND 30 — KISAH BANGKIT (INTERACTIVE EDITORIAL CONTROLLER)
 // ============================================================
 
 const Stories = {
   activeTab: 'shao',
 
-  switchTab(storyId, btn) {
+  switchTab(storyId, cardEl) {
     this.activeTab = storyId;
-    document.querySelectorAll('#screen-stories .tab-btn').forEach(b => b.classList.remove('active'));
-    if (btn) btn.classList.add('active');
     
-    const shaoEl = document.getElementById('story-content-shao');
-    const tangEl = document.getElementById('story-content-tang');
-    if (storyId === 'shao') {
-      if (shaoEl) shaoEl.style.display = 'block';
-      if (tangEl) tangEl.style.display = 'none';
+    // Update card selection states
+    document.querySelectorAll('.story-selector-card').forEach(c => c.classList.remove('active'));
+    if (cardEl) {
+      cardEl.classList.add('active');
     } else {
-      if (shaoEl) shaoEl.style.display = 'none';
-      if (tangEl) tangEl.style.display = 'block';
+      const activeCard = document.getElementById(`card-story-${storyId}`);
+      if (activeCard) activeCard.classList.add('active');
+    }
+
+    // Toggle content visibility with smooth fade
+    const shaoContent = document.getElementById('story-content-shao');
+    const tangContent = document.getElementById('story-content-tang');
+    
+    if (storyId === 'shao') {
+      if (shaoContent) shaoContent.style.display = 'block';
+      if (tangContent) tangContent.style.display = 'none';
+    } else {
+      if (shaoContent) shaoContent.style.display = 'none';
+      if (tangContent) tangContent.style.display = 'block';
+    }
+
+    // Scroll to top of reading area smoothly
+    const pageHeader = document.querySelector('#screen-stories .page-header');
+    if (pageHeader) {
+      pageHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 };

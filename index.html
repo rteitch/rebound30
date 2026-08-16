@@ -668,120 +668,287 @@
       <!-- === SETTINGS === -->
       
     <!-- SCREEN: STORIES -->
+    
+    <!-- SCREEN: STORIES -->
     <div class="screen" id="screen-stories">
       <div class="page-header" style="margin-bottom:var(--space-6);">
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--teal-50);border:1px solid var(--teal-200);border-radius:20px;color:var(--teal-800);font-size:12px;font-weight:700;margin-bottom:var(--space-2);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Ruang Inspirasi & Refleksi
+        </div>
         <h1 class="page-title">Kisah Nyata: Dari Titik Nol Menuju Bangkit</h1>
-        <div class="page-subtitle">Pelajaran faktual dan bukti nyata bahwa sebesar apa pun badai utang, selalu ada jalan keluar bagi mereka yang berani bertindak hari ini.</div>
+        <div class="page-subtitle">Bukti faktual bahwa sebesar apa pun badai utang, selalu ada jalan keluar bagi mereka yang berani melangkah dari unit terkecil hari ini.</div>
       </div>
 
-      <!-- Story Tab Switcher -->
-      <div class="tabs" style="margin-bottom:var(--space-6);">
-        <button class="tab-btn active" onclick="Stories.switchTab('shao', this)" id="tab-story-shao">
-          Shao Baoling (Ratu Koper & Bakpao)
-        </button>
-        <button class="tab-btn" onclick="Stories.switchTab('tang', this)" id="tab-story-tang">
-          Tang Jian (Om Sosis Panggang 46 Juta Yuan)
-        </button>
-      </div>
-
-      <!-- Story 1: Shao Baoling -->
-      <div id="story-content-shao" class="story-container">
-        <div class="card" style="margin-bottom:var(--space-6);border-left:4px solid var(--teal-600);">
-          <div class="grid grid-2" style="gap:var(--space-4);">
-            <div>
-              <div style="font-size:12px;font-weight:700;color:var(--teal-700);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Profil Tokoh</div>
-              <h2 style="font-size:1.4rem;font-weight:800;color:var(--color-text-primary);margin-bottom:6px;">Shao Baoling (邵宝玲)</h2>
-              <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">Mantan "Ratu Koper" asal Yiwu, Tiongkok yang memimpin ekspor bernilai miliaran sebelum badai utang dan kanker datang.</div>
+      <!-- Interactive Story Selector Grid -->
+      <div class="story-selector-grid">
+        <!-- Story Card 1 -->
+        <div class="story-selector-card active" onclick="Stories.switchTab('shao', this)" id="card-story-shao">
+          <div class="story-card-top">
+            <div class="story-avatar" style="background:var(--teal-100);color:var(--teal-800);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
             </div>
-            <div style="background:var(--slate-50);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);border:1px solid var(--slate-200);">
-              <div style="font-size:11px;font-weight:700;color:var(--slate-500);text-transform:uppercase;margin-bottom:4px;">Fakta Finansial</div>
-              <div style="font-size:13px;color:var(--slate-700);line-height:1.6;">
-                <strong>Total Utang:</strong> > 100 Juta Yuan (~Rp 220 Miliar)<br>
-                <strong>Penyebab:</strong> Penjaminan kredit usaha (utang silang) & krisis 2014<br>
-                <strong>Langkah Rebound:</strong> Berjualan bakpao 5 Yuan (Rp 11.000) mulai usia 61 tahun<br>
-                <strong>Pencapaian:</strong> 3 cabang toko, omset 3 juta Yuan/thn, lapangan kerja untuk 12 orang
-              </div>
+            <div>
+              <span class="story-tag" style="background:var(--teal-100);color:var(--teal-800);">Kisah #1 · Yiwu</span>
+              <div class="story-selector-title">Shao Baoling (邵宝玲)</div>
+            </div>
+          </div>
+          <div class="story-selector-desc">Ratu Koper berutang Rp 220 Miliar & didiagnosis kanker, bangkit di usia 61 tahun dengan warung bakpao 5 Yuan.</div>
+          <div class="story-metric-badge">
+            <strong>Fakta:</strong> Berkembang 3 cabang · Omset 3 Juta Yuan/thn
+          </div>
+        </div>
+
+        <!-- Story Card 2 -->
+        <div class="story-selector-card theme-amber" onclick="Stories.switchTab('tang', this)" id="card-story-tang">
+          <div class="story-card-top">
+            <div class="story-avatar" style="background:var(--amber-100);color:var(--amber-800);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <span class="story-tag" style="background:var(--amber-100);color:var(--amber-800);">Kisah #2 · Qingdao</span>
+              <div class="story-selector-title">Tang Jian (唐健)</div>
+            </div>
+          </div>
+          <div class="story-selector-desc">Raja Kuliner terlilit utang Rp 100 Miliar karena ekspansi, bangkit di usia 57 tahun dengan kios sosis 25 m².</div>
+          <div class="story-metric-badge">
+            <strong>Fakta:</strong> Kios 25 m² kalahkan resto 1.300 m² · Target lunas 2027
+          </div>
+        </div>
+      </div>
+
+      <!-- STORY 1: SHAO BAOLING -->
+      <div id="story-content-shao" class="story-content-wrap">
+        <!-- Hero Card -->
+        <div class="story-hero-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--teal-700);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Laporan Fakta & Narasi Inspiratif</div>
+              <h2 style="font-size:1.6rem;font-weight:800;color:var(--color-text-primary);margin:0 0 4px 0;">Dari Reruntuhan, Ia Tumbuh Kembali</h2>
+              <div style="font-size:13.5px;color:var(--color-text-secondary);">Perjalanan Nyata Shao Baoling (邵宝玲) — Mantan Pengusaha Ekspor Koper Yiwu</div>
+            </div>
+            <span class="badge badge-success" style="padding:6px 12px;font-size:12px;border-radius:20px;">Aktif Membuka 3 Cabang</span>
+          </div>
+
+          <!-- Quick Stats Grid -->
+          <div class="story-stats-grid">
+            <div class="story-stat-box">
+              <div class="stat-box-label">Beban Utang Awal</div>
+              <div class="stat-box-val" style="color:var(--red-600);">> 100 Juta Yuan (~Rp 220 M)</div>
+            </div>
+            <div class="story-stat-box">
+              <div class="stat-box-label">Penyebab Kejatuhan</div>
+              <div class="stat-box-val">Penjaminan Kredit Silang & Krisis 2014</div>
+            </div>
+            <div class="story-stat-box">
+              <div class="stat-box-label">Usia Saat Rebound</div>
+              <div class="stat-box-val">61 Tahun (Disertai Vonis Kanker)</div>
+            </div>
+            <div class="story-stat-box">
+              <div class="stat-box-label">Langkah Pertama</div>
+              <div class="stat-box-val">Jual Bakpao 5 Yuan (Rp 11.000)</div>
             </div>
           </div>
 
-          <div style="margin-top:var(--space-4);padding:var(--space-3) var(--space-4);background:var(--teal-50);border-radius:var(--radius-md);border:1px solid var(--teal-200);">
-            <div style="font-size:13px;font-weight:700;color:var(--teal-900);font-style:italic;">
+          <!-- Golden Quote -->
+          <div class="story-quote-box" style="background:var(--teal-50);border-color:var(--teal-600);">
+            <div class="story-quote-text" style="color:var(--teal-950);">
               "Kalau masih bisa berpikir jernih, buatlah bakpao. Kalau sudah tak kuasa berpikir, loncatlah dari sini."
             </div>
-            <div style="font-size:11px;color:var(--teal-700);margin-top:4px;">— Shao Baoling saat menolak menyerah pada keterpurukan</div>
+            <div class="story-quote-author" style="color:var(--teal-700);">
+              — Shao Baoling, saat kerabat mencibir keputusannya memulai usaha di usia senja
+            </div>
           </div>
         </div>
 
-        <!-- Story Article -->
-        <div class="card" style="line-height:1.8;font-size:14.5px;color:var(--color-text-secondary);">
-          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-bottom:var(--space-3);">1. Kejatuhan Sang Ratu</h3>
-          <p style="margin-bottom:var(--space-4);">Pada puncak kejayaannya, nama Shao Baoling adalah gemuruh yang mengguncang pasar ekspor Yiwu. Pabrik kopernya meroket dengan omzet miliaran rupiah, produknya menyeberangi lautan, dan ia duduk di kursi empuk sebagai "Ratu Koper" yang disegani. Namun, tahun 2014 menjadi titik balik yang menghancurkan. Jeratan utang akibat penjaminan kredit usaha merambat seperti retakan di dinding istananya. Satu per satu pabrik berhenti berdenyut. Bangkrut.</p>
-          <p style="margin-bottom:var(--space-4);">Pukulan berikutnya datang dari dokter—sebuah diagnosis kanker yang dingin dan membekukan. Air matanya habis. Ia hanya terdiam berjam-jam di kursi, membiarkan waktu lewat tanpa arti. <em>"Aku sudah kehilangan segalanya,"</em> bisiknya.</p>
+        <!-- Narrative Chapters -->
+        <div class="story-narrative-card">
+          <!-- Bab 1 -->
+          <div class="chapter-block">
+            <div class="chapter-header">
+              <div class="chapter-badge" style="background:var(--teal-100);color:var(--teal-800);">1</div>
+              <h3 class="chapter-title">Kejatuhan Sang Ratu</h3>
+            </div>
+            <div class="chapter-body">
+              <p>Pada puncak kejayaannya, nama Shao Baoling adalah gemuruh yang mengguncang pasar ekspor Yiwu. Pabrik kopernya meroket dengan omzet miliaran rupiah, produknya menyeberangi lautan, dan ia duduk di kursi empuk sebagai "Ratu Koper" yang disegani. Setiap pagi, ia melangkah di antara deru mesin dan hiruk-pikuk ratusan buruh pabrik, seolah dunia berada di genggamannya. Namun, takdir berkata lain.</p>
+              <p>Tahun 2014 menjadi titik balik yang menghancurkan. Jeratan utang akibat penjaminan kredit usaha untuk relasi bisnis merambat seperti retakan di dinding istananya. Satu per satu pintu tertutup. Pabrik-pabrik berhenti berdenyut. Bangkrut. Dalam sekejap, deretan angka nol di rekeningnya lenyap, digantikan oleh deretan utang yang menggunung lebih dari 100 juta Yuan (sekitar Rp 220 miliar).</p>
+              <p>Pukulan keras itu belum usai. Kabar buruk berikutnya datang dari dokter—sebuah diagnosis kanker yang dingin dan membekukan. Di rumahnya yang sunyi, Shao Baoling menatap cermin. Yang ia lihat bukan lagi perempuan berpakaian sutra itu, melainkan seorang tua renta dengan uban bertebaran dan mata yang kehilangan cahaya. Air matanya habis. <em>"Aku sudah kehilangan segalanya,"</em> bisiknya pada angin malam yang dingin.</p>
+            </div>
+          </div>
 
-          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-top:var(--space-6);margin-bottom:var(--space-3);">2. Titik Balik di Balik Kukusan Uap</h3>
-          <p style="margin-bottom:var(--space-4);">Suatu siang seorang sahabat lamanya datang, masuk ke dapur, mengulen adonan, dan mengukus bakpao sederhana. Aroma kukusan itu membangkitkan memori masa lalunya. Ibunya dulu pernah berpesan: <em>"Di zaman sesulit apa pun, selama tangan masih mau bekerja dan dagangan itu jujur, rezeki tak akan pernah kabur."</em></p>
-          <p style="margin-bottom:var(--space-4);">Pada usia 61 tahun, di tengah situasi dunia yang berat, Shao Baoling mengambil keputusan yang membuat semua orang tercengang: ia membuka warung bakpao kecil. Ketika kerabat mencibirnya, ia menjawab mantap: <strong>"Kalau masih bisa berpikir jernih, buatlah bakpao."</strong></p>
+          <!-- Bab 2 -->
+          <div class="chapter-block">
+            <div class="chapter-header">
+              <div class="chapter-badge" style="background:var(--teal-100);color:var(--teal-800);">2</div>
+              <h3 class="chapter-title">Titik Balik di Balik Kukusan Uap</h3>
+            </div>
+            <div class="chapter-body">
+              <p>Hari-hari gelap itu terasa tak berujung, sampai suatu siang seorang sahabat lamanya datang. Tanpa banyak bicara, teman itu masuk ke dapur, mengulen adonan, dan mengukus bakpao—sebuah hidangan sederhana yang dulu sering mereka santap di masa muda.</p>
+              <p>Aroma kukusan itu merambat ke ruang tamu. Shao Baoling menghirupnya, dan tiba-tiba pikirannya terbang ke masa lalu. Ia teringat pesan mendiang ibunya: <em>"Nak, di zaman sesulit apa pun, selama tangan masih mau bekerja dan dagangan itu jujur, rezeki tak akan pernah kabur."</em></p>
+              <p>Malam itu, dua suara bertempur di kepalanya. Suara pertama mengejek: <em>Kau sudah tua, kau sakit, apa lagi yang bisa kau perbuat?</em> Suara kedua, lebih pelan namun gigih, berbisik: <em>Tidakkah kau ingat bagaimana kau memulai dari nol dulu?</em> Pada usia 61 tahun, Shao Baoling mengambil keputusan yang membuat semua orang tercengang: ia membuka warung bakpao kecil.</p>
+            </div>
+          </div>
 
-          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-top:var(--space-6);margin-bottom:var(--space-3);">3. Bangkit dengan Tangan dan Arus Kas Harian</h3>
-          <p style="margin-bottom:var(--space-4);">Tepat pukul tiga dini hari, ia sudah berdiri di dapur sempitnya. Tangannya yang dulu menandatangani kontrak bernilai miliaran, kini mengulen adonan dengan sabar. Dalam sehari, ia menghasilkan ratusan hingga seribu bakpao seharga 5 Yuan. Ia menolak belas kasihan cuma-cuma: <em>"Saya tidak sedang mengemis, saya sedang berdagang."</em></p>
-          <p style="margin-bottom:var(--space-4);">Toko pertamanya berkembang menjadi 3 cabang dengan omset tahunan 3 juta Yuan dan mempekerjakan 12 orang. Meski utang 100 juta Yuan belum sepenuhnya lunas dalam semalam, ia membuktikan bahwa tindakan nyata harian adalah satu-satunya jembatan keluar dari jurang keputusasaan.</p>
+          <!-- Bab 3 -->
+          <div class="chapter-block">
+            <div class="chapter-header">
+              <div class="chapter-badge" style="background:var(--teal-100);color:var(--teal-800);">3</div>
+              <h3 class="chapter-title">Bangkit dengan Tangan dan Adonan</h3>
+            </div>
+            <div class="chapter-body">
+              <p>Tepat pukul tiga dini hari, ia sudah berdiri di dapur sempitnya. Tangannya yang dulu biasa menandatangani kontrak bernilai miliaran rupiah, kini mengulen adonan dengan sabar. Ia meremas, menepuk, membulatkan, lalu mengisi daging cincang ke dalam cengkeraman kulit tipis—semua dilakukannya sendirian. Dalam sehari, ia bisa menghasilkan ratusan, bahkan hingga seribu bakpao.</p>
+              <p>Ia tidak lagi memimpin ratusan karyawan, tetapi ia belajar mendengar lagi—mendengar keluhan buruh pabrik sekitar yang butuh sarapan cepat dan kenyang dengan harga ramah (5 Yuan / Rp 11.000). Ketika teman-teman lama menawari modal cuma-cuma, ia menolak: <em>"Saya tidak sedang mengemis, saya sedang berdagang."</em></p>
+              <p>Penghasilannya awalnya tak seberapa. Namun, bagi Shao Baoling, setiap koin yang jatuh ke dalam laci kasir adalah sebuah kemenangan. Itu adalah keringatnya, itu adalah darahnya, dan bukti bahwa ia masih hidup.</p>
+            </div>
+          </div>
 
-          <div style="margin-top:var(--space-6);padding:var(--space-4);background:var(--slate-50);border-radius:var(--radius-md);border-left:4px solid var(--teal-600);">
-            <div style="font-weight:700;color:var(--color-text-primary);margin-bottom:6px;">Pelajaran Kunci untuk Rebound Finansial:</div>
-            <ul style="margin:0;padding-left:20px;font-size:13.5px;color:var(--color-text-secondary);">
-              <li><strong>Buang Ego & Gengsi:</strong> Masa lalu yang megah tidak akan membayar cicilan hari ini. Mulailah dari unit terkecil yang menghasilkan uang riil.</li>
-              <li><strong>Kekuatan Arus Kas Harian:</strong> Setiap pemasukan kecil (5 Yuan / Rp 10.000) adalah bahan bakar untuk menjaga kehidupan tetap berjalan.</li>
-              <li><strong>Konsistensi Tanpa Alasan:</strong> Bangun jam 3 pagi dan mengeksekusi tugas tanpa menunda adalah fondasi pemulihan sejati.</li>
-            </ul>
+          <!-- Bab 4 -->
+          <div class="chapter-block">
+            <div class="chapter-header">
+              <div class="chapter-badge" style="background:var(--teal-100);color:var(--teal-800);">4</div>
+              <h3 class="chapter-title">Hidup, Lagi</h3>
+            </div>
+            <div class="chapter-body">
+              <p>Kini usaha bakpaonya telah berkembang menjadi 3 cabang toko di Yiwu dengan omset tahunan mencapai lebih dari 3 juta Yuan (sekitar Rp 6,6 miliar) dan membuka lapangan kerja bagi 12 orang. Meski utang 100 juta Yuan belum sepenuhnya lunas dan kanker masih bersarang di tubuhnya, Shao Baoling telah menemukan kembali kedamaian jiwanya.</p>
+              <p><em>"Masa lalu biarlah berlalu,"</em> ujarnya sambil tersenyum di balik kepulan uap putih kukusan. <em>"Saya tidak ingin dikenang sebagai ratu yang jatuh. Saya ingin dikenang sebagai perempuan tua yang masih punya nyali untuk memulai dari awal."</em></p>
+            </div>
+          </div>
+
+          <!-- Blueprint Takeaways -->
+          <div class="takeaways-box">
+            <div class="takeaways-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              Pelajaran Finansial Rebound 30 dari Shao Baoling:
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-num">1</div>
+              <div class="takeaway-text"><strong>Buang Ego & Romantisme Masa Lalu:</strong> Kejayaan lama tidak akan membayar cicilan hari ini. Akui kejatuhan tanpa rasa malu dan mulailah dari pekerjaan paling mendasar yang menghasilkan uang nyata.</div>
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-num">2</div>
+              <div class="takeaway-text"><strong>Kekuatan Arus Kas Harian:</strong> Setiap pemasukan kecil (5 Yuan / Rp 10.000) adalah setetes air yang akan menghentikan kepanikan finansial dan membangun kembali martabat hidup.</div>
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-num">3</div>
+              <div class="takeaway-text"><strong>Tindakan Mengalahkan Rasa Takut:</strong> Bangun jam 3 pagi dan mengeksekusi misi harian tanpa menunda adalah satu-satunya obat penawar dari depresi utang.</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Story 2: Tang Jian -->
-      <div id="story-content-tang" class="story-container" style="display:none;">
-        <div class="card" style="margin-bottom:var(--space-6);border-left:4px solid var(--amber-500);">
-          <div class="grid grid-2" style="gap:var(--space-4);">
+      <!-- STORY 2: TANG JIAN -->
+      <div id="story-content-tang" class="story-content-wrap" style="display:none;">
+        <!-- Hero Card -->
+        <div class="story-hero-card" style="border-top:4px solid var(--amber-500);">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
             <div>
-              <div style="font-size:12px;font-weight:700;color:var(--amber-600);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Profil Tokoh</div>
-              <h2 style="font-size:1.4rem;font-weight:800;color:var(--color-text-primary);margin-bottom:6px;">Tang Jian (唐健)</h2>
-              <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">Mantan Air Traffic Controller (ATC) yang mendirikan jaringan restoran mewah sebelum terlilit utang ekspansi Rp 100 miliar.</div>
+              <div style="font-size:12px;font-weight:700;color:var(--amber-600);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Laporan Fakta & Narasi Inspiratif</div>
+              <h2 style="font-size:1.6rem;font-weight:800;color:var(--color-text-primary);margin:0 0 4px 0;">Dari Raja Kuliner Menuju Om Sosis Panggang</h2>
+              <div style="font-size:13.5px;color:var(--color-text-secondary);">Perjalanan Nyata Tang Jian (唐健) — Mantan Pengusaha Restoran Mewah Qingdao</div>
             </div>
-            <div style="background:var(--slate-50);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);border:1px solid var(--slate-200);">
-              <div style="font-size:11px;font-weight:700;color:var(--slate-500);text-transform:uppercase;margin-bottom:4px;">Fakta Finansial</div>
-              <div style="font-size:13px;color:var(--slate-700);line-height:1.6;">
-                <strong>Total Utang:</strong> 46 Juta Yuan (~Rp 100 Miliar)<br>
-                <strong>Penyebab:</strong> Ekspansi berlebihan, leverage tinggi, dan rentenir<br>
-                <strong>Langkah Rebound:</strong> Kios sosis panggang pinggir jalan 25 m² mulai usia 57 tahun<br>
-                <strong>Target & Kemajuan:</strong> Pendapatan kios melampaui restoran mewah 1.300 m² miliknya dulu, target lunas total 2027
-              </div>
+            <span class="badge badge-warning" style="padding:6px 12px;font-size:12px;border-radius:20px;background:var(--amber-100);color:var(--amber-800);">Target Lunas Total 2027</span>
+          </div>
+
+          <!-- Quick Stats Grid -->
+          <div class="story-stats-grid">
+            <div class="story-stat-box">
+              <div class="stat-box-label">Beban Utang Awal</div>
+              <div class="stat-box-val" style="color:var(--red-600);">46 Juta Yuan (~Rp 100 Miliar)</div>
+            </div>
+            <div class="story-stat-box">
+              <div class="stat-box-label">Penyebab Kejatuhan</div>
+              <div class="stat-box-val">Ekspansi Berlebihan & Jeratan Rentenir</div>
+            </div>
+            <div class="story-stat-box">
+              <div class="stat-box-label">Usia Saat Rebound</div>
+              <div class="stat-box-val">57 Tahun (Setelah Bangkrut & Cerai)</div>
+            </div>
+            <div class="story-stat-box">
+              <div class="stat-box-label">Langkah Pertama</div>
+              <div class="stat-box-val">Kios Sosis Panggang Pinggir Jalan 25 m²</div>
             </div>
           </div>
 
-          <div style="margin-top:var(--space-4);padding:var(--space-3) var(--space-4);background:var(--amber-50);border-radius:var(--radius-md);border:1px solid var(--amber-200);">
-            <div style="font-size:13px;font-weight:700;color:var(--amber-900);font-style:italic;">
-              "Penyesalan tidak mengubah apa-apa. Yang mengubah segalanya adalah tindakan. Setiap hari, aku bangun pagi, menyalakan panggangan, dan mulai bekerja."
+          <!-- Golden Quote -->
+          <div class="story-quote-box" style="background:var(--amber-50);border-color:var(--amber-500);">
+            <div class="story-quote-text" style="color:var(--amber-950);">
+              "Penyesalan tidak mengubah apa-apa. Yang mengubah segalanya adalah tindakan. Setiap hari, aku bangun pagi, menyalakan panggangan, dan mulai bekerja. Itu saja."
             </div>
-            <div style="font-size:11px;color:var(--amber-700);margin-top:4px;">— Tang Jian ("Om Sosis Panggang Qingdao")</div>
+            <div class="story-quote-author" style="color:var(--amber-800);">
+              — Tang Jian, saat ditanya apakah ia membenci masa lalunya
+            </div>
           </div>
         </div>
 
-        <!-- Story Article -->
-        <div class="card" style="line-height:1.8;font-size:14.5px;color:var(--color-text-secondary);">
-          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-bottom:var(--space-3);">1. Dari Langit ke Jurang Kehancuran</h3>
-          <p style="margin-bottom:var(--space-4);">Tang Jian pernah berada di puncak dunia kuliner Qingdao. Tiga restoran mewahnya menghasilkan pendapatan lebih dari 30 juta Yuan per tahun. Namun, nafsu ekspansi yang tidak terukur dan pinjaman berbunga tinggi menjerumuskannya ke dalam lubang utang 46 juta Yuan. Dalam sekejap, rumah dan mobilnya disita, istrinya bercerai, dan teman-temannya menjauh.</p>
-          <p style="margin-bottom:var(--space-4);">Dalam keputusasaan mendalam, ia mengasingkan diri ke Gunung Laoshan selama 3 hari 3 malam, berteriak di tengah kegelapan dan nyaris mengakhiri hidupnya. Pesan ibunya yang telah renta menyadarkannya: <em>"Selama kau masih bernapas, kau bisa memulai dari awal."</em></p>
+        <!-- Narrative Chapters -->
+        <div class="story-narrative-card">
+          <!-- Bab 1 -->
+          <div class="chapter-block">
+            <div class="chapter-header">
+              <div class="chapter-badge" style="background:var(--amber-100);color:var(--amber-800);">1</div>
+              <h3 class="chapter-title">Sang Raja Kuliner</h3>
+            </div>
+            <div class="chapter-body">
+              <p>Pagi itu di Qingdao, aroma rempah dari "唐家老院子" (Halaman Tua Keluarga Tang) memenuhi jalanan. Itu adalah restoran paling bergengsi di kota, milik Tang Jian—seorang pria yang dulu mengendalikan lalu lintas udara dari menara kontrol selama 10 tahun, kini mengendalikan lidah ribuan pelanggan elit.</p>
+              <p>Tiga cabang restoran mewah. Pendapatan kotor lebih dari 30 juta Yuan per tahun. Hidupnya tampak sempurna. Namun, di balik gemerlap lampu-lampu restoran, ada nafsu berbahaya: keinginan untuk ekspansi tanpa batas. <em>"Aku bisa melakukan lebih besar lagi,"</em> bisiknya pada dirinya sendiri setiap malam.</p>
+            </div>
+          </div>
 
-          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-top:var(--space-6);margin-bottom:var(--space-3);">2. Sebatang Sosis di Pinggir Jalan</h3>
-          <p style="margin-bottom:var(--space-4);">Tahun 2017, di usia 57 tahun, ia melepas rasa malunya dan membuka gerobak sosis panggang sederhana. Ia memilih jujur pada konsumen: membeli daging dari supermarket resmi dan memajang nota pembeliannya di depan kios agar pembeli tahu produknya bersih dan bermutu tinggi.</p>
-          <p style="margin-bottom:var(--space-4);">Kisah keteguhan hatinya viral di media sosial. Kios kecilnya yang hanya berukuran 25 m² bersama 7 orang karyawan justru mencetak perputaran uang yang lebih sehat dan menguntungkan daripada restoran mewahnya yang seluas 1.300 m² dulu.</p>
+          <!-- Bab 2 -->
+          <div class="chapter-block">
+            <div class="chapter-header">
+              <div class="chapter-badge" style="background:var(--amber-100);color:var(--amber-800);">2</div>
+              <h3 class="chapter-title">Kejatuhan di Jurang Gunung Laoshan</h3>
+            </div>
+            <div class="chapter-body">
+              <p>Keserakahan dan leverage berlebih adalah jurang yang tak berdasar. Tang Jian mulai meminjam ke mana-mana—bank, rekan usaha, hingga terperangkap rentenir berbunga mencekik. Ketika siklus ekonomi berbalik, gelembung itu meletus seketika.</p>
+              <p>46 juta Yuan utang (sekitar Rp 100 miliar). Istri menggugat cerai. Rumah dan mobil disita kurator. Restoran mewah yang dulu penuh tawa berubah menjadi sunyi bagai kuburan.</p>
+              <p>Tang Jian melarikan diri ke Gunung Laoshan. Tiga hari tiga malam ia bersembunyi dalam kegelapan, menangis histeris, dan beberapa kali berdiri di tepi tebing jurang hampir mengakhiri hidupnya. Yang menyelamatkannya adalah suara ibunya yang sudah renta: <em>"Nak, selama kau masih bernapas, kau bisa memulai dari awal."</em></p>
+            </div>
+          </div>
 
-          <div style="margin-top:var(--space-6);padding:var(--space-4);background:var(--slate-50);border-radius:var(--radius-md);border-left:4px solid var(--amber-500);">
-            <div style="font-weight:700;color:var(--color-text-primary);margin-bottom:6px;">Pelajaran Kunci untuk Rebound Finansial:</div>
-            <ul style="margin:0;padding-left:20px;font-size:13.5px;color:var(--color-text-secondary);">
-              <li><strong>Jangan Menggandakan Risiko Saat Tertekan:</strong> Menghindari spekulasi berbahaya / judi / rentenir baru ketika sudah berada di bawah.</li>
-              <li><strong>Fokus pada Kualitas & Kepercayaan:</strong> Usaha sekecil apa pun jika dikerjakan dengan jujur dan berkualitas tinggi akan menemukan pasarnya.</li>
-              <li><strong>Miliki Horizon Waktu yang Realistis:</strong> Membayar utang besar membutuhkan rencana tahunan yang disiplin, bukan ilusi cepat kaya.</li>
-            </ul>
+          <!-- Bab 3 -->
+          <div class="chapter-block">
+            <div class="chapter-header">
+              <div class="chapter-badge" style="background:var(--amber-100);color:var(--amber-800);">3</div>
+              <h3 class="chapter-title">Sebatang Sosis di Pinggir Jalan</h3>
+            </div>
+            <div class="chapter-body">
+              <p>Tahun 2017, pada usia 57 tahun, Tang Jian berdiri di jalan pejalan kaki Qingdao. Di depannya bukan lagi ruang VIP mewah, melainkan panggangan arang sederhana. Di tangannya, sebatang sosis.</p>
+              <p>Awalnya ia merasa malu. Mantan pengusaha terpandang kini harus berteriak menawarkan sosis di pinggir jalan. Namun, ia segera melepas topeng gengsinya. Ia mengangkat kepala dan berfokus pada apa yang bisa ia kendalikan: <strong>kualitas daging dan kejujuran</strong>. Ia membeli daging dari supermarket resmi ternama dan memajang faktur pembelian di depan kiosnya. <em>"Aku ingin pelanggan tahu: sosis ini jujur. Sama seperti tekadku sekarang."</em></p>
+            </div>
+          </div>
+
+          <!-- Bab 4 -->
+          <div class="chapter-block">
+            <div class="chapter-header">
+              <div class="chapter-badge" style="background:var(--amber-100);color:var(--amber-800);">4</div>
+              <h3 class="chapter-title">Teriakan yang Menggema & Jalan Menuju 2027</h3>
+            </div>
+            <div class="chapter-body">
+              <p>Pada 2022, video tentang <em>"Pria paruh baya berutang 46 juta berjualan sosis panggang"</em> menjadi viral dan ditonton lebih dari 400 juta kali. Alih-alih terbuai ketenaran instan media sosial, Tang Jian tetap berdisiplin membangun rantai pasok dan pabrik sosisnya sendiri di Qingdao.</p>
+              <p>Hari ini, kios kecilnya yang hanya berukuran 25 m² bersama 7 karyawan justru mencatatkan perputaran uang yang lebih sehat dan menguntungkan daripada restoran 1.300 m² miliknya dulu. Dengan disiplin arus kas ketat, Tang Jian menargetkan melunasi seluruh sisa utang 46 juta Yuan pada tahun 2027.</p>
+            </div>
+          </div>
+
+          <!-- Blueprint Takeaways -->
+          <div class="takeaways-box" style="border-top:3px solid var(--amber-400);">
+            <div class="takeaways-title" style="color:var(--amber-400);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              Pelajaran Finansial Rebound 30 dari Tang Jian:
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-num" style="background:var(--amber-900);color:var(--amber-300);">1</div>
+              <div class="takeaway-text"><strong>Jangan Gandakan Risiko Saat Terpuruk:</strong> Jauhi rentenir, pinjaman gali lubang tutup lubang, atau perjudian saat sedang jatuh. Itu adalah jurang yang mempercepat kehancuran.</div>
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-num" style="background:var(--amber-900);color:var(--amber-300);">2</div>
+              <div class="takeaway-text"><strong>Ukuran Fisik Bukan Penentu Keberhasilan:</strong> Kios 25 m² yang efisien dan fokus pada margin bersih jauh lebih menyelamatkan daripada bisnis mewah 1.300 m² yang digerogoti utang operasional.</div>
+            </div>
+            <div class="takeaway-item">
+              <div class="takeaway-num" style="background:var(--amber-900);color:var(--amber-300);">3</div>
+              <div class="takeaway-text"><strong>Horizon Pelunasan yang Jelas:</strong> Menghadapi utang puluhan miliar membutuhkan rencana realistis multi-tahun (seperti roadmap 2027 milik Tang Jian), dimulai dari disiplin 30 hari pertama.</div>
+            </div>
           </div>
         </div>
       </div>

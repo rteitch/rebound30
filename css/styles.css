@@ -1527,3 +1527,276 @@ img { max-width: 100%; }
   .stats-grid { grid-template-columns: repeat(4, 1fr); }
   .achievements-grid { grid-template-columns: repeat(5, 1fr); }
 }
+
+/* ============================================================
+   KISAH BANGKIT — EDITORIAL READING EXPERIENCE
+   ============================================================ */
+.story-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.story-selector-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.story-selector-card:hover {
+  border-color: var(--teal-400);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.story-selector-card.active {
+  border-color: var(--teal-600);
+  background: var(--teal-50);
+  box-shadow: 0 0 0 1px var(--teal-600), var(--shadow-md);
+}
+
+.story-selector-card.active.theme-amber {
+  border-color: var(--amber-500);
+  background: var(--amber-50);
+  box-shadow: 0 0 0 1px var(--amber-500), var(--shadow-md);
+}
+
+.story-card-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.story-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.story-avatar svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
+}
+
+.story-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.story-selector-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.story-selector-desc {
+  font-size: 12.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+  margin-bottom: var(--space-3);
+}
+
+.story-metric-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: rgba(255,255,255,0.7);
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Article Hero */
+.story-hero-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.story-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+}
+
+.story-stat-box {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+}
+
+.story-stat-box .stat-box-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.story-stat-box .stat-box-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+/* Golden Quote */
+.story-quote-box {
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  position: relative;
+  margin-top: var(--space-4);
+  border-left: 4px solid;
+}
+
+.story-quote-text {
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.story-quote-author {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Chapter Narrative */
+.story-narrative-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  line-height: 1.85;
+  font-size: 15px;
+  color: var(--slate-700);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-6);
+}
+
+.chapter-block {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px dashed var(--slate-200);
+}
+
+.chapter-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.chapter-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.chapter-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chapter-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.chapter-body p {
+  margin-bottom: var(--space-4);
+}
+
+.chapter-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Blueprint / Takeaways Box */
+.takeaways-box {
+  background: var(--slate-900);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.takeaways-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--teal-400);
+}
+
+.takeaway-item {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.takeaway-item:last-child {
+  margin-bottom: 0;
+}
+
+.takeaway-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--teal-800);
+  color: var(--teal-300);
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.takeaway-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--slate-300);
+}
+
+.takeaway-text strong {
+  color: #fff;
+}
