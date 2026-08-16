@@ -19,7 +19,10 @@ const App = {
 
     open(tab = 'breathing') {
       const modal = document.getElementById('modal-sos');
-      if (modal) modal.style.display = 'flex';
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
       this.switchTab(tab);
     },
 
@@ -27,7 +30,10 @@ const App = {
 
     close() {
       const modal = document.getElementById('modal-sos');
-      if (modal) modal.style.display = 'none';
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
       this.stopBreathing();
     },
 
