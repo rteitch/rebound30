@@ -3109,3 +3109,161 @@ html, body {
 .modal-content {
   scroll-padding-bottom: 80px;
 }
+
+
+/* ============================================================
+   TYPOGRAPHY AIR & SPACING POLISH (LEGA, TERATUR & ELEGAN)
+   ============================================================ */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.62 !important;
+  letter-spacing: 0.012em !important;
+  color: var(--color-text);
+  word-spacing: 0.02em;
+}
+
+/* Headings with Balanced Tracking */
+.page-title {
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.018em !important;
+  line-height: 1.35 !important;
+  margin-bottom: 6px !important;
+  color: var(--slate-900) !important;
+}
+
+.page-subtitle {
+  font-size: 13.5px !important;
+  color: var(--slate-600) !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 20px !important;
+}
+
+.section-title {
+  font-size: 1.12rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.4 !important;
+  margin-bottom: 12px !important;
+}
+
+.card-title {
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.005em !important;
+  line-height: 1.4 !important;
+}
+
+.card-subtitle {
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+  color: var(--slate-500) !important;
+  margin-top: 4px !important;
+}
+
+/* Cards with Generous Breathing Room */
+.card {
+  padding: 18px 20px !important;
+  border-radius: var(--radius-xl) !important;
+  line-height: 1.6 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.card-header {
+  margin-bottom: 14px !important;
+}
+
+/* Form Controls with Spacious Touch Targets */
+.form-group {
+  margin-bottom: 16px !important;
+}
+
+.form-label {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.015em !important;
+  margin-bottom: 7px !important;
+  color: var(--slate-800) !important;
+  display: block;
+}
+
+.form-input {
+  padding: 11px 15px !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.01em !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.form-hint {
+  font-size: 11.5px !important;
+  line-height: 1.5 !important;
+  color: var(--slate-500) !important;
+  margin-top: 5px !important;
+}
+
+/* Buttons with Clean Letter Spacing */
+.btn {
+  padding: 10px 18px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  border-radius: var(--radius-lg) !important;
+  gap: 7px !important;
+}
+
+.btn-sm {
+  padding: 6px 14px !important;
+  font-size: 12px !important;
+  letter-spacing: 0.015em !important;
+}
+
+/* Badges with Clean Pill Proportions */
+.badge {
+  padding: 3.5px 10px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.4 !important;
+}
+
+/* Number Figures with Tabular Alignment */
+.metric-value, .stat-value, .report-row-value, .income-amount, .debt-amount {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Quote Boxes with Comfortable Spacing */
+.mindset-quote-box {
+  padding: 16px 18px !important;
+  line-height: 1.65 !important;
+  gap: 12px !important;
+}
+
+.quote-box {
+  padding: 16px 18px !important;
+  line-height: 1.65 !important;
+}
+
+/* List Items with Breathing Room */
+ul li, ol li {
+  line-height: 1.6 !important;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 15px 16px !important;
+  }
+  .page-title {
+    font-size: 1.35rem !important;
+  }
+}
