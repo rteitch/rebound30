@@ -3303,6 +3303,83 @@ const Stories = {
         'Dukungan Keluarga adalah Jangkar Terkuat di Titik Nol: Pengorbanan tabungan dan emas istri menjadi katalisator kebangkitan moral yang tak ternilai harganya.',
         'Digitalisasi dan Reinvestasi Laba untuk Pertumbuhan Berkelanjutan: Mengganti sistem manual dengan komputerisasi dan memutar laba untuk scale-up (bukan gaya hidup) menjamin bisnis tetap lincah dan berdaya saing.'
       ]
+    },
+    {
+      id: 'suyono',
+      featured: false,
+      name: 'Suyono',
+      tagline: 'Dari Kolong Jembatan, 3x Gagal Panen Tebu & Utang Bank Rp 40 Juta — Bangkit dari Toko Terpal ke 2.000 Toko di Seluruh Indonesia',
+      title: 'Dari Kolong Jembatan dan Utang Rp 40 Juta, Kini Jangkau 2.000 Toko',
+      subtitle: 'Pengusaha Perlengkapan Toko, Nganjuk — Dari Toko Dinding Terpal ke Jaringan Nasional Omzet Rp 10 Juta/Hari',
+      origin: 'Nganjuk, Jawa Timur',
+      ageAtRebound: '40-an Thn',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Gagal Panen & Utang Rp 40 Jt',
+      badge: '2.000 Toko se-Indonesia — Omzet Rp 10 Jt/Hari',
+      theme: 'amber',
+      accentColor: '#B45309',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Rp 40 Juta di Banyak Bank',
+        age: '40-an Tahun',
+        lowest: 'Tinggal di Kolong Jembatan, 3x Gagal Panen, Anak SD Berbohong Tutupi Penagih',
+        action: 'Buka Usaha Perlengkapan Toko Modal Rak Sederhana & Dinding Terpal',
+        result: 'Menjangkau 2.000+ Toko hingga Papua, Omzet Rp 10 Juta/Hari'
+      },
+      timeline: [
+        { year: 'Masa Kecil — Kolong Jembatan', text: 'Tumbuh serba kekurangan di Nganjuk. Bertahun-tahun tinggal di kolong jembatan, membantu orang lewat demi secuil jagung atau tahu.' },
+        { year: 'Petani Tebu', text: 'Bekerja keras bertani tebu, namun tertimpa musibah 3 kali berturut-turut gagal panen total akibat cuaca dan hama.' },
+        { year: 'Titik Terendah — Rp 40 Juta', text: 'Terlilit utang Rp 40 juta di berbagai bank. Setiap minggu didatangi penagih; anak kelas 5 SD terpaksa berbohong menutupi keberadaan ayahnya.' },
+        { year: 'Titik Balik — Toko Terpal', text: 'Menghentikan lingkaran utang. Membuka usaha perlengkapan toko bermodal rak kayu sederhana dan dinding terpal.' },
+        { year: 'Hari Ini — Jangkau Papua', text: 'Menyuplai lebih dari 2.000 toko di seluruh Indonesia dengan omzet Rp 10 juta per hari.' }
+      ],
+      quote: 'Anak saya waktu itu masih kelas 5 SD, tapi sudah bisa menutupi saya dari penagih utang. Rasa nelongso itu yang membuat saya bersumpah harus bangkit.',
+      quoteAuthor: 'Suyono, pengusaha perlengkapan toko asal Nganjuk',
+      chapters: [
+        {
+          num: 1,
+          title: 'Tiga Kali Gagal Panen dan Utang yang Menggunung',
+          paragraphs: [
+            'Nganjuk, Jawa Timur. Suyono adalah seorang petani tebu yang membanting tulang di ladang setiap hari. Panas terik matahari dan lumpur sawah adalah kawan akrabnya, berharap panen tebu yang manis dapat mencukupi kebutuhan keluarganya.',
+            'Namun alam berkehendak lain: tiga musim berturut-turut tanamannya diserang hama dan anomali cuaca ekstrem, berujung pada gagal panen total.',
+            'Untuk menutup biaya sewa lahan dan operasional pupuk, ia terpaksa meminjam ke banyak bank hingga terakumulasi sebesar Rp 40 juta. Di pedesaan, angka itu adalah gunung yang menindih leher, mendatangkan penagih utang bergantian setiap minggunya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Memori Kolong Jembatan dan Luka Hati Seorang Ayah',
+          paragraphs: [
+            'Kehidupan keras bukanlah hal baru bagi Suyono. Sejak belia ia pernah bertahun-tahun hidup terlunta-lunta di kolong jembatan, menengadahkan tangan dan membantu orang lewat hanya untuk diberi sepotong jagung bakar atau tahu.',
+            'Namun kepedihan di kolong jembatan tidak ada apa-apanya dibanding saat ia menyaksikan anaknya sendiri yang masih duduk di kelas 5 SD harus berbohong di depan pintu rumah: "Bapak tidak ada di rumah," demi melindungi ayahnya dari amarah penagih utang.',
+            '"Anak saya waktu itu masih kelas 5 SD, tapi sudah bisa menutupi saya dari penagih utang. Itu yang paling membuat saya nelongso dan menangis batin," kenang Suyono.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Sebuah Rak Sederhana dan Toko Berdinding Terpal',
+          paragraphs: [
+            'Rasa nelongso itu memantik sumpah di dalam dada Suyono: ia harus memutus rantai kemiskinan dan jeratan utang ini sekarang juga. Dengan sisa uang terakhir hasil tebasan tebu yang tersisa, ia beralih haluan secara drastis.',
+            'Ia melihat para pemilik warung dan toko kelontong di sekitarnya selalu kesulitan mencari display dan rak perlengkapan toko berkualitas dengan harga terjangkau.',
+            'Bermodalkan satu rak kayu buatan tangan dan sebuah lapak berdinding terpal plastik seadanya di pinggir jalan, ia mulai memajang barang dagangannya. Dinginnya angin malam dan terpal yang berkibar ditiup badai tak menggoyahkan tekadnya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Dari Terpal Menuju 2.000 Toko hingga Pelosok Papua',
+          paragraphs: [
+            'Kejujuran harga dan keandalan produk perlengkapan toko Suyono menyebar dari mulut ke mulut antar-pedagang. Dari lapak terpal, usahanya berevolusi menjadi workshop pembuatan rak minimarket dan display ritel yang kokoh.',
+            'Pesanan tidak lagi hanya datang dari Nganjuk atau Jawa Timur, melainkan meluas ke Jawa Tengah, Sumatera, Kalimantan, Sulawesi, hingga pelosok Papua.',
+            'Kini, jaringannya telah memasok lebih dari 2.000 toko di seantero nusantara dengan omzet harian mencapai Rp 10 juta per hari (sekitar Rp 300 juta per bulan). Dari comberan kolong jembatan dan air mata anak yang menutupi utang ayahnya, Suyono membuktikan bahwa martabat keluarga bisa direbut kembali dengan kerja keras tanpa batas.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Rasa Malu dan Nelongso Bisa Diubah Menjadi Bahan Bakar Kebangkitan Terkuat: Titik balik Suyono bukan modal besar, melainkan luka batin melihat anaknya harus berbohong melindungi ayahnya.',
+        'Mulai Dari Sarana Seadanya (Lapak Terpal & 1 Rak): Jangan menunggu punya ruko mewah untuk berbisnis. Mulailah dari apa yang ada di tangan hari ini.',
+        'Peluang B2B Perlengkapan Usaha yang Resilien: Menyediakan infrastruktur bagi toko kelontong/minimarket (rak & display) adalah ceruk bisnis yang selalu dibutuhkan seiring tumbuhnya sektor ritel mikro.',
+        'Kualitas dan Kejujuran Menembus Batas Geografis: Produk buatan tangan dari Nganjuk bisa menembus hingga ke Papua murni karena reputasi dan kepuasan pelanggan.'
+      ]
     }
   ],
 
