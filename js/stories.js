@@ -3821,6 +3821,93 @@ const Stories = {
         'Forbes Bukan Jaminan Kebal Krisis Finansial: Prestasi dan popularitas publik harus dibarengi disiplin operasional di dapur bisnis sehari-hari.',
         'Rebranding dan Evolusi Visi (House of Brands): Dari sekadar jualan produk pakaian dalam, berevolusi menjadi ekosistem brand lokal berkelas global.'
       ]
+    },
+    {
+      id: 'bobsadino',
+      featured: false,
+      name: 'Bambang Mustari Sadino (Bob Sadino)',
+      tagline: 'Dari Warisan Habis, Rental Mobil Hancur Kecelakaan, Kuli Bangunan Rp 100/Hari & Depresi Berat — Bangkit Jadi Pelopor Ayam Negeri & Pendiri Kem Chicks',
+      title: 'Dari Kuli Bangunan Berupah Rp 100, Kini Raja Agrobisnis Legendaris',
+      subtitle: 'Pendiri Kem Chicks & KemFood, Kemang — Pelopor Agrobisnis Modern yang Bangkit dari Nol & Kuli Bangunan',
+      origin: 'Tanjung Karang, Lampung / Kemang, Jakarta',
+      ageAtRebound: '37 Thn (Tahun 1970)',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Kuli Rp 100/Hari & Kem Chicks',
+      badge: 'Pelopor Agrobisnis — Kem Chicks & KemFood',
+      theme: 'amber',
+      accentColor: '#B45309',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Bangkrut Total & Mobil Hancur Tabrakan',
+        age: '37 Tahun (1970)',
+        lowest: 'Kuli Bangunan Upah Rp 100/Hari, Menolak Bantuan Keluarga, Depresi Berat',
+        action: 'Ternak 50 Ekor Ayam Negeri dari Belanda + Jual Telur Door-to-Door Kemang',
+        result: 'Supermarket Kem Chicks Kemang, Pabrik Daging KemFood, Legenda Agrobisnis'
+      },
+      timeline: [
+        { year: '1933–1952 — Masa Muda', text: 'Lahir di Lampung dari keluarga berkecukupan. Usia 19 tahun mewarisi seluruh harta orang tua dan berkeliling dunia.' },
+        { year: '1958–1967 — Hidup di Belanda', text: 'Tinggal 9 tahun di Belanda, bekerja di Djakarta Lloyd dan menikah dengan Soelami Soejoed.' },
+        { year: '1967 — Kembali ke RI & Bangkrut', text: 'Membeli tanah di Kemang dari 1 Mercedes. Membuka rental mobil dengan 1 Mercedes lain, namun mobil hancur kecelakaan parah.' },
+        { year: 'Titik Terendah — Kuli Rp 100', text: 'Menolak bantuan keluarga. Menjadi kuli bangunan bergaji Rp 100/hari dan mengalami depresi berat.' },
+        { year: '1970 — Pelopor Ayam Negeri', text: 'Teman menyarankan ternak ayam untuk obati depresi. Menulis surat ke Belanda meminta bibit ayam negeri & majalah ternak.' },
+        { year: 'Pintu Bule Kemang & Kem Chicks', text: 'Pintu rumah ekspatriat Kemang terbuka; pelanggan borong telur. Mendirikan Supermarket Kem Chicks & pabrik KemFood.' }
+      ],
+      quote: 'Setinggi apa pun pangkat yang Anda miliki, Anda tetaplah seorang pegawai. Sekecil apa pun usaha yang Anda punya, Anda adalah bosnya.',
+      quoteAuthor: 'Bambang Mustari Sadino (Om Bob Sadino), pendiri Kem Chicks & KemFood',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Bungsu yang Mewarisi Segalanya dan Keliling Dunia',
+          paragraphs: [
+            'Tanjung Karang, Lampung, 1933. Seorang anak laki-laki lahir dari keluarga yang sangat berkecukupan di era Hindia Belanda. Namanya Bambang Mustari Sadino, anak bungsu dari lima bersaudara. Ayahnya adalah seorang guru dan kepala sekolah terpandang.',
+            'Ketika kedua orang tuanya wafat saat Bob baru berusia 19 tahun, ia mewarisi seluruh harta kekayaan keluarga. Dengan kebebasan finansial di tangan muda, Bob memilih meninggalkan tanah air untuk berpetualang mengelilingi dunia.',
+            'Ia singgah dan menetap di Belanda selama sembilan tahun, bekerja di perusahaan pelayaran BUMN Djakarta Lloyd, serta mempersunting Soelami Soejoed — wanita tangguh yang setia mendampingi seluruh babak hidupnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Pulang Membawa Dua Mercedes dan Kehancuran Tak Terduga',
+          paragraphs: [
+            'Tahun 1967, Bob memutuskan pulang ke tanah air membawa dua unit mobil Mercedes-Benz antik buatan tahun 1960-an. Satu mobil ia lego untuk membeli sebidang tanah perkebunan di kawasan Kemang, Jakarta Selatan yang kala itu masih berupa rawa-rawa sepi.',
+            'Dengan mobil Mercedes yang tersisa, Bob bertekad mandiri dan merintis jasa sewa mobil mewah di mana ia sendiri yang bertindak sebagai sopir pribadinya.',
+            'Namun petaka menghantam tanpa ampun: saat mengemudi, Bob mengalami kecelakaan lalu lintas hebat. Mobil Mercedes satu-satunya itu hancur ringsek tak berbentuk dan tidak sanggup ia perbaiki. Bisnis transportasinya seketika gulung tikar total.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Kuli Bangunan Upah Rp 100 dan Perang Melawan Depresi',
+          paragraphs: [
+            'Kehilangan mata pencaharian membuat kondisi ekonominya terjun bebas ke titik nol. Tabungan habis dan biaya hidup keluarga mendesak. Kendati saudara-saudaranya yang mapan menawarkan uluran tangan, harga diri Bob menolaknya.',
+            'Ia memilih banting setir menjadi kuli bangunan kasar dengan bayaran upah harian hanya Rp 100 per hari. Di bawah terik matahari Jakarta, tangan yang dulu memegang kemudi mobil mewah kini mengangkut adukan semen dan memecah batu kali.',
+            'Beban hidup yang begitu kontras memicu depresi mental yang sangat berat. Hari-harinya dipenuhi kegelapan batin, bertanya mengapa roda nasib bisa mencampakkannya sedemikian dalam.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Sepucuk Surat ke Belanda dan 50 Ekor Ayam Negeri',
+          paragraphs: [
+            'Melihat Bob yang terpuruk dalam depresi, seorang sahabat menyarankannya memelihara ayam untuk terapi jiwa dan mengalihkan pikiran dari keputusasaan.',
+            'Insting jeli Bob menyala: ia teringat bahwa ayam dan telur di Eropa berukuran jauh lebih besar dan berdaging tebal dibanding ayam kampung lokal Indonesia. Ia segera mengirimkan surat ke koleganya di Belanda, meminta dikirimkan 50 ekor bibit ayam negeri (broiler/leghorn) beserta majalah panduan beternak modern.',
+            'Tahun 1970, Bob Sadino resmi menjadi orang pertama yang memperkenalkan ayam negeri beserta telurnya ke nusantara. Namun masyarakat lokal awalnya menolak membeli karena menganggap telur berkulit cokelat keemasan itu aneh dan tidak alami.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Ketukan Pintu Bule Kemang dan Lahirnya Kem Chicks',
+          paragraphs: [
+            'Pantang menyerah, Bob berjalan kaki menjajakan telur dari pintu ke pintu di kawasan pemukiman Kemang. Titik balik bersejarah tiba ketika seorang ekspatriat (bule) asal Amerika membuka pintu dan mencicipi telur segar berkualitas tinggi milik Bob.',
+            'Sang ekspatriat takjub dan berkata: "Mulai besok Anda tidak perlu keliling lagi. Cukup taruh di rumahmu, saya dan teman-teman komunitas ekspatriat yang akan datang membeli langsung ke sana."',
+            'Dari langganan para diplomat dan ekspatriat itulah kerajaan agrobisnisnya meledak. Bob memperluas usaha ke sayuran hidroponik, mendirikan supermarket impor legendaris Kem Chicks di Kemang, serta membangun pabrik olahan daging modern PT Kemang Food Industries (KemFood). Dari kuli upah Rp 100 per hari, Bob Sadino mengukir namanya sebagai ikon agrobisnis paling legendaris dalam sejarah Indonesia.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Harga Diri untuk Bangkit Mandiri Tanpa Mengharapkan Belas Kasihan: Meski berasal dari keluarga berada, Bob menolak subsidi saudara dan memilih bekerja kasar sebagai kuli bangunan demi menjaga martabat kemandiriannya.',
+        'Mengubah Terapi Depresi Menjadi Peluang Usaha Pionir: Memelihara ayam yang semula ditujukan untuk menyembuhkan stres mental justru melahirkan industri peternakan ayam negeri modern pertama di Indonesia.',
+        'Target Pasar yang Tepat Mengubah Produk yang Ditolak Menjadi Emas: Telur ayam negeri ditolak warga lokal karena belum terbiasa, namun menjadi komoditas bernilai tinggi di tangan komunitas ekspatriat Kemang.',
+        'Konsistensi Nilai & Kualitas di Atas Ekspansi Membabi Buta: Filosofi Om Bob yang mempertahankan Kem Chicks eksklusif di Kemang membuktikan bahwa reputasi mutu produk premium lebih abadi daripada sekadar mengejar jumlah gerai.'
+      ]
     }
   ],
 
