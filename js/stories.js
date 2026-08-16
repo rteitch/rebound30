@@ -2443,6 +2443,93 @@ const Stories = {
         'Jaringan Positif adalah Aset yang Tidak Terlihat di Neraca: Komunitas orang-orang yang mendukung secara mental jauh lebih berharga daripada modal uang di saat krisis.',
         'Model Kemitraan Mengurangi Risiko Tunggal: Pertanian dan madu berbasis kemitraan yang dibangun Pasek menunjukkan bahwa bisnis yang tersebar risikonya jauh lebih tahan terhadap guncangan daripada yang bergantung pada satu sumber.'
       ]
+    },
+    {
+      id: 'maimun',
+      featured: false,
+      name: 'Maimun',
+      tagline: 'Banjir Situ Gintung 2009 Menghancurkan Segalanya — Dua Karyawan Tewas, Rugi Rp 1 M, Utang Rp 250 Jt, Bangkit dengan Nama "Bangket Sejati"',
+      title: 'Banjir yang Menghancurkan, Nama yang Membangkitkan',
+      subtitle: 'Pengusaha Furnitur, Tangerang Selatan — Bangkit dari Nol Pasca Banjir Bandang Situ Gintung 2009',
+      origin: 'Ciputat, Tangerang Selatan',
+      ageAtRebound: '47 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'indonesia'],
+      categoryLabel: 'Rugi Rp 1 M + Utang Rp 250 Jt',
+      badge: 'Bangket Sejati — Simbol Kebangkitan',
+      theme: 'teal',
+      accentColor: '#0F766E',
+      bgLight: '#F0FDFA',
+      borderLight: '#CCFBF1',
+      stats: {
+        debt: 'Rp 250,6 Juta (Ganti Rugi Pesanan)',
+        age: '47 Tahun',
+        lowest: 'Banjir Bandang Situ Gintung — 2 Karyawan Tewas, Pabrik & Stok Rp 1 M Musnah',
+        action: 'Modal Rp 30 Jt (Teman) + Pinjaman Rp 4,5 Jt (Rumah Zakat)',
+        result: 'Bangket Sejati — Bangkit, Utang Lunas Sedikit Demi Sedikit'
+      },
+      timeline: [
+        { year: 'Sebelum 2009', text: 'Membangun pabrik furnitur "Gunung Raya" di Kampung Gintung, Ciputat — tumbuh dengan kepercayaan pelanggan dan loyalitas karyawan.' },
+        { year: '26 Maret 2009 — 05.00 Pagi', text: 'Banjir bandang Situ Gintung meluluhlantakkan segalanya. Pabrik, stok furnitur pesanan Rp 1 miliar, dan bahan baku musnah dalam hitungan detik.' },
+        { year: 'Dua Karyawan Tewas', text: 'Dua orang kepercayaannya terseret banjir — salah satunya sedang hamil enam bulan. Luka yang tidak hanya finansial.' },
+        { year: 'Utang Rp 250 Juta', text: 'Harus mengganti rugi pesanan pelanggan yang hancur. Utang bukan dari ekspansi, tapi dari tanggung jawab moral.' },
+        { year: 'Tiga Bulan Kemudian', text: 'Mulai mencari modal. Mendapat Rp 30 juta dari teman-teman dan pinjaman tanpa bunga Rp 4,5 juta dari rumah zakat.' },
+        { year: 'Bangket Sejati', text: 'Mengganti nama perusahaan dari "Gunung Raya" menjadi "Bangket Sejati" — simbol doa dan tekad bahwa kebangkitan sejati bisa lahir dari reruntuhan.' }
+      ],
+      quote: 'Untuk memaknai kebangkitan usaha.',
+      quoteAuthor: 'Maimun, alasan di balik pergantian nama dari "Gunung Raya" menjadi "Bangket Sejati"',
+      chapters: [
+        {
+          num: 1,
+          title: 'Fajar Kelabu di Situ Gintung',
+          paragraphs: [
+            'Kampung Gintung, Tangerang Selatan. 26 Maret 2009. Pukul 05.00 pagi. Sebagian besar warga masih terlelap dalam mimpi. Maimun, pengusaha furnitur berusia 47 tahun, terbangun oleh suara gemuruh yang aneh. Sebelum ia sempat memahami apa yang terjadi, air datang — bukan sekadar genangan, tapi gelombang dahsyat yang menghancurkan segalanya.',
+            'Banjir bandang Situ Gintung meluluhlantakkan permukiman dan tempat-tempat usaha dalam hitungan detik. Pabrik furnitur Maimun — yang ia bangun dengan susah payah selama bertahun-tahun — lenyap ditelan air. Puluhan furnitur pesanan yang sudah jadi dan sudah dibayar pelanggan, hanyut dan rusak total. Bahan baku dan material senilai sekitar Rp 1 miliar musnah dalam sekejap.',
+            'Tapi kehilangan materi bukanlah yang paling menyakitkan. Dua karyawannya tewas terseret banjir. Salah satunya sedang hamil enam bulan. "Setiap kali benaknya kosong, bayangan dua karyawannya yang terseret banjir selalu melintas," kenangnya kemudian. Ada duka yang tidak bisa dihitung dengan angka.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 250 Juta yang Menghantui',
+          paragraphs: [
+            'Dari puing-puing usahanya, Maimun harus menghadapi kenyataan lain: utang Rp 250,6 juta. Ini bukan utang untuk ekspansi bisnis. Bukan utang karena kesalahan investasi atau spekulasi yang gagal.',
+            'Ini adalah utang untuk mengganti rugi pesanan pelanggan yang hancur akibat bencana yang tidak ia pilih, yang tidak ia inginkan, yang datang tanpa peringatan. Ia harus bertanggung jawab atas sesuatu yang bukan kesalahannya — dan itulah beban yang paling berat.',
+            'Ia kehilangan tempat usaha. Kehilangan stok. Kehilangan dua orang kepercayaan. Dan kini, ia harus memikirkan bagaimana menghidupi istri dan dua anaknya yang masih bersekolah, sambil melunasi utang yang menggunung. "Bagaimana caraku bangkit dari sini?" tanyanya pada dirinya sendiri setiap malam.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Tiga Bulan dan Modal yang Dikumpulkan',
+          paragraphs: [
+            'Tiga bulan pascabanjir, Maimun mulai bergerak. Ia mencari modal dari mana pun yang bisa ia jangkau. Dari teman-teman yang bersimpati dengan kondisinya, ia mendapat bantuan Rp 30 juta. Dari rumah zakat, ia memperoleh pinjaman tanpa bunga Rp 4,5 juta.',
+            'Total modal: Rp 34,5 juta. Angka yang sangat kecil dibandingkan kerugian Rp 1 miliar yang ia alami. Tapi Maimun tidak punya pilihan lain selain memulai dari sana. Ia tidak menyesali kecilnya modal — ia bersyukur bahwa masih ada yang mau membantu.',
+            'Dengan modal seadanya itu, ia memulai kembali usahanya dari nol. Perlahan. Pelan tapi pasti. Meski omzetnya jauh tidak sebanding dengan sebelum banjir, Maimun bersyukur — usahanya mulai membaik. Sebagian besar penghasilannya ia gunakan untuk membayar utang, sedikit demi sedikit.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Bangket Sejati — Nama yang Lahir dari Reruntuhan',
+          paragraphs: [
+            'Tapi Maimun melakukan sesuatu yang lebih dari sekadar membangun kembali usahanya. Ia melakukan sesuatu yang simbolis. Ia mengganti nama perusahaannya.',
+            'Dari Gunung Raya — nama yang mungkin melambangkan kejayaan dan kemegahan masa lalu — menjadi Bangket Sejati. "Untuk memaknai kebangkitan usaha," katanya. Sebuah nama yang sarat makna. Bukan sekadar label bisnis, tapi doa dan tekad.',
+            '"Bangket" — bangkit. "Sejati" — sungguh-sungguh, nyata, tulus. Ia ingin ingat setiap hari bahwa ia pernah hancur, dan bahwa kebangkitannya bukan kebetulan — tapi hasil dari perjuangan yang keras dan keinginan yang sejati. Nama itu menjadi pengingat abadi, terpahat di setiap lembar kayu yang ia ukir.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Pelajaran dari Seseorang yang Kehilangan Segalanya karena Bencana',
+          paragraphs: [
+            'Kisah Maimun bukanlah kisah tentang pengusaha yang gagal karena kesalahan bisnis. Ini adalah kisah tentang seorang pria yang kehilangan segalanya akibat bencana yang tak terduga — dan memilih untuk tidak tenggelam dalam keputusasaan.',
+            'Ia kehilangan dua karyawan yang ia percaya. Ia kehilangan tempat usaha dan stok senilai miliaran. Ia berutang ratusan juta bukan karena keserakahannya, tapi karena tanggung jawabnya kepada pelanggan. Tapi ia tidak berhenti.',
+            'Ia mencari modal. Ia membangun kembali. Ia mengganti nama perusahaannya menjadi pengingat abadi bahwa dari keterpurukan, kebangkitan sejati bisa lahir. Karena terkadang, bencana bukan hanya menghancurkan — ia juga memberi kesempatan untuk membangun ulang dengan fondasi yang lebih kokoh, lebih tulus, lebih bermakna.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Bencana Bukan Kesalahan — Tapi Tanggung Jawab Tetap Ada: Maimun harus membayar ganti rugi pesanan pelanggan meski banjir bukan salahnya. Memiliki asuransi usaha dan dana darurat adalah perlindungan minimal yang wajib dimiliki setiap pengusaha.',
+        'Modal Kecil Tidak Menghalangi Permulaan: Dari Rp 34,5 juta (Rp 30 juta + Rp 4,5 juta), Maimun memulai ulang. Besarnya modal bukan penentu — kesungguhan untuk memulailah yang menentukan.',
+        'Nama Bisnis Bisa Menjadi Jangkar Mental: Mengganti nama dari "Gunung Raya" ke "Bangket Sejati" bukan sekadar rebranding — itu adalah ritual psikologis yang membantu Maimun menegaskan identitas barunya sebagai orang yang telah bangkit.',
+        'Pinjaman Tanpa Bunga dari Lembaga Sosial adalah Opsi Nyata: Rp 4,5 juta dari rumah zakat tanpa bunga adalah contoh nyata bahwa lembaga zakat dan sosial bisa menjadi sumber modal mikro di saat darurat — sesuatu yang sering dilupakan oleh pengusaha kecil.'
+      ]
     }
   ],
 
