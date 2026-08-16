@@ -552,6 +552,102 @@ const Stories = {
       ]
     },
     {
+      id: 'kiaraya',
+      featured: false,
+      name: 'Kia Raya (Siti Khoiriah)',
+      tagline: 'Dari Kasir Indomaret Usia 15 Tahun Bayar Utang Ortu & Modal Rp 100 Ribu Menjadi Bos Pabrik Mie Lidi & Pemilik Franchise Indomaret',
+      title: 'Dari Kasir Indomaret, Kini Bos Pemilik Indomaret',
+      subtitle: 'Pendiri Mie Lidi Si Umang & Ikon Generasi Sandwich, Jakarta',
+      origin: 'Jakarta & Bogor',
+      ageAtRebound: 'Kasir Usia 15 Thn',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Ortu & Modal Rp 100 Rb',
+      badge: 'Pabrik 2.000 m² & Owner Indomaret',
+      theme: 'rose',
+      accentColor: '#E11D48',
+      bgLight: '#FFF1F2',
+      borderLight: '#FECDD3',
+      stats: {
+        debt: 'Utang Keluarga Sejak SMP',
+        age: 'Kasir Usia 15 Tahun',
+        lowest: 'Gaji Kasir Pas-pasan & Usaha Angkringan Gagal',
+        action: 'Modal Rp 100.000 & Racik Mie Lidi Si Umang',
+        result: '16.000 Bungkus/Hari, Pabrik 2.000 m² & Beli Franchise Indomaret'
+      },
+      timeline: [
+        { year: '2012 — Seragam Biru Kasir', text: 'Ayah meninggal dan ibu terlilit utang; di usia 15 tahun bekerja sebagai kasir Indomaret Kemang demi melunasi utang keluarga.' },
+        { year: 'Pertemuan & Resign', text: 'Bertemu Bari (rekan kerja toko), menikah, dan nekat resign untuk wirausaha meski sempat gagal di baju online dan angkringan.' },
+        { year: 'Modal Rp 100.000 Mie Lidi', text: 'Memulai camilan masa kecil "Lidi Si Umang" dengan modal Rp 100.000 di dapur rumah, mengemas manual dan jualan online.' },
+        { year: 'Meledak 16.000 Bungkus/Hari', text: 'Inovasi rasa gurih dan kemasan modern membuat produk viral di media sosial, permintaan melonjak belasan ribu bungkus per hari.' },
+        { year: 'Pabrik 2.000 m² & Bebas Utang', text: 'Membangun pabrik modern di Gunung Sindur Bogor dengan ratusan staf, seluruh sisa utang orang tua lunas tuntas.' },
+        { year: 'Hari Ini — Pemilik Franchise', text: 'Membeli waralaba Indomaret tempat ia dulu menjadi kasir, menjadi inspirasi nyata bagi pembebasan Generasi Sandwich.' }
+      ],
+      quote: 'Cerita kasir Indomaret bisa punya Indomaret bukan lagi mimpi. Kemiskinan dan utang masa lalu bukan takdir permanen; dengan modal Rp 100.000 dan tekad pantang menyerah, kita bisa mengubah jalan hidup.',
+      quoteAuthor: 'Kia Raya (Siti Khoiriah), pendiri Lidi Si Umang',
+      chapters: [
+        {
+          num: 1,
+          title: 'Seragam Biru dan Beban yang Tak Terbayangkan',
+          paragraphs: [
+            'Tahun 2012 di Kemang, Jakarta Selatan. Seorang gadis muda bernama Siti Khoiriah berdiri tegak berjam-jam di balik mesin kasir sebuah gerai minimarket Indomaret.',
+            'Ia mengenakan seragam biru bergaris dengan senyum ramah menyapa setiap pelanggan. Namun di balik keceriaannya melayani transaksi belanjaan, tersimpan beban hidup yang teramat berat di pundaknya yang masih belia.',
+            'Kia—sapaan akrabnya—harus memikul predikat tulang punggung keluarga sejak usia 15 tahun. Sang ayah meninggal dunia mendadak saat ia masih duduk di bangku SMP, meninggalkan sang ibu yang terjerat utang kebutuhan hidup. Dari gaji kasir yang serba terbatas itulah Kia menyisihkan setiap rupiah untuk menyicil utang orang tua dan membiayai adik-adiknya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Bertemu di Balik Mesin Kasir',
+          paragraphs: [
+            'Di sela-sela rutinitas minimarket yang padat, takdir mempertemukan Kia dengan Bari—seorang pemuda pramusaji di gerai yang sama. Keduanya memiliki latar belakang serupa: anak muda yang bertekad memutus rantai kemiskinan keluarga.',
+            'Cinta mereka bertumbuh dalam balutan perjuangan hidup. Setelah melangsungkan pernikahan sederhana, Kia dan Bari mengambil keputusan berani: mengundurkan diri dari pekerjaan kasir untuk merintis usaha sendiri.',
+            'Namun jalan wirausaha tidak langsung mulus. Percobaan jualan pakaian online hingga membuka warung angkringan pinggir jalan berkali-kali menemui kegagalan dan menguras tabungan mereka hingga titik nol.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Rp 100.000 dan Sebungkus Mie Lidi',
+          paragraphs: [
+            'Di tengah kebuntuan ekonomi, ingatan masa kecil membawa Kia pada kenangan jajanan tradisional sekolah: mie lidi yang renyah dan gurih pedas.',
+            'Dengan sisa uang terakhir sebesar Rp 100.000 di dompet, Kia dan sang suami membeli tepung dan bumbu dasar. Di dapur kontrakan sempit, mereka meracik sendiri bumbu tabur pedas khas dan menggoreng mie lidi berbentuk unik menyerupai lidi sapu sepanjang 30 cm.',
+            'Mereka menamai produknya "Lidi Si Umang". Dengan ketelatenan tinggi, mereka mengemasnya satu per satu menggunakan plastik klip rapi dan mulai memasarkannya secara gigih melalui media sosial dan forum komunitas daring.'
+          ]
+        },
+        {
+          num: 4,
+          title: '16.000 Bungkus Sehari',
+          paragraphs: [
+            'Keajaiban cita rasa dan kekuatan pemasaran digital berpadu manis. Renyahnya mie lidi Si Umang dengan kepedasan bertingkat meledak viral di kalangan anak muda dan pecinta camilan Nusantara.',
+            'Pesanan yang semula hanya puluhan bungkus meroket dahsyat menjadi ratusan, ribuan, hingga menembus rekor penjualan 16.000 bungkus per hari! Sistem keagenan dan reseller Si Umang menjamur di puluhan kota di seluruh Indonesia.',
+            'Arus kas yang melimpah dikelola dengan sangat bijak. Seluruh sisa utang keluarga masa lalu dilunasi tanpa sisa, membebaskan sang ibu dari kepedihan jeratan kreditur bertahun-tahun.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Dari Kasir Menjadi Bos Pemilik Franchise',
+          paragraphs: [
+            'Kapasitas produksi dapur kontrakan yang kewalahan mendorong Kia dan Bari membangun fasilitas pabrik modern mandiri seluas 2.000 meter persegi di kawasan Gunung Sindur, Bogor, yang mempekerjakan ratusan warga lokal.',
+            'Puncak pembuktian takdir terjadi ketika pasangan ini memutuskan untuk berinvestasi membeli waralaba resmi gerai Indomaret lengkap dengan area komersial di sebelahnya.',
+            'Tempat di mana Kia dulu hanyalah seorang gadis kasir remaja bergaji pas-pasan yang memindai belanjaan orang lain, kini berdiri megah di bawah kepemilikan bisnisnya sendiri.'
+          ]
+        },
+        {
+          num: 6,
+          title: 'Inspirasi Pembebasan Generasi Sandwich',
+          paragraphs: [
+            'Perjalanan hidup Kia Raya kini menjadi mercusuar harapan bagi jutaan anak muda Indonesia yang sedang berjuang menanggung beban ekonomi keluarga (Sandwich Generation).',
+            'Kia membuktikan bahwa lahir dalam keterbatasan dan terjerat utang bukanlah vonis permanen. Dengan kemauan memulai dari modal Rp 100.000, inovasi rasa yang dicintai konsumen, dan kesetiaan mendampingi pasangan di masa susah, siapapun berhak meraih kemerdekaan finansial sejati.',
+            '"Jangan pernah malu pada pekerjaan halal apa pun hari ini. Teruslah bermimpi besar, karena seragam kasirmu hari ini bisa menjadi pintu gerbang kerajaan bisnismu esok hari," pungkas Kia Raya penuh senyum kemenangan.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Mulai dari Modal Terkecil (Rp 100.000): Ketiadaan uang miliaran bukan alasan menunda usaha; manfaatkan sisa modal kecil untuk memvalidasi ide jajanan yang disukai pasar.',
+        'Inovasi Produk Nostalgia: Mengemas camilan masa kecil (mie lidi) dengan diferensiasi bentuk (30 cm) dan bumbu premium menciptakan pasar massal yang loyal.',
+        'Bangkit dari Kegagalan Beruntun: Jangan patah arang saat bisnis pertama atau kedua bangkrut; jadikan setiap kegagalan sebagai batu asahan insting bisnis.',
+        'Memutus Rantai Kemiskinan Keluarga: Berjuang bersama pasangan dengan saling menguatkan adalah kunci terhebat keluar dari beban himpitan Sandwich Generation.'
+      ]
+    },
+    {
       id: 'yosep',
       featured: false,
       name: 'Yosep',
