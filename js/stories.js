@@ -2966,6 +2966,83 @@ const Stories = {
         'Inovasi Produk dari Keunikan Geografis: Dermaga apung beton lahir dari kesadaran bahwa Indonesia adalah negara maritim. Inovasi terbaik sering lahir dari pertanyaan: "Apa yang dibutuhkan orang di sekitarku yang belum ada solusinya?"',
         'Franchise Tanpa Royalti sebagai Model Pertumbuhan Inklusif: Menlu tidak ingin besar sendirian. Model franchise tanpa royalti memungkinkan pertumbuhan ekosistem, bukan hanya pertumbuhan satu perusahaan — dan ini menciptakan loyalitas yang jauh lebih kuat dari sekadar kontrak bisnis.'
       ]
+    },
+    {
+      id: 'tridawang',
+      featured: false,
+      name: 'Tri Dawang',
+      tagline: 'Dari Keyakinan Bahwa Utang Adalah Bensin Bisnis & 800 Cek Kosong Rp 350 Miliar, Bangkit Menumbuhkan Bisnis Sehat Tanpa Utang',
+      title: 'Dari Jeratan Utang Ratusan Miliar, Kini Bisnisnya Tumbuh Sehat',
+      subtitle: 'Pendiri Dawang Group — Pengusaha TI yang Lepas dari 800 Cek Kosong & Membangun Sistem Tanpa Utang',
+      origin: 'Indonesia',
+      ageAtRebound: '40-an Thn',
+      categories: ['debt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Ratusan Miliar & 800 Cek Kosong',
+      badge: 'Dawang Group — Tumbuh Sehat Tanpa Utang',
+      theme: 'indigo',
+      accentColor: '#4338CA',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: 'Rp 350 Miliar & 800 Cek Kosong',
+        age: '40-an Tahun',
+        lowest: 'Terlilit Utang Ratusan Miliar, 800 Cek Kosong, Reputasi TI Terancam Hancur',
+        action: 'Disiplin Pengelolaan Finansial Ketat + Stop Utang + Pelunasan Menyeluruh',
+        result: 'Lunas Penuh — Dawang Group Tumbuh Berkelanjutan Tanpa Ketergantungan Utang'
+      },
+      timeline: [
+        { year: 'Awal Bisnis TI', text: 'Mendirikan Dawang Group di bidang sistem teknologi informasi dengan keyakinan kuat bahwa utang adalah bensin utama pertumbuhan.' },
+        { year: 'Ekspansi Agresif', text: 'Meminjam dana besar untuk memacu ekspansi tanpa perhitungan arus kas yang matang.' },
+        { year: '2021 — Titik Terendah', text: 'Terjebak utang ratusan miliar rupiah (hingga Rp 350 miliar) dan menerbitkan 800 cek kosong. Dikejar puluhan kreditur.' },
+        { year: 'Titik Balik & Pelunasan', text: 'Melakukan pembenahan total, menghentikan penambahan utang baru, dan melunasi seluruh kewajiban secara disiplin.' },
+        { year: 'Hari Ini — Tumbuh Sehat', text: 'Dawang Group terus berkembang pesat secara organik tanpa ketergantungan pada pinjaman utang.' }
+      ],
+      quote: 'Bisnis tetap dapat berkembang dengan pengelolaan yang lebih disiplin, tanpa harus terus menambah utang.',
+      quoteAuthor: 'Tri Dawang, pendiri Dawang Group',
+      chapters: [
+        {
+          num: 1,
+          title: 'Keyakinan yang Menjadi Bumerang',
+          paragraphs: [
+            'Bagi Tri Dawang, utang selama bertahun-tahun dianggap sebagai bensin bagi mesin bisnis. Tanpanya, roda usaha diyakini akan berhenti berputar. Ini adalah doktrin umum yang ia telan mentah-mentah: bahwa untuk melipatgandakan valuasi dan skala perusahaan TI miliknya, seorang founder harus berani leverage pinjaman sebesar-besarnya.',
+            'Keyakinan ini mendorongnya untuk terus membuka keran pembiayaan bank dan pinjaman institusional. Ia meminjam dari sana-sini demi mengejar pertumbuhan kilat, yakin bahwa proyeksi keuntungan di masa depan akan mampu menutup seluruh kewajiban.',
+            'Namun, pertumbuhan yang ditopang oleh utang berbunga ibarat membangun gedung pencakar langit di atas rawa. Begitu arus kas meleset sedikit saja, seluruh struktur mulai retak.'
+          ]
+        },
+        {
+          num: 2,
+          title: '800 Cek Kosong dan Beban Ratusan Miliar',
+          paragraphs: [
+            'Pada tahun 2021, realitas pahit tak lagi bisa ditutupi. Gelombang utang yang menggunung hingga mencapai angka ratusan miliar rupiah (ditaksir mencapai Rp 350 miliar) menghantam Dawang Group secara telak.',
+            'Situasi likuiditas memburuk sedemikian rupa hingga ia terpaksa menerbitkan 800 cek kosong. Ini adalah titik nadir paling memalukan sekaligus menakutkan dalam sejarah bisnisnya. Cek demi cek yang ditolak bank bukan sekadar masalah administrasi, melainkan ancaman hukum pidana dan kehancuran reputasi di hadapan para kreditur.',
+            'Setiap hari dipenuhi oleh dering telepon penagih, ancaman somasi, dan tekanan mental yang luar biasa. Di saat itulah ia sadar: apa yang selama ini ia anggap sebagai bensin kemajuan, ternyata adalah racun yang membakar perusahaannya sendiri.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Titik Balik: Disiplin Melunasi dan Menolak Utang Baru',
+          paragraphs: [
+            'Di tengah kepungan krisis, Tri Dawang mengambil keputusan radikal: berhenti gali lubang tutup lubang. Ia menolak ilusi bahwa solusi dari utang adalah meminjam dana talangan baru.',
+            'Ia melakukan restrukturisasi menyeluruh. Mengencangkan ikat pinggang perusahaan, menegosiasikan skema pelunasan realistis dengan para kreditur, dan mengalokasikan setiap tetes keuntungan operasional untuk melunasi kewajiban pokok.',
+            'Proses itu membutuhkan disiplin baja dan kerendahan hati. Perlahan tapi pasti, ratusan cek kosong itu diselesaikan satu demi satu, hingga beban ratusan miliar tersebut lunas sepenuhnya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Tumbuh Sehat Tanpa Utang — Paradigma Baru Dawang Group',
+          paragraphs: [
+            'Dari kawah candradimuka tersebut, Tri Dawang menemukan pencerahan yang mengubah arah hidup dan bisnisnya selamanya: bisnis justru berkembang jauh lebih kokoh, tenang, dan lincah ketika dikelola tanpa beban utang.',
+            'Hari ini, Dawang Group berdiri tegak sebagai entitas teknologi informasi yang mandiri dan menguntungkan secara murni dari perputaran kas internal (bootstrapped cashflow). Keuntungan yang didapat tidak lagi habis tersedot bunga bank, melainkan diinvestasikan kembali untuk riset produk dan kesejahteraan tim.',
+            'Kisah Tri Dawang membuktikan bahwa terkadang rem paling pakem adalah penyelamat terbaik, dan kejayaan bisnis sejati tidak diukur dari seberapa besar plafon pinjaman yang berhasil didapat, melainkan seberapa sehat fondasi operasionalnya.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Mitos "Utang Wajib untuk Scale Up" adalah Jebakan: Banyak bisnis hancur bukan karena produknya jelek, tapi karena beban bunga utang mematikan likuiditas saat terjadi volatilitas pasar.',
+        '800 Cek Kosong adalah Alarm Kegagalan Tata Kelola: Jangan pernah mengandalkan instrumen pembayaran tunda (cek/giro) tanpa kepastian dana masuk yang nyata.',
+        'Pertumbuhan Organik Jauh Lebih Tahan Badai: Mengembangkan bisnis berbasis laba ditahan (retained earnings) mungkin terasa lebih lambat di awal, tapi memberikan ketenangan dan ketahanan mutlak.',
+        'Disiplin Arus Kas Mengalahkan Ambisi Kosong: Bisnis yang sehat adalah bisnis yang bisa membayar kewajibannya tepat waktu tanpa perlu bergantung pada belas kasihan pinjaman baru.'
+      ]
     }
   ],
 
