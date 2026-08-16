@@ -907,7 +907,7 @@ img { max-width: 100%; }
 /* Stats grid */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--space-3);
   margin-bottom: var(--space-5);
 }
@@ -1524,7 +1524,12 @@ img { max-width: 100%; }
 
 /* Responsive desktop improvements */
 @media (min-width: 1200px) {
-  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
   .achievements-grid { grid-template-columns: repeat(5, 1fr); }
 }
 
@@ -2718,9 +2723,11 @@ img { max-width: 100%; }
     font-size: 11px;
   }
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
   .stat-card {
     padding: 12px;
   }
@@ -2936,9 +2943,11 @@ html, body {
     gap: 12px !important;
   }
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px !important;
-  }
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
   .stat-card {
     padding: 10px 12px !important;
   }
@@ -3630,4 +3639,29 @@ ul li, ol li {
 .input-prefix-group input {
   padding-left: 48px !important;
   width: 100% !important;
+}
+
+
+/* ============================================================
+   RESPONSIVE 5-PILLAR STATS GRID
+   ============================================================ */
+@media (min-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 1099px) and (min-width: 769px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 768px) and (min-width: 481px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

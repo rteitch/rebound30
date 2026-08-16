@@ -312,14 +312,14 @@ const App = {
     document.getElementById('dash-date').textContent = dateStr;
     
     const greetings = ['Hari ke', 'Rebound'];
-    document.getElementById('dash-greeting').innerHTML = `Hari ke-${day} dari 30 &nbsp;${phase.emoji} ${phase.name}`;
+    document.getElementById('dash-greeting').innerHTML = `Hari ke-${day} dari 30 &nbsp;·&nbsp; <span style="font-size:15px;font-weight:600;color:#a7f3d0;">Fase ${phase.id}: ${phase.name}</span>`;
     
     // Score ring
     document.getElementById('dash-score').textContent = score;
     const circumference = 226.2;
     const offset = circumference - (score / 100) * circumference;
     document.getElementById('score-ring-fill').style.strokeDashoffset = offset;
-    document.getElementById('dash-phase-badge').textContent = `${phase.emoji} ${phase.name}`;
+    document.getElementById('dash-phase-badge').textContent = `Fase ${phase.id} · ${phase.name}`;
     document.getElementById('dash-focus').textContent = (components.coaching || ScoreEngine.getFocus(components));
 
     // Daily Mindset Anchor Banner
