@@ -657,14 +657,18 @@
           </div>
         </div>
 
-        <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
+        <div class="stats-grid" style="grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));">
           <div class="stat-card">
-            <div class="stat-label">Bulan Ini</div>
+            <div class="stat-label">Bulan Ini (Gaji + Harian)</div>
             <div class="stat-value positive" id="income-month-total">Rp 0</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">Pemasukan Rutin/Bln</div>
             <div class="stat-value" id="income-recurring-total">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Peluang Aktif</div>
+            <div class="stat-value" id="income-opp-count" style="color:var(--teal-600);">0</div>
           </div>
         </div>
 
@@ -688,7 +692,10 @@
             <div class="page-title">Pengeluaran</div>
             <div class="page-subtitle">Kontrol aliran keluar uangmu</div>
           </div>
-          <button class="btn btn-primary btn-sm" onclick="App.expenses.showAdd()">+ Catat</button>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-outline btn-sm" onclick="App.expenses.showEditEssential()">Atur Anggaran Pokok</button>
+            <button class="btn btn-primary btn-sm" onclick="App.expenses.showAdd()">+ Catat</button>
+          </div>
         </div>
 
 

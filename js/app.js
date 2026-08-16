@@ -795,11 +795,14 @@ const App = {
     const { score, components } = ScoreEngine.calculate(s);
     const snap = s.meta.snapshotDay1;
     
-    // Compare: Day 1 vs Now
+    // Compare: Day 1 vs Now (Sinkronisasi Komprehensif)
     const totalDebt = s.debts.reduce((a,d)=>a+d.remaining,0);
     const origDebt = s.debts.reduce((a,d)=>a+d.original,0);
-    const income = s.profile.monthlyIncome + s.incomes.filter(i=>H.isThisMonth(i.date)).reduce((a,i)=>a+i.amount,0);
+    const income = (s.profile.monthlyIncome || 0) + s.incomes.filter(i=>H.isThisMonth(i.date)).reduce((a,i)=>a+i.amount,0);
     const recurringIncome = s.incomes.filter(i=>i.recurring).reduce((a,i)=>a+i.amount,0);
+    const totalAssets = (s.assets || []).reduce((a,x)=>a+x.value,0);
+    const cash = s.profile.cash || 0;
+    const netWorth = (cash + totalAssets) - totalDebt;
     
     document.getElementById('report-compare').innerHTML = `
       <div class="report-before">
@@ -834,6 +837,10 @@ const App = {
         <div class="report-row">
           <div class="report-row-label">Uang Tunai</div>
           <div class="report-row-value">${H.formatRp(s.profile.cash)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Kekayaan Bersih (Net Worth)</div>
+          <div class="report-row-value" style="color:${netWorth >= 0 ? 'var(--green-600)' : 'var(--red-600)'}">${netWorth >= 0 ? '+' : ''}${H.formatRp(netWorth)}</div>
         </div>
         <div class="report-row">
           <div class="report-row-label">Rebound Score</div>
@@ -2103,15 +2110,14 @@ const App = {
       const cash = s.profile.cash;
       const runwayDays = essTotal > 0 ? Math.round(cash / essTotal * 30) : 999;
       
-      document.getElementById('expense-essential-total').textContent = H.formatRp(essTotal);
-      document.getElementById('expense-all-total').textContent = H.formatRp(allTotal);
-      document.getElementById('expense-runway-days').textContent = runwayDays >= 999 ? '∞' : `${runwayDays} hari`;
+      const elEss = document.getElementById('exp-essential-total') || document.getElementById('expense-essential-total');
+      if (elEss) elEss.textContent = H.formatRp(essTotal);
+      const elNonEss = document.getElementById('exp-nonessential-total') || document.getElementById('expense-all-total');
+      if (elNonEss) elNonEss.textContent = H.formatRp(nonEssTotal);
       
-      // Essential inputs
-      const map = { food:'exp-food', housing:'exp-housing', utilities:'exp-util', transport:'exp-transport', comm:'exp-comm', other:'exp-other' };
-      for (const [k, id] of Object.entries(map)) {
-        const el = document.getElementById(id);
-        if (el) el.value = ess[k] || 0;
+      const warnBanner = document.getElementById('exp-warning-banner');
+      if (warnBanner) {
+        warnBanner.style.display = nonEssTotal > (essTotal * 0.4) && nonEssTotal > 0 ? 'flex' : 'none';
       }
       
       // Non-essential records list
@@ -2157,17 +2163,65 @@ const App = {
       return map[cat] || map.other;
     },
     
-    saveEssential() {
-      const ess = App.state.expenses.essential;
-      ess.food = H.parseRp(document.getElementById('exp-food').value);
-      ess.housing = H.parseRp(document.getElementById('exp-housing').value);
-      ess.utilities = H.parseRp(document.getElementById('exp-util').value);
-      ess.transport = H.parseRp(document.getElementById('exp-transport').value);
-      ess.comm = H.parseRp(document.getElementById('exp-comm').value);
-      ess.other = H.parseRp(document.getElementById('exp-other').value);
+    showEditEssential() {
+      const ess = App.state.expenses.essential || {};
+      App.openModal(`
+        <div class="modal-title">Atur Anggaran Pokok / Esensial Bulanan</div>
+        <div class="form-group">
+          <label class="form-label">Makanan & Minuman Pokok</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="modal-exp-food" value="${ess.food || 0}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tempat Tinggal (Sewa / Kos / KPR)</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="modal-exp-housing" value="${ess.housing || 0}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Listrik & Air</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="modal-exp-utilities" value="${ess.utilities || 0}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Transportasi Kerja / Esensial</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="modal-exp-transport" value="${ess.transport || 0}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Komunikasi (Pulsa & Internet Kerja)</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="modal-exp-comm" value="${ess.comm || 0}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggungan Keluarga / Esensial Lain</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="modal-exp-other" value="${ess.other || 0}"></div>
+        </div>
+        <div style="display:flex;gap:var(--space-3);margin-top:var(--space-4);">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.expenses.saveEssentialModal()">Simpan Anggaran</button>
+        </div>
+      `);
+    },
+
+    saveEssentialModal() {
+      App.state.expenses.essential = {
+        food: H.parseRp(document.getElementById('modal-exp-food')?.value),
+        housing: H.parseRp(document.getElementById('modal-exp-housing')?.value),
+        utilities: H.parseRp(document.getElementById('modal-exp-utilities')?.value),
+        transport: H.parseRp(document.getElementById('modal-exp-transport')?.value),
+        comm: H.parseRp(document.getElementById('modal-exp-comm')?.value),
+        other: H.parseRp(document.getElementById('modal-exp-other')?.value),
+      };
       App.save();
+      App.closeModal();
       this.render();
-      App.toast('Pengeluaran esensial disimpan ✓', 'success');
+      App.renderDashboard && App.renderDashboard();
+      App.toast('Anggaran pokok esensial berhasil diperbarui ✓', 'success');
+    },
+
+    saveEssential() {
+      this.saveEssentialModal();
     },
     
     showAdd() {
