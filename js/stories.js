@@ -184,7 +184,7 @@ const Stories = {
       origin: '🇮🇩 Indonesia',
       ageAtRebound: 'Usia Dewasa',
       categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
-      categoryLabel: 'Bangkit dari Titik Nol Mutlak',
+      categoryLabel: 'Titik Nol Mutlak',
       badge: 'Utang Lunas 100%',
       theme: 'indigo',
       accentColor: '#4F46E5',
@@ -193,7 +193,7 @@ const Stories = {
       stats: {
         debt: 'Rp 2,2 Miliar',
         age: 'Usia Produktif',
-        lowest: 'Sisa Uang Rp 700rb & Tidur di Masjid',
+        lowest: 'Sisa Rp 700rb & Tidur di Masjid',
         action: 'Rintis Skincare Salina Herbal dari Nol',
         result: 'Pabrik Sendiri & Utang Lunas 100%'
       },
@@ -265,7 +265,7 @@ const Stories = {
       origin: '🇮🇩 Indonesia / 🇹🇼 Taiwan',
       ageAtRebound: 'Usia Dewasa',
       categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
-      categoryLabel: 'Bangkit dari Kebangkrutan & Ditinggalkan',
+      categoryLabel: 'Kebangkrutan Total',
       badge: '1.000 Armada Mobil',
       theme: 'rose',
       accentColor: '#E11D48',
@@ -274,7 +274,7 @@ const Stories = {
       stats: {
         debt: 'Utang Bank Menumpuk (Bangkrut Total)',
         age: 'Usia Produktif',
-        lowest: 'Semua Aset Habis & Ditinggal Pasangan',
+        lowest: 'Aset Habis & Ditinggal Pasangan',
         action: 'TKI Pabrik di Taiwan & Modal Mobil Timor Rp 33 Jt',
         result: 'Showroom 1.000 Mobil Tanpa Utang Bank'
       },
@@ -348,7 +348,7 @@ const Stories = {
       origin: '🇮🇩 Indonesia',
       ageAtRebound: 'Usia Dewasa',
       categories: ['debt', 'zero', 'business', 'indonesia'],
-      categoryLabel: 'Bangkit dari Utang Medis & Kartu Kredit',
+      categoryLabel: 'Utang Medis & KK',
       badge: 'Dapur Mesin Semi-Modern & Lunas',
       theme: 'emerald',
       accentColor: '#059669',
@@ -438,10 +438,10 @@ const Stories = {
       tagline: 'Dari Penjual Kue Bapel & Utang Rp 3 Miliar Menjadi Miliarder Besi Tua Sumba',
       title: 'Dari Penjual Kue Bapel hingga Miliarder Besi Tua',
       subtitle: 'Pengusaha Besi Tua Asal Desa Madulang, Sampang, Madura',
-      origin: '🇮🇩 Sampang, Madura / Sumba Barat, NTT',
+      origin: '🇮🇩 Madura & NTT',
       ageAtRebound: 'Usia Dewasa',
       categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
-      categoryLabel: 'Bangkit dari Utang Rp 3 Miliar & Pengabdian Desa',
+      categoryLabel: 'Utang Rp 3 M & Besi Tua',
       badge: 'Bangun Jalan 10 KM & Lunas',
       theme: 'blue',
       accentColor: '#2563EB',
@@ -450,7 +450,7 @@ const Stories = {
       stats: {
         debt: 'Rp 3 Miliar (Menumpuk 2020–2022)',
         age: 'Usia Produktif',
-        lowest: 'Kayu Bekas Bangkrut, Bingung Bayar Utang',
+        lowest: 'Kayu Bangkrut, Bingung Bayar',
         action: 'Nekat ke Sumba Barat Berdagang Besi Tua',
         result: 'Transaksi Puluhan Miliar & Bangun Jalan Aspal 10 KM'
       },
@@ -661,7 +661,7 @@ const Stories = {
           </div>
 
           <div class="catalog-card-footer">
-            <span class="badge" style="background:${item.bgLight};color:${item.accentColor};border:1px solid ${item.borderLight};font-size:11px;padding:3px 8px;">
+            <span class="catalog-category-badge" style="background:${item.bgLight};color:${item.accentColor};border:1px solid ${item.borderLight};">
               ${H.escHtml(item.categoryLabel)}
             </span>
             <span class="read-more-link" style="color:${item.accentColor};">
