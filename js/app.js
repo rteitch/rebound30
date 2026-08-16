@@ -9,6 +9,110 @@ const App = {
   state: null,
   currentScreen: 'dashboard',
   
+  
+  // SOS / Mental & Legal First Aid Controller
+  sos: {
+    breathingActive: false,
+    breathingTimer: null,
+    breathingStep: 0, // 0: Inhale (4s), 1: Hold (4s), 2: Exhale (4s), 3: Hold (4s)
+    breathingSecondsLeft: 4,
+
+    open(tab = 'breathing') {
+      const modal = document.getElementById('modal-sos');
+      if (modal) modal.style.display = 'flex';
+      this.switchTab(tab);
+    },
+
+    closeOverlay(e) { if (e && e.target && e.target.id === 'modal-sos') this.close(); },
+
+    close() {
+      const modal = document.getElementById('modal-sos');
+      if (modal) modal.style.display = 'none';
+      this.stopBreathing();
+    },
+
+    switchTab(tab) {
+      const tabs = ['breathing', 'legal', 'triage'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`sos-tab-${t}`);
+        const view = document.getElementById(`sos-view-${t}`);
+        if (btn) btn.classList.toggle('active', t === tab);
+        if (view) view.style.display = (t === tab) ? 'block' : 'none';
+      });
+      if (tab !== 'breathing') {
+        this.stopBreathing();
+      }
+    },
+
+    toggleBreathing() {
+      if (this.breathingActive) {
+        this.stopBreathing();
+      } else {
+        this.startBreathing();
+      }
+    },
+
+    startBreathing() {
+      this.breathingActive = true;
+      this.breathingStep = 0;
+      this.breathingSecondsLeft = 4;
+      const btn = document.getElementById('btn-toggle-breathing');
+      if (btn) btn.textContent = 'Hentikan Latihan';
+      this.runBreathingStep();
+    },
+
+    stopBreathing() {
+      this.breathingActive = false;
+      if (this.breathingTimer) clearInterval(this.breathingTimer);
+      const circle = document.getElementById('breathing-circle');
+      if (circle) {
+        circle.classList.remove('inhale', 'exhale');
+      }
+      const textEl = document.getElementById('breathing-instruction');
+      const timerEl = document.getElementById('breathing-timer');
+      const btn = document.getElementById('btn-toggle-breathing');
+      if (textEl) textEl.textContent = 'Tarik Napas...';
+      if (timerEl) timerEl.textContent = '4s';
+      if (btn) btn.textContent = 'Mulai Latihan (Box Breathing 4-4-4-4)';
+    },
+
+    runBreathingStep() {
+      if (!this.breathingActive) return;
+      const steps = [
+        { text: 'Tarik Napas Perlahan...', class: 'inhale' },
+        { text: 'Tahan Napas...', class: 'inhale' },
+        { text: 'Hembuskan Perlahan...', class: 'exhale' },
+        { text: 'Tahan Kosong...', class: 'exhale' }
+      ];
+
+      const current = steps[this.breathingStep];
+      const circle = document.getElementById('breathing-circle');
+      const textEl = document.getElementById('breathing-instruction');
+      const timerEl = document.getElementById('breathing-timer');
+
+      if (circle) {
+        circle.classList.remove('inhale', 'exhale');
+        circle.classList.add(current.class);
+      }
+      if (textEl) textEl.textContent = current.text;
+
+      this.breathingSecondsLeft = 4;
+      if (timerEl) timerEl.textContent = `${this.breathingSecondsLeft}s`;
+
+      if (this.breathingTimer) clearInterval(this.breathingTimer);
+      this.breathingTimer = setInterval(() => {
+        this.breathingSecondsLeft--;
+        if (timerEl) timerEl.textContent = `${this.breathingSecondsLeft}s`;
+
+        if (this.breathingSecondsLeft <= 0) {
+          clearInterval(this.breathingTimer);
+          this.breathingStep = (this.breathingStep + 1) % 4;
+          this.runBreathingStep();
+        }
+      }, 1000);
+    }
+  },
+
   init() {
     let stored = Store.get();
     if (!stored) {
@@ -133,7 +237,28 @@ const App = {
     const offset = circumference - (score / 100) * circumference;
     document.getElementById('score-ring-fill').style.strokeDashoffset = offset;
     document.getElementById('dash-phase-badge').textContent = `${phase.emoji} ${phase.name}`;
-    document.getElementById('dash-focus').textContent = ScoreEngine.getFocus(components);
+    document.getElementById('dash-focus').textContent = (components.coaching || ScoreEngine.getFocus(components));
+
+    // Daily Mindset Anchor Banner
+    const mindsetAnchor = MindsetEngine.getDailyAnchor(day);
+    const mindsetContainer = document.getElementById('dash-mindset-anchor');
+    if (mindsetContainer) {
+      mindsetContainer.innerHTML = `
+        <div class="daily-mindset-banner">
+          <div class="mindset-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Jangkar Mental & Mindset Hari ke-${day} (${phase.name})
+          </div>
+          <h3 class="mindset-theme">${H.escHtml(mindsetAnchor.theme)}</h3>
+          <p class="mindset-principle">${H.escHtml(mindsetAnchor.principle)}</p>
+          <div class="mindset-quote-box">
+            <span>"${H.escHtml(mindsetAnchor.quote)}"</span>
+            <strong style="color:var(--teal-300);margin-left:auto;white-space:nowrap;">— ${H.escHtml(mindsetAnchor.author)}</strong>
+          </div>
+        </div>
+      `;
+    }
+
     
     // Phase strip
     const phases = [
@@ -275,6 +400,27 @@ const App = {
   // ---- MISSIONS ----
   renderMissions() {
     const s = this.state;
+    // Render Mindset Anchor on Missions Screen
+    const day = H.dayNumber(s.meta.startDate);
+    const phase = H.getPhase(day);
+    const mindsetAnchor = MindsetEngine.getDailyAnchor(day);
+    const missionsMindsetEl = document.getElementById('missions-mindset-anchor');
+    if (missionsMindsetEl) {
+      missionsMindsetEl.innerHTML = `
+        <div class="daily-mindset-banner" style="margin-bottom:var(--space-5);">
+          <div class="mindset-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Jangkar Mental & Mindset Hari ke-${day} (${phase.name})
+          </div>
+          <h3 class="mindset-theme">${H.escHtml(mindsetAnchor.theme)}</h3>
+          <p class="mindset-principle">${H.escHtml(mindsetAnchor.principle)}</p>
+          <div class="mindset-quote-box">
+            <span>"${H.escHtml(mindsetAnchor.quote)}"</span>
+            <strong style="color:var(--teal-300);margin-left:auto;white-space:nowrap;">— ${H.escHtml(mindsetAnchor.author)}</strong>
+          </div>
+        </div>
+      `;
+    }
     const today = H.today();
     const todayFmt = new Date().toLocaleDateString('id-ID', { weekday:'long', day:'numeric', month:'long' });
     document.getElementById('missions-date-subtitle').textContent = todayFmt;

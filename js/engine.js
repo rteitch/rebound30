@@ -1,8 +1,142 @@
+
+// ============================================================
+// MINDSET ENGINE — 30-DAY DAILY STOIC & SPIRITUAL RECOVERY ANCHORS
+// Guaranteed Psychological Conditioning & Anti-Abandonment System
+// ============================================================
+const MindsetEngine = {
+  DAILY_ANCHORS: {
+    1: {
+      theme: 'Buang Gengsi & Akui Kenyataan',
+      principle: 'Kejayaan masa lalu tidak akan membayar cicilan hari ini. Keberanian terbesar dimulai saat kamu berani mencatat fakta apa adanya tanpa rasa malu.',
+      quote: 'Kalau masih bisa berpikir jernih, buatlah bakpao. Jangan biarkan gengsi membunuh masa depanmu.',
+      author: 'Shao Baoling (Mantan Ratu Koper Rp 220 M)',
+      directive: 'Catat seluruh utangmu hari ini. Angka hanyalah angka; mereka tidak mendefinisikan nilaimu sebagai manusia.',
+      antiPanic: 'Utang adalah urusan perdata. Nyawa dan martabatmu tidak ternilai harganya.'
+    },
+    2: {
+      theme: 'Bernapas Lega & Amankan Kebutuhan Dasar',
+      principle: 'Sebelum memikirkan pelunasan utang miliaran, pastikan perut keluargamu kenyang dan tempat berteduh aman hari ini.',
+      quote: 'Uang Rp 700.000 terakhir saya pakai untuk menyewa kos anak dan istri, sementara saya tidur di teras masjid.',
+      author: 'M. Taufik Hendradinata (Owner Salina Herbal)',
+      directive: 'Kunci anggaran kebutuhan pokok (makan & tempat tinggal). Jangan korbankan gizi keluarga demi membayar bunga.',
+      antiPanic: 'Jangan pusingkan 30 hari ke depan sekaligus. Cukup menangkan hari ini.'
+    },
+    3: {
+      theme: 'Hentikan Gali Lubang Tutup Lubang Seketika',
+      principle: 'Mengambil pinjaman baru untuk menutup cicilan lama ibarat meminum air laut saat haus. Itu hanya mempercepat kehancuran.',
+      quote: 'Keserakahan dan leverage berlebih adalah jurang. Penyesalan tidak mengubah apa-apa, tindakan yang mengubah segalanya.',
+      author: 'Tang Jian (Om Sosis Panggang Qingdao)',
+      directive: 'Tolak tawaran pinjaman baru dari mana pun. Hadapi kreditur lama dengan negosiasi pokok, bukan gali lubang.',
+      antiPanic: 'Jika ada penagih mengancam, gunakan hak perlindungan hukum POJK 22/2023.'
+    },
+    4: {
+      theme: 'Ketenangan Batin Mengembalikan Akal Sehat',
+      principle: 'Kepanikan menyempitkan cara pandang otak. Ketenangan batin dan doa adalah pintu pembuka logika pemulihan.',
+      quote: 'Bukan uang yang datang pertama kali, tapi ketenangan batin. Dengan tenang, saya sadar masalah ini bisa diselesaikan.',
+      author: 'Genta Gantara (Bos Properti Cimahi)',
+      directive: 'Luangkan 5 menit untuk bernapas dan berdoa sebelum memulai aktivitas mencari nafkah hari ini.',
+      antiPanic: 'Tarik napas dalam 4 detik, tahan 4 detik, hembuskan 4 detik. Kamu sedang memegang kendali kembali.'
+    },
+    5: {
+      theme: 'Kekuatan Rp 10.000 Pertama',
+      principle: 'Pemasukan sekecil apa pun hari ini adalah bukti hidup bahwa tanganmu masih berdaya menciptakan rezeki.',
+      quote: 'Mobil pertama yang saya beli seharga Rp 33 juta dan dijual dengan laba Rp 4 juta. Dari sana segalanya berputar.',
+      author: 'Suryo Hadi Pranoto (Pendiri Kacunk Motor)',
+      directive: 'Cari 1 sumber uang tunai hari ini, sekecil apa pun nominalnya. Itu adalah setetes air pemecah dahaga finansial.',
+      antiPanic: 'Jangan remehkan uang kecil. Imperium besar dibangun dari unit modal terkecil.'
+    },
+    6: {
+      theme: 'Hukum Probabilitas Penawaran (Outreach)',
+      principle: 'Rezeki tidak akan mengetuk pintu orang yang berdiam diri. Menghubungi 3 orang setiap hari adalah jaminan matematis datangnya peluang.',
+      quote: 'Di negeri orang, aku hanya punya satu pilihan: terus bergerak dan melunasi utang.',
+      author: 'Suryo Hadi Pranoto',
+      directive: 'Kirimkan minimal 3 pesan penawaran jasa atau barang kepada calon klien/kenalan hari ini.',
+      antiPanic: 'Penolakan adalah hal biasa. Kamu hanya butuh 1 orang yang berkata "Ya".'
+    },
+    7: {
+      theme: 'Mencairkan Barang Menganggur Menjadi Peluru Kas',
+      principle: 'Barang yang tidak terpakai adalah uang tunai yang tertidur. Lebih baik rumah lapang daripada hati terhimpit bunga utang.',
+      quote: 'Saya menjual mobil, rumah, hingga perkakas dapur. Yang tersisa hanyalah tubuh ini, dan tubuh ini masih bisa bekerja.',
+      author: 'M. Taufik Hendradinata',
+      directive: 'Foto dan iklankan 1 barang yang tidak lagi produktif di rumahmu untuk menambah napas dana darurat.',
+      antiPanic: 'Aset materi bisa dibeli kembali nanti. Kebebasan mental jauh lebih mahal harganya.'
+    },
+    8: {
+      theme: 'Kejujuran Produk Adalah Pemasaran Terbaik',
+      principle: 'Berjualan dengan bahan berkualitas dan hati yang jujur akan menciptakan pelanggan loyal yang merekomendasikanmu.',
+      quote: 'Dulu saya kerja kantoran menyuruh anak buah, sekarang jualan di pinggir jalan. Selama produk jujur, tak ada yang perlu dimalukan.',
+      author: 'Suprianto (Pendiri Siomay Wondes)',
+      directive: 'Berikan kualitas 100% pada apa pun yang kamu kerjakan hari ini, tanpa kompromi.',
+      antiPanic: 'Kualitas kerja yang tulus adalah magnet penarik rezeki paling ampuh.'
+    },
+    9: {
+      theme: 'Disiplin Bangun Pagi Mengalahkan Depresi',
+      principle: 'Bangun pagi dan langsung menyibukkan diri dengan kerja nyata adalah obat penawar terbaik dari rasa cemas berlebih.',
+      quote: 'Tepat pukul tiga dini hari saya sudah berdiri di dapur mengulen adonan bakpao sendirian.',
+      author: 'Shao Baoling',
+      directive: 'Mulai harimu lebih awal. Keringat kerja keras akan menyapu kabut keputusasaan.',
+      antiPanic: 'Tindakan fisik membakar hormon stres jauh lebih cepat daripada berbaring merenung.'
+    },
+    10: {
+      theme: 'Keberanian Menjemput Peluang di Luar Zona Nyaman',
+      principle: 'Terkadang jalan keluar ada di tempat yang belum pernah kamu bayangkan sebelumnya. Jangan takut mencoba hal baru.',
+      quote: 'Ini berkat doa ibu yang mengantarkanku pertama kali naik pesawat ke Sumba Barat berdagang besi tua.',
+      author: 'Mat Yasin (Miliarder Besi Tua)',
+      directive: 'Buka pikiranmu terhadap peluang pekerjaan atau usaha di luar bidang lamamu.',
+      antiPanic: 'Selama pekerjaan itu halal dan menghasilkan arus kas, jangan pernah merasa ragu.'
+    },
+    15: {
+      theme: 'Pangkas Bocor Halus & Amankan Margin',
+      principle: 'Bukan seberapa besar uang yang masuk, melainkan seberapa disiplin kamu menahan uang agar tidak bocor keluar.',
+      quote: 'Kios kecil 25 m² yang efisien jauh lebih menguntungkan daripada restoran mewah 1.300 m² yang digerogoti utang.',
+      author: 'Tang Jian',
+      directive: 'Audit seluruh pengeluaran kecil harianmu. Setiap Rp 5.000 yang kamu hemat adalah peluru pelunasan utang.',
+      antiPanic: 'Hidup sederhana hari ini adalah tiket menuju kemerdekaan finansial sejati esok hari.'
+    },
+    20: {
+      theme: 'Kekuatan Negosiasi Berbasis Itikad Baik',
+      principle: 'Kreditur lebih menghargai orang yang datang membawa itikad baik dan rencana pembayaran realistis daripada yang menghilang.',
+      quote: 'Kalau dengan dipenjarakan utangnya lunas, silakan penjarakan saya. Yang ada tinggal tubuh ini yang siap bekerja melunasinya.',
+      author: 'M. Taufik Hendradinata',
+      directive: 'Hubungi kreditur dengan kepala tegak, ajukan restrukturisasi pokok dan penghapusan denda.',
+      antiPanic: 'Hukum perdata melindungi debitur yang beritikad baik. Jangan pernah takut berbicara.'
+    },
+    25: {
+      theme: 'Metode Bola Salju (Fokus 1 Musuh)',
+      principle: 'Jangan mencoba memukul semua utang sekaligus. Hancurkan utang terkecil terlebih dahulu untuk membangun momentum kemenangan mental.',
+      quote: 'Sedikit demi sedikit, utang puluhan miliar itu terkikis hingga akhirnya lunas total.',
+      author: 'Mat Yasin & Tang Jian',
+      directive: 'Fokuskan seluruh sisa dana peluru kas untuk melunasi 1 target utang terkecil sampai tuntas.',
+      antiPanic: 'Kemenangan pada 1 utang kecil akan meledakkan rasa percaya dirimu untuk menaklukkan utang berikutnya.'
+    },
+    30: {
+      theme: 'Rebound Menjadi Manusia Merdeka & Berbagi',
+      principle: 'Kemenangan terbesar dari 30 hari ini bukanlah sekadar angka di rekening, melainkan mental baja baru yang tak bisa dikalahkan lagi.',
+      quote: 'Kalau suatu hari aku punya uang banyak, aku akan membangun desa kelahiranku sepanjang 10 kilometer.',
+      author: 'Mat Yasin',
+      directive: 'Tengok ke belakang dan syukuri seberapa jauh kamu telah melangkah. Terus jaga disiplin ini.',
+      antiPanic: 'Kamu telah membuktikan bahwa badai sebesar apa pun tidak mampu meruntuhkan tekadmu.'
+    }
+  },
+
+  getDailyAnchor(day) {
+    const validDay = Math.max(1, Math.min(day || 1, 30));
+    if (this.DAILY_ANCHORS[validDay]) {
+      return { day: validDay, ...this.DAILY_ANCHORS[validDay] };
+    }
+    // Fallback interpolator based on Phase
+    if (validDay <= 4) return { day: validDay, ...this.DAILY_ANCHORS[1] };
+    if (validDay <= 14) return { day: validDay, ...this.DAILY_ANCHORS[5] };
+    if (validDay <= 21) return { day: validDay, ...this.DAILY_ANCHORS[15] };
+    return { day: validDay, ...this.DAILY_ANCHORS[25] };
+  }
+};
+
 // ============================================================
 // SCORE ENGINE
 // ============================================================
 const ScoreEngine = {
-  calculate(state) {
+    calculate(state) {
     const components = {};
     
     // 1. Financial Visibility (20) — how much data is filled
@@ -57,8 +191,21 @@ const ScoreEngine = {
     const weights = { visibility: 0.20, cashflow: 0.20, income_activity: 0.20, debt_control: 0.15, expense_control: 0.15, consistency: 0.10 };
     let score = 0;
     for (const [k,w] of Object.entries(weights)) score += (components[k] || 0) * w;
+    const finalScore = Math.round(score);
     
-    return { score: Math.round(score), components };
+    // Anti-Shame Psychological Coaching
+    let coaching = '';
+    if (finalScore <= 35) {
+      coaching = '🛡️ Fase Bertahan: Wajar jika skor masih di zona merah saat baru mulai. Keberanianmu memetakan utang hari ini sudah memenangkan 50% pertempuran mental!';
+    } else if (finalScore <= 60) {
+      coaching = '🌱 Fase Tunas Bangkit: Arus kas dan konsistensimu mulai terbentuk. Fokus pada 1 tindakan kecil hari ini tanpa menunda.';
+    } else if (finalScore <= 80) {
+      coaching = '⚡ Fase Stabilitas: Fondasimu semakin kokoh! Pengendalian biaya dan rencana negosiasi utangmu membuahkan hasil nyata.';
+    } else {
+      coaching = '👑 Fase Manusia Merdeka: Luar biasa! Keuanganmu berada di jalur kebebasan sejati. Terus pertahankan mental pemenang ini!';
+    }
+    
+    return { score: finalScore, components, coaching };
   },
   
   getStreak(state) {
