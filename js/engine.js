@@ -579,9 +579,31 @@ Salam hangat,
     const add = (type, priority) => {
       const tmpl = this.MISSION_TEMPLATES[type];
       if (!tmpl) return;
+      
+      let desc = tmpl.desc;
+      const skills = state.profile && state.profile.skills ? state.profile.skills : [];
+      
+      // Personalisasi deskripsi misi berdasarkan skill yang dipilih pengguna
+      if (skills.length > 0) {
+        const skillMap = {
+          programming: 'Programming/IT', design: 'Desain Grafis', video: 'Video Editing',
+          photography: 'Fotografi', writing: 'Penulisan Konten', translation: 'Penerjemahan',
+          admin: 'Administrasi Data', teaching: 'Mengajar/Les', repair: 'Servis/Reparasi',
+          sales: 'Sales & Penjualan', cooking: 'Kuliner & Masak', driving: 'Kurir/Driver',
+          social_media: 'Admin Medsos', finance: 'Keuangan', other: 'Keahlian Utama'
+        };
+        const skillLabels = skills.slice(0, 2).map(s => skillMap[s] || s).join(' & ');
+        
+        if (type === 'CLIENT_OUTREACH') {
+          desc = `Tawarkan keahlianmu (${skillLabels}) ke 3 calon klien atau rekan bisnis terdekat.`;
+        } else if (type === 'SKILL_BUILDING') {
+          desc = `Tingkatkan kecepatan dan portofolio untuk skill ${skillLabels} agar siap ditawarkan.`;
+        }
+      }
+
       missions.push({
         id: H.uid(), date: today, type, priority,
-        title: tmpl.title, desc: tmpl.desc, completed: false, notes: ''
+        title: tmpl.title, desc: desc, completed: false, notes: ''
       });
     };
     
