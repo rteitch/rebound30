@@ -1930,6 +1930,61 @@ img { max-width: 100%; }
 }
 
 /* 7. Mission Bridge Box */
+
+/* Takeaways Blueprint Card */
+.takeaways-box {
+  background: var(--slate-900);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.takeaways-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.takeaway-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: var(--space-4);
+}
+
+.takeaway-item:last-child {
+  margin-bottom: 0;
+}
+
+.takeaway-num {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.takeaway-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--slate-300);
+  flex: 1;
+}
+
+.takeaway-text strong {
+  color: #fff;
+}
+
 .reader-mission-bridge-box {
   background: var(--teal-50);
   border: 1px solid var(--teal-200);
