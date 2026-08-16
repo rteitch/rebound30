@@ -954,13 +954,123 @@ const App = {
     }
   },
   
-  // ---- TOAST ----
-  toast(msg, type='') {
+  // ---- TOAST (WITH CRISP SVG ICONS & SMOOTH ANIMATION) ----
+  toast(msg, type = 'info') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
     const el = document.createElement('div');
     el.className = `toast ${type}`;
-    el.textContent = msg;
-    document.getElementById('toast-container').appendChild(el);
-    setTimeout(() => el.remove(), 3000);
+
+    let iconSvg = '';
+    if (type === 'success') {
+      iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><polyline points="20 6 9 17 4 12"/></svg>';
+    } else if (type === 'error') {
+      iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+    } else if (type === 'warning') {
+      iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
+    } else {
+      iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
+    }
+
+    el.innerHTML = `
+      <span class="toast-icon">${iconSvg}</span>
+      <span style="flex:1;">${H.escHtml(msg)}</span>
+    `;
+
+    container.appendChild(el);
+    setTimeout(() => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(-10px) scale(0.95)';
+      el.style.transition = 'all 0.25s ease';
+      setTimeout(() => el.remove(), 260);
+    }, 3200);
+  },
+
+  // ---- CUSTOM STYLED CONFIRM DIALOG (REPLACES NATIVE CONFIRM) ----
+  confirm({ title = 'Konfirmasi', message = 'Apakah Anda yakin?', confirmText = 'Lanjutkan', cancelText = 'Batal', type = 'warning' } = {}) {
+    return new Promise((resolve) => {
+      const existing = document.getElementById('custom-confirm-modal');
+      if (existing) existing.remove();
+
+      const overlay = document.createElement('div');
+      overlay.id = 'custom-confirm-modal';
+      overlay.className = 'custom-dialog-overlay';
+
+      let iconSvg = '';
+      if (type === 'danger') {
+        iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px;"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
+      } else if (type === 'warning') {
+        iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+      } else {
+        iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
+      }
+
+      overlay.innerHTML = `
+        <div class="custom-dialog-card">
+          <div class="custom-dialog-icon-wrap ${type}">
+            ${iconSvg}
+          </div>
+          <div class="custom-dialog-title">${H.escHtml(title)}</div>
+          <div class="custom-dialog-message">${H.escHtml(message)}</div>
+          <div class="custom-dialog-actions">
+            <button id="dialog-btn-cancel" class="btn btn-secondary" style="flex:1;">${H.escHtml(cancelText)}</button>
+            <button id="dialog-btn-confirm" class="btn ${type === 'danger' ? 'btn-danger' : 'btn-primary'}" style="flex:1;">${H.escHtml(confirmText)}</button>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+
+      const cleanup = (result) => {
+        overlay.remove();
+        resolve(result);
+      };
+
+      document.getElementById('dialog-btn-cancel').onclick = () => cleanup(false);
+      document.getElementById('dialog-btn-confirm').onclick = () => cleanup(true);
+      overlay.onclick = (e) => { if (e.target === overlay) cleanup(false); };
+    });
+  },
+
+  // ---- CUSTOM STYLED ALERT DIALOG (REPLACES NATIVE ALERT) ----
+  alert({ title = 'Informasi', message = '', buttonText = 'Mengerti', type = 'info' } = {}) {
+    return new Promise((resolve) => {
+      const existing = document.getElementById('custom-alert-modal');
+      if (existing) existing.remove();
+
+      const overlay = document.createElement('div');
+      overlay.id = 'custom-alert-modal';
+      overlay.className = 'custom-dialog-overlay';
+
+      let iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
+      if (type === 'success') {
+        iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px;"><polyline points="20 6 9 17 4 12"/></svg>';
+      }
+
+      overlay.innerHTML = `
+        <div class="custom-dialog-card">
+          <div class="custom-dialog-icon-wrap ${type}">
+            ${iconSvg}
+          </div>
+          <div class="custom-dialog-title">${H.escHtml(title)}</div>
+          <div class="custom-dialog-message">${H.escHtml(message)}</div>
+          <div class="custom-dialog-actions">
+            <button id="dialog-btn-ok" class="btn btn-primary btn-full">${H.escHtml(buttonText)}</button>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+
+      const cleanup = () => {
+        overlay.remove();
+        resolve(true);
+      };
+
+      document.getElementById('dialog-btn-ok').onclick = cleanup;
+      overlay.onclick = (e) => { if (e.target === overlay) cleanup(); };
+    });
   },
   
   // ---- FULLSCREEN ----
@@ -2084,12 +2194,18 @@ const App = {
       `);
     },
     
-    resetData() {
-      if (confirm('YAKIN? Semua data akan DIHAPUS PERMANEN dan tidak bisa dipulihkan.\n\nSarankan export dulu sebelum reset.')) {
-        if (confirm('Ini tidak bisa dibatalkan. Reset sekarang?')) {
-          localStorage.removeItem(Store.KEY);
-          location.reload();
-        }
+    async resetData() {
+      const ok = await App.confirm({
+        title: 'Hapus Semua Data Permanen?',
+        message: 'Tindakan ini akan MENGHAPUS SEMUA DATA progres 30 hari, utang, dan transaksi Anda secara permanen.\n\nPastikan Anda sudah mengekspor cadangan file JSON terlebih dahulu jika ingin menyimpan riwayat.',
+        confirmText: 'Hapus & Mulai Ulang',
+        cancelText: 'Batalkan',
+        type: 'danger'
+      });
+      if (ok) {
+        localStorage.removeItem(Store.KEY);
+        App.toast('Semua data berhasil direset', 'info');
+        setTimeout(() => location.reload(), 400);
       }
     },
   },
