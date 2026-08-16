@@ -27,7 +27,7 @@
 - *Anti-Shame Coaching System* pada `ScoreEngine` yang memvalidasi keberanian pengguna sekecil apa pun tanpa penghakiman.
 
 ### 3. 📚 Perpustakaan Kisah Bangkit (*Real-Life Recovery Library*)
-Arsip kurasi 10 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian:
+Arsip kurasi 11 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian:
 1. **Shao Baoling (邵宝玲)** — Ratu Koper Yiwu $\to$ Pemilik 3 Toko Bakpao (Utang > Rp 220 M)
 2. **Tang Jian (唐健)** — Raja Restoran Qingdao $\to$ Kios Sosis Panggang 25 m² (Utang Rp 100 M)
 3. **M. Taufik Hendradinata** — Mantan Raja Laundry $\to$ Pabrik Skincare Salina Herbal (Utang Rp 2,2 M)
@@ -38,6 +38,7 @@ Arsip kurasi 10 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazin
 8. **Rini Sudarwanti** — Usaha Makanan Sepi & Terjerat Rentenir Harian $\to$ Pengrajin Gitar Handmade & 50 Besar Mekaarpreneur 2026
 9. **Dian Agustin** — 350 Cabang Pizza Runtuh & Bedeng Modal Rp 100 Ribu $\to$ Kerajaan Sambal Alu 150 Karyawan
 10. **Eko Susanto & Dwi Rizky Setiawan** — Kontraktor Tambang Minus Rp 2 Miliar & Makan Nasi Garam $\to$ Bakso Sritikah Ekspor Hong Kong & Pabrik 27 Staf
+11. **Sirivat Voravetvuthikun** — CEO Asia Securities Utang Rp 500 Miliar Krisis Asia 1997 $\to$ "The Sandwich Man" Bangkok & Jaringan Gerai
 
 ### 4. 📋 30-Day Daily Mission Engine (100% Zero-Confusion)
 - Menghasilkan 3–5 misi harian dinamis berdasarkan 4 Fase:

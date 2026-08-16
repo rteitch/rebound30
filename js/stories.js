@@ -552,6 +552,102 @@ const Stories = {
       ]
     },
     {
+      id: 'sirivat',
+      featured: false,
+      name: 'Sirivat Voravetvuthikun',
+      tagline: 'Dari Miliarder CEO Pasar Modal Utang Rp 500 Miliar Menjadi Ikon "The Sandwich Man" Bangkok',
+      title: 'Dari Miliarder ke Pedagang Sandwich, dan Kembali Lagi',
+      subtitle: 'Mantan CEO Asia Securities & Pendiri Sirivat Sandwich, Bangkok',
+      origin: 'Bangkok, Thailand',
+      ageAtRebound: 'Mantan CEO 28 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'global'],
+      categoryLabel: 'Utang Rp 500 M & Krisis 1997',
+      badge: 'Ikon Kebangkitan Krisis Asia 1997',
+      theme: 'blue',
+      accentColor: '#2563EB',
+      bgLight: '#EFF6FF',
+      borderLight: '#BFDBFE',
+      stats: {
+        debt: 'US$ 30,4 Juta (Rp 500 Miliar)',
+        age: 'Mantan CEO Asia Securities',
+        lowest: 'Hari Pertama Jualan Sandwich US$ 14 (Rp 200 Rb)',
+        action: 'Menelan Gengsi, Jualan Sandwich Jalanan Bangkok',
+        result: 'Lunas 100%, Jaringan Gerai & Ikon Ketangguhan Asia'
+      },
+      timeline: [
+        { year: '1990-an — Raja Finansial', text: 'Menjabat CEO Asia Securities di usia 28 tahun, mengelola jutaan dolar bursa saham, mobil mewah, dan resor Khao Yai.' },
+        { year: '1997 — Krisis Moneter Asia', text: 'Nilai tukar Baht anjlok, bursa saham kolaps, dan proyek properti macet total meninggalkan utang US$ 30,4 juta (Rp 500 miliar).' },
+        { year: 'Titik Terendah & Gugatan', text: 'Dinyatakan bangkrut total tahun 2003, aset disita, digugat kreditur di pengadilan, dan kehilangan seluruh kemewahan hidup.' },
+        { year: 'Hari Pertama US$ 14', text: 'Menelan rasa gengsi dan turun ke trotoar jalanan Bangkok menjual sandwich dengan hasil hari pertama hanya US$ 14 (Rp 200.000).' },
+        { year: '10 Tahun Perjuangan', text: 'Didampingi sang istri (Vilailuk), konsisten bangun jam 3 pagi membuat sandwich, membuka kios satu per satu, dan merambah rumah sakit.' },
+        { year: 'Hari Ini — Lunas & Abadi', text: 'Seluruh utang Rp 500 miliar lunas, mendirikan jaringan Sirivat Sandwich dengan logo dolar-baht-IMF sebagai simbol ketangguhan mental.' }
+      ],
+      quote: 'Hidup saya berubah total dari miliarder menjadi pedagang jalanan. Tapi jika kita menelan rasa gengsi dan menolak untuk menyerah, tidak ada lubang utang yang terlalu dalam untuk dipanjat kembali.',
+      quoteAuthor: 'Sirivat Voravetvuthikun, "The Sandwich Man" Bangkok',
+      chapters: [
+        {
+          num: 1,
+          title: 'Raja di Atas Panggung Finansial',
+          paragraphs: [
+            'Pada awal tahun 1990-an, nama Sirivat Voravetvuthikun adalah simbol kejayaan pasar modal Thailand. Di usia yang baru menginjak 28 tahun, ia telah dipercaya menduduki kursi Chief Executive Officer (CEO) Asia Securities.',
+            'Ia adalah pialang saham papan atas yang pergerakan jarinya menentukan alur jutaan dolar setiap hari. Gaya hidupnya bergelimang kemewahan: deretan mobil sport Eropa, rumah mewah di kawasan elit, hingga proyek ambisius pembangunan kondominium dan resor golf di kawasan Taman Nasional Khao Yai.',
+            'Bagi Sirivat kala itu, langit adalah batasnya. Ia merasa sebagai raja yang tak terkalahkan dan tidak pernah membayangkan bahwa takhta kemegahan itu bisa runtuh dalam sekejap mata.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Badai Krisis Moneter 1997',
+          paragraphs: [
+            'Tahun 1994, riak-riak ketidakstabilan mulai mengguncang bursa efek Bangkok. Namun kepercayaan diri Sirivat yang tinggi membuatnya terus menambah pinjaman leverage perbankan untuk mendanai proyek propertinya.',
+            'Puncaknya meletus pada pertengahan 1997 ketika Krisis Finansial Asia (Krisis Moneter Tom Yum Goong) menghantam dengan kekuatan tsunami. Nilai tukar Baht Thailand anjlok bebas, indeks saham terjun bebas, dan pasar properti membeku seketika.',
+            'Seluruh investasi Sirivat menguap tanpa sisa. Yang tertinggal di pundaknya adalah tumpukan liabilitas yang mencengangkan: US$ 30,4 juta atau hampir Rp 500 miliar. Kreditur dan bank mengejarnya, menyita seluruh aset pribadinya, dan menyeretnya ke meja pengadilan dengan status pailit total.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Hari Pertama yang Hanya US$ 14',
+          paragraphs: [
+            'Di ruang tamu kontrakannya yang sepi, Sirivat menatap tangannya. Dari seorang eksekutif berdasi sutra yang mengelola ratusan staf, kini ia tidak memiliki uang sepeser pun untuk membeli makan keluarga.',
+            'Namun alih-alih meratapi nasib atau lari dari tanggung jawab, Sirivat mengambil keputusan yang menuntut keberanian luar biasa: menelan habis seluruh rasa gengsinya dan turun mengais rezeki di jalanan.',
+            'Ia mengalungkan boks styrofoam berisi roti sandwich buatan rumah dan berdiri di trotoar jalanan Bangkok yang berdebu di bawah terik matahari. Pada hari pertamanya berjualan, dari pagi hingga petang, ia hanya berhasil mengumpulkan US$ 14 (sekitar Rp 200.000). Nominal yang begitu kecil dibandingkan tumpukan utang ratusan miliarnya, namun bernilai tak terhingga bagi harga dirinya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Sang Istri yang Menjadi Tiang Keteguhan',
+          paragraphs: [
+            'Di balik ketabahan Sirivat, ada sosok sang istri, Vilailuk, yang memilih untuk tidak berpaling. Melihat suaminya yang dulu dielu-elukan kini harus berteriak menjajakan roti di pinggir jalan, hatinya kerap tersayat.',
+            'Namun Vilailuk selalu menepis rasa putus asa dengan prinsip baja: "Jika kami menyerah, tidak akan ada orang lain yang datang menolong. Apa pun yang terjadi, kami harus bergandengan tangan dan terus melangkah."',
+            'Setiap malam usai anak-anak tertidur, pasangan suami istri ini berdiri berjam-jam di dapur sempit, mengiris tomat, selada, dan memanggang roti untuk disiapkan bagi pertempuran esok hari.'
+          ]
+        },
+        {
+          num: 5,
+          title: '10 Tahun Menembus Fajar',
+          paragraphs: [
+            'Pemulihan finansial itu bukanlah cerita sulap semalam; Sirivat membutuhkan waktu 10 tahun penuh kesabaran dan keringat.',
+            'Sepuluh tahun ia bangun sebelum fajar jam 3 pagi. Sepuluh tahun ia menahan tatapan iba maupun cibiran dari mantan rekan-rekan pialang saham yang melewatinya. Perlahan tapi pasti, integritas dan kelezatan sandwich buatannya memikat hati para dokter dan perawat di berbagai rumah sakit besar Bangkok.',
+            'Dari satu boks gantung di leher, ia membuka kios kecil pertama. Dari kios, berkembang menjadi gerai-gerai di stasiun dan pusat perbelanjaan hingga lahir brand nasional "Sirivat Sandwich". Publik Thailand dengan bangga menjulukinya "Sirivat the Sandwich Man".'
+          ]
+        },
+        {
+          num: 6,
+          title: 'Logo Dolar-Baht-IMF',
+          paragraphs: [
+            'Hari ini, seluruh beban utang US$ 30,4 juta (Rp 500 miliar) dari masa krisis moneter telah berhasil dilunasi 100% tuntas. Sirivat kembali berdiri tegak sebagai pengusaha kuliner yang sukses dan dihormati.',
+            'Logo resmi perusahaannya dirancang dengan simbol yang sangat mendalam: memuat tanda Dolar Amerika ($), lambang mata uang Baht (฿), dan logo IMF. Bagi Sirivat, logo itu adalah pengingat abadi bahwa kesombongan materi bisa hancur seketika oleh krisis makro, tetapi keteguhan mental dan ketiadaan rasa gengsi akan selalu mampu membangun kembali martabat manusia.',
+            'Sirivat Voravetvuthikun membuktikan kepada dunia bahwa kebangkrutan terparah sekalipun tidak pernah sanggup mematikan masa depan orang yang berani memulai kembali dari langkah paling sederhana.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Tanggalkan Gengsi Demi Bertahan Hidup: Menghapus rasa malu adalah langkah pertama untuk bangkit. Martabat sejati terletak pada kejujuran berusaha, bukan pada jabatan masa lalu.',
+        'Ketabahan Jangka Panjang (10 Years Marathon): Menyelesaikan utang bernilai fantastis menuntut konsistensi harian tanpa henti, dimulai dari pencapaian US$ 14 per hari.',
+        'Saling Mendukung Bersama Pasangan: Kekuatan mental pasangan adalah pilar terpenting yang mencegah keputusasaan saat seluruh aset dan relasi menghilang.',
+        'Belajar dari Badai Finansial: Kelola risiko dengan bijak, hindari over-leverage yang spekulatif, dan selalu miliki rasa syukur yang membumi.'
+      ]
+    },
+    {
       id: 'sritikah',
       featured: false,
       name: 'Eko Susanto & Dwi Rizky Setiawan',
