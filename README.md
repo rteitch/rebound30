@@ -7,7 +7,7 @@
 [![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 
-> **Rebound 30** adalah aplikasi web pendamping pemulihan finansial mandiri (*offline-first* PWA) yang memadukan **5 Pilar Arus Kas Real-Time**, **perlindungan hukum konsumen (POJK 22/2023 & UU HAM)**, **pendampingan psikologis anti-panik**, **peta jalan 30 hari interaktif**, dan **arsip inspirasi 20 kisah nyata tokoh yang bangkit dari titik nol**.
+> **Rebound 30** adalah aplikasi web pendamping pemulihan finansial mandiri (*offline-first* PWA) yang memadukan **5 Pilar Arus Kas Real-Time**, **perlindungan hukum konsumen (POJK 22/2023 & UU HAM)**, **pendampingan psikologis anti-panik**, **peta jalan 30 hari interaktif**, dan **arsip inspirasi 44 kisah nyata tokoh yang bangkit dari titik nol**.
 
 ---
 
@@ -78,28 +78,54 @@ Sistem mengolah keputusan profil awal secara terpadu tanpa *gap* logika, diverif
 - **Target Utama 30 Hari (*Primary Goal Driver*)**:
   - Mengarahkan prioritas `CRITICAL` ke misi yang sesuai target (`Pemasukan Pertama`, `Dapat Kerja`, `Kurangi Utang`, `Pemasukan Rutin`, atau `Bantu Keluarga`).
 
-### 7. 📚 Perpustakaan 20 Kisah Nyata Bangkit dari Utang (*20 Real-Life Recovery Stories*)
-Arsip kurasi 20 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian:
+### 7. 📚 Perpustakaan 44 Kisah Nyata Bangkit dari Utang (*44 Real-Life Recovery Stories*)
+Arsip kurasi 44 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian:
+
 1. **Shao Baoling (邵宝玲)** — Ratu Koper Yiwu $\to$ Pemilik 3 Toko Bakpao (Utang > Rp 220 M)
 2. **Tang Jian (唐健)** — Raja Restoran Qingdao $\to$ Kios Sosis Panggang 25 m² (Utang Rp 100 M)
-3. **M. Taufik Hendradinata** — Mantan Raja Laundry $\to$ Pabrik Skincare Salina Herbal (Utang Rp 2,2 M)
-4. **Suryo Hadi Pranoto** — TKI Taiwan $\to$ Showroom 1.000 Unit Mobil Kacunk Motor
-5. **Suprianto** — Karyawan Kantoran $\to$ Dapur Produksi Semi-Modern Siomay Wondes
+3. **M. Taufik Hendradinata (Hendra)** — Mantan Raja Laundry Ditipu Rp 800 Jt $\to$ Tidur Teras Masjid $\to$ Pabrik Skincare Salina Herbal CPKB BPOM (Utang Rp 2,2 M)
+4. **Suryo Hadi Pranoto** — Mantan TKI Taiwan & Bangkrut $\to$ Showroom 1.000 Unit Mobil Kacunk Motor Tulungagung
+5. **Suprianto** — Terlilit Utang Kartu Kredit $\to$ Dapur Produksi Semi-Modern Siomay Wondes
 6. **Mat Yasin** — Penjual Kue Bapel $\to$ Miliarder Besi Tua & Pembangun Jalan Aspal 10 KM Sampang Madura (Utang Rp 3 M)
 7. **Genta Gantara** — Mahasiswa Terjebak Investasi Bodong Usia 23 Thn $\to$ Bos Developer Properti & Konstruksi Cimahi (Utang Rp 500 Jt)
-8. **Rini Sudarwanti** — Usaha Makanan Sepi & Terjerat Rentenir Harian $\to$ Pengrajin Gitar Handmade & 50 Besar Mekaarpreneur 2026
-9. **Dian Agustin** — 350 Cabang Pizza Runtuh & Bedeng Modal Rp 100 Ribu $\to$ Kerajaan Sambal Alu 150 Karyawan
-10. **Eko Susanto & Dwi Rizky Setiawan** — Kontraktor Tambang Minus Rp 2 Miliar & Makan Nasi Garam $\to$ Bakso Sritikah Ekspor Hong Kong & Pabrik 27 Staf
-11. **Sirivat Voravetvuthikun** — CEO Asia Securities Utang Rp 500 Miliar Krisis Asia 1997 $\to$ "The Sandwich Man" Bangkok & Jaringan Gerai
-12. **Amber & Ryan Duncan** — Bangkrut 40 Properti Hilang Krisis Subprime 2008 $\to$ "Life After Debt" Berharta Rp 814 Miliar (US$ 50 Juta)
-13. **Wang Peng (王鹏)** — Mewarisi Utang Ayah Rp 580 Miliar $\to$ Pelopor Terminal Satelit Beidou & Gelar Hengyang Good People 2023
+8. **Bonzor** — Utang Rp 15 Miliar & Selamat dari Racun Serangga $\to$ Makelar Besi, Sedekah Rp 2,5 M, Lunas 40 Hari & Pengasuh 37 Anak Yatim
+9. **Arif Sanyoto (Kang Arif)** — Bangkrut Kerugian Rp 1,5 Miliar & Modal Terakhir Rp 108.000 $\to$ Lumpia Sortalok 5.000 Pcs/Hari & Penulis Buku 27 Hari Bebas Utang
+10. **Steve Sonnenberg** — Pailit Gugatan Hukum FTC & 4 Anak Balita $\to$ Modal Kartu Kredit ke Unicorn Awardco ($1 Miliar / Rp 16 T)
+11. **Kia Raya (Siti Khoiriah)** — Kasir Indomaret Usia 15 Thn Bayar Utang Ortu & Modal Rp 100 Ribu $\to$ Pabrik Mie Lidi Si Umang & Owner Indomaret
+12. **Yosep** — Mewarisi Usaha Kerupuk Orang Tua Utang Rp 700 Juta Usia 24 Thn $\to$ Inovasi Mesin Oven & Pemilik 3 Pabrik Kerupuk Sehati Ciamis
+13. **Heppy Trenggono** — Utang Bank Niaga Rp 63 Miliar & Gerakan Beli Indonesia $\to$ United Balimuda Group 80.000 Ha Sawit (Rp 7 Triliun)
 14. **Donanto** — Bangkrut Menjual Rumah & Menyewa Rumah Sendiri $\to$ Eksportir Sidat Jepang, Duta Unagi & Pemilik 5 Perusahaan
-15. **Heppy Trenggono** — Utang Bank Niaga Rp 63 Miliar & Sedekah di Masa Kritis $\to$ United Balimuda Group 80.000 Ha Sawit (Rp 7 Triliun)
-16. **Yosep** — Mewarisi Usaha Orang Tua Utang Rp 700 Juta Usia 24 Thn $\to$ Pemilik 3 Pabrik Kerupuk Sehati Omset Miliaran/Bulan
-17. **Kia Raya (Siti Khoiriah)** — Kasir Indomaret Usia 15 Thn Bayar Utang Ortu & Modal Rp 100 Ribu $\to$ Pabrik Mie Lidi Si Umang & Owner Indomaret
-18. **Steve Sonnenberg** — Pailit Gugatan Hukum FTC & 4 Anak Balita $\to$ Modal Domain $5.000 Kartu Kredit ke Unicorn Awardco ($1 Miliar / Rp 16 T)
-19. **Arif Sanyoto (Kang Arif)** — Bangkrut Kerugian Rp 1,5 Miliar & Modal Terakhir Rp 108.000 $\to$ Lumpia Sortalok 5.000 Pcs/Hari & Penulis Buku 27 Hari Bebas Utang
-20. **Bonzor** — Utang Rp 15 Miliar & Selamat dari Racun Serangga $\to$ Makelar Besi, Sedekah Rp 2,5 M, Lunas 40 Hari & Pengasuh 37 Anak Yatim
+15. **Wang Peng (王鹏)** — Mewarisi Utang Ayah Rp 580 Miliar $\to$ Pelopor Terminal Satelit Beidou & Gelar Hengyang Good People 2023
+16. **Amber & Ryan Duncan** — Bangkrut 40 Properti Hilang Krisis Subprime 2008 $\to$ Platform "Life After Debt" Berharta Rp 814 Miliar (US$ 50 Juta)
+17. **Sirivat Voravetvuthikun** — CEO Asia Securities Utang Rp 500 Miliar Krisis Asia 1997 $\to$ "The Sandwich Man" Bangkok & Jaringan Gerai
+18. **Eko Susanto & Dwi Rizky Setiawan** — Kontraktor Tambang Minus Rp 2 Miliar & Modal Rp 120 Ribu $\to$ Bakso Sritikah Ekspor Hong Kong & Pabrik 27 Staf
+19. **Dian Agustin** — 350 Cabang Pizza Runtuh & Bedeng Modal Rp 100 Ribu $\to$ Kerajaan Sambal Alu 150 Karyawan
+20. **Rini Sudarwanti** — Usaha Makanan Sepi & Terjerat Rentenir Harian $\to$ Pengrajin Gitar Handmade & 50 Besar Mekaarpreneur 2026
+21. **Muhammad Catur Gunandi (Mister Catur)** — Terlilit Utang Rp 2,5 Miliar $\to$ Bangkit Bangun Brand Keripik & Pembina Komunitas Bisnis Anti-Riba
+22. **Nani Kurniasari** — Terjerat Utang Rp 2 Miliar & Diteror Debt Collector $\to$ Bangkit Lewat Sambal Kemasan & Berdayakan Ibu-Ibu
+23. **Syaikhul Hadi** — Terjerat 800 Cek Kosong & Utang Bank Miliaran $\to$ Bangkit Jadi Produsen Pupuk PT Keraton Agri Ponorogo
+24. **Baim Wong (Muhammad Ibrahim)** — Restoran Pablo Kolaps & Utang Rp 1,5 Miliar $\to$ Berjuang Melunasi Sendiri & Bangkit Membangun Ekosistem Digital-F&B
+25. **Krisna Mukti** — Gagal Pileg 2019, Tabungan Habis & Terjerat Utang Rp 2 Miliar $\to$ Bangkit Jual Barang Antik & Keluar dari Depresi
+26. **Chen Zhao (陈兆)** — Utang Keluarga 20 Juta Yuan (Rp 44 Miliar) di Usia 24 Thn $\to$ Lunas 7 Tahun Murni dari Karya Seni & Kursus Kaligrafi Wuhan
+27. **Syakir Daulay** — Terlilit Utang Produksi Film Rp 5 Miliar di Usia 20 Thn $\to$ Pasrah, Dibimbing Guru & Melunasi Seluruh Kewajiban
+28. **Pasek Reksa (Gede Pasek Reksa Saputra)** — Pandemi COVID-19, PHK, Ortu Cerai & Utang Rp 500 Jt $\to$ Transformasi Mindset, Ketua WMS & Pengusaha Madu-Properti Bali
+29. **Maimun** — Bencana Banjir Bandang Situ Gintung 2009 Rugi Rp 1 M + Utang Rp 250 Jt $\to$ Bangkit Bangun Pabrik Furnitur "Bangket Sejati"
+30. **Fauzi Priambodo** — Adiksi Utang Bank Rp 140 Miliar $\to$ Jual 20 Toko, Hijrah SyaREA World & Bangun PT Inspirasi Prima Nusantara Bebas Utang
+31. **Susilowati (Ibu Susi)** — Kontrak Kendang Jimbe Ekspor Macet & Utang Bank Rp 300 Jt $\to$ Olah Limbah Kayu via TikTok, Ekspor & Berangkat Haji 2023
+32. **Feby Eki Prasetyo (Fepto)** — Runtuh Bisnis Kripto Usia 20 Thn Utang Rp 2 M $\to$ Lunas 3 Bulan, Bangun Fepto Group & Ekspansi AI/Payment Gateway Asia
+33. **Ican Suherlan (Coach Ican)** — Kehilangan Ibu dalam Perampokan, Sakit Langka 1 Thn di RS & Utang Rp 10 M $\to$ Bangkit Cariilmu 200k+ Peserta & IBJ Group
+34. **Menlu** — Anak Nelayan, Distributor Semen Bangkrut Utang Miliaran $\to$ Modal 5 Cetakan Beton Jadi "Raja Beton Banyuwangi" (Rabanton) & Dermaga Apung
+35. **Tri Dawang** — Mitos Utang Wajib, Utang Rp 350 M & 800 Cek Kosong $\to$ Disiplin Finansial Dawang Group Tumbuh Sehat Tanpa Utang
+36. **Mulyono (Pak Mul)** — 17 Tahun Bergantung Utang Rp 40 Miliar $\to$ Hijrah SyaREA World, Riset Rp 2 M Gratis ke Afrika, Panen Padi Kamerun Naik 40%
+37. **Tommy Wong** — Anak Jalanan, Ditipu Mitra Puluhan Miliar Nyaris Dipenjara $\to$ Berserah Diri, Lunas 2 Tahun Jadi CEO Victorindo Group & Pengajar Anak Jalanan
+38. **Deni Lukman** — Sales Garuda Food Pacitan, Utang Rp 1 Miliar ke Supplier $\to$ Pengorbanan Emas Istri, Negosiasi & Digitalisasi Toko Tenang Tanpa Riba
+39. **Suyono** — Pernah Tinggal di Kolong Jembatan, 3x Gagal Panen Tebu & Utang Bank Rp 40 Jt $\to$ Toko Dinding Terpal ke 2.000 Toko se-Indonesia (Rp 10 Jt/Hari)
+40. **Ridwan Ghany** — Pandemi COVID-19, Bisnis Ibu Kolaps & Utang Rp 5 Miliar $\to$ Ikhlas Jual Rumah Impian & Mobil, Bangkit dari Nol Didampingi Istri
+41. **Ahmad Nasa'i** — Dicap Gelandangan & Sulit Beli Beras Pasca Bangkrut $\to$ Bangun Mitraku Toko Sembako & Bahan Kue Terbesar Ciamis (800 Pelanggan/Hari)
+42. **Devy Anastasia** — Tertekan Utang Rp 1 Miliar Saat Kompetisi MasterChef S9 $\to$ Ubah Mindset, Negosiasi Jujur & Endorse Gratis, Lunas 1 Tahun Jadi Miliarder
+43. **Eka Nugraha** — Ekspansi Telekomunikasi Bogor Terlalu Agresif Utang Rp 350 Miliar $\to$ SyaREA World, Pangkas 50% Utang 1 Tahun & Tumbuh Mandiri
+44. **Yasa Singgih** — Bangkrut Kedai Kopi Rp 150 Jt, Utang Rp 1,5 M Men's Republic $\to$ Forbes 30 Under 30 Asia di Usia 20 Thn, Lunas 2020 & Rebranding Republic
+
 
 ### 8. 📊 Penilaian Kondisi & Prioritas Utang Berbasis Risiko Nyata
 - **Rasio Cicilan terhadap Pemasukan (DTI)** dan **status `NO_INCOME`** sesuai PRD §12, ditampilkan langsung di beranda bersama **kekayaan bersih** dan **sisa hari bertahan**.
@@ -157,7 +183,7 @@ d:\Project\ui\
 │   ├── finance.js          # Assessment (DTI, runway), prioritas utang, laporan bulanan, rencana 90 hari
 │   ├── notify.js           # Pusat pengingat in-app (jatuh tempo, follow-up, kas kritis)
 │   ├── exporter.js         # Ekspor CSV & laporan cetak/PDF tanpa pustaka eksternal
-│   ├── stories.js          # Controller Perpustakaan Kisah & Reader Interaktif (20 Tokoh)
+│   ├── stories.js          # Controller Perpustakaan Kisah & Reader Interaktif (44 Tokoh)
 │   ├── app.js              # Router utama, lifecycle controller, 5-Pillar Sync, CRUD & modal SOS
 │   └── screens.js          # Modul layar tambahan: pengingat, review mingguan, rencana 90 hari,
 │                           #   mode darurat, laporan bulanan, aksesibilitas, install PWA
@@ -165,7 +191,7 @@ d:\Project\ui\
     ├── run_all.js                 # Runner terpadu seluruh suite (exit code untuk CI)
     ├── istqb_test_suite.js        # Formal ISTQB Test Suite (EP, BVA, STT, Integration)
     ├── test_simulation_30days.js  # Simulasi otomatis siklus perjalanan Hari 1 s.d. 30
-    ├── audit_all_buttons.js       # Audit otomatis 104 tombol & handler interaktif
+    ├── audit_all_buttons.js       # Audit otomatis 110 tombol & handler interaktif
     ├── data_integrity.js          # Migrasi skema, validasi import, kuota storage, presisi uang
     ├── timezone_integrity.js      # Regresi tanggal lintas zona waktu (WIB/WITA/WIT + kontrol)
     ├── features_test.js           # Prioritas utang, DTI, pengingat, laporan bulanan, review, 90 hari
