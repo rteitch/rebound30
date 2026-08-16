@@ -789,62 +789,97 @@ const App = {
     document.getElementById('plan-list').innerHTML = html;
   },
   
-  // ---- REPORTS ----
+  // ---- REPORTS (LAPORAN FINANSIAL MENYELURUH 100% SINKRON) ----
   renderReports() {
     const s = this.state;
     const { score, components } = ScoreEngine.calculate(s);
-    const snap = s.meta.snapshotDay1;
+    const snap = s.meta.snapshotDay1 || {};
     
-    // Compare: Day 1 vs Now (Sinkronisasi Komprehensif)
-    const totalDebt = s.debts.reduce((a,d)=>a+d.remaining,0);
-    const origDebt = s.debts.reduce((a,d)=>a+d.original,0);
-    const income = (s.profile.monthlyIncome || 0) + s.incomes.filter(i=>H.isThisMonth(i.date)).reduce((a,i)=>a+i.amount,0);
-    const recurringIncome = s.incomes.filter(i=>i.recurring).reduce((a,i)=>a+i.amount,0);
+    // 1. Data Sekarang
+    const totalDebt = (s.debts || []).reduce((a,d)=>a+d.remaining,0);
+    const origDebt = (s.debts || []).reduce((a,d)=>a+d.original,0);
+    const income = (s.profile.monthlyIncome || 0) + (s.incomes || []).filter(i=>H.isThisMonth(i.date)).reduce((a,i)=>a+i.amount,0);
+    
+    const essExpenses = Object.values(s.expenses?.essential || {}).reduce((a,v)=>a+v,0);
+    const nonEssExpenses = (s.expenses?.records || []).filter(e=>H.isThisMonth(e.date)).reduce((a,e)=>a+e.amount,0);
+    const totalExpenses = essExpenses + nonEssExpenses;
+
     const totalAssets = (s.assets || []).reduce((a,x)=>a+x.value,0);
     const cash = s.profile.cash || 0;
     const netWorth = (cash + totalAssets) - totalDebt;
+    const netCashflow = income - totalExpenses;
+
+    // 2. Data Hari 1
+    const snapIncome = snap.income !== undefined ? snap.income : s.profile.monthlyIncome || 0;
+    const snapExpenses = snap.expenses !== undefined ? snap.expenses : essExpenses;
+    const snapDebt = snap.debt !== undefined ? snap.debt : origDebt;
+    const snapAssets = snap.assets !== undefined ? snap.assets : totalAssets;
+    const snapCash = snap.cash !== undefined ? snap.cash : cash;
+    const snapNetWorth = (snapCash + snapAssets) - snapDebt;
+    const snapScore = snap.score !== undefined ? snap.score : 20;
     
     document.getElementById('report-compare').innerHTML = `
       <div class="report-before">
-        <div class="report-label">Hari 1</div>
+        <div class="report-label">Hari 1 (Baseline)</div>
         <div class="report-row">
-          <div class="report-row-label">Pemasukan/bln</div>
-          <div class="report-row-value">${snap ? H.formatRp(snap.income) : '—'}</div>
+          <div class="report-row-label">Uang Tunai (Kas)</div>
+          <div class="report-row-value">${H.formatRp(snapCash)}</div>
         </div>
         <div class="report-row">
-          <div class="report-row-label">Total Utang</div>
-          <div class="report-row-value">${snap ? H.formatRp(snap.debt) : H.formatRp(origDebt)}</div>
+          <div class="report-row-label">Pemasukan / Bulan</div>
+          <div class="report-row-value">${H.formatRp(snapIncome)}</div>
         </div>
         <div class="report-row">
-          <div class="report-row-label">Uang Tunai</div>
-          <div class="report-row-value">${snap ? H.formatRp(snap.cash) : '—'}</div>
+          <div class="report-row-label">Pengeluaran / Bulan</div>
+          <div class="report-row-value">${H.formatRp(snapExpenses)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Total Sisa Utang</div>
+          <div class="report-row-value">${H.formatRp(snapDebt)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Total Estimasi Aset</div>
+          <div class="report-row-value">${H.formatRp(snapAssets)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Kekayaan Bersih</div>
+          <div class="report-row-value" style="color:${snapNetWorth >= 0 ? 'var(--green-700)' : 'var(--red-700)'}">${snapNetWorth >= 0 ? '+' : ''}${H.formatRp(snapNetWorth)}</div>
         </div>
         <div class="report-row">
           <div class="report-row-label">Rebound Score</div>
-          <div class="report-row-value">${snap ? snap.score : '—'}</div>
+          <div class="report-row-value">${snapScore}/100</div>
         </div>
       </div>
+
       <div class="report-after">
-        <div class="report-label" style="color:var(--teal-700)">Sekarang</div>
+        <div class="report-label" style="color:var(--teal-700)">Posisi Saat Ini</div>
         <div class="report-row">
-          <div class="report-row-label">Pemasukan/bln</div>
-          <div class="report-row-value" style="color:var(--green-600)">${H.formatRp(income)}</div>
+          <div class="report-row-label">Uang Tunai (Kas)</div>
+          <div class="report-row-value" style="font-weight:700;color:var(--teal-700)">${H.formatRp(cash)}</div>
         </div>
         <div class="report-row">
-          <div class="report-row-label">Total Utang</div>
-          <div class="report-row-value" style="color:var(--red-600)">${H.formatRp(totalDebt)}</div>
+          <div class="report-row-label">Pemasukan / Bulan</div>
+          <div class="report-row-value" style="font-weight:700;color:var(--green-600)">${H.formatRp(income)}</div>
         </div>
         <div class="report-row">
-          <div class="report-row-label">Uang Tunai</div>
-          <div class="report-row-value">${H.formatRp(s.profile.cash)}</div>
+          <div class="report-row-label">Pengeluaran / Bulan</div>
+          <div class="report-row-value" style="font-weight:700;color:${netCashflow >= 0 ? 'var(--color-text-primary)' : 'var(--red-600)'}">${H.formatRp(totalExpenses)}</div>
         </div>
         <div class="report-row">
-          <div class="report-row-label">Kekayaan Bersih (Net Worth)</div>
-          <div class="report-row-value" style="color:${netWorth >= 0 ? 'var(--green-600)' : 'var(--red-600)'}">${netWorth >= 0 ? '+' : ''}${H.formatRp(netWorth)}</div>
+          <div class="report-row-label">Total Sisa Utang</div>
+          <div class="report-row-value" style="font-weight:700;color:${totalDebt === 0 ? 'var(--green-600)' : 'var(--red-600)'}">${totalDebt === 0 ? 'Lunas (Rp 0)' : H.formatRp(totalDebt)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Total Estimasi Aset</div>
+          <div class="report-row-value" style="font-weight:700;color:var(--indigo-600)">${H.formatRp(totalAssets)}</div>
+        </div>
+        <div class="report-row">
+          <div class="report-row-label">Kekayaan Bersih</div>
+          <div class="report-row-value" style="font-weight:800;color:${netWorth >= 0 ? 'var(--green-600)' : 'var(--red-600)'}">${netWorth >= 0 ? '+' : ''}${H.formatRp(netWorth)}</div>
         </div>
         <div class="report-row">
           <div class="report-row-label">Rebound Score</div>
-          <div class="report-row-value" style="color:var(--teal-700);font-size:1.3rem">${score}/100</div>
+          <div class="report-row-value" style="color:var(--teal-700);font-size:1.3rem;font-weight:800">${score}/100</div>
         </div>
       </div>
     `;
@@ -1297,12 +1332,16 @@ const App = {
     finish() {
       this.saveCurrentStep();
       App.state.meta.onboardingDone = true;
-      // Snapshot Day 1
+      // Snapshot Day 1 (Lengkap 5 Pilar Finansial)
       const { score } = ScoreEngine.calculate(App.state);
+      const essentialExpenses = Object.values(App.state.expenses.essential || {}).reduce((a,v)=>a+v,0);
+      const totalAssets = (App.state.assets || []).reduce((a,x)=>a+x.value,0);
       App.state.meta.snapshotDay1 = {
-        income: App.state.profile.monthlyIncome,
+        income: App.state.profile.monthlyIncome || 0,
+        expenses: essentialExpenses,
         debt: App.state.debts.reduce((a,d)=>a+d.remaining,0),
-        cash: App.state.profile.cash,
+        assets: totalAssets,
+        cash: App.state.profile.cash || 0,
         score,
         date: H.today(),
       };
