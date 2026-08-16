@@ -25,1542 +25,876 @@
 </head>
 <body>
 
-<script src="https://unpkg.com/lucide@latest"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-
-
-/* ============================================================
-   RESPONSIVE SVG ICON DIMENSIONS & SYSTEM
-   ============================================================ */
-
-/* Global SVG Safety */
-svg {
-  box-sizing: border-box;
-}
-
-/* 1. Step Badges (Onboarding Header Icons) */
-.step-icon-badge {
-  width: 52px !important;
-  height: 52px !important;
-  min-width: 52px !important;
-  min-height: 52px !important;
-  max-width: 52px !important;
-  max-height: 52px !important;
-  border-radius: 16px !important;
-  background: var(--teal-50) !important;
-  color: var(--teal-700) !important;
-  border: 1px solid var(--teal-200) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto var(--space-4) !important;
-  padding: 0 !important;
-}
-.step-icon-badge svg {
-  width: 26px !important;
-  height: 26px !important;
-  max-width: 26px !important;
-  max-height: 26px !important;
-  stroke-width: 2.2 !important;
-  display: block !important;
-}
-
-/* 2. Option Cards (Onboarding Selection Items) */
-.option-card {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding: var(--space-4) var(--space-3) !important;
-  min-height: 84px !important;
-}
-.option-card .option-icon {
-  width: 36px !important;
-  height: 36px !important;
-  min-width: 36px !important;
-  min-height: 36px !important;
-  max-width: 36px !important;
-  max-height: 36px !important;
-  border-radius: 10px !important;
-  background: var(--teal-50) !important;
-  color: var(--teal-700) !important;
-  border: 1px solid var(--teal-200) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto var(--space-2) !important;
-  padding: 0 !important;
-  transition: all 0.2s ease !important;
-}
-.option-card .option-icon svg {
-  width: 18px !important;
-  height: 18px !important;
-  max-width: 18px !important;
-  max-height: 18px !important;
-  stroke-width: 2.2 !important;
-  display: block !important;
-}
-.option-card.selected .option-icon {
-  background: var(--teal-600) !important;
-  color: white !important;
-  border-color: var(--teal-600) !important;
-}
-
-/* 3. Welcome Features */
-.welcome-feature-icon {
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  min-height: 42px !important;
-  max-width: 42px !important;
-  max-height: 42px !important;
-  border-radius: 12px !important;
-  background: var(--teal-50) !important;
-  color: var(--teal-700) !important;
-  border: 1px solid var(--teal-200) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
-}
-.welcome-feature-icon svg {
-  width: 20px !important;
-  height: 20px !important;
-  max-width: 20px !important;
-  max-height: 20px !important;
-  stroke-width: 2.2 !important;
-  display: block !important;
-}
-
-/* 4. Navigation (Desktop & Mobile) */
-.nav-item {
-  display: flex !important;
-  align-items: center !important;
-  gap: var(--space-3) !important;
-}
-.nav-item svg {
-  width: 18px !important;
-  height: 18px !important;
-  max-width: 18px !important;
-  max-height: 18px !important;
-  stroke-width: 2.2 !important;
-  flex-shrink: 0 !important;
-  display: inline-block !important;
-}
-.bottom-nav-item svg {
-  width: 20px !important;
-  height: 20px !important;
-  max-width: 20px !important;
-  max-height: 20px !important;
-  stroke-width: 2.2 !important;
-  margin: 0 auto 2px !important;
-  display: block !important;
-}
-
-/* 5. Achievement & Stats */
-.achievement-card .achievement-icon {
-  width: 44px !important;
-  height: 44px !important;
-  min-width: 44px !important;
-  max-width: 44px !important;
-  border-radius: 12px !important;
-  background: var(--teal-50) !important;
-  color: var(--teal-700) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto var(--space-2) !important;
-}
-.achievement-card.locked .achievement-icon {
-  background: var(--slate-100) !important;
-  color: var(--slate-400) !important;
-}
-.achievement-icon svg {
-  width: 22px !important;
-  height: 22px !important;
-  max-width: 22px !important;
-  max-height: 22px !important;
-  stroke-width: 2.2 !important;
-  display: block !important;
-}
-
-/* 6. Empty States */
-.empty-state-icon {
-  width: 56px !important;
-  height: 56px !important;
-  margin: 0 auto var(--space-3) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-.empty-state-icon svg {
-  width: 44px !important;
-  height: 44px !important;
-  max-width: 44px !important;
-  max-height: 44px !important;
-  stroke-width: 1.8 !important;
-  display: block !important;
-}
-
-/* 7. Banners & Notifications */
-.backup-icon, .streak-icon {
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
-}
-.backup-icon svg, .streak-icon svg {
-  width: 20px !important;
-  height: 20px !important;
-  max-width: 20px !important;
-  max-height: 20px !important;
-  display: block !important;
-}
-
-/* ============================================================
-   DESIGN SYSTEM — REBOUND 30
-   ============================================================ */
-:root {
-  /* Primary Palette */
-  --teal-50:  #F0FDFA;
-  --teal-100: #CCFBF1;
-  --teal-200: #99F6E4;
-  --teal-400: #2DD4BF;
-  --teal-500: #14B8A6;
-  --teal-600: #0D9488;
-  --teal-700: #0F766E;
-  --teal-800: #115E59;
-  --teal-900: #134E4A;
-
-  /* Amber (Alert/Priority) */
-  --amber-50:  #FFFBEB;
-  --amber-100: #FEF3C7;
-  --amber-400: #FBBF24;
-  --amber-500: #F59E0B;
-  --amber-600: #D97706;
-  --amber-700: #B45309;
-
-  /* Red (Critical/Danger) */
-  --red-50:  #FFF1F2;
-  --red-100: #FFE4E6;
-  --red-400: #F87171;
-  --red-500: #EF4444;
-  --red-600: #DC2626;
-  --red-700: #B91C1C;
-
-  /* Green (Success) */
-  --green-50:  #F0FDF4;
-  --green-100: #DCFCE7;
-  --green-500: #22C55E;
-  --green-600: #16A34A;
-  --green-700: #15803D;
-
-  /* Blue (Info) */
-  --blue-50:  #EFF6FF;
-  --blue-500: #3B82F6;
-  --blue-600: #2563EB;
-
-  /* Neutral */
-  --slate-50:  #F8FAFC;
-  --slate-100: #F1F5F9;
-  --slate-200: #E2E8F0;
-  --slate-300: #CBD5E1;
-  --slate-400: #94A3B8;
-  --slate-500: #64748B;
-  --slate-600: #475569;
-  --slate-700: #334155;
-  --slate-800: #1E293B;
-  --slate-900: #0F172A;
-
-  /* Semantic */
-  --color-primary: var(--teal-600);
-  --color-primary-light: var(--teal-500);
-  --color-primary-dark: var(--teal-700);
-  --color-primary-bg: var(--teal-50);
-  --color-accent: var(--amber-600);
-  --color-danger: var(--red-600);
-  --color-success: var(--green-600);
-  --color-warning: var(--amber-500);
-
-  --color-bg: var(--slate-50);
-  --color-surface: #FFFFFF;
-  --color-border: var(--slate-200);
-  --color-text: var(--slate-800);
-  --color-text-secondary: var(--slate-500);
-  --color-text-muted: var(--slate-400);
-
-  /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-
-  /* Spacing */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04);
-
-  /* Border Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.25rem;
-  --radius-full: 9999px;
-
-  /* Layout */
-  --nav-height: 64px;
-  --sidebar-width: 240px;
-  --content-max: 800px;
-}
-
-/* ---- Reset & Base ---- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; }
-body {
-  font-family: var(--font-sans);
-  background: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.5;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
-input, select, textarea { font-family: inherit; font-size: var(--text-base); }
-a { color: inherit; text-decoration: none; }
-ul, ol { list-style: none; }
-img { max-width: 100%; }
-
-/* ---- Utilities ---- */
-.hidden { display: none !important; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.justify-center { justify-content: center; }
-.gap-1 { gap: var(--space-1); }
-.gap-2 { gap: var(--space-2); }
-.gap-3 { gap: var(--space-3); }
-.gap-4 { gap: var(--space-4); }
-.gap-6 { gap: var(--space-6); }
-.w-full { width: 100%; }
-.text-center { text-align: center; }
-.font-semibold { font-weight: 600; }
-.font-bold { font-weight: 700; }
-.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-/* ---- Typography ---- */
-.text-xs { font-size: var(--text-xs); }
-.text-sm { font-size: var(--text-sm); }
-.text-base { font-size: var(--text-base); }
-.text-lg { font-size: var(--text-lg); }
-.text-xl { font-size: var(--text-xl); }
-.text-2xl { font-size: var(--text-2xl); }
-.text-3xl { font-size: var(--text-3xl); }
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-text-secondary); }
-.text-muted { color: var(--color-text-muted); }
-.text-danger { color: var(--color-danger); }
-.text-success { color: var(--color-success); }
-.text-warning { color: var(--color-warning); }
-
-/* ============================================================
-   APP LAYOUT
-   ============================================================ */
-#app {
-  display: flex;
-  min-height: 100vh;
-}
-
-/* Sidebar — Desktop */
-#sidebar {
-  width: var(--sidebar-width);
-  background: var(--color-surface);
-  border-right: 1px solid var(--color-border);
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 0; left: 0; bottom: 0;
-  z-index: 100;
-  transition: transform 0.3s ease;
-}
-
-.sidebar-logo {
-  padding: var(--space-6) var(--space-5);
-  border-bottom: 1px solid var(--color-border);
-}
-.sidebar-logo .logo-mark {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-.logo-icon {
-  width: 36px; height: 36px;
-  border-radius: var(--radius-md);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.logo-icon img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.logo-text { font-weight: 700; font-size: var(--text-base); color: var(--color-text); }
-.logo-tagline { font-size: var(--text-xs); color: var(--color-text-secondary); }
-
-.sidebar-day-badge {
-  margin: var(--space-4) var(--space-5);
-  background: var(--teal-50);
-  border: 1px solid var(--teal-200);
-  border-radius: var(--radius-lg);
-  padding: var(--space-3) var(--space-4);
-}
-.sidebar-day-badge .day-label { font-size: var(--text-xs); color: var(--teal-600); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-.sidebar-day-badge .day-number { font-size: var(--text-xl); font-weight: 800; color: var(--teal-700); }
-
-.sidebar-nav {
-  flex: 1;
-  padding: var(--space-2) var(--space-3);
-  overflow-y: auto;
-}
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-3);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-1);
-  color: var(--color-text-secondary);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-}
-.nav-item:hover { background: var(--slate-100); color: var(--color-text); }
-.nav-item.active {
-  background: var(--teal-50);
-  color: var(--teal-700);
-  font-weight: 600;
-}
-.nav-item .nav-icon { width: 20px; font-size: 18px; flex-shrink: 0; text-align: center; }
-
-.sidebar-footer {
-  padding: var(--space-4) var(--space-5);
-  border-top: 1px solid var(--color-border);
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-}
-
-/* Main content area */
-#main {
-  flex: 1;
-  margin-left: var(--sidebar-width);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Top bar */
-#topbar {
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  padding: 0 var(--space-6);
-  height: var(--nav-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 90;
-}
-.topbar-title { font-weight: 700; font-size: var(--text-lg); }
-.topbar-actions { display: flex; gap: var(--space-2); align-items: center; }
-
-/* Page content */
-#content {
-  flex: 1;
-  padding: var(--space-6);
-  max-width: calc(var(--content-max) + var(--space-12));
-  width: 100%;
-}
-
-/* Bottom Navigation — Mobile */
-#bottom-nav {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-  z-index: 100;
-  padding: var(--space-2) 0 max(var(--space-2), env(safe-area-inset-bottom));
-}
-.bottom-nav-items {
-  display: flex;
-  justify-content: space-around;
-}
-.bottom-nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
-  color: var(--color-text-muted);
-  font-size: 10px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-  border: none;
-  background: none;
-  min-width: 48px;
-}
-.bottom-nav-item .bnav-icon { font-size: 22px; line-height: 1; }
-.bottom-nav-item.active { color: var(--teal-600); }
-.bottom-nav-item.active .bnav-icon { transform: scale(1.1); }
-
-/* Mobile header */
-#mobile-header {
-  display: none;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-4) var(--space-5);
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 90;
-}
-.mobile-logo { display: flex; align-items: center; gap: var(--space-2); }
-.mobile-logo .logo-icon { width: 30px; height: 30px; font-size: var(--text-xs); }
-.mobile-page-title { font-weight: 700; font-size: var(--text-base); }
-
-/* Responsive — Mobile */
-@media (max-width: 768px) {
-  #sidebar { display: none; }
-  #main { margin-left: 0; padding-bottom: 80px; }
-  #topbar { display: none; }
-  #mobile-header { display: flex; }
-  #bottom-nav { display: block; }
-  #content { padding: var(--space-4); }
-}
-
-/* ============================================================
-   SCREENS
-   ============================================================ */
-.screen { display: none; }
-.screen.active { display: block; }
-
-/* ============================================================
-   ONBOARDING
-   ============================================================ */
-#screen-onboarding {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--color-bg);
-  z-index: 200;
-  overflow-y: auto;
-}
-#screen-onboarding.active { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
-
-.onboarding-container {
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
-  padding: var(--space-8) var(--space-5) var(--space-16);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.onboarding-progress {
-  display: flex;
-  gap: var(--space-1);
-  margin-bottom: var(--space-8);
-}
-.progress-dot {
-  height: 4px;
-  flex: 1;
-  background: var(--slate-200);
-  border-radius: var(--radius-full);
-  transition: background 0.3s;
-}
-.progress-dot.done { background: var(--teal-500); }
-.progress-dot.current { background: var(--teal-400); }
-
-.onboarding-step { display: none; flex: 1; flex-direction: column; }
-.onboarding-step.active { display: flex; }
-
-.step-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
-.step-title { font-size: var(--text-2xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--space-2); line-height: 1.2; }
-.step-subtitle { color: var(--color-text-secondary); margin-bottom: var(--space-8); line-height: 1.6; }
-
-.onboarding-actions {
-  margin-top: auto;
-  display: flex;
-  gap: var(--space-3);
-  padding-top: var(--space-6);
-}
-
-/* Welcome screen */
-.welcome-card {
-  background: linear-gradient(135deg, var(--teal-600), var(--teal-800));
-  border-radius: var(--radius-2xl);
-  padding: var(--space-8) var(--space-6);
-  color: white;
-  margin-bottom: var(--space-6);
-  position: relative;
-  overflow: hidden;
-}
-.welcome-card::before {
-  content: '';
-  position: absolute;
-  top: -60px; right: -60px;
-  width: 200px; height: 200px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-}
-.welcome-card::after {
-  content: '';
-  position: absolute;
-  bottom: -40px; left: -40px;
-  width: 160px; height: 160px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-}
-.welcome-app-name { font-size: var(--text-3xl); font-weight: 800; letter-spacing: -0.5px; margin-bottom: var(--space-2); }
-.welcome-tagline { font-size: var(--text-base); opacity: 0.85; line-height: 1.6; }
-
-.welcome-features {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  margin-bottom: var(--space-6);
-}
-.welcome-feature {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-3) var(--space-4);
-}
-.welcome-feature-icon { font-size: 1.5rem; width: 36px; text-align: center; flex-shrink: 0; }
-.welcome-feature-text { font-size: var(--text-sm); color: var(--color-text-secondary); }
-.welcome-feature-text strong { color: var(--color-text); display: block; }
-
-/* ============================================================
-   CARDS & COMPONENTS
-   ============================================================ */
-.card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-5);
-  box-shadow: var(--shadow-sm);
-}
-.card-sm {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-sm);
-}
-.card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-4);
-}
-.card-title { font-weight: 700; font-size: var(--text-base); }
-.card-subtitle { font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: var(--space-1); }
-
-/* ---- Buttons ---- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  font-size: var(--text-sm);
-  transition: all 0.15s ease;
-  cursor: pointer;
-  border: none;
-  line-height: 1;
-  white-space: nowrap;
-}
-.btn-primary {
-  background: var(--teal-600);
-  color: white;
-}
-.btn-primary:hover { background: var(--teal-700); transform: translateY(-1px); box-shadow: var(--shadow-md); }
-.btn-primary:active { transform: translateY(0); }
-.btn-secondary {
-  background: var(--slate-100);
-  color: var(--color-text);
-}
-.btn-secondary:hover { background: var(--slate-200); }
-.btn-outline {
-  background: transparent;
-  color: var(--teal-600);
-  border: 1.5px solid var(--teal-500);
-}
-.btn-outline:hover { background: var(--teal-50); }
-.btn-danger {
-  background: var(--red-600);
-  color: white;
-}
-.btn-danger:hover { background: var(--red-700); }
-.btn-ghost {
-  background: transparent;
-  color: var(--color-text-secondary);
-}
-.btn-ghost:hover { background: var(--slate-100); color: var(--color-text); }
-.btn-sm { padding: var(--space-2) var(--space-3); font-size: var(--text-xs); border-radius: var(--radius-md); }
-.btn-lg { padding: var(--space-4) var(--space-8); font-size: var(--text-base); border-radius: var(--radius-xl); }
-.btn-full { width: 100%; }
-.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
-
-/* ---- Badges / Pills ---- */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  padding: 2px var(--space-2);
-  border-radius: var(--radius-full);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-.badge-critical { background: var(--red-100); color: var(--red-700); }
-.badge-high { background: var(--amber-100); color: var(--amber-700); }
-.badge-medium { background: var(--blue-50); color: var(--blue-600); }
-.badge-low { background: var(--slate-100); color: var(--slate-600); }
-.badge-success { background: var(--green-100); color: var(--green-700); }
-.badge-primary { background: var(--teal-100); color: var(--teal-700); }
-
-/* ---- Form Controls ---- */
-.form-group { margin-bottom: var(--space-4); }
-.form-label {
-  display: block;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: var(--space-2);
-}
-.form-hint {
-  font-size: var(--text-xs);
-  color: var(--color-text-secondary);
-  margin-top: var(--space-1);
-}
-.form-input {
-  width: 100%;
-  padding: var(--space-3) var(--space-4);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-size: var(--text-sm);
-  transition: border-color 0.15s, box-shadow 0.15s;
-  outline: none;
-}
-.form-input:focus {
-  border-color: var(--teal-500);
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
-}
-.form-input::placeholder { color: var(--color-text-muted); }
-.form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394A3B8' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
-.form-textarea { min-height: 80px; resize: vertical; }
-.input-prefix-group { position: relative; }
-.input-prefix {
-  position: absolute;
-  left: 14px; top: 50%; transform: translateY(-50%);
-  color: var(--color-text-secondary);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  pointer-events: none;
-}
-.input-prefix + .form-input { padding-left: 48px; }
-
-/* Option cards (radio-style) */
-.option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
-.option-grid-3 { grid-template-columns: repeat(3, 1fr); }
-.option-card {
-  padding: var(--space-3) var(--space-3);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  cursor: pointer;
-  transition: all 0.15s;
-  text-align: center;
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  background: var(--color-surface);
-  user-select: none;
-}
-.option-card:hover { border-color: var(--teal-400); color: var(--teal-600); background: var(--teal-50); }
-.option-card.selected { border-color: var(--teal-500); background: var(--teal-50); color: var(--teal-700); font-weight: 600; }
-.option-card .option-icon { font-size: 1.5rem; margin-bottom: var(--space-1); display: block; }
-
-/* Skill tags */
-.skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.skill-tag {
-  padding: var(--space-2) var(--space-3);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-full);
-  font-size: var(--text-sm);
-  cursor: pointer;
-  transition: all 0.15s;
-  color: var(--color-text-secondary);
-  user-select: none;
-}
-.skill-tag:hover { border-color: var(--teal-400); color: var(--teal-600); }
-.skill-tag.selected { border-color: var(--teal-500); background: var(--teal-50); color: var(--teal-700); font-weight: 600; }
-
-/* ============================================================
-   DASHBOARD
-   ============================================================ */
-.dashboard-header {
-  background: linear-gradient(135deg, var(--teal-600) 0%, var(--teal-800) 100%);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-6);
-  color: white;
-  margin-bottom: var(--space-5);
-  position: relative;
-  overflow: hidden;
-}
-.dashboard-header::before {
-  content: '';
-  position: absolute;
-  top: -40px; right: -40px;
-  width: 180px; height: 180px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-}
-.dashboard-meta { font-size: var(--text-sm); opacity: 0.8; margin-bottom: var(--space-1); }
-.dashboard-greeting { font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-5); line-height: 1.3; }
-
-.score-ring-container {
-  display: flex;
-  align-items: center;
-  gap: var(--space-5);
-}
-.score-ring {
-  position: relative;
-  width: 88px; height: 88px;
-  flex-shrink: 0;
-}
-.score-ring svg { transform: rotate(-90deg); }
-.score-ring-track { fill: none; stroke: rgba(255,255,255,0.2); stroke-width: 8; }
-.score-ring-fill {
-  fill: none;
-  stroke: white;
-  stroke-width: 8;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 1s ease;
-}
-.score-ring-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.1;
-}
-.score-number { font-size: var(--text-2xl); font-weight: 800; }
-.score-label { font-size: 10px; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.05em; }
-
-.score-details { flex: 1; }
-.score-tag { font-size: var(--text-xs); background: rgba(255,255,255,0.15); border-radius: var(--radius-full); padding: 3px 10px; display: inline-block; margin-bottom: var(--space-2); }
-.score-focus { font-size: var(--text-sm); opacity: 0.9; line-height: 1.4; }
-
-/* Phase indicator */
-.phase-strip {
-  display: flex;
-  gap: var(--space-2);
-  margin-bottom: var(--space-5);
-}
-.phase-item {
-  flex: 1;
-  padding: var(--space-2);
-  border-radius: var(--radius-lg);
-  text-align: center;
-  font-size: var(--text-xs);
-  font-weight: 600;
-  border: 1.5px solid var(--color-border);
-  color: var(--color-text-muted);
-  background: var(--color-surface);
-  transition: all 0.3s;
-}
-.phase-item.current {
-  border-color: var(--teal-500);
-  background: var(--teal-50);
-  color: var(--teal-700);
-}
-.phase-item.done {
-  border-color: var(--green-500);
-  background: var(--green-50);
-  color: var(--green-700);
-}
-
-/* Stats grid */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
-  margin-bottom: var(--space-5);
-}
-.stat-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-sm);
-}
-.stat-label { font-size: var(--text-xs); color: var(--color-text-secondary); font-weight: 500; margin-bottom: var(--space-1); }
-.stat-value { font-size: var(--text-lg); font-weight: 700; color: var(--color-text); }
-.stat-value.positive { color: var(--green-600); }
-.stat-value.negative { color: var(--red-600); }
-.stat-value.warning { color: var(--amber-600); }
-.stat-sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
-
-/* ============================================================
-   MISSIONS
-   ============================================================ */
-.mission-card {
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4);
-  margin-bottom: var(--space-3);
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
-}
-.mission-card.completed {
-  opacity: 0.6;
-  background: var(--slate-50);
-}
-.mission-card.priority-critical { border-left: 4px solid var(--red-500); }
-.mission-card.priority-high { border-left: 4px solid var(--amber-500); }
-.mission-card.priority-medium { border-left: 4px solid var(--blue-500); }
-.mission-card.priority-low { border-left: 4px solid var(--slate-300); }
-
-.mission-header { display: flex; align-items: flex-start; gap: var(--space-3); }
-.mission-check {
-  width: 24px; height: 24px;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s;
-  margin-top: 2px;
-}
-.mission-check:hover { border-color: var(--teal-500); background: var(--teal-50); }
-.mission-card.completed .mission-check {
-  background: var(--teal-500);
-  border-color: var(--teal-500);
-  color: white;
-}
-.mission-content { flex: 1; }
-.mission-type-label {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 2px;
-}
-.mission-title { font-weight: 600; color: var(--color-text); line-height: 1.4; }
-.mission-description { font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: var(--space-1); }
-
-/* Streak display */
-.streak-banner {
-  background: linear-gradient(135deg, var(--amber-50), var(--amber-100));
-  border: 1px solid var(--amber-200);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4) var(--space-5);
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
-}
-.streak-icon { font-size: 2rem; }
-.streak-text .streak-days { font-size: var(--text-xl); font-weight: 800; color: var(--amber-700); }
-.streak-text .streak-label { font-size: var(--text-sm); color: var(--amber-600); }
-
-/* ============================================================
-   DEBT MANAGEMENT
-   ============================================================ */
-.debt-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--space-3);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s;
-}
-.debt-card:hover { box-shadow: var(--shadow-md); }
-.debt-card-header {
-  padding: var(--space-4) var(--space-5);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-.debt-card.expanded .debt-card-header { border-color: var(--color-border); }
-.debt-name { font-weight: 700; margin-bottom: 2px; }
-.debt-creditor { font-size: var(--text-xs); color: var(--color-text-secondary); }
-.debt-amount { font-size: var(--text-xl); font-weight: 800; color: var(--color-text); }
-.debt-amount-label { font-size: var(--text-xs); color: var(--color-text-muted); text-align: right; }
-.debt-card-body { padding: var(--space-4) var(--space-5); display: none; }
-.debt-card.expanded .debt-card-body { display: block; }
-
-.debt-meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-bottom: var(--space-4); }
-.debt-meta-item { }
-.debt-meta-label { font-size: var(--text-xs); color: var(--color-text-secondary); }
-.debt-meta-value { font-size: var(--text-sm); font-weight: 600; }
-
-.illegal-flag {
-  background: var(--red-50);
-  border: 1px solid var(--red-200);
-  border-radius: var(--radius-md);
-  padding: var(--space-3);
-  margin-bottom: var(--space-3);
-  font-size: var(--text-xs);
-  color: var(--red-700);
-  display: flex;
-  gap: var(--space-2);
-}
-
-.debt-progress-bar {
-  height: 6px;
-  background: var(--slate-100);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  margin-bottom: var(--space-4);
-}
-.debt-progress-fill {
-  height: 100%;
-  border-radius: var(--radius-full);
-  background: linear-gradient(to right, var(--teal-500), var(--teal-600));
-  transition: width 0.5s ease;
-}
-
-/* Negotiation tracker */
-.negotiation-status {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  padding: 2px var(--space-2);
-  border-radius: var(--radius-full);
-  font-size: var(--text-xs);
-  font-weight: 600;
-}
-.neg-NOT_CONTACTED { background: var(--slate-100); color: var(--slate-600); }
-.neg-CONTACTED { background: var(--blue-50); color: var(--blue-600); }
-.neg-NEGOTIATING { background: var(--amber-100); color: var(--amber-700); }
-.neg-AGREED { background: var(--green-100); color: var(--green-700); }
-.neg-REJECTED { background: var(--red-100); color: var(--red-700); }
-.neg-FOLLOW_UP { background: var(--amber-50); color: var(--amber-600); }
-
-/* ============================================================
-   INCOME TRACKER
-   ============================================================ */
-.income-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4) var(--space-5);
-  margin-bottom: var(--space-3);
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  box-shadow: var(--shadow-sm);
-}
-.income-icon-bg {
-  width: 44px; height: 44px;
-  background: var(--green-50);
-  border-radius: var(--radius-lg);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.25rem;
-  flex-shrink: 0;
-}
-.income-info { flex: 1; }
-.income-source { font-weight: 600; }
-.income-meta { font-size: var(--text-xs); color: var(--color-text-secondary); margin-top: 2px; }
-.income-amount { font-weight: 700; font-size: var(--text-lg); color: var(--green-700); }
-.recurring-badge {
-  font-size: var(--text-xs);
-  background: var(--teal-50);
-  color: var(--teal-700);
-  border: 1px solid var(--teal-200);
-  border-radius: var(--radius-full);
-  padding: 1px 8px;
-  margin-top: 3px;
-  display: inline-block;
-}
-
-/* Opportunity tracker */
-.opportunity-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4) var(--space-5);
-  margin-bottom: var(--space-3);
-  box-shadow: var(--shadow-sm);
-}
-.opp-status { }
-.opp-SAVED { color: var(--slate-500); }
-.opp-APPLIED { color: var(--blue-600); }
-.opp-INTERVIEW { color: var(--amber-600); }
-.opp-NEGOTIATION { color: var(--teal-600); }
-.opp-WON { color: var(--green-600); }
-.opp-LOST { color: var(--red-500); }
-.opp-CANCELLED { color: var(--slate-400); }
-
-/* ============================================================
-   EXPENSE TRACKER
-   ============================================================ */
-.expense-summary {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
-  margin-bottom: var(--space-5);
-}
-.expense-donut-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: var(--space-4);
-}
-
-/* ============================================================
-   REPORTS
-   ============================================================ */
-.report-compare {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3);
-}
-.report-before {
-  background: var(--slate-50);
-  border: 1px solid var(--slate-200);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4);
-}
-.report-after {
-  background: var(--teal-50);
-  border: 1px solid var(--teal-200);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4);
-}
-.report-label { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: var(--space-3); }
-.report-row { margin-bottom: var(--space-2); }
-.report-row-label { font-size: var(--text-xs); color: var(--color-text-secondary); }
-.report-row-value { font-size: var(--text-base); font-weight: 700; }
-
-/* Score breakdown bars */
-.score-breakdown { }
-.score-bar-row { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
-.score-bar-label { font-size: var(--text-xs); color: var(--color-text-secondary); width: 120px; flex-shrink: 0; }
-.score-bar-track { flex: 1; height: 8px; background: var(--slate-100); border-radius: var(--radius-full); overflow: hidden; }
-.score-bar-fill { height: 100%; border-radius: var(--radius-full); background: linear-gradient(to right, var(--teal-400), var(--teal-600)); transition: width 0.8s ease; }
-.score-bar-value { font-size: var(--text-xs); font-weight: 700; color: var(--teal-700); width: 30px; text-align: right; }
-
-/* ============================================================
-   ACHIEVEMENTS / BADGES
-   ============================================================ */
-.achievements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
-.achievement-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4);
-  text-align: center;
-  transition: all 0.2s;
-}
-.achievement-card.earned { border-color: var(--amber-300); background: var(--amber-50); }
-.achievement-card.locked { opacity: 0.4; filter: grayscale(1); }
-.achievement-icon { font-size: 2rem; margin-bottom: var(--space-2); }
-.achievement-name { font-size: var(--text-xs); font-weight: 600; color: var(--color-text); }
-
-/* ============================================================
-   MODALS
-   ============================================================ */
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(4px);
-  z-index: 300;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s;
-}
-.modal-backdrop.open { opacity: 1; pointer-events: all; }
-
-.modal {
-  background: var(--color-surface);
-  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
-  width: 100%;
-  max-width: 560px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: var(--space-6);
-  padding-bottom: max(var(--space-8), env(safe-area-inset-bottom));
-  transform: translateY(100%);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.modal-backdrop.open .modal { transform: translateY(0); }
-.modal-handle { width: 40px; height: 4px; background: var(--slate-200); border-radius: var(--radius-full); margin: 0 auto var(--space-5); }
-.modal-title { font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-5); }
-
-@media (min-width: 768px) {
-  .modal-backdrop { align-items: center; }
-  .modal { border-radius: var(--radius-2xl); max-height: 80vh; }
-  .modal-backdrop.open .modal { transform: none; }
-}
-
-/* ============================================================
-   TOAST NOTIFICATIONS
-   ============================================================ */
-#toast-container {
-  position: fixed;
-  top: var(--space-5);
-  right: var(--space-5);
-  z-index: 500;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  pointer-events: none;
-}
-.toast {
-  background: var(--slate-800);
-  color: white;
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-lg);
-  font-size: var(--text-sm);
-  box-shadow: var(--shadow-xl);
-  animation: toastIn 0.3s ease;
-  max-width: 300px;
-  pointer-events: all;
-}
-.toast.success { background: var(--green-700); }
-.toast.warning { background: var(--amber-600); }
-.toast.error { background: var(--red-700); }
-@keyframes toastIn {
-  from { opacity: 0; transform: translateX(100%); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* ============================================================
-   EMPTY STATE
-   ============================================================ */
-.empty-state {
-  text-align: center;
-  padding: var(--space-12) var(--space-6);
-  color: var(--color-text-secondary);
-}
-.empty-state-icon { font-size: 3rem; margin-bottom: var(--space-4); }
-.empty-state-title { font-size: var(--text-lg); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2); }
-.empty-state-text { font-size: var(--text-sm); line-height: 1.6; }
-
-/* ============================================================
-   BACKUP BANNER
-   ============================================================ */
-.backup-banner {
-  background: var(--amber-50);
-  border: 1px solid var(--amber-200);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4) var(--space-5);
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
-}
-.backup-icon { font-size: 1.5rem; flex-shrink: 0; }
-.backup-text { flex: 1; }
-.backup-text strong { display: block; font-size: var(--text-sm); color: var(--amber-800); }
-.backup-text span { font-size: var(--text-xs); color: var(--amber-700); }
-
-/* ============================================================
-   EMERGENCY MODE
-   ============================================================ */
-.emergency-banner {
-  background: linear-gradient(135deg, var(--red-600), var(--red-800));
-  color: white;
-  border-radius: var(--radius-2xl);
-  padding: var(--space-5) var(--space-6);
-  margin-bottom: var(--space-5);
-}
-.emergency-banner h3 { font-size: var(--text-lg); font-weight: 800; margin-bottom: var(--space-1); }
-.emergency-banner p { font-size: var(--text-sm); opacity: 0.9; }
-
-/* ============================================================
-   SECTION HEADERS
-   ============================================================ */
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-4);
-}
-.section-title { font-size: var(--text-lg); font-weight: 700; }
-.section-subtitle { font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: 2px; }
-
-/* ============================================================
-   DIVIDER
-   ============================================================ */
-.divider { height: 1px; background: var(--color-border); margin: var(--space-4) 0; }
-.divider-label {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin: var(--space-4) 0;
-  color: var(--color-text-muted);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.divider-label::before, .divider-label::after { content: ''; flex: 1; height: 1px; background: var(--color-border); }
-
-/* ============================================================
-   MISC ANIMATIONS
-   ============================================================ */
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes celebrateIn { 0% { transform: scale(0.5) rotate(-10deg); opacity: 0; } 70% { transform: scale(1.1) rotate(3deg); } 100% { transform: scale(1) rotate(0); opacity: 1; } }
-
-.fade-in { animation: fadeInUp 0.4s ease forwards; }
-.celebrate { animation: celebrateIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-
-/* Interest warning flag */
-.interest-legal { color: var(--green-600); font-size: var(--text-xs); }
-.interest-illegal { color: var(--red-600); font-size: var(--text-xs); }
-
-/* ============================================================
-   SETTINGS PAGE
-   ============================================================ */
-.settings-section { margin-bottom: var(--space-6); }
-.settings-section-title {
-  font-size: var(--text-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-3);
-}
-.settings-item {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4) var(--space-5);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-2);
-}
-.settings-item-label { font-weight: 500; font-size: var(--text-sm); }
-.settings-item-sub { font-size: var(--text-xs); color: var(--color-text-secondary); margin-top: 2px; }
-
-/* Toggle switch */
-.toggle {
-  position: relative;
-  width: 44px; height: 24px;
-  flex-shrink: 0;
-}
-.toggle input { opacity: 0; width: 0; height: 0; }
-.toggle-slider {
-  position: absolute;
-  inset: 0;
-  background: var(--slate-300);
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: 0.3s;
-}
-.toggle-slider::before {
-  content: '';
-  position: absolute;
-  width: 18px; height: 18px;
-  left: 3px; top: 3px;
-  background: white;
-  border-radius: 50%;
-  transition: 0.3s;
-  box-shadow: var(--shadow-sm);
-}
-.toggle input:checked + .toggle-slider { background: var(--teal-500); }
-.toggle input:checked + .toggle-slider::before { transform: translateX(20px); }
-
-/* ============================================================
-   PLAN VIEW
-   ============================================================ */
-.plan-day-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4) var(--space-5);
-  margin-bottom: var(--space-2);
-  display: flex;
-  gap: var(--space-4);
-  align-items: flex-start;
-}
-.plan-day-number {
-  width: 40px; height: 40px;
-  border-radius: var(--radius-lg);
-  background: var(--slate-100);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800;
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  flex-shrink: 0;
-}
-.plan-day-card.today .plan-day-number {
-  background: var(--teal-600);
-  color: white;
-}
-.plan-day-card.completed-day .plan-day-number {
-  background: var(--green-100);
-  color: var(--green-700);
-}
-.plan-day-content { flex: 1; }
-.plan-day-phase { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: 2px; }
-.plan-day-objective { font-weight: 600; font-size: var(--text-sm); }
-
-/* ============================================================
-   INTEREST ACCRUED WIDGET
-   ============================================================ */
-.interest-widget {
-  background: var(--red-50);
-  border: 1px solid var(--red-200);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4) var(--space-5);
-  margin-bottom: var(--space-5);
-}
-.interest-widget-title { font-size: var(--text-xs); font-weight: 600; color: var(--red-700); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
-.interest-widget-amount { font-size: var(--text-2xl); font-weight: 800; color: var(--red-700); }
-.interest-widget-sub { font-size: var(--text-xs); color: var(--red-600); margin-top: 2px; }
-
-/* ============================================================
-   RIGHTS INFO
-   ============================================================ */
-.rights-card {
-  background: var(--blue-50);
-  border: 1px solid var(--blue-500);
-  border-radius: var(--radius-xl);
-  padding: var(--space-5);
-  margin-bottom: var(--space-4);
-}
-.rights-card h4 { font-weight: 700; color: var(--blue-600); margin-bottom: var(--space-3); }
-.rights-list { }
-.rights-item { font-size: var(--text-sm); color: var(--slate-700); margin-bottom: var(--space-2); padding-left: var(--space-4); position: relative; }
-.rights-item::before { content: '\2713'; position: absolute; left: 0; color: var(--blue-500); font-weight: 700; }
-.rights-contact { margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--blue-200); font-size: var(--text-sm); color: var(--blue-700); font-weight: 500; }
-
-/* ============================================================
-   LOADING / SPLASH
-   ============================================================ */
-#splash {
-  position: fixed;
-  inset: 0;
-  background: var(--teal-700);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  transition: opacity 0.5s;
-}
-#splash.fade-out { opacity: 0; pointer-events: none; }
-.splash-content { text-align: center; color: white; }
-.splash-logo-big { width: 72px; height: 72px; background: rgba(255,255,255,0.15); border-radius: var(--radius-2xl); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-5); font-weight: 900; font-size: var(--text-3xl); letter-spacing: -2px; backdrop-filter: blur(4px); }
-.splash-name { font-size: var(--text-2xl); font-weight: 800; letter-spacing: -0.5px; }
-.splash-sub { font-size: var(--text-sm); opacity: 0.8; margin-top: var(--space-2); }
-
-/* ============================================================
-   MISC PAGE-LEVEL STYLES
-   ============================================================ */
-.page-title {
-  font-size: var(--text-2xl);
-  font-weight: 800;
-  color: var(--color-text);
-  margin-bottom: var(--space-1);
-}
-.page-subtitle {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-6);
-}
-
-.total-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-4) var(--space-5);
-  margin-bottom: var(--space-5);
-}
-.total-bar-label { font-size: var(--text-sm); color: var(--color-text-secondary); }
-.total-bar-value { font-size: var(--text-xl); font-weight: 800; }
-
-/* Fullscreen button */
-.fullscreen-btn {
-  background: var(--slate-100);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  width: 36px; height: 36px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.15s;
-}
-.fullscreen-btn:hover { background: var(--slate-200); }
-
-/* Responsive desktop improvements */
-@media (min-width: 1200px) {
-  .stats-grid { grid-template-columns: repeat(4, 1fr); }
-  .achievements-grid { grid-template-columns: repeat(5, 1fr); }
-}
-</style>
+<!-- Splash Screen -->
+<div id="splash">
+  <div class="splash-content">
+    <div class="splash-logo-big">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:72px;height:72px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.2);display:block;">
+        <defs>
+          <linearGradient id="splash-g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#14B8A6"/>
+            <stop offset="100%" stop-color="#0F766E"/>
+          </linearGradient>
+        </defs>
+        <rect width="512" height="512" rx="128" fill="url(#splash-g)"/>
+        <path d="M160 360V152h110c48 0 82 32 82 76s-34 76-82 76h-110" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M260 304l88 96" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="372" cy="180" r="24" fill="#FBBF24"/>
+      </svg>
+    </div>
+    <div class="splash-name">Rebound 30</div>
+    <div class="splash-sub">Pemulihan Finansial 30 Hari</div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- ONBOARDING -->
+<div id="screen-onboarding">
+  <div class="onboarding-container">
+    <div class="onboarding-progress" id="ob-progress"></div>
+
+    <!-- Step 0: Welcome -->
+    <div class="onboarding-step active" id="ob-step-0">
+      <div class="welcome-card">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:48px;height:48px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.15);flex-shrink:0;">
+            <defs>
+              <linearGradient id="ob-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#14B8A6"/>
+                <stop offset="100%" stop-color="#0F766E"/>
+              </linearGradient>
+            </defs>
+            <rect width="512" height="512" rx="128" fill="url(#ob-g)"/>
+            <path d="M160 360V152h110c48 0 82 32 82 76s-34 76-82 76h-110" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M260 304l88 96" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="372" cy="180" r="24" fill="#FBBF24"/>
+          </svg>
+          <div class="welcome-app-name" style="margin-bottom:0;">Rebound 30</div>
+        </div>
+        <div class="welcome-tagline">
+          Kita tidak akan menyelesaikan semuanya hari ini.<br>
+          Kita akan mencari langkah pertama.
+        </div>
+      </div>
+      <div class="welcome-features">
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+          <div class="welcome-feature-text">
+            <strong>Petakan kondisi finansial</strong>
+            Ketahui angka pasti sebelum bertindak
+          </div>
+        </div>
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div class="welcome-feature-text">
+            <strong>Misi harian yang konkret</strong>
+            3–5 tindakan per hari sesuai kondisimu
+          </div>
+        </div>
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+          <div class="welcome-feature-text">
+            <strong>Pantau perkembangan</strong>
+            Rebound Score mengukur kemajuanmu
+          </div>
+        </div>
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div class="welcome-feature-text">
+            <strong>Data hanya di perangkatmu</strong>
+            Privasi 100% aman, tersimpan di browsermu
+          </div>
+        </div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-primary btn-full btn-lg" onclick="App.ob.next()">Mulai Rebound →</button>
+      </div>
+    </div>
+
+    <!-- Step 1: Employment Status -->
+    <div class="onboarding-step" id="ob-step-1">
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+      <div class="step-title">Apa status pekerjaanmu saat ini?</div>
+      <div class="step-subtitle">Ini membantu kami menyusun misi yang relevan untukmu.</div>
+      <div class="option-grid" id="ob-employment-grid">
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'tidak_bekerja', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg></span>Tidak bekerja
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'baru_phk', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>Baru kehilangan pekerjaan
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'freelance', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg></span>Freelance
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'pekerja_harian', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>Pekerja harian
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'usaha_kecil', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg></span>Usaha kecil
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'bekerja_kurang', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Bekerja tapi pemasukan tidak cukup
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('employment', 'lainnya', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></span>Lainnya
+        </div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Monthly Income -->
+    <div class="onboarding-step" id="ob-step-2">
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div>
+      <div class="step-title">Berapa pemasukan per bulan?</div>
+      <div class="step-subtitle">Estimasi saja — ini bisa diperbarui nanti. Masukkan 0 jika tidak ada.</div>
+      <div class="form-group">
+        <label class="form-label">Total Pemasukan Bulanan</label>
+        <div class="input-prefix-group">
+          <span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ob-income" placeholder="0" min="0">
+        </div>
+        <div class="form-hint">Gabungkan semua sumber pemasukan (gaji, freelance, usaha, dll.)</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Frekuensi Pemasukan</label>
+        <select class="form-input form-select" id="ob-income-freq">
+          <option value="bulanan">Bulanan</option>
+          <option value="mingguan">Mingguan</option>
+          <option value="harian">Harian</option>
+          <option value="tidak_tetap">Tidak tetap</option>
+        </select>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Essential Expenses -->
+    <div class="onboarding-step" id="ob-step-3">
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="step-title">Pengeluaran pokok per bulan?</div>
+      <div class="step-subtitle">Hanya yang benar-benar esensial. Perkiraan sudah cukup.</div>
+      <div class="form-group">
+        <label class="form-label">Makanan & Minuman</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-food" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sewa / Cicilan Tempat Tinggal</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-housing" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Listrik + Air</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-utilities" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Transportasi</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-transport" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Komunikasi (HP/internet)</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-comm" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tanggungan keluarga / lainnya</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-exp-other" placeholder="0"></div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Debts -->
+    <div class="onboarding-step" id="ob-step-4">
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg></div>
+      <div class="step-title">Tambahkan utang pertamamu</div>
+      <div class="step-subtitle">Tambahkan setidaknya satu utang. Kamu bisa menambah lebih banyak nanti di menu Utang.</div>
+      <div id="ob-debts-list" style="margin-bottom: var(--space-4);"></div>
+      <button class="btn btn-outline btn-full" onclick="App.ob.showAddDebt()">+ Tambah Utang</button>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()" id="ob-debt-next">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 5: Assets -->
+    <div class="onboarding-step" id="ob-step-5">
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"/><path d="M2 9v1c0 1.1.9 2 2 2h1"/><path d="M16 11h.01"/></svg></div>
+      <div class="step-title">Berapa uang tunai yang tersedia?</div>
+      <div class="step-subtitle">Termasuk uang di dompet, rekening bank, e-wallet. Tidak termasuk aset seperti motor atau HP.</div>
+      <div class="form-group">
+        <label class="form-label">Uang Tunai & Saldo Bank / E-Wallet</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-cash" placeholder="0"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Aset yang bisa dijual (estimasi nilai)</label>
+        <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+        <input type="number" class="form-input" id="ob-assets-value" placeholder="0"></div>
+        <div class="form-hint">Motor, elektronik, perhiasan, dll. Kamu bisa detail nanti di menu Aset.</div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 6: Skills -->
+    <div class="onboarding-step" id="ob-step-6">
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="step-title">Apa skill yang kamu miliki?</div>
+      <div class="step-subtitle">Pilih semua yang relevan. Ini membantu misi pemasukan yang tepat.</div>
+      <div class="skill-tags" id="ob-skills-grid">
+        <div class="skill-tag" onclick="App.ob.toggleSkill('programming', this)">Programming / IT</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('design', this)">Desain Grafis</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('video', this)">Video Editing</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('photography', this)">Fotografi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('writing', this)">Penulisan / Konten</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('translation', this)">Penerjemahan</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('admin', this)">Administrasi & Data</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('teaching', this)">Mengajar / Les</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('repair', this)">Servis & Reparasi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('sales', this)">Penjualan & Marketing</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('cooking', this)">Kuliner & Masak</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('driving', this)">Pengemudi / Kurir</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('social_media', this)">Media Sosial & Admin</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('finance', this)">Akuntansi & Keuangan</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('other', this)">Keahlian Lainnya</div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.next()">Lanjut →</button>
+      </div>
+    </div>
+
+    <!-- Step 7: Goals -->
+    <div class="onboarding-step" id="ob-step-7">
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="step-title">Apa tujuan utamamu dalam 30 hari?</div>
+      <div class="step-subtitle">Pilih yang paling mendesak sekarang.</div>
+      <div class="option-grid" id="ob-goals-grid">
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'pemasukan_pertama', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Pemasukan pertama
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'dapat_kerja', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>Dapat pekerjaan
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'kurangi_utang', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></span>Kurangi utang
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'pemasukan_rutin', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></span>Pemasukan rutin
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'bantu_keluarga', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Bantu keluarga
+        </div>
+        <div class="option-card" onclick="App.ob.selectOption('goal', 'semuanya', this)">
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></span>Semua target di atas
+        </div>
+      </div>
+      <div class="onboarding-actions">
+        <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.finish()" id="ob-finish-btn">Mulai Hari 1 →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app">
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:100%;height:100%;display:block;">
+            <defs>
+              <linearGradient id="side-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#14B8A6"/>
+                <stop offset="100%" stop-color="#0F766E"/>
+              </linearGradient>
+            </defs>
+            <rect width="512" height="512" rx="128" fill="url(#side-g)"/>
+            <path d="M160 360V152h110c48 0 82 32 82 76s-34 76-82 76h-110" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M260 304l88 96" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="372" cy="180" r="24" fill="#FBBF24"/>
+          </svg>
+        </div>
+        <div>
+          <div class="logo-text">Rebound 30</div>
+          <div class="logo-tagline">Pemulihan Finansial</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-day-badge">
+      <div class="day-label">Hari ke</div>
+      <div class="day-number" id="sidebar-day">1 / 30</div>
+    </div>
+    <div class="sidebar-nav">
+      <button class="nav-item active" onclick="App.navigate('dashboard')" id="nav-dashboard">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg> Dashboard
+      </button>
+      <button class="nav-item" onclick="App.navigate('missions')" id="nav-missions">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Misi Harian
+      </button>
+      <button class="nav-item" onclick="App.navigate('debts')" id="nav-debts">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg> Utang
+      </button>
+      <button class="nav-item" onclick="App.navigate('income')" id="nav-income">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg> Pemasukan
+      </button>
+      <button class="nav-item" onclick="App.navigate('expenses')" id="nav-expenses">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Pengeluaran
+      </button>
+      <button class="nav-item" onclick="App.navigate('assets')" id="nav-assets">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg> Aset
+      </button>
+      <button class="nav-item" onclick="App.navigate('plan')" id="nav-plan">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg> Rencana 30 Hari
+      </button>
+      <button class="nav-item" onclick="App.navigate('reports')" id="nav-reports">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg> Laporan
+      </button>
+      <button class="nav-item" onclick="App.navigate('stories')" id="nav-stories">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Kisah Bangkit
+      </button>
+      <button class="nav-item" onclick="App.navigate('settings')" id="nav-settings">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> Pengaturan
+      </button>
+    </div>
+    <div class="sidebar-footer">
+      Data tersimpan di browser ini saja.<br>
+      Gunakan Export di Pengaturan untuk backup.
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div id="main">
+    <!-- Mobile Header -->
+    <header id="mobile-header">
+      <div class="mobile-logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:100%;height:100%;display:block;">
+            <defs>
+              <linearGradient id="mob-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#14B8A6"/>
+                <stop offset="100%" stop-color="#0F766E"/>
+              </linearGradient>
+            </defs>
+            <rect width="512" height="512" rx="128" fill="url(#mob-g)"/>
+            <path d="M160 360V152h110c48 0 82 32 82 76s-34 76-82 76h-110" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M260 304l88 96" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="372" cy="180" r="24" fill="#FBBF24"/>
+          </svg>
+        </div>
+        <div class="mobile-page-title" id="mobile-title">Dashboard</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <div id="mobile-day-badge" style="font-size:12px;font-weight:700;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-200);border-radius:20px;padding:4px 10px;">Hari 1</div>
+        <button class="fullscreen-btn" onclick="App.toggleFullscreen()" title="Fullscreen">⛶</button>
+      </div>
+    </header>
+
+    <!-- Desktop Topbar -->
+    <div id="topbar">
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-actions">
+        <div id="topbar-day" style="font-size:13px;font-weight:700;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-200);border-radius:20px;padding:4px 14px;"></div>
+        <button class="fullscreen-btn" onclick="App.toggleFullscreen()" title="Fullscreen">⛶</button>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div id="content">
+
+      <!-- === DASHBOARD === -->
+      <div class="screen active" id="screen-dashboard">
+        <div id="backup-banner-container"></div>
+        <div class="dashboard-header">
+          <div class="dashboard-meta" id="dash-date"></div>
+          <div class="dashboard-greeting" id="dash-greeting"></div>
+          <div class="score-ring-container">
+            <div class="score-ring">
+              <svg width="88" height="88" viewBox="0 0 88 88">
+                <circle class="score-ring-track" cx="44" cy="44" r="36"/>
+                <circle class="score-ring-fill" id="score-ring-fill" cx="44" cy="44" r="36"
+                  stroke-dasharray="226.2"
+                  stroke-dashoffset="226.2"/>
+              </svg>
+              <div class="score-ring-text">
+                <div class="score-number" id="dash-score">0</div>
+                <div class="score-label">SKOR</div>
+              </div>
+            </div>
+            <div class="score-details">
+              <div class="score-tag" id="dash-phase-badge">Phase 1</div>
+              <div class="score-focus" id="dash-focus">Memulai pemetaan finansial...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-strip" id="phase-strip"></div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label"><i data-lucide="wallet" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Uang Tunai</div>
+            <div class="stat-value" id="stat-cash">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pemasukan/Bln</div>
+            <div class="stat-value positive" id="stat-income">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><i data-lucide="shopping-bag" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Pengeluaran/Bln</div>
+            <div class="stat-value warning" id="stat-expenses">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label"><i data-lucide="receipt" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Total Utang</div>
+            <div class="stat-value negative" id="stat-debt">Rp 0</div>
+            <div class="stat-sub" id="stat-runway"></div>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <div class="section-title">Misi Hari Ini</div>
+            <div class="section-subtitle" id="missions-progress-text"></div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="App.navigate('missions')">Semua →</button>
+        </div>
+        <div id="dash-missions"></div>
+
+        <div class="section-header" style="margin-top:var(--space-6)">
+          <div class="section-title">Pencapaian Terbaru</div>
+        </div>
+        <div id="dash-achievements" style="display:flex;gap:var(--space-3);flex-wrap:wrap;"></div>
+      </div>
+
+      <!-- === MISSIONS === -->
+      <div class="screen" id="screen-missions">
+        <div class="page-title">Misi Harian</div>
+        <div class="page-subtitle" id="missions-date-subtitle"></div>
+        <div id="streak-container"></div>
+        <div id="missions-list"></div>
+        <div class="section-header" style="margin-top:var(--space-6)">
+          <div class="section-title">Riwayat Kemarin</div>
+        </div>
+        <div id="missions-history"></div>
+      </div>
+
+      <!-- === DEBTS === -->
+      <div class="screen" id="screen-debts">
+        <div class="section-header">
+          <div>
+            <div class="page-title">Utang</div>
+            <div class="page-subtitle">Peta seluruh kewajibanmu</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="App.debts.showAdd()">+ Tambah</button>
+        </div>
+
+        <div id="debt-interest-widget"></div>
+
+        <div class="total-bar">
+          <div>
+            <div class="total-bar-label">Total Utang Tersisa</div>
+            <div style="font-size:11px;color:var(--color-text-muted)" id="debt-count-text"></div>
+          </div>
+          <div class="total-bar-value negative" id="debt-total-value">Rp 0</div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
+          <div style="font-size:13px;font-weight:600;color:var(--color-text-secondary);">Strategi:</div>
+          <select class="form-input form-select" id="debt-strategy-select" style="width:auto;padding:8px 28px 8px 12px;" onchange="App.debts.setStrategy(this.value)">
+            <option value="risk_first">Risk First (Risiko Tertinggi)</option>
+            <option value="avalanche">Avalanche (Bunga Tertinggi)</option>
+            <option value="snowball">Snowball (Saldo Terkecil)</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+
+        <div id="debts-list"></div>
+
+        <div style="margin-top:var(--space-6)">
+          <div class="rights-card">
+            <h4>Hak-hak Resmi Debitur (Regulasi OJK & AFPI)</h4>
+            <div class="rights-list">
+              <div class="rights-item">Penagihan hanya boleh antara 08.00–20.00 waktu setempat</div>
+              <div class="rights-item">Tidak boleh ada ancaman, intimidasi, atau penyebaran data</div>
+              <div class="rights-item">Kamu berhak mengajukan restrukturisasi (perpanjang tenor, turunkan bunga)</div>
+              <div class="rights-item">Ajukan restrukturisasi secara tertulis (email) sebelum macet bayar</div>
+              <div class="rights-item">Pinjol wajib lapor ke SLIK OJK sejak Juli 2025</div>
+            </div>
+            <div class="rights-contact">
+              Layanan Konsumen OJK: 157 / WhatsApp 081-157-157-157<br>
+              AFPI: afpi.or.id | Siber: patrolisiber.id
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === INCOME === -->
+      <div class="screen" id="screen-income">
+        <div class="section-header">
+          <div>
+            <div class="page-title">Pemasukan</div>
+            <div class="page-subtitle">Lacak semua sumber pemasukan</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="App.income.showAdd()">+ Catat</button>
+        </div>
+
+        <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
+          <div class="stat-card">
+            <div class="stat-label">Bulan Ini</div>
+            <div class="stat-value positive" id="income-month-total">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pemasukan Rutin/Bln</div>
+            <div class="stat-value" id="income-recurring-total">Rp 0</div>
+          </div>
+        </div>
+
+        <div class="divider-label">Riwayat Pemasukan</div>
+        <div id="income-list"></div>
+
+        <div class="section-header" style="margin-top:var(--space-6)">
+          <div>
+            <div class="section-title">Peluang & Lamaran</div>
+            <div class="section-subtitle">Lacak calon klien dan lamaran kerja</div>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="App.income.showAddOpp()">+ Tambah</button>
+        </div>
+        <div id="opportunities-list"></div>
+      </div>
+
+      <!-- === EXPENSES === -->
+      <div class="screen" id="screen-expenses">
+        <div class="section-header">
+          <div>
+            <div class="page-title">Pengeluaran</div>
+            <div class="page-subtitle">Kontrol aliran keluar uangmu</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="App.expenses.showAdd()">+ Catat</button>
+        </div>
+
+        <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
+          <div class="stat-card">
+            <div class="stat-label">Esensial Bulan Ini</div>
+            <div class="stat-value" id="exp-essential-total">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Non-Esensial Bulan Ini</div>
+            <div class="stat-value warning" id="exp-nonessential-total">Rp 0</div>
+          </div>
+        </div>
+
+        <div id="exp-warning-banner" style="display:none;" class="backup-banner" style="background:var(--amber-50);border-color:var(--amber-200);">
+          <div class="backup-icon" style="color:var(--amber-500);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg></div>
+          <div class="backup-text">
+            <strong>Pengeluaran non-esensial cukup besar bulan ini</strong>
+            <span>Kita perlu mencari sumber kebocoran terbesar.</span>
+          </div>
+        </div>
+
+        <div class="divider-label">Semua Pengeluaran</div>
+        <div id="expenses-list"></div>
+      </div>
+
+      <!-- === ASSETS === -->
+      <div class="screen" id="screen-assets">
+        <div class="section-header">
+          <div>
+            <div class="page-title">Aset</div>
+            <div class="page-subtitle">Inventaris kekayaanmu</div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="App.assets.showAdd()">+ Tambah</button>
+        </div>
+
+        <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
+          <div class="stat-card">
+            <div class="stat-label">Total Nilai Aset</div>
+            <div class="stat-value" id="asset-total-value">Rp 0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Dapat Dijual</div>
+            <div class="stat-value positive" id="asset-liquid-value">Rp 0</div>
+          </div>
+        </div>
+
+        <div id="assets-list"></div>
+      </div>
+
+      <!-- === PLAN === -->
+      <div class="screen" id="screen-plan">
+        <div class="page-title">Rencana 30 Hari</div>
+        <div class="page-subtitle">Panduan harianmu menuju pemulihan finansial</div>
+        <div id="plan-list"></div>
+      </div>
+
+      <!-- === REPORTS === -->
+      <div class="screen" id="screen-reports">
+        <div class="page-title">Laporan</div>
+        <div class="page-subtitle">Pantau perkembanganmu</div>
+
+        <div class="section-header">
+          <div class="section-title">Rebound Report: Hari 1 vs Sekarang</div>
+        </div>
+        <div class="report-compare" id="report-compare"></div>
+
+        <div style="margin-top:var(--space-6)">
+          <div class="section-title" style="margin-bottom:var(--space-4)">Breakdown Rebound Score</div>
+          <div class="card">
+            <div class="score-breakdown" id="score-breakdown"></div>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-6)">
+          <div class="section-title" style="margin-bottom:var(--space-4);display:flex;align-items:center;gap:8px;"><i data-lucide="award" style="width:20px;height:20px;color:var(--teal-600);"></i> Pencapaian</div>
+          <div class="achievements-grid" id="achievements-grid"></div>
+        </div>
+      </div>
+
+      <!-- === SETTINGS === -->
+      
+    <!-- SCREEN: STORIES -->
+    <div class="screen" id="screen-stories">
+      <div class="page-header" style="margin-bottom:var(--space-6);">
+        <h1 class="page-title">Kisah Nyata: Dari Titik Nol Menuju Bangkit</h1>
+        <div class="page-subtitle">Pelajaran faktual dan bukti nyata bahwa sebesar apa pun badai utang, selalu ada jalan keluar bagi mereka yang berani bertindak hari ini.</div>
+      </div>
+
+      <!-- Story Tab Switcher -->
+      <div class="tabs" style="margin-bottom:var(--space-6);">
+        <button class="tab-btn active" onclick="Stories.switchTab('shao', this)" id="tab-story-shao">
+          Shao Baoling (Ratu Koper & Bakpao)
+        </button>
+        <button class="tab-btn" onclick="Stories.switchTab('tang', this)" id="tab-story-tang">
+          Tang Jian (Om Sosis Panggang 46 Juta Yuan)
+        </button>
+      </div>
+
+      <!-- Story 1: Shao Baoling -->
+      <div id="story-content-shao" class="story-container">
+        <div class="card" style="margin-bottom:var(--space-6);border-left:4px solid var(--teal-600);">
+          <div class="grid grid-2" style="gap:var(--space-4);">
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--teal-700);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Profil Tokoh</div>
+              <h2 style="font-size:1.4rem;font-weight:800;color:var(--color-text-primary);margin-bottom:6px;">Shao Baoling (邵宝玲)</h2>
+              <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">Mantan "Ratu Koper" asal Yiwu, Tiongkok yang memimpin ekspor bernilai miliaran sebelum badai utang dan kanker datang.</div>
+            </div>
+            <div style="background:var(--slate-50);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);border:1px solid var(--slate-200);">
+              <div style="font-size:11px;font-weight:700;color:var(--slate-500);text-transform:uppercase;margin-bottom:4px;">Fakta Finansial</div>
+              <div style="font-size:13px;color:var(--slate-700);line-height:1.6;">
+                <strong>Total Utang:</strong> > 100 Juta Yuan (~Rp 220 Miliar)<br>
+                <strong>Penyebab:</strong> Penjaminan kredit usaha (utang silang) & krisis 2014<br>
+                <strong>Langkah Rebound:</strong> Berjualan bakpao 5 Yuan (Rp 11.000) mulai usia 61 tahun<br>
+                <strong>Pencapaian:</strong> 3 cabang toko, omset 3 juta Yuan/thn, lapangan kerja untuk 12 orang
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:var(--space-4);padding:var(--space-3) var(--space-4);background:var(--teal-50);border-radius:var(--radius-md);border:1px solid var(--teal-200);">
+            <div style="font-size:13px;font-weight:700;color:var(--teal-900);font-style:italic;">
+              "Kalau masih bisa berpikir jernih, buatlah bakpao. Kalau sudah tak kuasa berpikir, loncatlah dari sini."
+            </div>
+            <div style="font-size:11px;color:var(--teal-700);margin-top:4px;">— Shao Baoling saat menolak menyerah pada keterpurukan</div>
+          </div>
+        </div>
+
+        <!-- Story Article -->
+        <div class="card" style="line-height:1.8;font-size:14.5px;color:var(--color-text-secondary);">
+          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-bottom:var(--space-3);">1. Kejatuhan Sang Ratu</h3>
+          <p style="margin-bottom:var(--space-4);">Pada puncak kejayaannya, nama Shao Baoling adalah gemuruh yang mengguncang pasar ekspor Yiwu. Pabrik kopernya meroket dengan omzet miliaran rupiah, produknya menyeberangi lautan, dan ia duduk di kursi empuk sebagai "Ratu Koper" yang disegani. Namun, tahun 2014 menjadi titik balik yang menghancurkan. Jeratan utang akibat penjaminan kredit usaha merambat seperti retakan di dinding istananya. Satu per satu pabrik berhenti berdenyut. Bangkrut.</p>
+          <p style="margin-bottom:var(--space-4);">Pukulan berikutnya datang dari dokter—sebuah diagnosis kanker yang dingin dan membekukan. Air matanya habis. Ia hanya terdiam berjam-jam di kursi, membiarkan waktu lewat tanpa arti. <em>"Aku sudah kehilangan segalanya,"</em> bisiknya.</p>
+
+          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-top:var(--space-6);margin-bottom:var(--space-3);">2. Titik Balik di Balik Kukusan Uap</h3>
+          <p style="margin-bottom:var(--space-4);">Suatu siang seorang sahabat lamanya datang, masuk ke dapur, mengulen adonan, dan mengukus bakpao sederhana. Aroma kukusan itu membangkitkan memori masa lalunya. Ibunya dulu pernah berpesan: <em>"Di zaman sesulit apa pun, selama tangan masih mau bekerja dan dagangan itu jujur, rezeki tak akan pernah kabur."</em></p>
+          <p style="margin-bottom:var(--space-4);">Pada usia 61 tahun, di tengah situasi dunia yang berat, Shao Baoling mengambil keputusan yang membuat semua orang tercengang: ia membuka warung bakpao kecil. Ketika kerabat mencibirnya, ia menjawab mantap: <strong>"Kalau masih bisa berpikir jernih, buatlah bakpao."</strong></p>
+
+          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-top:var(--space-6);margin-bottom:var(--space-3);">3. Bangkit dengan Tangan dan Arus Kas Harian</h3>
+          <p style="margin-bottom:var(--space-4);">Tepat pukul tiga dini hari, ia sudah berdiri di dapur sempitnya. Tangannya yang dulu menandatangani kontrak bernilai miliaran, kini mengulen adonan dengan sabar. Dalam sehari, ia menghasilkan ratusan hingga seribu bakpao seharga 5 Yuan. Ia menolak belas kasihan cuma-cuma: <em>"Saya tidak sedang mengemis, saya sedang berdagang."</em></p>
+          <p style="margin-bottom:var(--space-4);">Toko pertamanya berkembang menjadi 3 cabang dengan omset tahunan 3 juta Yuan dan mempekerjakan 12 orang. Meski utang 100 juta Yuan belum sepenuhnya lunas dalam semalam, ia membuktikan bahwa tindakan nyata harian adalah satu-satunya jembatan keluar dari jurang keputusasaan.</p>
+
+          <div style="margin-top:var(--space-6);padding:var(--space-4);background:var(--slate-50);border-radius:var(--radius-md);border-left:4px solid var(--teal-600);">
+            <div style="font-weight:700;color:var(--color-text-primary);margin-bottom:6px;">Pelajaran Kunci untuk Rebound Finansial:</div>
+            <ul style="margin:0;padding-left:20px;font-size:13.5px;color:var(--color-text-secondary);">
+              <li><strong>Buang Ego & Gengsi:</strong> Masa lalu yang megah tidak akan membayar cicilan hari ini. Mulailah dari unit terkecil yang menghasilkan uang riil.</li>
+              <li><strong>Kekuatan Arus Kas Harian:</strong> Setiap pemasukan kecil (5 Yuan / Rp 10.000) adalah bahan bakar untuk menjaga kehidupan tetap berjalan.</li>
+              <li><strong>Konsistensi Tanpa Alasan:</strong> Bangun jam 3 pagi dan mengeksekusi tugas tanpa menunda adalah fondasi pemulihan sejati.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 2: Tang Jian -->
+      <div id="story-content-tang" class="story-container" style="display:none;">
+        <div class="card" style="margin-bottom:var(--space-6);border-left:4px solid var(--amber-500);">
+          <div class="grid grid-2" style="gap:var(--space-4);">
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--amber-600);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Profil Tokoh</div>
+              <h2 style="font-size:1.4rem;font-weight:800;color:var(--color-text-primary);margin-bottom:6px;">Tang Jian (唐健)</h2>
+              <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">Mantan Air Traffic Controller (ATC) yang mendirikan jaringan restoran mewah sebelum terlilit utang ekspansi Rp 100 miliar.</div>
+            </div>
+            <div style="background:var(--slate-50);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);border:1px solid var(--slate-200);">
+              <div style="font-size:11px;font-weight:700;color:var(--slate-500);text-transform:uppercase;margin-bottom:4px;">Fakta Finansial</div>
+              <div style="font-size:13px;color:var(--slate-700);line-height:1.6;">
+                <strong>Total Utang:</strong> 46 Juta Yuan (~Rp 100 Miliar)<br>
+                <strong>Penyebab:</strong> Ekspansi berlebihan, leverage tinggi, dan rentenir<br>
+                <strong>Langkah Rebound:</strong> Kios sosis panggang pinggir jalan 25 m² mulai usia 57 tahun<br>
+                <strong>Target & Kemajuan:</strong> Pendapatan kios melampaui restoran mewah 1.300 m² miliknya dulu, target lunas total 2027
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:var(--space-4);padding:var(--space-3) var(--space-4);background:var(--amber-50);border-radius:var(--radius-md);border:1px solid var(--amber-200);">
+            <div style="font-size:13px;font-weight:700;color:var(--amber-900);font-style:italic;">
+              "Penyesalan tidak mengubah apa-apa. Yang mengubah segalanya adalah tindakan. Setiap hari, aku bangun pagi, menyalakan panggangan, dan mulai bekerja."
+            </div>
+            <div style="font-size:11px;color:var(--amber-700);margin-top:4px;">— Tang Jian ("Om Sosis Panggang Qingdao")</div>
+          </div>
+        </div>
+
+        <!-- Story Article -->
+        <div class="card" style="line-height:1.8;font-size:14.5px;color:var(--color-text-secondary);">
+          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-bottom:var(--space-3);">1. Dari Langit ke Jurang Kehancuran</h3>
+          <p style="margin-bottom:var(--space-4);">Tang Jian pernah berada di puncak dunia kuliner Qingdao. Tiga restoran mewahnya menghasilkan pendapatan lebih dari 30 juta Yuan per tahun. Namun, nafsu ekspansi yang tidak terukur dan pinjaman berbunga tinggi menjerumuskannya ke dalam lubang utang 46 juta Yuan. Dalam sekejap, rumah dan mobilnya disita, istrinya bercerai, dan teman-temannya menjauh.</p>
+          <p style="margin-bottom:var(--space-4);">Dalam keputusasaan mendalam, ia mengasingkan diri ke Gunung Laoshan selama 3 hari 3 malam, berteriak di tengah kegelapan dan nyaris mengakhiri hidupnya. Pesan ibunya yang telah renta menyadarkannya: <em>"Selama kau masih bernapas, kau bisa memulai dari awal."</em></p>
+
+          <h3 style="color:var(--color-text-primary);font-size:1.15rem;font-weight:700;margin-top:var(--space-6);margin-bottom:var(--space-3);">2. Sebatang Sosis di Pinggir Jalan</h3>
+          <p style="margin-bottom:var(--space-4);">Tahun 2017, di usia 57 tahun, ia melepas rasa malunya dan membuka gerobak sosis panggang sederhana. Ia memilih jujur pada konsumen: membeli daging dari supermarket resmi dan memajang nota pembeliannya di depan kios agar pembeli tahu produknya bersih dan bermutu tinggi.</p>
+          <p style="margin-bottom:var(--space-4);">Kisah keteguhan hatinya viral di media sosial. Kios kecilnya yang hanya berukuran 25 m² bersama 7 orang karyawan justru mencetak perputaran uang yang lebih sehat dan menguntungkan daripada restoran mewahnya yang seluas 1.300 m² dulu.</p>
+
+          <div style="margin-top:var(--space-6);padding:var(--space-4);background:var(--slate-50);border-radius:var(--radius-md);border-left:4px solid var(--amber-500);">
+            <div style="font-weight:700;color:var(--color-text-primary);margin-bottom:6px;">Pelajaran Kunci untuk Rebound Finansial:</div>
+            <ul style="margin:0;padding-left:20px;font-size:13.5px;color:var(--color-text-secondary);">
+              <li><strong>Jangan Menggandakan Risiko Saat Tertekan:</strong> Menghindari spekulasi berbahaya / judi / rentenir baru ketika sudah berada di bawah.</li>
+              <li><strong>Fokus pada Kualitas & Kepercayaan:</strong> Usaha sekecil apa pun jika dikerjakan dengan jujur dan berkualitas tinggi akan menemukan pasarnya.</li>
+              <li><strong>Miliki Horizon Waktu yang Realistis:</strong> Membayar utang besar membutuhkan rencana tahunan yang disiplin, bukan ilusi cepat kaya.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-settings">
+        <div class="page-title">Pengaturan</div>
+
+        <div class="settings-section">
+          <div class="settings-section-title">Data & Backup</div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Export Data (JSON)</div>
+              <div class="settings-item-sub" id="last-export-text">Belum pernah di-export</div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="App.settings.exportData()">Export</button>
+          </div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Import Data (JSON)</div>
+              <div class="settings-item-sub">Pulihkan dari file backup</div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="App.settings.importData()">Import</button>
+          </div>
+          <input type="file" id="import-file-input" accept=".json" style="display:none" onchange="App.settings.handleImport(event)">
+        </div>
+
+        <div class="settings-section">
+          <div class="settings-section-title">Pengingat Backup</div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Aktifkan pengingat backup</div>
+              <div class="settings-item-sub">Notifikasi jika belum backup selama X hari</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="backup-reminder-toggle" onchange="App.settings.toggleBackupReminder(this.checked)">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="settings-item" id="backup-days-setting">
+            <div>
+              <div class="settings-item-label">Ingatkan setiap</div>
+            </div>
+            <select class="form-input form-select" id="backup-days-select" style="width:auto;padding:8px 28px 8px 12px;" onchange="App.settings.setBackupDays(this.value)">
+              <option value="3">3 hari</option>
+              <option value="7" selected>7 hari</option>
+              <option value="14">14 hari</option>
+              <option value="30">30 hari</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <div class="settings-section-title">Info Aplikasi</div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Rebound 30</div>
+              <div class="settings-item-sub">Versi 1.0.0 — Data tersimpan lokal di browser ini</div>
+            </div>
+          </div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Hak Pengguna & Regulasi</div>
+              <div class="settings-item-sub">Informasi hak debitur berdasarkan OJK & POJK 22/2023</div>
+            </div>
+            <button class="btn btn-ghost btn-sm" onclick="App.settings.showRights()">Lihat →</button>
+          </div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Reset Semua Data</div>
+              <div class="settings-item-sub">Hapus semua data dan mulai ulang</div>
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="App.settings.resetData()">Reset</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+</div><!-- /app -->
+
+<!-- Bottom Navigation (Mobile) -->
+<nav id="bottom-nav">
+  <div class="bottom-nav-items">
+    <button class="bottom-nav-item active" onclick="App.navigate('dashboard')" id="bnav-dashboard">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Home
+    </button>
+    <button class="bottom-nav-item" onclick="App.navigate('missions')" id="bnav-missions">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Misi
+    </button>
+    <button class="bottom-nav-item" onclick="App.navigate('debts')" id="bnav-debts">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>Utang
+    </button>
+    <button class="bottom-nav-item" onclick="App.navigate('stories')" id="bnav-stories">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Kisah
+    </button>
+    <button class="bottom-nav-item" onclick="App.navigate('settings')" id="bnav-settings">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>Setting
+    </button>
+  </div>
+</nav>
+
+<!-- Modals -->
+<div class="modal-backdrop" id="modal-backdrop" onclick="App.closeModal(event)">
+  <div class="modal" id="modal-content">
+    <div class="modal-handle"></div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT — REBOUND 30 ENGINE
+     ============================================================ -->
 
 <!-- Atomic JavaScript Modules -->
 <script src="js/icons.js"></script>
