@@ -552,6 +552,93 @@ const Stories = {
       ]
     },
     {
+      id: 'kangarif',
+      featured: false,
+      name: 'Arif Sanyoto (Kang Arif)',
+      tagline: 'Dari Bangkrut Rp 1,5 Miliar & Modal Terakhir Rp 108.000 Menjadi Juragan Ribuan Lumpia & Penulis 27 Hari Bebas Utang',
+      title: 'Dari Bangkrut Rp 1,5 Miliar, Kini Jual Ribuan Lumpia Sehari',
+      subtitle: 'Pendiri Lumpia Sortalok & Penulis Buku 27 Hari Bebas Utang, Karanganyar',
+      origin: 'Karanganyar, Jawa Tengah',
+      ageAtRebound: 'Pengusaha Karanganyar',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkrut Rp 1,5 M & Modal Rp 108 Rb',
+      badge: 'Lumpia Sortalok & 5.000 Pcs/Hari',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Rp 1,5 Miliar (Kerugian Usaha Masa Lalu)',
+        age: 'Pengusaha Karanganyar',
+        lowest: 'Bangkrut Nol & Sisa Uang Rp 108.000',
+        action: 'Modal Rp 108.000, Lumpia Sortalok & Viral TikTok',
+        result: '3.000–5.000 Pcs/Hari, Lunas & Buku 27 Hari Bebas Utang'
+      },
+      timeline: [
+        { year: 'Keruntuhan Rp 1,5 Miliar', text: 'Usaha sebelumnya hancur total, menyisakan tumpukan kewajiban utang Rp 1,5 miliar di Karanganyar.' },
+        { year: 'Titik Terendah Rp 108.000', text: 'Berada di titik nol tanpa modal besar; hanya memegang uang tunai Rp 108.000 di dalam dompet.' },
+        { year: 'Mulai Lumpia Sortalok', text: 'Membelanjakan modal Rp 108.000 untuk bahan baku rebung/kulit lumpia dan promosi digital mandiri.' },
+        { year: 'Viral TikTok Storytelling', text: 'Membuat konten video edukasi dan pembuatan lumpia yang menggugah selera di TikTok, pesanan membeludak.' },
+        { year: 'Skala 3.000–5.000 Pcs/Hari', text: 'Membangun SOP produksi terstandarisasi dan sistem komunitas reseller, melunasi utang miliaran rupiah.' },
+        { year: 'Hari Ini — Buku Bebas Utang', text: 'Membagikan cetak biru kebangkitan finansial melalui buku "27 Hari Bebas Utang" dan membina ribuan UMKM.' }
+      ],
+      quote: 'Modal awal kami hanya Rp 108.000. Mulailah dari apa yang ada di tangan dan apa yang kita kuasai hari ini, bukan meratapi apa yang tidak ada. Selama kita terus bergerak dan membangun sistem, jalan keluar selalu terbuka.',
+      quoteAuthor: 'Arif Sanyoto (Kang Arif), pemilik Lumpia Sortalok',
+      chapters: [
+        {
+          num: 1,
+          title: 'Jatuhnya Seorang Pebisnis',
+          paragraphs: [
+            'Di sebuah sudut ruangan di Karanganyar, Jawa Tengah, Arif Sanyoto—yang akrab disapa Kang Arif—duduk termangu memandangi tumpukan berkas tagihan yang menggunung di atas meja kerjanya.',
+            'Bisnis yang telah ia rintis dan perjuangkan dengan segenap tenaga hancur lebur tanpa ampun. Total kerugian finansial dan jeratan liabilitas mencapai angka fantastis: sekitar Rp 1,5 miliar.',
+            'Kepanikan, rasa malu, dan tekanan mental dari berbagai pihak sempat membuatnya merasa berada di lorong gelap tanpa ujung. "Bagaimana mungkin saya bisa melunasi utang sebesar ini dari kondisi bangkrut tanpa sepeser pun harta tersisa?" tanyanya dalam hati.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 108.000 dan Sebuah Gerakan',
+          paragraphs: [
+            'Di titik nadir tersebut, Kang Arif menyadari bahwa meratapi kerugian miliaran rupiah tidak akan mendatangkan satu rupiah pun ke dalam dompetnya. Ia menolak untuk menyerah pada rasa putus asa.',
+            'Ia merogoh sakunya dan menemukan sisa uang terakhir: hanya Rp 108.000. Uang tersebut mungkin tampak tak berarti di mata banyak orang, namun bagi Kang Arif, itu adalah amunisi terakhir untuk menyalakan kembali api perjuangannya.',
+            'Dengan modal Rp 108.000, ia membeli bahan baku rebung segar, bumbu dapur, dan lembaran kulit lumpia. Ia memutuskan untuk merintis produk kuliner tradisional yang ia beri nama "Lumpia Sortalok".'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Gelombang Viral TikTok dan Ribuan Pelanggan',
+          paragraphs: [
+            'Kang Arif menyadari bahwa modal kecil menuntut kreativitas pemasaran yang luar biasa. Alih-alih menyewa ruko mahal, ia memaksimalkan gawai pribadinya untuk membuat konten video di platform media sosial TikTok.',
+            'Ia menyajikan proses pembuatan lumpia secara transparan, bercerita tentang perjuangannya dari titik nol, dan menunjukkan kebersihan serta kelezatan isian lumpia renyah buatannya.',
+            'Ketulusan konten dan cita rasa gurih autentik Lumpia Sortalok meledak viral di jagat maya. Penonton terkesima, dan pesanan mulai berdatangan dari berbagai penjuru Solo Raya hingga luar kota dalam jumlah yang mencengangkan.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Membangun Sistem Kerja dan Komunitas',
+          paragraphs: [
+            'Lonjakan pesanan tidak membuat Kang Arif terlena. Ia segera merancang Standar Operasional Prosedur (SOP) produksi yang rapi, memastikan konsistensi rasa, dan membangun sistem kemitraan komunitas reseller yang solid.',
+            'Penjualan Lumpia Sortalok meroket stabil ke angka 3.000 hingga 5.000 pcs lumpia per hari. Dapur produksinya memberdayakan warga sekitar dan menyerap tenaga kerja lokal.',
+            'Dengan kedisiplinan arus kas yang ketat, keuntungan harian dialokasikan secara tertib untuk mencicil seluruh kewajiban masa lalu. Satu per satu surat utang diselesaikan hingga kerugian Rp 1,5 miliar berhasil dilunasi 100% tuntas.'
+          ]
+        },
+        {
+          num: 5,
+          title: '27 Hari Bebas Utang',
+          paragraphs: [
+            'Keberhasilan melunasi utang miliaran rupiah dari modal Rp 108.000 menggerakkan hati Kang Arif untuk menolong masyarakat yang sedang mengalami keterpurukan serupa.',
+            'Ia membukukan seluruh strategi restrukturisasi mental, negosiasi kreditur, dan percepatan arus kasnya ke dalam sebuah buku panduan praktis bertajuk "27 Hari Bebas Utang". Buku ini menjadi pegangan wajib bagi ribuan pelaku UMKM di seluruh Indonesia untuk bangkit dari jerat utang.',
+            '"Jika saya yang pernah terpuruk Rp 1,5 miliar bisa bangkit hanya dengan modal Rp 108.000, maka tidak ada alasan bagi siapapun untuk berputus asa," tegas Kang Arif dengan penuh optimisme.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Mulai dari Apa yang Dimiliki (Modal Rp 108.000): Jangan menunggu modal miliaran untuk bergerak; gunakan uang sekecil apa pun untuk menciptakan transaksi pertama.',
+        'Pemasaran Digital Organik (TikTok Storytelling): Bagikan kisah perjuangan dan kualitas produk secara autentik di media sosial untuk membangun basis pelanggan loyal.',
+        'Standardisasi Sistem & Komunitas Reseller: Bangun SOP kerja yang kokoh agar bisnis mampu menangani lonjakan produksi hingga ribuan pcs per hari.',
+        'Edukasi & Memberi Manfaat (Buku Bebas Utang): Menjadikan pengalaman kepahitan masa lalu sebagai sarana menuntun orang lain keluar dari krisis finansial.'
+      ]
+    },
+    {
       id: 'sonnenberg',
       featured: false,
       name: 'Steve Sonnenberg',
