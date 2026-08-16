@@ -96,23 +96,331 @@ const ScoreEngine = {
 // REBOUND ENGINE — Daily Mission Generator
 // ============================================================
 const ReboundEngine = {
-  MISSION_TEMPLATES: {
-    CLIENT_OUTREACH: { title: 'Hubungi 3 calon klien atau pelanggan', desc: 'Tawarkan skill atau jasamu. Mulai dari kontak terdekat.', type: 'CLIENT_OUTREACH' },
-    JOB_APPLICATION: { title: 'Kirim 5 lamaran pekerjaan yang relevan', desc: 'Cari lowongan di platform online. Fokus pada yang bisa langsung menghasilkan.', type: 'JOB_APPLICATION' },
-    FOLLOW_UP: { title: 'Follow-up 2 prospek atau lamaran yang belum direspons', desc: 'Follow-up bukan opsional — ini bagian dari proses.', type: 'FOLLOW_UP' },
-    CUT_EXPENSE: { title: 'Identifikasi 1 pengeluaran yang bisa dipangkas hari ini', desc: 'Tunda atau hilangkan satu pengeluaran non-esensial.', type: 'CUT_EXPENSE' },
-    TRACK_EXPENSE: { title: 'Catat semua pengeluaran hari ini', desc: 'Tidak perlu jumlah yang besar — yang penting tercatat.', type: 'TRACK_EXPENSE' },
-    DEBT_REVIEW: { title: 'Review prioritas utang dan jatuh tempo terdekat', desc: 'Ketahui utang mana yang paling mendesak minggu ini.', type: 'DEBT_REVIEW' },
-    DEBT_PAYMENT: { title: 'Bayar cicilan minimum utang prioritas', desc: 'Bayar sesuai kemampuan, bukan rasa bersalah.', type: 'DEBT_PAYMENT' },
-    NEGOTIATION: { title: 'Hubungi kreditur untuk minta restrukturisasi', desc: 'Ajukan permohonan tertulis (email). Jelaskan kondisi secara jujur.', type: 'NEGOTIATION' },
-    INCOME_TASK: { title: 'Ambil pekerjaan atau tugas yang bisa menghasilkan HARI INI', desc: 'Ojol, jual barang, ambil project kecil — utamakan kecepatan.', type: 'INCOME_TASK' },
-    SELL_ASSET: { title: 'Pasang 1 barang untuk dijual di marketplace', desc: 'Mulai dari aset yang tidak kamu pakai dan bukan alat kerja.', type: 'SELL_ASSET' },
-    SKILL_BUILDING: { title: 'Perbarui profil di platform freelance', desc: 'Update portofolio atau kirim proposal ke platform lokal.', type: 'SKILL_BUILDING' },
-    BUILD_RECURRING: { title: 'Kontak klien/atasan untuk jadwal rutin berikutnya', desc: 'Ubah pekerjaan satu kali menjadi pemasukan berulang.', type: 'BUILD_RECURRING' },
-    NO_NEW_DEBT: { title: 'Jangan ambil utang konsumtif baru hari ini', desc: 'Bukan soal moral — supaya angka keuangan tidak berubah saat dipetakan.', type: 'NO_NEW_DEBT' },
-    MAP_FINANCES: { title: 'Lengkapi pemetaan utang dan pengeluaran', desc: 'Ketahui angka pasti sebelum bertindak. Kurangi ambiguitas.', type: 'MAP_FINANCES' },
+    MISSION_TEMPLATES: {
+    CLIENT_OUTREACH: {
+      title: 'Hubungi 3 calon klien atau pelanggan',
+      desc: 'Tawarkan skill atau jasamu secara proaktif. Mulai dari kontak terdekat.',
+      type: 'CLIENT_OUTREACH',
+      why: 'Arus kas baru tidak akan datang dengan menunggu. Menghubungi 3 orang setiap hari secara konsisten adalah hukum probabilitas tercepat untuk mendapatkan uang tunai.',
+      steps: [
+        'Tulis 3 nama teman, mantan rekan kerja, atau pemilik usaha yang kamu kenal.',
+        'Pilih 1 keahlian utama yang bisa kamu tawarkan (desain, ketik, servis, admin, promosi).',
+        'Salin dan sesuaikan template pesan di bawah, lalu kirimkan lewat WhatsApp secara personal.'
+      ],
+      templateTitle: 'Template Chat Penawaran Jasa ke Kenalan / Klien',
+      templateText: `Halo [Nama Teman/Klien], semoga kabarmu sehat selalu ya!
+
+Sekadar info singkat, saat ini saya sedang membuka slot bantuan untuk pengerjaan [sebutkan jasa/skill: misal Desain Grafis / Pembuatan Website / Admin Data / Penulisan / Servis].
+
+Jika di tokomu, kantormu, atau bisnismu sedang ada kebutuhan bantuan untuk [masalah yang bisa kamu selesaikan], saya siap bantu dengan hasil cepat, rapi, dan harga sahabat.
+
+Kalau kamu atau ada kenalan yang sedang butuh, boleh kabari saya ya. Terima kasih banyak atas dukungannya! 🙏`,
+      actionTarget: 'income',
+      actionLabel: 'Catat Peluang di Menu Income'
+    },
+
+    JOB_APPLICATION: {
+      title: 'Kirim 5 lamaran pekerjaan yang relevan',
+      desc: 'Cari lowongan di platform online. Fokus pada yang bisa langsung menghasilkan.',
+      type: 'JOB_APPLICATION',
+      why: 'Memperbanyak jalur lamaran meningkatkan peluang wawancara kerja dalam 1-2 minggu ke depan.',
+      steps: [
+        'Buka platform lowongan (Glints, Jobstreet, LinkedIn, atau grup lowongan lokal).',
+        'Pilih 5 posisi yang paling sesuai dengan kemampuan dan pengalamanmu.',
+        'Kirimkan CV terbaru dengan pesan pengantar yang singkat dan percaya diri.'
+      ],
+      templateTitle: 'Template Surat Pengantar Lamaran Kerja Cepat (Email / Chat)',
+      templateText: `Yth. Tim Rekrutmen / HRD [Nama Perusahaan],
+
+Melalui pesan/email ini, saya bermaksud mengajukan lamaran untuk posisi [Nama Posisi] di [Nama Perusahaan].
+
+Dengan pengalaman saya di bidang [sebutkan 1-2 skill atau pengalaman relevan], saya siap bekerja secara profesional, disiplin, dan memberikan kontribusi nyata bagi kelancaran operasional tim Bapak/Ibu.
+
+Terlampir saya sertakan CV terbaru untuk bahan pertimbangan. Saya sangat berharap mendapat kesempatan untuk wawancara.
+
+Terima kasih atas waktu dan kesempatan yang diberikan.
+
+Hormat saya,
+[Nama Lengkap]
+[Nomor WhatsApp]`,
+      actionTarget: 'income',
+      actionLabel: 'Tambah Peluang Lamaran'
+    },
+
+    FOLLOW_UP: {
+      title: 'Follow-up 2 prospek atau lamaran yang belum direspons',
+      desc: 'Follow-up bukan opsional — ini bagian terpenting dari proses.',
+      type: 'FOLLOW_UP',
+      why: 'Banyak kesepakatan dan panggilan kerja terjadi justru di pesan kedua (follow-up) karena pesan pertama sering terlewat.',
+      steps: [
+        'Cek riwayat pesan atau lamaran yang sudah kamu kirim 3–5 hari lalu.',
+        'Kirimkan pesan penegasan yang sopan tanpa kesan memaksa.'
+      ],
+      templateTitle: 'Template Follow-Up Ramah & Profesional',
+      templateText: `Halo [Nama Klien/HRD], selamat pagi/siang.
+
+Saya ingin menindaklanjuti pesan / lamaran yang saya kirimkan beberapa hari lalu terkait [proyek/posisi kerja].
+
+Apakah ada informasi tambahan atau portofolio pendukung yang perlu saya lengkapi untuk proses selanjutnya?
+
+Terima kasih banyak atas waktunya, semoga harimu menyenangkan!
+
+Salam,
+[Nama Lengkap]`,
+      actionTarget: 'income',
+      actionLabel: 'Buka Menu Income'
+    },
+
+    CUT_EXPENSE: {
+      title: 'Identifikasi 1 pengeluaran yang bisa dipangkas hari ini',
+      desc: 'Tunda atau hilangkan satu pengeluaran non-esensial untuk menambah runway.',
+      type: 'CUT_EXPENSE',
+      why: 'Setiap rupiah yang tidak kamu keluarkan hari ini sama bernilainya dengan pemasukan tambahan untuk bertahan hidup.',
+      steps: [
+        'Audit rekening mutasi bank dan e-wallet 7 hari terakhir.',
+        'Temukan 1 langganan otomatis (subscription), jajan delivery, atau rokok/kopi yang bisa dihentikan sementara.',
+        'Catat penghematan tersebut di menu Pengeluaran.'
+      ],
+      templateTitle: 'Panduan Audit Pengeluaran Bocor Halus',
+      templateText: `Daftar Cek Pengeluaran Bocor yang Wajib Dihentikan Sementara:
+1. Langganan aplikasi/streaming yang jarang dipakai (Netflix, Spotify, Game).
+2. Pesan antar makanan online (biaya ongkir + service fee tinggi) -> ganti masak sendiri.
+3. Kopi kekinian / rokok / cemilan harian -> alihkan ke air putih & makanan pokok.
+4. Paket data kuota berlebih -> ganti paket kuota hemat bulanan.`,
+      actionTarget: 'expenses',
+      actionLabel: 'Kelola Pengeluaran'
+    },
+
+    TRACK_EXPENSE: {
+      title: 'Catat semua pengeluaran hari ini',
+      desc: 'Tidak perlu jumlah yang besar — yang paling penting tercatat secara jujur.',
+      type: 'TRACK_EXPENSE',
+      why: 'Uang yang tidak dicatat akan lenyap tanpa jejak. Mengetahui angka pengeluaran harian memberi kamu kendali 100% atas hidupmu.',
+      steps: [
+        'Kumpulkan struk belanja, mutasi e-wallet, dan catatan uang tunai hari ini.',
+        'Buka menu Pengeluaran di aplikasi dan masukkan setiap transaksi.',
+        'Pisahkan mana yang bersifat Kebutuhan Pokok (Esensial) dan mana yang Bukan Pokok.'
+      ],
+      templateTitle: 'Format Catatan Pengeluaran Harian',
+      templateText: `Checklist Pengeluaran Harian:
+- Makan & Minum Pokok: Rp [...]
+- Transport / Bensin: Rp [...]
+- Token Listrik / Air / Pulsa: Rp [...]
+- Pengeluaran Lainnya: Rp [...]`,
+      actionTarget: 'expenses',
+      actionLabel: 'Catat Pengeluaran Sekarang'
+    },
+
+    DEBT_REVIEW: {
+      title: 'Review prioritas utang dan jatuh tempo terdekat',
+      desc: 'Ketahui utang mana yang paling mendesak minggu ini agar tidak panik.',
+      type: 'DEBT_REVIEW',
+      why: 'Rasa cemas muncul dari ketidaktahuan. Saat semua utang dipetakan, kamu bisa memilah mana yang harus dinegosiasikan dan mana yang harus dibayar duluan.',
+      steps: [
+        'Buka menu Utang di aplikasi dan lihat daftar kreditur.',
+        'Cek jatuh tempo yang paling dekat dalam 7 hari ke depan.',
+        'Tentukan strategi: Dahulukan utang berisiko tinggi (pinjol ilegal/denda harian) atau bunga terbesar (Avalanche).'
+      ],
+      templateTitle: 'Panduan Evaluasi Prioritas Utang',
+      templateText: `Urutan Prioritas Penanganan Utang:
+1. PRIORITAS UTAMA: Utang dengan risiko intimidasi tinggi atau bunga mencekik harian.
+2. PRIORITAS KEDUA: Pinjaman legal berizin OJK dengan bunga bulanan tertinggi (Metode Avalanche).
+3. PRIORITAS KETIGA: Utang nominal kecil yang bisa cepat dilunasi untuk dorongan moral (Metode Snowball).
+4. PRIORITAS KEEMPAT: Utang keluarga/teman (komunikasikan kondisi secara jujur dan transparan).`,
+      actionTarget: 'debts',
+      actionLabel: 'Buka Daftar Utang'
+    },
+
+    DEBT_PAYMENT: {
+      title: 'Bayar cicilan minimum utang prioritas',
+      desc: 'Bayar sesuai kemampuan riil, bukan atas dasar rasa bersalah atau intimidasi.',
+      type: 'DEBT_PAYMENT',
+      why: 'Membayar angsuran pokok secara bertahap menjaga iktikad baik dan menurunkan saldo utang secara nyata.',
+      steps: [
+        'Pastikan kebutuhan makan pokok keluargamu untuk bulan ini sudah aman terlebih dahulu.',
+        'Ambil dana sisa yang tersedia dan bayarkan ke kreditur prioritas nomor 1.',
+        'Simpan bukti transfer dan catat pembayaran di menu Utang.'
+      ],
+      templateTitle: 'Konfirmasi Pembayaran Cicilan ke Kreditur',
+      templateText: `Yth. [Nama Kreditur/Bank],
+
+Saya telah melakukan pembayaran angsuran pinjaman atas nama [Nama Lengkap] (No. Kontrak: [Nomor Kontrak]) sebesar Rp [Nomor Pembayaran] pada tanggal [Tanggal Hari Ini].
+
+Bukti transfer terlampir. Mohon dana tersebut dialokasikan untuk pemotongan Pokok Pinjaman saya dan dilakukan pembaruan sisa tagihan.
+
+Terima kasih atas kerja samanya.
+
+Hormat saya,
+[Nama Lengkap]`,
+      actionTarget: 'debts',
+      actionLabel: 'Catat Pembayaran di Menu Utang'
+    },
+
+    NEGOTIATION: {
+      title: 'Hubungi kreditur untuk minta restrukturisasi',
+      desc: 'Ajukan permohonan tertulis (WhatsApp / Email). Jelaskan kondisi finansial secara jujur.',
+      type: 'NEGOTIATION',
+      why: 'Kreditur resmi memiliki program restrukturisasi (keringanan bunga, perpanjangan tenor, atau diskon pelunasan pokok). Kamu berhak mengajukannya secara resmi.',
+      steps: [
+        'Kumpulkan nomor kontrak dan sisa pokok utang.',
+        'Kirimkan surat permohonan tertulis ke email resmi atau WhatsApp layanan konsumen kreditur.',
+        'Jangan menyanggupi nominal pembayaran yang melebihi kemampuan arus kasmu.'
+      ],
+      templateTitle: 'Template Surat Permohonan Keringanan & Restrukturisasi Utang',
+      templateText: `Yth. Tim Layanan Konsumen & Restrukturisasi [Nama Bank / Lembaga Pembiayaan],
+
+Saya yang bertanda tangan di bawah ini:
+Nama: [Nama Lengkap]
+No. KTP: [Nomor KTP]
+No. Kontrak/Pinjaman: [Nomor Pinjaman]
+No. HP: [Nomor WhatsApp]
+
+Melalui pesan ini, saya bermaksud menyampaikan iktikad baik saya untuk menyelesaikan seluruh kewajiban pinjaman saya.
+
+Saat ini saya mengalami kendala finansial yang berat akibat [sebutkan alasan: PHK / penurunan omset usaha / musibah keluarga], sehingga arus kas saya saat ini belum mencukupi untuk membayar cicilan bulanan sesuai nominal awal.
+
+Demi kelancaran pembayaran, saya mengajukan permohonan program keringanan/restrukturisasi berupa:
+1. Penghapusan denda keterlambatan dan keringanan bunga berjalan.
+2. Penyesuaian angsuran pokok menjadi sebesar Rp [nominal kemampuan, misal: Rp 300.000] per bulan dengan perpanjangan tenor.
+
+Saya siap membayar secara disiplin sesuai kesepakatan tertulis yang baru. Mohon arahan prosedur dan dokumen yang perlu saya lengkapi.
+
+Atas bantuan dan kebijaksanaan Bapak/Ibu, saya ucapkan terima kasih.
+
+Hormat saya,
+[Nama Lengkap]`,
+      actionTarget: 'debts',
+      actionLabel: 'Catat Negosiasi di Menu Utang'
+    },
+
+    INCOME_TASK: {
+      title: 'Ambil pekerjaan atau tugas yang bisa menghasilkan HARI INI',
+      desc: 'Ojol, jual barang, ambil project lepas harian — utamakan kecepatan pencairan.',
+      type: 'INCOME_TASK',
+      why: 'Saat kas menipis di bawah 7 hari, prioritas nomor satu adalah menciptakan uang tunai hari ini untuk membeli waktu dan makanan pokok.',
+      steps: [
+        'Pilih opsi tercepat: ojek online, kurir kilat, jasa bantu pindahan, atau freelance mikro.',
+        'Eksekusi tugas tersebut hari ini dan langsung catat pemasukan yang diterima di aplikasi.'
+      ],
+      templateTitle: 'Checklist Pekerjaan Arus Kas Cepat (Instant Cash)',
+      templateText: `Pilihan Sumber Uang Tunai Cepat:
+1. Ojek Online / Kurir Instan (GoSend / Grab / Lalamove / ShopeeFood).
+2. Menawarkan jasa bersih-bersih / laundry / cuci AC / servis ke tetangga & grup RT.
+3. Menjual barang bekas yang masih bagus di Facebook Marketplace dengan sistem COD.
+4. Membantu jualan dagangan teman/keluarga dengan sistem komisi harian.`,
+      actionTarget: 'income',
+      actionLabel: 'Catat Pemasukan Hari Ini'
+    },
+
+    SELL_ASSET: {
+      title: 'Pasang 1 barang untuk dijual di marketplace',
+      desc: 'Mulai dari aset yang tidak kamu pakai dan bukan alat untuk mencari nafkah.',
+      type: 'SELL_ASSET',
+      why: 'Menjual aset yang tidak produktif adalah cara tercepat melunasi utang tanpa menambah beban cicilan baru.',
+      steps: [
+        'Foto barang dari berbagai sudut dengan pencahayaan terang dan bersih.',
+        'Tentukan harga kompetitif sedikit di bawah harga pasar agar cepat terjual.',
+        'Pasang iklan di Facebook Marketplace, OLX, atau tawarkan ke grup WhatsApp.'
+      ],
+      templateTitle: 'Template Iklan Jual Cepat (Marketplace / WA Story)',
+      templateText: `[DIJUAL CEPAT - BUTUH DANA]
+Barang: [Nama Barang, misal: HP Bekas / TV / Sepeda / Kamera / Jam Tangan]
+Kondisi: [Mulus / Normal / Pemakaian Pribadi]
+Kelengkapan: [Lengkap dus & charger / Unit saja]
+Harga: Rp [Tulis Harga Kompetitif] (Nego tipis)
+Lokasi: [Sebutkan Kecamatan & Kota], siap COD di tempat ramai atau kirim kurir.
+
+Peminat serius silakan langsung WhatsApp ke nomor: [Nomor HP]. Terima kasih!`,
+      actionTarget: 'assets',
+      actionLabel: 'Buka Daftar Aset'
+    },
+
+    SKILL_BUILDING: {
+      title: 'Perbarui profil di platform freelance',
+      desc: 'Update portofolio atau kirim proposal penawaran ke platform online.',
+      type: 'SKILL_BUILDING',
+      why: 'Profil yang menarik dan jelas akan menarik calon klien potensial secara berulang.',
+      steps: [
+        'Buka akun Fastwork, Sribulancer, Freelancer, atau LinkedIn milikmu.',
+        'Cantumkan contoh hasil kerja nyata (foto/dokumen) dan testimoni jika ada.',
+        'Tulis deskripsi keahlian yang fokus pada keuntungan yang didapat klien.'
+      ],
+      templateTitle: 'Template Bio & Deskripsi Jasa Freelance Menjual',
+      templateText: `Halo! Saya [Nama Lengkap], profesional di bidang [Nama Bidang: Desain / Penulisan / Admin / Pemrograman].
+
+Saya membantu pemilik bisnis dan UMKM untuk:
+✓ [Keuntungan 1: Menyelesaikan tugas admin/desain dalam 24 jam]
+✓ [Keuntungan 2: Meningkatkan kualitas visual promosi bisnis Anda]
+✓ [Keuntungan 3: Komunikasi cepat dan revisi sampai sesuai kebutuhan]
+
+Hubungi saya sekarang untuk konsultasi gratis mengenai proyek Anda!`,
+      actionTarget: 'income',
+      actionLabel: 'Kelola Peluang di Income'
+    },
+
+    BUILD_RECURRING: {
+      title: 'Kontak klien untuk jadwal rutin berikutnya',
+      desc: 'Ubah pekerjaan satu kali menjadi pemasukan berulang setiap bulan.',
+      type: 'BUILD_RECURRING',
+      why: 'Pemasukan rutin (retainer) memberikan kepastian cashflow untuk membayar cicilan bulanan secara stabil.',
+      steps: [
+        'Pilih klien yang puas dengan hasil kerjamu sebelumnya.',
+        'Tawarkan paket bulanan/langganan rutin dengan diskon khusus daripada tarif per proyek.'
+      ],
+      templateTitle: 'Template Penawaran Kerjasama Retainer Bulanan',
+      templateText: `Halo [Nama Klien],
+
+Terima kasih atas kerja sama yang baik pada proyek [Nama Proyek Sebelumnya].
+
+Agar operasional bisnis Bapak/Ibu lebih praktis ke depannya, saya menawarkan paket pendampingan rutin bulanan untuk [bidang jasa: misal pengelolaan media sosial / maintenance web / pembukuan bulanan].
+
+Dengan paket retainer bulanan ini, Bapak/Ibu mendapatkan alokasi waktu prioritas dan tarif yang jauh lebih hemat sebesar Rp [Nomor Paket] per bulan.
+
+Jika berkenan, kita bisa diskusikan detail pekerjaannya minggu ini. Terima kasih!
+
+Salam hangat,
+[Nama Lengkap]`,
+      actionTarget: 'income',
+      actionLabel: 'Buka Menu Income'
+    },
+
+    NO_NEW_DEBT: {
+      title: 'Jangan ambil utang konsumtif baru hari ini',
+      desc: 'Kendalikan diri agar kondisi finansial stabil dan tidak bertambah parah.',
+      type: 'NO_NEW_DEBT',
+      why: 'Mengambil pinjaman baru saat sedang terlilit utang adalah jebakan psikologis yang mengubah masalah kecil menjadi kebangkrutan permanen.',
+      steps: [
+        'Hapus aplikasi pinjol yang tidak terpakai dari ponselmu.',
+        'Jika ada tawaran dana tunai lewat SMS/WA, abaikan dan blokir.',
+        'Ulangi komitmen harian: "Saya fokus menyelesaikan apa yang ada, bukan menambah beban baru."'
+      ],
+      templateTitle: 'Mantra Pengingat Anti-Utang Konsumtif',
+      templateText: `Prinsip Pemulihan Finansial Rebound 30:
+"Setiap kali saya tergoda meminjam uang baru untuk menutupi cicilan lama, saya sedang menukar ketenangan sementara dengan bencana yang jauh lebih besar. Hari ini saya memilih bertahan dan mencari uang tunai riil."`,
+      actionTarget: 'debts',
+      actionLabel: 'Cek Status Utang'
+    },
+
+    MAP_FINANCES: {
+      title: 'Lengkapi pemetaan utang dan pengeluaran',
+      desc: 'Ketahui angka pasti sebelum bertindak. Singkirkan rasa takut dengan data nyata.',
+      type: 'MAP_FINANCES',
+      why: 'Ketakutan terbesar debitur berasal dari rasa tidak tahu total angka pasti. Saat semua ditulis, jalan keluar mulai terlihat.',
+      steps: [
+        'Buka menu Utang dan masukkan semua daftar pinjaman beserta bunga dan jatuh temponya.',
+        'Buka menu Pengeluaran dan isi estimasi biaya makan pokok, listrik, dan tempat tinggal.',
+        'Buka menu Aset dan catat barang yang berpotensi dicairkan jika dalam kondisi darurat.'
+      ],
+      templateTitle: 'Lembar Checklist Pemetaan Finansial Mandiri',
+      templateText: `Data yang Wajib Diisi di Aplikasi Rebound 30:
+1. Daftar seluruh utang: Nama Kreditur, Sisa Pokok, Bunga/bln, dan Jatuh Tempo.
+2. Pengeluaran Pokok Esensial: Makan, Tempat Tinggal, Listrik/Air, Transport, Komunikasi.
+3. Sisa Uang Tunai & Saldo Bank saat ini.
+4. Daftar Aset yang bukan alat kerja yang bisa dijual jika darurat.`,
+      actionTarget: 'debts',
+      actionLabel: 'Mulai Lengkapi Data Utang'
+    }
   },
-  
   generate(state) {
     const today = H.today();
     const existing = state.missions[today];

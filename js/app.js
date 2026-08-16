@@ -179,9 +179,14 @@ const App = {
           <div class="mission-check" onclick="App.toggleMission('${m.id}')">
             ${m.completed ? '✓' : ''}
           </div>
-          <div class="mission-content">
+          <div class="mission-content" style="flex:1">
             <div class="mission-type-label">${this.missionTypeLabel(m.type)} · <span class="badge badge-${m.priority.toLowerCase()}">${m.priority}</span></div>
             <div class="mission-title">${H.escHtml(m.title)}</div>
+            <div style="margin-top:6px;">
+              <button class="btn btn-sm btn-outline" style="font-size:11px;padding:2px 7px;display:inline-flex;align-items:center;gap:4px;" onclick="event.stopPropagation(); App.missions.showGuide('${m.type}', '${m.id}')">
+                📖 Panduan & Template
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -287,6 +292,12 @@ const App = {
             <div class="mission-type-label">${this.missionTypeLabel(m.type)} · <span class="badge badge-${m.priority.toLowerCase()}">${m.priority}</span></div>
             <div class="mission-title">${H.escHtml(m.title)}</div>
             <div class="mission-description">${H.escHtml(m.desc)}</div>
+            <div style="margin-top:8px;">
+              <button class="btn btn-sm btn-outline" style="font-size:11px;padding:3px 8px;display:inline-flex;align-items:center;gap:4px;" onclick="event.stopPropagation(); App.missions.showGuide('${m.type}', '${m.id}')">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Panduan & Template Siap Pakai
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -429,6 +440,99 @@ const App = {
         if (shaoEl) shaoEl.style.display = 'none';
         if (tangEl) tangEl.style.display = 'block';
       }
+    }
+  },
+
+  
+  copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => {
+        this.toast('Template berhasil disalin ke clipboard! 📋', 'success');
+      }).catch(() => {
+        this.fallbackCopy(text);
+      });
+    } else {
+      this.fallbackCopy(text);
+    }
+  },
+  
+  fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-999999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      this.toast('Template berhasil disalin ke clipboard! 📋', 'success');
+    } catch (e) {
+      this.toast('Gagal menyalin otomatis. Silakan salin manual.', 'error');
+    }
+    document.body.removeChild(ta);
+  },
+
+  // ---- MISSIONS CONTROLLER ----
+  missions: {
+    showGuide(type, id) {
+      const tmpl = ReboundEngine.MISSION_TEMPLATES[type];
+      if (!tmpl) return;
+
+      const stepsHtml = (tmpl.steps || []).map((s, idx) => `
+        <div style="display:flex;gap:10px;margin-bottom:8px;font-size:13px;color:var(--slate-700);">
+          <div style="width:22px;height:22px;border-radius:50%;background:var(--teal-100);color:var(--teal-800);font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${idx+1}</div>
+          <div style="line-height:1.5;">${H.escHtml(s)}</div>
+        </div>
+      `).join('');
+
+      const templateBlock = tmpl.templateText ? `
+        <div style="margin-top:var(--space-4);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:11.5px;font-weight:700;color:var(--teal-800);text-transform:uppercase;">${H.escHtml(tmpl.templateTitle || 'Template Siap Pakai')}</div>
+            <button class="btn btn-sm btn-primary" onclick="App.copyText(decodeURIComponent('${encodeURIComponent(tmpl.templateText)}'))" style="font-size:11px;padding:3px 8px;">
+              📋 Salin Template
+            </button>
+          </div>
+          <textarea readonly class="form-input" style="width:100%;height:140px;font-size:12px;font-family:monospace;line-height:1.5;background:var(--slate-50);border:1px solid var(--slate-300);resize:none;">${H.escHtml(tmpl.templateText)}</textarea>
+        </div>
+      ` : '';
+
+      const actionBtn = tmpl.actionTarget ? `
+        <button class="btn btn-secondary flex-1" onclick="App.closeModal(); App.navigate('${tmpl.actionTarget}');">
+          ${H.escHtml(tmpl.actionLabel || 'Buka Menu Terkait')} →
+        </button>
+      ` : '';
+
+      App.openModal(`
+        <div class="modal-title" style="margin-bottom:4px;font-size:1.15rem;">${H.escHtml(tmpl.title)}</div>
+        <div style="font-size:12px;color:var(--color-text-muted);margin-bottom:var(--space-3);">
+          Kategori: <strong>${App.missionTypeLabel(type)}</strong>
+        </div>
+
+        <!-- Why Box -->
+        <div style="background:var(--teal-50);border-left:4px solid var(--teal-600);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);margin-bottom:var(--space-4);font-size:13px;color:var(--teal-950);line-height:1.5;">
+          <strong>🎯 Mengapa Misi Ini Penting:</strong><br>
+          ${H.escHtml(tmpl.why || tmpl.desc)}
+        </div>
+
+        <!-- Steps -->
+        <div style="margin-bottom:var(--space-4);">
+          <div style="font-size:11.5px;font-weight:700;color:var(--slate-500);text-transform:uppercase;margin-bottom:8px;">Langkah Praktis:</div>
+          ${stepsHtml}
+        </div>
+
+        <!-- Template -->
+        ${templateBlock}
+
+        <!-- Actions -->
+        <div style="display:flex;gap:var(--space-2);margin-top:var(--space-5);">
+          ${actionBtn}
+          <button class="btn btn-primary" onclick="App.toggleMission('${id}'); App.closeModal();">
+            Tandai Selesai ✓
+          </button>
+        </div>
+      `);
     }
   },
 
