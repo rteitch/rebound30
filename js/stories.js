@@ -552,6 +552,93 @@ const Stories = {
       ]
     },
     {
+      id: 'wangpeng',
+      featured: false,
+      name: 'Wang Peng (王鹏)',
+      tagline: 'Dari Mantan Polisi Mengambil Alih Utang Ayah Rp 580 Miliar Menjadi Pelopor Terminal Satelit Beidou & Lunas 7 Tahun',
+      title: 'Anak yang Menepati Janji di Atas Kertas Utang',
+      subtitle: 'Pendiri Layanan Terminal Satelit Beidou, Hengyang, Hunan',
+      origin: 'Hengyang, Tiongkok',
+      ageAtRebound: 'Mantan Polisi Usia 28 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'global'],
+      categoryLabel: 'Utang Ayah Rp 580 M & Beidou',
+      badge: 'Penghargaan Hengyang Good People',
+      theme: 'sky',
+      accentColor: '#0284C7',
+      bgLight: '#F0F9FF',
+      borderLight: '#BAE6FD',
+      stats: {
+        debt: '264 Juta Yuan (~Rp 580 Miliar)',
+        age: 'Usia 28 Tahun (Ex-Polisi/Militer)',
+        lowest: 'Gaji Hanya Mampu Bayar Setelah 20 Tahun',
+        action: 'Tanda Tangan Surat Utang Atas Nama Sendiri',
+        result: 'Lunas 27 Sept 2022 & Gelar Hengyang Good People'
+      },
+      timeline: [
+        { year: '2016 — Telepon Kehancuran', text: 'Ayahnya menelepon putus asa karena usaha bangkrut dan menanggung beban utang 264 juta Yuan.' },
+        { year: 'Tanggung Jawab Pribadi', text: 'Resign dari Beijing, pulang ke Hengyang, menemui kreditur, dan mengganti nama di seluruh surat utang menjadi namanya sendiri.' },
+        { year: 'Kantor Papan Bergerak', text: 'Mendirikan layanan terminal satelit navigasi Beidou dari kontainer papan bergerak bersama rekan purnawirawan militer.' },
+        { year: 'Layanan Ekstrem Tanpa Syarat', text: 'Sempat gagal jawab 4 pertanyaan teknis klien, belajar 3 hari tanpa tidur, lalu memberikan garansi servis gratis seumur hidup.' },
+        { year: '27 September 2022 — Lunas', text: 'Setelah 7 tahun menyisihkan laba secara disiplin, cek utang terakhir diserahkan dan dinyatakan lunas 100% tuntas.' },
+        { year: '2023 — Hengyang Good People', text: 'Dianugerahi penghargaan kehormatan resmi "Hengyang Good People" atas integritas moral dan baktinya kepada orang tua.' }
+      ],
+      quote: 'Ayah saya pernah jatuh, tapi saya tidak akan membiarkan nama kehormatan keluarga terpuruk selamanya. Saya hanya berpikir: ini orang tua saya, tidak ada pilihan lain selain menepati janji.',
+      quoteAuthor: 'Wang Peng, penerima penghargaan Hengyang Good People 2023',
+      chapters: [
+        {
+          num: 1,
+          title: 'Telepon yang Mengubah Segalanya',
+          paragraphs: [
+            'Oktober 2016 di Beijing. Wang Peng—seorang pemuda lulusan Akademi Kepolisian Hunan angkatan 2010 yang baru saja menyelesaikan masa dinas militer—sedang fokus merintis kariernya di ibu kota ketika ponselnya berdering.',
+            'Di ujung sambungan telepon, suara ayahnya terdengar parau, terisak, dan gemetar: "Nak... Ayah sudah tidak kuat lagi. Usaha ayah hancur dan ayah benar-benar sudah tidak punya jalan keluar. Ayah hanya bisa meninggalkan ibu dan adik-adikmu, maafkan ayah..."',
+            'Pria panutan yang selama ini ia kagumi telah hancur oleh kebangkrutan bisnis yang meninggalkan lubang utang raksasa sebesar 264 juta Yuan (sekitar Rp 580 miliar). Tangis keputusasaan sang ayah menyentak sanubari terdalam Wang Peng.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Keputusan Seorang Anak',
+          paragraphs: [
+            'Malam itu di kamar sewa sempitnya di Beijing, Wang Peng menghitung realitas finansialnya. Dengan gajinya kala itu sebesar 10.000 Yuan per bulan, ia membutuhkan waktu puluhan tahun tanpa makan sepeser pun untuk melunasi utang sang ayah.',
+            'Namun darah prajurit yang mengalir di tubuhnya menolak untuk lari. "Ayah dan ibu membesarkanku dengan segenap jiwa. Sekarang saat keluarga di jurang kehancuran, giliran saya yang berdiri di garis depan," tekadnya.',
+            'Wang Peng mengundurkan diri dari pekerjaannya di Beijing dan pulang ke Hengyang. Ia mendatangi satu per satu kreditur ayahnya yang marah. Alih-alih membela diri, Wang Peng mengeluarkan pena dan menulis ulang setiap surat pengakuan utang: mencoret nama ayahnya dan menggantinya dengan tanda tangan atas namanya sendiri sebagai penanggung jawab mutlak.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Kantor Papan Bergerak dan 3 Hari Belajar',
+          paragraphs: [
+            'Bersama beberapa rekan purnawirawan militer, Wang Peng mendirikan perusahaan penyedia layanan sistem terminal Beidou (satelit navigasi nasional). Karena modal yang nyaris nol, mereka berkantor di sebuah bilik kantor papan bergerak (bedeng kontainer proyek).',
+            'Wang Peng merangkap sebagai manajer, teknisi lapangan, hingga tenaga pemasar keliling. Suatu hari, saat mempresentasikan sistem navigasinya kepada seorang pemilik armada logistik besar, sang calon klien melontarkan 4 pertanyaan teknis yang sangat rumit mengenai frekuensi satelit.',
+            'Wang Peng tidak bisa menjawab satu pun. Namun dengan tatapan jujur, ia membungkuk hormat: "Maaf Pak, saya belum menguasai hal tersebut. Beri saya waktu 3 hari, saya akan kembali dengan jawaban lengkap." Tiga hari tiga malam tanpa tidur ia membedah buku manual teknik, kembali tepat waktu, dan menjawab seluruh pertanyaan dengan presisi sempurna hingga memenangkan kontrak perdana.'
+          ]
+        },
+        {
+          num: 4,
+          title: '7 Tahun Menuntaskan Janji',
+          paragraphs: [
+            'Wang Peng menerapkan filosofi pelayanan ekstrem: seluruh perbaikan dan pemeliharaan alat terminal Beidou diberikan 100% GRATIS kepada klien tanpa memandang penyebab kerusakannya. Kepercayaan pasar meledak dan armadanya dipercaya oleh ribuan armada transportasi komersial.',
+            'Selama 7 tahun penuh pengorbanan, Wang Peng hidup sangat sederhana. Setiap tetes keuntungan perusahaan dialirkan secara teratur ke rekening para kreditur ayahnya satu demi satu.',
+            'Hingga tibalah tanggal bersejarah: 27 September 2022. Wang Peng duduk di hadapan berkas utang terakhir ayahnya. Dengan senyum haru dan tangan mantap, ia menyerahkan pembayaran pamungkas. Utang 264 juta Yuan dinyatakan LUNAS 100% tuntas.'
+          ]
+        },
+        {
+          num: 5,
+          title: '"Kau Mengembalikan Kehormatan Ayahmu"',
+          paragraphs: [
+            'Pada tahun 2023, Pemerintah Kota Hengyang secara resmi menganugerahi Wang Peng gelar kehormatan "Hengyang Good People" (衡阳好人)—sebuah penghargaan sipil tertinggi atas teladan integritas, kejujuran, dan bakti anak kepada orang tua.',
+            'Saat ditanya wartawan apa hal yang paling membahagiakannya, Wang Peng tersenyum dengan mata berkaca-kaca: "Ayah saya pernah tersandung dan jatuh. Namun saya tidak pernah membiarkan nama baik ayah saya terkubur dalam aib kebangkrutan."',
+            'Wang Peng membuktikan kepada generasi muda bahwa keberanian menanggung beban keluarga dan memegang teguh kejujuran adalah jalan sejati menuju kehormatan hidup yang abadi.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Keberanian Mengambil Tanggung Jawab: Hadapi kreditur secara terbuka dan ikat janji atas nama sendiri untuk membangun kembali martabat dan kepercayaan.',
+        'Komitmen Belajar Tanpa Henti (Agile Learning): Ketidaktahuan teknis bukan alasan menyerah; belajarlah siang dan malam untuk menguasai industri barumu.',
+        'Layanan Konsumen Berintegritas Tinggi: Memberikan nilai lebih di atas ekspektasi klien adalah strategi pemasaran terkuat untuk memenangkan pasar.',
+        'Bakti Tanpa Syarat: Kebahagiaan dan pemulihan nama baik orang tua adalah motivasi tanpa batas yang mampu menembus kemustahilan finansial.'
+      ]
+    },
+    {
       id: 'duncan',
       featured: false,
       name: 'Amber & Ryan Duncan',
