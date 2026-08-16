@@ -1,5 +1,5 @@
 // Rebound 30 — Offline Service Worker
-const CACHE_NAME = 'rebound30-v2';
+const CACHE_NAME = 'rebound30-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -11,8 +11,7 @@ const ASSETS_TO_CACHE = [
   '/js/store.js',
   '/js/engine.js',
   '/js/stories.js',
-  '/js/app.js',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'
+  '/js/app.js'
 ];
 
 self.addEventListener('install', (event) => {
@@ -36,26 +35,48 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  const url = event.request.url;
+
+  // Only handle HTTP and HTTPS requests; ignore chrome-extension://, moz-extension://, file://, etc.
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    return;
+  }
+
+  // Only cache GET requests
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
       }
-      return fetch(event.request).then((networkResponse) => {
-        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+
+      return fetch(event.request)
+        .then((networkResponse) => {
+          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+            return networkResponse;
+          }
+
+          // Double check scheme before storing in cache
+          if (url.startsWith('http://') || url.startsWith('https://')) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache).catch(() => {
+                // Ignore any cache put errors safely
+              });
+            });
+          }
+
           return networkResponse;
-        }
-        const responseToCache = networkResponse.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
+        })
+        .catch(() => {
+          // Offline navigation fallback
+          if (event.request.mode === 'navigate') {
+            return caches.match('/index.html');
+          }
         });
-        return networkResponse;
-      }).catch(() => {
-        // Offline fallback
-        if (event.request.mode === 'navigate') {
-          return caches.match('/index.html');
-        }
-      });
     })
   );
 });
