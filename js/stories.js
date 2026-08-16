@@ -1803,12 +1803,80 @@ const Stories = {
 
   setCategory(catId) {
     this.selectedCategory = catId;
-    this.render();
+    // Perbarui hanya bagian yang berubah, sama seperti pencarian —
+    // kotak pencarian tidak boleh ikut dibangun ulang.
+    this.refreshResults();
   },
 
+  /**
+   * Dipanggil pada setiap ketikan di kotak pencarian.
+   *
+   * BUG YANG DIPERBAIKI: versi lama memanggil this.render(), yang menulis
+   * ulang innerHTML SELURUH pustaka — termasuk elemen <input> tempat
+   * pengguna sedang mengetik. Node input lama dihancurkan dan diganti node
+   * baru, sehingga fokus keyboard hilang setiap satu huruf. Akibatnya
+   * pengguna harus mengklik kembali kotak pencarian untuk tiap huruf.
+   *
+   * Sekarang state diperbarui lalu HANYA daftar hasil yang digambar ulang;
+   * elemen input tidak pernah disentuh, jadi fokus dan posisi kursor utuh.
+   *
+   * Query disimpan apa adanya (tanpa .trim()) agar pengguna bisa mengetik
+   * spasi di tengah kata kunci. Pemangkasan hanya saat pencocokan.
+   */
   setSearch(q) {
-    this.searchQuery = (q || '').toLowerCase().trim();
-    this.render();
+    this.searchQuery = String(q == null ? '' : q);
+    this.refreshResults();
+  },
+
+  clearSearch() {
+    this.searchQuery = '';
+    const input = document.getElementById('story-search-input');
+    if (input) { input.value = ''; input.focus(); }
+    this.refreshResults();
+  },
+
+  /** Pakai kata kunci saran saat pencarian pengguna nihil hasil. */
+  applySuggestion(kata) {
+    this.searchQuery = kata;
+    const input = document.getElementById('story-search-input');
+    if (input) { input.value = kata; input.focus(); }
+    this.refreshResults();
+  },
+
+  /**
+   * Gambar ulang HANYA daftar hasil, jumlah hasil, tombol hapus, dan
+   * status aktif chip kategori. Kotak pencarian tidak pernah disentuh.
+   */
+  refreshResults() {
+    // Bila sedang di layar pembaca, tidak ada daftar untuk diperbarui.
+    const grid = document.querySelector('#stories-root .story-catalog-grid');
+    if (!grid) return;
+
+    const filtered = this.getFilteredData();
+    grid.innerHTML = this.buildCardsHtml(filtered);
+
+    const info = document.getElementById('story-search-info');
+    if (info) {
+      const q = this.searchQuery.trim();
+      if (q) {
+        info.textContent = filtered.length > 0
+          ? `${filtered.length} kisah cocok dengan "${q}"`
+          : `Tidak ada kisah yang cocok dengan "${q}"`;
+        info.style.display = '';
+      } else {
+        info.textContent = '';
+        info.style.display = 'none';
+      }
+    }
+
+    const clearBtn = document.getElementById('story-search-clear');
+    if (clearBtn) clearBtn.style.display = this.searchQuery ? '' : 'none';
+
+    document.querySelectorAll('#stories-root .story-category-chip').forEach(chip => {
+      const aktif = chip.getAttribute('data-cat') === this.selectedCategory;
+      chip.classList.toggle('active', aktif);
+      chip.setAttribute('aria-pressed', aktif ? 'true' : 'false');
+    });
   },
 
   openReader(id) {
@@ -1824,23 +1892,119 @@ const Stories = {
     this.render();
   },
 
+  /**
+   * Gabungan teks yang bisa dicari untuk satu kisah, di-cache per id.
+   *
+   * Versi lama hanya mencari di name/title/tagline/subtitle, padahal
+   * placeholder menjanjikan "nama tokoh, KOTA, atau kata kunci masalah".
+   * Field `origin` (kota/negara) dan `categoryLabel` (besaran utang)
+   * tidak pernah ikut dicari, sehingga mengetik "Madura", "Bangkok",
+   * atau "rentenir" tidak menemukan apa pun meski datanya ada.
+   */
+  _haystack(item) {
+    if (!this._haystackCache) this._haystackCache = {};
+    if (this._haystackCache[item.id]) return this._haystackCache[item.id];
+
+    const bagian = [
+      item.name, item.title, item.tagline, item.subtitle,
+      item.origin, item.categoryLabel, item.badge, item.ageAtRebound,
+    ];
+
+    const st = item.stats || {};
+    bagian.push(st.debt, st.age, st.lowest, st.action, st.result);
+
+    // Label kategori manusiawi agar "utang", "bangkrut", "indonesia" cocok.
+    const labelKategori = {
+      debt: 'terlilit utang', bankrupt: 'bangkrut pailit',
+      zero: 'mulai dari nol', business: 'bangkit bisnis usaha',
+      indonesia: 'indonesia lokal', global: 'global internasional luar negeri',
+    };
+    (item.categories || []).forEach(c => bagian.push(labelKategori[c] || c));
+
+    // Isi perjalanan & pelajaran agar kata kunci masalah benar-benar tembus.
+    (item.timeline || []).forEach(t => { bagian.push(t.year, t.text); });
+    (item.lessons || []).forEach(l => bagian.push(typeof l === 'string' ? l : (l && l.text)));
+    if (item.quote) bagian.push(typeof item.quote === 'string' ? item.quote : item.quote.text);
+
+    const teks = bagian.filter(Boolean).join(' ').toLowerCase();
+    this._haystackCache[item.id] = teks;
+    return teks;
+  },
+
+  /**
+   * Padanan kata sehari-hari yang dipakai pengguna aplikasi ini, tetapi
+   * tidak muncul persis di naskah kisah. Pengguna yang sedang terlilit
+   * utang mengetik dengan kosakata situasinya sendiri — "pinjol", "PHK",
+   * "galbay" — sementara naskah memakai "rentenir", "bangkrut", "kredit".
+   * Tanpa pemetaan ini, pencarian yang paling wajar justru nihil hasil.
+   *
+   * Sengaja dijaga sempit: hanya padanan yang benar-benar setara, supaya
+   * hasil pencarian tidak melebar jadi tidak berguna.
+   */
+  SEARCH_SYNONYMS: {
+    pinjol: ['rentenir', 'pinjaman', 'bunga'],
+    'pinjaman online': ['rentenir', 'pinjaman'],
+    galbay: ['gagal bayar', 'macet', 'menunggak'],
+    phk: ['kehilangan pekerjaan', 'karyawan', 'bangkrut'],
+    dipecat: ['kehilangan pekerjaan', 'karyawan'],
+    nganggur: ['kehilangan pekerjaan', 'bangkrut'],
+    menganggur: ['kehilangan pekerjaan', 'bangkrut'],
+    dc: ['penagih'],
+    'debt collector': ['penagih'],
+    ditagih: ['penagih'],
+    lintah: ['rentenir'],
+    'lintah darat': ['rentenir'],
+    riba: ['bunga', 'rentenir'],
+    'kredit macet': ['macet', 'kredit'],
+    'gagal bayar': ['macet', 'menunggak', 'kredit'],
+    jatuh: ['bangkrut', 'pailit'],
+    hancur: ['bangkrut', 'pailit'],
+    'gulung tikar': ['bangkrut', 'pailit'],
+    sita: ['disita', 'lelang'],
+    disita: ['lelang'],
+    modal: ['modal', 'usaha'],
+    jualan: ['warung', 'usaha', 'kuliner'],
+    dagang: ['usaha', 'warung'],
+  },
+
+  /** Kata kunci yang terbukti ada di korpus, untuk saran saat nihil hasil. */
+  SEARCH_SUGGESTIONS: ['bangkrut', 'rentenir', 'kredit', 'bank', 'disita', 'kuliner', 'sedekah', 'karyawan'],
+
+  /** Satu kata kunci cocok bila kata itu ATAU padanannya ada di teks. */
+  _tokenMatch(teks, token) {
+    if (teks.indexOf(token) !== -1) return true;
+    const padanan = this.SEARCH_SYNONYMS[token];
+    if (!padanan) return false;
+    return padanan.some(p => teks.indexOf(p) !== -1);
+  },
+
   getFilteredData() {
+    // Pisah kata kunci; seluruh kata harus cocok (AND) sehingga
+    // "yiwu bakpao" menyaring lebih tajam, bukan makin longgar.
+    const mentah = this.searchQuery.toLowerCase().trim();
+    const kata = mentah.split(/\s+/).filter(Boolean);
+
+    // Frasa dua kata seperti "pinjaman online" atau "gagal bayar" dicek
+    // utuh lebih dulu sebelum dipecah per kata.
+    if (kata.length > 1 && this.SEARCH_SYNONYMS[mentah]) {
+      return this.DATA.filter(item => {
+        if (!this._matchCategory(item)) return false;
+        return this._tokenMatch(this._haystack(item), mentah);
+      });
+    }
+
     return this.DATA.filter(item => {
-      let matchCat = true;
-      if (this.selectedCategory === 'bookmarks') {
-        matchCat = this.isBookmarked(item.id);
-      } else if (this.selectedCategory !== 'all') {
-        matchCat = (item.categories || []).includes(this.selectedCategory);
-      }
-
-      const matchSearch = !this.searchQuery || 
-        item.name.toLowerCase().includes(this.searchQuery) ||
-        item.title.toLowerCase().includes(this.searchQuery) ||
-        item.tagline.toLowerCase().includes(this.searchQuery) ||
-        item.subtitle.toLowerCase().includes(this.searchQuery);
-
-      return matchCat && matchSearch;
+      if (!this._matchCategory(item)) return false;
+      if (kata.length === 0) return true;
+      const teks = this._haystack(item);
+      return kata.every(k => this._tokenMatch(teks, k));
     });
+  },
+
+  _matchCategory(item) {
+    if (this.selectedCategory === 'bookmarks') return this.isBookmarked(item.id);
+    if (this.selectedCategory === 'all') return true;
+    return (item.categories || []).includes(this.selectedCategory);
   },
 
   render() {
@@ -1854,29 +2018,13 @@ const Stories = {
     }
   },
 
-  renderLibrary(container) {
-    const filtered = this.getFilteredData();
-    const featuredStory = this.DATA.find(s => s.featured) || this.DATA[0];
-
-    const categories = [
-      { id: 'all', label: `Semua (${this.DATA.length})`, icon: this.ICONS.all },
-      { id: 'debt', label: 'Terlilit Utang', icon: this.ICONS.debt },
-      { id: 'bankrupt', label: 'Bangkrut', icon: this.ICONS.bankrupt },
-      { id: 'zero', label: 'Mulai dari Nol', icon: this.ICONS.zero },
-      { id: 'business', label: 'Bangkit Bisnis', icon: this.ICONS.business },
-      { id: 'indonesia', label: 'Indonesia', icon: this.ICONS.indonesia },
-      { id: 'global', label: 'Global', icon: this.ICONS.global },
-      { id: 'bookmarks', label: `Tersimpan (${this.bookmarks.length})`, icon: this.ICONS.bookmarks },
-    ];
-
-    const categoryChipsHtml = categories.map(cat => `
-      <button class="story-category-chip ${this.selectedCategory === cat.id ? 'active' : ''}" onclick="Stories.setCategory('${cat.id}')">
-        ${cat.icon}
-        <span>${cat.label}</span>
-      </button>
-    `).join('');
-
-        const cardsHtml = filtered.map(item => {
+  /**
+   * Bangun HTML kartu katalog. Dipisahkan dari renderLibrary() supaya
+   * hasil pencarian bisa diperbarui TANPA membangun ulang seluruh
+   * pustaka — termasuk kotak pencarian itu sendiri.
+   */
+  buildCardsHtml(filtered) {
+    return filtered.map(item => {
       const isSaved = this.isBookmarked(item.id);
       const v = {"shao":{"avatarText":"SB","profession":"Pengrajin Bakpao Yiwu · Mantan Eksportir Koper","iconSvg":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:20px;height:20px;\"><path d=\"M12 2a8 8 0 0 0-8 8c0 4.418 3.582 8 8 8s8-3.582 8-8a8 8 0 0 0-8-8z\"/><path d=\"M12 6v6l4 2\"/></svg>","gradient":"linear-gradient(135deg, #0F766E 0%, #134E4A 100%)"},"tang":{"avatarText":"TJ","profession":"Kios Sosis Panggang Hangzhou · Mantan Raja Restoran","iconSvg":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:20px;height:20px;\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"/></svg>","gradient":"linear-gradient(135deg, #B45309 0%, #78350F 100%)"},"hendra":{"avatarText":"TH","profession":"Owner Pabrik Salina Herbal · Formulator Kosmetik","iconSvg":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:20px;height:20px;\"><path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"/></svg>","gradient":"linear-gradient(135deg, #4338CA 0%, #312E81 100%)"},"suryo":{"avatarText":"SP","profession":"Owner Kacunk Motor · Showroom 1.000 Unit Mobil","iconSvg":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:20px;height:20px;\"><path d=\"M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 11.2 2 11.6 2 12v4c0 .6.4 1 1 1h2\"/><circle cx=\"7\" cy=\"17\" r=\"2\"/><path d=\"M9 17h6\"/><circle cx=\"17\" cy=\"17\" r=\"2\"/></svg>","gradient":"linear-gradient(135deg, #047857 0%, #064E3B 100%)"},"suprianto":{"avatarText":"SW","profession":"Founder Siomay Wondes · Dapur Mesin Modern","iconSvg":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:20px;height:20px;\"><path d=\"M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z\"/><line x1=\"6\" x2=\"18\" y1=\"17\" y2=\"17\"/></svg>","gradient":"linear-gradient(135deg, #0D9488 0%, #115E59 100%)"},"matyasin":{"avatarText":"MY","profession":"Miliarder Besi Tua Sumba & Pembangun Jalan 10 KM","iconSvg":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:20px;height:20px;\"><rect width=\"20\" height=\"8\" x=\"2\" y=\"14\" rx=\"2\"/><path d=\"M6 14V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10\"/></svg>","gradient":"linear-gradient(135deg, #059669 0%, #065F46 100%)"},"genta":{"avatarText":"GG","profession":"Developer Properti & Bisnis Konstruksi Cimahi","iconSvg":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:20px;height:20px;\"><path d=\"M3 21h18\"/><path d=\"M19 21v-4\"/><path d=\"M19 17a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v4\"/><path d=\"M14 9V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v4\"/><path d=\"M10 12h4\"/></svg>","gradient":"linear-gradient(135deg, #0284C7 0%, #075985 100%)"},"rini":{"avatarText":"RS","profession":"Pengrajin Gitar Handmade & 50 Besar Mekaarpreneur","iconSvg":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:20px;height:20px;\"><path d=\"m9 18 6-6\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"6\" r=\"3\"/><path d=\"m15 6 3 3\"/></svg>","gradient":"linear-gradient(135deg, #BE123C 0%, #881337 100%)"}}[item.id] || {
         avatarText: item.name.slice(0,2).toUpperCase(),
@@ -1934,9 +2082,49 @@ const Stories = {
       <div class="empty-state" style="grid-column: 1 / -1; padding: var(--space-8) var(--space-4);">
         <div class="empty-state-icon" style="color:var(--teal-600);">${this.ICONS.bookmarks}</div>
         <div class="empty-state-title">Tidak ada kisah yang cocok</div>
-        <div class="empty-state-text">Coba ganti kategori filter atau kata kunci pencarian kamu.</div>
+        <div class="empty-state-text">
+          ${this.searchQuery.trim()
+            ? 'Coba kata kunci lain, atau pilih salah satu di bawah ini.'
+            : 'Coba ganti kategori filter atau kata kunci pencarian kamu.'}
+        </div>
+        ${this.searchQuery.trim() ? `
+          <div class="story-suggest-row">
+            ${this.SEARCH_SUGGESTIONS.map(k => `
+              <button class="story-suggest-chip" onclick="Stories.applySuggestion('${k}')">${k}</button>
+            `).join('')}
+          </div>` : ''}
       </div>
     `;
+  },
+
+  renderLibrary(container) {
+    const filtered = this.getFilteredData();
+    const featuredStory = this.DATA.find(s => s.featured) || this.DATA[0];
+
+    const categories = [
+      { id: 'all', label: `Semua (${this.DATA.length})`, icon: this.ICONS.all },
+      { id: 'debt', label: 'Terlilit Utang', icon: this.ICONS.debt },
+      { id: 'bankrupt', label: 'Bangkrut', icon: this.ICONS.bankrupt },
+      { id: 'zero', label: 'Mulai dari Nol', icon: this.ICONS.zero },
+      { id: 'business', label: 'Bangkit Bisnis', icon: this.ICONS.business },
+      { id: 'indonesia', label: 'Indonesia', icon: this.ICONS.indonesia },
+      { id: 'global', label: 'Global', icon: this.ICONS.global },
+      { id: 'bookmarks', label: `Tersimpan (${this.bookmarks.length})`, icon: this.ICONS.bookmarks },
+    ];
+
+    // data-cat dipakai refreshResults() untuk memperbarui status aktif chip
+    // tanpa membangun ulang seluruh pustaka.
+    const categoryChipsHtml = categories.map(cat => `
+      <button class="story-category-chip ${this.selectedCategory === cat.id ? 'active' : ''}"
+              data-cat="${cat.id}"
+              aria-pressed="${this.selectedCategory === cat.id ? 'true' : 'false'}"
+              onclick="Stories.setCategory('${cat.id}')">
+        ${cat.icon}
+        <span>${cat.label}</span>
+      </button>
+    `).join('');
+
+    const cardsHtml = this.buildCardsHtml(filtered);
 
     container.innerHTML = `
       <div class="story-library-wrapper">
@@ -1973,20 +2161,39 @@ const Stories = {
         </div>
 
         <!-- Search Bar & Filter Controls -->
-        <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4);flex-wrap:wrap;">
-          <div style="flex:1;min-width:240px;position:relative;">
-            <input 
-              type="text" 
-              class="form-input" 
-              placeholder="Cari nama tokoh, kota, atau kata kunci masalah..." 
+        <div class="story-search-wrap">
+          <div class="story-search-box">
+            <label class="sr-only" for="story-search-input">Cari kisah</label>
+            <input
+              type="search"
+              id="story-search-input"
+              class="form-input story-search-input"
+              placeholder="Cari nama tokoh, kota, atau kata kunci masalah..."
               value="${H.escHtml(this.searchQuery)}"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              enterkeyhint="search"
+              aria-describedby="story-search-info"
               oninput="Stories.setSearch(this.value)"
-              style="padding-left:36px;border-radius:24px;"
+              onsearch="Stories.setSearch(this.value)"
+              onkeydown="if(event.key==='Escape'){event.stopPropagation();Stories.clearSearch();}"
             >
-            <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--color-text-muted);">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <span class="story-search-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
             </span>
+            <button
+              type="button"
+              id="story-search-clear"
+              class="story-search-clear"
+              onclick="Stories.clearSearch()"
+              aria-label="Hapus kata kunci pencarian"
+              style="${this.searchQuery ? '' : 'display:none'}"
+            >&times;</button>
           </div>
+          <div id="story-search-info" class="story-search-info" role="status" aria-live="polite"
+               style="${this.searchQuery.trim() ? '' : 'display:none'}"></div>
         </div>
 
         <!-- Horizontal Problem Filter Chips with SVGs -->

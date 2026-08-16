@@ -66,6 +66,22 @@ const H = {
     return Math.min(Math.max(n, 0), H.MAX_MONEY);
   },
 
+  /**
+   * Ubah input persen (mis. bunga per bulan) menjadi angka aman.
+   * Menerima desimal dengan koma maupun titik, menolak nilai negatif,
+   * dan menjepit di 1000% agar salah ketik tidak merusak perhitungan.
+   */
+  parsePercent(s) {
+    if (typeof s === 'number') {
+      if (!isFinite(s)) return 0;
+      return Math.min(Math.max(s, 0), 1000);
+    }
+    const bersih = String(s == null ? '' : s).replace(',', '.').replace(/[^\d.]/g, '');
+    const n = parseFloat(bersih);
+    if (!isFinite(n)) return 0;
+    return Math.min(Math.max(n, 0), 1000);
+  },
+
   uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); },
 
   // ---- TANGGAL (LOKAL, BUKAN UTC) ----

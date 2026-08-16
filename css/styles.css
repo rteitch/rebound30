@@ -3834,3 +3834,371 @@ ul li, ol li {
   .interest-widget-amount { font-size: var(--text-2xl); }
   .report-row-value { font-size: var(--text-base); }
 }
+
+/* ============================================================
+   KOMPONEN BARU — PENGINGAT, REVIEW, RENCANA 90 HARI,
+   MODE DARURAT, LAPORAN BULANAN, AKSESIBILITAS
+   ============================================================ */
+
+/* --- Utilitas aksesibilitas (PRD §47) --------------------- */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+/* Fokus keyboard harus selalu terlihat jelas. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--teal-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Cegah latar ikut bergulir saat dialog terbuka. */
+body.modal-open { overflow: hidden; }
+
+/* Target sentuh minimum 44px (PRD §47). */
+.btn-sm { min-height: 34px; }
+.mission-check { min-width: 28px; min-height: 28px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Pusat pengingat (PRD §27) ---------------------------- */
+#notif-container { display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-4); }
+
+.notif-card {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 13px 15px;
+  border: 1.5px solid var(--color-border);
+  border-left-width: 4px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+.notif-critical { border-left-color: var(--red-600); background: var(--red-50); }
+.notif-warning  { border-left-color: var(--amber-600); background: var(--amber-50); }
+.notif-info     { border-left-color: var(--teal-600); background: var(--teal-50); }
+
+.notif-icon { flex-shrink: 0; width: 22px; height: 22px; margin-top: 2px; }
+.notif-icon svg { width: 100%; height: 100%; }
+.notif-critical .notif-icon { color: var(--red-600); }
+.notif-warning  .notif-icon { color: var(--amber-700); }
+.notif-info     .notif-icon { color: var(--teal-700); }
+
+.notif-body { flex: 1; min-width: 0; }
+.notif-title { font-size: 13.5px; font-weight: 800; color: var(--color-text-primary); line-height: 1.35; }
+.notif-text  { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.5; margin-top: 3px; }
+
+.notif-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.notif-dismiss {
+  background: none; border: none; cursor: pointer;
+  font-size: 20px; line-height: 1; color: var(--color-text-muted);
+  width: 30px; height: 30px; border-radius: 50%;
+}
+.notif-dismiss:hover { background: rgba(0,0,0,0.06); color: var(--color-text-primary); }
+
+@media (max-width: 640px) {
+  .notif-card { flex-wrap: wrap; }
+  .notif-actions { width: 100%; justify-content: flex-end; margin-top: 4px; }
+}
+
+/* Lencana jumlah pengingat pada navigasi. */
+.notif-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 18px; height: 18px; padding: 0 5px;
+  border-radius: 9px; background: var(--teal-600); color: #fff;
+  font-size: 10.5px; font-weight: 800; margin-left: 6px;
+}
+.notif-badge.badge-urgent { background: var(--red-600); }
+
+/* --- Indikator vital di dashboard (PRD §12) --------------- */
+.vitals-row {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px; margin-bottom: var(--space-5);
+}
+.vital {
+  background: var(--color-surface); border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 12px 14px;
+}
+.vital-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--color-text-secondary);
+}
+.vital-value {
+  font-size: clamp(14px, 3.8vw, 18px); font-weight: 800; margin-top: 4px;
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.vital-sub { font-size: 11px; color: var(--color-text-muted); margin-top: 3px; line-height: 1.4; }
+
+@media (max-width: 640px) {
+  .vitals-row { grid-template-columns: 1fr; }
+}
+
+/* --- Kartu utang: alasan prioritas & urut manual ---------- */
+.debt-why {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin: 0 var(--space-5) var(--space-3);
+  padding: 9px 11px; border-radius: var(--radius-md);
+  background: var(--teal-50); border: 1px solid var(--teal-200);
+  font-size: 12px; color: var(--teal-900); line-height: 1.45;
+}
+.debt-why svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 1px; color: var(--teal-700); }
+
+.debt-reorder {
+  display: flex; gap: 6px; padding: 0 var(--space-5) var(--space-3);
+}
+.debt-reorder .btn { font-size: 11px; padding: 4px 10px; }
+
+.debt-card.debt-lunas { opacity: .62; }
+.debt-card.debt-lunas .debt-amount { color: var(--green-600); }
+
+/* --- Misi dilewati (PRD §14) ------------------------------ */
+.mission-card.skipped { opacity: .72; border-style: dashed; }
+.mission-skipped-note {
+  margin-top: 6px; padding: 6px 9px;
+  background: var(--slate-50); border-radius: var(--radius-md);
+  font-size: 11.5px; color: var(--color-text-secondary); line-height: 1.45;
+}
+.skip-note {
+  padding: 11px 13px; background: var(--teal-50);
+  border: 1px solid var(--teal-200); border-radius: var(--radius-md);
+  font-size: 12.5px; color: var(--teal-900); line-height: 1.5;
+}
+
+/* --- Review mingguan (PRD §9) ----------------------------- */
+.modal-sub { font-size: 12.5px; color: var(--color-text-secondary); margin: -6px 0 var(--space-4); line-height: 1.5; }
+
+.review-progress { margin-bottom: var(--space-4); }
+.review-progress-bar {
+  height: 10px; background: var(--slate-100);
+  border-radius: var(--radius-full); overflow: hidden;
+}
+.review-progress-fill {
+  height: 100%; border-radius: var(--radius-full);
+  background: linear-gradient(to right, var(--teal-400), var(--teal-600));
+  transition: width .8s ease;
+}
+.review-progress-text { font-size: 12px; color: var(--color-text-secondary); margin-top: 6px; text-align: center; }
+
+.review-card {
+  border: 1.5px solid var(--color-border); border-radius: var(--radius-lg);
+  padding: 6px 14px; margin-bottom: var(--space-4);
+}
+.review-row {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--color-border);
+}
+.review-row:last-child { border-bottom: none; }
+.review-row-label { font-size: 12.5px; color: var(--color-text-secondary); }
+.review-row-value { font-size: 13.5px; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.review-note {
+  padding: 12px 14px; background: var(--teal-50);
+  border-left: 3px solid var(--teal-600); border-radius: var(--radius-md);
+  font-size: 12.5px; color: var(--teal-900); line-height: 1.6;
+}
+
+/* --- Rencana 90 hari (PRD §24) ---------------------------- */
+.plan90-locked {
+  text-align: center; padding: var(--space-6) var(--space-5);
+  border: 1.5px dashed var(--color-border); border-radius: var(--radius-xl);
+  background: var(--slate-50);
+}
+.plan90-locked-icon { width: 38px; height: 38px; margin: 0 auto var(--space-3); color: var(--slate-400); }
+.plan90-locked-icon svg { width: 100%; height: 100%; }
+.plan90-locked-title { font-size: 14px; font-weight: 800; color: var(--color-text-primary); }
+.plan90-locked-text { font-size: 12.5px; color: var(--color-text-secondary); margin-top: 6px; line-height: 1.6; max-width: 460px; margin-inline: auto; }
+
+.plan90-intro {
+  padding: 14px 16px; border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--teal-50) 0%, #F0FDFA 100%);
+  border: 1.5px solid var(--teal-300); margin-bottom: var(--space-4);
+}
+.plan90-intro-title { font-size: 14px; font-weight: 800; color: var(--teal-950); }
+.plan90-intro-text { font-size: 12.5px; color: var(--teal-900); line-height: 1.6; margin-top: 5px; }
+
+.plan90-targets {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px; margin-bottom: var(--space-4);
+}
+.plan90-target {
+  background: var(--color-surface); border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 12px 14px;
+}
+.plan90-target-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--color-text-secondary);
+}
+.plan90-target-value {
+  font-size: clamp(15px, 4vw, 19px); font-weight: 800; color: var(--teal-700);
+  margin-top: 4px; white-space: nowrap; font-variant-numeric: tabular-nums;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.plan90-target-value span { font-size: 11px; font-weight: 600; color: var(--color-text-muted); }
+.plan90-target-sub { font-size: 11px; color: var(--color-text-muted); margin-top: 3px; }
+
+.plan90-months { display: flex; flex-direction: column; gap: 12px; }
+.plan90-month {
+  border: 1.5px solid var(--color-border); border-radius: var(--radius-lg);
+  padding: 14px 16px; background: var(--color-surface);
+}
+.plan90-month-head { display: flex; align-items: flex-start; gap: 11px; }
+.plan90-month-no {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal-600); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px;
+}
+.plan90-month-name { font-size: 14px; font-weight: 800; color: var(--color-text-primary); }
+.plan90-month-focus { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; line-height: 1.45; }
+.plan90-month-target {
+  margin: 10px 0 8px; padding: 8px 11px;
+  background: var(--teal-50); border-radius: var(--radius-md);
+  font-size: 12.5px; font-weight: 700; color: var(--teal-900); line-height: 1.45;
+}
+.plan90-steps { margin: 0; padding-left: 18px; }
+.plan90-steps li { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 5px; }
+
+@media (max-width: 640px) {
+  .plan90-targets { grid-template-columns: 1fr; }
+}
+
+/* --- Mode darurat (PRD §29) ------------------------------- */
+.emergency-head { display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3); }
+.emergency-icon { width: 40px; height: 40px; color: var(--red-600); flex-shrink: 0; }
+.emergency-icon svg { width: 100%; height: 100%; }
+
+.emergency-status {
+  padding: 11px 13px; background: var(--amber-50);
+  border: 1px solid var(--amber-300); border-radius: var(--radius-md);
+  font-size: 12.5px; color: var(--amber-900); line-height: 1.55; margin-bottom: var(--space-4);
+}
+
+.emergency-list { display: flex; flex-direction: column; gap: 8px; }
+.emergency-item {
+  display: flex; align-items: flex-start; gap: 11px;
+  padding: 11px 13px; cursor: pointer;
+  border: 1.5px solid var(--color-border); border-radius: var(--radius-md);
+  background: var(--color-surface); transition: background .15s ease, border-color .15s ease;
+}
+.emergency-item:hover { border-color: var(--teal-400); }
+.emergency-item.done { background: var(--green-50); border-color: var(--green-300); }
+.emergency-item.done .emergency-item-title { text-decoration: line-through; color: var(--color-text-muted); }
+.emergency-item input[type="checkbox"] { margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--teal-600); }
+.emergency-item-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); line-height: 1.4; }
+.emergency-no {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--slate-200); color: var(--slate-700);
+  font-size: 10.5px; font-weight: 800; margin-right: 4px;
+}
+.emergency-item-detail { font-size: 12px; color: var(--color-text-secondary); line-height: 1.55; margin-top: 4px; }
+
+.emergency-help {
+  margin-top: var(--space-4); padding: 12px 14px;
+  background: var(--blue-50); border: 1px solid var(--blue-500); border-radius: var(--radius-md);
+}
+.emergency-help-title { font-size: 12.5px; font-weight: 800; color: var(--color-text-primary); }
+.emergency-help-text { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; margin-top: 4px; }
+
+/* --- Laporan bulanan (PRD §26) ---------------------------- */
+.mr-toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-4); flex-wrap: wrap; }
+.mr-select-label { font-size: 12px; font-weight: 700; color: var(--color-text-secondary); }
+.mr-toolbar select { width: auto; padding: 8px 28px 8px 12px; }
+
+.mr-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 720px) { .mr-grid { grid-template-columns: 1fr; } }
+
+.mr-card {
+  border: 1.5px solid var(--color-border); border-radius: var(--radius-lg);
+  padding: 14px 16px; background: var(--color-surface);
+}
+.mr-card-title { font-size: 13px; font-weight: 800; color: var(--color-text-primary); margin-bottom: 8px; }
+.mr-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 5px 0; }
+.mr-label { font-size: 12.5px; color: var(--color-text-secondary); }
+.mr-value { font-size: 13px; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mr-divider { height: 1px; background: var(--color-border); margin: 7px 0; }
+
+.mr-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+.mr-bar-label { font-size: 11.5px; color: var(--color-text-secondary); width: 108px; flex-shrink: 0; }
+.mr-bar-track { flex: 1; height: 8px; background: var(--slate-100); border-radius: var(--radius-full); overflow: hidden; }
+.mr-bar-fill { height: 100%; border-radius: var(--radius-full); background: linear-gradient(to right, var(--teal-400), var(--teal-600)); }
+.mr-bar-value { font-size: 11.5px; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; min-width: 84px; text-align: right; }
+.mr-hint { font-size: 11px; color: var(--color-text-muted); margin-top: 9px; line-height: 1.5; }
+.mr-empty { font-size: 12.5px; color: var(--color-text-muted); text-align: center; padding: var(--space-4) 0; }
+
+@media (max-width: 480px) {
+  .mr-bar-label { width: 78px; }
+  .mr-bar-value { min-width: 72px; font-size: 11px; }
+}
+
+/* --- Cetak: sembunyikan kerangka aplikasi ----------------- */
+@media print {
+  .sidebar, .topbar, .bottom-nav, .mobile-drawer, .mobile-header,
+  #notif-container, #backup-banner-container, .fab, #toast-container { display: none !important; }
+  .content { padding: 0 !important; }
+}
+
+/* ============================================================
+   PENCARIAN KISAH BANGKIT
+   ============================================================ */
+.story-search-wrap { margin-bottom: var(--space-4); }
+
+.story-search-box { position: relative; }
+
+.story-search-input {
+  padding-left: 38px !important;
+  padding-right: 38px !important;
+  border-radius: 24px !important;
+}
+/* Sembunyikan tombol silang bawaan browser — kita pakai tombol sendiri
+   agar perilakunya sama di semua peramban. */
+.story-search-input::-webkit-search-cancel-button,
+.story-search-input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }
+
+.story-search-icon {
+  position: absolute; left: 13px; top: 50%; transform: translateY(-50%);
+  color: var(--color-text-muted); pointer-events: none; display: flex;
+}
+.story-search-icon svg { width: 16px; height: 16px; }
+
+.story-search-clear {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  width: 26px; height: 26px; border: none; border-radius: 50%;
+  background: var(--slate-100); color: var(--color-text-secondary);
+  font-size: 17px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.story-search-clear:hover { background: var(--slate-200); color: var(--color-text-primary); }
+
+.story-search-info {
+  font-size: 12px; color: var(--color-text-secondary);
+  margin-top: 7px; padding-left: 4px;
+}
+
+.story-suggest-row {
+  display: flex; flex-wrap: wrap; gap: 7px;
+  justify-content: center; margin-top: var(--space-4);
+}
+.story-suggest-chip {
+  border: 1.5px solid var(--teal-300); background: var(--teal-50);
+  color: var(--teal-800); border-radius: var(--radius-full);
+  padding: 5px 13px; font-size: 12px; font-weight: 700; cursor: pointer;
+}
+.story-suggest-chip:hover { background: var(--teal-100); border-color: var(--teal-500); }

@@ -1,5 +1,9 @@
 // Rebound 30 — Offline Service Worker
-const CACHE_NAME = 'rebound30-v4';
+//
+// PENTING: naikkan CACHE_NAME setiap kali daftar berkas atau isi berkas
+// berubah. Tanpa itu, service worker lama terus menyajikan JS versi
+// sebelumnya dari cache dan pengguna tidak pernah menerima perbaikan.
+const CACHE_NAME = 'rebound30-v6';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -11,8 +15,12 @@ const ASSETS_TO_CACHE = [
   '/js/helpers.js',
   '/js/store.js',
   '/js/engine.js',
+  '/js/finance.js',
+  '/js/notify.js',
+  '/js/exporter.js',
   '/js/stories.js',
   '/js/app.js',
+  '/js/screens.js',
   '/fonts/plus-jakarta-sans-1.woff2',
   '/fonts/plus-jakarta-sans-10.woff2',
   '/fonts/plus-jakarta-sans-11.woff2',

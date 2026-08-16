@@ -16,6 +16,8 @@ const SUITES = [
   ['test_simulation_30days.js','Simulasi siklus Hari 1–30'],
   ['data_integrity.js',        'Migrasi skema, validasi import, presisi uang'],
   ['timezone_integrity.js',    'Integritas tanggal lintas zona waktu'],
+  ['features_test.js',         'Fitur baru: prioritas utang, DTI, pengingat, laporan'],
+  ['search_test.js',           'Pencarian Kisah: fokus input, cakupan, padanan kata'],
   ['deep_gap_audit.js',        'Matriks keputusan — audit gap menyeluruh'],
 ];
 

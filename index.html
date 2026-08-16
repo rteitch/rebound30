@@ -342,7 +342,7 @@
     </div>
     <div class="sidebar-nav">
       <button class="nav-item active" onclick="App.navigate('dashboard')" id="nav-dashboard">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg> Dashboard
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg> Dashboard<span class="notif-badge" data-notif-badge style="display:none" aria-live="polite"></span>
       </button>
       <button class="nav-item" onclick="App.navigate('missions')" id="nav-missions">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Misi Harian
@@ -440,6 +440,9 @@
       <!-- === DASHBOARD === -->
       <div class="screen active" id="screen-dashboard">
         <div id="backup-banner-container"></div>
+        <!-- Pusat pengingat in-app (PRD §27): jatuh tempo utang, follow-up
+             peluang & negosiasi, review mingguan, kas kritis. -->
+        <div id="notif-container" aria-label="Pengingat hari ini"></div>
         <div class="dashboard-header">
           <div class="dashboard-meta" id="dash-date"></div>
           <div class="dashboard-greeting" id="dash-greeting"></div>
@@ -530,6 +533,9 @@
           </div>
         </div>
 
+        <!-- Indikator kesehatan finansial (PRD §12): kekayaan bersih,
+             rasio cicilan terhadap pemasukan (DTI), dan sisa hari bertahan -->
+        <div class="vitals-row" id="dash-vitals" aria-label="Indikator kesehatan finansial"></div>
 
         <div class="section-header">
           <div>
@@ -802,6 +808,15 @@
         </div>
 
         <div id="plan-list"></div>
+
+        <!-- RENCANA 90 HARI (PRD §24) -->
+        <div class="section-header" style="margin:var(--space-6) 0 var(--space-3);">
+          <div class="section-title" style="display:flex;align-items:flex-start;gap:8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:var(--teal-600);flex-shrink:0;margin-top:3px;" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M17 14h-6"/><path d="M13 18H7"/></svg>
+            <span style="line-height:1.35;">Rencana 90 Hari — Setelah Program Berakhir</span>
+          </div>
+        </div>
+        <div id="plan90-container"></div>
       </div>
 
       <!-- === REPORTS === -->
@@ -821,9 +836,20 @@
           </div>
         </div>
 
+        <!-- LAPORAN BULANAN (PRD §26) -->
+        <div style="margin-top:var(--space-6)">
+          <div class="section-title" style="margin-bottom:var(--space-4)">Laporan Bulanan</div>
+          <div id="monthly-report"></div>
+        </div>
+
         <div style="margin-top:var(--space-6)">
           <div class="section-title" style="margin-bottom:var(--space-4);display:flex;align-items:center;gap:8px;"><i data-lucide="award" style="width:20px;height:20px;color:var(--teal-600);"></i> Pencapaian</div>
           <div class="achievements-grid" id="achievements-grid"></div>
+        </div>
+
+        <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="btn btn-outline btn-sm" onclick="Exporter.printReport(App.state,'rebound')">Cetak Laporan Rebound (PDF)</button>
+          <button class="btn btn-ghost btn-sm" onclick="App.review.open()">Buka Review Mingguan</button>
         </div>
       </div>
 
@@ -914,7 +940,39 @@
             </div>
             <button class="btn btn-outline btn-sm" onclick="App.settings.importData()">Import</button>
           </div>
-          <input type="file" id="import-file-input" accept=".json" style="display:none" onchange="App.settings.handleImport(event)">
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Export Spreadsheet (CSV)</div>
+              <div class="settings-item-sub">Buka di Excel atau Google Sheets untuk diolah sendiri</div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="Exporter.downloadCSV(App.state)">CSV</button>
+          </div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Cetak Laporan (PDF)</div>
+              <div class="settings-item-sub">Lampiran saat mengajukan restrukturisasi ke kreditur</div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="Exporter.printReport(App.state,'rebound')">Cetak</button>
+          </div>
+          <input type="file" id="import-file-input" accept=".json,application/json" style="display:none" onchange="App.settings.handleImport(event)">
+        </div>
+
+        <div class="settings-section">
+          <div class="settings-section-title">Bantuan Cepat</div>
+          <div class="settings-item">
+            <div>
+              <div class="settings-item-label">Mode Darurat</div>
+              <div class="settings-item-sub">Checklist bertahan hidup saat uang benar-benar menipis</div>
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="App.emergency.open()">Buka</button>
+          </div>
+          <div class="settings-item" data-pwa-install style="display:none">
+            <div>
+              <div class="settings-item-label">Pasang Aplikasi di Perangkat</div>
+              <div class="settings-item-sub">Buka langsung dari layar utama, tetap jalan tanpa internet</div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="App.pwa.install()">Install</button>
+          </div>
         </div>
 
         <div class="settings-section">
@@ -1024,7 +1082,7 @@
     <div class="drawer-section-label">UTAMA & AKSI</div>
     <button class="drawer-nav-item active" onclick="App.navigate('dashboard'); App.closeMobileDrawer();" id="dnav-dashboard">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-      <span>Dashboard</span>
+      <span>Dashboard</span><span class="notif-badge" data-notif-badge style="display:none" aria-live="polite"></span>
     </button>
     <button class="drawer-nav-item" onclick="App.navigate('missions'); App.closeMobileDrawer();" id="dnav-missions">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
@@ -1076,7 +1134,7 @@
 <nav id="bottom-nav">
   <div class="bottom-nav-items">
     <button class="bottom-nav-item active" onclick="App.navigate('dashboard')" id="bnav-dashboard">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Home
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Home<span class="notif-badge" data-notif-badge style="display:none" aria-live="polite"></span>
     </button>
     <button class="bottom-nav-item" onclick="App.navigate('missions')" id="bnav-missions">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Misi
@@ -1110,8 +1168,16 @@
 <script src="js/helpers.js"></script>
 <script src="js/store.js"></script>
 <script src="js/engine.js"></script>
+<!-- Mesin finansial, pengingat, dan ekspor: murni perhitungan tanpa
+     sentuhan DOM, sehingga bisa diuji terpisah oleh tests/*.js -->
+<script src="js/finance.js"></script>
+<script src="js/notify.js"></script>
+<script src="js/exporter.js"></script>
 <script src="js/stories.js"></script>
 <script src="js/app.js"></script>
+<!-- screens.js memperluas objek App, jadi WAJIB dimuat setelah app.js.
+     Aman karena App.init() baru dijalankan pada DOMContentLoaded. -->
+<script src="js/screens.js"></script>
 
 
   <!-- MODAL: SOS / FIRST AID MENTAL & HUKUM (PIXEL-PERFECT CENTERED & 100% SVG) -->

@@ -1,8 +1,8 @@
 # 🚀 Rebound 30 — Aplikasi Pendamping Pemulihan Finansial 30 Hari
 
 [![Live App](https://img.shields.io/badge/Live-rebound30.vercel.app-teal?style=for-the-badge&logo=vercel)](https://rebound30.vercel.app/)
-[![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-104%2F104%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
-[![Tests](https://img.shields.io/badge/Automated%20Tests-236%2F236%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-110%2F110%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Tests](https://img.shields.io/badge/Automated%20Tests-363%2F363%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Gap Audit](https://img.shields.io/badge/Decision%20Matrix-1440%20Permutasi%20%C2%B7%200%20Gap-blueviolet?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
@@ -66,7 +66,7 @@ Seluruh entitas data di dalam aplikasi memiliki fitur **Tambah (+)**, **Edit (Ub
   4. *Pendapatan Drop*: Modul restrukturisasi dan draf negosiasi keringanan cicilan.
 
 ### 6. 🧠 Matriks Keputusan Adaptif Multi-Variabel (*Adaptive Decision Engine*)
-Sistem mengolah 3 keputusan profil awal secara terpadu tanpa *gap* logika melalui 960 permutasi pengujian:
+Sistem mengolah keputusan profil awal secara terpadu tanpa *gap* logika, diverifikasi lewat sapuan 1.440 permutasi pengujian:
 - **Status Pekerjaan (*Employment Baseline*)**:
   - *Tidak Bekerja / PHK*: Memacu misi `JOB_APPLICATION` dan `CLIENT_OUTREACH` kilat, mengunci pangan keluarga (`CUT_EXPENSE`).
   - *Freelance / Usaha Kecil*: Memacu penawaran 3 prospek harian dan program langganan bulanan (`BUILD_RECURRING`).
@@ -101,7 +101,35 @@ Arsip kurasi 20 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazin
 19. **Arif Sanyoto (Kang Arif)** — Bangkrut Kerugian Rp 1,5 Miliar & Modal Terakhir Rp 108.000 $\to$ Lumpia Sortalok 5.000 Pcs/Hari & Penulis Buku 27 Hari Bebas Utang
 20. **Bonzor** — Utang Rp 15 Miliar & Selamat dari Racun Serangga $\to$ Makelar Besi, Sedekah Rp 2,5 M, Lunas 40 Hari & Pengasuh 37 Anak Yatim
 
-### 8. 🛡️ 100% Privasi & Offline-First (PWA Service Worker v4 & Self-Hosted Fonts)
+### 8. 📊 Penilaian Kondisi & Prioritas Utang Berbasis Risiko Nyata
+- **Rasio Cicilan terhadap Pemasukan (DTI)** dan **status `NO_INCOME`** sesuai PRD §12, ditampilkan langsung di beranda bersama **kekayaan bersih** dan **sisa hari bertahan**.
+- **Prioritas utang multi-faktor (PRD §17.2)**: bukan sekadar bunga atau jatuh tempo. Skor risiko menimbang **agunan yang bisa disita** (BPKB, sertifikat), **indikasi pemberi pinjaman ilegal** (bunga di atas batas wajar), tunggakan, bunga berjalan, dan **kesepakatan restrukturisasi** yang sudah tercapai.
+- **Empat strategi berfungsi penuh**: Risk First, Avalanche, Snowball, dan **Custom** dengan pengaturan urutan manual.
+- **Alasan prioritas ditampilkan terbuka** pada utang teratas — setiap rekomendasi bisa dijelaskan (PRD §7.6).
+
+### 9. 🔔 Pengingat In-App & Sistem Follow-up (PRD §27)
+Berjalan 100% offline tanpa meminta izin notifikasi apa pun. Dihitung ulang setiap aplikasi dibuka:
+- Utang **jatuh tempo atau sudah menunggak**, lengkap dengan nominal cicilan minimum.
+- **Follow-up peluang kerja** dan **negosiasi kreditur yang belum dijawab**, disertai jalur eskalasi resmi OJK.
+- **Kas kritis** (runway di bawah 7 hari) yang membuka Mode Darurat — pengingat ini sengaja tidak bisa ditutup.
+- **Review mingguan**, lonjakan pengeluaran non-pokok, dan pengingat pencadangan data.
+- Setiap pengingat bisa ditutup untuk hari itu saja, agar tidak berubah jadi spam.
+
+### 10. 🗓️ Review Mingguan, Rencana 90 Hari & Laporan Bulanan
+- **Review Mingguan (PRD §9)** di hari ke-7, 14, 21, dan 28: rekap pemasukan, pengeluaran, pembayaran utang, dan persentase misi — dengan catatan refleksi yang bisa kamu tulis sendiri.
+- **Rencana 90 Hari (PRD §24)**: Recovery → Income Stabilization → Debt Attack, dengan target **dihitung dari angka nyata perjalananmu**, bukan angka karangan. Target bisa kamu sesuaikan sendiri.
+- **Laporan Bulanan (PRD §26)**: arus kas, pemisahan pokok vs bunga utang, aktivitas pemulihan, dan rincian ke mana uang pergi per kategori — bisa dibuka untuk bulan-bulan sebelumnya.
+
+### 11. 🆘 Mode Darurat Terstruktur (PRD §29)
+Checklist delapan langkah bertahan hidup yang urutannya mengikuti prinsip **Survival Before Aggressive Debt Payment**: amankan pangan dan tempat tinggal lebih dulu, **lindungi alat cari nafkah** (jangan jual laptop atau motor kerja), hubungi orang yang dipercaya, hentikan utang baru, baru bicara ke kreditur. Progres checklist tersimpan.
+
+### 12. ♿ Aksesibilitas & Ekspor (PRD §42 & §47)
+- **Focus-trap pada seluruh dialog**, label ARIA, navigasi keyboard penuh (Enter/Spasi pada kartu misi & utang), indikator fokus yang jelas, serta dukungan `prefers-reduced-motion`.
+- **Export CSV** untuk diolah di Excel/Google Sheets, dan **laporan cetak/PDF** lewat dialog cetak bawaan browser — tanpa pustaka eksternal, tetap Zero-CDN dan berfungsi offline.
+- **Lewati misi disertai alasan** tanpa penalti apa pun terhadap progres.
+- **Tombol pasang aplikasi (PWA)** dengan penanganan `beforeinstallprompt`.
+
+### 13. 🛡️ 100% Privasi & Offline-First (PWA Service Worker v4 & Self-Hosted Fonts)
 - Seluruh data transaksi, utang, pengeluaran, dan jurnal tersimpan secara lokal di browser masing-masing (`localStorage`) tanpa server pusat.
 - Font `Plus Jakarta Sans` di-host secara lokal di direktori `/fonts/` untuk memastikan independensi 100% dari jaringan luar.
 - Tersedia fitur Ekspor/Impor JSON dengan validasi skema untuk pencadangan manual.
@@ -122,12 +150,17 @@ d:\Project\ui\
 │   └── styles.css          # Sistem Desain CSS murni (Color tokens, 2-Tier Stats, SOS, Reader, Cards)
 ├── fonts/                  # Berkas font lokal woff2 (Plus Jakarta Sans Regular, SemiBold, Bold)
 ├── js/
-│   ├── icons.js            # Kamus 20+ ikon SVG inline mandiri (Zero-CDN)
-│   ├── helpers.js          # Utilitas format mata uang Rupiah, kalkulasi hari, sanitasi HTML
-│   ├── store.js            # Engine persistensi reaktif localStorage & snapshot harian
+│   ├── icons.js            # Kamus 30+ ikon SVG inline mandiri (Zero-CDN)
+│   ├── helpers.js          # Tanggal lokal (bukan UTC), format Rupiah penuh, validasi nominal
+│   ├── store.js            # Persistensi localStorage, versioning skema, migrasi & validasi import
 │   ├── engine.js           # ScoreEngine, MindsetEngine, ReboundEngine, & Achievements
+│   ├── finance.js          # Assessment (DTI, runway), prioritas utang, laporan bulanan, rencana 90 hari
+│   ├── notify.js           # Pusat pengingat in-app (jatuh tempo, follow-up, kas kritis)
+│   ├── exporter.js         # Ekspor CSV & laporan cetak/PDF tanpa pustaka eksternal
 │   ├── stories.js          # Controller Perpustakaan Kisah & Reader Interaktif (20 Tokoh)
-│   └── app.js              # Router utama, lifecycle controller, 5-Pillar Sync, CRUD & modal SOS
+│   ├── app.js              # Router utama, lifecycle controller, 5-Pillar Sync, CRUD & modal SOS
+│   └── screens.js          # Modul layar tambahan: pengingat, review mingguan, rencana 90 hari,
+│                           #   mode darurat, laporan bulanan, aksesibilitas, install PWA
 └── tests/
     ├── run_all.js                 # Runner terpadu seluruh suite (exit code untuk CI)
     ├── istqb_test_suite.js        # Formal ISTQB Test Suite (EP, BVA, STT, Integration)
@@ -135,6 +168,8 @@ d:\Project\ui\
     ├── audit_all_buttons.js       # Audit otomatis 104 tombol & handler interaktif
     ├── data_integrity.js          # Migrasi skema, validasi import, kuota storage, presisi uang
     ├── timezone_integrity.js      # Regresi tanggal lintas zona waktu (WIB/WITA/WIT + kontrol)
+    ├── features_test.js           # Prioritas utang, DTI, pengingat, laporan bulanan, review, 90 hari
+    ├── search_test.js             # Pencarian Kisah: kontrak DOM (fokus input), cakupan, padanan kata
     └── deep_gap_audit.js          # Sapuan 1.440 permutasi matriks keputusan tanpa gap
 ```
 
@@ -148,9 +183,11 @@ Seluruh logika perhitungan finansial, alur fase pemulihan, dan antarmuka aplikas
 | :--- | :--- | :--- |
 | **Financial Engine & Logic** | Pengujian partisi cashflow, pembagian fase, batasan threshold runway, dan ketahanan data. | **23/23 PASSED (100%)** |
 | **30-Day Lifecycle Simulation** | Simulasi otomatis transisi Hari 1 hingga Hari 30, perhitungan Rebound Score, dan pembukaan achievement. | **23/23 PASSED (100%)** |
-| **Interactive Buttons Audit** | Verifikasi integritas seluruh 104 atribut aksi tombol dan fungsi callback antarmuka. | **104/104 VALID (100%)** |
+| **Interactive Buttons Audit** | Verifikasi integritas seluruh 110 atribut aksi tombol, plus pemeriksaan bahwa setiap berkas skrip yang dimuat halaman ikut diaudit. | **110/110 VALID (100%)** |
 | **Data Integrity & Storage** | Migrasi skema dari backup versi lama, penolakan berkas import asing, pelaporan kuota `localStorage` penuh, presisi nominal & nilai ekstrem. | **58/58 PASSED (100%)** |
 | **Timezone Integrity** | Regresi tanggal pada 6 zona waktu (WIB, WITA, WIT, UTC+14, UTC-8, UTC+5:45) di 7 jam rawan per zona. | **132/132 PASSED (100%)** |
+| **Fitur Pemulihan Lanjutan** | Prioritas utang berbasis agunan & risiko hukum, rasio DTI, status `NO_INCOME`, pengingat follow-up, laporan bulanan, review mingguan, rencana 90 hari, integritas ekspor CSV. | **82/82 PASSED (100%)** |
+| **Pencarian Kisah Bangkit** | Kontrak DOM (mengetik tidak boleh membangun ulang kotak pencarian), cakupan field termasuk kota, pencocokan banyak kata (AND), dan padanan kosakata sehari-hari. | **39/39 PASSED (100%)** |
 | **Decision Matrix Gap Audit** | Sapuan 1.440 permutasi variabel (Pekerjaan × Target × Keahlian × Hari × Kondisi Keuangan), 11 kaidah per permutasi. | **0 GAP / 100% COVERED** |
 
 Untuk menjalankan seluruh pengujian sekaligus:
@@ -165,6 +202,8 @@ node tests/test_simulation_30days.js
 node tests/audit_all_buttons.js
 node tests/data_integrity.js
 node tests/timezone_integrity.js
+node tests/features_test.js
+node tests/search_test.js
 node tests/deep_gap_audit.js
 ```
 
@@ -175,6 +214,10 @@ Tiga aturan berikut mudah dilanggar kembali tanpa disadari, sehingga masing-masi
 1. **Tanggal selalu memakai kalender lokal, bukan UTC.** `new Date().toISOString().split('T')[0]` menghasilkan tanggal KEMARIN antara pukul 00:00–06:59 WIB. Gunakan `H.today()`, `H.toKey()`, dan `H.addDays()`. Dijaga oleh `timezone_integrity.js`.
 2. **Nominal ditampilkan penuh, tidak disingkat.** `H.formatRp()` selalu mencetak `Rp 18.547.300`. Singkatan `Rp 18,5jt` hanya boleh lewat `H.formatRpShort()` untuk ruang sempit — pengguna harus dapat memverifikasi setiap rupiah (PRD §7.6). Dijaga oleh `data_integrity.js`.
 3. **Misi jangkar tiap fase tidak boleh terpangkas.** Daftar misi harian dipotong maksimal 5; tanpa jaminan jangkar, `DEBT_PAYMENT` justru hilang di Fase Debt Attack bagi pengguna yang paling membutuhkannya. Lihat `ReboundEngine.PHASE_ANCHOR`. Dijaga oleh `deep_gap_audit.js`.
+4. **Prioritas utang tidak boleh disederhanakan jadi satu faktor.** PRD §17.2 melarangnya secara eksplisit. `FinanceEngine.riskScore()` wajib tetap menimbang agunan dan risiko hukum, bukan hanya jatuh tempo atau bunga. Dijaga oleh `features_test.js`.
+5. **Bahasa aplikasi tidak menghakimi.** Peringatan pengeluaran dan catatan review mingguan diuji otomatis agar bebas dari kata seperti "boros", "gagal", atau "buruk" (PRD §7.4 No Shame). Dijaga oleh `features_test.js`.
+6. **Setiap berkas skrip baru wajib ikut diaudit.** `audit_all_buttons.js` membandingkan daftar `<script>` di `index.html` dengan daftar yang dimuatnya dan gagal bila ada yang terlewat.
+7. **Handler input tidak boleh membangun ulang elemen input itu sendiri.** Menulis ulang `innerHTML` induk saat pengguna mengetik akan menghancurkan node input dan membuang fokus keyboard — pengguna hanya bisa mengetik satu huruf. Perbarui hanya bagian yang berubah. Dijaga oleh `search_test.js`.
 
 ---
 

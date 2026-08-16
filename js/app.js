@@ -162,6 +162,10 @@ const App = {
       this.showApp();
     }
 
+    // Tombol pasang aplikasi (PWA) — README menjanjikannya sejak awal
+    // tetapi penanganan beforeinstallprompt belum pernah ada.
+    this.pwa && this.pwa.init();
+
     // Smart Virtual Keyboard Focus Centering
     document.addEventListener('focusin', (e) => {
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) {
@@ -326,6 +330,12 @@ const App = {
       stories: () => Stories.render(), settings: () => this.renderSettings(),
     };
     if (renders[screen]) renders[screen]();
+
+    // Modul tambahan yang menempel pada layar tertentu.
+    if (screen === 'plan' && this.plan90) this.plan90.render();
+    if (screen === 'reports' && this.monthly) this.monthly.render();
+    if (this.notifications) this.notifications.updateBadge();
+
     this.refreshIcons();
     window.scrollTo(0, 0);
   },
@@ -448,7 +458,45 @@ const App = {
         ? `<span style="color:var(--green-600);font-weight:600;">Bisa dijual: ${H.formatRp(liquidAssets)}</span>`
         : `<span>Kelola Aset →</span>`;
     }
-    
+
+    // 6. Indikator kesehatan finansial (PRD §12): kekayaan bersih, rasio
+    // cicilan terhadap pemasukan (DTI), dan status runway. Ketiganya
+    // diminta PRD sejak awal tetapi belum pernah ditampilkan.
+    const vitalEl = document.getElementById('dash-vitals');
+    if (vitalEl) {
+      const a = FinanceEngine.assess(s);
+      const warnaDti = { SEHAT: 'var(--green-600)', WASPADA: 'var(--amber-600)',
+        BERAT: 'var(--red-600)', UNDEFINED: 'var(--color-text-muted)' }[a.dtiStatus];
+      const warnaRunway = { SAFE: 'var(--green-600)', WARNING: 'var(--amber-600)',
+        CRITICAL: 'var(--red-600)', UNKNOWN: 'var(--color-text-muted)' }[a.runwayStatus];
+
+      vitalEl.innerHTML = `
+        <div class="vital" title="Total aset dan kas dikurangi seluruh sisa utang">
+          <div class="vital-label">Kekayaan Bersih</div>
+          <div class="vital-value" style="color:${a.netPosition >= 0 ? 'var(--green-600)' : 'var(--red-600)'}">
+            ${a.netPosition >= 0 ? '+' : ''}${H.formatRp(a.netPosition)}
+          </div>
+        </div>
+        <div class="vital">
+          <div class="vital-label">Cicilan vs Pemasukan</div>
+          <div class="vital-value" style="color:${warnaDti}">
+            ${a.dtiRatio === null ? '—' : Math.round(a.dtiRatio * 100) + '%'}
+          </div>
+          <div class="vital-sub">${H.escHtml(FinanceEngine.dtiLabel(a.dtiStatus))}</div>
+        </div>
+        <div class="vital">
+          <div class="vital-label">Sisa Hari Bertahan</div>
+          <div class="vital-value" style="color:${warnaRunway}">
+            ${a.runwayDays === null ? '—' : a.runwayDays + ' hari'}
+          </div>
+          <div class="vital-sub">${H.escHtml(FinanceEngine.runwayLabel(a.runwayStatus))}</div>
+        </div>
+      `;
+    }
+
+    // 7. Pengingat hari ini (PRD §27)
+    this.notifications && this.notifications.render();
+
     // Missions preview
     const todayMissions = ReboundEngine.generate(s);
     this.save();
@@ -541,13 +589,24 @@ const App = {
     const m = missions.find(x=>x.id===id);
     if (m) {
       m.completed = !m.completed;
+      // Menyelesaikan misi otomatis membatalkan status "dilewati" —
+      // sebuah misi tidak boleh tercatat selesai sekaligus dilewati.
+      if (m.completed && m.skipped) {
+        m.skipped = false;
+        delete m.skipReason;
+        delete m.skipNote;
+        delete m.skippedAt;
+      }
       this.save();
       if (m.completed) this.toast('Misi selesai! ✓', 'success');
+      this.a11y && this.a11y.announce(
+        `${m.title} ${m.completed ? 'ditandai selesai' : 'dibatalkan'}`);
       if (this.currentScreen === 'dashboard') {
         this.renderDashboard();
       } else if (this.currentScreen === 'missions') {
         this.renderMissions();
       }
+      this.notifications && this.notifications.refresh();
       this.refreshIcons();
     }
   },
@@ -590,8 +649,13 @@ const App = {
     
     // Counter badge
     const doneCount = missions.filter(m => m.completed).length;
+    const skipCount = missions.filter(m => m.skipped && !m.completed).length;
     const badgeEl = document.getElementById('missions-counter-badge');
-    if (badgeEl) badgeEl.textContent = `${doneCount} / ${missions.length} Selesai`;
+    if (badgeEl) {
+      badgeEl.textContent = skipCount > 0
+        ? `${doneCount} / ${missions.length} Selesai · ${skipCount} dilewati`
+        : `${doneCount} / ${missions.length} Selesai`;
+    }
 
     // 4. Streak
     const streak = ScoreEngine.getStreak(s);
@@ -615,20 +679,34 @@ const App = {
     const listEl = document.getElementById('missions-list');
     if (listEl) {
       listEl.innerHTML = missions.map(m => `
-        <div class="mission-card ${m.completed?'completed':''} priority-${m.priority.toLowerCase()} fade-in" id="m-${m.id}">
+        <div class="mission-card ${m.completed?'completed':''} ${m.skipped?'skipped':''} priority-${m.priority.toLowerCase()} fade-in" id="m-${m.id}">
           <div class="mission-header">
-            <div class="mission-check" onclick="App.toggleMission('${m.id}')">
+            <div class="mission-check" onclick="App.toggleMission('${m.id}')"
+                 role="checkbox" tabindex="0" aria-checked="${m.completed ? 'true' : 'false'}"
+                 aria-label="Tandai selesai: ${H.escHtml(m.title)}"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();App.toggleMission('${m.id}')}">
               ${m.completed ? '✓' : ''}
             </div>
             <div class="mission-content" style="flex:1">
               <div class="mission-type-label">${this.missionTypeLabel(m.type)} · <span class="badge badge-${m.priority.toLowerCase()}">${m.priority}</span></div>
               <div class="mission-title">${H.escHtml(m.title)}</div>
               <div class="mission-description">${H.escHtml(m.desc)}</div>
-              <div style="margin-top:8px;">
+              ${m.skipped ? `
+                <div class="mission-skipped-note">
+                  Dilewati hari ini — ${H.escHtml(m.skipReason || 'tanpa alasan')}${m.skipNote ? ': ' + H.escHtml(m.skipNote) : ''}
+                </div>` : ''}
+              <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
                 <button class="btn btn-sm btn-outline" style="font-size:11px;padding:3px 8px;display:inline-flex;align-items:center;gap:4px;" onclick="event.stopPropagation(); App.missions.showGuide('${m.type}', '${m.id}')">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                   Panduan & Template Siap Pakai
                 </button>
+                ${m.completed ? '' : (m.skipped ? `
+                  <button class="btn btn-sm btn-ghost" style="font-size:11px;padding:3px 8px;" onclick="event.stopPropagation(); App.missionSkip.undo('${m.id}')">
+                    Batalkan Lewati
+                  </button>` : `
+                  <button class="btn btn-sm btn-ghost" style="font-size:11px;padding:3px 8px;color:var(--color-text-secondary)" onclick="event.stopPropagation(); App.missionSkip.open('${m.id}')" aria-label="Lewati misi: ${H.escHtml(m.title)}">
+                    Lewati
+                  </button>`)}
               </div>
             </div>
           </div>
@@ -1041,14 +1119,28 @@ const App = {
   
   // ---- MODALS ----
   openModal(html) {
-    document.getElementById('modal-body').innerHTML = html;
+    const backdrop = document.getElementById('modal-backdrop');
+    const body = document.getElementById('modal-body');
+    body.innerHTML = html;
     setTimeout(() => this.refreshIcons(), 0);
-    document.getElementById('modal-backdrop').classList.add('open');
+    backdrop.classList.add('open');
+
+    // Aksesibilitas (PRD §47): kunci fokus keyboard di dalam dialog agar
+    // pengguna keyboard dan pembaca layar tidak "bocor" ke konten latar
+    // yang sedang tidak dapat diakses.
+    backdrop.setAttribute('role', 'dialog');
+    backdrop.setAttribute('aria-modal', 'true');
+    document.body.classList.add('modal-open');
+    this.a11y && this.a11y.trap(body);
   },
-  
+
   closeModal(e) {
-    if (!e || e.target === document.getElementById('modal-backdrop')) {
-      document.getElementById('modal-backdrop').classList.remove('open');
+    const backdrop = document.getElementById('modal-backdrop');
+    if (!e || e.target === backdrop) {
+      backdrop.classList.remove('open');
+      backdrop.removeAttribute('aria-modal');
+      document.body.classList.remove('modal-open');
+      this.a11y && this.a11y.release(document.getElementById('modal-body'));
     }
   },
   
@@ -1223,22 +1315,22 @@ const App = {
       const s = App.state;
       if (this.step === 1 && this.selectedEmployment) s.profile.employment = this.selectedEmployment;
       if (this.step === 2) {
-        s.profile.monthlyIncome = parseInt(document.getElementById('ob-income').value) || 0;
+        s.profile.monthlyIncome = H.parseRp(document.getElementById('ob-income').value);
         s.profile.incomeFrequency = document.getElementById('ob-income-freq').value;
       }
       if (this.step === 3) {
         s.expenses.essential = {
-          food: parseInt(document.getElementById('ob-exp-food').value) || 0,
-          housing: parseInt(document.getElementById('ob-exp-housing').value) || 0,
-          utilities: parseInt(document.getElementById('ob-exp-utilities').value) || 0,
-          transport: parseInt(document.getElementById('ob-exp-transport').value) || 0,
-          comm: parseInt(document.getElementById('ob-exp-comm').value) || 0,
-          other: parseInt(document.getElementById('ob-exp-other').value) || 0,
+          food: H.parseRp(document.getElementById('ob-exp-food').value),
+          housing: H.parseRp(document.getElementById('ob-exp-housing').value),
+          utilities: H.parseRp(document.getElementById('ob-exp-utilities').value),
+          transport: H.parseRp(document.getElementById('ob-exp-transport').value),
+          comm: H.parseRp(document.getElementById('ob-exp-comm').value),
+          other: H.parseRp(document.getElementById('ob-exp-other').value),
         };
       }
       if (this.step === 5) {
-        s.profile.cash = parseInt(document.getElementById('ob-cash').value) || 0;
-        const assetVal = parseInt(document.getElementById('ob-assets-value').value) || 0;
+        s.profile.cash = H.parseRp(document.getElementById('ob-cash').value);
+        const assetVal = H.parseRp(document.getElementById('ob-assets-value').value);
         if (assetVal > 0 && !s.assets.find(a=>a.name==='Aset Lainnya (estimasi)')) {
           s.assets.push({ id: H.uid(), name: 'Aset Lainnya (estimasi)', category: 'other', value: assetVal, liquidatable: true, keepForWork: false, notes: '' });
         }
@@ -1304,7 +1396,7 @@ const App = {
     saveDebt() {
       const name = document.getElementById('ob-debt-name').value.trim();
       if (!name) { App.toast('Nama utang wajib diisi', 'error'); return; }
-      const remaining = parseInt(document.getElementById('ob-debt-remaining').value) || 0;
+      const remaining = H.parseRp(document.getElementById('ob-debt-remaining').value);
       if (remaining <= 0) { App.toast('Masukkan sisa utang yang valid (> Rp 0)', 'error'); return; }
       const debt = {
         id: H.uid(),
@@ -1312,9 +1404,9 @@ const App = {
         creditor: document.getElementById('ob-debt-creditor').value.trim(),
         original: remaining,
         remaining: remaining,
-        interestMonthly: parseFloat(document.getElementById('ob-debt-interest').value) || 0,
+        interestMonthly: H.parsePercent(document.getElementById('ob-debt-interest').value),
         dueDate: document.getElementById('ob-debt-due').value,
-        minPayment: parseInt(document.getElementById('ob-debt-minpay').value) || 0,
+        minPayment: H.parseRp(document.getElementById('ob-debt-minpay').value),
         collateral: '',
         status: 'ACTIVE',
         notes: '',
@@ -1438,9 +1530,19 @@ const App = {
         const negStatus = d.negotiations && d.negotiations.length > 0
           ? d.negotiations[d.negotiations.length-1].status : 'NOT_CONTACTED';
         
+        const lunas = H.parseRp(d.remaining) === 0;
+        const isCustom = strategy === 'custom';
+        // Alasan prioritas dibuat terlihat: setiap rekomendasi harus bisa
+        // dijelaskan kepada pengguna (PRD §7.6 Transparent Calculation).
+        const alasan = (i === 0 && !lunas)
+          ? FinanceEngine.explainPriority(d, strategy) : '';
+
         return `
-          <div class="debt-card ${i === 0 ? 'priority-target' : ''}" id="debt-card-${d.id}">
-            <div class="debt-card-header" onclick="App.debts.toggleCard('${d.id}')">
+          <div class="debt-card ${i === 0 && !lunas ? 'priority-target' : ''} ${lunas ? 'debt-lunas' : ''}" id="debt-card-${d.id}">
+            <div class="debt-card-header" onclick="App.debts.toggleCard('${d.id}')"
+                 role="button" tabindex="0" aria-expanded="false"
+                 aria-label="Rincian utang ${H.escHtml(d.name)}, sisa ${H.formatRp(d.remaining)}"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();App.debts.toggleCard('${d.id}')}">
               <div>
                 <div class="debt-name">${H.escHtml(d.name)} <span style="font-size:11px;background:var(--slate-100);padding:2px 6px;border-radius:10px;color:var(--slate-600)">#${i+1}</span></div>
                 <div class="debt-creditor">${H.escHtml(d.creditorType || d.creditor || 'Kreditur')} · <span class="negotiation-status neg-${negStatus}">${this.negLabel(negStatus)}</span></div>
@@ -1450,6 +1552,18 @@ const App = {
                 <div class="debt-progress-text">Sisa dari ${H.formatRp(d.original || d.remaining)} (${paidPct}% terbayar)</div>
               </div>
             </div>
+            ${alasan ? `
+              <div class="debt-why" role="note">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <span><strong>Kenapa ini didahulukan:</strong> ${H.escHtml(alasan)}</span>
+              </div>` : ''}
+            ${isCustom && !lunas ? `
+              <div class="debt-reorder" role="group" aria-label="Atur urutan ${H.escHtml(d.name)}">
+                <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();App.debts.moveCustom('${d.id}',-1)"
+                        ${i === 0 ? 'disabled' : ''} aria-label="Naikkan ${H.escHtml(d.name)} satu posisi">↑ Naik</button>
+                <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();App.debts.moveCustom('${d.id}',1)"
+                        aria-label="Turunkan ${H.escHtml(d.name)} satu posisi">↓ Turun</button>
+              </div>` : ''}
             <div class="debt-progress-bar"><div class="debt-progress-fill" style="width:${paidPct}%"></div></div>
             <div class="debt-card-body">
               <div class="debt-meta-grid">
@@ -1487,13 +1601,22 @@ const App = {
               ${d.negotiations && d.negotiations.length > 0 ? `
                 <div style="margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-border)">
                   <div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);margin-bottom:var(--space-2)">Riwayat Negosiasi</div>
-                  ${d.negotiations.map(n=>`
+                  ${d.negotiations.map(n=>{
+                    const telat = n.followUp && H.daysBetween(H.today(), n.followUp) < 0
+                      && ['AGREED','REJECTED'].indexOf(n.status) === -1;
+                    return `
                     <div style="font-size:12px;padding:var(--space-2);background:var(--slate-50);border-radius:var(--radius-md);margin-bottom:4px">
                       <span class="negotiation-status neg-${n.status}">${this.negLabel(n.status)}</span>
                       ${H.escHtml(n.offer||'')} — ${H.formatDate(n.date)}
-                      ${n.followUp ? `<div style="color:var(--amber-600)">Follow-up: ${H.formatDate(n.followUp)}</div>` : ''}
-                    </div>
-                  `).join('')}
+                      ${n.contactPerson || n.channel ? `<div style="color:var(--color-text-secondary);margin-top:3px">
+                        ${n.contactPerson ? 'Narahubung: ' + H.escHtml(n.contactPerson) : ''}${n.contactPerson && n.channel ? ' · ' : ''}${n.channel ? 'via ' + H.escHtml(App.debts.channelLabel(n.channel)) : ''}
+                      </div>` : ''}
+                      ${n.attachment ? `<div style="color:var(--color-text-secondary);margin-top:2px">Bukti: ${H.escHtml(n.attachment)}</div>` : ''}
+                      ${n.followUp ? `<div style="color:var(--${telat ? 'red' : 'amber'}-600);margin-top:2px;font-weight:600">
+                        ${telat ? 'Follow-up terlewat: ' : 'Follow-up: '}${H.formatDate(n.followUp)}
+                      </div>` : ''}
+                    </div>`;
+                  }).join('')}
                 </div>
               ` : ''}
               ${d.payments && d.payments.length > 0 ? `
@@ -1510,22 +1633,48 @@ const App = {
       }).join('');
     },
     
+    /**
+     * Pengurutan didelegasikan ke FinanceEngine agar logika prioritas
+     * bisa diuji tanpa DOM. Versi lama di sini mengabaikan agunan dan
+     * risiko hukum (melanggar PRD §17.2) dan tidak menangani strategi
+     * 'custom' sama sekali — opsi itu ada di dropdown tetapi diam-diam
+     * tidak mengurutkan apa pun.
+     */
     sortDebts(debts, strategy) {
-      if (strategy === 'avalanche') return [...debts].sort((a,b)=>b.interestMonthly-a.interestMonthly);
-      if (strategy === 'snowball') return [...debts].sort((a,b)=>a.remaining-b.remaining);
-      if (strategy === 'risk_first') {
-        return [...debts].sort((a,b)=>{
-          const riskA = a.dueDate ? H.daysBetween(H.today(), a.dueDate) : 999;
-          const riskB = b.dueDate ? H.daysBetween(H.today(), b.dueDate) : 999;
-          return riskA - riskB;
-        });
-      }
-      return debts;
+      return FinanceEngine.sortDebts(debts, strategy);
+    },
+
+    /** Naikkan/turunkan posisi utang pada mode urutan Custom. */
+    moveCustom(id, arah) {
+      const s = App.state;
+      if ((s.settings.debtStrategy || '') !== 'custom') return;
+
+      const urut = FinanceEngine.sortDebts(s.debts, 'custom');
+      const i = urut.findIndex(d => d.id === id);
+      const j = i + arah;
+      if (i === -1 || j < 0 || j >= urut.length) return;
+
+      const tmp = urut[i];
+      urut[i] = urut[j];
+      urut[j] = tmp;
+
+      // Tulis ulang seluruh nomor urut supaya rapat dan stabil.
+      urut.forEach((d, idx) => { d.customOrder = idx; });
+
+      App.save();
+      this.render();
+      App.toast(`"${tmp.name}" dipindahkan ke urutan ${j + 1}`, 'info');
     },
     
     negLabel(status) {
       const map = { NOT_CONTACTED:'Belum dihubungi', CONTACTED:'Sudah dihubungi', NEGOTIATING:'Negosiasi', AGREED:'Setuju', REJECTED:'Ditolak', FOLLOW_UP:'Follow-up' };
       return map[status] || status;
+    },
+
+    channelLabel(ch) {
+      const map = { email:'Email', whatsapp:'WhatsApp', telepon:'Telepon',
+        surat:'Surat resmi', datang:'Datang langsung', aplikasi:'Chat aplikasi' };
+      return map[ch] || ch;
     },
     
     toggleCard(id) {
@@ -1535,8 +1684,23 @@ const App = {
     
     setStrategy(val) {
       App.state.settings.debtStrategy = val;
+
+      // Saat pertama kali beralih ke Custom, ambil urutan yang sedang
+      // tampil sebagai titik awal — supaya daftar tidak "melompat"
+      // menjadi urutan penambahan yang terasa acak bagi pengguna.
+      if (val === 'custom' && App.state.debts.some(d => !Number.isFinite(d.customOrder))) {
+        const sebelumnya = FinanceEngine.sortDebts(App.state.debts, 'risk_first');
+        sebelumnya.forEach((d, idx) => {
+          if (!Number.isFinite(d.customOrder)) d.customOrder = idx;
+        });
+      }
+
       App.save();
       this.render();
+
+      if (val === 'custom') {
+        App.toast('Mode Custom aktif — atur urutan dengan tombol ↑ ↓ pada tiap kartu utang', 'info');
+      }
     },
     
     showAdd() {
@@ -1607,7 +1771,7 @@ const App = {
         creditorType,
         original: remaining,
         remaining,
-        interestMonthly: parseFloat(document.getElementById('d-interest').value) || 0,
+        interestMonthly: H.parsePercent(document.getElementById('d-interest').value),
         minPayment: H.parseRp(document.getElementById('d-minpay').value) || 0,
         dueDate: document.getElementById('d-due').value,
         collateral: document.getElementById('d-collateral').value.trim(),
@@ -1702,16 +1866,39 @@ const App = {
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Detail</label>
+          <label class="form-label" for="neg-offer">Detail</label>
           <textarea class="form-input form-textarea" id="neg-offer" placeholder="Jelaskan situasimu secara jujur..."></textarea>
         </div>
         <div class="form-group">
-          <label class="form-label">Tanggal Kontak</label>
-          <input type="date" class="form-input" id="neg-date" value="${H.today()}">
+          <label class="form-label" for="neg-contact">Nama Petugas / Narahubung</label>
+          <input class="form-input" id="neg-contact" placeholder="mis. Ibu Rina (bagian penagihan)">
+          <div class="form-hint">Catat namanya. Bila janji lisan tidak ditepati, kamu punya rujukan konkret.</div>
         </div>
         <div class="form-group">
-          <label class="form-label">Tanggal Follow-up Berikutnya</label>
-          <input type="date" class="form-input" id="neg-followup">
+          <label class="form-label" for="neg-channel">Kanal Komunikasi</label>
+          <select class="form-input form-select" id="neg-channel">
+            <option value="email">Email (paling kuat sebagai bukti)</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="telepon">Telepon</option>
+            <option value="surat">Surat resmi</option>
+            <option value="datang">Datang langsung ke kantor</option>
+            <option value="aplikasi">Chat di aplikasi kreditur</option>
+          </select>
+          <div class="form-hint">Ajukan secara tertulis bila memungkinkan — jejak tertulis yang dipakai OJK bila perlu eskalasi.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="neg-attachment">Bukti yang Disimpan</label>
+          <input class="form-input" id="neg-attachment" placeholder="mis. Screenshot chat 12 Agu, balasan email di folder Utang">
+          <div class="form-hint">Aplikasi tidak menyimpan berkasnya (semua data hanya di perangkatmu). Tulis di mana kamu menyimpannya.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="neg-date">Tanggal Kontak</label>
+          <input type="date" class="form-input" id="neg-date" value="${H.today()}" max="${H.today()}">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="neg-followup">Tanggal Follow-up Berikutnya</label>
+          <input type="date" class="form-input" id="neg-followup" value="${H.addDays(H.today(), 7)}" min="${H.today()}">
+          <div class="form-hint">Kamu akan diingatkan otomatis di beranda saat tanggal ini tiba.</div>
         </div>
         <div style="display:flex;gap:var(--space-3)">
           <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
@@ -1727,18 +1914,31 @@ const App = {
     saveNegotiation(id) {
       const debt = App.state.debts.find(d=>d.id===id);
       if (!debt) return;
+      const val = (elId) => {
+        const el = document.getElementById(elId);
+        return el ? String(el.value || '').trim() : '';
+      };
+
+      const followUp = val('neg-followup');
       debt.negotiations = debt.negotiations || [];
       debt.negotiations.push({
         id: H.uid(),
-        status: document.getElementById('neg-status').value,
-        offer: document.getElementById('neg-offer').value.trim(),
-        date: document.getElementById('neg-date').value,
-        followUp: document.getElementById('neg-followup').value,
+        status: val('neg-status'),
+        offer: val('neg-offer'),
+        date: val('neg-date') || H.today(),
+        followUp,
+        // Field PRD §18 yang sebelumnya tidak pernah dicatat.
+        contactPerson: val('neg-contact'),
+        channel: val('neg-channel'),
+        attachment: val('neg-attachment'),
       });
       App.save();
       App.closeModal();
       this.render();
-      App.toast('Negosiasi dicatat ✓', 'success');
+      App.notifications && App.notifications.refresh();
+      App.toast(followUp
+        ? `Negosiasi dicatat ✓ Kamu akan diingatkan pada ${H.formatDate(followUp)}`
+        : 'Negosiasi dicatat ✓', 'success');
     },
     
     showEdit(id) {
@@ -1785,7 +1985,7 @@ const App = {
       if (!d) return;
       d.name = document.getElementById('ed-name').value.trim() || d.name;
       d.remaining = H.parseRp(document.getElementById('ed-remaining').value) || d.remaining;
-      d.interestMonthly = parseFloat(document.getElementById('ed-interest').value) || 0;
+      d.interestMonthly = H.parsePercent(document.getElementById('ed-interest').value);
       d.minPayment = H.parseRp(document.getElementById('ed-minpay').value) || 0;
       d.dueDate = document.getElementById('ed-due').value;
       App.save();
