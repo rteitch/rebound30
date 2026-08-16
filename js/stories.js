@@ -2098,6 +2098,92 @@ const Stories = {
         'Jatuh Dua Kali Bukan Aib — Tidak Bangkit Itulah Aibnya: Titik terendah pertama dan kedua adalah bagian dari perjalanan, bukan tanda kelemahan permanen.',
         'Cintai Prosesnya, Bukan Hanya Hasilnya: Baim tidak bisa berhenti dari kuliner meski terus gagal — karena ia benar-benar mencintainya. Gairah yang tulus akan membuat seseorang terus mencoba sampai menemukan formula yang tepat.'
       ]
+    },
+    {
+      id: 'krisna',
+      featured: false,
+      name: 'Krisna Mukti',
+      tagline: 'Dari Utang Rp 2 Miliar & Depresi Pasca Gagal Pileg 2019, Bangkit Berkat Koleksi Antik yang Diselamatkan',
+      title: 'Hobi yang Menjadi Penyelamat di Saat Paling Gelap',
+      subtitle: 'Aktor, Presenter & Mantan Anggota DPR RI 2014–2019 — Bangkit dari Utang Rp 2 Miliar dan Depresi',
+      origin: 'Jakarta',
+      ageAtRebound: '40-an Thn',
+      categories: ['debt', 'zero', 'indonesia'],
+      categoryLabel: 'Utang Rp 2 M',
+      badge: 'Lunas — Koleksi Antik sebagai Jalan Keluar',
+      theme: 'amber',
+      accentColor: '#92400E',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Rp 2 Miliar',
+        age: '40-an Tahun',
+        lowest: 'Gagal Pileg 2019, Pandemi COVID, Depresi, Tabungan Nol Minus',
+        action: 'Jual Koleksi Antik (Rugi, Tapi Ikhlas)',
+        result: 'Utang Rp 2 M Lunas, Hidup Berlanjut dengan Syukur'
+      },
+      timeline: [
+        { year: '2014–2019', text: 'Menjabat sebagai anggota DPR RI. Karir politik berjalan berdampingan dengan karir hiburan sebagai aktor dan presenter.' },
+        { year: '2019 — Gagal Pileg', text: 'Habiskan seluruh tabungan, aset, dan berutang demi kampanye. Tidak terpilih kembali. Utang Rp 2 miliar tersisa.' },
+        { year: '2020 — Pandemi COVID', text: 'Dunia hiburan berhenti. Pendapatan lenyap. Tabungan nol bahkan minus. Depresi berat melanda.' },
+        { year: 'Titik Balik — Hidayah', text: 'Mendapat dorongan untuk menjual koleksi barang antik yang dikumpulkan bertahun-tahun — meski harus rela rugi besar.' },
+        { year: 'Hari Ini — Lunas', text: 'Seluruh utang Rp 2 miliar lunas dari hasil menjual koleksi antik. "Alhamdulillah, Allah tidak hanya memberi ujian, tapi juga solusinya."' }
+      ],
+      quote: 'Allah tidak hanya memberikan ujian, tapi juga memberikan solusinya.',
+      quoteAuthor: 'Krisna Mukti, aktor dan mantan anggota DPR RI',
+      chapters: [
+        {
+          num: 1,
+          title: 'Panggung yang Mulai Meredup',
+          paragraphs: [
+            'Tahun 2019. Krisna Mukti, seorang aktor dan presenter yang namanya sudah dikenal luas, sedang berada di persimpangan jalan. Ia telah menjabat sebagai anggota DPR RI periode 2014–2019. Kini, ia maju lagi dalam Pemilu Legislatif 2019. Ia mengerahkan segalanya — tabungan pribadi, seluruh aset yang dimiliki, bahkan sampai berutang — demi bisa kembali ke Senayan.',
+            'Tapi hasil akhir berkata lain. Ia gagal. Kursi yang dulu ia duduki, kini berpindah tangan. "Ya pas itu kan karena sudah jarang tampil di TV. Jadi berasa banget itu biaya yang dikeluarkan dan pandemi," kenangnya kemudian.',
+            'Dua dunia yang selama ini menopang hidupnya — panggung politik dan panggung hiburan — runtuh hampir bersamaan. Dan yang tertinggal hanyalah tumpukan tagihan yang semakin hari semakin berat.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 2 Miliar, Pandemi, dan Depresi',
+          paragraphs: [
+            'Kegagalan politik meninggalkan luka yang dalam. Tapi luka terbesar datang dari beban finansial yang menggunung: utang Rp 2 miliar. Dan di saat yang bersamaan, pandemi COVID-19 melanda. Dunia hiburan berhenti berputar. Panggung-panggung yang dulu ramai, kini sepi. Krisna Mukti kehilangan pekerjaannya sebagai aktor dan presenter.',
+            '"Uang di tabungan nol bahkan minus, utang masih numpuk," ucapnya. Ia berada di titik terendah. Setiap malam, ia terbaring di ranjang, memandang langit-langit, bertanya pada dirinya sendiri bagaimana caranya keluar dari sini.',
+            'Tekanan itu terasa begitu berat hingga ia jatuh dalam depresi. "Depresi? Pasti dong, utang numpuk, tabungan nol sampai minus malahan," tuturnya jujur. Tidak ada jalan yang terlihat. Tidak ada cahaya di ujung terowongan — atau setidaknya, begitulah rasanya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Hidayah di Tengah Gelap — Koleksi Antik yang Terlupakan',
+          paragraphs: [
+            'Di tengah keputusasaan itulah, sebuah pemikiran muncul di benaknya — seperti bisikan yang tak terduga: kamu kan masih punya barang antik yang bisa dijual.',
+            'Krisna Mukti memang dikenal sebagai penggemar barang-barang antik. Selama bertahun-tahun, ia telah mengumpulkan koleksi yang berharga — dari berbagai daerah, dari berbagai era. Selama ini ia hanya menyimpannya sebagai hobi, sebagai kenangan, sebagai kecintaan yang ia rawat dalam diam.',
+            'Kini, hobi itu menjadi penyelamat. "Kayak dapat hidayah, akhirnya gue jual-jualin (barang antik)," ungkapnya. Bukan sesuatu yang ia rencanakan. Bukan strategi bisnis yang matang. Tapi sebuah dorongan yang datang di saat paling gelap — dan ia memilih untuk mengikutinya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Menjual dengan Hati Rela — Beli Rp 10 Juta, Jual Rp 1 Juta',
+          paragraphs: [
+            'Ia mulai menjual koleksinya satu per satu. Tapi ia tidak bisa berharap banyak. Kondisi ekonomi sedang sulit. Pembeli sulit dicari. Daya beli masyarakat sedang lesu di tengah pandemi. Ia harus rela menjual dengan harga jauh di bawah nilai beli.',
+            '"Misalnya beli Rp 10 juta, saya jual Rp 1 juta atau Rp 2 juta. Yang penting bisa bertahan hidup," jelasnya. Setiap kali ia melepas sebuah barang, ada rasa sakit di hatinya — kenangan yang ikut pergi bersama benda-benda itu. Tapi ia tahu, ini adalah jalan yang harus ia tempuh.',
+            '"Dan bener, ternyata pas pandemik itu laku walaupun jual murah," lanjut Krisna. Perlahan, dari satu penjualan ke penjualan berikutnya, utang Rp 2 miliar yang dulu terasa seperti gunung, mulai terkikis. Sedikit demi sedikit. Dengan pengorbanan demi pengorbanan.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas dan Hikmah dari Setiap Kegagalan',
+          paragraphs: [
+            '"Udah selesai, (karena) jualan barang antik," kata Krisna Mukti. Utang Rp 2 miliar yang selama bertahun-tahun membebaninya, akhirnya lunas. Ia menarik napas panjang. Beban yang menggantung di pundaknya, akhirnya terlepas. "Alhamdulillah, Allah tidak hanya memberikan ujian, tapi juga memberikan solusinya," ujarnya.',
+            'Dari pengalaman pahitnya, ia belajar satu hal yang sederhana namun dalam. "Pelajaran dan hikmah dari kegagalan menjadi anggota dewan itu yang paling penting buat saya," pungkasnya. Ia juga menyadari bahwa hobinya mengoleksi barang antik — yang dulu mungkin dianggap sekadar kesenangan — ternyata menjadi jalan keluar di saat yang paling sulit.',
+            'Kini, Krisna Mukti melanjutkan hidup dengan semangat baru. Dari seorang aktor yang kehilangan panggung, dari seorang politisi yang gagal kembali ke Senayan, dari seorang pria yang terjerat utang Rp 2 miliar dan depresi — kini ia berdiri sebagai bukti bahwa di balik setiap kegelapan, selalu ada cahaya. Dan terkadang, cahaya itu datang dari hal-hal yang selama ini kita anggap biasa — seperti sebuah koleksi antik yang kita simpan bertahun-tahun.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Aset Non-Likuid Bisa Menjadi Penyelamat Darurat: Koleksi antik, perhiasan, kendaraan, atau barang berharga lain adalah aset yang bisa dicairkan di situasi krisis — meskipun harganya jauh dari harapan.',
+        'Jual Rugi Lebih Baik dari Tidak Bayar Utang: Menjual Rp 10 juta dengan harga Rp 1 juta terasa menyakitkan, tapi jauh lebih baik daripada membiarkan utang berbunga dan merusak reputasi.',
+        'Depresi adalah Tanda — Bukan Akhir: Krisna mengakui depresinya secara terbuka. Mengenali dan menerima kondisi mental yang berat adalah langkah pertama untuk mulai mencari jalan keluar.',
+        'Hobi Bisa Menjadi Aset Darurat: Apa yang kamu kumpulkan hari ini — entah barang, keahlian, atau jaringan — bisa menjadi penyelamat di hari yang tidak pernah kamu bayangkan.'
+      ]
     }
   ],
 
