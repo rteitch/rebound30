@@ -552,6 +552,102 @@ const Stories = {
       ]
     },
     {
+      id: 'dian',
+      featured: false,
+      name: 'Dian Agustin',
+      tagline: 'Dari 350 Cabang Bisnis Bangkrut & Utang Rp 500 Juta Menjadi Pendiri Kerajaan Sambal Alu 150 Karyawan',
+      title: 'Dari Bedeng Sederhana ke Kerajaan Sambal',
+      subtitle: 'Pendiri & Owner Sambal Alu, Bandar Lampung',
+      origin: 'Bandar Lampung, Lampung',
+      ageAtRebound: 'Ibu 2 Anak',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 500 Jt & Bedeng',
+      badge: '150 Karyawan & Sukses Berkah',
+      theme: 'amber',
+      accentColor: '#EA580C',
+      bgLight: '#FFF7ED',
+      borderLight: '#FFEDD5',
+      stats: {
+        debt: 'Rp 500 Juta (Bisnis Runtuh)',
+        age: 'Ibu 2 Anak',
+        lowest: 'Tinggal di Bedeng dengan Modal Rp 100.000',
+        action: 'Uji Ngangenin & Peluncuran Sambal Alu 2017',
+        result: '150 Karyawan & Fasilitas Umrah Berkah'
+      },
+      timeline: [
+        { year: 'Awal Perjuangan', text: 'Merantau ke Solo, bekerja sebagai kapster salon dan asisten rumah tangga demi membiayai kuliah.' },
+        { year: 'Puncak Kejayaan Awal', text: 'Membangun 12 merek kuliner berbeda, termasuk waralaba pizza yang meroket hingga 350 cabang di seluruh Indonesia.' },
+        { year: 'Prahara & Kehancuran', text: 'Prahara rumah tangga berujung kebangkrutan total. Seluruh 350 cabang runtuh seketika dengan sisa utang Rp 500 juta.' },
+        { year: 'Titik Terendah Bedeng', text: 'Tinggal di bedeng sederhana bersama 2 anaknya dengan sisa uang Rp 100.000, depresi berat hingga terbersit ingin mengakhiri hidup.' },
+        { year: '2017 — Lahirnya Sambal Alu', text: 'Bangkit berserah kepada Tuhan, meramu saripati ilmu bisnisnya, melakukan "Uji Ngangenin", dan meluncurkan Sambal Alu di Lampung.' },
+        { year: 'Hari Ini — Sukses Berkah', text: 'Memimpin kerajaan kuliner Sambal Alu dengan 150 karyawan, melunasi seluruh utang, dan memberi fasilitas umrah serta beasiswa anak karyawan.' }
+      ],
+      quote: 'Kita terlalu fokus dengan hati manusia tapi lupa dengan siapa yang membuat hati. Saya hanya ingin mencari sukses berkah—sukses yang mendatangkan ketenangan, kebahagiaan, serta kebermanfaatan dunia dan akhirat.',
+      quoteAuthor: 'Dian Agustin, pendiri Sambal Alu',
+      chapters: [
+        {
+          num: 1,
+          title: 'Perempuan dari Tanah Sederhana',
+          paragraphs: [
+            'Dian Agustin lahir dari keluarga yang sangat sederhana. Ia tumbuh dengan tekad baja untuk mengangkat harkat dan martabat orang tuanya melalui jalur pendidikan.',
+            'Masa kecilnya penuh dengan keterbatasan. Ia pernah hidup menumpang di rumah kerabat tanpa memiliki fasilitas toilet pribadi. Namun kondisi serba kekurangan itu tidak mematahkan semangatnya, melainkan menjadi cambuk motivasi terbesar dalam hidupnya.',
+            'Dengan tekad mandiri, ia merantau ke Solo. Demi membiayai kuliahnya sendiri, Dian bekerja membanting tulang sebagai kapster salon hingga asisten rumah tangga. Tangannya yang dulu telaten memijat kepala dan menyapu lantai orang lain, kelak akan memegang ulekan cobek untuk membangun kerajaan bisnis sambalnya sendiri.'
+          ]
+        },
+        {
+          num: 2,
+          title: '350 Cabang yang Runtuh dalam Sekejap',
+          paragraphs: [
+            'Setelah lulus kuliah dan sempat berkarier sebagai penyiar radio, Dian memberanikan diri terjun total ke dunia wirausaha kuliner. Naluri bisnisnya terbukti tajam.',
+            'Ia berhasil meluncurkan 12 merek kuliner berbeda. Salah satu mahakaryanya adalah waralaba pizza lokal yang meroket dahsyat hingga memiliki 350 cabang di berbagai kota di seluruh Indonesia. Dari seorang gadis desa yang serba kekurangan, namanya melambung sebagai pengusaha wanita yang diperhitungkan.',
+            'Namun badai kehidupan datang tanpa permisi. Prahara dalam kehidupan rumah tangganya memicu perpecahan manajemen yang menghancurkan fondasi bisnisnya seketika. 350 cabang yang dulu ramai mendadak gulung tikar satu per satu. Bangkrut total tanpa sisa.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Rp 100.000 di Sebuah Bedeng Sederhana',
+          paragraphs: [
+            'Kejatuhan itu melempar Dian ke titik paling kelam dalam hidupnya. Ia mendapati dirinya tinggal di sebuah bedeng sempit dan sederhana bersama kedua anaknya yang masih kecil.',
+            'Di dalam sakunya, uang yang tersisa hanya selembar uang Rp 100.000 untuk membeli makan esok hari, sementara di pundaknya membayangi tumpukan utang bisnis sebesar Rp 500 juta yang terus ditagih.',
+            'Depresi berat merenggut ketenangan harinya. Dalam keputusasaan yang sunyi menatap masa depan kedua anaknya, untuk pertama kali dalam hidupnya, terbersit bisikan gelap untuk mengakhiri hidup karena merasa tidak tahu lagi harus melangkah ke mana.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Tamparan yang Menyadarkan',
+          paragraphs: [
+            'Di tengah kegelapan yang mencekam itu, seorang sahabat datang dan memberinya sebuah tamparan kata-kata yang menusuk sanubari: "Kamu sampai kapan mau menangis? Yang kamu tangisi sedang bersenang-senang di luar sana, sementara kamu menghancurkan dirimu dan masa depan anak-anakmu!"',
+            'Kata-kata keras itu bagai kilat yang menyambar kesadarannya. Dian tersentak menangis tersedu-sedu. Ia menyadari kesalahannya selama ini: ia terlalu bergantung pada sanjungan dan cinta manusia, hingga lupa pada Sang Pencipta yang memegang kendali atas segala takdir.',
+            'Dian bersujud memasrahkan seluruh hidup dan air matanya. Ketenangan batin yang luar biasa merayap ke dalam jiwanya. Dengan hati yang lapang dan kepala dingin, ia memutuskan untuk bangkit bertarung sekali lagi.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Sambal Alu dan "Uji Ngangenin"',
+          paragraphs: [
+            'Dian tidak memulai dari nol; ia memulai dari saripati ilmu dan pengalaman mahal dari 12 brand yang pernah ia bangun sebelumnya. Pada tahun 2017 di Bandar Lampung, lahirlah brand "Sambal Alu".',
+            'Ia mempopulerkan konsep nasi liwet hangat dengan sambal ulek segar makan sepuasnya via penjualan daring dan gerai makan. Sebelum peluncuran besar, Dian menerapkan metode "Uji Ngangenin"—ia membagikan ratusan porsi sambal gratis kepada masyarakat untuk memvalidasi tingkat kepuasan dan daya beli ulang (repeat order).',
+            'Respons pasar meledak. Cita rasa sambalnya yang gurih, pedas pas, dan bikin rindu membuat antrean pembeli mengular panjang setiap hari. Sambal Alu menjadi fenomena kuliner baru di Lampung.'
+          ]
+        },
+        {
+          num: 6,
+          title: 'Sukses Berkah',
+          paragraphs: [
+            'Hari ini, Sambal Alu telah bertransformasi menjadi kerajaan kuliner megah dengan mempekerjakan sekitar 150 orang karyawan. Seluruh sisa utang Rp 500 juta di masa lalu telah lunas terbayar tuntas.',
+            'Namun kebanggaan terbesar Dian adalah pergeseran visinya: bukan lagi sekadar mengejar profit duniawi, melainkan mewujudkan "Sukses Berkah". Dian menyediakan program kemudahan umrah bagi para stafnya, standar gaji di atas rata-rata industri, hingga fasilitas beasiswa pendidikan bagi anak-anak karyawan.',
+            'Dian Agustin membuktikan bahwa dari bedeng tersempit dengan sisa Rp 100.000 sekalipun, seorang ibu yang berserah pada Tuhan dan pantang menyerah mampu membangun kembali peradaban bisnis yang memuliakan ratusan keluarga.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Modal Pengalaman Lebih Berharga dari Uang: Bangkrutnya bisnis lama tidak menghapus ilmu strategimu. Jadikan kegagalan sebagai saripati fondasi bisnis baru.',
+        'Validasi Produk ("Uji Ngangenin"): Bagikan sampel gratis ke ratusan calon pelanggan untuk memastikan produkmu benar-benar dicintai pasar sebelum ekspansi.',
+        'Berserah Diri Mengusir Depresi: Ketenangan batin dari Sang Pencipta adalah kunci pemulihan akal sehat dari jeratan utang dan trauma kegagalan.',
+        'Visi Sukses Berkah: Keberhasilan tertinggi dalam bisnis adalah seberapa banyak keberkahan dan kesejahteraan yang kita bagikan kepada karyawan dan sesama.'
+      ]
+    },
+    {
       id: 'rini',
       featured: false,
       name: 'Rini Sudarwanti',
