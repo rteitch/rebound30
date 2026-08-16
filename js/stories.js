@@ -2012,6 +2012,92 @@ const Stories = {
         'Keberanian Terbesar adalah Berhenti Berutang: Ketika utang sudah di luar kendali, keputusan paling berani bukan meminjam lagi untuk menambal — melainkan berhenti, menjual aset, dan membayar bertahap.',
         'Naik Kelas dari Agen ke Produsen: Setelah bebas utang, jangan kembali ke model bisnis yang sama. Gunakan pengalaman pahit itu sebagai modal membangun usaha yang lebih mandiri dan bernilai lebih tinggi.'
       ]
+    },
+    {
+      id: 'baim',
+      featured: false,
+      name: 'Baim Wong (Muhammad Ibrahim)',
+      tagline: 'Dari Restoran Bangkrut & Utang Rp 1,5 Miliar, Dua Kali Jatuh — Tidak Pernah Berhenti Bangkit',
+      title: 'Dua Kali Jatuh, Dua Kali Bangkit',
+      subtitle: 'Aktor, Presenter & Pengusaha Indonesia — Pemilik Pablo Restaurant yang Bangkit dari Utang Rp 1,5 Miliar',
+      origin: 'Jakarta',
+      ageAtRebound: '30-an Thn',
+      categories: ['debt', 'bankrupt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 1,5 M',
+      badge: 'Bangkit 2x dari Titik Terendah',
+      theme: 'indigo',
+      accentColor: '#4338CA',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: 'Rp 1,5 Miliar (Sendirian)',
+        age: '30-an Tahun',
+        lowest: 'Pablo Restaurant Bangkrut 2012 + Keluar Sinemart 2018',
+        action: 'Lunasi Utang Mandiri, Tidak Menyerah',
+        result: 'Bangkit Dua Kali — Aktor, Kreator, & Pengusaha'
+      },
+      timeline: [
+        { year: '2007–2013', text: 'Bisnis kuliner berulang kali bangkrut. Orang tuanya melarang. Tapi Baim tidak bisa berhenti — ia mencintai dunia desain dan makanan.' },
+        { year: '2012 — Titik Terendah #1', text: 'Pablo Restaurant di Kemang bangkrut. Utang Rp 1,5 miliar harus dilunasi seorang diri, tanpa bantuan siapa pun.' },
+        { year: 'Bangkit #1', text: 'Melunasi seluruh utang secara mandiri sambil terus berkarir sebagai aktor dan publik figur.' },
+        { year: '2018 — Titik Terendah #2', text: 'Keluar dari rumah produksi Sinemart. Titik terendah kedua dalam hidupnya.' },
+        { year: 'Bangkit #2', text: 'Kembali bangkit, beradaptasi, dan terus berkarya. Keputusan salah bukan akhir — melainkan pelajaran untuk bangkit lagi.' }
+      ],
+      quote: 'Keputusan itu pasti banyak salah, cuma gimana kita melihat sisi positifnya, bangkit lagi, bangkit lagi.',
+      quoteAuthor: 'Baim Wong, aktor dan pengusaha Indonesia',
+      chapters: [
+        {
+          num: 1,
+          title: 'Restoran di Kemang dan Mimpi yang Runtuh',
+          paragraphs: [
+            'Tahun 2012. Baim Wong berdiri di depan Pablo Restaurant di Kemang, Jakarta Selatan — restoran yang ia bangun dengan segenap hati dan harapan. Dulu tempat ini ramai. Dulu ia percaya bahwa bisnis kuliner adalah jalan hidupnya. Tapi kini, pintu-pintunya tertutup. Meja-meja kosong. Dapur tak lagi mengepulkan asap.',
+            'Restorannya bangkrut. Dan yang tersisa hanyalah utang Rp 1,5 miliar yang menggunung di pundaknya. "Saya ada di titik terendah itu dua kali, 2012 sama 2018," kenangnya kemudian.',
+            'Tahun 2012 adalah yang pertama. Dan yang paling menyakitkan: ia harus melunasi utang itu seorang diri. Tidak ada yang membantunya. Tidak ada rekan bisnis yang berbagi beban. Tidak ada keluarga yang turun tangan. Ia sendiri yang bertanggung jawab penuh atas setiap rupiahnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Gila dan Coba Lagi — Tujuh Tahun Gagal Berturut-turut',
+          paragraphs: [
+            'Tapi kegagalan di 2012 bukanlah yang pertama. Antara tahun 2007 hingga 2013, restoran-restoran yang ia kelola selalu bangkrut. Ia mencoba. Gagal. Mencoba lagi. Gagal lagi. Dan mencoba lagi. "Gue tuh gila sih, coba lagi, lagi," ujarnya.',
+            'Orang tuanya bahkan sampai melarangnya. "Im, jangan restoran lagi ya," kata mereka. Mereka khawatir melihat anaknya terus menerus jatuh dalam lubang yang sama. Tapi Baim tidak bisa berhenti. Ia mencintai dunia kuliner. Ia suka desain. Ia suka makanan.',
+            'Namun di tengah semua kecintaan itu, ia akhirnya mengenali kelemahan terbesarnya dengan jujur. "Yang gue nggak bisa itu finance," akunya terus terang. Bukan produknya yang buruk. Bukan konsepnya yang salah. Melainkan pengelolaan keuangan yang tidak ia kuasai — dan itu yang menghancurkan semuanya.'
+          ]
+        },
+        {
+          num: 3,
+          title: '2018 — Jatuh untuk Kedua Kalinya',
+          paragraphs: [
+            'Setelah berhasil bangkit dari utang Rp 1,5 miliar dan melunasi seluruhnya secara mandiri, Baim kembali terjatuh. Tahun 2018, ia memutuskan keluar dari sebuah rumah produksi besar — Sinemart. Keputusan itu menghadirkan konsekuensi yang tidak ringan.',
+            'Itu adalah titik terendah kedua dalam hidupnya. Dua kali ia berada di jurang. Dua kali ia merasakan pahitnya kegagalan — pertama sebagai pengusaha kuliner, kedua sebagai orang yang harus meninggalkan zona nyaman karirnya.',
+            'Bagi banyak orang, satu kejatuhan saja cukup untuk mematahkan semangat. Tapi Baim telah membuktikan bahwa ia bukan orang kebanyakan. Ia tidak pernah benar-benar berhenti — hanya berhenti sebentar untuk mengambil napas, lalu melanjutkan perjalanan.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Filosofi Seorang Pejuang yang Tidak Kenal Bosan Kalah',
+          paragraphs: [
+            '"Keputusan itu pasti banyak salah, cuma gimana kita melihat sisi positifnya, bangkit lagi, bangkit lagi," katanya. Ia tidak pernah bosan kalah. Ia selalu mencoba lagi dan lagi. Baginya, kegagalan bukanlah akhir — melainkan bagian dari proses belajar yang tidak bisa dilewati dengan jalan pintas.',
+            'Dari pengalaman pahitnya, Baim belajar bahwa kesuksesan tidak hanya tentang bakat atau ide bagus. Ia juga tentang pengelolaan keuangan yang bijak — tentang mengetahui kelemahan diri dan mencari orang yang bisa menutupinya. Ia pandai di desain dan rasa, tapi ia butuh seseorang yang kuat di angka.',
+            'Pelajaran itu mahal harganya — Rp 1,5 miliar dan bertahun-tahun kegagalan. Tapi pelajaran itulah yang membentuknya menjadi pengusaha yang lebih bijak, lebih sadar diri, dan lebih tangguh dari sebelumnya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Jatuh Berkali-kali, Berdiri Lebih Tegak',
+          paragraphs: [
+            'Kisah Baim Wong mengajarkan satu hal yang sederhana namun dalam: kadang, kita harus jatuh berkali-kali sebelum benar-benar bisa berdiri tegak. Bukan karena kita bodoh atau tidak berbakat — tapi karena ada pelajaran tertentu yang hanya bisa dipahami setelah mengalaminya sendiri.',
+            'Dari restoran yang bangkrut berturut-turut, dari utang Rp 1,5 miliar yang harus ia lunasi sendiri, dari dua titik terendah dalam hidupnya — Baim Wong tidak pernah berhenti. Ia terus melangkah, terus mencoba, terus belajar.',
+            'Dan itulah yang membuatnya tetap berdiri sampai hari ini. Bukan karena ia tidak pernah jatuh, tapi karena setiap kali jatuh, ia memilih untuk bangkit. Lagi. Dan lagi.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kenali Kelemahan Finansialmu Sebelum Terlambat: Baim pandai di desain dan makanan, tapi lemah di finance. Kenali di mana lubangnya dan tambal dengan orang yang tepat sebelum bisnis tenggelam.',
+        'Melunasi Utang Sendiri adalah Kehormatan: Tidak ada yang membantu Baim melunasi Rp 1,5 miliar — dan itu justru membangun karakter dan integritas yang tidak bisa dibeli dengan cara lain.',
+        'Jatuh Dua Kali Bukan Aib — Tidak Bangkit Itulah Aibnya: Titik terendah pertama dan kedua adalah bagian dari perjalanan, bukan tanda kelemahan permanen.',
+        'Cintai Prosesnya, Bukan Hanya Hasilnya: Baim tidak bisa berhenti dari kuliner meski terus gagal — karena ia benar-benar mencintainya. Gairah yang tulus akan membuat seseorang terus mencoba sampai menemukan formula yang tepat.'
+      ]
     }
   ],
 
