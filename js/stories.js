@@ -2879,6 +2879,93 @@ const Stories = {
         'Modal Kecil + Kreativitas + Ketekunan > Modal Besar + Tanpa Arah: Dari Rp 100 juta pesangon dan BPJS, Ican membangun IBJ Group. Jumlah modal awal bukan penentu — bagaimana modal itu digunakan yang menentukan.',
         'Diversifikasi Brand dari Satu Core Competency: Dari Cariilmu (edukasi), Ican berkembang ke SUAI Skincare dan Buatizin.id. Satu keahlian inti — dalam kasus Ican adalah memahami kebutuhan pasar — bisa melahirkan banyak brand yang saling menguatkan.'
       ]
+    },
+    {
+      id: 'menlu',
+      featured: false,
+      name: 'Menlu',
+      tagline: 'Dari Anak Nelayan & Distributor Semen Bangkrut Utang Miliaran, Bangkit dengan 5 Cetakan Beton — Kini Raja Beton Banyuwangi via Rabanton',
+      title: 'Dari Utang Miliaran dan Bangkrut, Kini Raja Beton Banyuwangi',
+      subtitle: 'Pendiri Rabanton (Rajanya Banyuwangi Beton) — Inovasi Dermaga Apung Beton & Franchise Tanpa Royalti',
+      origin: 'Banyuwangi, Jawa Timur',
+      ageAtRebound: '30-an Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Miliaran Rupiah',
+      badge: 'Raja Beton Banyuwangi — Rabanton',
+      theme: 'teal',
+      accentColor: '#0F766E',
+      bgLight: '#F0FDFA',
+      borderLight: '#CCFBF1',
+      stats: {
+        debt: 'Miliaran Rupiah (Bisnis Semen Kolaps)',
+        age: '30-an Tahun',
+        lowest: 'Bangkrut Total — Tidak Punya Tabungan, Justru Berutang Miliaran',
+        action: '5 Cetakan Beton + Produksi Sendiri + Doa & Dukungan Keluarga',
+        result: 'Rabanton — Raja Beton Banyuwangi, Dermaga Apung, Franchise Tanpa Royalti'
+      },
+      timeline: [
+        { year: 'Latar Belakang', text: 'Lahir di Situbondo dari keluarga nelayan. Pindah ke Banyuwangi dan memulai karir bisnis.' },
+        { year: 'Distributor Semen', text: 'Menjadi distributor semen dari paman yang punya pabrik. Persaingan ketat, tempo pembayaran panjang, risiko besar tanpa jaminan.' },
+        { year: 'Bangkrut & Utang Miliaran', text: 'Bisnis semen kolaps total. Bukan hanya tanpa tabungan — justru terjerat utang miliaran rupiah.' },
+        { year: 'Titik Balik — 5 Cetakan', text: 'Dengan sisa dana seadanya, membeli 5 cetakan beton. "Kalau ini gagal, saya benar-benar tidak tahu harus apa lagi."' },
+        { year: 'Lahirnya Rabanton', text: 'Produk-produk beton pracetak mulai diterima pasar. Proyek pemerintah daerah membuka peluang besar.' },
+        { year: 'Hari Ini — Raja Beton', text: 'Rabanton dikenal luas. Dermaga apung beton — inovasi maritim tanpa pondasi. Franchise tanpa royalti untuk pengusaha lokal.' }
+      ],
+      quote: 'Saya ingin jadi semut yang ada di mana-mana, bukan gajah besar yang hanya berdiri di satu tempat.',
+      quoteAuthor: 'Menlu, pendiri Rabanton — Raja Beton Banyuwangi',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Nelayan yang Bermimpi Besar',
+          paragraphs: [
+            'Situbondo, Jawa Timur. Seorang anak laki-laki tumbuh di tengah keluarga sederhana. Ayahnya adalah nelayan yang setiap hari melaut, ibunya menunggu di rumah dengan penuh harap. Anak itu bernama Menlu.',
+            'Sejak kecil, ia sudah terbiasa membantu keluarga. Hidup di pesisir mengajarkannya satu hal yang tidak ada di buku sekolah mana pun: laut bisa memberi, tapi laut juga bisa mengambil. Ia belajar tentang ketidakpastian sejak dini.',
+            'Namun, Menlu tidak ingin selamanya menjadi anak nelayan. Ia ingin lebih. Ia ingin membangun sesuatu yang besar — sesuatu yang bisa ia wariskan, sesuatu yang bisa mengangkat tidak hanya dirinya tapi juga orang-orang di sekitarnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Distributor Semen yang Terjerat Utang',
+          paragraphs: [
+            'Kesempatan datang ketika Menlu menjadi distributor semen dari pamannya yang memiliki pabrik. Ia merasa ini adalah jalan menuju kesuksesan — sebuah jembatan yang sudah dibangun untuknya, tinggal ia yang berjalan di atasnya.',
+            'Tapi dunia bisnis semen ternyata tidak semudah yang ia bayangkan. Persaingan harga begitu ketat. Tempo pembayaran dari pelanggan sangat panjang. Risiko besar tanpa jaminan membuatnya terjepit di antara dua batu yang terus merapat.',
+            'Dan kemudian, segalanya runtuh. Menlu bangkrut. Bukan hanya tanpa tabungan — ia justru terjerat utang miliaran rupiah. "Bukan hanya tanpa tabungan, saya justru terjerat utang miliaran," kenangnya kemudian. Jembatan yang ia kira kokoh, ternyata rapuh dari dalam.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Lima Cetakan Beton dan Sebuah Doa',
+          paragraphs: [
+            'Di titik terendah itulah, Menlu mengambil keputusan yang mengubah segalanya. Dengan sisa dana seadanya — angka yang jauh dari cukup untuk memulai bisnis baru — ia membeli lima cetakan beton. Lima cetakan. Itu saja. Tidak lebih.',
+            'Dari situlah lahir produk pertamanya: beton pracetak untuk saluran drainase dan pagar. Sederhana. Kecil. Tapi itu adalah awal dari segalanya. "Kalau ini gagal, saya benar-benar tidak tahu harus apa lagi," ujarnya — sebuah kejujuran yang menunjukkan betapa dalam ia telah terdesak.',
+            'Ia memproduksi sendiri. Berbekal doa, semangat, dan dukungan keluarga, ia terus bergerak. Tidak ada yang mewah. Tidak ada yang instan. Hanya kerja keras dan keyakinan bahwa dari lima cetakan beton, ia bisa membangun kembali hidupnya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Rabanton — Rajanya Banyuwangi Beton',
+          paragraphs: [
+            'Perlahan, usaha betonnya mulai mendapat perhatian. Proyek pemerintah daerah memberi peluang baru. Kualitas produknya berbicara lebih keras dari iklan mana pun. Dan dari situlah Rabanton — singkatan dari "Rajanya Banyuwangi Beton" yang kemudian diplesetkan menjadi "Rajanya Barang Beton" — mulai dikenal.',
+            'Produk-produk Rabanton semakin luas dan berani berinovasi. Bukan hanya saluran drainase dan pagar, tapi juga sesuatu yang belum pernah ada sebelumnya: dermaga apung beton. Sebuah inovasi yang bisa terapung tanpa pondasi, mudah dipindahkan, tapi tetap kokoh — dengan biaya yang jauh lebih murah dibanding dermaga konvensional.',
+            '"Kita ini negara maritim. Dengan dermaga apung, akses laut bisa lebih murah dan efisien," kata Menlu penuh semangat. Seorang anak nelayan yang kini menciptakan solusi untuk nelayan-nelayan lain seperti ayahnya dulu.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Filosofi Semut, Bukan Gajah — dan Franchise Tanpa Royalti',
+          paragraphs: [
+            'Menlu tidak pernah melupakan masa-masa kelamnya. Ia tidak pernah melupakan lima cetakan beton yang menjadi titik balik hidupnya. Dan itu membuatnya memiliki cara pandang yang berbeda tentang kesuksesan.',
+            '"Saya ingin jadi semut yang ada di mana-mana, bukan gajah besar yang hanya berdiri di satu tempat," ujarnya. Itulah sebabnya Rabanton menerapkan model franchise tanpa royalti — memberi peluang pengusaha lokal memproduksi beton pracetak dengan standar yang sama tanpa harus membayar biaya franchise yang memberatkan.',
+            'Bagi Menlu, ukuran keberhasilan bisnis bukan hanya dari laba, tapi juga kesejahteraan karyawan. Gaji minimal selalu sesuai UMR dan dibayarkan tepat waktu. Dari anak nelayan di Situbondo, dari distributor semen yang bangkrut, dari pria yang hanya punya lima cetakan beton — kini ia berdiri sebagai Raja Beton Banyuwangi yang memilih menjadi semut: hadir di mana-mana, bermanfaat bagi banyak orang.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Pivot ke Bisnis yang Relevan dengan Konteks Lokal: Menlu tidak pivot ke bisnis yang jauh dari hidupnya — ia pivot ke beton, material yang ia pahami dari lingkungan sekitarnya. Pivot yang paling berhasil adalah yang berangkat dari pemahaman konteks, bukan dari tren semata.',
+        'Modal Minimal, Bukan Modal Nol — Ada Bedanya: Lima cetakan beton bukan nol modal, tapi jauh lebih kecil dari yang dibutuhkan untuk membangun bisnis beton skala besar. Identifikasi aset minimum yang bisa memulai siklus pendapatan pertama.',
+        'Inovasi Produk dari Keunikan Geografis: Dermaga apung beton lahir dari kesadaran bahwa Indonesia adalah negara maritim. Inovasi terbaik sering lahir dari pertanyaan: "Apa yang dibutuhkan orang di sekitarku yang belum ada solusinya?"',
+        'Franchise Tanpa Royalti sebagai Model Pertumbuhan Inklusif: Menlu tidak ingin besar sendirian. Model franchise tanpa royalti memungkinkan pertumbuhan ekosistem, bukan hanya pertumbuhan satu perusahaan — dan ini menciptakan loyalitas yang jauh lebih kuat dari sekadar kontrak bisnis.'
+      ]
     }
   ],
 
