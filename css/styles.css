@@ -1851,6 +1851,13 @@ img { max-width: 100%; }
   box-shadow: 0 0 0 1px #4F46E5, var(--shadow-sm);
 }
 
+
+.story-shelf-card.active.theme-emerald {
+  border-color: #059669;
+  background: #ECFDF5;
+  box-shadow: 0 0 0 1px #059669, var(--shadow-sm);
+}
+
 .story-shelf-card.active.theme-rose {
   border-color: #E11D48;
   background: #FFF1F2;

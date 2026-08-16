@@ -269,6 +269,82 @@ const Stories = {
         { num: 2, text: '<strong>Mulai Kembali dari Unit Terkecil (Modal Rp 33 Juta):</strong> Rebound tidak butuh modal ratusan juta sekaligus. Mobil bekas Timor seharga Rp 33 juta dengan laba Rp 4 juta sudah cukup menjadi batu pijakan pertama.' },
         { num: 3, text: '<strong>Disiplin Menggulung Arus Kas:</strong> Keuntungan bisnis tidak langsung dipakai untuk foya-foya, melainkan diputar kembali menjadi stok mobil hingga mencapai 1.000 unit.' }
       ]
+    },
+
+    {
+      id: 'suprianto',
+      category: 'indonesia',
+      name: 'Suprianto (Siomay Wondes)',
+      title: 'Dari Meja Kantor ke Pinggir Jalan',
+      subtitle: 'Pendiri Siomay Wondes — Indonesia',
+      tag: 'Kisah #5 · Indonesia',
+      badge: 'Dapur Produksi Mesin & Lunas 100%',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-7.54 16.58L3 22l3.42-1.46A10 10 0 1 0 12 2z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>',
+      summary: 'Mantan karyawan kantoran terjerat utang ratusan juta akibat biaya medis kartu kredit, bangkit jualan siomay di pinggir jalan hingga punya dapur mesin sendiri.',
+      stats: {
+        debt: 'Ratusan Juta Rupiah (Bunga Kartu Kredit)',
+        cause: 'Biaya Rawat RS Rp 40 Jt & Bisnis Gagal',
+        lowest: 'Tekanan Keluarga & Tak Sanggup Bayar Cicilan',
+        firstStep: 'Resign Kantor & Jual Siomay di Depan Gereja Tiap Minggu'
+      },
+      quote: 'Dulu saya kerja kantoran, suruh-suruh anak buah. Sekarang saya sendiri yang dagang di pinggir jalan. Selama produk kita jujur dan berkualitas, tidak ada yang perlu dimalukan.',
+      quoteAuthor: 'Suprianto, saat memulai usaha gerobak siomay di pinggir jalan',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pria yang Tak Pernah Berutang',
+          paragraphs: [
+            'Suprianto adalah tipe orang yang sangat berhati-hati. Sepanjang hidupnya, ia tidak pernah punya utang. Bahkan kartu kredit pun tidak pernah ia sentuh. Setiap rupiah ia kelola dengan tertib. Ia bekerja di kantor, punya posisi manajerial, dan memimpin anak buah. Hidupnya stabil, teratur, dan aman.',
+            'Ia tidak pernah menyangka bahwa rasa aman tersebut bisa runtuh dalam sekejap mata oleh sebuah musibah tak terduga.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 40 Juta yang Mengubah Segalanya',
+          paragraphs: [
+            'Musibah datang tanpa permisi. Suprianto jatuh sakit parah dan harus dirawat intensif di rumah sakit dengan total tagihan mencapai Rp 40 juta. Karena tidak memegang uang tunai likuid sebanyak itu, dalam kepanikan ia menggesek kartu kredit.',
+            '"Saya bayar pakai kartu kredit karena enggak punya uang tunai saat itu," kenangnya.',
+            'Dari situlah bola salju masalah menggelinding. Bunga kartu kredit yang tinggi menumpuk tagihan demi tagihan. Utang Rp 40 juta membengkak menjadi ratusan juta rupiah. Demi menutup lubang, ia mencoba membuka usaha sampingan namun bisnisnya ikut gagal. Tekanan dari keluarga dan penagih datang silih berganti. Suprianto terjebak dalam kegelapan pekat di mana untuk membayar cicilan minimum pun ia sudah tak sanggup.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Doa di Tengah Malam & Titik Balik',
+          paragraphs: [
+            'Di titik nadir itulah, ketika segala logika manusia sudah buntu, Suprianto melakukan satu hal: berserah total. Ia rutin bangun di sepertiga malam terakhir, shalat, dan memohon petunjuk jalan keluar.',
+            'Perlahan, rentetan keajaiban ikhtiar mulai berdatangan. Orang yang memiliki piutang lama kepadanya—yang sudah ia ikhlaskan—tiba-tiba datang melunasi. Gaji kantornya yang tertunda berbulan-bulan akhirnya dibayarkan oleh perusahaan. Satu per satu, beban utang ratusan juta itu terbayar lunas.',
+            'Beban berat yang selama bertahun-tahun menghimpit dadanya akhirnya terangkat lepas.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Resign dan Memulai dari Nol di Pinggir Jalan',
+          paragraphs: [
+            'Setelah utang lunas, Suprianto mengambil keputusan besar yang mengejutkan: ia mengundurkan diri (resign) dari pekerjaan kantorannya yang mapan.',
+            '"Dulu saya kerja kantoran, biasa menyuruh anak buah. Sekarang saya sendiri yang berdiri dagang di pinggir jalan," ujarnya mantap.',
+            'Ia memulai dari nol berjualan siomay di tempat sangat sederhana: di depan gereja setiap hari Minggu pagi. Ia menggelar gerobak kecil, menyalakan kukusan, dan melayani para jemaat yang baru selesai beribadah.',
+            'Awalnya berjalan pelan, namun racikan siomaynya yang kenyal, gurih, dan bersih dengan cepat memikat lidah pelanggan setia.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Siomay Wondes & Dapur Produksi Mesin',
+          paragraphs: [
+            'Dari gerobak kecil Minggu pagi, Suprianto membesarkan brand Siomay Wondes. Kini usahanya telah memiliki dapur produksi sendiri yang semi-modern dengan mesin pemarut labu siam, penggiling ikan tenggiri asli, hingga mixer adonan otomatis.',
+            'Rahasia kelezatannya konsisten: menggunakan labu siam muda agar tekstur kenyal alami tanpa serat kasar, 100% daging ikan tenggiri asli, serta bumbu rempah pilihan (kemiri, bawang putih, lada murni).',
+            'Suprianto membuktikan bahwa membuang gengsi dan fokus pada mutu produk adalah kunci sejati untuk bangkit mandiri menjadi pemilik bisnis yang bermartabat.'
+          ]
+        }
+      ],
+      takeaways: [
+        { num: 1, text: '<strong>Waspadai Gesek Kartu Kredit untuk Dana Darurat:</strong> Membayar biaya medis besar dengan kartu kredit berbunga tinggi tanpa mitigasi darurat adalah jebakan utang ratusan juta. Siapkan pos dana darurat cair.' },
+        { num: 2, text: '<strong>Buang Gengsi Status Pekerjaan:</strong> Pindah dari bos kantoran menjadi penjual gerobak pinggir jalan bukanlah kemunduran, melainkan langkah awal membangun kebebasan finansial sejati.' },
+        { num: 3, text: '<strong>Kualitas Produk Adalah Pemasaran Terbaik:</strong> Siomay dengan bahan baku jujur (ikan tenggiri asli & labu siam muda) akan menciptakan pelanggan setia yang mengembangkan bisnis secara organik.' }
+      ]
     }
   ],
 
