@@ -552,6 +552,93 @@ const Stories = {
       ]
     },
     {
+      id: 'donanto',
+      featured: false,
+      name: 'Donanto',
+      tagline: 'Dari Bangkrut Total & Menyewa Rumah Sendiri Menjadi Eksportir Sidat ke Jepang & Pemilik 5 Perusahaan',
+      title: 'Dari Menyewa Rumah Sendiri, Kini Memimpin 5 Perusahaan',
+      subtitle: 'Pendiri Duta Unagi & 5 Lini Bisnis Ekspor, Kediri',
+      origin: 'Kediri, Jawa Timur',
+      ageAtRebound: 'Pengusaha Kediri',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia', 'global'],
+      categoryLabel: 'Jual Rumah & 5 Perusahaan',
+      badge: 'Ekspor Sidat Jepang & Duta Unagi',
+      theme: 'teal',
+      accentColor: '#0F766E',
+      bgLight: '#F0FDFA',
+      borderLight: '#CCFBF1',
+      stats: {
+        debt: 'Utang Bank & Seluruh Aset Terjual',
+        age: 'Pengusaha Kediri',
+        lowest: 'Mengontrak di Rumah yang Dulu Miliknya Sendiri',
+        action: 'Pasrah Total, Pesantren & Ekspor Sidat 2016',
+        result: '5 Perusahaan Mandiri & Omset Puluhan Juta/Hari'
+      },
+      timeline: [
+        { year: 'Prahara & Utang Bank', text: 'Usaha bangkrut total, terjerat utang bank, dan terpaksa melelang/menjual seluruh aset termasuk rumah tinggal keluarga.' },
+        { year: 'Titik Terendah Rumah Sewa', text: 'Tinggal sebagai penyewa di rumah yang dulu ia bangun dan miliki sendiri, merasakan getirnya kehilangan segalanya.' },
+        { year: 'Pasrah Total & Pengabdian', text: 'Berserah penuh kepada Tuhan, mendirikan pesantren di Kediri, dan terus bergerak mencari peluang baru tanpa gengsi.' },
+        { year: '2016 — Ekspor Sidat Jepang', text: 'Membaca peluang kelangkaan unagi di Jepang, menyempurnakan kualitas budidaya, dan sukses menembus ekspor ke Jepang.' },
+        { year: 'Ekspansi 5 Gurita Bisnis', text: 'Mendirikan LPK magang Jepang (2018), Restoran Duta Unagi (2020), pabrik gazebo kayu Sragen, dan teknologi pemetaan geologi.' },
+        { year: 'Hari Ini — Pemberdayaan SDM', text: 'Memimpin 5 korporasi dengan omset puluhan juta per hari dan membuka lapangan kerja bagi ratusan pemuda serta keluarga prasejahtera.' }
+      ],
+      quote: 'Saat paling berat adalah berjuang melunasi utang bank dan menyewa rumah sendiri. Namun ketika kita pasrah total dan fokus memberdayakan manusia, Tuhan akan membukakan jalan keluar dari arah yang tak disangka-sangka.',
+      quoteAuthor: 'Donanto, pendiri Duta Unagi & eksportir sidat',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pria yang Kehilangan Segalanya',
+          paragraphs: [
+            'Donanto duduk termenung di teras sebuah rumah kontrakan di Kediri. Bangunan itu bukanlah tempat asing baginya; setiap sudut ruangan, dinding yang dicat rapi, hingga taman kecil di halaman depan adalah hasil jerih payahnya sendiri beberapa tahun silam.',
+            'Namun kini statusnya telah berbalik 180 derajat: ia bukan lagi pemilik, melainkan penyewa bulanan yang membayar sewa kepada orang lain atas rumah yang dulu adalah miliknya sendiri.',
+            'Kehancuran bisnis sebelumnya telah menyeret Donanto ke jurang utang bank yang menumpuk. Demi menjaga kehormatan dan melunasi kewajiban perbankan, ia mengambil keputusan paling pedih: menjual seluruh aset yang dimilikinya tanpa terkecuali, termasuk rumah tempat tinggal keluarganya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Pasrah di Titik Nol',
+          paragraphs: [
+            'Di titik nadir tersebut, ketika semua pintu materi seakan tertutup rapat, Donanto memilih untuk berserah diri secara total kepada Sang Pencipta. "Saat paling berat itu, saya benar-benar pasrah kepada Allah. Saya lepaskan semua ego, ketakutan, dan rasa malu," kenangnya.',
+            'Kepasrahan itu bukan berarti berpangku tangan. Sembari merintis usaha-usaha kecil harian, Donanto mengabdikan dirinya dengan mendirikan sebuah pesantren di Kediri bukan untuk mencari keuntungan materi, melainkan sebagai sarana berbakti dan mendidik generasi muda.',
+            'Ketulusan niat dan ketenangan batin membuatnya kembali memiliki kejernihan pikiran untuk membaca peluang-peluang bisnis strategis yang luput dari pandangan orang lain.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Sidat yang Mengubah Takdir',
+          paragraphs: [
+            'Tahun 2016 menjadi gerbang kebangkitan besar Donanto. Mendengar informasi mengenai fenomena kelangkaan pasokan ikan sidat (unagi) di pasar kuliner Jepang, ia mencium potensi emas ekspor komoditas perikanan air tawar Indonesia.',
+            'Meski sebelumnya pernah mengalami kegagalan bertahun-tahun dalam menembus pasar luar negeri, Donanto menolak menyerah. Ia memperbaiki teknologi kolam budidaya, memperketat kontrol kualitas pakan, dan memenuhi standar higienitas karantina internasional Jepang yang teramat ketat.',
+            'Perjuangannya berbuah manis. Kontainer sidat hidup asal Kediri berhasil lolos uji laboratorium dan mendarat di pasar Tokyo dengan apresiasi tinggi. Pintu ekspor terbuka lebar dan arus kas bernilai miliaran rupiah kembali mengalir deras.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Lima Perusahaan yang Tumbuh Subur',
+          paragraphs: [
+            'Keberhasilan ekspor sidat menjadi batu loncatan Donanto untuk membangun ekosistem bisnis terintegrasi. Pada tahun 2018, ia mendirikan Lembaga Pelatihan Kerja (LPK) yang berhasil memberangkatkan ratusan tenaga kerja magang ke Jepang, khususnya di sektor perawatan medis dan lansia.',
+            'Tahun 2020, ia meresmikan restoran kuliner Jepang "Duta Unagi". Restoran ini difungsikan ganda: sebagai etalase olahan sidat premium sekaligus pusat pelatihan kerja bagi pemuda prasejahtera.',
+            'Tak berhenti di situ, Donanto memperluas gurita usahanya ke manufaktur pembuatan gazebo dan rumah kayu etnik di Sragen (yang memasok resort-resort mewah di Bali) serta mendirikan perusahaan teknologi pemetaan geologi. Kini ia memimpin 5 perusahaan mandiri dengan omset puluhan juta rupiah per hari.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Filosofi Pemberdayaan Manusia',
+          paragraphs: [
+            'Bagi Donanto, kekayaan materi masa kini bukanlah tujuan akhir. Rumah yang dulu pernah terpaksa ia sewakan telah menjadi prasasti pengingat bahwa roda kehidupan selalu berputar bagi mereka yang mau berikhtiar.',
+            'Ia memegang teguh filosofi hidup: "Pemberdayaan sumber daya manusia adalah kunci utama kesuksesan sejati. Ketika kita membuka jalan rezeki bagi orang lain yang membutuhkan, jalan rezeki kita pun akan dilapangkan oleh Tuhan."',
+            'Donanto membuktikan bahwa kehilangan seluruh harta benda bukanlah akhir cerita, melainkan permulaan dari sebuah lompatan kebangkitan yang jauh lebih kokoh dan bermanfaat bagi masyarakat luas.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Ikhlas Melepaskan Aset Demi Kehormatan: Berani menjual aset demi melunasi utang bank adalah tindakan ksatria yang membersihkan beban mental dan membuka pintu berkah baru.',
+        'Kekuatan Spiritual & Pengabdian: Pasrah total kepada Tuhan dan membangun sarana sosial (pesantren) mengembalikan ketenangan batin untuk berpikir jernih.',
+        'Peka Menangkap Peluang Global: Ketekunan memperbaiki kualitas produk mampu menembus pasar ekspor dengan standar tertinggi di dunia.',
+        'Fokus pada Pemberdayaan Sesama: Kesuksesan bisnis yang berkelanjutan adalah bisnis yang mampu mengangkat harkat hidup karyawan dan lingkungan sekitar.'
+      ]
+    },
+    {
       id: 'wangpeng',
       featured: false,
       name: 'Wang Peng (王鹏)',
