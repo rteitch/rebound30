@@ -27,6 +27,7 @@ const H = {
     return Math.floor((db - da) / 86400000);
   },
   
+  dayNumber(startDate) { return this.currentDay(startDate); },
   currentDay(startDate) {
     const d = H.daysBetween(startDate, H.today()) + 1;
     return Math.min(Math.max(d, 1), 30);

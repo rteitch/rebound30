@@ -400,9 +400,10 @@ const App = {
   // ---- MISSIONS ----
   renderMissions() {
     const s = this.state;
-    // Render Mindset Anchor on Missions Screen
-    const day = H.dayNumber(s.meta.startDate);
+    const day = H.currentDay(s.meta.startDate);
     const phase = H.getPhase(day);
+    
+    // 1. Render Mindset Anchor on Missions Screen
     const mindsetAnchor = MindsetEngine.getDailyAnchor(day);
     const missionsMindsetEl = document.getElementById('missions-mindset-anchor');
     if (missionsMindsetEl) {
@@ -421,77 +422,114 @@ const App = {
         </div>
       `;
     }
+
+    // 2. Date Subtitle
     const today = H.today();
     const todayFmt = new Date().toLocaleDateString('id-ID', { weekday:'long', day:'numeric', month:'long' });
-    document.getElementById('missions-date-subtitle').textContent = todayFmt;
+    const subEl = document.getElementById('missions-date-subtitle');
+    if (subEl) subEl.textContent = `Hari ini: ${todayFmt} · Hari ke-${day} dari 30`;
     
+    // 3. Generate & Render Missions
     const missions = ReboundEngine.generate(s);
     this.save();
     
-    // Streak
+    // Counter badge
+    const doneCount = missions.filter(m => m.completed).length;
+    const badgeEl = document.getElementById('missions-counter-badge');
+    if (badgeEl) badgeEl.textContent = `${doneCount} / ${missions.length} Selesai`;
+
+    // 4. Streak
     const streak = ScoreEngine.getStreak(s);
     const streakContainer = document.getElementById('streak-container');
-    if (streak > 0) {
-      streakContainer.innerHTML = `
-        <div class="streak-banner">
-          <div class="streak-icon" style="color:#EF4444;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
-          <div class="streak-text">
-            <div class="streak-days">${streak} Hari Beruntun</div>
-            <div class="streak-label">Teruskan konsistensimu!</div>
+    if (streakContainer) {
+      if (streak > 0) {
+        streakContainer.innerHTML = `
+          <div class="streak-banner">
+            <div class="streak-icon" style="color:#EF4444;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
+            <div class="streak-text">
+              <div class="streak-days">${streak} Hari Beruntun</div>
+              <div class="streak-label">Teruskan konsistensimu!</div>
+            </div>
           </div>
-        </div>
-      `;
-    } else { streakContainer.innerHTML = ''; }
+        `;
+      } else {
+        streakContainer.innerHTML = '';
+      }
+    }
     
-    document.getElementById('missions-list').innerHTML = missions.map(m => `
-      <div class="mission-card ${m.completed?'completed':''} priority-${m.priority.toLowerCase()} fade-in" id="m-${m.id}">
-        <div class="mission-header">
-          <div class="mission-check" onclick="App.toggleMission('${m.id}')">
-            ${m.completed ? '✓' : ''}
-          </div>
-          <div class="mission-content" style="flex:1">
-            <div class="mission-type-label">${this.missionTypeLabel(m.type)} · <span class="badge badge-${m.priority.toLowerCase()}">${m.priority}</span></div>
-            <div class="mission-title">${H.escHtml(m.title)}</div>
-            <div class="mission-description">${H.escHtml(m.desc)}</div>
-            <div style="margin-top:8px;">
-              <button class="btn btn-sm btn-outline" style="font-size:11px;padding:3px 8px;display:inline-flex;align-items:center;gap:4px;" onclick="event.stopPropagation(); App.missions.showGuide('${m.type}', '${m.id}')">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Panduan & Template Siap Pakai
-              </button>
+    const listEl = document.getElementById('missions-list');
+    if (listEl) {
+      listEl.innerHTML = missions.map(m => `
+        <div class="mission-card ${m.completed?'completed':''} priority-${m.priority.toLowerCase()} fade-in" id="m-${m.id}">
+          <div class="mission-header">
+            <div class="mission-check" onclick="App.toggleMission('${m.id}')">
+              ${m.completed ? '✓' : ''}
+            </div>
+            <div class="mission-content" style="flex:1">
+              <div class="mission-type-label">${this.missionTypeLabel(m.type)} · <span class="badge badge-${m.priority.toLowerCase()}">${m.priority}</span></div>
+              <div class="mission-title">${H.escHtml(m.title)}</div>
+              <div class="mission-description">${H.escHtml(m.desc)}</div>
+              <div style="margin-top:8px;">
+                <button class="btn btn-sm btn-outline" style="font-size:11px;padding:3px 8px;display:inline-flex;align-items:center;gap:4px;" onclick="event.stopPropagation(); App.missions.showGuide('${m.type}', '${m.id}')">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  Panduan & Template Siap Pakai
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    `).join('') || '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="empty-state-title">Semua misi selesai hari ini!</div><div class="empty-state-text">Luar biasa! Kembali lagi besok untuk misi baru.</div></div>';
-    
-    // History (yesterday)
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate()-1);
-    const yKey = yesterday.toISOString().split('T')[0];
-    const yMissions = s.missions[yKey] || [];
-    document.getElementById('missions-history').innerHTML = (yMissions.length ? yMissions.map(m=>`
-      <div class="mission-card ${m.completed?'completed':''}" style="opacity:0.85" id="ym-${m.id}">
-        <div class="mission-header">
-          <div class="mission-check" onclick="App.toggleYesterdayMission('${m.id}')" title="Klik untuk ubah status misi kemarin">
-            ${m.completed?'✓':''}
-          </div>
-          <div class="mission-content" style="flex:1">
-            <div class="mission-title" style="font-size:13px;">${H.escHtml(m.title)}</div>
-            <div style="font-size:11px;color:var(--color-text-muted);">Misi Kemarin · ${m.completed ? '<span style="color:var(--teal-600);font-weight:600;">Selesai ✓</span>' : '<span style="color:var(--amber-600);">Terlewat (bisa dicentang jika sudah dikerjakan)</span>'}</div>
-          </div>
+      `).join('') || '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="empty-state-title">Semua misi selesai hari ini!</div><div class="empty-state-text">Luar biasa! Kembali lagi besok untuk misi baru.</div></div>';
+    }
+
+    // 5. History (Yesterday) — Only display if day > 1 and has yesterday data!
+    const histContainer = document.getElementById('missions-history-container');
+    const histListEl = document.getElementById('missions-history');
+    if (histContainer && histListEl) {
+      if (day > 1) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yKey = yesterday.toISOString().split('T')[0];
+        const yMissions = s.missions[yKey] || [];
+        
+        if (yMissions.length > 0) {
+          histContainer.style.display = 'block';
+          histListEl.innerHTML = yMissions.map(m => `
+            <div class="mission-card ${m.completed?'completed':''}" style="opacity:0.85" id="ym-${m.id}">
+              <div class="mission-header">
+                <div class="mission-check" onclick="App.toggleYesterdayMission('${m.id}')" title="Klik untuk ubah status misi kemarin">
+                  ${m.completed?'✓':''}
+                </div>
+                <div class="mission-content" style="flex:1">
+                  <div class="mission-title" style="font-size:13px;">${H.escHtml(m.title)}</div>
+                  <div style="font-size:11px;color:var(--color-text-muted);">Misi Kemarin · ${m.completed ? '<span style="color:var(--teal-600);font-weight:600;">Selesai ✓</span>' : '<span style="color:var(--amber-600);">Terlewat (bisa dicentang jika sudah dikerjakan)</span>'}</div>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        } else {
+          histContainer.style.display = 'none';
+        }
+      } else {
+        // Day 1: Hide history container entirely
+        histContainer.style.display = 'none';
+      }
+    }
+
+    // 6. Plan Link Card at bottom
+    const planLinkEl = document.getElementById('missions-plan-link');
+    if (planLinkEl) {
+      planLinkEl.innerHTML = `
+        <div style="margin-top:var(--space-5);padding:var(--space-4);background:var(--slate-50);border:1px dashed var(--slate-300);border-radius:var(--radius-lg);text-align:center;">
+          <div style="font-size:12.5px;color:var(--slate-600);margin-bottom:8px;">Ingin melihat gambaran target misi di fase-fase berikutnya?</div>
+          <button class="btn btn-secondary btn-sm" onclick="App.navigate('plan')" style="font-size:12px;display:inline-flex;align-items:center;gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            Lihat Roadmap Lengkap 30 Hari di Menu Rencana →
+          </button>
         </div>
-      </div>
-    `).join('') : '<div style="font-size:13px;color:var(--color-text-muted);padding:var(--space-3)">Belum ada riwayat misi kemarin.</div>') + `
-      <div style="margin-top:var(--space-5);padding:var(--space-4);background:var(--slate-50);border:1px dashed var(--slate-300);border-radius:var(--radius-lg);text-align:center;">
-        <div style="font-size:12.5px;color:var(--slate-600);margin-bottom:8px;">Ingin melihat gambaran target misi di fase-fase berikutnya?</div>
-        <button class="btn btn-secondary btn-sm" onclick="App.navigate('plan')" style="font-size:12px;display:inline-flex;align-items:center;gap:6px;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-          Lihat Roadmap Lengkap 30 Hari di Menu Rencana →
-        </button>
-      </div>
-    `;
+      `;
+    }
   },
-  
+
   // ---- PLAN ----
   renderPlan() {
     const s = this.state;
