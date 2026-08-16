@@ -3129,6 +3129,93 @@ const Stories = {
         'Investasi pada Validasi Produk Jauh Lebih Berharga (Riset Rp 2 M): Uji coba gratis 2 tahun di Kamerun adalah strategi pembuktian mutu produk (proof-of-concept) yang akhirnya membuka pasar ekspor bernilai ratusan kali lipat.',
         'Ketenangan Batin Menghasilkan Keputusan Bisnis yang Tajam: Begitu beban utang hilang, fokus dan energi pengusaha bisa dialihkan 100% untuk inovasi produk dan ekspansi pasar global.'
       ]
+    },
+    {
+      id: 'tommywong',
+      featured: false,
+      name: 'Tommy Wong',
+      tagline: 'Dari Anak Jalanan & Nyaris Dibunuh Rebutan Warisan, Ditipu Mitra Puluhan Miliar Hingga Nyaris Penjara — Bangkit Lunas 2 Tahun Jadi CEO Victorindo Group',
+      title: 'Dari Anak Jalanan, Bangkrut Ditipu Mitra, Kini CEO Distributor Ponsel',
+      subtitle: 'CEO Victorindo Group — Distributor Resmi Gawai Korsel yang Bangkit dari Utang Puluhan Miliar dalam 2 Tahun',
+      origin: 'Surabaya / Jakarta',
+      ageAtRebound: '30-an Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Puluhan Miliar Ditipu Mitra',
+      badge: 'CEO Victorindo Group — Lunas 2 Tahun',
+      theme: 'amber',
+      accentColor: '#B45309',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Puluhan Miliar Rupiah (Aset Dilarikan Mitra)',
+        age: '30-an Tahun',
+        lowest: 'Nyaris Masuk Penjara, Berdiri Saja Ingin Jatuh, Sempat Berpikir Mati Jalan Terbaik',
+        action: 'Berserah Penuh + Bantuan Ayah Angkat + Restrukturisasi & Mindset Baja',
+        result: 'Lunas 2 Tahun, CEO Victorindo Group, Aktif Membantu Anak Jalanan via HIMTI'
+      },
+      timeline: [
+        { year: 'Usia 7 Tahun — Jalanan', text: 'Ayah wafat, nyaris dibunuh paman akibat perebutan warisan. Lari ke jalanan Surabaya menjadi gelandangan sebelum merantau ke Jakarta.' },
+        { year: 'Kerja Serabutan ke GM', text: 'Bekerja keras di gerai ponsel hingga dipromosikan menjadi Manajer dan General Manajer.' },
+        { year: '1998 — Krisis Moneter', text: 'Kehilangan pekerjaan. Buka lapak ponsel di mall, ditolak berkali-kali sampai meyakinkan distributor besar lewat hukum 100 penawaran.' },
+        { year: 'Kejatuhan: Dikhianati Mitra', text: 'Menyerahkan pengelolaan aset pada mitra bisnis yang kemudian membawa kabur seluruh aset. Ditinggalkan utang puluhan miliar dan ancaman penjara.' },
+        { year: 'Titik Balik — Berserah', text: '"Saya bukan menyerah, tapi berserah." Pertolongan datang dari ayah angkat yang juga pelanggan setia menjelang dipenjarakan.' },
+        { year: 'Hari Ini — CEO Victorindo', text: 'Melunasi seluruh utang puluhan miliar dalam 2 tahun. Memimpin Victorindo Group dan aktif mengajar anak jalanan Manggarai.' }
+      ],
+      quote: 'Saya bukan menyerah, tapi berserah. Setiap 100 langkah yang Anda lakukan, tidak mungkin Tuhan tidak berbelas kasih.',
+      quoteAuthor: 'Tommy Wong, CEO Victorindo Group',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Kecil yang Lari ke Jalanan',
+          paragraphs: [
+            'Surabaya, akhir 1980-an. Seorang anak laki-laki berusia tujuh tahun, Tommy Wong, kehilangan ayahnya. Kematian itu seharusnya menjadi momen berkabung, namun seketika berubah menjadi mimpi buruk ketika konflik perebutan warisan meletus ganas di dalam keluarganya.',
+            '"Paman saya tak terima karena saya adalah pewaris dari harta kakek dan ayah, akhirnya saya sempat ingin dibunuh. Kemudian saya lari ke jalanan," kenang Tommy. Bocah 7 tahun itu terpaksa bertahan hidup sebagai gelandangan di jalanan keras Surabaya.',
+            'Setelah ibunya pulih dari trauma, mereka merantau ke Jakarta dengan tangan hampa. Di ibu kota, Tommy bekerja serabutan apa saja, hingga kegigihannya meyakinkan seorang pemilik gerai ponsel untuk menerimanya. Dengan etos kerja tanpa tawar-menawar, ia melesat dari pramuniaga hingga menduduki kursi General Manager.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Krisis 1998 dan Bangkit dari Nol dengan Hukum 100 Langkah',
+          paragraphs: [
+            'Badai kembali datang ketika krisis moneter 1998 meluluhlantakkan perekonomian nasional. Perusahaan tempatnya bekerja kolaps dan Tommy kembali kehilangan pegangan hidup.',
+            'Alih-alih meratapi nasib, ia memberanikan diri menyewa lapak kecil ponsel di salah satu mall Jakarta. Awalnya terasa mustahil — selama berminggu-minggu tak satu pun ponsel berhasil terjual.',
+            'Namun Tommy memegang prinsip baja: "Setiap 100 langkah yang Anda lakukan, kalau Anda sudah melakukan penawaran kepada 100 orang, tidak mungkin Tuhan tidak berbelas kasih." Konsistensi itu berbuah manis saat seorang distributor kakap mempercayainya mendistribusikan gawai global.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Puncak Sukses yang Dirampas: Ditipu Mitra Puluhan Miliar',
+          paragraphs: [
+            'Bisnisnya berkembang pesat hingga ia memimpin Victorindo Group. Namun di tengah ambisi ekspansi, ia membuat satu kekeliruan fatal: memberikan kuasa mutlak pengelolaan aset kepada mitra bisnis tanpa pengawasan ketat.',
+            'Kepercayaan itu dikhianati secara brutal. Sang mitra melarikan diri membawa kabur seluruh aset perusahaan, meninggalkan Tommy sendirian menanggung utang puluhan miliar rupiah kepada para supplier besar, lengkap dengan ancaman kurungan penjara.',
+            '"Saya down luar biasa. Bahkan untuk berdiri saja saya seringkali seperti mau jatuh. Bagi saya sepertinya sudah tidak ada pilihan lain. Mungkin mati adalah jalan keluar terakhir yang paling baik," tuturnya mengenang masa paling gelap itu.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Bukan Menyerah, Tapi Berserah — Pertolongan Tak Terduga',
+          paragraphs: [
+            'Menjelang detik-detik eksekusi hukum dan penahanan, Tommy melepaskan seluruh ego manusianya. Ia bersujud dan memasrahkan seluruh takdirnya kepada Sang Pencipta. "Saya bukan menyerah, tapi berserah," ujarnya.',
+            'Di ambang batas itulah pertolongan ajaib datang melalui sosok ayah angkat yang sebelumnya merupakan pelanggan setianya. Sang ayah angkat turun tangan membantu melacak penipu dan memberikan dukungan mediasi dengan pihak berwajib serta para kreditur.',
+            'Dengan kepastian hukum yang mulai terbuka dan mindset yang kembali jernih, Tommy menyusun restrukturisasi pembayaran utang secara bertahap.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas 2 Tahun dan Menjadi Terang Bagi Anak Jalanan',
+          paragraphs: [
+            'Hanya dalam waktu 2 tahun yang penuh kerja keras tanpa henti, seluruh utang puluhan miliar rupiah berhasil dilunasi tuntas tanpa sisa. Victorindo Group bangkit kembali menjadi distributor resmi terkemuka.',
+            'Pengalaman hidup yang pernah berada di comberan jalanan membuat Tommy tak pernah lupa asal-usulnya. Melalui program HIMTI Mengajar, ia rutin turun langsung ke bawah kolong rel Manggarai untuk mengajar anak-anak jalanan membaca, menulis, dan berhitung.',
+            'Dari anak jalanan yang nyaris dibunuh, dikhianati puluhan miliar, hingga berdiri sebagai CEO terhormat — Tommy Wong membuktikan bahwa kepercayaan dan kepasrahan mutlak kepada Tuhan adalah kompas terbaik melewati badai kehidupan.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Jangan Berikan Kuasa Penuh Aset Bisnis Tanpa Sistem Pengawasan (Check & Balance): Kesalahan terbesar Tommy adalah mempercayakan 100% aset tanpa mekanisme kontrol ganda.',
+        'Hukum 100 Penawaran — Konsistensi Menembus Penolakan: Ketika penjualan macet, tingkatkan volume penawaran secara masif. Penolakan ke-99 bisa jadi pintu keajaiban ke-100.',
+        '"Berserah" Berbeda dengan "Menyerah": Menyerah adalah berhenti berusaha; berserah adalah mengerahkan seluruh daya upaya lalu memasrahkan hasil akhir kepada Tuhan.',
+        'Karakter Teruji Melahirkan Kepedulian Sosial Nyata: Rasa sakit masa lalu Tommy menjadi bahan bakar untuk membantu anak-anak jalanan di Manggarai agar memiliki masa depan.'
+      ]
     }
   ],
 
