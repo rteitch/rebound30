@@ -2775,9 +2775,12 @@ const App = {
       m.completed = !m.completed;
       this.save();
       if (m.completed) this.toast('Misi selesai! ✓', 'success');
-      if (this.currentScreen === 'dashboard') this.renderDashboard();
-    setTimeout(() => this.refreshIcons(), 0);
-      else if (this.currentScreen === 'missions') this.renderMissions();
+      if (this.currentScreen === 'dashboard') {
+        this.renderDashboard();
+      } else if (this.currentScreen === 'missions') {
+        this.renderMissions();
+      }
+      this.refreshIcons();
     }
   },
   
