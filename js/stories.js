@@ -1839,6 +1839,93 @@ const Stories = {
         'Sedekah Minimal 10% dari Omzet sebagai Sistem: Menjadikan sedekah bukan opsi tapi kewajiban tetap membuat bisnis terasa lebih ringan dan rezeki lebih terbuka.',
         'Dukungan Keluarga adalah Bahan Bakar Bertahan: Di titik paling gelap, satu kalimat penguatan dari orang terdekat bisa menjadi sumber tenaga untuk bangkit.'
       ]
+    },
+    {
+      id: 'nani',
+      featured: false,
+      name: 'Nani Kurniasari',
+      tagline: 'Dari Utang Rp 2 Miliar & Perceraian Menjadi Pengusaha Selai Caramel Omzet Rp 4 Juta Per Hari',
+      title: 'Selai Caramel Rp 200 Ribu yang Melunasi Utang Rp 2 Miliar',
+      subtitle: 'Pengusaha Selai Caramel, Jakarta — Bangkit dari Nol Setelah Katering Bangkrut & Perceraian',
+      origin: 'Jakarta',
+      ageAtRebound: '30-an Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 2 M',
+      badge: 'Omzet Rp 4 Juta / Hari',
+      theme: 'amber',
+      accentColor: '#B45309',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Hampir Rp 2 Miliar',
+        age: '30-an Tahun',
+        lowest: 'Katering Bangkrut, Cerai, 3 Tahun Tanpa Pekerjaan',
+        action: 'Selai Caramel — Modal Rp 200 Ribu',
+        result: '300 Toples/Hari, Omzet Rp 4 Juta/Hari, Lunas'
+      },
+      timeline: [
+        { year: '2003', text: 'Merintis usaha katering di Jakarta. Tujuh tahun berjuang penuh keringat dan kerja keras membangun bisnis.' },
+        { year: '2010 — Kejatuhan', text: 'Usaha katering bangkrut meninggalkan utang hampir Rp 2 miliar. Bersamaan, suaminya meninggalkannya.' },
+        { year: '2010–2013', text: 'Tiga tahun tanpa pekerjaan — mengandalkan bantuan keluarga untuk bertahan hidup.' },
+        { year: '2014 — Titik Balik', text: 'Mengikuti program life coach untuk self healing. Mendapat tugas "menghasilkan sebuah karya" yang mengubah arah hidupnya.' },
+        { year: 'Modal Rp 200 Ribu', text: 'Membuat 4 sampel selai caramel. Hanya 1 yang lolos. Awal hanya 10 toples seminggu, sering tidak habis.' },
+        { year: 'Hari Ini — Rebound', text: 'Produksi 300 toples per hari. Omzet Rp 4 juta per hari. Utang Rp 2 miliar telah lunas. Bermimpi membangun "Rumah Selai".' }
+      ],
+      quote: 'Fokus untuk kerjakan satu. Walaupun hasilnya kecil, tapi harus ditekuni.',
+      quoteAuthor: 'Pesan life coach Nani Kurniasari yang mengubah cara pandangnya',
+      chapters: [
+        {
+          num: 1,
+          title: 'Wanita yang Kehilangan Segalanya',
+          paragraphs: [
+            'Tahun 2010. Nani Kurniasari duduk di ruang tamu rumahnya yang mulai sepi. Usaha katering yang telah ia rintis sejak 2003 — tujuh tahun penuh keringat dan kerja keras — kini tinggal kenangan. Bangkrut. Dan yang tersisa hanyalah utang hampir Rp 2 miliar.',
+            'Tapi pukulan terberat belum selesai. Di saat ia paling membutuhkan sandaran, suaminya pergi meninggalkannya. Nani terjatuh ke jurang yang paling dalam. Dari 2010 hingga 2013, ia tidak memiliki pekerjaan sama sekali. Hari-harinya dihabiskan dalam kehampaan, mengandalkan pemberian keluarga untuk sekadar bisa bertahan hidup.',
+            'Di momen-momen paling sunyi itu, Nani merasakan bukan hanya kehilangan materi — tapi juga kehilangan identitas dirinya sebagai pengusaha, sebagai istri, sebagai orang yang mandiri. Namun di dalam dirinya, ada keyakinan kecil yang menolak untuk padam: bahwa ini bukan akhir dari segalanya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Self Healing dan Sebuah Tugas',
+          paragraphs: [
+            'Tahun 2014. Nani mulai mencoba bangkit dengan berjualan hijab. Tapi itu belum cukup. Ia masih membawa luka dan beban yang terlalu berat. Kemudian, ia mengikuti program life coach untuk self healing. Di sanalah ia mendapat sebuah tugas yang mengubah hidupnya: menghasilkan sebuah karya.',
+            'Nani berpikir. Ia suka memasak. Tapi katering — yang dulu menjadi sumber kejatuhannya — terlalu ribet dengan peralatan yang banyak, modal yang besar, dan risiko operasional yang tinggi. Ia tidak mau kembali ke jalan yang sama.',
+            'Lalu ia teringat pada sesuatu yang sederhana: selai caramel. "Ini mudah. Bisa dikerjakan sendiri," pikirnya. Tidak butuh dapur besar. Tidak butuh tim yang banyak. Hanya butuh gula, susu, wajan, dan ketekunan.'
+          ]
+        },
+        {
+          num: 3,
+          title: '4 Sampel dan Hanya 1 yang Lolos',
+          paragraphs: [
+            'Dengan modal hanya Rp 200 ribu untuk bahan baku dan toples, Nani memulai percobaannya. Ia membuat 4 sampel selai. Tapi hasilnya mengecewakan — hanya 1 yang layak dijual. Sisanya pahit, teksturnya salah, rasanya jauh dari yang diharapkan.',
+            'Di sinilah pesan sang life coach menjadi kompas: "Fokus untuk kerjakan satu. Walaupun hasilnya kecil, tapi harus ditekuni." Nani tidak terburu-buru. Ia tidak menyerah karena 3 dari 4 sampelnya gagal. Ia justru memeluk satu yang berhasil itu dengan sepenuh hati.',
+            'Ia fokus pada satu rasa: selai caramel. Awalnya, usahanya berjalan sangat lambat. Seminggu hanya bisa menjual 10 toples — itu pun tidak selalu habis. Kadang ia hanya menatap toples-toples berisi selai itu dengan harap-harap cemas, menunggu ada yang mau membeli.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Dari 10 Toples Seminggu Menjadi 300 Toples Sehari',
+          paragraphs: [
+            'Perlahan, pelanggan mulai berdatangan. Dari mulut ke mulut. Dari unggahan di Facebook, Instagram, dan Twitter. Satu toples berpindah tangan, lalu dua, lalu sepuluh, lalu seratus. Rasa yang konsisten dan kemasan yang rapi membuat selai caramel Nani semakin dikenal.',
+            'Nani tidak lagi sendirian. Dua orang teman membantunya mengerjakan pesanan yang terus meningkat. Jam kerja bertambah, kapasitas produksi naik, dan pesanan online mengalir dari berbagai penjuru kota.',
+            'Dan kemudian, angka yang dulu hanya bisa ia impikan menjadi kenyataan. Kini Nani bisa memproduksi hingga 300 toples per hari dengan omzet mencapai Rp 4 juta per hari. Dari Rp 200 ribu, ia membangun usaha yang kini menghasilkan jutaan rupiah setiap hari — bukan karena keberuntungan, tapi karena ketekunan, fokus, dan keberanian untuk memulai dari yang paling kecil.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas dan Mimpi ke Depan',
+          paragraphs: [
+            'Utang hampir Rp 2 miliar yang dulu menghantuinya, kini telah lunas. Setiap rupiah dari toples selai caramel yang terjual membawa Nani satu langkah lebih dekat ke kebebasan — dan akhirnya ia meraihnya.',
+            'Nani Kurniasari bukan lagi wanita yang kehilangan segalanya — usaha, suami, dan harga diri. Ia adalah pengusaha selai caramel yang namanya mulai dikenal, yang tahu persis rasanya jatuh ke titik paling bawah dan memilih untuk memanjat kembali.',
+            'Dan ia tidak berhenti di situ. Cita-citanya kini lebih besar: membangun "Rumah Selai" — sebuah tempat yang bisa dimanfaatkan sebagai pusat penjualan selai dan produk-produk turunannya. Dari seorang wanita yang terpuruk dengan utang Rp 2 miliar dan perceraian, dari seorang ibu yang sempat tidak punya pekerjaan selama tiga tahun, Nani berdiri sebagai bukti bahwa dari titik terendah sekalipun, seseorang bisa bangkit — dengan modal kecil, dengan fokus, dan dengan keyakinan bahwa setiap kegagalan adalah bagian dari proses belajar.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Satu Produk Satu Fokus: Jangan tersebar ke banyak lini produk saat modal dan energi terbatas. Kuasai satu produk lebih dulu, baru ekspansi.',
+        'Modal Rp 200 Ribu Cukup untuk Memulai: Ketiadaan modal besar bukan alasan untuk tidak mulai — itu adalah latihan untuk efisien dan kreatif dari awal.',
+        'Self Healing Sebelum Re-Start Bisnis: Luka psikologis dari kegagalan dan perceraian yang belum sembuh akan terus menyabotase langkah selanjutnya. Pulihkan diri dulu.',
+        'Pemasaran Digital Tanpa Biaya: Facebook, Instagram, dan Twitter bisa menjadi mesin penjualan gratis jika konten konsisten dan produk memiliki kualitas yang bisa direkomendasikan dari mulut ke mulut.'
+      ]
     }
   ],
 
