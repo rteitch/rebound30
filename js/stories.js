@@ -552,6 +552,93 @@ const Stories = {
       ]
     },
     {
+      id: 'sritikah',
+      featured: false,
+      name: 'Eko Susanto & Dwi Rizky Setiawan',
+      tagline: 'Dari Kontraktor Tambang Utang Rp 2 Miliar & Makan Nasi Garam Menjadi Eksportir Bakso Frozen ke Hong Kong',
+      title: 'Dari Nasi Garam, Kini Ekspor ke Hong Kong',
+      subtitle: 'Pendiri & Co-Founder Bakso Sritikah, Malang',
+      origin: 'Malang, Jawa Timur',
+      ageAtRebound: 'Dua Bersaudara',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia', 'global'],
+      categoryLabel: 'Utang Rp 2 M & Modal Rp 120 Rb',
+      badge: 'Ekspor Hong Kong & Pabrik 27 Karyawan',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Rp 2 Miliar (Kontraktor Tambang)',
+        age: 'Dua Bersaudara',
+        lowest: 'Makan Nasi Goreng Garam Tanpa Lauk',
+        action: 'Modal Rp 120.000 & Inovasi Bakso Frozen',
+        result: 'Lunas 100%, Pabrik 27 Karyawan & Ekspor Hong Kong'
+      },
+      timeline: [
+        { year: '2016 — Krisis Tambang', text: 'Usaha kontraktor tambang bangkrut total, meninggalkan beban utang minus hampir Rp 2 miliar dan cemoohan relasi.' },
+        { year: 'Titik Terendah Nasi Garam', text: 'Berminggu-minggu hanya mampu makan nasi goreng dengan garam dan bawang karena ketiadaan uang beli lauk.' },
+        { year: '2017 — Modal Rp 120 Ribu', text: 'Memulai dari dapur rumah membuat adonan bakso seharga Rp 120.000 dan berguru resep khas Malang ke sang paman.' },
+        { year: 'Ujian & Pivot Frozen', text: 'Warung pertama bangkrut dalam 2 bulan; beralih fokus ke adonan mentah dan inovasi Bakso Frozen via online & Facebook.' },
+        { year: 'Pelunasan Utang Rp 2 Miliar', text: 'Bisnis berkembang pesat, pesanan lintas pulau melonjak, dan seluruh utang Rp 2 miliar berhasil dilunasi 100% tuntas.' },
+        { year: 'Hari Ini — Ekspor ke Hong Kong', text: 'Membangun pabrik modern berizin BPOM dengan 27 staf, rutin ekspor ke Hong Kong, dan tetap menjual porsi rakyat mulai Rp 2.000.' }
+      ],
+      quote: 'Jualan bakso berpuluh-puluh tahun pun kamu tidak akan pernah bisa melunasi utangmu. Tapi kami membuktikan, dengan tekad tidak menyerah dan modal Rp 120.000, jalan keluar selalu ada.',
+      quoteAuthor: 'Eko Susanto & Dwi Rizky Setiawan, pendiri Bakso Sritikah',
+      chapters: [
+        {
+          num: 1,
+          title: 'Dua Bersaudara di Ujung Tanduk',
+          paragraphs: [
+            'Tahun 2016 menjadi masa paling kelam bagi Eko Susanto dan adik kandungnya, Dwi Rizky Setiawan. Di sebuah rumah kontrakan sederhana di Malang, keduanya duduk termenung menatap meja makan yang kosong.',
+            'Di hadapan mereka hanya ada sepiring nasi goreng tanpa telur, tanpa daging, dan tanpa lauk—hanya nasi putih berbalut tumisan bawang dan taburan garam dapur. Itulah menu makanan mereka selama berminggu-minggu bukan karena selera, melainkan karena uang di saku benar-benar telah habis tak bersisa.',
+            'Usaha pertama mereka sebagai kontraktor alat berat tambang mengalami kehancuran total. Kerugian operasional menumpuk hingga meninggalkan lubang utang minus hampir Rp 2 miliar. Teman dan rekan bisnis mencemooh di belakang, mencap mereka tidak akan pernah sanggup melunasi beban utang sebesar itu seumur hidup. Namun di mata Eko, api perjuangan menolak padam.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 120.000 dan Sebuah Adonan',
+          paragraphs: [
+            'Pertengahan 2017, Eko dan istrinya mengambil langkah nekat. Dengan sisa uang terakhir sebesar Rp 120.000 di dompet, mereka memutuskan untuk mencoba berjualan bakso dari dapur kontrakan.',
+            'Karena modal yang teramat minim, mereka tidak langsung membuka warung matang. Eko membeli bahan dan menggiling satu adonan bakso saja untuk dijual mentah kepada orang lain. Niatnya sangat sederhana: jika adonannya laku, mereka bisa membeli beras; jika tersisa, adonan itu bisa dimasak sendiri agar tidak lagi makan nasi garam setiap hari.',
+            'Untuk menyempurnakan kualitas, mereka menemui paman mereka yang telah berpengalaman sebagai pedagang bakso keliling untuk mempelajari formula bumbu dan tekstur bakso khas Malang yang kenyal alami. Mereka menamai usaha tersebut "Bakso Sritikah"—sebuah gabungan nama dari ibu kandung dan ibu mertua sebagai wujud doa restu orang tua.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Jatuh, Bangun, Jatuh, Bangun',
+          paragraphs: [
+            'Jalan menuju pemulihan penuh liku terjal. Warung bakso fisik pertama yang mereka coba buka terpaksa gulung tikar dalam kurun waktu kurang dari dua bulan akibat sepinya pengunjung dan biaya sewa yang menekan.',
+            'Alih-alih menyerah, kedua bersaudara ini melakukan evaluasi radikal. Mereka kembali fokus memproduksi adonan bakso berkualitas dan mulai menjajaki penjualan daring lewat grup-grup komunitas Facebook dan media sosial.',
+            'Dari sanalah lahir inovasi penentu: "Bakso Frozen". Dengan mengemas bakso beku bersama bumbu kuah kaldu, bawang goreng, mie kering, dan sambal dalam kemasan higienis, produk mereka mampu dikirim ke berbagai kota tanpa risiko basi. Pesanan pun mulai membanjir dari berbagai pelosok Nusantara.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Lunas Rp 2 Miliar',
+          paragraphs: [
+            'Kerja keras tanpa henti siang dan malam mulai membuahkan hasil manis. Permintaan pasar terhadap Bakso Sritikah Frozen melonjak eksponensial. Dari produksi manual di dapur rumah, kapasitas produksi merangkak naik hingga ratusan kilogram per hari.',
+            'Arus kas yang sehat dialokasikan secara disiplin untuk membayar cicilan pokok para kreditur satu per satu. Hingga suatu hari yang mengharukan, seluruh tumpukan utang Rp 2 miliar dari masa lalu kontraktor tambang dinyatakan LUNAS 100%.',
+            'Eko dan Dwi tersenyum mengingat cemoohan orang-orang di masa lalu. Mereka membuktikan bahwa kehormatan yang hilang akibat kebangkrutan bisa direbut kembali lewat keringat, ketekunan, dan kejujuran.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Dari Malang Melintasi Samudra ke Hong Kong',
+          paragraphs: [
+            'Hari ini, Bakso Sritikah telah berdiri kokoh dengan pabrik pengolahan modern sendiri di Malang dan mempekerjakan 27 orang karyawan. Seluruh lini produk telah mengantongi izin edar BPOM dan sertifikasi halal resmi.',
+            'Kelezatan bakso khas Malang racikan dua bersaudara ini kini melintasi samudra, menjadi komoditas ekspor rutin yang digemari para pekerja migran dan konsumen di Hong Kong.',
+            'Meski telah menjadi eksportir sukses, Eko dan Dwi tidak pernah melupakan getirnya masa-masa makan nasi garam. Di gerai lokalnya, mereka tetap menyediakan porsi bakso dengan harga mulai Rp 2.000 agar siapa pun yang sedang berada di titik terendah tetap bisa menikmati semangkuk bakso hangat dengan harga yang manusiawi.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Mulai dari Skala Mikro (Rp 120 Ribu): Jangan menunggu modal besar untuk bangkit. Satu adonan terkecil yang dieksekusi hari ini jauh lebih bernilai dari rencana besar yang tertunda.',
+        'Inovasi Daya Tahan (Bakso Frozen): Mentransformasikan produk makanan matang harian menjadi produk beku higienis memperluas jangkauan pasar hingga skala ekspor lintas negara.',
+        'Rendah Hati Menimba Ilmu (Mentorship): Meminta bimbingan dari praktisi yang lebih berpengalaman menghemat waktu dan mencegah kegagalan formula produk.',
+        'Tetap Membumi dan Peduli: Mengingat masa sulit membuat bisnis memiliki jiwa, salah satunya dengan tetap menyediakan produk yang terjangkau bagi masyarakat kecil.'
+      ]
+    },
+    {
       id: 'dian',
       featured: false,
       name: 'Dian Agustin',
