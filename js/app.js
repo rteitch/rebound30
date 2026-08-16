@@ -1274,77 +1274,82 @@ const App = {
   // ============================================================
   // DEBT MANAGEMENT
   // ============================================================
+  // ============================================================
+  // DEBTS MODULE
+  // ============================================================
   debts: {
     render() {
       const s = App.state;
-      const debts = [...s.debts];
+      const total = s.debts.reduce((a,d)=>a+d.remaining, 0);
+      const minPay = s.debts.reduce((a,d)=>a+d.minPayment, 0);
+      const inc = s.profile.monthlyIncome || 0;
+      const dsr = inc > 0 ? Math.round((minPay / inc) * 100) : (minPay > 0 ? 100 : 0);
+      
+      const debtTotalVal = document.getElementById('debt-total-value');
+      if (debtTotalVal) debtTotalVal.textContent = H.formatRp(total);
+      
+      const debtCountTxt = document.getElementById('debt-count-text');
+      if (debtCountTxt) debtCountTxt.textContent = `${s.debts.length} utang aktif`;
+      
+      const strategySelect = document.getElementById('debt-strategy-select');
       const strategy = s.settings.debtStrategy || 'risk_first';
-      document.getElementById('debt-strategy-select').value = strategy;
-      
-      // Sort by strategy
-      const sorted = this.sortDebts(debts, strategy);
-      
-      const total = sorted.reduce((a,d)=>a+d.remaining,0);
-      document.getElementById('debt-total-value').textContent = H.formatRp(total);
-      document.getElementById('debt-count-text').textContent = `${sorted.length} utang aktif`;
+      if (strategySelect) strategySelect.value = strategy;
       
       // Interest widget
       const thisMonthInterest = s.expenses.records
         .filter(e => e.isInterest && H.isThisMonth(e.date))
         .reduce((a,e)=>a+e.amount,0);
       const widget = document.getElementById('debt-interest-widget');
-      if (thisMonthInterest > 0) {
-        widget.innerHTML = `
-          <div class="interest-widget">
-            <div class="interest-widget-title">Total Beban Bunga Bulan Ini</div>
-            <div class="interest-widget-amount">${H.formatRp(thisMonthInterest)}</div>
-            <div class="interest-widget-sub">Ini biaya "waktu" untuk menyelesaikan utang — bukan pokok.</div>
-          </div>
-        `;
-      } else { widget.innerHTML = ''; }
+      if (widget) {
+        if (thisMonthInterest > 0) {
+          widget.innerHTML = `
+            <div class="interest-widget">
+              <div class="interest-widget-title">Total Beban Bunga Bulan Ini</div>
+              <div class="interest-widget-amount">${H.formatRp(thisMonthInterest)}</div>
+              <div class="interest-widget-sub">Ini biaya "waktu" untuk menyelesaikan utang — bukan pokok.</div>
+            </div>
+          `;
+        } else { widget.innerHTML = ''; }
+      }
+      
+      const sorted = this.sortDebts(s.debts, strategy);
+      const listEl = document.getElementById('debts-list');
+      if (!listEl) return;
       
       if (sorted.length === 0) {
-        document.getElementById('debts-list').innerHTML = `
+        listEl.innerHTML = `
           <div class="empty-state">
             <div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
             <div class="empty-state-title">Belum ada utang tercatat</div>
             <div class="empty-state-text">Tambahkan utangmu untuk mulai memetakan kewajiban.</div>
+            <button class="btn btn-primary btn-sm" style="margin-top:var(--space-4)" onclick="App.debts.showAdd()">+ Tambah Utang Pertama</button>
           </div>
         `;
         return;
       }
       
-      document.getElementById('debts-list').innerHTML = sorted.map((d,i) => {
+      listEl.innerHTML = sorted.map((d,i) => {
         const paidPct = d.original > 0 ? Math.round((1 - d.remaining/d.original)*100) : 0;
         const interestPerDay = d.interestMonthly / 30;
-        const isIllegal = interestPerDay > 0.1;
+        const isIllegal = interestPerDay > 0.1 || d.isIllegal || (d.interestMonthly > 3);
         const daysUntilDue = d.dueDate ? H.daysBetween(H.today(), d.dueDate) : null;
         const negStatus = d.negotiations && d.negotiations.length > 0
           ? d.negotiations[d.negotiations.length-1].status : 'NOT_CONTACTED';
         
         return `
-          <div class="debt-card" id="debt-card-${d.id}">
+          <div class="debt-card ${i === 0 ? 'priority-target' : ''}" id="debt-card-${d.id}">
             <div class="debt-card-header" onclick="App.debts.toggleCard('${d.id}')">
               <div>
-                <div class="debt-name">${H.escHtml(d.name)} ${strategy !== 'custom' ? `<span style="font-size:11px;background:var(--slate-100);padding:2px 6px;border-radius:10px;color:var(--slate-600)">#${i+1}</span>` : ''}</div>
-                <div class="debt-creditor">${H.escHtml(d.creditor || '—')} · <span class="negotiation-status neg-${negStatus}">${this.negLabel(negStatus)}</span></div>
-                ${daysUntilDue !== null && daysUntilDue <= 7 && daysUntilDue >= 0
-                  ? `<div class="badge badge-critical" style="margin-top:4px">Jatuh tempo ${daysUntilDue===0?'hari ini':`${daysUntilDue} hari lagi`}</div>` 
-                  : daysUntilDue !== null && daysUntilDue < 0 
-                    ? `<div class="badge badge-critical" style="margin-top:4px">Sudah melewati jatuh tempo</div>` : ''}
+                <div class="debt-name">${H.escHtml(d.name)} <span style="font-size:11px;background:var(--slate-100);padding:2px 6px;border-radius:10px;color:var(--slate-600)">#${i+1}</span></div>
+                <div class="debt-creditor">${H.escHtml(d.creditorType || d.creditor || 'Kreditur')} · <span class="negotiation-status neg-${negStatus}">${this.negLabel(negStatus)}</span></div>
               </div>
               <div style="text-align:right">
                 <div class="debt-amount">${H.formatRp(d.remaining)}</div>
-                <div class="debt-amount-label">tersisa ${paidPct>0?`· ${paidPct}% lunas`:''}</div>
+                <div class="debt-progress-text">Sisa dari ${H.formatRp(d.original || d.remaining)} (${paidPct}% terbayar)</div>
               </div>
             </div>
+            <div class="debt-progress-bar"><div class="debt-progress-fill" style="width:${paidPct}%"></div></div>
             <div class="debt-card-body">
-              <div class="debt-progress-bar"><div class="debt-progress-fill" style="width:${paidPct}%"></div></div>
-              ${isIllegal ? `
-                <div class="illegal-flag">
-                  <strong>Perhatian:</strong> Bunga ${d.interestMonthly}%/bln melebihi batas legal OJK (maks 3%/bln konsumtif). 
-                  Kemungkinan ini pinjol ilegal. Verifikasi di ojk.go.id sebelum membayar lebih.
-                </div>` : ''}
               <div class="debt-meta-grid">
                 <div class="debt-meta-item">
                   <div class="debt-meta-label">Cicilan Min/Bln</div>
@@ -1359,11 +1364,23 @@ const App = {
                   <div class="debt-meta-value">${d.dueDate ? H.formatDate(d.dueDate) : '—'}</div>
                 </div>
               </div>
-              <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;">
-                <button class="btn btn-sm btn-outline" onclick="App.debts.showPayment('${d.id}')">Catat Pembayaran</button>
-                <button class="btn btn-sm btn-secondary" onclick="App.debts.showNegotiation('${d.id}')">Ajukan Negosiasi</button>
-                <button class="btn btn-sm btn-ghost" onclick="App.debts.showEdit('${d.id}')">Edit</button>
-                <button class="btn btn-sm btn-ghost" style="color:var(--red-500)" onclick="App.removeDebt('${d.id}')">Hapus</button>
+              <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-top:var(--space-3);">
+                <button class="btn btn-sm btn-outline" onclick="App.debts.showPayment('${d.id}')">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                  Catat Pembayaran
+                </button>
+                <button class="btn btn-sm btn-secondary" onclick="App.debts.showNegotiation('${d.id}')">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  Ajukan Negosiasi
+                </button>
+                <button class="btn btn-sm btn-ghost" onclick="App.debts.showEdit('${d.id}')">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+                  Edit
+                </button>
+                <button class="btn btn-sm btn-ghost" style="color:var(--red-600);" onclick="App.debts.remove('${d.id}')">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  Hapus
+                </button>
               </div>
               ${d.negotiations && d.negotiations.length > 0 ? `
                 <div style="margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-border)">
@@ -1410,7 +1427,8 @@ const App = {
     },
     
     toggleCard(id) {
-      document.getElementById('debt-card-'+id).classList.toggle('expanded');
+      const el = document.getElementById('debt-card-'+id);
+      if (el) el.classList.toggle('expanded');
     },
     
     setStrategy(val) {
@@ -1421,31 +1439,35 @@ const App = {
     
     showAdd() {
       App.openModal(`
-        <div class="modal-title">+ Tambah Utang</div>
+        <div class="modal-title">+ Catat Utang Baru</div>
         <div class="form-group">
-          <label class="form-label">Nama / Label Utang *</label>
-          <input class="form-input" id="d-name" placeholder="mis. KPR, Pinjol Kredivo">
+          <label class="form-label">Nama Utang / Kreditur *</label>
+          <input class="form-input" id="d-name" placeholder="mis. Pinjol AdaModal, Kartu Kredit BCA, Teman">
         </div>
         <div class="form-group">
-          <label class="form-label">Nama Kreditur</label>
-          <input class="form-input" id="d-creditor" placeholder="mis. Bank BCA">
+          <label class="form-label">Jenis Kreditur</label>
+          <select class="form-input form-select" id="d-type">
+            <option value="Pinjol Legal (OJK)">Pinjol Legal (OJK)</option>
+            <option value="Pinjol Ilegal">Pinjol Ilegal</option>
+            <option value="Bank / KTA">Bank / KTA</option>
+            <option value="Kartu Kredit">Kartu Kredit</option>
+            <option value="Paylater">Paylater</option>
+            <option value="Keluarga / Teman">Keluarga / Teman</option>
+            <option value="Koperasi / BPR">Koperasi / BPR</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Jumlah Awal</label>
-          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
-          <input type="number" class="form-input" id="d-original" placeholder="0"></div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Sisa Utang Sekarang *</label>
+          <label class="form-label">Total Sisa Pokok Utang Saat Ini *</label>
           <div class="input-prefix-group"><span class="input-prefix">Rp</span>
           <input type="number" class="form-input" id="d-remaining" placeholder="0"></div>
         </div>
         <div class="form-group">
-          <label class="form-label">Bunga (% per bulan)</label>
-          <input type="number" step="0.01" class="form-input" id="d-interest" placeholder="0">
+          <label class="form-label">Estimasi Bunga per Bulan (%)</label>
+          <input type="number" step="0.01" class="form-input" id="d-interest" placeholder="mis. 0.3 atau 2.5">
         </div>
         <div class="form-group">
-          <label class="form-label">Cicilan Minimum/Bulan</label>
+          <label class="form-label">Cicilan Minimum per Bulan</label>
           <div class="input-prefix-group"><span class="input-prefix">Rp</span>
           <input type="number" class="form-input" id="d-minpay" placeholder="0"></div>
         </div>
@@ -1468,204 +1490,31 @@ const App = {
       `);
     },
     
-        showEdit(id) {
-      const inc = App.state.incomes.find(i => i.id === id);
-      if (!inc) return;
-
-      App.openModal(`
-        <div class="modal-title">Edit Pemasukan</div>
-        <div class="form-group">
-          <label class="form-label">Sumber Pemasukan *</label>
-          <input class="form-input" id="ed-inc-source" value="${H.escHtml(inc.source)}">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Jumlah (Rp) *</label>
-          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
-          <input type="number" class="form-input" id="ed-inc-amount" value="${inc.amount}"></div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Kategori</label>
-          <select class="form-input form-select" id="ed-inc-cat">
-            <option value="job" ${inc.category==='job'?'selected':''}>Gaji / Pekerjaan</option>
-            <option value="freelance" ${inc.category==='freelance'?'selected':''}>Freelance / Proyek</option>
-            <option value="client" ${inc.category==='client'?'selected':''}>Klien Baru</option>
-            <option value="business" ${inc.category==='business'?'selected':''}>Bisnis / Jualan</option>
-            <option value="daily" ${inc.category==='daily'?'selected':''}>Kerja Harian</option>
-            <option value="commission" ${inc.category==='commission'?'selected':''}>Komisi</option>
-            <option value="asset_sale" ${inc.category==='asset_sale'?'selected':''}>Jual Aset</option>
-            <option value="other" ${inc.category==='other'?'selected':''}>Lainnya</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Tanggal</label>
-          <input type="date" class="form-input" id="ed-inc-date" value="${inc.date || H.today()}">
-        </div>
-        <div class="settings-item" style="margin-bottom:var(--space-4)">
-          <div><div class="settings-item-label">Pemasukan Rutin/Berulang?</div></div>
-          <label class="toggle"><input type="checkbox" id="ed-inc-recurring" ${inc.recurring?'checked':''}><span class="toggle-slider"></span></label>
-        </div>
-        <div style="display:flex;gap:var(--space-3)">
-          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
-          <button class="btn btn-primary flex-1" onclick="App.income.saveEdit('${id}')">Simpan</button>
-        </div>
-      `);
-    },
-
-    saveEdit(id) {
-      const inc = App.state.incomes.find(i => i.id === id);
-      if (!inc) return;
-      const source = document.getElementById('ed-inc-source').value.trim();
-      const amount = H.parseRp(document.getElementById('ed-inc-amount').value);
-      if (!source) { App.toast('Sumber pemasukan wajib diisi', 'error'); return; }
-      if (!amount || amount <= 0) { App.toast('Masukkan nominal pemasukan valid', 'error'); return; }
-
-      inc.source = source;
-      inc.amount = amount;
-      inc.category = document.getElementById('ed-inc-cat').value;
-      inc.date = document.getElementById('ed-inc-date').value;
-      inc.recurring = document.getElementById('ed-inc-recurring').checked;
-
-      App.save();
-      App.closeModal();
-      this.render();
-      App.toast('Pemasukan berhasil diperbarui ✓', 'success');
-    },
-
-        showEdit(id) {
-      const exp = App.state.expenses.records.find(e => e.id === id);
-      if (!exp) return;
-
-      App.openModal(`
-        <div class="modal-title">Edit Pengeluaran</div>
-        <div class="form-group">
-          <label class="form-label">Deskripsi *</label>
-          <input class="form-input" id="ed-exp-desc" value="${H.escHtml(exp.description)}">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Jumlah (Rp) *</label>
-          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
-          <input type="number" class="form-input" id="ed-exp-amount" value="${exp.amount}"></div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Kategori</label>
-          <select class="form-input form-select" id="ed-exp-cat">
-            <option value="eating_out" ${exp.category==='eating_out'?'selected':''}>Makan di Luar</option>
-            <option value="entertainment" ${exp.category==='entertainment'?'selected':''}>Hiburan / Rekreasi</option>
-            <option value="shopping" ${exp.category==='shopping'?'selected':''}>Belanja Non-Esensial</option>
-            <option value="transport" ${exp.category==='transport'?'selected':''}>Transportasi Tambahan</option>
-            <option value="health" ${exp.category==='health'?'selected':''}>Kesehatan & Obat</option>
-            <option value="other" ${exp.category==='other'?'selected':''}>Lainnya</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Tanggal</label>
-          <input type="date" class="form-input" id="ed-exp-date" value="${exp.date || H.today()}">
-        </div>
-        <div style="display:flex;gap:var(--space-3)">
-          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
-          <button class="btn btn-primary flex-1" onclick="App.expenses.saveEdit('${id}')">Simpan</button>
-        </div>
-      `);
-    },
-
-    saveEdit(id) {
-      const exp = App.state.expenses.records.find(e => e.id === id);
-      if (!exp) return;
-      const desc = document.getElementById('ed-exp-desc').value.trim();
-      const amount = H.parseRp(document.getElementById('ed-exp-amount').value);
-      if (!desc) { App.toast('Deskripsi pengeluaran wajib diisi', 'error'); return; }
-      if (!amount || amount <= 0) { App.toast('Masukkan nominal pengeluaran valid', 'error'); return; }
-
-      exp.description = desc;
-      exp.amount = amount;
-      exp.category = document.getElementById('ed-exp-cat').value;
-      exp.date = document.getElementById('ed-exp-date').value;
-
-      App.save();
-      App.closeModal();
-      this.render();
-      App.toast('Pengeluaran berhasil diperbarui ✓', 'success');
-    },
-
-        showEdit(id) {
-      const ast = App.state.assets.find(a => a.id === id);
-      if (!ast) return;
-
-      App.openModal(`
-        <div class="modal-title">Edit Aset</div>
-        <div class="form-group">
-          <label class="form-label">Nama Aset *</label>
-          <input class="form-input" id="ed-a-name" value="${H.escHtml(ast.name)}">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Kategori</label>
-          <select class="form-input form-select" id="ed-a-cat">
-            <option value="electronics" ${ast.category==='electronics'?'selected':''}>Elektronik</option>
-            <option value="vehicle" ${ast.category==='vehicle'?'selected':''}>Kendaraan</option>
-            <option value="property" ${ast.category==='property'?'selected':''}>Properti</option>
-            <option value="cash" ${ast.category==='cash'?'selected':''}>Uang Tunai</option>
-            <option value="jewelry" ${ast.category==='jewelry'?'selected':''}>Perhiasan</option>
-            <option value="business" ${ast.category==='business'?'selected':''}>Peralatan Usaha</option>
-            <option value="other" ${ast.category==='other'?'selected':''}>Lainnya</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Estimasi Nilai</label>
-          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
-          <input type="number" class="form-input" id="ed-a-value" value="${ast.value}"></div>
-        </div>
-        <div class="settings-item" style="margin-bottom:var(--space-2)">
-          <div><div class="settings-item-label">Bisa dijual jika darurat?</div></div>
-          <label class="toggle"><input type="checkbox" id="ed-a-liquid" ${ast.liquidatable?'checked':''}><span class="toggle-slider"></span></label>
-        </div>
-        <div class="settings-item" style="margin-bottom:var(--space-4)">
-          <div><div class="settings-item-label">Alat kerja utama (Jangan dijual)</div></div>
-          <label class="toggle"><input type="checkbox" id="ed-a-work" ${ast.keepForWork?'checked':''}><span class="toggle-slider"></span></label>
-        </div>
-        <div style="display:flex;gap:var(--space-3)">
-          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
-          <button class="btn btn-primary flex-1" onclick="App.assets.saveEdit('${id}')">Simpan</button>
-        </div>
-      `);
-    },
-
-    saveEdit(id) {
-      const ast = App.state.assets.find(a => a.id === id);
-      if (!ast) return;
-      const name = document.getElementById('ed-a-name').value.trim();
-      const val = H.parseRp(document.getElementById('ed-a-value').value);
-      if (!name) { App.toast('Nama aset wajib diisi', 'error'); return; }
-      if (!val || val <= 0) { App.toast('Masukkan estimasi nilai aset yang valid', 'error'); return; }
-
-      ast.name = name;
-      ast.category = document.getElementById('ed-a-cat').value;
-      ast.value = val;
-      ast.liquidatable = document.getElementById('ed-a-liquid').checked;
-      ast.keepForWork = document.getElementById('ed-a-work').checked;
-
-      App.save();
-      App.closeModal();
-      this.render();
-      App.toast('Aset berhasil diperbarui ✓', 'success');
-    },
-
     saveNew() {
       const name = document.getElementById('d-name').value.trim();
+      const remaining = H.parseRp(document.getElementById('d-remaining').value);
       if (!name) { App.toast('Nama utang wajib diisi', 'error'); return; }
-      const remaining = parseInt(document.getElementById('d-remaining').value) || 0;
       if (remaining <= 0) { App.toast('Sisa utang harus lebih besar dari Rp 0', 'error'); return; }
-      const original = parseInt(document.getElementById('d-original').value) || remaining;
+      
+      const creditorType = document.getElementById('d-type').value;
+      const isIllegal = creditorType === 'Pinjol Ilegal';
+      
       App.state.debts.push({
-        id: H.uid(), name,
-        creditor: document.getElementById('d-creditor').value.trim(),
-        original: original > 0 ? original : remaining,
+        id: H.uid(),
+        name,
+        creditorType,
+        original: remaining,
         remaining,
-        interestMonthly: Math.max(0, parseFloat(document.getElementById('d-interest').value) || 0),
-        minPayment: Math.max(0, parseInt(document.getElementById('d-minpay').value) || 0),
+        interestMonthly: parseFloat(document.getElementById('d-interest').value) || 0,
+        minPayment: H.parseRp(document.getElementById('d-minpay').value) || 0,
         dueDate: document.getElementById('d-due').value,
         collateral: document.getElementById('d-collateral').value.trim(),
         notes: document.getElementById('d-notes').value.trim(),
-        payments: [], negotiations: [], status: 'ACTIVE',
+        isIllegal,
+        riskLevel: isIllegal ? 'HIGH' : 'MEDIUM',
+        status: 'ACTIVE',
+        payments: [],
+        negotiations: [],
       });
       App.save();
       App.closeModal();
@@ -1674,10 +1523,12 @@ const App = {
     },
     
     showPayment(id) {
+      const d = App.state.debts.find(x=>x.id===id);
+      if (!d) return;
       App.openModal(`
-        <div class="modal-title">Catat Pembayaran</div>
+        <div class="modal-title">Catat Pembayaran: ${H.escHtml(d.name)}</div>
         <div class="form-group">
-          <label class="form-label">Jumlah Dibayar</label>
+          <label class="form-label">Jumlah Pembayaran *</label>
           <div class="input-prefix-group"><span class="input-prefix">Rp</span>
           <input type="number" class="form-input" id="pay-amount" placeholder="0"></div>
         </div>
@@ -1689,7 +1540,7 @@ const App = {
           <label class="form-label">Dari jumlah itu, berapa bunga?</label>
           <div class="input-prefix-group"><span class="input-prefix">Rp</span>
           <input type="number" class="form-input" id="pay-interest" placeholder="0"></div>
-          <div class="form-hint">Digunakan untuk menghitung "total bunga terbayar bulan ini"</div>
+          <div class="form-hint">Digunakan untuk menghitung total bunga terbayar</div>
         </div>
         <div class="form-group">
           <label class="form-label">Catatan</label>
@@ -1703,17 +1554,16 @@ const App = {
     },
     
     savePayment(id) {
-      const amount = parseInt(document.getElementById('pay-amount').value) || 0;
-      if (!amount) { App.toast('Masukkan jumlah pembayaran', 'error'); return; }
-      const interest = parseInt(document.getElementById('pay-interest').value) || 0;
+      const amount = H.parseRp(document.getElementById('pay-amount').value);
+      if (!amount || amount <= 0) { App.toast('Masukkan jumlah pembayaran yang valid', 'error'); return; }
+      const interest = H.parseRp(document.getElementById('pay-interest').value) || 0;
       const date = document.getElementById('pay-date').value;
       const debt = App.state.debts.find(d=>d.id===id);
       if (!debt) return;
-      const principal = amount - interest;
+      const principal = Math.max(0, amount - interest);
       debt.remaining = Math.max(0, debt.remaining - principal);
       debt.payments = debt.payments || [];
       debt.payments.push({ id: H.uid(), amount, interest, date, notes: document.getElementById('pay-notes').value });
-      // Track interest as expense
       if (interest > 0) {
         App.state.expenses.records.push({ id: H.uid(), description: `Bunga utang: ${debt.name}`, amount: interest, date, category: 'debt_interest', essential: true, isInterest: true });
       }
@@ -1816,12 +1666,12 @@ const App = {
         </div>
         <div style="display:flex;gap:var(--space-2);margin-top:var(--space-4);">
           <button class="btn btn-danger btn-sm" onclick="App.debts.remove('${id}')">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-            Hapus
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Hapus Utang
           </button>
           <div style="flex:1;"></div>
           <button class="btn btn-secondary btn-sm" onclick="App.closeModal()">Batal</button>
-          <button class="btn btn-primary btn-sm" onclick="App.debts.saveEdit('${id}')">Simpan Perubahan</button>
+          <button class="btn btn-primary btn-sm" onclick="App.debts.saveEdit('${id}')">Simpan</button>
         </div>
       `);
     },
@@ -1830,9 +1680,9 @@ const App = {
       const d = App.state.debts.find(x=>x.id===id);
       if (!d) return;
       d.name = document.getElementById('ed-name').value.trim() || d.name;
-      d.remaining = parseInt(document.getElementById('ed-remaining').value) || d.remaining;
+      d.remaining = H.parseRp(document.getElementById('ed-remaining').value) || d.remaining;
       d.interestMonthly = parseFloat(document.getElementById('ed-interest').value) || 0;
-      d.minPayment = parseInt(document.getElementById('ed-minpay').value) || 0;
+      d.minPayment = H.parseRp(document.getElementById('ed-minpay').value) || 0;
       d.dueDate = document.getElementById('ed-due').value;
       App.save();
       App.closeModal();
@@ -1845,7 +1695,7 @@ const App = {
       const name = debt ? debt.name : 'utang ini';
       const ok = await App.confirm({
         title: 'Hapus Data Utang?',
-        message: `Apakah Anda yakin ingin menghapus data "${name}"?\n\nRiwayat pembayaran utang ini akan tetap disimpan di laporan.`,
+        message: `Apakah Anda yakin ingin menghapus data "${name}"?\n\nData ini akan dihapus dari daftar perhitungan utang aktif.`,
         confirmText: 'Ya, Hapus Utang',
         cancelText: 'Batal',
         type: 'danger'
@@ -1859,19 +1709,26 @@ const App = {
       }
     },
   },
-  
+
   // ============================================================
   // INCOME TRACKER
   // ============================================================
   income: {
     render() {
       const s = App.state;
-      const monthIncome = s.incomes.filter(i=>H.isThisMonth(i.date));
-      const totalMonth = monthIncome.reduce((a,i)=>a+i.amount,0);
-      const recurring = s.incomes.filter(i=>i.recurring).reduce((a,i)=>a+i.amount,0);
-      document.getElementById('income-month-total').textContent = H.formatRp(totalMonth);
-      document.getElementById('income-recurring-total').textContent = H.formatRp(recurring) + '/bln';
+      const totalThisMonth = s.incomes
+        .filter(i => H.isThisMonth(i.date))
+        .reduce((a,i) => a + i.amount, 0);
+      const recurringTotal = s.incomes
+        .filter(i => i.recurring)
+        .reduce((a,i) => a + i.amount, 0);
+      const oppCount = s.opportunities.filter(o => o.status === 'APPLIED' || o.status === 'INTERVIEW').length;
       
+      document.getElementById('income-month-total').textContent = H.formatRp(totalThisMonth + (s.profile.monthlyIncome || 0));
+      document.getElementById('income-recurring-total').textContent = H.formatRp(recurringTotal);
+      document.getElementById('income-opp-count').textContent = oppCount;
+      
+      // Incomes List
       const sorted = [...s.incomes].sort((a,b)=>b.date.localeCompare(a.date));
       document.getElementById('income-list').innerHTML = sorted.length ? sorted.map(i => `
         <div class="income-card">
@@ -1883,40 +1740,43 @@ const App = {
           </div>
           <div style="text-align:right">
             <div class="income-amount">${H.formatRp(i.amount)}</div>
-            
-            <div style="display:flex;gap:2px;justify-content:flex-end;margin-top:2px;">
-              <button class="btn btn-ghost btn-sm" style="padding:4px;" onclick="App.income.showEdit('${i.id}')" title="Edit Pemasukan">
+            <div style="display:flex;gap:4px;justify-content:flex-end;margin-top:4px;">
+              <button class="btn btn-ghost btn-sm" style="padding:4px 8px;font-size:11px;" onclick="App.income.showEdit('${i.id}')" title="Edit Pemasukan">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+                <span>Edit</span>
               </button>
-              <button class="btn btn-ghost btn-sm" style="padding:4px;color:var(--red-600);" onclick="App.income.remove('${i.id}')" title="Hapus Pemasukan">
+              <button class="btn btn-ghost btn-sm" style="padding:4px 8px;font-size:11px;color:var(--red-600);" onclick="App.income.remove('${i.id}')" title="Hapus Pemasukan">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span>Hapus</span>
               </button>
             </div>
           </div>
         </div>
-      `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="empty-state-title">Belum ada pemasukan</div><div class="empty-state-text">Catat setiap pemasukan, sekecil apapun.</div></div>';
+      `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="empty-state-title">Belum ada pemasukan tercatat</div><div class="empty-state-text">Catat setiap pemasukan harian, proyek, atau komisi di sini.</div></div>';
       
-      // Opportunities
+      // Opportunities List
       const opps = [...s.opportunities].sort((a,b)=>b.dateApplied?.localeCompare(a.dateApplied||''));
       document.getElementById('opportunities-list').innerHTML = opps.length ? opps.map(o=>`
         <div class="opportunity-card">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <div>
-              <div style="font-weight:600">${H.escHtml(o.title)}</div>
-              <div style="font-size:12px;color:var(--color-text-secondary)">${H.escHtml(o.company||'')} · ${o.type}</div>
+              <div style="font-weight:700;color:var(--slate-900);">${H.escHtml(o.title)}</div>
+              <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px;">${H.escHtml(o.company||'')} · ${o.type}</div>
             </div>
             <div style="text-align:right">
               <div class="opp-${o.status}" style="font-size:12px;font-weight:700">${this.oppStatusLabel(o.status)}</div>
               ${o.expectedIncome ? `<div style="font-size:12px;color:var(--green-600);font-weight:600">${H.formatRp(o.expectedIncome)}</div>` : ''}
             </div>
           </div>
-          <div style="display:flex;gap:var(--space-2);margin-top:var(--space-3)">
+          <div style="display:flex;gap:var(--space-2);margin-top:var(--space-3);align-items:center;">
             <select class="form-input form-select" style="font-size:12px;padding:6px 24px 6px 8px;flex:1" onchange="App.income.updateOppStatus('${o.id}',this.value)">
               ${['SAVED','APPLIED','INTERVIEW','NEGOTIATION','WON','LOST','CANCELLED'].map(st=>`<option value="${st}" ${o.status===st?'selected':''}>${this.oppStatusLabel(st)}</option>`).join('')}
             </select>
-            <button class="btn btn-ghost btn-sm" onclick="App.income.removeOpp('${o.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            <button class="btn btn-ghost btn-sm" style="padding:6px 8px;color:var(--red-600);" onclick="App.income.removeOpp('${o.id}')" title="Hapus Peluang">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
           </div>
-          ${o.followUpDate ? `<div style="font-size:11px;color:var(--amber-600);margin-top:4px">⏰ Follow-up: ${H.formatDate(o.followUpDate)}</div>` : ''}
+          ${o.followUpDate ? `<div style="font-size:11px;color:var(--amber-600);margin-top:6px;font-weight:600;">⏰ Follow-up: ${H.formatDate(o.followUpDate)}</div>` : ''}
         </div>
       `).join('') : '<div style="font-size:13px;color:var(--color-text-muted);padding:var(--space-4)">Catat lamaran kerja atau calon klien di sini.</div>';
     },
@@ -1944,16 +1804,21 @@ const App = {
       App.openModal(`
         <div class="modal-title">+ Catat Pemasukan</div>
         <div class="form-group">
-          <label class="form-label">Sumber / Deskripsi *</label>
-          <input class="form-input" id="i-source" placeholder="mis. Freelance desain, Gaji harian, Jual HP lama">
+          <label class="form-label">Sumber Pemasukan *</label>
+          <input class="form-input" id="inc-source" placeholder="mis. Desain Logo Klien A, Gaji, Jual Blender">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jumlah (Rp) *</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="inc-amount" placeholder="0"></div>
         </div>
         <div class="form-group">
           <label class="form-label">Kategori</label>
-          <select class="form-input form-select" id="i-cat">
-            <option value="job">Pekerjaan</option>
-            <option value="freelance">Freelance</option>
-            <option value="client">Klien</option>
-            <option value="business">Usaha</option>
+          <select class="form-input form-select" id="inc-cat">
+            <option value="freelance">Freelance / Proyek</option>
+            <option value="client">Klien Baru</option>
+            <option value="job">Gaji / Pekerjaan</option>
+            <option value="business">Bisnis / Usaha</option>
             <option value="daily">Kerja Harian</option>
             <option value="commission">Komisi</option>
             <option value="asset_sale">Jual Aset</option>
@@ -1961,21 +1826,12 @@ const App = {
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Jumlah *</label>
-          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
-          <input type="number" class="form-input" id="i-amount" placeholder="0"></div>
-        </div>
-        <div class="form-group">
           <label class="form-label">Tanggal</label>
-          <input type="date" class="form-input" id="i-date" value="${H.today()}">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Klien / Pemberi Kerja</label>
-          <input class="form-input" id="i-client" placeholder="Opsional">
+          <input type="date" class="form-input" id="inc-date" value="${H.today()}">
         </div>
         <div class="settings-item" style="margin-bottom:var(--space-4)">
-          <div><div class="settings-item-label">Pemasukan Berulang?</div><div class="settings-item-sub">Tandai jika ini pemasukan rutin</div></div>
-          <label class="toggle"><input type="checkbox" id="i-recurring"><span class="toggle-slider"></span></label>
+          <div><div class="settings-item-label">Pemasukan Rutin / Berulang?</div><div class="settings-item-sub">Langganan bulanan atau gaji tetap</div></div>
+          <label class="toggle"><input type="checkbox" id="inc-recurring"><span class="toggle-slider"></span></label>
         </div>
         <div style="display:flex;gap:var(--space-3)">
           <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
@@ -1985,179 +1841,281 @@ const App = {
     },
     
     saveNew() {
-      const source = document.getElementById('i-source').value.trim();
+      const source = document.getElementById('inc-source').value.trim();
+      const amount = H.parseRp(document.getElementById('inc-amount').value);
       if (!source) { App.toast('Sumber pemasukan wajib diisi', 'error'); return; }
-      const amount = parseInt(document.getElementById('i-amount').value) || 0;
       if (!amount || amount <= 0) { App.toast('Masukkan nominal pemasukan yang valid (> Rp 0)', 'error'); return; }
+      
       App.state.incomes.push({
-        id: H.uid(), source, amount,
-        category: document.getElementById('i-cat').value,
-        date: document.getElementById('i-date').value || H.today(),
-        client: document.getElementById('i-client').value.trim(),
-        recurring: document.getElementById('i-recurring').checked,
-        status: 'RECEIVED', notes: '',
+        id: H.uid(),
+        source,
+        amount,
+        category: document.getElementById('inc-cat').value,
+        date: document.getElementById('inc-date').value || H.today(),
+        recurring: document.getElementById('inc-recurring').checked,
+        notes: '',
       });
-      // Update profile income estimate
-      App.state.profile.monthlyIncome = App.state.incomes
-        .filter(i => H.isThisMonth(i.date))
-        .reduce((a,i)=>a+i.amount, 0);
       App.save();
       App.closeModal();
       this.render();
       App.toast(`Pemasukan ${H.formatRp(amount)} dicatat ✓`, 'success');
     },
+
+    showEdit(id) {
+      const inc = App.state.incomes.find(i => i.id === id);
+      if (!inc) return;
+
+      App.openModal(`
+        <div class="modal-title">Edit Pemasukan</div>
+        <div class="form-group">
+          <label class="form-label">Sumber Pemasukan *</label>
+          <input class="form-input" id="ed-inc-source" value="${H.escHtml(inc.source)}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jumlah (Rp) *</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ed-inc-amount" value="${inc.amount}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="ed-inc-cat">
+            <option value="job" ${inc.category==='job'?'selected':''}>Gaji / Pekerjaan</option>
+            <option value="freelance" ${inc.category==='freelance'?'selected':''}>Freelance / Proyek</option>
+            <option value="client" ${inc.category==='client'?'selected':''}>Klien Baru</option>
+            <option value="business" ${inc.category==='business'?'selected':''}>Bisnis / Jualan</option>
+            <option value="daily" ${inc.category==='daily'?'selected':''}>Kerja Harian</option>
+            <option value="commission" ${inc.category==='commission'?'selected':''}>Komisi</option>
+            <option value="asset_sale" ${inc.category==='asset_sale'?'selected':''}>Jual Aset</option>
+            <option value="other" ${inc.category==='other'?'selected':''}>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal</label>
+          <input type="date" class="form-input" id="ed-inc-date" value="${inc.date || H.today()}">
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-4)">
+          <div><div class="settings-item-label">Pemasukan Rutin / Berulang?</div></div>
+          <label class="toggle"><input type="checkbox" id="ed-inc-recurring" ${inc.recurring?'checked':''}><span class="toggle-slider"></span></label>
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.income.saveEdit('${id}')">Simpan Perubahan</button>
+        </div>
+      `);
+    },
+
+    saveEdit(id) {
+      const inc = App.state.incomes.find(i => i.id === id);
+      if (!inc) return;
+      const source = document.getElementById('ed-inc-source').value.trim();
+      const amount = H.parseRp(document.getElementById('ed-inc-amount').value);
+      if (!source) { App.toast('Sumber pemasukan wajib diisi', 'error'); return; }
+      if (!amount || amount <= 0) { App.toast('Masukkan nominal pemasukan valid (> Rp 0)', 'error'); return; }
+
+      inc.source = source;
+      inc.amount = amount;
+      inc.category = document.getElementById('ed-inc-cat').value;
+      inc.date = document.getElementById('ed-inc-date').value || H.today();
+      inc.recurring = document.getElementById('ed-inc-recurring').checked;
+
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Pemasukan berhasil diperbarui ✓', 'success');
+    },
     
-    remove(id) {
-      App.state.incomes = App.state.incomes.filter(i=>i.id!==id);
-      App.save(); this.render();
+    async remove(id) {
+      const inc = App.state.incomes.find(i => i.id === id);
+      const name = inc ? inc.source : 'pemasukan ini';
+      const ok = await App.confirm({
+        title: 'Hapus Catatan Pemasukan?',
+        message: `Apakah Anda yakin ingin menghapus catatan pemasukan "${name}" (${H.formatRp(inc?.amount)})?`,
+        confirmText: 'Ya, Hapus',
+        cancelText: 'Batal',
+        type: 'danger'
+      });
+      if (ok) {
+        App.state.incomes = App.state.incomes.filter(i=>i.id!==id);
+        App.save();
+        this.render();
+        App.toast('Pemasukan dihapus', 'info');
+      }
     },
     
     showAddOpp() {
       App.openModal(`
         <div class="modal-title">+ Tambah Peluang / Lamaran</div>
         <div class="form-group">
-          <label class="form-label">Posisi / Proyek *</label>
-          <input class="form-input" id="o-title" placeholder="mis. Desainer UI Freelance, Admin Toko Online">
+          <label class="form-label">Nama Proyek / Posisi *</label>
+          <input class="form-input" id="opp-title" placeholder="mis. Redesain Web Toko X, Lowongan Admin PT Y">
         </div>
         <div class="form-group">
-          <label class="form-label">Perusahaan / Klien</label>
-          <input class="form-input" id="o-company" placeholder="Opsional">
+          <label class="form-label">Klien / Perusahaan</label>
+          <input class="form-input" id="opp-company" placeholder="mis. PT Maju Bersama, Pak Budi">
         </div>
         <div class="form-group">
-          <label class="form-label">Tipe</label>
-          <select class="form-input form-select" id="o-type">
-            <option value="Pekerjaan Tetap">Pekerjaan Tetap</option>
-            <option value="Freelance">Freelance</option>
-            <option value="Part-time">Part-time</option>
-            <option value="Gig/Ojol">Gig / Ojol</option>
-            <option value="Proyek Langsung">Proyek Langsung</option>
+          <label class="form-label">Jenis</label>
+          <select class="form-input form-select" id="opp-type">
+            <option value="freelance">Freelance</option>
+            <option value="job">Pekerjaan Penuh Waktu</option>
+            <option value="part_time">Paruh Waktu</option>
+            <option value="client">Klien</option>
+            <option value="other">Lainnya</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Kanal</label>
-          <select class="form-input form-select" id="o-channel">
-            <option>Direct / Kontak Langsung</option>
-            <option>Projects.co.id</option>
-            <option>Sribulancer</option>
-            <option>Upwork</option>
-            <option>Fiverr</option>
-            <option>LinkedIn</option>
-            <option>Jobstreet</option>
-            <option>Ojol / Gojek / Grab</option>
-            <option>Marketplace (Tokopedia/Shopee)</option>
-            <option>Lainnya</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Estimasi Pemasukan</label>
+          <label class="form-label">Estimasi Nilai / Gaji (Rp)</label>
           <div class="input-prefix-group"><span class="input-prefix">Rp</span>
-          <input type="number" class="form-input" id="o-income" placeholder="0"></div>
+          <input type="number" class="form-input" id="opp-income" placeholder="0"></div>
         </div>
         <div class="form-group">
-          <label class="form-label">Tanggal Lamar / Hubungi</label>
-          <input type="date" class="form-input" id="o-date" value="${H.today()}">
+          <label class="form-label">Status Saat Ini</label>
+          <select class="form-input form-select" id="opp-status">
+            <option value="SAVED">Tersimpan (Belum dikontak)</option>
+            <option value="APPLIED" selected>Sudah Dikontak / Dilamar</option>
+            <option value="INTERVIEW">Interview / Diskusi</option>
+            <option value="NEGOTIATION">Negosiasi Harga</option>
+          </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Tanggal Follow-up</label>
-          <input type="date" class="form-input" id="o-followup">
+          <label class="form-label">Tanggal Follow-up Berikutnya</label>
+          <input type="date" class="form-input" id="opp-followup">
         </div>
         <div style="display:flex;gap:var(--space-3)">
           <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
-          <button class="btn btn-primary flex-1" onclick="App.income.saveOpp()">Simpan</button>
+          <button class="btn btn-primary flex-1" onclick="App.income.saveNewOpp()">Simpan</button>
         </div>
       `);
     },
     
-    saveOpp() {
-      const title = document.getElementById('o-title').value.trim();
+    saveNewOpp() {
+      const title = document.getElementById('opp-title').value.trim();
       if (!title) { App.toast('Isi nama posisi/proyek', 'error'); return; }
+      
       App.state.opportunities.push({
-        id: H.uid(), title,
-        company: document.getElementById('o-company').value.trim(),
-        type: document.getElementById('o-type').value,
-        channel: document.getElementById('o-channel').value,
-        expectedIncome: parseInt(document.getElementById('o-income').value) || 0,
-        dateApplied: document.getElementById('o-date').value,
-        followUpDate: document.getElementById('o-followup').value,
-        status: 'APPLIED', notes: '',
+        id: H.uid(),
+        title,
+        company: document.getElementById('opp-company').value.trim(),
+        type: document.getElementById('opp-type').value,
+        expectedIncome: H.parseRp(document.getElementById('opp-income').value) || 0,
+        status: document.getElementById('opp-status').value,
+        followUpDate: document.getElementById('opp-followup').value,
+        dateApplied: H.today(),
+        notes: '',
       });
-      App.save(); App.closeModal(); this.render();
+      App.save();
+      App.closeModal();
+      this.render();
       App.toast('Peluang ditambahkan ✓', 'success');
     },
     
     updateOppStatus(id, status) {
-      const o = App.state.opportunities.find(x=>x.id===id);
-      if (o) { o.status = status; App.save(); this.render(); }
+      const opp = App.state.opportunities.find(o=>o.id===id);
+      if (!opp) return;
+      opp.status = status;
+      App.save();
+      this.render();
+      App.toast(`Status diperbarui: ${this.oppStatusLabel(status)}`, 'info');
     },
     
-    removeOpp(id) {
-      App.state.opportunities = App.state.opportunities.filter(o=>o.id!==id);
-      App.save(); this.render();
+    async removeOpp(id) {
+      const opp = App.state.opportunities.find(o => o.id === id);
+      const name = opp ? opp.title : 'peluang ini';
+      const ok = await App.confirm({
+        title: 'Hapus Peluang / Lamaran?',
+        message: `Apakah Anda yakin ingin menghapus peluang "${name}"?`,
+        confirmText: 'Ya, Hapus',
+        cancelText: 'Batal',
+        type: 'danger'
+      });
+      if (ok) {
+        App.state.opportunities = App.state.opportunities.filter(o=>o.id!==id);
+        App.save();
+        this.render();
+        App.toast('Peluang dihapus', 'info');
+      }
     },
   },
-  
+
   // ============================================================
-  // EXPENSE TRACKER
+  // EXPENSES MODULE
   // ============================================================
   expenses: {
     render() {
       const s = App.state;
-      const records = s.expenses.records || [];
-      const thisMonth = records.filter(e => H.isThisMonth(e.date));
-      const essential = thisMonth.filter(e=>e.essential).reduce((a,e)=>a+e.amount,0);
-      const nonEssential = thisMonth.filter(e=>!e.essential).reduce((a,e)=>a+e.amount,0);
+      const ess = s.expenses.essential;
+      const essTotal = Object.values(ess).reduce((a,v)=>a+v,0);
+      const recordsThisMonth = s.expenses.records.filter(e=>H.isThisMonth(e.date));
+      const nonEssTotal = recordsThisMonth.filter(e=>!e.essential).reduce((a,e)=>a+e.amount,0);
+      const allTotal = essTotal + nonEssTotal;
+      const cash = s.profile.cash;
+      const runwayDays = essTotal > 0 ? Math.round(cash / essTotal * 30) : 999;
       
-      document.getElementById('exp-essential-total').textContent = H.formatRp(essential);
-      document.getElementById('exp-nonessential-total').textContent = H.formatRp(nonEssential);
+      document.getElementById('expense-essential-total').textContent = H.formatRp(essTotal);
+      document.getElementById('expense-all-total').textContent = H.formatRp(allTotal);
+      document.getElementById('expense-runway-days').textContent = runwayDays >= 999 ? '∞' : `${runwayDays} hari`;
       
-      const warnEl = document.getElementById('exp-warning-banner');
-      if (essential > 0 && nonEssential / essential > 0.3) {
-        warnEl.style.display = 'flex';
-      } else {
-        warnEl.style.display = 'none';
+      // Essential inputs
+      const map = { food:'exp-food', housing:'exp-housing', utilities:'exp-util', transport:'exp-transport', comm:'exp-comm', other:'exp-other' };
+      for (const [k, id] of Object.entries(map)) {
+        const el = document.getElementById(id);
+        if (el) el.value = ess[k] || 0;
       }
       
-      const sorted = [...records].sort((a,b)=>b.date.localeCompare(a.date));
-      document.getElementById('expenses-list').innerHTML = sorted.length ? sorted.map(e=>`
-        <div class="income-card" style="border-left: 3px solid ${e.essential?'var(--teal-400)':'var(--amber-400)'}">
-          <div class="income-icon-bg" style="background:${e.essential?'var(--teal-50)':'var(--amber-50)'}">
-            ${this.catIcon(e.category)}
-          </div>
+      // Non-essential records list
+      const sorted = [...s.expenses.records].sort((a,b)=>b.date.localeCompare(a.date));
+      document.getElementById('expenses-list').innerHTML = sorted.length ? sorted.map(e => `
+        <div class="income-card">
+          <div class="income-icon-bg" style="background:#fee2e2;color:#dc2626;">${this.catIcon(e.category)}</div>
           <div class="income-info">
             <div class="income-source">${H.escHtml(e.description)}</div>
-            <div class="income-meta">${H.formatDate(e.date)} · ${e.essential?'Esensial':'Non-esensial'}</div>
+            <div class="income-meta">${H.formatDate(e.date)} · ${e.category}</div>
           </div>
           <div style="text-align:right">
-            <div style="font-weight:700;color:var(--red-600)">${H.formatRp(e.amount)}</div>
-            
-            <div style="display:flex;gap:2px;justify-content:flex-end;margin-top:2px;">
-              <button class="btn btn-ghost btn-sm" style="padding:4px;" onclick="App.expenses.showEdit('${e.id}')" title="Edit Pengeluaran">
+            <div style="font-weight:700;color:var(--red-600)">-${H.formatRp(e.amount)}</div>
+            <div style="display:flex;gap:4px;justify-content:flex-end;margin-top:4px;">
+              <button class="btn btn-ghost btn-sm" style="padding:4px 8px;font-size:11px;" onclick="App.expenses.showEdit('${e.id}')" title="Edit Pengeluaran">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+                <span>Edit</span>
               </button>
-              <button class="btn btn-ghost btn-sm" style="padding:4px;color:var(--red-600);" onclick="App.expenses.remove('${e.id}')" title="Hapus Pengeluaran">
+              <button class="btn btn-ghost btn-sm" style="padding:4px 8px;font-size:11px;color:var(--red-600);" onclick="App.expenses.remove('${e.id}')" title="Hapus Pengeluaran">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span>Hapus</span>
               </button>
             </div>
           </div>
         </div>
-      `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--slate-400);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div class="empty-state-title">Belum ada pengeluaran tercatat</div><div class="empty-state-text">Catat pengeluaran harian untuk kontrol cashflow.</div></div>';
+      `).join('') : '<div style="font-size:13px;color:var(--color-text-muted);padding:var(--space-4)">Belum ada pengeluaran non-esensial tercatat.</div>';
     },
     
     catIcon(cat) {
-      const m = {
-        food: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/><path d="M12 2v20"/><path d="M21 15v7"/><path d="M21 15a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v7"/></svg>',
+      const map = {
+        food: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>',
         housing: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
         utilities: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
-        transport: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>',
+        transport: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>',
         comm: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
-        debt_interest: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>',
-        entertainment: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>',
-        shopping: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
-        eating_out: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>',
         health: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
-        other: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>'
+        debt_interest: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>',
+        entertainment: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>',
+        shopping: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
+        eating_out: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>',
+        other: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>'
       };
-      return m[cat] || m.other;
+      return map[cat] || map.other;
+    },
+    
+    saveEssential() {
+      const ess = App.state.expenses.essential;
+      ess.food = H.parseRp(document.getElementById('exp-food').value);
+      ess.housing = H.parseRp(document.getElementById('exp-housing').value);
+      ess.utilities = H.parseRp(document.getElementById('exp-util').value);
+      ess.transport = H.parseRp(document.getElementById('exp-transport').value);
+      ess.comm = H.parseRp(document.getElementById('exp-comm').value);
+      ess.other = H.parseRp(document.getElementById('exp-other').value);
+      App.save();
+      this.render();
+      App.toast('Pengeluaran esensial disimpan ✓', 'success');
     },
     
     showAdd() {
@@ -2165,40 +2123,27 @@ const App = {
         <div class="modal-title">+ Catat Pengeluaran</div>
         <div class="form-group">
           <label class="form-label">Deskripsi *</label>
-          <input class="form-input" id="exp-desc" placeholder="mis. Makan siang, Bensin, Netflix">
+          <input class="form-input" id="exp-desc" placeholder="mis. Kopi, Makan di luar, Beli pulsa darurat">
         </div>
         <div class="form-group">
-          <label class="form-label">Jumlah *</label>
+          <label class="form-label">Jumlah (Rp) *</label>
           <div class="input-prefix-group"><span class="input-prefix">Rp</span>
           <input type="number" class="form-input" id="exp-amount" placeholder="0"></div>
         </div>
         <div class="form-group">
           <label class="form-label">Kategori</label>
           <select class="form-input form-select" id="exp-cat">
-            <optgroup label="Esensial">
-              <option value="food">Makanan & Minuman</option>
-              <option value="housing">Tempat Tinggal</option>
-              <option value="utilities">Listrik & Air</option>
-              <option value="transport">Transportasi</option>
-              <option value="comm">Komunikasi</option>
-              <option value="health">Kesehatan</option>
-            </optgroup>
-            <optgroup label="Non-esensial">
-              <option value="entertainment">Hiburan</option>
-              <option value="shopping">Belanja</option>
-              <option value="eating_out">Makan di Luar</option>
-              <option value="subscription">Langganan</option>
-              <option value="other">Lainnya</option>
-            </optgroup>
+            <option value="eating_out">Makan di Luar / Jajan</option>
+            <option value="entertainment">Hiburan / Langganan</option>
+            <option value="shopping">Belanja Non-Esensial</option>
+            <option value="transport">Transportasi Tambahan</option>
+            <option value="health">Kesehatan</option>
+            <option value="other">Lainnya</option>
           </select>
         </div>
         <div class="form-group">
           <label class="form-label">Tanggal</label>
           <input type="date" class="form-input" id="exp-date" value="${H.today()}">
-        </div>
-        <div class="settings-item" style="margin-bottom:var(--space-4)">
-          <div><div class="settings-item-label">Pengeluaran Esensial?</div></div>
-          <label class="toggle"><input type="checkbox" id="exp-essential" checked><span class="toggle-slider"></span></label>
         </div>
         <div style="display:flex;gap:var(--space-3)">
           <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
@@ -2209,35 +2154,109 @@ const App = {
     
     saveNew() {
       const desc = document.getElementById('exp-desc').value.trim();
+      const amount = H.parseRp(document.getElementById('exp-amount').value);
       if (!desc) { App.toast('Deskripsi pengeluaran wajib diisi', 'error'); return; }
-      const amount = parseInt(document.getElementById('exp-amount').value) || 0;
       if (!amount || amount <= 0) { App.toast('Masukkan nominal pengeluaran yang valid (> Rp 0)', 'error'); return; }
-      if (!App.state.expenses.records) App.state.expenses.records = [];
+      
       App.state.expenses.records.push({
-        id: H.uid(), description: desc, amount,
+        id: H.uid(),
+        description: desc,
+        amount,
         category: document.getElementById('exp-cat').value,
         date: document.getElementById('exp-date').value || H.today(),
-        essential: document.getElementById('exp-essential').checked,
+        essential: false,
       });
-      App.save(); App.closeModal(); this.render();
+      App.save();
+      App.closeModal();
+      this.render();
       App.toast(`Pengeluaran ${H.formatRp(amount)} dicatat ✓`, 'success');
     },
+
+    showEdit(id) {
+      const exp = App.state.expenses.records.find(e => e.id === id);
+      if (!exp) return;
+
+      App.openModal(`
+        <div class="modal-title">Edit Pengeluaran</div>
+        <div class="form-group">
+          <label class="form-label">Deskripsi *</label>
+          <input class="form-input" id="ed-exp-desc" value="${H.escHtml(exp.description)}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jumlah (Rp) *</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ed-exp-amount" value="${exp.amount}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="ed-exp-cat">
+            <option value="eating_out" ${exp.category==='eating_out'?'selected':''}>Makan di Luar / Jajan</option>
+            <option value="entertainment" ${exp.category==='entertainment'?'selected':''}>Hiburan / Langganan</option>
+            <option value="shopping" ${exp.category==='shopping'?'selected':''}>Belanja Non-Esensial</option>
+            <option value="transport" ${exp.category==='transport'?'selected':''}>Transportasi Tambahan</option>
+            <option value="health" ${exp.category==='health'?'selected':''}>Kesehatan</option>
+            <option value="other" ${exp.category==='other'?'selected':''}>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal</label>
+          <input type="date" class="form-input" id="ed-exp-date" value="${exp.date || H.today()}">
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.expenses.saveEdit('${id}')">Simpan Perubahan</button>
+        </div>
+      `);
+    },
+
+    saveEdit(id) {
+      const exp = App.state.expenses.records.find(e => e.id === id);
+      if (!exp) return;
+      const desc = document.getElementById('ed-exp-desc').value.trim();
+      const amount = H.parseRp(document.getElementById('ed-exp-amount').value);
+      if (!desc) { App.toast('Deskripsi pengeluaran wajib diisi', 'error'); return; }
+      if (!amount || amount <= 0) { App.toast('Masukkan nominal pengeluaran valid (> Rp 0)', 'error'); return; }
+
+      exp.description = desc;
+      exp.amount = amount;
+      exp.category = document.getElementById('ed-exp-cat').value;
+      exp.date = document.getElementById('ed-exp-date').value || H.today();
+
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Pengeluaran berhasil diperbarui ✓', 'success');
+    },
     
-    remove(id) {
-      App.state.expenses.records = (App.state.expenses.records||[]).filter(e=>e.id!==id);
-      App.save(); this.render();
+    async remove(id) {
+      const exp = App.state.expenses.records.find(e => e.id === id);
+      const name = exp ? exp.description : 'pengeluaran ini';
+      const ok = await App.confirm({
+        title: 'Hapus Catatan Pengeluaran?',
+        message: `Apakah Anda yakin ingin menghapus catatan pengeluaran "${name}" (${H.formatRp(exp?.amount)})?`,
+        confirmText: 'Ya, Hapus',
+        cancelText: 'Batal',
+        type: 'danger'
+      });
+      if (ok) {
+        App.state.expenses.records = App.state.expenses.records.filter(e=>e.id!==id);
+        App.save();
+        this.render();
+        App.toast('Pengeluaran dihapus', 'info');
+      }
     },
   },
-  
+
   // ============================================================
-  // ASSET INVENTORY
+  // ASSETS MODULE
   // ============================================================
   assets: {
     render() {
       const s = App.state;
-      const assets = s.assets || [];
+      const assets = s.assets;
       const total = assets.reduce((a,x)=>a+x.value,0);
-      const liquid = assets.filter(x=>x.liquidatable && !x.keepForWork).reduce((a,x)=>a+x.value,0);
+      const liquid = assets.filter(a=>a.liquidatable && !a.keepForWork).reduce((a,x)=>a+x.value,0);
+      
       document.getElementById('asset-total-value').textContent = H.formatRp(total);
       document.getElementById('asset-liquid-value').textContent = H.formatRp(liquid);
       
@@ -2250,14 +2269,15 @@ const App = {
           </div>
           <div style="text-align:right">
             <div style="font-weight:700">${H.formatRp(a.value)}</div>
-            <div style="font-size:11px;color:${a.liquidatable&&!a.keepForWork?'var(--green-600)':'var(--slate-400)'}">${a.liquidatable&&!a.keepForWork?'Bisa dijual':'—'}</div>
-            
-            <div style="display:flex;gap:2px;justify-content:flex-end;margin-top:2px;">
-              <button class="btn btn-ghost btn-sm" style="padding:4px;" onclick="App.assets.showEdit('${a.id}')" title="Edit Aset">
+            <div style="font-size:11px;color:${a.liquidatable && !a.keepForWork ? 'var(--green-600)' : 'var(--slate-400)'}">${a.liquidatable && !a.keepForWork ? 'Bisa dijual' : '—'}</div>
+            <div style="display:flex;gap:4px;justify-content:flex-end;margin-top:4px;">
+              <button class="btn btn-ghost btn-sm" style="padding:4px 8px;font-size:11px;" onclick="App.assets.showEdit('${a.id}')" title="Edit Aset">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+                <span>Edit</span>
               </button>
-              <button class="btn btn-ghost btn-sm" style="padding:4px;color:var(--red-600);" onclick="App.assets.remove('${a.id}')" title="Hapus Aset">
+              <button class="btn btn-ghost btn-sm" style="padding:4px 8px;font-size:11px;color:var(--red-600);" onclick="App.assets.remove('${a.id}')" title="Hapus Aset">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span>Hapus</span>
               </button>
             </div>
           </div>
@@ -2274,7 +2294,7 @@ const App = {
         property: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
         business: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
         jewelry: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>',
-        other: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>'
+        other: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>'
       };
       return m[cat] || m.other;
     },
@@ -2304,11 +2324,11 @@ const App = {
           <input type="number" class="form-input" id="a-value" placeholder="0"></div>
         </div>
         <div class="settings-item" style="margin-bottom:var(--space-2)">
-          <div><div class="settings-item-label">Bisa dijual?</div></div>
+          <div><div class="settings-item-label">Bisa dijual jika darurat?</div></div>
           <label class="toggle"><input type="checkbox" id="a-liquid" checked><span class="toggle-slider"></span></label>
         </div>
         <div class="settings-item" style="margin-bottom:var(--space-4)">
-          <div><div class="settings-item-label">Dipakai untuk bekerja?</div><div class="settings-item-sub">Jika ya, tidak akan direkomendasikan untuk dijual</div></div>
+          <div><div class="settings-item-label">Alat kerja utama (Jangan dijual)</div><div class="settings-item-sub">Laptop kerja, motor ojol, dll.</div></div>
           <label class="toggle"><input type="checkbox" id="a-work"><span class="toggle-slider"></span></label>
         </div>
         <div style="display:flex;gap:var(--space-3)">
@@ -2320,30 +2340,108 @@ const App = {
     
     saveNew() {
       const name = document.getElementById('a-name').value.trim();
+      const val = H.parseRp(document.getElementById('a-value').value);
       if (!name) { App.toast('Nama aset wajib diisi', 'error'); return; }
-      const val = parseInt(document.getElementById('a-value').value) || 0;
       if (!val || val <= 0) { App.toast('Masukkan estimasi nilai aset yang valid (> Rp 0)', 'error'); return; }
+      
       App.state.assets.push({
-        id: H.uid(), name, value: val,
+        id: H.uid(),
+        name,
         category: document.getElementById('a-cat').value,
+        value: val,
         liquidatable: document.getElementById('a-liquid').checked,
         keepForWork: document.getElementById('a-work').checked,
         notes: '',
       });
-      App.save(); App.closeModal(); this.render();
+      App.save();
+      App.closeModal();
+      this.render();
       App.toast('Aset berhasil dicatat ✓', 'success');
     },
+
+    showEdit(id) {
+      const ast = App.state.assets.find(a => a.id === id);
+      if (!ast) return;
+
+      App.openModal(`
+        <div class="modal-title">Edit Aset</div>
+        <div class="form-group">
+          <label class="form-label">Nama Aset *</label>
+          <input class="form-input" id="ed-a-name" value="${H.escHtml(ast.name)}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="ed-a-cat">
+            <option value="electronics" ${ast.category==='electronics'?'selected':''}>Elektronik</option>
+            <option value="vehicle" ${ast.category==='vehicle'?'selected':''}>Kendaraan</option>
+            <option value="property" ${ast.category==='property'?'selected':''}>Properti</option>
+            <option value="cash" ${ast.category==='cash'?'selected':''}>Uang Tunai</option>
+            <option value="jewelry" ${ast.category==='jewelry'?'selected':''}>Perhiasan</option>
+            <option value="business" ${ast.category==='business'?'selected':''}>Peralatan Usaha</option>
+            <option value="other" ${ast.category==='other'?'selected':''}>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimasi Nilai</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ed-a-value" value="${ast.value}"></div>
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-2)">
+          <div><div class="settings-item-label">Bisa dijual jika darurat?</div></div>
+          <label class="toggle"><input type="checkbox" id="ed-a-liquid" ${ast.liquidatable?'checked':''}><span class="toggle-slider"></span></label>
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-4)">
+          <div><div class="settings-item-label">Alat kerja utama (Jangan dijual)</div></div>
+          <label class="toggle"><input type="checkbox" id="ed-a-work" ${ast.keepForWork?'checked':''}><span class="toggle-slider"></span></label>
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.assets.saveEdit('${id}')">Simpan Perubahan</button>
+        </div>
+      `);
+    },
+
+    saveEdit(id) {
+      const ast = App.state.assets.find(a => a.id === id);
+      if (!ast) return;
+      const name = document.getElementById('ed-a-name').value.trim();
+      const val = H.parseRp(document.getElementById('ed-a-value').value);
+      if (!name) { App.toast('Nama aset wajib diisi', 'error'); return; }
+      if (!val || val <= 0) { App.toast('Masukkan estimasi nilai aset yang valid (> Rp 0)', 'error'); return; }
+
+      ast.name = name;
+      ast.category = document.getElementById('ed-a-cat').value;
+      ast.value = val;
+      ast.liquidatable = document.getElementById('ed-a-liquid').checked;
+      ast.keepForWork = document.getElementById('ed-a-work').checked;
+
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Aset berhasil diperbarui ✓', 'success');
+    },
     
-    remove(id) {
-      App.state.assets = App.state.assets.filter(a=>a.id!==id);
-      App.save(); this.render();
+    async remove(id) {
+      const ast = App.state.assets.find(a => a.id === id);
+      const name = ast ? ast.name : 'aset ini';
+      const ok = await App.confirm({
+        title: 'Hapus Catatan Aset?',
+        message: `Apakah Anda yakin ingin menghapus catatan aset "${name}" (${H.formatRp(ast?.value)})?`,
+        confirmText: 'Ya, Hapus',
+        cancelText: 'Batal',
+        type: 'danger'
+      });
+      if (ok) {
+        App.state.assets = App.state.assets.filter(a=>a.id!==id);
+        App.save();
+        this.render();
+        App.toast('Aset dihapus', 'info');
+      }
     },
   },
-  
+
   // ============================================================
-  // SETTINGS
-  // ============================================================
-  settings: {
+    settings: {
     render() {
       const p = App.state.profile || {};
       const empSelect = document.getElementById('settings-profile-employment');
