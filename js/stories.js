@@ -4171,6 +4171,93 @@ const Stories = {
         'Investasi Mutu Produk Pada Standar Global: Riset formula ke pabrik kimia Jerman memastikan produk lokal memiliki daya saing kualitas setara merek internasional.',
         'Rela Melepaskan Aset Lama Demi Menyelamatkan Kelangsungan Usaha: Menutup 62 cabang yang tidak efisien adalah keputusan pahit yang menyelamatkan kelangsungan seluruh grup usaha.'
       ]
+    },
+    {
+      id: 'tomywinata',
+      featured: false,
+      name: 'Tomy Winata (Tjoet Tjwan Ling)',
+      tagline: 'Dari Anak Yatim Piatu, Jual Es Loli & Bangkrut 5 Kali di Berbagai Pulau — Bangkit Kemitraan Strategis Jadi Pemilik Kawasan SCBD & Artha Graha',
+      title: 'Dari Anak Yatim Piatu, 5 Kali Bangkrut, Kini Raja Kawasan SCBD',
+      subtitle: 'Pendiri Artha Graha Group & Pemilik Kawasan Bisnis SCBD Jakarta — Bangkit 5 Kali dari Titik Nol Menuju Konglomerasi Nasional',
+      origin: 'Pontianak, Kalimantan Barat / Jakarta',
+      ageAtRebound: '30 Thn (Tahun 1988)',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: '5 Kali Bangkrut & Kawasan SCBD',
+      badge: 'Pemilik SCBD — Pendiri Artha Graha Group',
+      theme: 'emerald',
+      accentColor: '#047857',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: '5 Kali Bangkrut Total (Papua, Kalbar, NTT, 2x Jakarta)',
+        age: '30 Tahun (1988)',
+        lowest: 'Anak Yatim Piatu, Jual Es Loli & Cuci Mobil, Jadi Kuli Kasar Pasca Bangkrut',
+        action: 'Mental Baja Pantang Menyerah + Kemitraan Strategis + Revitalisasi Bank Bermasalah',
+        result: 'Pemilik Kawasan SCBD Jakarta, Artha Graha Group, Kekayaan > Rp 14 Triliun'
+      },
+      timeline: [
+        { year: '1958–1972 — Masa Kecil Pontianak', text: 'Yatim piatu sejak kecil di keluarga miskin. Bertahan hidup dengan jualan es loli keliling dan mencuci mobil.' },
+        { year: '1972 — Proyek Pertama Usia 15', text: 'Dipercaya membangun kantor Koramil di Singkawang, Kalimantan Barat, mengasah kemampuan eksekusi lapangan.' },
+        { year: 'Era Kegagalan — 5 Kali Bangkrut', text: 'Investasi gagal berturut-turut di Papua, Kalbar, NTT, dan 2 kali bangkrut di Jakarta hingga melakoni profesi kuli kasar.' },
+        { year: '1988 — Lahirnya Artha Graha', text: 'Menggandeng Yayasan Kartika Eka Paksi mendirikan Artha Graha Group dan merestrukturisasi perbankan sakit.' },
+        { year: 'Revitalisasi Perbankan', text: 'Mengakuisisi Bank Propelat (menjadi Bank Artha Graha) dan memulihkannya dalam 1,5 tahun, disusul Bank Inter-Pacific.' },
+        { year: 'Hari Ini — Penguasa SCBD', text: 'Mengembangkan Sudirman Central Business District (SCBD) Jakarta dan dinobatkan sebagai salah satu orang terkaya Indonesia.' }
+      ],
+      quote: 'Saya 5 kali bangkrut: di Papua, di Kalimantan Barat, di NTT, dan di Jakarta 2 kali. Jatuh adalah hal biasa dalam bisnis; yang luar biasa adalah bangkit kembali setiap kali kita terjatuh.',
+      quoteAuthor: 'Tomy Winata, pendiri Artha Graha Group',
+      chapters: [
+        {
+          num: 1,
+          title: 'Bocah Es Loli dan Yatim Piatu di Pontianak',
+          paragraphs: [
+            'Pontianak, 1958. Seorang anak laki-laki bernama Tjoet Tjwan Ling (kelak dikenal sebagai Tomy Winata) terlahir di tengah kepapaan yang teramat perih. Kehilangan kedua orang tuanya sejak masa kanak-kanak menjadikannya seorang anak yatim piatu yang harus bertarung sendirian tanpa tempat mengadu.',
+            'Demi mengganjal perut lapar dan bertahan hidup di kerasnya jalanan Kalimantan Barat, Tomy kecil berkeliling memikul kotak es loli dan menawarkan jasa mencuci mobil para pemilik kendaraan di pasar tradisional.',
+            '"Saya tidak punya warisan dan tidak punya siapapun untuk bergantung. Rasa lapar dan kerasnya jalanan itulah guru pertama saya dalam memahami nilai kerja keras," kenangnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Usia 15 Tahun dan Kepercayaan Kantor Koramil',
+          paragraphs: [
+            'Tahun 1972, saat usianya baru menginjak 15 tahun, pintu takdirnya mulai terbuka saat ia diperkenalkan dengan aparat teritorial militer di Singkawang.',
+            'Kendati masih belia, ketangkasan, kejujuran, dan keuletannya membuahkan kepercayaan besar: ia diserahi tanggung jawab proyek pembangunan kantor Koramil setempat.',
+            'Tomy membuktikan kemampuannya mengelola material bangunan dan pekerja lapangan dengan penuh disiplin, membuka jaringan pertemanan dan fondasi awal di dunia konstruksi.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Lima Kali Runtuh: Dari Papua, NTT, hingga Kuli di Jakarta',
+          paragraphs: [
+            'Namun jalan menuju puncak konglomerasi dipenuhi jurang kegagalan yang berulang kali menenggelamkannya. Tomy mencoba menanam modal pada berbagai proyek di berbagai penjuru kepulauan Nusantara, namun takdir mengujinya tanpa ampun.',
+            'Investasinya di belantara Papua hancur lebur. Ia kembali mencoba di tanah kelahirannya Kalimantan Barat, namun kembali gulung tikar. Pindah ke Nusa Tenggara Timur (NTT), usahanya kembali kandas. Merantau ke Jakarta untuk mengadu nasib, ia menelan kebangkrutan dua kali berturut-turut.',
+            '"Saya lima kali bangkrut. Di Papua bangkrut, di Kalbar bangkrut, di NTT bangkrut, dan di Jakarta dua kali bangkrut," aku Tomy. Di masa-masa terkelam saat uangnya habis tak bersisa, ia tidak malu menyambung hidup dengan menjadi kuli bangunan kasar.'
+          ]
+        },
+        {
+          num: 4,
+          title: '1988: Kemitraan Strategis dan Revitalisasi Bank Sakit',
+          paragraphs: [
+            'Ditempa oleh lima kali kejatuhan, Tomy menjelma menjadi wirausahawan yang matang dalam manajemen risiko dan negosiasi tingkat tinggi.',
+            'Tahun 1988 menjadi momentum lompatan raksasa saat ia menggandeng Yayasan Kartika Eka Paksi untuk mendirikan Artha Graha Group. Insting bisnisnya yang tajam membawanya mengambil alih bank-bank yang kolaps.',
+            'Ia mengakuisisi Bank Propelat yang sedang sekarat, merombak manajemennya, dan menyulapnya menjadi Bank Artha Graha yang sehat dan mencetak laba hanya dalam tempo 1,5 tahun. Kesuksesan itu berlanjut dengan restrukturisasi Bank Inter-Pacific pada tahun 2003.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Kawasan SCBD dan Mahkota Kejayaan Artha Graha',
+          paragraphs: [
+            'Mahakarya terbesarnya terwujud dalam pembangunan kawasan Sudirman Central Business District (SCBD) di jantung segitiga emas Jakarta — kawasan perkantoran, perhotelan, dan pusat finansial paling prestisius dan modern di Indonesia.',
+            'Dari seorang bocah yatim piatu penjual es loli yang pernah lima kali bangkrut dan menjadi kuli, Tomy Winata melesat masuk ke jajaran konglomerat terkaya di Indonesia dengan estimasi kekayaan melampaui Rp 14 triliun.',
+            'Perjalanan hidupnya adalah monumen keteguhan mental: bahwa jumlah kegagalan kita tidak akan pernah menjadi masalah selama tekad untuk bangkit selalu lebih banyak satu kali daripada jumlah kejatuhan.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Resiliensi Tanpa Batas (Jatuh 5 Kali, Bangkit 6 Kali): Kebangkrutan beruntun di berbagai daerah adalah modul pembelajaran mental termahal untuk membentuk ketangguhan bisnis.',
+        'Membangun Kepercayaan Sejak Dini: Keberhasilan menyelesaikan proyek pertama di usia 15 tahun membuktikan bahwa amanah dan integritas adalah mata uang sosial tertinggi.',
+        'Keahlian Menyehatkan Aset Sakit (*Turnaround Specialist*): Mengakuisisi bank bermasalah dan merevitalisasinya menjadi institusi laba adalah keunggulan strategis pembeda.',
+        'Visi Infrastruktur Jangka Panjang: Mengembangkan kawasan SCBD membuktikan pentingnya kepemilikan aset properti strategis sebagai pilar ketahanan konglomerasi multi-dekade.'
+      ]
     }
   ],
 
