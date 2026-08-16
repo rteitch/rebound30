@@ -166,76 +166,87 @@ const Stories = {
       id: 'hendra',
       featured: false,
       name: 'M. Taufik Hendradinata (Hendra)',
-      tagline: 'Dari Raja Laundry & Utang Rp 2,2 Miliar Menjadi Owner Pabrik Skincare Salina Herbal',
-      title: 'Menembus Badai Riba Menuju Berkah Herbal',
-      subtitle: 'Owner Pabrik Skincare & Herbal CV Salina Herbal Mandiri, Sleman',
+      tagline: 'Dari Laundry & Ditipu Waralaba Pendidikan Rp 800 Jt, Utang Rp 2,2 M Hingga Tidur di Teras Masjid — Bangkit Jadi Owner Pabrik Skincare Salina Herbal',
+      title: 'Gelandangan yang Kini Punya Pabrik Skincare Sendiri',
+      subtitle: 'Owner Pabrik Skincare CV Salina Herbal Mandiri, Sleman — Dari Teras Masjid ke Pabrik Kosmetik Mandiri',
       origin: 'Sleman, D.I. Yogyakarta',
       ageAtRebound: '40-an Thn',
       categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
-      categoryLabel: 'Utang Rp 2,2 M',
-      badge: 'Lunas 100% & Omset Ratusan Juta',
+      categoryLabel: 'Utang Rp 2,2 M & Tidur di Masjid',
+      badge: 'Owner Pabrik Salina Herbal — Lunas Total',
       theme: 'indigo',
       accentColor: '#4F46E5',
       bgLight: '#EEF2FF',
       borderLight: '#C7D2FE',
       stats: {
-        debt: 'Rp 2,2 Miliar (9 Bank & Rentenir)',
+        debt: 'Rp 2,2 Miliar (Ditipu Waralaba Rp 800 Jt & Bunga Bank)',
         age: '40-an Tahun',
-        lowest: 'Tidur di Teras Masjid & Diteror DC',
-        action: 'Jual Makaroni & Riset Sabun Herbal',
-        result: 'Pabrik Skincare CPKB & Lunas Total'
+        lowest: 'Tidur di Teras Masjid, Sisa Rp 700rb untuk Kos Putri Anak Istri, Jual Sendok Garpu',
+        action: 'Jual Makaroni Pedas Keliling + Riset Formulasi Sabun & Kosmetik Herbal',
+        result: 'Pabrik Skincare CPKB BPOM Sendiri, Utang Rp 2,2 M Lunas Total'
       },
       timeline: [
-        { year: '2005–2010', text: 'Membangun bisnis laundry kiloan hingga memiliki 12 cabang di Yogyakarta dan Jawa Tengah.' },
-        { year: '2011 — Jebakan Utang', text: 'Tergiur ekspansi dengan pinjaman perbankan dan leasing mesin. Total utang menggunung Rp 2,2 miliar.' },
-        { year: '2012 — Titik Nadir', text: 'Seluruh aset disita, mobil ditarik leasing, rumah dijual. Hendra tidur di teras masjid demi anak istri di kos sempit.' },
-        { year: '2014 — Bangkit dari Dapur', text: 'Mulai jualan makaroni pedas keliling, lalu meracik sabun herbal di dapur kontrakan.' },
-        { year: 'Hari Ini — Salina Herbal', text: 'Memiliki pabrik kosmetik berstandar CPKB BPOM, melunasi seluruh utang Rp 2,2 M, dan menampung puluhan karyawan.' }
+        { year: '2007–2010 — Raja Laundry', text: 'Mengelola bisnis laundry dengan 3 cabang dan 15 agen yang beroperasi penuh dengan omzet lancar.' },
+        { year: '2010 — Tertipu Rp 800 Juta', text: 'Diajak investor membuka waralaba pendidikan senilai Rp 800 juta. Investor menghilang, laundry macet, utang gali lubang tutup lubang.' },
+        { year: 'Titik Nadir — Rp 2,2 Miliar', text: 'Jual mobil, rumah, hingga sendok garpu. Uang Rp 700.000 terakhir untuk kos putri anak istri; Hendra hidup menggelandang tidur di teras masjid.' },
+        { year: 'Hadapi Debt Collector', text: '"Saya cuma punya diri ini. Kalau dengan dipenjarakan bisa lunas, silakan. Sisa tubuh ini yang siap bekerja."' },
+        { year: 'Bangkit dari Dapur', text: 'Jualan makaroni pedas keliling Rp 500/bungkus, lalu meracik sabun dan kosmetik herbal di dapur kontrakan sempit.' },
+        { year: 'Hari Ini — Pabrik Skincare', text: 'Memiliki pabrik kosmetik sendiri (Salina Herbal) bersertifikasi CPKB BPOM, seluruh utang Rp 2,2 miliar lunas tuntas.' }
       ],
-      quote: 'Kalau dengan dipenjarakan utangnya lunas, silakan penjarakan saya. Yang ada tinggal tubuh ini yang siap bekerja melunasinya.',
-      quoteAuthor: 'M. Taufik Hendradinata, saat menghadapi ancaman debt collector',
+      quote: 'Debt collector pernah datang ngamuk dan maki-maki. Saya cuma punya diri ini. Kalau dengan dipenjarakan bisa lunas, silakan. Yang ada tinggal sisa tubuh ini yang siap bekerja melunasinya.',
+      quoteAuthor: 'M. Taufik Hendradinata, owner Salina Herbal',
       chapters: [
         {
           num: 1,
-          title: 'Ilusi Sukses di Balik 12 Cabang Laundry',
+          title: 'Raja Laundry dan Jebakan Waralaba Rp 800 Juta',
           paragraphs: [
-            'Nama Hendra sempat berkibar di Yogyakarta sebagai pionir usaha laundry kiloan modern. Dari satu outlet kecil, bisnisnya menggurita hingga memiliki 12 cabang di lokasi-lokasi strategis. Ratusan mesin cuci berputar tanpa henti menghasilkan omset puluhan juta setiap hari.',
-            'Namun di balik tampilan mentereng itu, fondasi keuangannya rapuh. Untuk membuka setiap cabang baru, Hendra menggunakan pinjaman bank dengan agunan sertifikat tanah keluarga dan leasing mesin berbunga tinggi. Gali lubang tutup lubang menjadi rutinitas harian.',
-            'Ketika persaingan harga kian berdarah dan biaya operasional membengkak pada tahun 2011, arus kasnya lumpuh total. Sembilan bank dan belasan pihak ketiga melayangkan surat peringatan. Total tagihan membengkak hingga Rp 2,2 miliar.'
+            'Tahun 2007. Hendra (M. Taufik Hendradinata) tersenyum puas melihat 3 cabang laundry miliknya beroperasi penuh, didukung oleh 15 agen yang tersebar di berbagai titik strategis. Bisnisnya berjalan mulus, rezeki mengalir deras, dan ia menikmati masa keemasan sebagai pengusaha muda yang dihormati.',
+            'Lalu pada tahun 2010 datanglah seorang investor yang menawarkan kerja sama ekspansi waralaba di bidang pendidikan. Dengan janji keuntungan berlipat ganda, Hendra mempercayainya dan menyuntikkan dana investasi sebesar Rp 800 juta.',
+            'Namun petaka terjadi: sang investor tiba-tiba menghilang tanpa jejak dan waralaba tersebut tak pernah direalisasikan. Uang Rp 800 juta lenyap ditelan bumi, sementara efek dominonya langsung menghancurkan arus kas bisnis laundry miliknya.'
           ]
         },
         {
           num: 2,
-          title: 'Kehilangan Segalanya hingga Teras Masjid',
+          title: 'Lelaki Tanpa Rumah dan Teras Masjid Dingin',
           paragraphs: [
-            'Kehancuran datang bagai gelombang pasang. Rumah tinggal keluarga, tanah warisan, hingga mobil operasional disita dan dilelang dengan harga jatuh. Uang tabungan yang tersisa di dompetnya hanya Rp 700.000.',
-            'Dengan uang itu, ia menyewa sebuah kamar kos sempit berukuran 3x3 meter untuk istri dan anak-anaknya. Karena tidak muat dan merasa gagal sebagai kepala keluarga, Hendra sering menghabiskan malam dengan tidur beralaskan sajadah tipis di teras sebuah masjid di pinggiran Sleman.',
-            'Di tengah dinginnya lantai marmer masjid, air matanya tumpah dalam sujud sepertiga malam. "Ya Allah, jika Engkau masih izinkan aku hidup, bimbinglah langkahku untuk melunasi hak orang lain tanpa riba lagi," pintanya dalam kepasrahan total.'
+            'Demi menutup lubang tagihan yang terus mengalir, Hendra terpaksa meminjam ke banyak pihak hingga total utang membengkak menjadi Rp 2,2 miliar.',
+            'Satu per satu asetnya dilepas: mobil pribadi, rumah tinggal keluarga, perabotan rumah tangga, hingga sendok dan garpu di dapur ikut dijual. Mertuanya bahkan menjual 75% bagian rumah untuk membantu, namun angka utang tetap tak tertutup.',
+            'Dengan sisa uang Rp 700.000 terakhir di saku, ia menyewa sebuah kamar kos putri sempit untuk tempat berteduh istri dan ketiga anaknya. Sementara Hendra sendiri, karena tak ada tempat lagi dan menolak membebani keluarga, memilih menggelandang dan tidur beralaskan sajadah di teras masjid pinggiran Sleman.'
           ]
         },
         {
           num: 3,
-          title: 'Dari Makaroni Pedas ke Dapur Sabun Herbal',
+          title: 'Di Hadapan Amarah Debt Collector',
           paragraphs: [
-            'Membuang rasa gengsi mantan pengusaha sukses, Hendra mulai berjualan makaroni pedas bungkus kecil yang ia titipkan di warung-warung kelontong. Keuntungan Rp 500 per bungkus ia kumpulkan untuk membeli beras harian keluarga.',
-            'Berbekal latar belakang pendidikannya di bidang kimia, Hendra melihat peluang baru: sabun pembersih berbahan alami herbal yang aman bagi kulit sensitif. Di dapur kontrakan sempitnya, ia bereksperimen mengaduk minyak kelapa, zaitun, dan ekstrak rempah menggunakan wadah plastik bekas.',
-            'Sabun buatannya mulai diminati tetangga dan teman komunitas pengajian karena kualitasnya yang lembut di kulit. Hendra menjaga komitmennya: seluruh transaksi dilakukan secara tunai, tanpa pinjaman berbunga sepeser pun.'
+            'Hari-harinya dipenuhi teror penagihan yang mencekam. Para penagih utang mendatangi, mengamuk, dan memaki-makinya tanpa henti.',
+            'Di titik kepasrahan total itu, Hendra menatap mereka dengan tenang: "Debt collector pernah datang ngamuk, maki-maki. Saya enggak bisa jelasin, saya cuma punya diri ini. Kira-kira apa yang bisa buat utang bisa lunas? Kalau dengan penjarakan bisa lunas, silakan. Yang ada sisa tubuh ini doang, bahkan sendok-sendok sudah dijual."',
+            'Keberanian untuk tidak lari dan menghadapi konsekuensi dengan tubuh yang siap bekerja menjadi benteng pertahanan moral terakhirnya.'
           ]
         },
         {
           num: 4,
-          title: 'Salina Herbal dan Mahkota Kemerdekaan',
+          title: 'Bangkit dari Dapur Kontrakan ke Pabrik Skincare',
           paragraphs: [
-            'Pesanan sabun herbal meledak seiring tren kecantikan alami. Usaha kecil rumahan itu bermetamorfosis menjadi CV Salina Herbal Mandiri, produsen kosmetik dan perawatan kulit bersertifikasi CPKB (Cara Pembuatan Kosmetika yang Baik) dari BPOM RI.',
-            'Sedikit demi sedikit, seluruh sisa utang Rp 2,2 miliar di 9 bank berhasil dilunasi 100%. Hari ini, pabrik Salina Herbal di Sleman mempekerjakan puluhan karyawan lokal dan melayani maklon kosmetik dari berbagai penjuru Nusantara.',
-            'Hendra membuktikan bahwa badai utang terparah sekalipun dapat ditaklukkan ketika seseorang berani bertaubat dari pola gali lubang, merendahkan hati untuk memulai dari nol, dan menjaga itikad baik pelunasan.'
+            'Membuang rasa gengsi mantan bos laundry, Hendra mulai menitipkan makaroni pedas bungkus kecil di warung-warung kelontong demi membeli beras harian. Dari sana, berbekal riset mandiri tentang formulasi alami, ia merintis pembuatan sabun dan skincare herbal di dapur kontrakan sempit.',
+            'Setiap botol dan batang sabun yang ia racik adalah wujud air mata, doa malam di teras masjid, dan tekad baja untuk melunasi hak orang lain secara halal tanpa pinjaman berbunga.',
+            'Permintaan pasar meledak berkat khasiat produk yang terbukti lembut dan berkualitas. Usaha kecil itu bermetamorfosis menjadi CV Salina Herbal Mandiri.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas Total dan Memiliki Pabrik Sendiri',
+          paragraphs: [
+            'Bertahun-tahun kemudian, Hendra berdiri tegak di depan gedung pabrik kosmetik miliknya sendiri yang telah bersertifikasi CPKB dari BPOM RI. Karyawan-karyawannya sibuk memproduksi skincare yang didistribusikan ke seluruh Indonesia.',
+            'Seluruh beban utang Rp 2,2 miliar yang dulu serasa mustahil dipindahkan, kini telah lunas 100% tuntas tanpa sisa.',
+            'Dari seorang gelandangan yang tidur di lantai dingin teras masjid hingga menjadi pemilik pabrik skincare terkemuka, M. Taufik Hendradinata membuktikan: selama napas masih ada dan tangan masih mau bekerja, diri kita sendiri sudah lebih dari cukup untuk bangkit menjemput keajaiban.'
           ]
         }
       ],
       takeaways: [
-        'Hentikan Jebakan Leverage Berlebih: Ekspansi berbasis utang berbunga tanpa cadangan kas darurat adalah bom waktu bisnis.',
-        'Kembali ke Keahlian Inti (Core Skill): Temukan keahlian teknis unikmu (formulasi, produksi, atau pemasaran) untuk menciptakan nilai tambah nyata.',
-        'Spiritualitas & Tawakal Aktif: Ketenangan batin dan doa di titik nadir mengembalikan akal sehat untuk berpikir jernih mencari solusi.'
+        'Waspada Kemitraan Investasi Tanpa Legalitas Ketat: Kehilangan Rp 800 juta pada waralaba bodong mengajarkan pentingnya uji tuntas (due diligence) sebelum menyetor modal besar.',
+        'Hadapi Kreditur Tanpa Lari: Iktikad baik Hendra menghadapi debt collector dengan jujur menunjukkan integritas yang membuka jalan penyelesaian.',
+        'Harga Diri Bukan Pada Gengsi Masa Lalu: Dari bos laundry menjadi penjual makaroni pedas dan peracik sabun dapur — kerendahan hati untuk memulai dari bawah adalah kunci *rebound*.',
+        'Fokus Pada Produk Nyata yang Menyelesaikan Masalah: Skincare Salina Herbal berkembang bukan karena iklan mahal, tapi karena kualitas formulasi herbal yang dicintai konsumen.'
       ]
     },
     {
