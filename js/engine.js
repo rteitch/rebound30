@@ -622,6 +622,27 @@ Salam hangat,
       o.status === 'APPLIED' || o.status === 'INTERVIEW'
     ).length > 0;
     
+    // Goal-Driven Prioritization (Menyesuaikan Misi dengan Target Utama 30 Hari)
+    const goal = state.profile && state.profile.goal ? state.profile.goal : null;
+    if (goal === 'pemasukan_pertama') {
+      add('CLIENT_OUTREACH', 'CRITICAL');
+      if (state.assets.length > 0 || state.profile.cash === 0) add('SELL_ASSET', 'HIGH');
+    } else if (goal === 'dapat_kerja') {
+      add('JOB_APPLICATION', 'CRITICAL');
+      if (hasOppFollowUp) add('FOLLOW_UP', 'HIGH');
+    } else if (goal === 'kurangi_utang') {
+      if (state.debts.length > 0) {
+        add('DEBT_REVIEW', 'HIGH');
+        add('NEGOTIATION', 'HIGH');
+      }
+    } else if (goal === 'pemasukan_rutin') {
+      if (hasRepeatClient) add('BUILD_RECURRING', 'HIGH');
+      add('CLIENT_OUTREACH', 'HIGH');
+    } else if (goal === 'bantu_keluarga') {
+      add('CUT_EXPENSE', 'HIGH');
+      add('TRACK_EXPENSE', 'HIGH');
+    }
+
     // Phase-based + condition-based rules
     if (cashRunway < 7) add('INCOME_TASK', 'CRITICAL');
     if (needsFinancialMap && day <= 4) add('MAP_FINANCES', 'HIGH');
