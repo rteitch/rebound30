@@ -552,6 +552,102 @@ const Stories = {
       ]
     },
     {
+      id: 'sonnenberg',
+      featured: false,
+      name: 'Steve Sonnenberg',
+      tagline: 'Dari Bangkrut Gugatan Hukum FTC & 4 Balita Menjadi Pendiri Unicorn Awardco Bernilai $1 Miliar (Rp 16 Triliun)',
+      title: 'Dari Kartu Kredit $5.000 Menuju Unicorn $1 Miliar',
+      subtitle: 'Pendiri & CEO Awardco, Utah, Amerika Serikat',
+      origin: 'Utah, Amerika Serikat',
+      ageAtRebound: 'Ayah 4 Balita',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'global'],
+      categoryLabel: 'Bangkrut FTC & Unicorn $1B',
+      badge: 'Unicorn Awardco & Valuasi $1 Miliar',
+      theme: 'blue',
+      accentColor: '#2563EB',
+      bgLight: '#EFF6FF',
+      borderLight: '#BFDBFE',
+      stats: {
+        debt: 'Jutaan Dolar (Gugatan Hukum FTC 2011)',
+        age: 'Ayah 4 Anak Balita',
+        lowest: 'Aset Dibekukan & Pailit Bersama 4 Balita',
+        action: 'Gesek $5.000 Kartu Kredit, Beli Domain & Kemitraan Amazon',
+        result: '6 Juta Pengguna, Klien AT&T & Valuasi $1 Miliar (Rp 16 T)'
+      },
+      timeline: [
+        { year: '2000-an — Puncak WholesaleMatch', text: 'Membangun platform e-commerce dengan 200 karyawan dan omzet jutaan dolar per tahun di Utah.' },
+        { year: '2011 — Gugatan FTC & Pailit', text: 'Tersangkut kasus regulasi FTC, seluruh aset dibekukan seketika, menanggung utang jutaan dolar bersama 4 anak balita.' },
+        { year: 'Titik Balik Jalur Setapak', text: 'Mendapat pencerahan saat mendaki: "Jika kau terus melawan masa lalu, kau akan kehilangan keluargamu. Mulai saja dari nol."' },
+        { year: 'Modal $5.000 Kartu Kredit', text: 'Menggesek kartu kredit $5.000 untuk membeli domain Awardco.com, bekerja sambilan dari jam 7 pagi hingga tengah malam.' },
+        { year: '2015 — Kemitraan Amazon', text: 'Mempresentasikan sistem penghargaan di hadapan tim eksekutif Amazon di Seattle dan memenangkan kontrak kemitraan resmi.' },
+        { year: 'Hari Ini — Unicorn $1 Miliar', text: 'Awardco melayani 6 juta pengguna korporat global (AT&T, Hertz) dengan valuasi pasar mencapai $1 Miliar (Rp 16 Triliun).' }
+      ],
+      quote: 'Kemampuan untuk sekadar memulai dari awal adalah kekuatan terbesar manusia. Jangan buang energimu melawan masa lalu; mulailah kembali dengan apa pun yang tersisa di tanganmu.',
+      quoteAuthor: 'Steve Sonnenberg, pendiri & CEO Awardco',
+      chapters: [
+        {
+          num: 1,
+          title: 'Kerajaan yang Runtuh dalam Semalam',
+          paragraphs: [
+            'Awal dekade 2000-an di Utah, Amerika Serikat. Steve Sonnenberg adalah potret wirausahawan muda yang menikmati puncak kejayaan. Perusahaan rintisannya, WholesaleMatch, berkembang menjadi raksasa e-commerce dengan 200 karyawan dan perputaran omzet jutaan dolar per tahun.',
+            'Namun dunia bisnis modern menyimpan risiko tak terduga. Perusahaannya mendadak terseret dalam investigasi dan gugatan hukum ketat Federal Trade Commission (FTC) terkait aktivitas transaksi klien pihak ketiga. Meskipun Steve bukanlah pelaku kejahatan, putusan regulasi tersebut menghancurkan perusahaannya seketika.',
+            'Seluruh rekening operasional dibekukan oleh otoritas. Dalam hitungan minggu, perusahaan bangkrut total dan meninggalkan tumpukan utang bernilai jutaan dolar. Di rumahnya yang sunyi, Steve menatap cemas keempat anaknya yang semuanya masih berusia di bawah lima tahun.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Saat Berjalan di Jalur Setapak',
+          paragraphs: [
+            'Tahun 2011, proses pengajuan pailit resmi diketok palu di pengadilan kebangkrutan. Hidup Steve Sonnenberg terasa bagai mimpi buruk tanpa akhir. Berbulan-bulan ia diliputi kepedihan, amarah atas ketidakadilan, dan kecemasan akan masa depan keluarganya.',
+            'Suatu sore yang dingin saat berjalan sendirian di sebuah jalur setapak perbukitan Utah, sebuah bisikan nurani yang teramat jernih menghantam pikirannya: "Jika kau terus menghabiskan energimu untuk marah dan melawan masa lalu ini, kau akan kehilangan keluargamu. Lepaskan semuanya, dan mulailah kembali dari nol."',
+            'Steve berhenti melangkah, menarik napas panjang, dan membuat keputusan terbesar dalam hidupnya: berhenti menyesali keruntuhan masa lalu dan mengarahkan 100% fokusnya untuk membangun kapal baru.'
+          ]
+        },
+        {
+          num: 3,
+          title: '$5.000 di Kartu Kredit dan Sebuah Domain',
+          paragraphs: [
+            'Tanpa modal uang tunai sepeser pun, Steve nekat menggesek sisa limit kartu kreditnya sebesar $5.000 (sekitar Rp 80 juta) untuk membeli sebuah nama domain di internet: Awardco.com.',
+            'Visinya adalah mendisrupsi industri apresiasi karyawan konvensional yang kaku dengan membangun platform piranti lunak (SaaS) penghargaan loyalitas kerja yang terintegrasi langsung dengan katalog belanja Amazon Business.',
+            'Demi menyambung hidup keluarganya dan membiayai pengembangan kode awal, Steve bekerja sebagai web developer lepas di malam hari sembari memegang pekerjaan tetap di Qualtrics. Jadwal kerjanya dimulai dari pukul 07.00 pagi hingga larut lewat tengah malam, sementara sang istri dengan setia membantu membungkus pesanan hadiah secara manual dari meja makan rumah.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Menolak Menyerah di LinkedIn',
+          paragraphs: [
+            'Membangun Awardco dari nol menuntut ketahanan mental baja. Steve melakukan ratusan panggilan dingin (cold calls) dan mengirim pesan langsung ke para direktur HR di LinkedIn. Sebagian besar menolak dengan dingin atau menganggap remeh idenya.',
+            'Namun Steve menolak berhenti. "Orang-orang acak yang saya temui di internet menolak ide saya, tapi saya terus menulis kode dan memperbaiki sistem," kenangnya.',
+            'Kerja keras tanpa henti itu berbuah tiket emas pada tahun 2015. Tim eksekutif Amazon Business mengundangnya terbang ke kantor pusat di Seattle. Di ruang rapat tersebut, Steve mempresentasikan visinya dengan penuh keyakinan dan berhasil menyepakati kemitraan integrasi resmi dengan Amazon.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Unicorn Bernilai $1 Miliar',
+          paragraphs: [
+            'Kemitraan Amazon melambungkan pertumbuhan Awardco secara eksponensial. Sistem otomatisasi pemberian hadiah karyawan berbasis poin Amazon yang dirancang Steve diadopsi oleh ribuan korporasi multinasional, termasuk raksasa telekomunikasi AT&T dan perusahaan rental global Hertz.',
+            'Pada tahun 2021, setelah mengantongi pendanaan Seri A sebesar $165 juta, valuasi pasar Awardco resmi melampaui $1 Miliar (sekitar Rp 16 Triliun) dan melayani lebih dari 6 juta pengguna aktif di berbagai belahan dunia.',
+            'Seluruh tumpukan liabilitas jutaan dolar dari masa pailit masa lalu telah lunas terbayar tuntas, mengubah status Steve Sonnenberg dari seorang ayah pailit menjadi pendiri perusahaan teknologi Unicorn paling disegani di Utah.'
+          ]
+        },
+        {
+          num: 6,
+          title: 'Filosofi Seorang Pemenang',
+          paragraphs: [
+            'Ketika diwawancarai mengenai kunci keberhasilannya mengubah $5.000 limit kartu kredit menjadi perusahaan $1 miliar, Steve menjawab dengan penuh kerendahan hati: "Kekuatan terbesar saya hanyalah keberanian untuk sekadar memulai dari awal."',
+            'Ia bahkan memandang kebangkrutan masa lalunya sebagai berkah terselubung yang memaksanya merenung, membuang kesombongan materi, dan membangun bisnis dengan fondasi yang jauh lebih kokoh.',
+            'Steve Sonnenberg membuktikan bahwa modal terbesar seorang manusia bukanlah saldo rekeningnya, melainkan keberanian mental untuk berdiri kembali saat segala sesuatunya hancur berkeping-keping.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Hentikan Membuang Energi Melawan Masa Lalu: Mengikhlaskan kerugian masa lalu membebaskan kapasitas mental untuk menciptakan inovasi baru yang jauh lebih besar.',
+        'Keberanian Sekadar Memulai (*The Power of Starting*): Satu langkah kecil (membeli domain dengan sisa limit kartu kredit) adalah pemantik lahirnya terobosan bernilai triliunan.',
+        'Disiplin Kerja Keras & Pengorbanan: Menjalani dua pekerjaan sekaligus (7 AM hingga tengah malam) demi menjaga komitmen finansial keluarga di masa perintisan.',
+        'Menggandeng Mitra Strategis Global: Membangun relasi saling menguntungkan dengan pemain raksasa (Amazon) mempercepat skalabilitas bisnis ke level internasional.'
+      ]
+    },
+    {
       id: 'kiaraya',
       featured: false,
       name: 'Kia Raya (Siti Khoiriah)',
