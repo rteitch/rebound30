@@ -504,6 +504,20 @@
           <button class="btn btn-primary btn-sm" onclick="App.debts.showAdd()">+ Tambah</button>
         </div>
 
+        
+        <!-- Friendly Guide: Debts -->
+        <div class="card" style="background:var(--slate-50);border-left:4px solid var(--teal-600);padding:var(--space-3) var(--space-4);margin-bottom:var(--space-4);">
+          <div style="font-size:12px;font-weight:700;color:var(--teal-900);margin-bottom:4px;display:flex;align-items:center;gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+            Panduan & Aturan Mengelola Utang
+          </div>
+          <div style="font-size:12.5px;color:var(--slate-700);line-height:1.5;">
+            <strong>Langkah 1:</strong> Klik <strong>+ Tambah</strong> untuk mencatat semua kreditur secara jujur tanpa rasa takut.<br>
+            <strong>Langkah 2:</strong> Pilih strategi pelunasan: <em>Risk First</em> (dahulukan yang paling mendesak/denda harian), <em>Avalanche</em> (bunga tertinggi), atau <em>Snowball</em> (nominal terkecil).<br>
+            <strong>Langkah 3:</strong> Manfaatkan tombol <em>Catat Negosiasi</em> untuk mengajukan perpanjangan tenor atau potongan bunga.
+          </div>
+        </div>
+
         <div id="debt-interest-widget"></div>
 
         <div class="total-bar">
@@ -554,6 +568,20 @@
           <button class="btn btn-primary btn-sm" onclick="App.income.showAdd()">+ Catat</button>
         </div>
 
+        
+        <!-- Friendly Guide: Income -->
+        <div class="card" style="background:var(--slate-50);border-left:4px solid var(--teal-600);padding:var(--space-3) var(--space-4);margin-bottom:var(--space-4);">
+          <div style="font-size:12px;font-weight:700;color:var(--teal-900);margin-bottom:4px;display:flex;align-items:center;gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+            Panduan Arus Kas Masuk (Income Strategy)
+          </div>
+          <div style="font-size:12.5px;color:var(--slate-700);line-height:1.5;">
+            <strong>Kecepatan Kas:</strong> Utamakan pekerjaan atau penjualan yang menghasilkan uang tunai riil dalam 24–48 jam.<br>
+            <strong>Peluang & Lamaran:</strong> Catat setiap pengajuan kerja atau calon klien di kolom bawah untuk memantau proses follow-up.<br>
+            <strong>Pemasukan Rutin:</strong> Tandai checklist <em>Pemasukan Rutin</em> untuk pekerjaan dengan sistem gaji/retainer bulanan.
+          </div>
+        </div>
+
         <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
           <div class="stat-card">
             <div class="stat-label">Bulan Ini</div>
@@ -587,6 +615,21 @@
           </div>
           <button class="btn btn-primary btn-sm" onclick="App.expenses.showAdd()">+ Catat</button>
         </div>
+
+
+        <!-- Friendly Guide: Expenses -->
+        <div class="card" style="background:var(--slate-50);border-left:4px solid #F59E0B;padding:var(--space-3) var(--space-4);margin-bottom:var(--space-4);">
+          <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:4px;display:flex;align-items:center;gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+            Aturan Pengendalian Pengeluaran 30 Hari
+          </div>
+          <div style="font-size:12.5px;color:var(--slate-700);line-height:1.5;">
+            <strong>Esensial (Wajib):</strong> Kebutuhan dasar hidup (makan pokok, tempat tinggal, listrik/air, bensin/pulsa kerja).<br>
+            <strong>Non-Esensial (Bocor Halus):</strong> Jajan di luar, rokok/kopi berlebih, langganan hiburan. Pangkas sementara waktu.<br>
+            <strong>Tujuan:</strong> Memperpanjang napas bertahan hidup (<em>Cash Runway</em>) selama fase pemulihan.
+          </div>
+        </div>
+
 
         <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
           <div class="stat-card">
