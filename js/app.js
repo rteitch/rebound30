@@ -1468,6 +1468,187 @@ const App = {
       `);
     },
     
+        showEdit(id) {
+      const inc = App.state.incomes.find(i => i.id === id);
+      if (!inc) return;
+
+      App.openModal(`
+        <div class="modal-title">Edit Pemasukan</div>
+        <div class="form-group">
+          <label class="form-label">Sumber Pemasukan *</label>
+          <input class="form-input" id="ed-inc-source" value="${H.escHtml(inc.source)}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jumlah (Rp) *</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ed-inc-amount" value="${inc.amount}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="ed-inc-cat">
+            <option value="job" ${inc.category==='job'?'selected':''}>Gaji / Pekerjaan</option>
+            <option value="freelance" ${inc.category==='freelance'?'selected':''}>Freelance / Proyek</option>
+            <option value="client" ${inc.category==='client'?'selected':''}>Klien Baru</option>
+            <option value="business" ${inc.category==='business'?'selected':''}>Bisnis / Jualan</option>
+            <option value="daily" ${inc.category==='daily'?'selected':''}>Kerja Harian</option>
+            <option value="commission" ${inc.category==='commission'?'selected':''}>Komisi</option>
+            <option value="asset_sale" ${inc.category==='asset_sale'?'selected':''}>Jual Aset</option>
+            <option value="other" ${inc.category==='other'?'selected':''}>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal</label>
+          <input type="date" class="form-input" id="ed-inc-date" value="${inc.date || H.today()}">
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-4)">
+          <div><div class="settings-item-label">Pemasukan Rutin/Berulang?</div></div>
+          <label class="toggle"><input type="checkbox" id="ed-inc-recurring" ${inc.recurring?'checked':''}><span class="toggle-slider"></span></label>
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.income.saveEdit('${id}')">Simpan</button>
+        </div>
+      `);
+    },
+
+    saveEdit(id) {
+      const inc = App.state.incomes.find(i => i.id === id);
+      if (!inc) return;
+      const source = document.getElementById('ed-inc-source').value.trim();
+      const amount = H.parseRp(document.getElementById('ed-inc-amount').value);
+      if (!source) { App.toast('Sumber pemasukan wajib diisi', 'error'); return; }
+      if (!amount || amount <= 0) { App.toast('Masukkan nominal pemasukan valid', 'error'); return; }
+
+      inc.source = source;
+      inc.amount = amount;
+      inc.category = document.getElementById('ed-inc-cat').value;
+      inc.date = document.getElementById('ed-inc-date').value;
+      inc.recurring = document.getElementById('ed-inc-recurring').checked;
+
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Pemasukan berhasil diperbarui ✓', 'success');
+    },
+
+        showEdit(id) {
+      const exp = App.state.expenses.records.find(e => e.id === id);
+      if (!exp) return;
+
+      App.openModal(`
+        <div class="modal-title">Edit Pengeluaran</div>
+        <div class="form-group">
+          <label class="form-label">Deskripsi *</label>
+          <input class="form-input" id="ed-exp-desc" value="${H.escHtml(exp.description)}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jumlah (Rp) *</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ed-exp-amount" value="${exp.amount}"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="ed-exp-cat">
+            <option value="eating_out" ${exp.category==='eating_out'?'selected':''}>Makan di Luar</option>
+            <option value="entertainment" ${exp.category==='entertainment'?'selected':''}>Hiburan / Rekreasi</option>
+            <option value="shopping" ${exp.category==='shopping'?'selected':''}>Belanja Non-Esensial</option>
+            <option value="transport" ${exp.category==='transport'?'selected':''}>Transportasi Tambahan</option>
+            <option value="health" ${exp.category==='health'?'selected':''}>Kesehatan & Obat</option>
+            <option value="other" ${exp.category==='other'?'selected':''}>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tanggal</label>
+          <input type="date" class="form-input" id="ed-exp-date" value="${exp.date || H.today()}">
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.expenses.saveEdit('${id}')">Simpan</button>
+        </div>
+      `);
+    },
+
+    saveEdit(id) {
+      const exp = App.state.expenses.records.find(e => e.id === id);
+      if (!exp) return;
+      const desc = document.getElementById('ed-exp-desc').value.trim();
+      const amount = H.parseRp(document.getElementById('ed-exp-amount').value);
+      if (!desc) { App.toast('Deskripsi pengeluaran wajib diisi', 'error'); return; }
+      if (!amount || amount <= 0) { App.toast('Masukkan nominal pengeluaran valid', 'error'); return; }
+
+      exp.description = desc;
+      exp.amount = amount;
+      exp.category = document.getElementById('ed-exp-cat').value;
+      exp.date = document.getElementById('ed-exp-date').value;
+
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Pengeluaran berhasil diperbarui ✓', 'success');
+    },
+
+        showEdit(id) {
+      const ast = App.state.assets.find(a => a.id === id);
+      if (!ast) return;
+
+      App.openModal(`
+        <div class="modal-title">Edit Aset</div>
+        <div class="form-group">
+          <label class="form-label">Nama Aset *</label>
+          <input class="form-input" id="ed-a-name" value="${H.escHtml(ast.name)}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kategori</label>
+          <select class="form-input form-select" id="ed-a-cat">
+            <option value="electronics" ${ast.category==='electronics'?'selected':''}>Elektronik</option>
+            <option value="vehicle" ${ast.category==='vehicle'?'selected':''}>Kendaraan</option>
+            <option value="property" ${ast.category==='property'?'selected':''}>Properti</option>
+            <option value="cash" ${ast.category==='cash'?'selected':''}>Uang Tunai</option>
+            <option value="jewelry" ${ast.category==='jewelry'?'selected':''}>Perhiasan</option>
+            <option value="business" ${ast.category==='business'?'selected':''}>Peralatan Usaha</option>
+            <option value="other" ${ast.category==='other'?'selected':''}>Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimasi Nilai</label>
+          <div class="input-prefix-group"><span class="input-prefix">Rp</span>
+          <input type="number" class="form-input" id="ed-a-value" value="${ast.value}"></div>
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-2)">
+          <div><div class="settings-item-label">Bisa dijual jika darurat?</div></div>
+          <label class="toggle"><input type="checkbox" id="ed-a-liquid" ${ast.liquidatable?'checked':''}><span class="toggle-slider"></span></label>
+        </div>
+        <div class="settings-item" style="margin-bottom:var(--space-4)">
+          <div><div class="settings-item-label">Alat kerja utama (Jangan dijual)</div></div>
+          <label class="toggle"><input type="checkbox" id="ed-a-work" ${ast.keepForWork?'checked':''}><span class="toggle-slider"></span></label>
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary flex-1" onclick="App.assets.saveEdit('${id}')">Simpan</button>
+        </div>
+      `);
+    },
+
+    saveEdit(id) {
+      const ast = App.state.assets.find(a => a.id === id);
+      if (!ast) return;
+      const name = document.getElementById('ed-a-name').value.trim();
+      const val = H.parseRp(document.getElementById('ed-a-value').value);
+      if (!name) { App.toast('Nama aset wajib diisi', 'error'); return; }
+      if (!val || val <= 0) { App.toast('Masukkan estimasi nilai aset yang valid', 'error'); return; }
+
+      ast.name = name;
+      ast.category = document.getElementById('ed-a-cat').value;
+      ast.value = val;
+      ast.liquidatable = document.getElementById('ed-a-liquid').checked;
+      ast.keepForWork = document.getElementById('ed-a-work').checked;
+
+      App.save();
+      App.closeModal();
+      this.render();
+      App.toast('Aset berhasil diperbarui ✓', 'success');
+    },
+
     saveNew() {
       const name = document.getElementById('d-name').value.trim();
       if (!name) { App.toast('Nama utang wajib diisi', 'error'); return; }
@@ -1633,9 +1814,14 @@ const App = {
           <label class="form-label">Jatuh Tempo</label>
           <input type="date" class="form-input" id="ed-due" value="${d.dueDate||''}">
         </div>
-        <div style="display:flex;gap:var(--space-3)">
-          <button class="btn btn-secondary flex-1" onclick="App.closeModal()">Batal</button>
-          <button class="btn btn-primary flex-1" onclick="App.debts.saveEdit('${id}')">Simpan</button>
+        <div style="display:flex;gap:var(--space-2);margin-top:var(--space-4);">
+          <button class="btn btn-danger btn-sm" onclick="App.debts.remove('${id}')">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            Hapus
+          </button>
+          <div style="flex:1;"></div>
+          <button class="btn btn-secondary btn-sm" onclick="App.closeModal()">Batal</button>
+          <button class="btn btn-primary btn-sm" onclick="App.debts.saveEdit('${id}')">Simpan Perubahan</button>
         </div>
       `);
     },
@@ -1652,6 +1838,25 @@ const App = {
       App.closeModal();
       this.render();
       App.toast('Utang diperbarui ✓', 'success');
+    },
+
+    async remove(id) {
+      const debt = App.state.debts.find(d => d.id === id);
+      const name = debt ? debt.name : 'utang ini';
+      const ok = await App.confirm({
+        title: 'Hapus Data Utang?',
+        message: `Apakah Anda yakin ingin menghapus data "${name}"?\n\nRiwayat pembayaran utang ini akan tetap disimpan di laporan.`,
+        confirmText: 'Ya, Hapus Utang',
+        cancelText: 'Batal',
+        type: 'danger'
+      });
+      if (ok) {
+        App.state.debts = App.state.debts.filter(d => d.id !== id);
+        App.save();
+        App.closeModal();
+        this.render();
+        App.toast('Data utang berhasil dihapus', 'info');
+      }
     },
   },
   
@@ -1678,7 +1883,15 @@ const App = {
           </div>
           <div style="text-align:right">
             <div class="income-amount">${H.formatRp(i.amount)}</div>
-            <button class="btn btn-ghost btn-sm" onclick="App.income.remove('${i.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            
+            <div style="display:flex;gap:2px;justify-content:flex-end;margin-top:2px;">
+              <button class="btn btn-ghost btn-sm" style="padding:4px;" onclick="App.income.showEdit('${i.id}')" title="Edit Pemasukan">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+              </button>
+              <button class="btn btn-ghost btn-sm" style="padding:4px;color:var(--red-600);" onclick="App.income.remove('${i.id}')" title="Hapus Pemasukan">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
           </div>
         </div>
       `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="empty-state-title">Belum ada pemasukan</div><div class="empty-state-text">Catat setiap pemasukan, sekecil apapun.</div></div>';
@@ -1916,7 +2129,15 @@ const App = {
           </div>
           <div style="text-align:right">
             <div style="font-weight:700;color:var(--red-600)">${H.formatRp(e.amount)}</div>
-            <button class="btn btn-ghost btn-sm" onclick="App.expenses.remove('${e.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            
+            <div style="display:flex;gap:2px;justify-content:flex-end;margin-top:2px;">
+              <button class="btn btn-ghost btn-sm" style="padding:4px;" onclick="App.expenses.showEdit('${e.id}')" title="Edit Pengeluaran">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+              </button>
+              <button class="btn btn-ghost btn-sm" style="padding:4px;color:var(--red-600);" onclick="App.expenses.remove('${e.id}')" title="Hapus Pengeluaran">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
           </div>
         </div>
       `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--slate-400);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div class="empty-state-title">Belum ada pengeluaran tercatat</div><div class="empty-state-text">Catat pengeluaran harian untuk kontrol cashflow.</div></div>';
@@ -2030,7 +2251,15 @@ const App = {
           <div style="text-align:right">
             <div style="font-weight:700">${H.formatRp(a.value)}</div>
             <div style="font-size:11px;color:${a.liquidatable&&!a.keepForWork?'var(--green-600)':'var(--slate-400)'}">${a.liquidatable&&!a.keepForWork?'Bisa dijual':'—'}</div>
-            <button class="btn btn-ghost btn-sm" onclick="App.assets.remove('${a.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            
+            <div style="display:flex;gap:2px;justify-content:flex-end;margin-top:2px;">
+              <button class="btn btn-ghost btn-sm" style="padding:4px;" onclick="App.assets.showEdit('${a.id}')" title="Edit Aset">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+              </button>
+              <button class="btn btn-ghost btn-sm" style="padding:4px;color:var(--red-600);" onclick="App.assets.remove('${a.id}')" title="Hapus Aset">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
           </div>
         </div>
       `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div><div class="empty-state-title">Belum ada aset</div><div class="empty-state-text">Catat aset untuk mengetahui apa yang bisa dijual saat darurat.</div></div>';
