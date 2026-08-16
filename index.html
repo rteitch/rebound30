@@ -1522,30 +1522,30 @@ img { max-width: 100%; }
 
     <!-- Step 1: Employment Status -->
     <div class="onboarding-step" id="ob-step-1">
-      <div class="step-emoji">💼</div>
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
       <div class="step-title">Apa status pekerjaanmu saat ini?</div>
       <div class="step-subtitle">Ini membantu kami menyusun misi yang relevan untukmu.</div>
       <div class="option-grid" id="ob-employment-grid">
         <div class="option-card" onclick="App.ob.selectOption('employment', 'tidak_bekerja', this)">
-          <span class="option-icon">🚫</span>Tidak bekerja
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg></span>Tidak bekerja
         </div>
         <div class="option-card" onclick="App.ob.selectOption('employment', 'baru_phk', this)">
-          <span class="option-icon">📋</span>Baru kehilangan pekerjaan
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>Baru kehilangan pekerjaan
         </div>
         <div class="option-card" onclick="App.ob.selectOption('employment', 'freelance', this)">
-          <span class="option-icon">💻</span>Freelance
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg></span>Freelance
         </div>
         <div class="option-card" onclick="App.ob.selectOption('employment', 'pekerja_harian', this)">
-          <span class="option-icon">🔧</span>Pekerja harian
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>Pekerja harian
         </div>
         <div class="option-card" onclick="App.ob.selectOption('employment', 'usaha_kecil', this)">
-          <span class="option-icon">🏪</span>Usaha kecil
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg></span>Usaha kecil
         </div>
         <div class="option-card" onclick="App.ob.selectOption('employment', 'bekerja_kurang', this)">
-          <span class="option-icon">📉</span>Bekerja tapi pemasukan tidak cukup
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Bekerja tapi pemasukan tidak cukup
         </div>
         <div class="option-card" onclick="App.ob.selectOption('employment', 'lainnya', this)">
-          <span class="option-icon">✦</span>Lainnya
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></span>Lainnya
         </div>
       </div>
       <div class="onboarding-actions">
@@ -1584,7 +1584,7 @@ img { max-width: 100%; }
 
     <!-- Step 3: Essential Expenses -->
     <div class="onboarding-step" id="ob-step-3">
-      <div class="step-emoji">🏠</div>
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
       <div class="step-title">Pengeluaran pokok per bulan?</div>
       <div class="step-subtitle">Hanya yang benar-benar esensial. Perkiraan sudah cukup.</div>
       <div class="form-group">
@@ -1660,25 +1660,25 @@ img { max-width: 100%; }
 
     <!-- Step 6: Skills -->
     <div class="onboarding-step" id="ob-step-6">
-      <div class="step-emoji">🛠️</div>
+      <div class="step-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
       <div class="step-title">Apa skill yang kamu miliki?</div>
       <div class="step-subtitle">Pilih semua yang relevan. Ini membantu misi pemasukan yang tepat.</div>
       <div class="skill-tags" id="ob-skills-grid">
-        <div class="skill-tag" onclick="App.ob.toggleSkill('programming', this)">💻 Programming</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('design', this)">🎨 Design</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('video', this)">🎬 Video Editing</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('photography', this)">📸 Fotografi</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('writing', this)">✍️ Menulis</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('translation', this)">🌐 Terjemahan</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('admin', this)">📁 Administrasi</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('teaching', this)">📚 Mengajar</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('repair', this)">🔧 Servis/Reparasi</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('sales', this)">🛒 Penjualan</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('cooking', this)">🍳 Memasak</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('driving', this)">🚗 Mengemudi</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('social_media', this)">📱 Media Sosial</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('finance', this)">📊 Akuntansi</div>
-        <div class="skill-tag" onclick="App.ob.toggleSkill('other', this)">✦ Lainnya</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('programming', this)">Programming / IT</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('design', this)">Desain Grafis</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('video', this)">Video Editing</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('photography', this)">Fotografi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('writing', this)">Penulisan / Konten</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('translation', this)">Penerjemahan</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('admin', this)">Administrasi & Data</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('teaching', this)">Mengajar / Les</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('repair', this)">Servis & Reparasi</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('sales', this)">Penjualan & Marketing</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('cooking', this)">Kuliner & Masak</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('driving', this)">Pengemudi / Kurir</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('social_media', this)">Media Sosial & Admin</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('finance', this)">Akuntansi & Keuangan</div>
+        <div class="skill-tag" onclick="App.ob.toggleSkill('other', this)">Keahlian Lainnya</div>
       </div>
       <div class="onboarding-actions">
         <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
@@ -1693,27 +1693,27 @@ img { max-width: 100%; }
       <div class="step-subtitle">Pilih yang paling mendesak sekarang.</div>
       <div class="option-grid" id="ob-goals-grid">
         <div class="option-card" onclick="App.ob.selectOption('goal', 'pemasukan_pertama', this)">
-          <span class="option-icon">💵</span>Pemasukan pertama
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Pemasukan pertama
         </div>
         <div class="option-card" onclick="App.ob.selectOption('goal', 'dapat_kerja', this)">
-          <span class="option-icon">💼</span>Dapat pekerjaan
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>Dapat pekerjaan
         </div>
         <div class="option-card" onclick="App.ob.selectOption('goal', 'kurangi_utang', this)">
-          <span class="option-icon">📉</span>Kurangi utang
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></span>Kurangi utang
         </div>
         <div class="option-card" onclick="App.ob.selectOption('goal', 'pemasukan_rutin', this)">
-          <span class="option-icon">🔄</span>Pemasukan rutin
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></span>Pemasukan rutin
         </div>
         <div class="option-card" onclick="App.ob.selectOption('goal', 'bantu_keluarga', this)">
-          <span class="option-icon">👨‍👩‍👧</span>Bantu keluarga
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Bantu keluarga
         </div>
         <div class="option-card" onclick="App.ob.selectOption('goal', 'semuanya', this)">
-          <span class="option-icon">✨</span>Semuanya
+          <span class="option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></span>Semua target di atas
         </div>
       </div>
       <div class="onboarding-actions">
         <button class="btn btn-secondary" onclick="App.ob.prev()">← Kembali</button>
-        <button class="btn btn-primary flex-1" onclick="App.ob.finish()" id="ob-finish-btn">Mulai Hari 1 🚀</button>
+        <button class="btn btn-primary flex-1" onclick="App.ob.finish()" id="ob-finish-btn">Mulai Hari 1 →</button>
       </div>
     </div>
   </div>
@@ -1857,7 +1857,7 @@ img { max-width: 100%; }
             <div class="stat-value" id="stat-cash">Rp 0</div>
           </div>
           <div class="stat-card">
-            <div class="stat-label">📈 Pemasukan/Bln</div>
+            <div class="stat-label">Pemasukan/Bln</div>
             <div class="stat-value positive" id="stat-income">Rp 0</div>
           </div>
           <div class="stat-card">
@@ -1932,7 +1932,7 @@ img { max-width: 100%; }
 
         <div style="margin-top:var(--space-6)">
           <div class="rights-card">
-            <h4>⚖️ Hak-hak Kamu sebagai Debitur</h4>
+            <h4>Hak-hak Resmi Debitur (Regulasi OJK & AFPI)</h4>
             <div class="rights-list">
               <div class="rights-item">Penagihan hanya boleh antara 08.00–20.00 waktu setempat</div>
               <div class="rights-item">Tidak boleh ada ancaman, intimidasi, atau penyebaran data</div>
@@ -1941,8 +1941,8 @@ img { max-width: 100%; }
               <div class="rights-item">Pinjol wajib lapor ke SLIK OJK sejak Juli 2025</div>
             </div>
             <div class="rights-contact">
-              📞 Pengaduan: OJK 157 / WhatsApp 081-157-157-157<br>
-              🌐 AFPI: afpi.or.id | Siber: patrolisiber.id
+              Layanan Konsumen OJK: 157 / WhatsApp 081-157-157-157<br>
+              AFPI: afpi.or.id | Siber: patrolisiber.id
             </div>
           </div>
         </div>
@@ -1964,7 +1964,7 @@ img { max-width: 100%; }
             <div class="stat-value positive" id="income-month-total">Rp 0</div>
           </div>
           <div class="stat-card">
-            <div class="stat-label">🔄 Pemasukan Rutin/Bln</div>
+            <div class="stat-label">Pemasukan Rutin/Bln</div>
             <div class="stat-value" id="income-recurring-total">Rp 0</div>
           </div>
         </div>
@@ -1974,7 +1974,7 @@ img { max-width: 100%; }
 
         <div class="section-header" style="margin-top:var(--space-6)">
           <div>
-            <div class="section-title">🎯 Peluang & Lamaran</div>
+            <div class="section-title">Peluang & Lamaran</div>
             <div class="section-subtitle">Lacak calon klien dan lamaran kerja</div>
           </div>
           <button class="btn btn-outline btn-sm" onclick="App.income.showAddOpp()">+ Tambah</button>
@@ -2004,7 +2004,7 @@ img { max-width: 100%; }
         </div>
 
         <div id="exp-warning-banner" style="display:none;" class="backup-banner" style="background:var(--amber-50);border-color:var(--amber-200);">
-          <div class="backup-icon">⚠️</div>
+          <div class="backup-icon" style="color:var(--amber-500);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg></div>
           <div class="backup-text">
             <strong>Pengeluaran non-esensial cukup besar bulan ini</strong>
             <span>Kita perlu mencari sumber kebocoran terbesar.</span>
@@ -2273,10 +2273,10 @@ const H = {
   },
   
   getPhase(day) {
-    if (day <= 4) return { id: 0, name: 'Survive', emoji: '🛡️', days: '1–4' };
-    if (day <= 14) return { id: 1, name: 'Create Cash', emoji: '💵', days: '5–14' };
-    if (day <= 21) return { id: 2, name: 'Stabilize', emoji: '⚖️', days: '15–21' };
-    return { id: 3, name: 'Debt Attack', emoji: '⚔️', days: '22–30' };
+    if (day <= 4) return { id: 0, name: 'Survive', emoji: 'Shield', days: '1–4' };
+    if (day <= 14) return { id: 1, name: 'Create Cash', emoji: 'Cash', days: '5–14' };
+    if (day <= 21) return { id: 2, name: 'Stabilize', emoji: 'Scale', days: '15–21' };
+    return { id: 3, name: 'Debt Attack', emoji: 'Attack', days: '22–30' };
   },
   
   priorityOrder: { CRITICAL: 0, HIGH: 1, MEDIUM: 2, LOW: 3 },
@@ -2592,7 +2592,7 @@ const App = {
       this.state.achievements = [...(this.state.achievements || []), ...newAch];
       newAch.forEach(id => {
         const def = Achievements.DEFINITIONS.find(d => d.id === id);
-        if (def) this.toast(`🏆 Pencapaian: ${def.name}`, 'success');
+        if (def) this.toast(`Pencapaian Baru: ${def.name}`, 'success');
       });
     }
     Store.save(this.state);
@@ -2740,7 +2740,7 @@ const App = {
           </div>
         </div>
       </div>
-    `).join('') || '<div class="empty-state"><div class="empty-state-icon">🎉</div><div class="empty-state-title">Semua misi selesai!</div></div>';
+    `).join('') || '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="empty-state-title">Semua misi selesai!</div></div>';
     
     // Achievements
     const earned = (s.achievements || []);
@@ -2750,7 +2750,7 @@ const App = {
         <div class="achievement-icon">${Icons[d.icon] || Icons.award}</div>
         <div style="font-size:10px;font-weight:600;color:var(--color-text-secondary);margin-top:4px">${d.name}</div>
       </div>
-    `).join('') || '<div style="font-size:13px;color:var(--color-text-muted)">Selesaikan misi untuk mendapatkan pencapaian 🏅</div>';
+    `).join('') || '<div style="font-size:13px;color:var(--color-text-muted)">Selesaikan misi harian untuk membuka pencapaian</div>';
     
     // Backup banner
     this.checkBackupBanner();
@@ -2769,7 +2769,7 @@ const App = {
     const msg = daysSince ? `Terakhir backup ${daysSince} hari yang lalu.` : `Kamu belum pernah backup data.`;
     container.innerHTML = `
       <div class="backup-banner">
-        <div class="backup-icon">💾</div>
+        <div class="backup-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg></div>
         <div class="backup-text">
           <strong>Saatnya backup data</strong>
           <span>${msg} Export sekarang agar data tidak hilang jika browser dibersihkan.</span>
@@ -2823,7 +2823,7 @@ const App = {
     if (streak > 0) {
       streakContainer.innerHTML = `
         <div class="streak-banner">
-          <div class="streak-icon">🔥</div>
+          <div class="streak-icon" style="color:#EF4444;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
           <div class="streak-text">
             <div class="streak-days">${streak} Hari Beruntun</div>
             <div class="streak-label">Teruskan konsistensimu!</div>
@@ -2845,7 +2845,7 @@ const App = {
           </div>
         </div>
       </div>
-    `).join('') || '<div class="empty-state"><div class="empty-state-icon">🎉</div><div class="empty-state-title">Semua misi selesai hari ini!</div><div class="empty-state-text">Luar biasa! Kembali lagi besok untuk misi baru.</div></div>';
+    `).join('') || '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="empty-state-title">Semua misi selesai hari ini!</div><div class="empty-state-text">Luar biasa! Kembali lagi besok untuk misi baru.</div></div>';
     
     // History (yesterday)
     const yesterday = new Date();
@@ -2869,10 +2869,10 @@ const App = {
     const s = this.state;
     const currentDay = H.currentDay(s.meta.startDate);
     const planData = [
-      { days: [1,2,3,4], phase: 'Survive 🛡️', objective: 'Petakan kondisi finansial secara akurat', tasks: ['Catat semua utang', 'Catat pengeluaran esensial', 'Inventaris aset', 'Hitung cashflow bersih'] },
-      { days: [5,6,7,8,9,10,11,12,13,14], phase: 'Create Cash 💵', objective: 'Hasilkan pemasukan pertama', tasks: ['Hubungi calon klien/pelanggan', 'Kirim lamaran pekerjaan', 'Jual aset aman', 'Follow-up prospek'] },
-      { days: [15,16,17,18,19,20,21], phase: 'Stabilize ⚖️', objective: 'Bangun pola pemasukan berulang', tasks: ['Identifikasi klien yang bisa jadi rutin', 'Hubungi kreditur untuk restrukturisasi', 'Susun jadwal kerja', 'Kurangi aktivitas tidak menghasilkan'] },
-      { days: [22,23,24,25,26,27,28,29,30], phase: 'Debt Attack ⚔️', objective: 'Eksekusi strategi pelunasan utang', tasks: ['Tentukan prioritas utang', 'Bayar cicilan sesuai kemampuan', 'Track outstanding tiap pembayaran', 'Mulai susun rencana 90 hari'] },
+      { days: [1,2,3,4], phase: 'Survive (Fase 1)', objective: 'Petakan kondisi finansial secara akurat', tasks: ['Catat semua utang', 'Catat pengeluaran esensial', 'Inventaris aset', 'Hitung cashflow bersih'] },
+      { days: [5,6,7,8,9,10,11,12,13,14], phase: 'Create Cash (Fase 2)', objective: 'Hasilkan pemasukan pertama', tasks: ['Hubungi calon klien/pelanggan', 'Kirim lamaran pekerjaan', 'Jual aset aman', 'Follow-up prospek'] },
+      { days: [15,16,17,18,19,20,21], phase: 'Stabilize (Fase 3)', objective: 'Bangun pola pemasukan berulang', tasks: ['Identifikasi klien yang bisa jadi rutin', 'Hubungi kreditur untuk restrukturisasi', 'Susun jadwal kerja', 'Kurangi aktivitas tidak menghasilkan'] },
+      { days: [22,23,24,25,26,27,28,29,30], phase: 'Debt Attack (Fase 4)', objective: 'Eksekusi strategi pelunasan utang', tasks: ['Tentukan prioritas utang', 'Bayar cicilan sesuai kemampuan', 'Track outstanding tiap pembayaran', 'Mulai susun rencana 90 hari'] },
     ];
     
     let html = '';
@@ -2928,7 +2928,7 @@ const App = {
         </div>
       </div>
       <div class="report-after">
-        <div class="report-label" style="color:var(--teal-700)">Sekarang ✨</div>
+        <div class="report-label" style="color:var(--teal-700)">Sekarang</div>
         <div class="report-row">
           <div class="report-row-label">Pemasukan/bln</div>
           <div class="report-row-value" style="color:var(--green-600)">${H.formatRp(income)}</div>
@@ -3185,7 +3185,7 @@ const App = {
       ReboundEngine.generate(App.state);
       App.save();
       App.showApp();
-      App.toast('Selamat datang di Rebound 30! 🚀', 'success');
+      App.toast('Selamat datang di Rebound 30!', 'success');
     }
   },
   
@@ -3221,7 +3221,7 @@ const App = {
       if (thisMonthInterest > 0) {
         widget.innerHTML = `
           <div class="interest-widget">
-            <div class="interest-widget-title">💸 Total Bunga Terbayar Bulan Ini</div>
+            <div class="interest-widget-title">Total Beban Bunga Bulan Ini</div>
             <div class="interest-widget-amount">${H.formatRp(thisMonthInterest)}</div>
             <div class="interest-widget-sub">Ini biaya "waktu" untuk menyelesaikan utang — bukan pokok.</div>
           </div>
@@ -3231,7 +3231,7 @@ const App = {
       if (sorted.length === 0) {
         document.getElementById('debts-list').innerHTML = `
           <div class="empty-state">
-            <div class="empty-state-icon">🎉</div>
+            <div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
             <div class="empty-state-title">Belum ada utang tercatat</div>
             <div class="empty-state-text">Tambahkan utangmu untuk mulai memetakan kewajiban.</div>
           </div>
@@ -3267,7 +3267,7 @@ const App = {
               <div class="debt-progress-bar"><div class="debt-progress-fill" style="width:${paidPct}%"></div></div>
               ${isIllegal ? `
                 <div class="illegal-flag">
-                  ⚠️ <strong>Perhatian:</strong> Bunga ${d.interestMonthly}%/bln melebihi batas legal OJK (maks 3%/bln konsumtif). 
+                  <strong>Perhatian:</strong> Bunga ${d.interestMonthly}%/bln melebihi batas legal OJK (maks 3%/bln konsumtif). 
                   Kemungkinan ini pinjol ilegal. Verifikasi di ojk.go.id sebelum membayar lebih.
                 </div>` : ''}
               <div class="debt-meta-grid">
@@ -3285,10 +3285,10 @@ const App = {
                 </div>
               </div>
               <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;">
-                <button class="btn btn-sm btn-outline" onclick="App.debts.showPayment('${d.id}')">💳 Catat Pembayaran</button>
-                <button class="btn btn-sm btn-secondary" onclick="App.debts.showNegotiation('${d.id}')">✍️ Negosiasi</button>
-                <button class="btn btn-sm btn-ghost" onclick="App.debts.showEdit('${d.id}')">✏️ Edit</button>
-                <button class="btn btn-sm btn-ghost" style="color:var(--red-500)" onclick="App.removeDebt('${d.id}')">🗑</button>
+                <button class="btn btn-sm btn-outline" onclick="App.debts.showPayment('${d.id}')">Catat Pembayaran</button>
+                <button class="btn btn-sm btn-secondary" onclick="App.debts.showNegotiation('${d.id}')">Ajukan Negosiasi</button>
+                <button class="btn btn-sm btn-ghost" onclick="App.debts.showEdit('${d.id}')">Edit</button>
+                <button class="btn btn-sm btn-ghost" style="color:var(--red-500)" onclick="App.removeDebt('${d.id}')">Hapus</button>
               </div>
               ${d.negotiations && d.negotiations.length > 0 ? `
                 <div style="margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-border)">
@@ -3417,7 +3417,7 @@ const App = {
     
     showPayment(id) {
       App.openModal(`
-        <div class="modal-title">💳 Catat Pembayaran</div>
+        <div class="modal-title">Catat Pembayaran</div>
         <div class="form-group">
           <label class="form-label">Jumlah Dibayar</label>
           <div class="input-prefix-group"><span class="input-prefix">Rp</span>
@@ -3467,7 +3467,7 @@ const App = {
     
     showNegotiation(id) {
       App.openModal(`
-        <div class="modal-title">✍️ Catat Negosiasi</div>
+        <div class="modal-title">Catat Negosiasi</div>
         <div class="form-group">
           <label class="form-label">Status</label>
           <select class="form-input form-select" id="neg-status">
@@ -3533,7 +3533,7 @@ const App = {
       const d = App.state.debts.find(x=>x.id===id);
       if (!d) return;
       App.openModal(`
-        <div class="modal-title">✏️ Edit Utang</div>
+        <div class="modal-title">Edit Utang</div>
         <div class="form-group">
           <label class="form-label">Nama Utang</label>
           <input class="form-input" id="ed-name" value="${H.escHtml(d.name)}">
@@ -3597,14 +3597,14 @@ const App = {
           <div class="income-info">
             <div class="income-source">${H.escHtml(i.source)}</div>
             <div class="income-meta">${H.formatDate(i.date)} · ${i.category}</div>
-            ${i.recurring ? '<div class="recurring-badge">🔄 Rutin</div>' : ''}
+            ${i.recurring ? '<div class="recurring-badge">Rutin</div>' : ''}
           </div>
           <div style="text-align:right">
             <div class="income-amount">${H.formatRp(i.amount)}</div>
             <button class="btn btn-ghost btn-sm" onclick="App.income.remove('${i.id}')">✕</button>
           </div>
         </div>
-      `).join('') : '<div class="empty-state"><div class="empty-state-icon">💵</div><div class="empty-state-title">Belum ada pemasukan</div><div class="empty-state-text">Catat setiap pemasukan, sekecil apapun.</div></div>';
+      `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="empty-state-title">Belum ada pemasukan</div><div class="empty-state-text">Catat setiap pemasukan, sekecil apapun.</div></div>';
       
       // Opportunities
       const opps = [...s.opportunities].sort((a,b)=>b.dateApplied?.localeCompare(a.dateApplied||''));
@@ -3832,7 +3832,7 @@ const App = {
             <button class="btn btn-ghost btn-sm" onclick="App.expenses.remove('${e.id}')">✕</button>
           </div>
         </div>
-      `).join('') : '<div class="empty-state"><div class="empty-state-icon">🧾</div><div class="empty-state-title">Belum ada pengeluaran tercatat</div><div class="empty-state-text">Catat pengeluaran harian untuk kontrol cashflow.</div></div>';
+      `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--slate-400);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div class="empty-state-title">Belum ada pengeluaran tercatat</div><div class="empty-state-text">Catat pengeluaran harian untuk kontrol cashflow.</div></div>';
     },
     
     catIcon(cat) {
@@ -3925,7 +3925,7 @@ const App = {
           <div class="income-icon-bg">${this.catIcon(a.category)}</div>
           <div class="income-info">
             <div class="income-source">${H.escHtml(a.name)}</div>
-            <div class="income-meta">${a.category} ${a.keepForWork ? '· 🔧 Alat kerja' : ''}</div>
+            <div class="income-meta">${a.category} ${a.keepForWork ? '· Alat kerja' : ''}</div>
           </div>
           <div style="text-align:right">
             <div style="font-weight:700">${H.formatRp(a.value)}</div>
@@ -3933,7 +3933,7 @@ const App = {
             <button class="btn btn-ghost btn-sm" onclick="App.assets.remove('${a.id}')">✕</button>
           </div>
         </div>
-      `).join('') : '<div class="empty-state"><div class="empty-state-icon">💰</div><div class="empty-state-title">Belum ada aset</div><div class="empty-state-text">Catat aset untuk mengetahui apa yang bisa dijual saat darurat.</div></div>';
+      `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div><div class="empty-state-title">Belum ada aset</div><div class="empty-state-text">Catat aset untuk mengetahui apa yang bisa dijual saat darurat.</div></div>';
     },
     
     catIcon(cat) {
@@ -3970,7 +3970,7 @@ const App = {
           <label class="toggle"><input type="checkbox" id="a-liquid" checked><span class="toggle-slider"></span></label>
         </div>
         <div class="settings-item" style="margin-bottom:var(--space-4)">
-          <div><div class="settings-item-label">🔧 Dipakai untuk bekerja?</div><div class="settings-item-sub">Jika ya, tidak akan direkomendasikan untuk dijual</div></div>
+          <div><div class="settings-item-label">Dipakai untuk bekerja?</div><div class="settings-item-sub">Jika ya, tidak akan direkomendasikan untuk dijual</div></div>
           <label class="toggle"><input type="checkbox" id="a-work"><span class="toggle-slider"></span></label>
         </div>
         <div style="display:flex;gap:var(--space-3)">
@@ -4058,7 +4058,7 @@ const App = {
     
     showRights() {
       App.openModal(`
-        <div class="modal-title">⚖️ Hak-hak Kamu sebagai Debitur</div>
+        <div class="modal-title">Hak-hak Resmi Debitur</div>
         <div class="rights-card" style="margin-bottom:0">
           <h4>Aturan Penagihan (POJK 22/2023 & SEOJK 19/2023)</h4>
           <div class="rights-list">
@@ -4071,9 +4071,9 @@ const App = {
             <div class="rights-item">Ajukan secara tertulis (email) sebelum benar-benar macet bayar</div>
           </div>
           <div class="rights-contact">
-            📞 OJK: 157 atau WhatsApp 081-157-157-157<br>
+            Layanan OJK: 157 atau WhatsApp 081-157-157-157<br>
             🌐 AFPI: afpi.or.id<br>
-            🚨 Ancaman/pemerasan: patrolisiber.id
+            Laporan Siber: patrolisiber.id
           </div>
         </div>
         <div style="margin-top:var(--space-4);padding:var(--space-3);background:var(--slate-50);border-radius:var(--radius-md);font-size:12px;color:var(--color-text-secondary)">
