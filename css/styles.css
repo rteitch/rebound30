@@ -1807,3 +1807,105 @@ img { max-width: 100%; }
 .takeaway-text strong {
   color: #fff;
 }
+
+
+/* Scalable Story Shelf Grid */
+.story-shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.story-shelf-card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.story-shelf-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal-500);
+  box-shadow: var(--shadow-sm);
+}
+
+.story-shelf-card.active {
+  border-color: var(--teal-600);
+  background: var(--teal-50);
+  box-shadow: 0 0 0 1px var(--teal-600), var(--shadow-sm);
+}
+
+.story-shelf-card.active.theme-amber {
+  border-color: #D97706;
+  background: #FFFBEB;
+  box-shadow: 0 0 0 1px #D97706, var(--shadow-sm);
+}
+
+.story-shelf-card.active.theme-indigo {
+  border-color: #4F46E5;
+  background: #EEF2FF;
+  box-shadow: 0 0 0 1px #4F46E5, var(--shadow-sm);
+}
+
+.story-shelf-card.active.theme-rose {
+  border-color: #E11D48;
+  background: #FFF1F2;
+  box-shadow: 0 0 0 1px #E11D48, var(--shadow-sm);
+}
+
+.shelf-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.shelf-card-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.shelf-card-avatar svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+}
+
+.shelf-card-name {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shelf-card-summary {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.shelf-card-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate-600);
+  background: rgba(0,0,0,0.04);
+  padding: 2px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}

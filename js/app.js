@@ -105,7 +105,7 @@ const App = {
       assets: () => this.assets.render(),
       plan: () => this.renderPlan(),
       reports: () => this.renderReports(),
-      stories: () => {}, settings: () => this.renderSettings(),
+      stories: () => Stories.render(), settings: () => this.renderSettings(),
     };
     if (renders[screen]) renders[screen]();
     this.refreshIcons();
