@@ -429,7 +429,101 @@ const Stories = {
         buttonText: 'Buka Misi Harian Hari Ini →'
       }
     }
-  ],
+,
+
+    {
+      id: 'matyasin',
+      featured: false,
+      name: 'Mat Yasin (Miliarder Besi Tua)',
+      tagline: 'Dari Penjual Kue Bapel & Utang Rp 3 Miliar Menjadi Miliarder Besi Tua Sumba',
+      title: 'Dari Penjual Kue Bapel hingga Miliarder Besi Tua',
+      subtitle: 'Pengusaha Besi Tua Asal Desa Madulang, Sampang, Madura',
+      origin: '🇮🇩 Sampang, Madura / Sumba Barat, NTT',
+      ageAtRebound: 'Usia Dewasa',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkit dari Utang Rp 3 Miliar & Pengabdian Desa',
+      badge: 'Bangun Jalan 10 KM & Lunas',
+      theme: 'blue',
+      accentColor: '#2563EB',
+      bgLight: '#EFF6FF',
+      borderLight: '#DBEAFE',
+      stats: {
+        debt: 'Rp 3 Miliar (Menumpuk 2020–2022)',
+        age: 'Usia Produktif',
+        lowest: 'Kayu Bekas Bangkrut, Bingung Bayar Utang',
+        action: 'Nekat ke Sumba Barat Berdagang Besi Tua',
+        result: 'Transaksi Puluhan Miliar & Bangun Jalan Aspal 10 KM'
+      },
+      timeline: [
+        { year: 'Awal Perjuangan', text: 'Merantau dari Madura menjual kue bapel keliling dan merintis dagang kayu bekas.' },
+        { year: '2020–2022 — Krisis', text: 'Bisnis kayu bekas bangkrut total. Utang menumpuk Rp 3 miliar dari bank, kerabat, dan rekan bisnis.' },
+        { year: 'Titik Terendah', text: 'Terpuruk di sudut ruangan dan kebingungan mencari cara melunasi utang yang bagai gunung.' },
+        { year: 'Akhir 2022 — Titik Balik', text: 'Berbekal doa ibu, pertama kali naik pesawat ke Sumba Barat, NTT untuk menjemput peluang bisnis besi tua.' },
+        { year: 'Hari Ini — Rebound', text: 'Transaksi tembus puluhan miliar, utang Rp 3 M lunas total, dan membangun jalan aspal 10 km di desanya.' }
+      ],
+      quote: 'Bagi siapapun yang ditinggal orang tuanya, jangan putus asa. Jangan patah semangat dan terus berusaha. Allah pasti akan memberi rezeki.',
+      quoteAuthor: 'Mat Yasin, saat mengenang perjuangan merantau ke Sumba Barat',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Madura yang Nekat Merantau',
+          paragraphs: [
+            'Mat Yasin lahir di Desa Madulang, Sampang, Madura—sebuah desa kecil dengan jalanan tanah dan keterbatasan fasilitas di mana-mana. Sejak muda, ia tahu bahwa untuk mengubah nasib keluarga, ia harus berani melangkah keluar dari kampung halaman.',
+            'Dengan keberanian khas anak Madura, ia merantau. Awalnya, ia berjualan kue bapel—kue tradisional khas Madura—di pinggir jalan. Setiap hari ia memikul dagangannya, berjalan kaki dari satu tempat ke tempat lain, menawarkan kue hangat buatan tangannya sendiri.',
+            'Penghasilannya pas-pasan, namun ia menabung sedikit demi sedikit dan mencoba peruntungan di bisnis kayu bekas sebagai tangga menuju kehidupan yang lebih baik.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 3 Miliar yang Menggunung',
+          paragraphs: [
+            'Namun nasib berkata lain. Usaha kayu bekasnya mengalami kegagalan fatal dan bangkrut total. Dan yang lebih mengerikan, utang mulai menumpuk dari segala arah—bank, kerabat keluarga, hingga rekanan bisnis.',
+            'Rp 3 miliar. Angka raksasa itu menghantuinya setiap malam. Tahun 2021 hingga 2022 adalah masa-masa tergelap dalam hidup Mat Yasin. Ia sering duduk termenung di sudut ruangan menatap langit-langit, bertanya pada dirinya sendiri: "Aku harus bayar utang ini dengan cara apa?"',
+            'Beban itu terasa seperti gunung yang mustahil dipindahkan. Namun darah juang pantang menyerah dalam dirinya berbisik: "Jangan menyerah, Yasin. Jangan."'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Doa Ibu dan Tiket ke Sumba',
+          paragraphs: [
+            'Di titik nadir itulah, pintu harapan terbuka dari arah yang tak terduga. Seorang kawan lamanya menghubungi dan mengajaknya berdagang besi tua di Sumba Barat, Nusa Tenggara Timur (NTT). Jaraknya sangat jauh ke timur Indonesia, namun Mat Yasin tidak memiliki pilihan lain untuk mundur.',
+            'Istrinya mengantar ke bandara. Di belakangnya, doa tulus sang ibu mengalir deras mengiringi setiap langkah kakinya.',
+            '"Ini berkat doa ibu yang mengantarkanku bertemu orang-orang baik di tanah rantau saat itu," kenang Mat Yasin dengan mata berkaca-kaca.',
+            'Ia menaiki pesawat terbang untuk pertama kalinya dalam hidupnya. Di dalam kabin, Mat Yasin menggenggam erat tiket penerbangannya dengan tekad bulat: ini adalah kesempatan terakhir untuk membalikkan takdir.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Miliarder Besi Tua',
+          paragraphs: [
+            'Di Sumba Barat, Mat Yasin menemukan ekosistem bisnisnya. Ia bertemu dan bergaul dengan ratusan pebisnis besi tua berpengalaman. Dari sanalah ia tekun belajar: cara menaksir kualitas besi, teknik negosiasi partai besar, dan membangun rantai pasok pengiriman.',
+            'Perlahan tapi pasti, skala bisnis besi tuanya melesat cepat. Nilai transaksi yang ia kelola meningkat dari puluhan juta, ratusan juta, hingga akhirnya menembus puluhan miliar rupiah.',
+            'Utang Rp 3 miliar yang dulu terasa menghimpit lehernya, sedikit demi sedikit terbayar lunas tanpa sisa. Mat Yasin bertransformasi menjadi pengusaha besi tua yang disegani.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Jalan Pulang Sepanjang 10 Kilometer',
+          paragraphs: [
+            'Namun kekayaan materi tidak membuatnya lupa pada tanah kelahirannya. Saat masih terpuruk dalam kubangan utang, Mat Yasin pernah berikrar pada dirinya sendiri: "Kalau suatu hari aku berhasil bangkit dan punya uang puluhan miliar, aku akan membangun desa kelahiranku."',
+            'Janji itu ia tunaikan secara nyata. Mat Yasin kembali ke Desa Madulang, Sampang, Madura, lalu membiayai langsung pembangunan jalan aspal mulus sepanjang lebih dari 10 kilometer dengan dana pribadinya.',
+            'Jalan desa yang puluhan tahun becek dan berlumpur kini telah mulus beraspal hitam. Anak-anak sekolah dapat melintas dengan ceria dan para petani desa dapat mengangkut hasil panen dengan mudah.',
+            'Mat Yasin membuktikan bahwa ketika niat kita lurus untuk melunasi utang dan berbakti pada orang tua, jalan rezeki akan terbuka tanpa batas.'
+          ]
+        }
+      ],
+      takeaways: [
+        { num: 1, text: '<strong>Keberanian Menjemput Peluang di Luar Zona Nyaman:</strong> Mat Yasin tidak ragu terbang ke Sumba Barat meski belum pernah naik pesawat demi mencari jalan keluar dari utang Rp 3 miliar.' },
+        { num: 2, text: '<strong>Kekuatan Doa Orang Tua & Keteguhan Hati:</strong> Ridha dan doa ibu adalah energi pendorong terkuat saat semua pintu bantuan manusia terasa tertutup rapat.' },
+        { num: 3, text: '<strong>Menepati Nazar & Berbagi Manfaat:</strong> Kesuksesan finansial tertinggi adalah saat kita mampu menepati janji untuk membawa manfaat nyata bagi masyarakat luas (membangun jalan aspal 10 km).' }
+      ],
+      missionBridge: {
+        lesson: 'Mat Yasin tidak berhenti saat utang Rp 3 miliar menghimpit, ia berani mencari peluang pasar baru.',
+        actionText: 'Catat prospek kerja atau peluang penghasilan baru di menu Income hari ini.',
+        targetScreen: 'income',
+        buttonText: 'Cari Peluang Pemasukan Baru →'
+      }
+    }  ],
 
   init() {
     // Load bookmarks from localStorage
