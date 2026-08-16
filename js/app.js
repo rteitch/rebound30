@@ -405,6 +405,18 @@ const App = {
         runwayEl.innerHTML = `<span style="color:var(--green-600);">Surplus +${H.formatRp(netCashflow)}/bln</span>`;
       }
     }
+
+    // 5. Total Aset & Aset Likuid
+    const totalAssets = (s.assets || []).reduce((a,x)=>a+x.value, 0);
+    const liquidAssets = (s.assets || []).filter(a=>a.liquidatable && !a.keepForWork).reduce((a,x)=>a+x.value, 0);
+    const statAssetsEl = document.getElementById('stat-assets');
+    if (statAssetsEl) statAssetsEl.textContent = H.formatRp(totalAssets);
+    const statAssetsSub = document.getElementById('stat-assets-sub');
+    if (statAssetsSub) {
+      statAssetsSub.innerHTML = liquidAssets > 0
+        ? `<span style="color:var(--green-600);font-weight:600;">Bisa dijual: ${H.formatRp(liquidAssets)}</span>`
+        : `<span>Kelola Aset →</span>`;
+    }
     
     // Missions preview
     const todayMissions = ReboundEngine.generate(s);
@@ -2495,9 +2507,11 @@ const App = {
       const goalSelect = document.getElementById('settings-profile-goal');
       const incInput = document.getElementById('settings-profile-income');
       
+      const cashInput = document.getElementById('settings-profile-cash');
       if (empSelect && p.employment) empSelect.value = p.employment;
       if (goalSelect && p.goal) goalSelect.value = p.goal;
       if (incInput) incInput.value = p.monthlyIncome || 0;
+      if (cashInput) cashInput.value = p.cash || 0;
       
       const lastExp = App.state.settings.lastExport;
       const lastExpEl = document.getElementById('last-export-text');
@@ -2516,10 +2530,12 @@ const App = {
       const emp = document.getElementById('settings-profile-employment')?.value;
       const goal = document.getElementById('settings-profile-goal')?.value;
       const inc = H.parseRp(document.getElementById('settings-profile-income')?.value);
+      const cash = H.parseRp(document.getElementById('settings-profile-cash')?.value);
 
       if (emp) App.state.profile.employment = emp;
       if (goal) App.state.profile.goal = goal;
       App.state.profile.monthlyIncome = Math.max(0, inc);
+      App.state.profile.cash = Math.max(0, cash);
 
       // Re-generate today's missions with the new profile strategy
       delete App.state.missions[H.today()];

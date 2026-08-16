@@ -471,10 +471,10 @@
           <div class="stat-card stat-card-clickable" onclick="App.navigate('income')" title="Klik untuk Buka Menu Pemasukan">
             <div class="stat-label"><i data-lucide="wallet" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Uang Tunai</div>
             <div class="stat-value" id="stat-cash">Rp 0</div>
-            <div class="stat-sub" style="color:var(--teal-600);font-weight:600;">Lihat Pemasukan →</div>
+            <div class="stat-sub" id="stat-cash-sub" style="color:var(--teal-600);font-weight:600;">Lihat Saldo →</div>
           </div>
           <div class="stat-card stat-card-clickable" onclick="App.navigate('income')" title="Klik untuk Buka Menu Pemasukan">
-            <div class="stat-label">Pemasukan/Bln</div>
+            <div class="stat-label"><i data-lucide="trending-up" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Pemasukan/Bln</div>
             <div class="stat-value positive" id="stat-income">Rp 0</div>
             <div class="stat-sub" style="color:var(--green-600);font-weight:600;">Catat Pemasukan →</div>
           </div>
@@ -487,6 +487,11 @@
             <div class="stat-label"><i data-lucide="receipt" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Total Utang</div>
             <div class="stat-value negative" id="stat-debt">Rp 0</div>
             <div class="stat-sub" id="stat-runway" style="font-weight:600;"></div>
+          </div>
+          <div class="stat-card stat-card-clickable" onclick="App.navigate('assets')" title="Klik untuk Buka Menu Aset">
+            <div class="stat-label"><i data-lucide="package" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Total Aset</div>
+            <div class="stat-value" id="stat-assets">Rp 0</div>
+            <div class="stat-sub" id="stat-assets-sub" style="color:var(--indigo-600);font-weight:600;">Kelola Aset →</div>
           </div>
         </div>
 
@@ -810,6 +815,15 @@
               <option value="lainnya">Lainnya</option>
             </select>
             <div class="form-hint">Jika kamu baru mendapat pekerjaan atau beralih profesi, perbarui di sini agar misi harian menyesuaikan secara otomatis.</div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:14px;">
+            <label class="form-label">Saldo Uang Tunai Saat Ini (Dompet + Rekening)</label>
+            <div class="input-prefix-group">
+              <span class="input-prefix">Rp</span>
+              <input type="number" class="form-input" id="settings-profile-cash" placeholder="0">
+            </div>
+            <div class="form-hint">Ubah saldo uang tunai secara manual jika ada penyesuaian di luar catatan transaksi harian.</div>
           </div>
 
           <div class="form-group" style="margin-bottom:14px;">
