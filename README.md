@@ -1,12 +1,12 @@
 # 🚀 Rebound 30 — Aplikasi Pendamping Pemulihan Finansial 30 Hari
 
 [![Live App](https://img.shields.io/badge/Live-rebound30.vercel.app-teal?style=for-the-badge&logo=vercel)](https://rebound30.vercel.app/)
-[![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-101%2F101%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-104%2F104%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![ISTQB Certified](https://img.shields.io/badge/ISTQB%20Testing-23%2F23%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
-[![Typography](https://img.shields.io/badge/Font-Plus%20Jakarta%20Sans-indigo?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 
-> **Rebound 30** adalah aplikasi web pendamping pemulihan finansial mandiri (*offline-first* PWA) yang memadukan **manajemen arus kas taktis**, **perlindungan hukum konsumen (POJK 22/2023)**, **pendampingan psikologis anti-panik**, **peta jalan 30 hari interaktif**, dan **arsip inspirasi 20 kisah nyata tokoh yang bangkit dari titik nol**.
+> **Rebound 30** adalah aplikasi web pendamping pemulihan finansial mandiri (*offline-first* PWA) yang memadukan **5 Pilar Arus Kas Real-Time**, **perlindungan hukum konsumen (POJK 22/2023 & UU HAM)**, **pendampingan psikologis anti-panik**, **peta jalan 30 hari interaktif**, dan **arsip inspirasi 20 kisah nyata tokoh yang bangkit dari titik nol**.
 
 ---
 
@@ -19,24 +19,39 @@
 
 ## 🌟 Fitur Utama & Keunggulan Arsitektur Sistem
 
-### 1. 🚨 Pusat Pertolongan Pertama Mental & Hukum (*Centered SOS Dialog 100% SVG*)
+### 1. 💎 5 Pilar Finansial & Dashboard 2-Tier Real-Time (*Cross-Module Live Sync*)
+Aplikasi mengintegrasikan 5 pilar finansial utama dalam tata letak **2-Tier Balanced Overview** yang lega dan proporsional:
+- **Baris 1 — Pilar Arus Kas Bulanan (*Cashflow*)**:
+  - 💵 **Uang Tunai (Kas)**: Menampilkan kas likuid (dompet, rekening, e-wallet) yang otomatis bertambah saat mencatat pemasukan dan berkurang saat pengeluaran/cicilan utang dibayar.
+  - 📈 **Pemasukan / Bulan**: Menjumlahkan gaji pokok rutin + seluruh pemasukan harian & freelance bulan berjalan.
+  - 📉 **Pengeluaran / Bulan**: Menjumlahkan anggaran pokok esensial + pengeluaran harian, dengan indikator warna pintar (kuning = aman, merah = defisit).
+- **Baris 2 — Pilar Neraca & Ketahanan (*Balance Sheet*)**:
+  - 💳 **Total Sisa Utang Aktif**: Sisa utang riil yang berkurang seketika setiap mencatat pembayaran pokok, lengkap dengan indikator *Runway Kas* atau badge **`Bebas Utang Total 🎉`**.
+  - 💎 **Total Estimasi Aset**: Total kekayaan barang berharga dengan subtext pintar nilai barang yang **bisa dijual darurat** tanpa mengorbankan alat kerja.
+
+### 2. 🚨 Pusat Pertolongan Pertama Mental & Hukum (*SOS First-Aid 100% SVG*)
 - **Modal Popup Terpusat (*Strictly Centered Modal*)**: Tampil tepat di tengah layar pada semua perangkat (HP, Tablet, Desktop) dengan *backdrop blur* elegan dan animasi *pop-in*.
 - **100% Ikon Vektor SVG Monokrom**: Bebas dari emotikon/emoji, menyajikan antarmuka yang bersih, profesional, dan tajam.
 - **Latihan Pernapasan Anti-Panik (*Box Breathing 4-4-4-4*)**: Animasi visual lingkaran (*Tarik 4s $\to$ Tahan 4s $\to$ Hembuskan 4s $\to$ Tahan 4s*) untuk meredakan stres dan mengembalikan ketenangan akal sehat.
 - **Skrip Hukum Lawan Teror Penagih (POJK No. 22/POJK.04/2023)**: Draf pesan WhatsApp resmi siap salin (*1-Click Copy*) untuk menghadapi penagihan tidak beretika berdasarkan regulasi OJK & Pasal 19 Ayat 2 UU HAM.
 - **Protokol Darurat Keuangan Minus (*Survival Triage*)**: Hierarki mutlak bertahan hidup (1. Pangan & Tempat Tinggal $\to$ 2. Kesehatan & Energi Kerja $\to$ 3. Pokok Utang).
 
-### 2. 🎨 Tipografi Modern & Kenyamanan Tata Letak (*Plus Jakarta Sans Typography*)
-- **Tipografi Humanis & Ramah**: Menggunakan **Google Fonts: `Plus Jakarta Sans`** dengan kurva membulat yang nyaman dibaca dan tidak mengintimidasi.
-- **Ruang Spasi Lega (*Breathing Room*)**: Spasi baris (*line-height*) $1.62$, *letter-spacing* terukur, dan bantalan kartu ($18\text{px} - 20\text{px}$) yang menghilangkan kesan sesak/mepet.
-- **Keteraturan Angka (*Tabular Figures*)**: Mengaktifkan `font-variant-numeric: tabular-nums` agar seluruh nominal rupiah tersusun simetris dan rapi.
+### 3. ⚙️ Rekonfigurasi Profil & Target di Tengah Perjalanan (*Mid-Journey Settings*)
+Pengguna dapat mengubah data dan strategi di tengah program 30 hari tanpa kehilangan riwayat atau mereset progres:
+- **Ubah Status Pekerjaan**: Menyesuaikan bobot misi harian dari pencarian kerja ke pengembangan usaha/freelance.
+- **Ubah Target Utama 30 Hari**: Mengalihkan fokus prioritas misi (`CRITICAL` / `HIGH`).
+- **Penyesuaian Saldo Kas & Pemasukan Bulanan**: Mengoreksi saldo uang tunai kapan saja langsung di menu Pengaturan.
+- **Atur Anggaran Pokok (Esensial)**: Tombol modal di menu Pengeluaran untuk menyesuaikan jatah pangan, sewa, listrik, dan transportasi bulanan.
 
-### 3. 📱 Pengalaman Pengguna Mobile & Pelindung Keyboard (*Mobile Virtual Keyboard Shield*)
-- **Auto Scroll-Into-Center Saat Mengetik**: Input form otomatis bergeser ke tengah layar di atas papan ketik virtual HP sehingga tidak pernah tertutup saat mengetik.
-- **Pencegah Distorsi Zoom iOS/Android**: Seluruh input form diatur dengan ukuran huruf minimal $16\text{px}$ untuk mencegah zoom otomatis yang merusak tata letak layar.
-- **Validasi Form Ketat & Empatik**: Dilengkapi verifikasi angka $> \text{Rp } 0$, nama wajib, dan pesan notifikasi (*toast*) yang terarah.
+### 4. 📝 Operasi CRUD Lengkap di Seluruh Entitas (*Full Edit & Delete Support*)
+Seluruh entitas data di dalam aplikasi memiliki fitur **Tambah (+)**, **Edit (Ubah Data)**, dan **Hapus (dengan Konfirmasi Modal Aman)**:
+- **Utang**: Tambah utang, catat pembayaran cicilan/pokok, catat log negosiasi, edit data bunga/tenor, dan hapus utang.
+- **Pemasukan**: Catat pemasukan harian, edit nominal/kategori, dan hapus catatan.
+- **Pengeluaran**: Catat pengeluaran tambahan, atur budget esensial, edit catatan, dan hapus catatan.
+- **Aset**: Tambah aset baru, tandai likuiditas darurat, edit nilai taksiran, dan hapus aset.
+- **Peluang / Lamaran**: Tambah prospek, ubah status pipa (*Pipeline*), dan hapus peluang.
 
-### 4. 🗺️ Roadmap 30 Hari Interaktif & Mitigasi Krisis Tak Terduga (*Menu Rencana*)
+### 5. 🗺️ Roadmap 30 Hari Interaktif & Mitigasi Krisis Tak Terduga (*Menu Rencana*)
 - **Peta Jalan 30 Hari Lengkap**: Memuat rincian fokus dan sub-tugas untuk masing-masing hari dari Hari ke-1 hingga Hari ke-30 terbagi dalam 4 fase:
   - **Fase 1 (Hari 1–4): Survive** — Pemetaan total, kunci kebutuhan pokok, stop gali lubang.
   - **Fase 2 (Hari 5–14): Create Cash** — Kecepatan perputaran kas 24–48 jam, outreach 3 prospek harian, monetisasi aset tidur.
@@ -48,10 +63,6 @@
   2. *Uang Menipis (<7 Hari)*: Rebound Engine otomatis menyuntikkan misi darurat *Pemasukan Cepat*.
   3. *Sakit / Berhalangan*: **Zero Penalty System** — Tidak ada reset progres ke Hari 1.
   4. *Pendapatan Drop*: Modul restrukturisasi dan draf negosiasi keringanan cicilan.
-
-### 5. 🏆 Penanganan Bebas Utang Awal & Pasca-30 Hari (*Lifecycle Milestones*)
-- **Pelunasan Sebelum Hari ke-30**: Otomatis membuka lencana prestasi **`🏆 Bebas Utang Total`**, memaksimalkan skor kesehatan finansial ($100/100$), dan mengalihkan rekomendasi ke pembentukan dana darurat 3–6 bulan.
-- **Perjalanan Pasca-30 Hari (`Hari 31+`)**: Aplikasi tidak kadaluarsa, bertransisi otomatis ke **Fase Pemeliharaan & Akumulasi Aset (*Maintenance & Growth*)** untuk pembiasaan disiplin finansial seumur hidup.
 
 ### 6. 🧠 Matriks Keputusan Adaptif Multi-Variabel (*Adaptive Decision Engine*)
 Sistem mengolah 3 keputusan profil awal secara terpadu tanpa *gap* logika melalui 960 permutasi pengujian:
@@ -90,9 +101,9 @@ Arsip kurasi 20 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazin
 20. **Bonzor** — Utang Rp 15 Miliar & Selamat dari Racun Serangga $\to$ Makelar Besi, Sedekah Rp 2,5 M, Lunas 40 Hari & Pengasuh 37 Anak Yatim
 
 ### 8. 🛡️ 100% Privasi & Offline-First (PWA Service Worker v4 & Self-Hosted Fonts)
-- Seluruh data transaksi, utang, pengeluaran, dan jurnal tersimpan secara lokal di browser (`localStorage`).
-- *Service Worker v3* menyaring skema protokol ekstensi browser (*Chrome/Firefox extensions*) untuk memastikan *caching* aman tanpa error.
-- Tersedia fitur Ekspor/Impor JSON dengan verifikasi skema untuk pencadangan manual.
+- Seluruh data transaksi, utang, pengeluaran, dan jurnal tersimpan secara lokal di browser masing-masing (`localStorage`) tanpa server pusat.
+- Font `Plus Jakarta Sans` di-host secara lokal di direktori `/fonts/` untuk memastikan independensi 100% dari jaringan luar.
+- Tersedia fitur Ekspor/Impor JSON dengan validasi skema untuk pencadangan manual.
 
 ---
 
@@ -100,24 +111,27 @@ Arsip kurasi 20 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazin
 
 ```text
 d:\Project\ui\
-├── index.html              # Antarmuka utama SPA, drawer mobile, & modal SOS
+├── index.html              # Antarmuka utama SPA, drawer mobile, 5-Pillar dashboard, & modal SOS
 ├── manifest.json           # Konfigurasi PWA (Installable di Android/iOS/Desktop)
-├── sw.js                   # Service Worker v3 dengan proteksi skema protokol HTTP/HTTPS
+├── sw.js                   # Service Worker v4 dengan caching offline dan self-hosted fonts
 ├── vercel.json             # Konfigurasi deploy hosting Vercel
 ├── README.md               # Dokumentasi lengkap proyek
 ├── css/
-│   └── styles.css          # Sistem Desain CSS murni (Color tokens, SOS, Reader, Cards, Typography)
+│   ├── fonts.css           # Konfigurasi self-hosted Plus Jakarta Sans font-face
+│   └── styles.css          # Sistem Desain CSS murni (Color tokens, 2-Tier Stats, SOS, Reader, Cards)
+├── fonts/                  # Berkas font lokal woff2 (Plus Jakarta Sans Regular, SemiBold, Bold)
 ├── js/
 │   ├── icons.js            # Kamus 20+ ikon SVG inline mandiri (Zero-CDN)
 │   ├── helpers.js          # Utilitas format mata uang Rupiah, kalkulasi hari, sanitasi HTML
 │   ├── store.js            # Engine persistensi reaktif localStorage & snapshot harian
 │   ├── engine.js           # ScoreEngine, MindsetEngine, ReboundEngine, & Achievements
 │   ├── stories.js          # Controller Perpustakaan Kisah & Reader Interaktif (20 Tokoh)
-│   └── app.js              # Router utama, lifecycle controller, & modal SOS First-Aid
+│   └── app.js              # Router utama, lifecycle controller, 5-Pillar Sync, CRUD & modal SOS
 └── tests/
     ├── istqb_test_suite.js        # Formal ISTQB Test Suite (EP, BVA, STT, Integration)
     ├── test_simulation_30days.js  # Simulasi otomatis siklus perjalanan Hari 1 s.d. 30
-    └── audit_all_buttons.js       # Audit otomatis 101 tombol & handler interaktif
+    ├── audit_all_buttons.js       # Audit otomatis 104 tombol & handler interaktif
+    └── deep_gap_audit.js          # Pengujian 960 permutasi matriks keputusan tanpa gap
 ```
 
 ---
@@ -130,7 +144,8 @@ Seluruh logika perhitungan finansial, alur fase pemulihan, dan antarmuka aplikas
 | :--- | :--- | :--- |
 | **Financial Engine & Logic** | Pengujian partisi cashflow, pembagian fase, batasan threshold runway, dan ketahanan data. | **23/23 PASSED (100%)** |
 | **30-Day Lifecycle Simulation** | Simulasi otomatis transisi Hari 1 hingga Hari 30, perhitungan Rebound Score, dan pembukaan achievement. | **23/23 PASSED (100%)** |
-| **Interactive Buttons Audit** | Verifikasi integritas seluruh 101 atribut aksi tombol dan fungsi callback antarmuka. | **101/101 VALID (100%)** |
+| **Interactive Buttons Audit** | Verifikasi integritas seluruh 104 atribut aksi tombol dan fungsi callback antarmuka. | **104/104 VALID (100%)** |
+| **Decision Matrix Gap Audit** | Audit komprehensif 960 permutasi variabel (Pekerjaan x Skill x Target x Fase). | **0 GAP / 100% COVERED** |
 | **30-Day Daily Mindset Audit** | Verifikasi ketersediaan jangkar mindset harian, kutipan tokoh, dan prinsip stoik di 30 hari penuh. | **30/30 HARI LENGKAP (100%)** |
 
 Untuk menjalankan pengujian secara lokal:
