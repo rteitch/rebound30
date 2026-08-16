@@ -196,13 +196,13 @@ const ScoreEngine = {
     // Anti-Shame Psychological Coaching
     let coaching = '';
     if (finalScore <= 35) {
-      coaching = '🛡️ Fase Bertahan: Wajar jika skor masih di zona merah saat baru mulai. Keberanianmu memetakan utang hari ini sudah memenangkan 50% pertempuran mental!';
+      coaching = 'Fase Bertahan: Wajar jika skor masih di zona merah saat baru mulai. Keberanianmu memetakan utang hari ini sudah memenangkan 50% pertempuran mental!';
     } else if (finalScore <= 60) {
-      coaching = '🌱 Fase Tunas Bangkit: Arus kas dan konsistensimu mulai terbentuk. Fokus pada 1 tindakan kecil hari ini tanpa menunda.';
+      coaching = 'Fase Tunas Bangkit: Arus kas dan konsistensimu mulai terbentuk. Fokus pada 1 tindakan kecil hari ini tanpa menunda.';
     } else if (finalScore <= 80) {
-      coaching = '⚡ Fase Stabilitas: Fondasimu semakin kokoh! Pengendalian biaya dan rencana negosiasi utangmu membuahkan hasil nyata.';
+      coaching = 'Fase Stabilitas: Fondasimu semakin kokoh! Pengendalian biaya dan rencana negosiasi utangmu membuahkan hasil nyata.';
     } else {
-      coaching = '👑 Fase Manusia Merdeka: Luar biasa! Keuanganmu berada di jalur kebebasan sejati. Terus pertahankan mental pemenang ini!';
+      coaching = 'Fase Manusia Merdeka: Luar biasa! Keuanganmu berada di jalur kebebasan sejati. Terus pertahankan mental pemenang ini!';
     }
     
     return { score: finalScore, components, coaching };
@@ -261,7 +261,7 @@ Sekadar info singkat, saat ini saya sedang membuka slot bantuan untuk pengerjaan
 
 Jika di tokomu, kantormu, atau bisnismu sedang ada kebutuhan bantuan untuk [masalah yang bisa kamu selesaikan], saya siap bantu dengan hasil cepat, rapi, dan harga sahabat.
 
-Kalau kamu atau ada kenalan yang sedang butuh, boleh kabari saya ya. Terima kasih banyak atas dukungannya! 🙏`,
+Kalau kamu atau ada kenalan yang sedang butuh, boleh kabari saya ya. Terima kasih banyak atas dukungannya! `,
       actionTarget: 'income',
       actionLabel: 'Catat Peluang di Menu Income'
     },

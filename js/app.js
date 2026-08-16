@@ -368,7 +368,7 @@ const App = {
             <div class="mission-title">${H.escHtml(m.title)}</div>
             <div style="margin-top:6px;">
               <button class="btn btn-sm btn-outline" style="font-size:11px;padding:2px 7px;display:inline-flex;align-items:center;gap:4px;" onclick="event.stopPropagation(); App.missions.showGuide('${m.type}', '${m.id}')">
-                📖 Panduan & Template
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-right:4px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Panduan & Template
               </button>
             </div>
           </div>
@@ -675,9 +675,9 @@ const App = {
         const isToday = d === currentDay;
         const isDone = d < currentDay;
         const statusBadge = isDone 
-          ? '<span class="badge badge-success" style="font-size:10.5px;">✓ Telah Dilalui</span>'
+          ? '<span class="badge badge-success" style="font-size:10.5px;">Telah Dilalui</span>'
           : isToday 
-            ? '<span class="badge badge-primary" style="font-size:10.5px;animation:pulse 2s infinite;">📍 Hari Ini</span>'
+            ? '<span class="badge badge-primary" style="font-size:10.5px;animation:pulse 2s infinite;">Hari Ini</span>'
             : '<span class="badge badge-secondary" style="font-size:10.5px;opacity:0.75;">⏳ Mendatang</span>';
 
         html += `
@@ -685,7 +685,7 @@ const App = {
             <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;">
               <div style="display:flex;align-items:center;gap:8px;">
                 <div style="width:26px;height:26px;border-radius:50%;background:${isDone ? 'var(--green-600)' : isToday ? 'var(--teal-600)' : 'var(--slate-200)'};color:${isDone||isToday?'#fff':'var(--slate-600)'};font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  ${isDone ? '✓' : d}
+                  ${isDone ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><polyline points="20 6 9 17 4 12"/></svg>' : d}
                 </div>
                 <div style="font-size:13px;font-weight:800;color:var(--color-text-primary);">
                   Hari ke-${d}: ${item.focus}
@@ -809,7 +809,7 @@ const App = {
   copyText(text) {
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(() => {
-        this.toast('Template berhasil disalin ke clipboard! 📋', 'success');
+        this.toast('Template berhasil disalin ke clipboard! ', 'success');
       }).catch(() => {
         this.fallbackCopy(text);
       });
@@ -828,7 +828,7 @@ const App = {
     ta.select();
     try {
       document.execCommand('copy');
-      this.toast('Template berhasil disalin ke clipboard! 📋', 'success');
+      this.toast('Template berhasil disalin ke clipboard! ', 'success');
     } catch (e) {
       this.toast('Gagal menyalin otomatis. Silakan salin manual.', 'error');
     }
@@ -853,7 +853,7 @@ const App = {
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
             <div style="font-size:11.5px;font-weight:700;color:var(--teal-800);text-transform:uppercase;">${H.escHtml(tmpl.templateTitle || 'Template Siap Pakai')}</div>
             <button class="btn btn-sm btn-primary" onclick="App.copyText(decodeURIComponent('${encodeURIComponent(tmpl.templateText)}'))" style="font-size:11px;padding:3px 8px;">
-              📋 Salin Template
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-right:4px;"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> Salin Template
             </button>
           </div>
           <textarea readonly class="form-input" style="width:100%;height:140px;font-size:12px;font-family:monospace;line-height:1.5;background:var(--slate-50);border:1px solid var(--slate-300);resize:none;">${H.escHtml(tmpl.templateText)}</textarea>
@@ -874,7 +874,7 @@ const App = {
 
         <!-- Why Box -->
         <div style="background:var(--teal-50);border-left:4px solid var(--teal-600);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);margin-bottom:var(--space-4);font-size:13px;color:var(--teal-950);line-height:1.5;">
-          <strong>🎯 Mengapa Misi Ini Penting:</strong><br>
+          <strong>Mengapa Misi Ini Penting:</strong><br>
           ${H.escHtml(tmpl.why || tmpl.desc)}
         </div>
 
@@ -1096,7 +1096,7 @@ const App = {
             <div style="font-weight:600;font-size:14px">${H.escHtml(d.name)}</div>
             <div style="font-size:12px;color:var(--color-text-secondary)">${H.formatRp(d.remaining)}</div>
           </div>
-          <button class="btn btn-ghost btn-sm" onclick="App.removeDebt('${d.id}')">✕</button>
+          <button class="btn btn-ghost btn-sm" onclick="App.removeDebt('${d.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         </div>
       `).join('');
     },
@@ -1535,7 +1535,7 @@ const App = {
           </div>
           <div style="text-align:right">
             <div class="income-amount">${H.formatRp(i.amount)}</div>
-            <button class="btn btn-ghost btn-sm" onclick="App.income.remove('${i.id}')">✕</button>
+            <button class="btn btn-ghost btn-sm" onclick="App.income.remove('${i.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
           </div>
         </div>
       `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="empty-state-title">Belum ada pemasukan</div><div class="empty-state-text">Catat setiap pemasukan, sekecil apapun.</div></div>';
@@ -1558,7 +1558,7 @@ const App = {
             <select class="form-input form-select" style="font-size:12px;padding:6px 24px 6px 8px;flex:1" onchange="App.income.updateOppStatus('${o.id}',this.value)">
               ${['SAVED','APPLIED','INTERVIEW','NEGOTIATION','WON','LOST','CANCELLED'].map(st=>`<option value="${st}" ${o.status===st?'selected':''}>${this.oppStatusLabel(st)}</option>`).join('')}
             </select>
-            <button class="btn btn-ghost btn-sm" onclick="App.income.removeOpp('${o.id}')">✕</button>
+            <button class="btn btn-ghost btn-sm" onclick="App.income.removeOpp('${o.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
           </div>
           ${o.followUpDate ? `<div style="font-size:11px;color:var(--amber-600);margin-top:4px">⏰ Follow-up: ${H.formatDate(o.followUpDate)}</div>` : ''}
         </div>
@@ -1566,8 +1566,17 @@ const App = {
     },
     
     catIcon(cat) {
-      const map = { job:'💼', freelance:'💻', client:'🤝', business:'🏪', daily:'⚒️', commission:'📊', asset_sale:'📦', other:'💵' };
-      return map[cat] || '💵';
+      const map = {
+        job: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+        freelance: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>',
+        client: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+        business: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>',
+        daily: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+        commission: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>',
+        asset_sale: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>',
+        other: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>'
+      };
+      return map[cat] || map.other;
     },
     
     oppStatusLabel(st) {
@@ -1764,15 +1773,27 @@ const App = {
           </div>
           <div style="text-align:right">
             <div style="font-weight:700;color:var(--red-600)">${H.formatRp(e.amount)}</div>
-            <button class="btn btn-ghost btn-sm" onclick="App.expenses.remove('${e.id}')">✕</button>
+            <button class="btn btn-ghost btn-sm" onclick="App.expenses.remove('${e.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
           </div>
         </div>
       `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--slate-400);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div class="empty-state-title">Belum ada pengeluaran tercatat</div><div class="empty-state-text">Catat pengeluaran harian untuk kontrol cashflow.</div></div>';
     },
     
     catIcon(cat) {
-      const m = { food:'🍛', housing:'🏠', utilities:'⚡', transport:'🚗', comm:'📱', debt_interest:'💸', entertainment:'🎮', shopping:'🛒', eating_out:'🍜', other:'💳' };
-      return m[cat] || '💳';
+      const m = {
+        food: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/><path d="M12 2v20"/><path d="M21 15v7"/><path d="M21 15a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v7"/></svg>',
+        housing: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+        utilities: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+        transport: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>',
+        comm: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+        debt_interest: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>',
+        entertainment: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>',
+        shopping: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
+        eating_out: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>',
+        health: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+        other: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>'
+      };
+      return m[cat] || m.other;
     },
     
     showAdd() {
@@ -1866,15 +1887,24 @@ const App = {
           <div style="text-align:right">
             <div style="font-weight:700">${H.formatRp(a.value)}</div>
             <div style="font-size:11px;color:${a.liquidatable&&!a.keepForWork?'var(--green-600)':'var(--slate-400)'}">${a.liquidatable&&!a.keepForWork?'Bisa dijual':'—'}</div>
-            <button class="btn btn-ghost btn-sm" onclick="App.assets.remove('${a.id}')">✕</button>
+            <button class="btn btn-ghost btn-sm" onclick="App.assets.remove('${a.id}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
           </div>
         </div>
       `).join('') : '<div class="empty-state"><div class="empty-state-icon" style="color:var(--teal-600);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div><div class="empty-state-title">Belum ada aset</div><div class="empty-state-text">Catat aset untuk mengetahui apa yang bisa dijual saat darurat.</div></div>';
     },
     
     catIcon(cat) {
-      const m = { cash:'💵', bank:'🏦', vehicle:'🏍️', electronics:'📱', property:'🏠', business:'🏪', jewelry:'💍', other:'📦' };
-      return m[cat] || '📦';
+      const m = {
+        cash: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>',
+        bank: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>',
+        vehicle: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>',
+        electronics: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+        property: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+        business: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+        jewelry: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>',
+        other: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>'
+      };
+      return m[cat] || m.other;
     },
     
     showAdd() {
@@ -2010,7 +2040,7 @@ const App = {
           </div>
           <div class="rights-contact">
             Layanan OJK: 157 atau WhatsApp 081-157-157-157<br>
-            🌐 AFPI: afpi.or.id<br>
+            AFPI: afpi.or.id<br>
             Laporan Siber: patrolisiber.id
           </div>
         </div>
