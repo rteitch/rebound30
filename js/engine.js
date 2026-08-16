@@ -622,6 +622,23 @@ Salam hangat,
       o.status === 'APPLIED' || o.status === 'INTERVIEW'
     ).length > 0;
     
+    // Employment-Driven Prioritization (Menyesuaikan Strategi dengan Status Pekerjaan)
+    const emp = state.profile && state.profile.employment ? state.profile.employment : null;
+    if (emp === 'tidak_bekerja' || emp === 'baru_phk') {
+      add('JOB_APPLICATION', 'CRITICAL');
+      add('CLIENT_OUTREACH', 'HIGH');
+      add('CUT_EXPENSE', 'HIGH');
+    } else if (emp === 'freelance' || emp === 'usaha_kecil') {
+      add('CLIENT_OUTREACH', 'HIGH');
+      if (hasRepeatClient) add('BUILD_RECURRING', 'HIGH');
+    } else if (emp === 'pekerja_harian') {
+      add('CLIENT_OUTREACH', 'HIGH');
+      if (state.profile.skills && state.profile.skills.length > 0) add('SKILL_BUILDING', 'HIGH');
+    } else if (emp === 'bekerja_kurang') {
+      add('CLIENT_OUTREACH', 'HIGH'); // cari side income
+      if (state.debts.length > 0) add('NEGOTIATION', 'HIGH'); // restrukturisasi cicilan
+    }
+
     // Goal-Driven Prioritization (Menyesuaikan Misi dengan Target Utama 30 Hari)
     const goal = state.profile && state.profile.goal ? state.profile.goal : null;
     if (goal === 'pemasukan_pertama') {
