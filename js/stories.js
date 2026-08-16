@@ -4431,6 +4431,93 @@ const Stories = {
         'Disiplin Mutlak Pemisahan Arus Kas Pribadi vs Bisnis: Pencatatan rinci dan pemisahan dompet kas adalah fondasi utama kelayakan peningkatan plafon perbankan.',
         'Menciptakan Dampak Sosial bagi Komunitas Lokal: Usaha yang memecahkan kesulitan masyarakat sekitar akan selalu didukung dan dijaga oleh warga lingkungannya.'
       ]
+    },
+    {
+      id: 'sitisofia',
+      featured: false,
+      name: 'Siti Sofia',
+      tagline: 'Dari Toko Elektronik Suami Bangkrut & Terlilit Utang — Bangkit Tanpa Modal dari Hobi Menanam di Teras Rumah, Miliki Ribuan Bibit & Omzet Ratusan Juta',
+      title: 'Dari Bangkrut dan Utang Toko Elektronik, Kini Pemilik Ribuan Bibit Tanaman',
+      subtitle: 'Ibu Rumah Tangga Pengusaha Bibit Buah & Tanaman Hias Semarang — Mengubah Halaman Rumah dan Hobi Menjadi Kerajaan Pembibitan Beromzet Ratusan Juta',
+      origin: 'Semarang, Jawa Tengah',
+      ageAtRebound: '36 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkrut Elektronik & Nol Modal',
+      badge: 'Pusat Pembibitan — Ribuan Bibit & 40 Varian Mangga',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Utang Toko Elektronik Pasca Bangkrut',
+        age: '36 Tahun',
+        lowest: 'Nol Modal, Keuangan Hancur, Ditinggali Utang Menumpuk dari Usaha Elektronik',
+        action: 'Mulai Reseller Tanaman Tanpa Modal + Budidaya Bibit di Teras Depan Rumah + Koleksi 40 Varian',
+        result: 'Ribuan Bibit Buah & Tanaman Hias, Pusat Bibit Terlengkap Semarang, Omzet Ratusan Juta/Tahun'
+      },
+      timeline: [
+        { year: 'Era Toko Elektronik', text: 'Hidup berkecukupan dari usaha elektronik suami, sebelum bisnis mengalami kebangkrutan parah dan meninggalkan tumpukan utang.' },
+        { year: 'Titik Nol — Tanpa Modal', text: 'Kondisi ekonomi keluarga hancur total; tidak memiliki modal sepeser pun untuk membuka toko baru.' },
+        { year: 'Eksplorasi Hobi Menanam', text: 'Memanfaatkan kegemaran keluarga dalam bercocok tanam dengan memulai sebagai reseller tanaman tanpa modal sepeser pun.' },
+        { year: 'Pemanfaatan Pekarangan Depan', text: 'Menanam dan menyemai bibit sendiri di lahan sempit teras rumah dari fase pembibitan hingga pembuahan.' },
+        { year: 'Koleksi 40 Varian Mangga', text: 'Koleksi melonjak hingga ribuan tanaman hias dan 40 varietas mangga unggulan, melayani pembeli ritel dan grosir.' },
+        { year: 'Hari Ini — Omzet Ratusan Juta', text: 'Menjadi salah satu pusat pembibitan buah dan tanaman hias terlengkap di Kota Semarang dengan omzet ratusan juta per tahun.' }
+      ],
+      quote: 'Awalnya kita dari nol tidak punya modal karena bangkrut dan terbelit utang. Tapi karena hobi menanam, kami mencoba belajar sungguh-sungguh. Hobi yang ditekuni dengan keuletan bisa menjadi jalan rezeki terbesar keluarga.',
+      quoteAuthor: 'Siti Sofia, ibu rumah tangga dan pengusaha bibit tanaman Semarang',
+      chapters: [
+        {
+          num: 1,
+          title: 'Ketika Toko Elektronik Runtuh dan Meninggalkan Utang',
+          paragraphs: [
+            'Di Kota Semarang, Jawa Tengah, Siti Sofia sebelumnya menjalani keseharian sebagai ibu rumah tangga yang tenang. Usaha toko elektronik milik sang suami selama bertahun-tahun menjadi pilar penopang kesejahteraan keluarga mereka.',
+            'Namun dinamika persaingan ritel dan krisis operasional memicu kebangkrutan toko tersebut. Usaha itu tutup total dengan meninggalkan beban utang yang menumpuk di berbagai pihak.',
+            'Keluarganya jatuh ke titik nadir: kehilangan sumber penghasilan utama, terkuras tabungannya, dan tidak memiliki modal uang sepeser pun untuk memulai kembali bisnis formal.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Hobi Menanam yang Menjadi Penyelamat Keluarga',
+          paragraphs: [
+            'Di tengah kebingungan dan kecemasan menghadapi tagihan utang, Siti dan suaminya melihat kembali aset non-finansial yang mereka miliki: kegemaran keluarga merawat tanaman di pekarangan rumah.',
+            '"Awalnya kami benar-benar dari nol tidak punya modal karena bangkrut. Tapi kebetulan kami sekeluarga hobi menanam, jadi kami sepakat mencoba mendalami dunia tanaman secara serius," kenang Siti.',
+            'Mereka menyadari bahwa tanaman bukan sekadar hiasan pekarangan, melainkan komoditas bernilai tinggi yang pasarnya terus bertumbuh baik untuk koleksi rumah tangga maupun perkebunan produktif.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Langkah Awal: Menjadi Reseller Tanpa Modal Sepeser Pun',
+          paragraphs: [
+            'Karena tidak memiliki modal kas untuk membeli stok pohon dalam jumlah besar, Siti mengambil strategi *zero-capital reseller*. Ia menjalin kerja sama dengan petani kebun di pinggiran kota untuk memasarkan tanaman mereka.',
+            'Dengan ketekunan memotret dan mempromosikan bibit melalui jejaring pesan instan dan media sosial, pesanan pertama mulai berdatangan.',
+            'Uang keuntungan dari komisi reseller tidak dipakai untuk konsumsi mewah, melainkan diputar penuh untuk membeli bibit polybag kecil dan pupuk dasar.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Dari Teras Sempit Rumah Menuju Koleksi 40 Varietas Mangga',
+          paragraphs: [
+            'Mereka memanfaatkan setiap jengkal lahan pekarangan depan rumah yang terbatas sebagai laboratorium pembibitan mini: melakukan okulasi, penyambungan tunas, dan perawatan hingga bibit siap berbuah.',
+            'Keahlian hortikultura mereka berkembang pesat. Koleksinya terus berlipat ganda hingga memiliki ribuan bibit buah unggul, termasuk 40 varian pohon mangga langka dan premium (seperti Irwin, Kiojay, Yuwen, hingga Chokanan).',
+            'Pekarangan rumahnya bertransformasi menjadi magnet bagi para pecinta tanaman dan kolektor buah dari berbagai kota yang mencari bibit berkualitas terjamin.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Omzet Ratusan Juta dan Berkah Ketekunan Ibu Rumah Tangga',
+          paragraphs: [
+            'Berkat ketelitian merawat kualitas bibit dan kejujuran dalam melayani pelanggan, usaha pembibitannya kini melayani penjualan ratusan pohon setiap bulan baik eceran maupun partai besar.',
+            'Omzet tahunannya melesat menembus angka ratusan juta rupiah, melunasi seluruh sisa beban utang lama dan memulihkan martabat ekonomi keluarganya secara mandiri.',
+            'Kisah Siti Sofia membuktikan bahwa ketika pintu modal uang tertutup rapat, hobi sederhana yang dipadukan dengan keuletan dan kemauan belajar mampu membuka pintu rezeki yang jauh lebih berlimpah.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Monetisasi Keterampilan dan Hobi Sebagai Solusi Nol Modal: Ketika modal kas nol, hobi bercocok tanam yang ditekuni secara ilmiah dapat dikonversi menjadi unit bisnis berpenghasilan nyata.',
+        'Mulai Dari Model Reseller untuk Membangun Arus Kas Pertama: Memasarkan barang pihak lain tanpa menanggung risiko stok awal adalah jalan keluar tercepat saat tidak punya modal.',
+        'Spesialisasi dan Keragaman Produk (*Product Depth*): Menawarkan 40 varietas mangga menciptakan keunggulan kompetitif unik yang membedakan tokonya dari pedagang tanaman biasa.',
+        'Memaksimalkan Aset Ruang yang Ada: Pekarangan sempit di depan rumah cukup menjadi landasan awal untuk menghasilkan perputaran omzet ratusan juta rupiah.'
+      ]
     }
   ],
 
