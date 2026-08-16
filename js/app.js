@@ -128,13 +128,28 @@ const App = {
   },
 
   init() {
+    // Kegagalan menyimpan harus terlihat oleh pengguna. Tanpa ini,
+    // localStorage yang penuh atau mode incognito membuat progres
+    // hilang tanpa peringatan apa pun.
+    Store.onError = (message) => {
+      this.toast(message, 'error');
+      const banner = document.getElementById('backup-banner-container');
+      if (banner) {
+        banner.innerHTML = `
+          <div class="backup-banner" style="border-color:var(--red-300);background:var(--red-50)" role="alert">
+            <div class="backup-banner-text" style="color:var(--red-800)">${H.escHtml(message)}</div>
+            <button class="btn btn-primary btn-sm" onclick="App.settings.exportData()">Export Sekarang</button>
+          </div>`;
+      }
+    };
+
     let stored = Store.get();
-    if (!stored) {
-      this.state = Store.defaultState();
-    } else {
-      this.state = stored;
-    }
-    
+    this.state = stored ? stored : Store.defaultState();
+
+    // Rotasi riwayat misi supaya localStorage tidak tumbuh tanpa batas
+    // pada pemakaian jangka panjang (data lebih dari 400 hari dibuang).
+    this.pruneMissionHistory();
+
     // Hide splash after short delay
     setTimeout(() => {
       document.getElementById('splash').classList.add('fade-out');
@@ -181,6 +196,22 @@ const App = {
     });
   },
   
+  /**
+   * Buang riwayat misi yang lebih tua dari batas simpan. Tanpa ini,
+   * objek `missions` bertambah satu entri setiap hari selamanya dan
+   * pada akhirnya bisa memenuhi kuota localStorage.
+   */
+  MISSION_HISTORY_DAYS: 400,
+
+  pruneMissionHistory() {
+    const missions = this.state && this.state.missions;
+    if (!missions || typeof missions !== 'object') return;
+    const cutoff = H.addDays(H.today(), -this.MISSION_HISTORY_DAYS);
+    for (const key of Object.keys(missions)) {
+      if (/^\d{4}-\d{2}-\d{2}$/.test(key) && key < cutoff) delete missions[key];
+    }
+  },
+
   save() {
     // Check new achievements
     const newAch = Achievements.check(this.state);
@@ -191,7 +222,7 @@ const App = {
         if (def) this.toast(`Pencapaian Baru: ${def.name}`, 'success');
       });
     }
-    Store.save(this.state);
+    return Store.save(this.state);
   },
   
   showOnboarding() {
@@ -493,9 +524,7 @@ const App = {
   
   
   toggleYesterdayMission(id) {
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const yKey = yesterday.toISOString().split('T')[0];
+    const yKey = H.addDays(H.today(), -1);
     const missions = this.state.missions[yKey] || [];
     const m = missions.find(x => x.id === id);
     if (m) {
@@ -612,9 +641,7 @@ const App = {
     const histListEl = document.getElementById('missions-history');
     if (histContainer && histListEl) {
       if (day > 1) {
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        const yKey = yesterday.toISOString().split('T')[0];
+        const yKey = H.addDays(H.today(), -1);
         const yMissions = s.missions[yKey] || [];
         
         if (yMissions.length > 0) {
@@ -905,25 +932,11 @@ const App = {
   },
   
   
-  // ---- STORIES CONTROLLER ----
-  stories: {
-    switchTab(storyId, btn) {
-      document.querySelectorAll('#screen-stories .tab-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      
-      const shaoEl = document.getElementById('story-content-shao');
-      const tangEl = document.getElementById('story-content-tang');
-      if (storyId === 'shao') {
-        if (shaoEl) shaoEl.style.display = 'block';
-        if (tangEl) tangEl.style.display = 'none';
-      } else {
-        if (shaoEl) shaoEl.style.display = 'none';
-        if (tangEl) tangEl.style.display = 'block';
-      }
-    }
-  },
+  // Catatan: controller `App.stories.switchTab` yang lama sudah dihapus.
+  // Fungsi itu masih menunjuk elemen `story-content-shao` / `-tang`
+  // dari versi 2-kisah, padahal layar Kisah kini sepenuhnya dirender
+  // oleh modul Stories (js/stories.js) ke dalam #stories-root.
 
-  
   copyText(text) {
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(() => {
@@ -2661,24 +2674,65 @@ const App = {
     
     handleImport(event) {
       const file = event.target.files[0];
+      event.target.value = ''; // reset lebih dulu agar file yang sama bisa dipilih ulang
       if (!file) return;
+
+      if (file.size > 25 * 1024 * 1024) {
+        App.toast('Berkas terlalu besar untuk backup Rebound 30 (maks 25 MB).', 'error');
+        return;
+      }
+
       const reader = new FileReader();
-      reader.onload = (e) => {
+
+      reader.onerror = () => App.toast('Berkas gagal dibaca. Coba salin ulang file backup-nya.', 'error');
+
+      reader.onload = async (e) => {
+        let parsed;
         try {
-          const data = JSON.parse(e.target.result);
-          if (!data.meta || !data.profile) throw new Error('Format tidak valid');
-          if (confirm('Import akan menggantikan SEMUA data yang ada. Lanjutkan?')) {
-            App.state = data;
-            App.save();
-            App.navigate('dashboard');
-            App.toast('Data berhasil di-import ✓', 'success');
-          }
+          parsed = JSON.parse(e.target.result);
         } catch {
-          App.toast('File tidak valid. Gunakan file backup Rebound 30.', 'error');
+          App.toast('Berkas bukan JSON yang sah. Gunakan file backup Rebound 30.', 'error');
+          return;
         }
+
+        // Validasi struktural — bukan sekadar cek dua kunci seperti versi lama.
+        const check = Store.validateImport(parsed);
+        if (!check.ok) {
+          App.alert({
+            title: 'Berkas Backup Tidak Valid',
+            message: `${check.reason}\n\nData kamu saat ini tidak diubah sama sekali.`,
+            type: 'danger',
+            buttonText: 'Mengerti'
+          });
+          return;
+        }
+
+        const incoming = check.state;
+        const ringkasan = [
+          `${incoming.debts.length} utang`,
+          `${incoming.incomes.length} catatan pemasukan`,
+          `${incoming.expenses.records.length} catatan pengeluaran`,
+          `${incoming.assets.length} aset`,
+          `${incoming.opportunities.length} peluang`,
+        ].join(', ');
+
+        const ok = await App.confirm({
+          title: 'Ganti Semua Data dengan Backup Ini?',
+          message: `Berkas berisi: ${ringkasan}.\nTanggal mulai program: ${H.formatDate(incoming.meta.startDate)}.\n\nSELURUH data yang ada di perangkat ini akan ditimpa dan tidak bisa dikembalikan. Pastikan kamu sudah meng-export data saat ini bila masih dibutuhkan.`,
+          confirmText: 'Ya, Timpa Data',
+          cancelText: 'Batalkan',
+          type: 'danger'
+        });
+        if (!ok) return;
+
+        App.state = incoming;
+        if (!App.save()) return; // Store.onError sudah memberi tahu pengguna
+        App.showApp();
+        App.navigate('dashboard');
+        App.toast('Data berhasil di-import ✓', 'success');
       };
+
       reader.readAsText(file);
-      event.target.value = '';
     },
     
     toggleBackupReminder(val) {

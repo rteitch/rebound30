@@ -2,7 +2,8 @@
 
 [![Live App](https://img.shields.io/badge/Live-rebound30.vercel.app-teal?style=for-the-badge&logo=vercel)](https://rebound30.vercel.app/)
 [![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-104%2F104%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
-[![ISTQB Certified](https://img.shields.io/badge/ISTQB%20Testing-23%2F23%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Tests](https://img.shields.io/badge/Automated%20Tests-236%2F236%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Gap Audit](https://img.shields.io/badge/Decision%20Matrix-1440%20Permutasi%20%C2%B7%200%20Gap-blueviolet?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 
@@ -128,10 +129,13 @@ d:\Project\ui\
 │   ├── stories.js          # Controller Perpustakaan Kisah & Reader Interaktif (20 Tokoh)
 │   └── app.js              # Router utama, lifecycle controller, 5-Pillar Sync, CRUD & modal SOS
 └── tests/
+    ├── run_all.js                 # Runner terpadu seluruh suite (exit code untuk CI)
     ├── istqb_test_suite.js        # Formal ISTQB Test Suite (EP, BVA, STT, Integration)
     ├── test_simulation_30days.js  # Simulasi otomatis siklus perjalanan Hari 1 s.d. 30
     ├── audit_all_buttons.js       # Audit otomatis 104 tombol & handler interaktif
-    └── deep_gap_audit.js          # Pengujian 960 permutasi matriks keputusan tanpa gap
+    ├── data_integrity.js          # Migrasi skema, validasi import, kuota storage, presisi uang
+    ├── timezone_integrity.js      # Regresi tanggal lintas zona waktu (WIB/WITA/WIT + kontrol)
+    └── deep_gap_audit.js          # Sapuan 1.440 permutasi matriks keputusan tanpa gap
 ```
 
 ---
@@ -145,15 +149,32 @@ Seluruh logika perhitungan finansial, alur fase pemulihan, dan antarmuka aplikas
 | **Financial Engine & Logic** | Pengujian partisi cashflow, pembagian fase, batasan threshold runway, dan ketahanan data. | **23/23 PASSED (100%)** |
 | **30-Day Lifecycle Simulation** | Simulasi otomatis transisi Hari 1 hingga Hari 30, perhitungan Rebound Score, dan pembukaan achievement. | **23/23 PASSED (100%)** |
 | **Interactive Buttons Audit** | Verifikasi integritas seluruh 104 atribut aksi tombol dan fungsi callback antarmuka. | **104/104 VALID (100%)** |
-| **Decision Matrix Gap Audit** | Audit komprehensif 960 permutasi variabel (Pekerjaan x Skill x Target x Fase). | **0 GAP / 100% COVERED** |
-| **30-Day Daily Mindset Audit** | Verifikasi ketersediaan jangkar mindset harian, kutipan tokoh, dan prinsip stoik di 30 hari penuh. | **30/30 HARI LENGKAP (100%)** |
+| **Data Integrity & Storage** | Migrasi skema dari backup versi lama, penolakan berkas import asing, pelaporan kuota `localStorage` penuh, presisi nominal & nilai ekstrem. | **58/58 PASSED (100%)** |
+| **Timezone Integrity** | Regresi tanggal pada 6 zona waktu (WIB, WITA, WIT, UTC+14, UTC-8, UTC+5:45) di 7 jam rawan per zona. | **132/132 PASSED (100%)** |
+| **Decision Matrix Gap Audit** | Sapuan 1.440 permutasi variabel (Pekerjaan × Target × Keahlian × Hari × Kondisi Keuangan), 11 kaidah per permutasi. | **0 GAP / 100% COVERED** |
 
-Untuk menjalankan pengujian secara lokal:
+Untuk menjalankan seluruh pengujian sekaligus:
+```bash
+node tests/run_all.js
+```
+
+Atau per modul:
 ```bash
 node tests/istqb_test_suite.js
 node tests/test_simulation_30days.js
 node tests/audit_all_buttons.js
+node tests/data_integrity.js
+node tests/timezone_integrity.js
+node tests/deep_gap_audit.js
 ```
+
+### 🛡️ Kaidah Rekayasa yang Dijaga Suite Ini
+
+Tiga aturan berikut mudah dilanggar kembali tanpa disadari, sehingga masing-masing dikunci oleh pengujian otomatis:
+
+1. **Tanggal selalu memakai kalender lokal, bukan UTC.** `new Date().toISOString().split('T')[0]` menghasilkan tanggal KEMARIN antara pukul 00:00–06:59 WIB. Gunakan `H.today()`, `H.toKey()`, dan `H.addDays()`. Dijaga oleh `timezone_integrity.js`.
+2. **Nominal ditampilkan penuh, tidak disingkat.** `H.formatRp()` selalu mencetak `Rp 18.547.300`. Singkatan `Rp 18,5jt` hanya boleh lewat `H.formatRpShort()` untuk ruang sempit — pengguna harus dapat memverifikasi setiap rupiah (PRD §7.6). Dijaga oleh `data_integrity.js`.
+3. **Misi jangkar tiap fase tidak boleh terpangkas.** Daftar misi harian dipotong maksimal 5; tanpa jaminan jangkar, `DEBT_PAYMENT` justru hilang di Fase Debt Attack bagi pengguna yang paling membutuhkannya. Lihat `ReboundEngine.PHASE_ANCHOR`. Dijaga oleh `deep_gap_audit.js`.
 
 ---
 

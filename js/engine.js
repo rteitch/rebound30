@@ -208,21 +208,35 @@ const ScoreEngine = {
     return { score: finalScore, components, coaching };
   },
   
+  /**
+   * Jumlah hari berturut-turut dengan minimal satu misi diselesaikan.
+   *
+   * Versi lama memakai `new Date(today)` (parsing UTC) lalu
+   * `toISOString()`, sehingga kunci tanggal bisa meleset satu hari di
+   * WIB. Versi lama juga mengembalikan `streak - 1`, sehingga pengguna
+   * yang sudah menuntaskan seluruh misi HARI INI tetap melihat streak
+   * kemarin — komponen Konsistensi pada Rebound Score ikut tertahan
+   * dan lencana "3/7 Hari Beruntun" baru terbuka di hari ke-4/ke-8.
+   *
+   * Aturan sekarang:
+   *   - hari dengan >= 1 misi selesai menambah streak;
+   *   - HARI INI yang belum ada misi selesai tidak memutus streak
+   *     (hari masih berjalan) tetapi juga belum menambah;
+   *   - hari sebelumnya tanpa misi selesai memutus streak.
+   */
   getStreak(state) {
+    if (!state || !state.missions) return 0;
     let streak = 0;
     const today = H.today();
-    for (let i = 0; i < 30; i++) {
-      const d = new Date(today);
-      d.setDate(d.getDate() - i);
-      const key = d.toISOString().split('T')[0];
+    for (let i = 0; i < 366; i++) {
+      const key = H.addDays(today, -i);
       const missions = state.missions[key] || [];
-      if (missions.length === 0 && i === 0) break;
-      if (missions.length === 0) break;
-      const done = missions.filter(m => m.completed).length;
-      if (done === 0 && i > 0) break;
-      streak++;
+      const done = missions.filter(m => m && m.completed).length;
+      if (done > 0) { streak++; continue; }
+      if (i === 0) continue; // hari ini masih berjalan — beri kesempatan
+      break;
     }
-    return Math.max(streak - 1, 0);
+    return streak;
   },
   
   getFocus(components) {
@@ -243,6 +257,23 @@ const ScoreEngine = {
 // REBOUND ENGINE — Daily Mission Generator
 // ============================================================
 const ReboundEngine = {
+  /**
+   * Misi jangkar tiap fase — misi yang mendefinisikan tujuan fase dan
+   * wajib tetap tampil meski daftar harian dipangkas ke 5 misi.
+   * Jangkar hanya berlaku bila misinya memang dibangkitkan oleh aturan
+   * kondisi; tidak ada misi yang dipaksakan muncul tanpa alasan.
+   *   0 Survive     -> memetakan kondisi finansial
+   *   1 Create Cash -> menghubungi calon klien
+   *   2 Stabilize   -> membuka negosiasi dengan kreditur
+   *   3 Debt Attack -> membayar pokok utang
+   */
+  PHASE_ANCHOR: {
+    0: 'MAP_FINANCES',
+    1: 'CLIENT_OUTREACH',
+    2: 'NEGOTIATION',
+    3: 'DEBT_PAYMENT',
+  },
+
     MISSION_TEMPLATES: {
     CLIENT_OUTREACH: {
       title: 'Hubungi 3 calon klien atau pelanggan',
@@ -684,18 +715,36 @@ Salam hangat,
     if (phase.id >= 2 && state.debts.filter(d => !d.negotiations || d.negotiations.length === 0).length > 0) {
       add('NEGOTIATION', 'MEDIUM');
     }
-    if (phase.id >= 3 && state.debts.length > 0) add('DEBT_PAYMENT', 'MEDIUM');
-    
+    // Fase 4 (Debt Attack) — membayar pokok utang ADALAH inti fase ini,
+    // jadi prioritasnya HIGH, bukan MEDIUM seperti sebelumnya.
+    if (phase.id >= 3 && state.debts.length > 0) add('DEBT_PAYMENT', 'HIGH');
+
     // Always: track expenses + no new debt
     if (missions.every(m => m.type !== 'TRACK_EXPENSE')) add('TRACK_EXPENSE', 'MEDIUM');
     if (phase.id <= 1) add('NO_NEW_DEBT', 'LOW');
-    
-    // Limit to 5, sort by priority
-    const sorted = missions
-      .filter((m,i,a) => a.findIndex(x=>x.type===m.type)===i) // dedupe
-      .sort((a,b) => H.priorityOrder[a.priority] - H.priorityOrder[b.priority])
-      .slice(0, 5);
-    
+
+    const deduped = missions.filter((m, i, a) => a.findIndex(x => x.type === m.type) === i);
+    const byPriority = (list) => [...list].sort((a, b) => H.priorityOrder[a.priority] - H.priorityOrder[b.priority]);
+
+    const LIMIT = 5;
+    let sorted = byPriority(deduped).slice(0, LIMIT);
+
+    // --- Jaminan misi jangkar fase ------------------------------------
+    // Pemangkasan ke 5 misi tadinya bisa membuang misi yang justru
+    // MENDEFINISIKAN fase berjalan. Contoh nyata: pengguna di Fase 4
+    // yang menganggur, kasnya menipis, dan utangnya jatuh tempo akan
+    // menghasilkan 5 misi CRITICAL/HIGH lain lebih dulu — sehingga
+    // DEBT_PAYMENT, satu-satunya misi yang benar-benar melunasi utang,
+    // tidak pernah muncul justru bagi orang yang paling membutuhkannya.
+    // Jika misi jangkar memang dibangkitkan tetapi terpangkas, ia
+    // menggantikan misi berprioritas paling rendah pada daftar hari itu.
+    const anchorType = ReboundEngine.PHASE_ANCHOR[phase.id];
+    const anchor = anchorType ? deduped.find(m => m.type === anchorType) : null;
+    if (anchor && sorted.indexOf(anchor) === -1) {
+      sorted[sorted.length - 1] = anchor;
+      sorted = byPriority(sorted);
+    }
+
     state.missions[today] = sorted;
     return sorted;
   }
