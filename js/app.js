@@ -155,6 +155,30 @@ const App = {
         }, 280);
       }
     });
+
+    // Global Keyboard Shortcut: Escape to close active modals & drawers
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const sos = document.getElementById('modal-sos');
+        if (sos && sos.style.display !== 'none') {
+          App.sos.close();
+          return;
+        }
+        const backdrop = document.getElementById('modal-backdrop');
+        if (backdrop && backdrop.classList.contains('open')) {
+          App.closeModal();
+          return;
+        }
+        const drawer = document.getElementById('mobile-drawer');
+        if (drawer && drawer.classList.contains('open')) {
+          App.closeMobileDrawer();
+          return;
+        }
+        if (window.StoriesUI && typeof window.StoriesUI.closeReader === 'function') {
+          window.StoriesUI.closeReader();
+        }
+      }
+    });
   },
   
   save() {
