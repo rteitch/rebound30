@@ -1562,6 +1562,13 @@ img { max-width: 100%; }
   box-shadow: 0 0 0 1px var(--teal-600), var(--shadow-md);
 }
 
+
+.story-selector-card.active.theme-indigo {
+  border-color: #4F46E5;
+  background: #EEF2FF;
+  box-shadow: 0 0 0 1px #4F46E5, var(--shadow-md);
+}
+
 .story-selector-card.active.theme-amber {
   border-color: var(--amber-500);
   background: var(--amber-50);

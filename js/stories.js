@@ -17,17 +17,14 @@ const Stories = {
       if (activeCard) activeCard.classList.add('active');
     }
 
-    // Toggle content visibility with smooth fade
-    const shaoContent = document.getElementById('story-content-shao');
-    const tangContent = document.getElementById('story-content-tang');
-    
-    if (storyId === 'shao') {
-      if (shaoContent) shaoContent.style.display = 'block';
-      if (tangContent) tangContent.style.display = 'none';
-    } else {
-      if (shaoContent) shaoContent.style.display = 'none';
-      if (tangContent) tangContent.style.display = 'block';
-    }
+    // Toggle all story contents
+    const stories = ['shao', 'tang', 'hendra'];
+    stories.forEach(id => {
+      const el = document.getElementById(`story-content-${id}`);
+      if (el) {
+        el.style.display = (id === storyId) ? 'block' : 'none';
+      }
+    });
 
     // Scroll to top of reading area smoothly
     const pageHeader = document.querySelector('#screen-stories .page-header');
