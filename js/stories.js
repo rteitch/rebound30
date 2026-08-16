@@ -4083,6 +4083,94 @@ const Stories = {
         'Hadapi Masalah Satu Per Satu dengan Kesabaran Panjang: Restrukturisasi utang triliunan rupiah tidak selesai dalam semalam, melainkan butuh komitmen negosiasi bertahun-tahun (1998–2004).',
         'Tiga Pilar IPE (Integritas, Profesionalisme, Entrepreneurship): Integritas menjaga kepercayaan, profesionalisme menjamin kualitas solusi, dan entrepreneurship melahirkan inovasi penyelamat krisis.'
       ]
+    },
+    {
+      id: 'johnnyandrean',
+      featured: false,
+      name: 'Johan Sunjoto (Johnny Andrean)',
+      tagline: 'Dari Anak Penjual Soto, 75 Cabang Salon Runtuh Tersisa 13 di Krismon 1998 — Bangkit Pivot ke Produk Rambut Jerman Jadi Raja Kecantikan Nasional',
+      title: 'Dari 75 Cabang Tersisa 13, Kini Raja Produk Perawatan Rambut Indonesia',
+      subtitle: 'Pendiri Johnny Andrean Group — Pelopor Transformasi Salon Jasa Menjadi Kerajaan Produk Konsumen & Sekolah Kecantikan',
+      origin: 'Semarang, Jawa Tengah / Jakarta',
+      ageAtRebound: '39 Thn (Tahun 1998)',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Krismon 1998 & 62 Cabang Tutup',
+      badge: 'Raja Produk Rambut — Johnny Andrean Group',
+      theme: 'purple',
+      accentColor: '#7C3AED',
+      bgLight: '#F5F3FF',
+      borderLight: '#DDD6FE',
+      stats: {
+        debt: 'Biaya Operasional 75 Cabang & Beban Krismon 1998',
+        age: '39 Tahun (Krisis 1998)',
+        lowest: 'Dari 75 Cabang Tersisa 13 (62 Cabang Tutup), Ratusan Karyawan Dirumahkan, Nyaris Menyerah',
+        action: 'Pivot Model Bisnis ke Lisensi Brand + Riset Formula Rambut di Jerman + Fokus Ritel Massal',
+        result: 'Produk Rambut Terlaris Nasional, Sekolah Kecantikan, Ekosistem Johnny Andrean Group'
+      },
+      timeline: [
+        { year: '1959–1980 — Anak Penjual Soto', text: 'Anak ke-8 dari 12 bersaudara di Semarang. Membantu pikul panci soto keliling ayahnya sejak belia.' },
+        { year: '1983 — Salon Pertama Cikini', text: 'Merantau ke Jakarta menjadi asisten salon, lalu mendirikan Johnny Andrean Salon pertama di Cikini di usia 24 tahun.' },
+        { year: '1990-an — Ekspansi 75 Cabang', text: 'Membuka cabang salon agresif hingga 75 gerai di seluruh Indonesia dengan biaya sewa gedung dan gaji masif.' },
+        { year: '1998 — Pukulan Telak Krismon', text: 'Daya beli runtuh; biaya overhead membengkak. Dari 75 cabang runtuh hanya tersisa 13 gerai, 62 cabang tutup dan nyaris menyerah.' },
+        { year: 'Transformasi & Riset Jerman', text: 'Beralih ke model lisensi brand dan terbang ke Jerman meriset formula produk shampo & hair treatment berkualitas tinggi.' },
+        { year: 'Hari Ini — Raja Produk Rambut', text: 'Memimpin kerajaan produk perawatan rambut ritel terlaris, jaringan sekolah tata rias, dan distribusi modern se-Indonesia.' }
+      ],
+      quote: 'Saya harus berani melakukan perubahan. Kalau tetap bertahan di zona nyaman model bisnis lama, saya akan mati perlahan. Kadang kita harus rela melepaskan apa yang kita bangun untuk menyelamatkan apa yang benar-benar penting.',
+      quoteAuthor: 'Johan Sunjoto (Johnny Andrean), pendiri Johnny Andrean Group',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Penjual Soto yang Bermimpi di Ibu Kota',
+          paragraphs: [
+            'Semarang, 1959. Johnny Andrean (Johan Sunjoto) lahir sebagai anak ke-8 dari 12 bersaudara dalam keluarga yang serba kekurangan. Ayahnya adalah seorang pedagang soto keliling sederhana.',
+            'Sejak masa kanak-kanak, Johnny kecil sudah terbiasa bangun dini hari membantu memikul panci kuah panas, mengiris sayuran, dan menjajakan semangkuk soto di pinggir jalan demi upah recehan.',
+            '"Saya sejak kecil sudah terbiasa hidup susah dan bekerja kasar. Mental itulah yang membuat saya tidak pernah gentar menghadapi kerasnya perjuangan," kenangnya. Lulus dari bangku SMA, ia memutuskan merantau ke Jakarta dan bekerja sebagai penata rambut junior di sebuah salon ibu kota.',
+            'Pada tahun 1983, di usianya yang baru menginjak 24 tahun, ia memberanikan diri membuka salon mandiri pertamanya di kawasan Cikini, Jakarta Pusat dengan nama Johnny Andrean Salon.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Ekspansi Agresif 75 Cabang dan Jebakan Biaya Operasional',
+          paragraphs: [
+            'Berkat keterampilan gunting rambutnya yang modern, teliti, dan ramah pelanggan, nama Johnny Andrean melambung cepat menjadi tren gaya hidup masyarakat urban.',
+            'Ekspansi dilakukan secara masif dan agresif sepanjang era 1990-an. Cabang demi cabang dibuka di pusat-pusat perbelanjaan bergengsi hingga mencapai 75 gerai salon di berbagai kota besar di Indonesia.',
+            'Namun di balik tampilan kejayaan itu, struktur keuangan menanggung beban operasional yang luar biasa besar: biaya sewa tempat di mal-mal utama yang mahal, gaji ribuan staf penata rambut, dan biaya utilitas bulanan yang terus menggelembung.'
+          ]
+        },
+        {
+          num: 3,
+          title: '1998: Badai Krisis dan Runtuhnya 62 Cabang Salon',
+          paragraphs: [
+            'Tahun 1998, badai krisis moneter menghantam perekonomian Indonesia tanpa ampun. Nilai tukar rupiah terpuruk, daya beli masyarakat anjlok seketika, dan kunjungan salon mewah merosot drastis.',
+            'Arus kas bisnisnya lumpuh seketika sementara tagihan sewa dan beban tetap tak kunjung berhenti menagih. Dalam waktu singkat, 62 cabang salon terpaksa ditutup satu per satu dan ratusan karyawan harus dirumahkan.',
+            '"Dari 75 cabang yang saya bangun berdarah-darah, hanya tersisa 13 cabang. Saya hampir frustasi, terpuruk dalam tekanan batin, dan sempat ingin menyerah kalah," kenang Johnny dengan mata berkaca-kaca.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Langkah Berani: Lisensi Kemitraan dan Formulasi Kimia Jerman',
+          paragraphs: [
+            'Di titik nadir keterpurukan itu, Johnny menyadari bahwa bertahan dengan model bisnis lama berbasis aset fisik padat karya (*high fixed-cost service*) akan membunuhnya perlahan.',
+            'Ia melakukan revolusi strategi dalam dua pilar utama: pertama, mengubah kepemilikan salon menjadi model kemitraan dan lisensi merek "Johnny Andrean", sehingga risiko dan beban operasional tempat ditanggung bersama mitra.',
+            'Kedua, ia mengalihkan fokus inti bisnis ke produk konsumen massal (*consumer FMCG*): memproduksi shampo, kondisioner, dan vitamin perawatan rambut. Ia terbang bolak-balik ke Jerman untuk bermitra dengan laboratorium kimia terkemuka demi meracik formula perawatan rambut terbaik yang disesuaikan dengan iklim tropis Indonesia.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Kebangkitan Raja Produk Perawatan Rambut Nusantara',
+          paragraphs: [
+            'Strategi pivot tersebut membuahkan hasil luar biasa. Produk perawatan rambut Johnny Andrean meledak di pasar swalayan, minimarket, dan apotek di seluruh pelosok Nusantara karena menawarkan kualitas salon profesional dengan harga yang sangat terjangkau bagi masyarakat luas.',
+            'Didukung jaringan sekolah kecantikan (Johnny Andrean Beauty School) yang mencetak ribuan penata rambut handal setiap tahunnya, ekosistem bisnisnya bertransformasi menjadi konglomerasi kecantikan modern yang kebal krisis.',
+            'Kisah Johnny Andrean membuktikan bahwa kejatuhan bukan untuk disesali; terkadang seorang pengusaha harus rela melepaskan ranting demi menumbuhkan akar baru yang jauh lebih kokoh dan menjulang tinggi.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Keberanian Pivot dari Model Bisnis Berbiaya Tetap Tinggi: Mengubah ketergantungan dari layanan salon padat operasional menjadi produk ritel dengan margin dan perputaran skala massal.',
+        'Model Lisensi dan Kemitraan Memangkas Risiko Krisis: Berbagi risiko operasional gerai bersama mitra membuat merek tetap berekspansi tanpa menanggung seluruh beban aset sendiri.',
+        'Investasi Mutu Produk Pada Standar Global: Riset formula ke pabrik kimia Jerman memastikan produk lokal memiliki daya saing kualitas setara merek internasional.',
+        'Rela Melepaskan Aset Lama Demi Menyelamatkan Kelangsungan Usaha: Menutup 62 cabang yang tidak efisien adalah keputusan pahit yang menyelamatkan kelangsungan seluruh grup usaha.'
+      ]
     }
   ],
 
