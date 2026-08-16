@@ -19,17 +19,17 @@ const Stories = {
       tagline: 'Dari Ratu Koper Rp 220 Miliar Menjadi Pemilik 3 Toko Bakpao',
       title: 'Dari Reruntuhan, Ia Tumbuh Kembali',
       subtitle: 'Mantan "Ratu Koper" Asal Yiwu, Tiongkok',
-      origin: '🇨🇳 Yiwu, Tiongkok',
-      ageAtRebound: '61 Tahun',
+      origin: '🇨🇳 Yiwu, China',
+      ageAtRebound: '61 Thn',
       categories: ['debt', 'bankrupt', 'zero', 'business', 'global'],
-      categoryLabel: 'Bangkit dari Utang Besar',
+      categoryLabel: 'Utang Rp 220 M',
       badge: 'Aktif Membuka 3 Cabang',
       theme: 'teal',
       accentColor: '#0F766E',
       bgLight: '#F0FDFA',
       borderLight: '#CCFBF1',
       stats: {
-        debt: '> Rp 220 Miliar (100 Juta Yuan)',
+        debt: '> Rp 220 M (100 Jt Yuan)',
         age: '61 Tahun',
         lowest: 'Bangkrut & Vonis Kanker',
         action: 'Jual Bakpao 5 Yuan (Rp 11.000)',
@@ -101,19 +101,19 @@ const Stories = {
       tagline: 'Dari Raja Restoran Mewah Rp 100 Miliar Menjadi Om Sosis Panggang',
       title: 'Dari Raja Kuliner Menuju Om Sosis Panggang',
       subtitle: 'Mantan Pengusaha Restoran Mewah Qingdao, Tiongkok',
-      origin: '🇨🇳 Qingdao, Tiongkok',
-      ageAtRebound: '57 Tahun',
+      origin: '🇨🇳 Qingdao, China',
+      ageAtRebound: '57 Thn',
       categories: ['debt', 'bankrupt', 'business', 'global'],
-      categoryLabel: 'Bangkit dari Utang Agresif',
+      categoryLabel: 'Utang Rp 100 M',
       badge: 'Target Lunas Total 2027',
       theme: 'amber',
       accentColor: '#D97706',
       bgLight: '#FFFBEB',
       borderLight: '#FEF3C7',
       stats: {
-        debt: 'Rp 100 Miliar (46 Juta Yuan)',
+        debt: 'Rp 100 M (46 Jt Yuan)',
         age: '57 Tahun',
-        lowest: 'Rumah & Mobil Disita, Dicerai',
+        lowest: 'Aset Disita & Dicerai',
         action: 'Kios Sosis Panggang 25 m² di Trotoar',
         result: 'Pabrik Sosis Sendiri (Target Lunas 2027)'
       },
@@ -182,7 +182,7 @@ const Stories = {
       title: 'Gelandangan yang Kini Punya Pabrik',
       subtitle: 'Owner Salina Herbal — Indonesia',
       origin: '🇮🇩 Indonesia',
-      ageAtRebound: 'Usia Dewasa',
+      ageAtRebound: 'Usia Produktif',
       categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
       categoryLabel: 'Titik Nol Mutlak',
       badge: 'Utang Lunas 100%',
@@ -262,8 +262,8 @@ const Stories = {
       tagline: 'Dari TKI Pabrik di Taiwan Menuju Pemilik Showroom 1.000 Mobil Bekas',
       title: 'Dari Nol di Taiwan Menuju Seribu Mobil',
       subtitle: 'Pendiri Kacunk Motor — Bisnis Mobil Bekas Terbesar',
-      origin: '🇮🇩 Indonesia / 🇹🇼 Taiwan',
-      ageAtRebound: 'Usia Dewasa',
+      origin: '🇮🇩 ID & Taiwan',
+      ageAtRebound: 'Usia Produktif',
       categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
       categoryLabel: 'Kebangkrutan Total',
       badge: '1.000 Armada Mobil',
@@ -272,7 +272,7 @@ const Stories = {
       bgLight: '#FFF1F2',
       borderLight: '#FFE4E6',
       stats: {
-        debt: 'Utang Bank Menumpuk (Bangkrut Total)',
+        debt: 'Utang Bank Menumpuk',
         age: 'Usia Produktif',
         lowest: 'Aset Habis & Ditinggal Pasangan',
         action: 'TKI Pabrik di Taiwan & Modal Mobil Timor Rp 33 Jt',
@@ -346,7 +346,7 @@ const Stories = {
       title: 'Dari Meja Kantor ke Pinggir Jalan',
       subtitle: 'Pendiri Siomay Wondes — Indonesia',
       origin: '🇮🇩 Indonesia',
-      ageAtRebound: 'Usia Dewasa',
+      ageAtRebound: 'Usia Produktif',
       categories: ['debt', 'zero', 'business', 'indonesia'],
       categoryLabel: 'Utang Medis & KK',
       badge: 'Dapur Mesin Semi-Modern & Lunas',
@@ -355,7 +355,7 @@ const Stories = {
       bgLight: '#ECFDF5',
       borderLight: '#A7F3D0',
       stats: {
-        debt: 'Ratusan Juta Rupiah (Bunga Kartu Kredit)',
+        debt: 'Ratusan Juta Rupiah',
         age: 'Usia Produktif',
         lowest: 'Tekanan Keluarga & Bisnis Gagal',
         action: 'Resign & Jual Siomay di Depan Gereja Tiap Minggu',
@@ -363,7 +363,7 @@ const Stories = {
       },
       timeline: [
         { year: 'Masa Mapan', text: 'Karyawan kantoran tertib finansial yang tidak pernah berutang dan memimpin banyak staf.' },
-        { year: 'Musibah Medis', text: 'Jatuh sakit parah dengan biaya RS Rp 40 juta. Digesek kartu kredit $\to$ bunga menumpuk jadi ratusan juta.' },
+        { year: 'Musibah Medis', text: 'Jatuh sakit parah dengan biaya RS Rp 40 juta. Digesek kartu kredit $	o$ bunga menumpuk jadi ratusan juta.' },
         { year: 'Titik Terendah', text: 'Buka usaha sampingan untuk tutup lubang tapi gagal. Tekanan keluarga besar dan cicilan macet.' },
         { year: 'Doa & Pasrah', text: 'Shalat malam rutin. Piutang lama tak terduga cair, gaji tertunda dibayarkan, utang ratusan juta lunas.' },
         { year: 'Hari Ini — Rebound', text: 'Resign dari kantor, jualan siomay gerobak tiap Minggu pagi, kini punya dapur produksi semi-modern dengan mesin penggiling ikan & mixer.' }
@@ -428,8 +428,7 @@ const Stories = {
         targetScreen: 'missions',
         buttonText: 'Buka Misi Harian Hari Ini →'
       }
-    }
-,
+    },
 
     {
       id: 'matyasin',
@@ -439,7 +438,7 @@ const Stories = {
       title: 'Dari Penjual Kue Bapel hingga Miliarder Besi Tua',
       subtitle: 'Pengusaha Besi Tua Asal Desa Madulang, Sampang, Madura',
       origin: '🇮🇩 Madura & NTT',
-      ageAtRebound: 'Usia Dewasa',
+      ageAtRebound: 'Usia Produktif',
       categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
       categoryLabel: 'Utang Rp 3 M & Besi Tua',
       badge: 'Bangun Jalan 10 KM & Lunas',
@@ -448,7 +447,7 @@ const Stories = {
       bgLight: '#EFF6FF',
       borderLight: '#DBEAFE',
       stats: {
-        debt: 'Rp 3 Miliar (Menumpuk 2020–2022)',
+        debt: 'Rp 3 Miliar (2020-2022)',
         age: 'Usia Produktif',
         lowest: 'Kayu Bangkrut, Bingung Bayar',
         action: 'Nekat ke Sumba Barat Berdagang Besi Tua',
@@ -523,10 +522,101 @@ const Stories = {
         targetScreen: 'income',
         buttonText: 'Cari Peluang Pemasukan Baru →'
       }
-    }  ],
+    },
+
+    {
+      id: 'genta',
+      featured: false,
+      name: 'Genta Gantara (Bos Properti Cimahi)',
+      tagline: 'Dari Utang Investasi Bodong Rp 500 Juta di Usia 23 Tahun Menjadi Bos Properti',
+      title: 'Dari Utang Rp 500 Juta di Usia 23 Tahun, Kini Bos Properti',
+      subtitle: 'Founder Bisnis Jasa Konstruksi & Developer Properti Cimahi',
+      origin: '🇮🇩 Cimahi, Jabar',
+      ageAtRebound: 'Usia 23 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 500 Jt Usia 23',
+      badge: 'Omset Miliaran & Lunas 100%',
+      theme: 'teal',
+      accentColor: '#0D9488',
+      bgLight: '#F0FDFA',
+      borderLight: '#CCFBF1',
+      stats: {
+        debt: 'Rp 500 Juta (Investasi Bodong)',
+        age: '23 Tahun',
+        lowest: 'Kontrakan Sempit Toilet Luar & Nol Aset',
+        action: 'Modal Gambar Desain & DP Proyek Bangun Rumah',
+        result: 'Developer & Bisnis Konstruksi Omset Miliaran (Usia 32)'
+      },
+      timeline: [
+        { year: '2013 — Jatuh Miskin', text: 'Keluarga bangkrut, pindah dari kawasan elit ke kontrakan sempit. Mulai jualan keripik & brownies saat kuliah.' },
+        { year: 'Freelance Properti', text: 'Jual unit rumah pertama dapat komisi Rp 7 juta, mulai membangun personal branding pengusaha properti.' },
+        { year: 'Usia 23 Tahun — Terjebak Rp 500 Jt', text: 'Tergiur titip dana investasi bodong dan ajak teman (total Rp 1 M lenyap). Menanggung utang Rp 500 juta tanpa aset.' },
+        { year: 'Titik Balik Batin', text: 'Menemukan ketenangan lewat seminar PPA & Tahajud. Mendapat proyek bangun rumah pertama bermodal gambar desain & DP klien.' },
+        { year: 'Usia 32 Tahun — Hari Ini', text: 'Memimpin bisnis developer, konstruksi, dan arsitektur di berbagai kota dengan omset miliaran rupiah.' }
+      ],
+      quote: 'Dalam membangun usaha, mental baja, ilmu, strategi, dan doa harus berjalan beriringan. Jatuh bukanlah akhir, yang terpenting adalah bagaimana kita bangkit.',
+      quoteAuthor: 'Genta Gantara, saat menceritakan kebangkitannya dari utang Rp 500 juta di usia 23 tahun',
+      chapters: [
+        {
+          num: 1,
+          title: 'Jatuh dari Singgasana',
+          paragraphs: [
+            'Genta Gantara tumbuh dalam keluarga yang berkecukupan di kawasan elit Cimahi, Jawa Barat. Segala kebutuhan hidup selalu tersedia, dan ia tidak pernah tahu bagaimana rasanya mengalami kekurangan materi.',
+            'Sampai suatu hari, krisis finansial hebat mengguncang keluarganya. Dalam sekejap, ia harus pindah dari rumah mewah ke sebuah kontrakan kecil di mana toiletnya berada di luar rumah. Dari sanalah, untuk pertama kalinya, Genta mengerti arti perjuangan hidup yang sebenarnya.',
+            'Tahun 2013 saat masih berstatus mahasiswa, ia mulai berjualan keripik dan brownies keliling yang diambil dari pabrik lokal Cimahi. Jualan kecil-kecilan itu bukan hanya menyambung hidup, tetapi juga mempertemukannya dengan banyak pengusaha yang kelak menjadi klien propertinya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Terjun ke Dunia Properti',
+          paragraphs: [
+            'Merasa tidak puas hanya dengan berjualan makanan ringan, Genta mencoba peruntungan sebagai marketing freelance di developer perumahan. Di sinilah bakat negosiasi dan komunikasinya mulai bersinar.',
+            'Ia berhasil menjual satu unit rumah pertamanya dan mengantongi komisi Rp 7 juta—uang yang saat itu cukup untuk melunasi biaya kuliah dua semester.',
+            'Genta mulai membangun personal branding yang kuat sebagai konsultan properti muda. Kepercayaan itu berbuah manis saat seorang dosen mempercayakan pencarian rumah berbudget Rp 1 miliar kepadanya, menghasilkan keuntungan besar pertamanya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Rp 500 Juta yang Menghantui di Usia 23 Tahun',
+          paragraphs: [
+            'Kesuksesan di usia muda membuat Genta overconfidence. Ia mulai tergiur skema investasi titip dana yang menjanjikan keuntungan tinggi, bahkan mengajak teman-temannya untuk ikut menanamkan modal.',
+            'Total dana hampir Rp 1 miliar masuk, dan semuanya raib dibawa lari pengelola investasi bodong tersebut.',
+            'Di usia yang baru menginjak 23 tahun, Genta harus memikul tanggung jawab utang Rp 500 juta. Tanpa sisa uang tabungan. Tanpa aset berharga. "Saya tidak menyalahkan siapa-siapa, ini murni akibat kelalaian dan kebodohan saya saat itu," ungkapnya dengan jujur.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Titik Balik di Tengah Kegelapan',
+          paragraphs: [
+            'Di titik nadir keputusasaan, Genta mengikuti seminar "Pola Pertolongan Allah". Yang ia peroleh pertama kali bukanlah uang, melainkan ketenangan batin yang mendalam.',
+            '"Ketika batin tenang, akal sehat kembali. Saya sadar masalah utang ini pasti ada jalan keluarnya," ujarnya.',
+            'Bersama sang istri, ia rutin menjalankan shalat tahajud di sepertiga malam. Tak lama berselang, seorang klien memberinya kepercayaan membangun rumah. Bermodalkan gambar desain arsitektur dan kepercayaan penuh klien, Genta meminta uang muka (DP) proyek untuk memulai pekerjaan konstruksi.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Bos Properti di Usia 32 Tahun',
+          paragraphs: [
+            'Kini di usia 32 tahun, Genta Gantara memimpin perusahaan jasa konstruksi, developer properti, dan desain arsitektur dengan proyek yang tersebar di berbagai kota beromset miliaran rupiah.',
+            'Utang Rp 500 juta yang dulu menghantuinya di usia 23 tahun telah lunas 100%. Pengalaman jatuh bangkrut justru menjadi fondasi terkuat yang membentuk integritas dan kematangan bisnisnya hari ini.'
+          ]
+        }
+      ],
+      takeaways: [
+        { num: 1, text: '<strong>Hindari Skema Investasi Titip Dana & Untung Kilat:</strong> Di usia muda, jangan mudah tergiur iming-iming investasi instan tanpa kejelasan legalitas dan underlying bisnis nyata.' },
+        { num: 2, text: '<strong>Ketenangan Batin Menghidupkan Kembali Logika:</strong> Kepanikan tidak akan menyelesaikan utang. Tenangkan diri dan perbaiki hubungan spiritual agar pikiran jernih melihat peluang.' },
+        { num: 3, text: '<strong>Bisnis Jasa dengan Modal Kepercayaan & DP:</strong> Bangkit tidak selalu butuh modal kapital raksasa. Menjual keahlian (desain arsitektur) dengan modal uang muka (DP) klien adalah strategi arus kas yang sangat ampuh.' }
+      ],
+      missionBridge: {
+        lesson: 'Genta bangkit dengan menawarkan keahlian jasa dan mengunci arus kas melalui sistem DP klien.',
+        actionText: 'Tawarkan keahlian atau jasa konsultasi/freelance di menu Income hari ini.',
+        targetScreen: 'income',
+        buttonText: 'Tawarkan Jasa & Cari Pemasukan →'
+      }
+    }
+  ],
 
   init() {
-    // Load bookmarks from localStorage
     try {
       const saved = localStorage.getItem('rebound30_bookmarks');
       this.bookmarks = saved ? JSON.parse(saved) : [];
@@ -615,7 +705,6 @@ const Stories = {
     const filtered = this.getFilteredData();
     const featuredStory = this.DATA.find(s => s.featured) || this.DATA[0];
 
-    // Problem-based category chips
     const categories = [
       { id: 'all', label: `Semua (${this.DATA.length})` },
       { id: 'debt', label: '💸 Terlilit Utang' },
@@ -633,7 +722,6 @@ const Stories = {
       </button>
     `).join('');
 
-    // Teaser Cards (2 columns on desktop, 1 on mobile)
     const cardsHtml = filtered.map(item => {
       const isSaved = this.isBookmarked(item.id);
       return `
@@ -648,7 +736,6 @@ const Stories = {
           <h3 class="catalog-card-name">${H.escHtml(item.name)}</h3>
           <p class="catalog-card-tagline">${H.escHtml(item.tagline)}</p>
 
-          <!-- 3 Micro Metrics -->
           <div class="catalog-micro-stats">
             <div class="micro-stat-item">
               <span class="micro-stat-label">Beban Utang:</span>
@@ -680,7 +767,6 @@ const Stories = {
 
     container.innerHTML = `
       <div class="stories-library-view fade-in">
-        <!-- Page Header -->
         <div class="page-header" style="margin-bottom:var(--space-5);">
           <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--teal-50);border:1px solid var(--teal-200);border-radius:20px;color:var(--teal-800);font-size:12px;font-weight:700;margin-bottom:var(--space-2);">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
@@ -690,17 +776,14 @@ const Stories = {
           <div class="page-subtitle">Belajar dari orang-orang nyata yang pernah berada di jurang utang terdalam dan menemukan jalan keluar melalui tindakan disiplin.</div>
         </div>
 
-        <!-- Search Bar -->
         <div style="margin-bottom:var(--space-4);position:relative;">
           <input type="text" class="form-input" placeholder="🔍 Cari nama tokoh, nominal utang, atau kata kunci..." value="${H.escHtml(this.searchQuery)}" oninput="Stories.setSearch(this.value)" style="width:100%;padding:10px 16px;border-radius:var(--radius-lg);font-size:13.5px;">
         </div>
 
-        <!-- Category Scrollable Filter Chips -->
         <div class="story-category-bar" style="margin-bottom:var(--space-6);">
           ${categoryChipsHtml}
         </div>
 
-        <!-- Featured Story Banner (Only show if viewing 'all' and no search) -->
         ${(this.selectedCategory === 'all' && !this.searchQuery && featuredStory) ? `
           <div class="featured-story-banner" onclick="Stories.openReader('${featuredStory.id}')" style="border-left:5px solid ${featuredStory.accentColor};">
             <div class="featured-badge-pill">⭐ KISAH PILIHAN MINGGU INI</div>
@@ -723,13 +806,11 @@ const Stories = {
           </div>
         ` : ''}
 
-        <!-- Section Label -->
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-4);margin-top:var(--space-5);">
           <div style="font-size:14px;font-weight:800;color:var(--color-text-primary);">Daftar Kisah (${filtered.length})</div>
           <div style="font-size:12px;color:var(--color-text-muted);">Pilih salah satu kisah untuk membuka mode membaca</div>
         </div>
 
-        <!-- 2-Column Catalog Grid (1 Col Mobile) -->
         <div class="story-catalog-grid">
           ${cardsHtml}
         </div>
@@ -744,7 +825,6 @@ const Stories = {
     const nextStory = currentIndex < this.DATA.length - 1 ? this.DATA[currentIndex + 1] : null;
     const isSaved = this.isBookmarked(story.id);
 
-    // Render Timeline Items
     const timelineHtml = (story.timeline || []).map(tl => `
       <div class="story-timeline-item">
         <div class="story-timeline-dot" style="background:${story.accentColor};"></div>
@@ -755,7 +835,6 @@ const Stories = {
       </div>
     `).join('');
 
-    // Render Narrative Chapters
     const chaptersHtml = (story.chapters || []).map(ch => `
       <div class="reader-chapter-box">
         <div class="reader-chapter-num" style="background:${story.bgLight};color:${story.accentColor};">
@@ -768,7 +847,6 @@ const Stories = {
       </div>
     `).join('');
 
-    // Render Takeaways
     const takeawaysHtml = (story.takeaways || []).map(t => `
       <div class="takeaway-item">
         <div class="takeaway-num" style="background:${story.accentColor};color:#fff;">${t.num}</div>
@@ -778,7 +856,6 @@ const Stories = {
 
     container.innerHTML = `
       <div class="story-reader-view fade-in">
-        <!-- Reader Top Nav -->
         <div class="reader-top-bar">
           <button class="btn btn-outline btn-sm" onclick="Stories.closeReader()" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;">
             ← Kembali ke Semua Kisah
@@ -791,7 +868,6 @@ const Stories = {
           </div>
         </div>
 
-        <!-- Editorial Hero Card -->
         <div class="reader-hero-card" style="border-top:5px solid ${story.accentColor};">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:var(--space-3);">
             <div>
@@ -804,7 +880,6 @@ const Stories = {
             </span>
           </div>
 
-          <!-- 4 Fact Boxes -->
           <div class="reader-stats-grid">
             <div class="rstat-box">
               <div class="rstat-label">Beban Utang Awal</div>
@@ -824,7 +899,6 @@ const Stories = {
             </div>
           </div>
 
-          <!-- Golden Quote Box -->
           <div class="reader-quote-box" style="background:${story.bgLight};border-left:4px solid ${story.accentColor};">
             <div class="reader-quote-text" style="color:var(--slate-900);">
               "${H.escHtml(story.quote)}"
@@ -835,7 +909,6 @@ const Stories = {
           </div>
         </div>
 
-        <!-- Vertical Journey Timeline -->
         <div class="reader-timeline-card">
           <div class="reader-section-heading">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:${story.accentColor};"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -846,7 +919,6 @@ const Stories = {
           </div>
         </div>
 
-        <!-- Narrative Reading Chapters -->
         <div class="reader-narrative-card">
           <div class="reader-section-heading" style="margin-bottom:var(--space-6);">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:${story.accentColor};"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -855,7 +927,6 @@ const Stories = {
 
           ${chaptersHtml}
 
-          <!-- Blueprint Takeaways -->
           <div class="takeaways-box" style="border-top:3px solid ${story.accentColor};margin-top:var(--space-6);">
             <div class="takeaways-title" style="color:${story.accentColor === '#0F766E' ? 'var(--teal-400)' : story.accentColor};">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -864,7 +935,6 @@ const Stories = {
             ${takeawaysHtml}
           </div>
 
-          <!-- Mission Bridge Box (Direct Action for Reader) -->
           ${story.missionBridge ? `
             <div class="reader-mission-bridge-box">
               <div style="font-size:12px;font-weight:700;color:var(--teal-700);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">🎯 Ambil Pelajaran & Mulai Bertindak</div>
@@ -878,7 +948,6 @@ const Stories = {
             </div>
           ` : ''}
 
-          <!-- Prev & Next Pagination -->
           <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:var(--space-8);padding-top:var(--space-5);border-top:1px solid var(--color-border);flex-wrap:wrap;">
             ${prevStory ? `
               <button class="btn btn-outline btn-sm" onclick="Stories.openReader('${prevStory.id}')" style="font-size:12.5px;">
