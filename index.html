@@ -12,9 +12,85 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Rebound 30">
+<script src="https://unpkg.com/lucide@latest"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+
+/* === Lucide Icons Polish === */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.nav-item svg, .nav-item i[data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2px;
+  flex-shrink: 0;
+}
+.bottom-nav-item svg, .bottom-nav-item i[data-lucide] {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2px;
+  margin-bottom: 2px;
+  display: block;
+}
+.welcome-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border: 1px solid var(--teal-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.welcome-feature-icon svg, .welcome-feature-icon i[data-lucide] {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2px;
+}
+.step-icon-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  border: 1px solid var(--teal-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+}
+.step-icon-badge svg, .step-icon-badge i[data-lucide] {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2.2px;
+}
+.achievement-card .achievement-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-2);
+}
+.achievement-card.locked .achievement-icon {
+  background: var(--slate-100);
+  color: var(--slate-400);
+}
+.achievement-icon svg, .achievement-icon i[data-lucide] {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.2px;
+}
+
 /* ============================================================
    DESIGN SYSTEM — REBOUND 30
    ============================================================ */
@@ -1411,31 +1487,31 @@ img { max-width: 100%; }
       </div>
       <div class="welcome-features">
         <div class="welcome-feature">
-          <div class="welcome-feature-icon">🗺️</div>
+          <div class="welcome-feature-icon"><i data-lucide="compass"></i></div>
           <div class="welcome-feature-text">
             <strong>Petakan kondisi finansial</strong>
             Ketahui angka pasti sebelum bertindak
           </div>
         </div>
         <div class="welcome-feature">
-          <div class="welcome-feature-icon">🎯</div>
+          <div class="welcome-feature-icon"><i data-lucide="target"></i></div>
           <div class="welcome-feature-text">
             <strong>Misi harian yang konkret</strong>
             3–5 tindakan per hari sesuai kondisimu
           </div>
         </div>
         <div class="welcome-feature">
-          <div class="welcome-feature-icon">📈</div>
+          <div class="welcome-feature-icon"><i data-lucide="trending-up"></i></div>
           <div class="welcome-feature-text">
             <strong>Pantau perkembangan</strong>
             Rebound Score mengukur kemajuanmu
           </div>
         </div>
         <div class="welcome-feature">
-          <div class="welcome-feature-icon">🔒</div>
+          <div class="welcome-feature-icon"><i data-lucide="shield-check"></i></div>
           <div class="welcome-feature-text">
             <strong>Data hanya di perangkatmu</strong>
-            Tidak ada data yang dikirim ke server
+            Privasi 100% aman, tersimpan di browsermu
           </div>
         </div>
       </div>
@@ -1480,7 +1556,7 @@ img { max-width: 100%; }
 
     <!-- Step 2: Monthly Income -->
     <div class="onboarding-step" id="ob-step-2">
-      <div class="step-emoji">💵</div>
+      <div class="step-icon-badge"><i data-lucide="wallet"></i></div>
       <div class="step-title">Berapa pemasukan per bulan?</div>
       <div class="step-subtitle">Estimasi saja — ini bisa diperbarui nanti. Masukkan 0 jika tidak ada.</div>
       <div class="form-group">
@@ -1549,7 +1625,7 @@ img { max-width: 100%; }
 
     <!-- Step 4: Debts -->
     <div class="onboarding-step" id="ob-step-4">
-      <div class="step-emoji">📋</div>
+      <div class="step-icon-badge"><i data-lucide="receipt"></i></div>
       <div class="step-title">Tambahkan utang pertamamu</div>
       <div class="step-subtitle">Tambahkan setidaknya satu utang. Kamu bisa menambah lebih banyak nanti di menu Utang.</div>
       <div id="ob-debts-list" style="margin-bottom: var(--space-4);"></div>
@@ -1562,7 +1638,7 @@ img { max-width: 100%; }
 
     <!-- Step 5: Assets -->
     <div class="onboarding-step" id="ob-step-5">
-      <div class="step-emoji">💰</div>
+      <div class="step-icon-badge"><i data-lucide="piggy-bank"></i></div>
       <div class="step-title">Berapa uang tunai yang tersedia?</div>
       <div class="step-subtitle">Termasuk uang di dompet, rekening bank, e-wallet. Tidak termasuk aset seperti motor atau HP.</div>
       <div class="form-group">
@@ -1612,7 +1688,7 @@ img { max-width: 100%; }
 
     <!-- Step 7: Goals -->
     <div class="onboarding-step" id="ob-step-7">
-      <div class="step-emoji">🎯</div>
+      <div class="step-icon-badge"><i data-lucide="target"></i></div>
       <div class="step-title">Apa tujuan utamamu dalam 30 hari?</div>
       <div class="step-subtitle">Pilih yang paling mendesak sekarang.</div>
       <div class="option-grid" id="ob-goals-grid">
@@ -1675,31 +1751,31 @@ img { max-width: 100%; }
     </div>
     <div class="sidebar-nav">
       <button class="nav-item active" onclick="App.navigate('dashboard')" id="nav-dashboard">
-        <span class="nav-icon">🏠</span> Dashboard
+        <i data-lucide="layout-dashboard"></i> Dashboard
       </button>
       <button class="nav-item" onclick="App.navigate('missions')" id="nav-missions">
-        <span class="nav-icon">🎯</span> Misi Harian
+        <i data-lucide="check-circle-2"></i> Misi Harian
       </button>
       <button class="nav-item" onclick="App.navigate('debts')" id="nav-debts">
-        <span class="nav-icon">📋</span> Utang
+        <i data-lucide="receipt"></i> Utang
       </button>
       <button class="nav-item" onclick="App.navigate('income')" id="nav-income">
-        <span class="nav-icon">💵</span> Pemasukan
+        <i data-lucide="trending-up"></i> Pemasukan
       </button>
       <button class="nav-item" onclick="App.navigate('expenses')" id="nav-expenses">
-        <span class="nav-icon">🧾</span> Pengeluaran
+        <i data-lucide="shopping-bag"></i> Pengeluaran
       </button>
       <button class="nav-item" onclick="App.navigate('assets')" id="nav-assets">
-        <span class="nav-icon">💰</span> Aset
+        <i data-lucide="wallet"></i> Aset
       </button>
       <button class="nav-item" onclick="App.navigate('plan')" id="nav-plan">
-        <span class="nav-icon">📅</span> Rencana 30 Hari
+        <i data-lucide="calendar"></i> Rencana 30 Hari
       </button>
       <button class="nav-item" onclick="App.navigate('reports')" id="nav-reports">
-        <span class="nav-icon">📊</span> Laporan
+        <i data-lucide="bar-chart-3"></i> Laporan
       </button>
       <button class="nav-item" onclick="App.navigate('settings')" id="nav-settings">
-        <span class="nav-icon">⚙️</span> Pengaturan
+        <i data-lucide="settings"></i> Pengaturan
       </button>
     </div>
     <div class="sidebar-footer">
@@ -1777,7 +1853,7 @@ img { max-width: 100%; }
 
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-label">💵 Uang Tunai</div>
+            <div class="stat-label"><i data-lucide="wallet" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Uang Tunai</div>
             <div class="stat-value" id="stat-cash">Rp 0</div>
           </div>
           <div class="stat-card">
@@ -1785,11 +1861,11 @@ img { max-width: 100%; }
             <div class="stat-value positive" id="stat-income">Rp 0</div>
           </div>
           <div class="stat-card">
-            <div class="stat-label">🧾 Pengeluaran/Bln</div>
+            <div class="stat-label"><i data-lucide="shopping-bag" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Pengeluaran/Bln</div>
             <div class="stat-value warning" id="stat-expenses">Rp 0</div>
           </div>
           <div class="stat-card">
-            <div class="stat-label">📋 Total Utang</div>
+            <div class="stat-label"><i data-lucide="receipt" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Total Utang</div>
             <div class="stat-value negative" id="stat-debt">Rp 0</div>
             <div class="stat-sub" id="stat-runway"></div>
           </div>
@@ -1988,7 +2064,7 @@ img { max-width: 100%; }
         </div>
 
         <div style="margin-top:var(--space-6)">
-          <div class="section-title" style="margin-bottom:var(--space-4)">Pencapaian 🏆</div>
+          <div class="section-title" style="margin-bottom:var(--space-4);display:flex;align-items:center;gap:8px;"><i data-lucide="award" style="width:20px;height:20px;color:var(--teal-600);"></i> Pencapaian</div>
           <div class="achievements-grid" id="achievements-grid"></div>
         </div>
       </div>
@@ -2074,19 +2150,19 @@ img { max-width: 100%; }
 <nav id="bottom-nav">
   <div class="bottom-nav-items">
     <button class="bottom-nav-item active" onclick="App.navigate('dashboard')" id="bnav-dashboard">
-      <span class="bnav-icon">🏠</span>Home
+      <i data-lucide="layout-dashboard"></i>Home
     </button>
     <button class="bottom-nav-item" onclick="App.navigate('missions')" id="bnav-missions">
-      <span class="bnav-icon">🎯</span>Misi
+      <i data-lucide="check-circle-2"></i>Misi
     </button>
     <button class="bottom-nav-item" onclick="App.navigate('debts')" id="bnav-debts">
-      <span class="bnav-icon">📋</span>Utang
+      <i data-lucide="receipt"></i>Utang
     </button>
     <button class="bottom-nav-item" onclick="App.navigate('income')" id="bnav-income">
-      <span class="bnav-icon">💵</span>Income
+      <i data-lucide="trending-up"></i>Income
     </button>
     <button class="bottom-nav-item" onclick="App.navigate('settings')" id="bnav-settings">
-      <span class="bnav-icon">⚙️</span>Setting
+      <i data-lucide="settings"></i>Setting
     </button>
   </div>
 </nav>
@@ -2413,18 +2489,18 @@ const ReboundEngine = {
 // ============================================================
 const Achievements = {
   DEFINITIONS: [
-    { id: 'first_cash', name: 'Uang Pertama', icon: '💵', desc: 'Catat pemasukan pertama' },
-    { id: 'first_client', name: 'Klien Pertama', icon: '🤝', desc: 'Tambah peluang pertama' },
-    { id: 'first_followup', name: 'Follow-up', icon: '📞', desc: 'Selesaikan misi follow-up' },
-    { id: 'streak_3', name: '3 Hari Beruntun', icon: '🔥', desc: 'Misi 3 hari berturut-turut' },
-    { id: 'streak_7', name: '7 Hari Beruntun', icon: '⚡', desc: 'Misi 7 hari berturut-turut' },
-    { id: 'first_debt_review', name: 'Peta Utang', icon: '🗺️', desc: 'Review utang pertama kali' },
-    { id: 'first_negotiation', name: 'Negosiator', icon: '⚖️', desc: 'Hubungi kreditur pertama kali' },
-    { id: 'expense_control', name: 'Hemat Cermat', icon: '✂️', desc: 'Selesaikan misi potong pengeluaran' },
-    { id: 'first_debt_payment', name: 'Bayar Utang', icon: '📉', desc: 'Catat pembayaran utang pertama' },
-    { id: 'day_30', name: 'Rebound 30!', icon: '🏆', desc: 'Selesaikan 30 hari' },
-    { id: 'financial_map', name: 'Peta Lengkap', icon: '📋', desc: 'Lengkapi semua data finansial' },
-    { id: 'first_recurring', name: 'Pemasukan Rutin', icon: '🔄', desc: 'Tandai pemasukan berulang' },
+    { id: 'first_cash', name: 'Uang Pertama', icon: 'banknote', desc: 'Catat pemasukan pertama' },
+    { id: 'first_client', name: 'Klien Pertama', icon: 'handshake', desc: 'Tambah peluang pertama' },
+    { id: 'first_followup', name: 'Follow-up', icon: 'phone-call', desc: 'Selesaikan misi follow-up' },
+    { id: 'streak_3', name: '3 Hari Beruntun', icon: 'flame', desc: 'Misi 3 hari berturut-turut' },
+    { id: 'streak_7', name: '7 Hari Beruntun', icon: 'zap', desc: 'Misi 7 hari berturut-turut' },
+    { id: 'first_debt_review', name: 'Peta Utang', icon: 'map', desc: 'Review utang pertama kali' },
+    { id: 'first_negotiation', name: 'Negosiator', icon: 'scale', desc: 'Hubungi kreditur pertama kali' },
+    { id: 'expense_control', name: 'Hemat Cermat', icon: 'scissors', desc: 'Selesaikan misi potong pengeluaran' },
+    { id: 'first_debt_payment', name: 'Bayar Utang', icon: 'trending-down', desc: 'Catat pembayaran utang pertama' },
+    { id: 'day_30', name: 'Rebound 30!', icon: 'trophy', desc: 'Selesaikan 30 hari' },
+    { id: 'financial_map', name: 'Peta Lengkap', icon: 'clipboard-check', desc: 'Lengkapi semua data finansial' },
+    { id: 'first_recurring', name: 'Pemasukan Rutin', icon: 'repeat', desc: 'Tandai pemasukan berulang' },
   ],
   
   check(state) {
@@ -2492,8 +2568,8 @@ const App = {
     if (newAch.length > 0) {
       this.state.achievements = [...(this.state.achievements || []), ...newAch];
       newAch.forEach(id => {
-        const def = Achievements.DEFINITIONS.find(d=>d.id===id);
-        if (def) this.toast(`${def.icon} Pencapaian: ${def.name}`, 'success');
+        const def = Achievements.DEFINITIONS.find(d => d.id === id);
+        if (def) this.toast(`🏆 Pencapaian: ${def.name}`, 'success');
       });
     }
     Store.save(this.state);
@@ -2504,6 +2580,7 @@ const App = {
     document.getElementById('app').style.display = 'none';
     document.getElementById('bottom-nav').style.display = 'none';
     this.ob.renderProgress();
+    this.refreshIcons();
   },
   
   showApp() {
@@ -2511,6 +2588,7 @@ const App = {
     document.getElementById('app').style.display = '';
     document.getElementById('bottom-nav').style.display = '';
     this.navigate('dashboard');
+    this.refreshIcons();
   },
   
   navigate(screen) {
@@ -2562,7 +2640,7 @@ const App = {
       settings: () => this.renderSettings(),
     };
     if (renders[screen]) renders[screen]();
-    
+    this.refreshIcons();
     window.scrollTo(0, 0);
   },
   
@@ -2646,7 +2724,7 @@ const App = {
     const earnedDefs = Achievements.DEFINITIONS.filter(d=>earned.includes(d.id));
     document.getElementById('dash-achievements').innerHTML = earnedDefs.slice(0,5).map(d=>`
       <div class="card-sm" style="text-align:center;padding:var(--space-3);min-width:80px;">
-        <div style="font-size:1.5rem">${d.icon}</div>
+        <div class="achievement-icon"><i data-lucide="${d.icon}"></i></div>
         <div style="font-size:10px;font-weight:600;color:var(--color-text-secondary);margin-top:4px">${d.name}</div>
       </div>
     `).join('') || '<div style="font-size:13px;color:var(--color-text-muted)">Selesaikan misi untuk mendapatkan pencapaian 🏅</div>';
@@ -2698,6 +2776,7 @@ const App = {
       this.save();
       if (m.completed) this.toast('Misi selesai! ✓', 'success');
       if (this.currentScreen === 'dashboard') this.renderDashboard();
+    setTimeout(() => this.refreshIcons(), 0);
       else if (this.currentScreen === 'missions') this.renderMissions();
     }
   },
@@ -2857,7 +2936,7 @@ const App = {
     const earned = new Set(s.achievements || []);
     document.getElementById('achievements-grid').innerHTML = Achievements.DEFINITIONS.map(d=>`
       <div class="achievement-card ${earned.has(d.id)?'earned':'locked'}">
-        <div class="achievement-icon">${d.icon}</div>
+        <div class="achievement-icon"><i data-lucide="${d.icon}"></i></div>
         <div class="achievement-name">${d.name}</div>
       </div>
     `).join('');
@@ -2876,6 +2955,7 @@ const App = {
   // ---- MODALS ----
   openModal(html) {
     document.getElementById('modal-body').innerHTML = html;
+    setTimeout(() => this.refreshIcons(), 0);
     document.getElementById('modal-backdrop').classList.add('open');
   },
   
