@@ -2184,6 +2184,93 @@ const Stories = {
         'Depresi adalah Tanda — Bukan Akhir: Krisna mengakui depresinya secara terbuka. Mengenali dan menerima kondisi mental yang berat adalah langkah pertama untuk mulai mencari jalan keluar.',
         'Hobi Bisa Menjadi Aset Darurat: Apa yang kamu kumpulkan hari ini — entah barang, keahlian, atau jaringan — bisa menjadi penyelamat di hari yang tidak pernah kamu bayangkan.'
       ]
+    },
+    {
+      id: 'chen',
+      featured: false,
+      name: 'Chen Zhao (陈兆)',
+      tagline: 'Dari Utang Keluarga 20 Juta Yuan (Rp 44 M) di Usia 24, Lunas dalam 7 Tahun Hanya dengan Kuas Kaligrafi',
+      title: 'Pena yang Melunasi Utang Rp 44 Miliar',
+      subtitle: 'Kaligrafer & Guru Kaligrafi, Wuhan — Melunasi Utang Keluarga 20 Juta Yuan dalam 7 Tahun',
+      origin: 'Wuhan, Tiongkok',
+      ageAtRebound: '24 Thn',
+      categories: ['debt', 'zero', 'global'],
+      categoryLabel: 'Utang 20 Jt Yuan (Rp 44 M)',
+      badge: 'Lunas 7 Tahun — 300+ Siswa Kaligrafi',
+      theme: 'indigo',
+      accentColor: '#3730A3',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: '20 Juta Yuan ≈ Rp 44 Miliar (Usia 24 Thn)',
+        age: '24 Tahun',
+        lowest: 'Bisnis Keluarga Kolaps, Ayah Sakit, Kaligrafi Diremehkan Orang Tua',
+        action: 'Studio Kaligrafi + Les 8 Pagi–9 Malam + Jual Online + Ruang Teh',
+        result: '300+ Siswa, Lunas 7 Tahun, Orang Tua: "Kami Bangga Padamu"'
+      },
+      timeline: [
+        { year: 'Usia 5 Tahun', text: 'Jatuh cinta pada kaligrafi. Orang tua tidak mendukung — "kaligrafi tidak bisa jadi pekerjaan nyata."' },
+        { year: 'Kuliah', text: 'Memilih jurusan kaligrafi di Hubei Institute of Fine Arts, menentang kehendak orang tua.' },
+        { year: '2016 — Lulus', text: 'Membuka studio kaligrafi kecil sendiri. Murid pertama: anak kidal yang susah diajar — tapi Chen sabar.' },
+        { year: '2017 — Kejatuhan', text: 'Bisnis keluarga di bidang pakaian kolaps total. Ayah jatuh sakit. Utang keluarga: 20 juta Yuan.' },
+        { year: '7 Tahun Berjuang', text: 'Bekerja 8 pagi–9 malam setiap hari. Studio diperluas. Les dinaikkan. Jual perlengkapan online. Buka ruang teh. Hingga 300+ siswa.' },
+        { year: 'September — Lunas', text: '20 juta Yuan lunas dalam 7 tahun. Hadiah terbesar bukan uang — tapi kalimat orang tuanya: "Kami bangga padamu."' }
+      ],
+      quote: 'Ketika orang lain meragukan jalanmu, jalanilah dengan tekad.',
+      quoteAuthor: 'Chen Zhao (陈兆), kaligrafer Wuhan yang melunasi Rp 44 miliar utang keluarga dengan kuasnya',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak yang Memilih Kuas',
+          paragraphs: [
+            'Wuhan, tahun 1990-an. Seorang anak laki-laki bernama Chen Zhao baru berusia 5 tahun ketika ia pertama kali memegang kuas kaligrafi. Sementara anak-anak lain berlarian di luar, Chen justru terpikat pada ritme goresan kuas dan kedamaian seni tulis-menulis yang tampak hidup di atas kertas.',
+            'Tapi orang tuanya tidak senang. "Kaligrafi tidak bisa menjadi pekerjaan nyata," kata mereka berulang kali. Chen mendengarkan. Tapi ia tidak menggubris. Ketika tiba waktunya memilih universitas, ia memilih jurusan kaligrafi di Hubei Institute of Fine Arts — bukan bisnis seperti yang diinginkan orang tuanya.',
+            '"Aku akan membuktikan bahwa kaligrafi bisa menghidupi," bisiknya dalam hati. Bukan dengan kata-kata, bukan dengan perdebatan — tapi dengan hasil nyata dari setiap goresan kuasnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: '20 Juta Yuan yang Jatuh dalam Semalam',
+          paragraphs: [
+            'Tahun 2016. Chen lulus kuliah. Ia tidak bergabung dengan bisnis keluarga di bidang pakaian. Ia membuka studio kecilnya sendiri. Murid pertamanya? Seorang anak kidal yang tidak mudah diajar. Tapi Chen sabar. Anak itu akhirnya bisa menulis dengan indah, dan kabar mulai menyebar dari mulut ke mulut.',
+            'Lalu tahun 2017 datang dan mengubah segalanya. Bisnis keluarga kolaps total. Ayahnya jatuh sakit. Dan dalam sekejap, keluarga Chen tenggelam dalam utang 20 juta Yuan — setara dengan sekitar Rp 44 miliar.',
+            'Chen, di usia 24 tahun, menatap tumpukan tagihan yang tak terbayangkan besarnya. Orang tuanya yang dulu meragukan pilihannya kini menggantungkan harapan padanya. "Bagaimana caraku membayar semua ini?" tanya batinnya. Bukan dengan bisnis pakaian. Bukan dengan pekerjaan kantoran. Hanya dengan kuas dan tintanya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Dari Fajar hingga Larut Malam — All In',
+          paragraphs: [
+            'Chen tidak punya pilihan selain all in. Ia menggandakan ukuran studio kaligrafinya. Ia menaikkan biaya les. Dan ia mulai bekerja tanpa kenal lelah — dari jam 8 pagi hingga 9 malam, setiap hari, tanpa henti, tanpa hari libur.',
+            'Ia mencoba merekrut guru lain untuk membantunya menanggung beban mengajar yang semakin berat. Tapi para orang tua murid bersikeras: mereka hanya ingin belajar langsung dari Chen. Nama dan reputasinya adalah produknya — tidak bisa didelegasikan.',
+            'Ia tidak berhenti di situ. Ia mulai menjual perlengkapan kaligrafi secara online — kuas, tinta, kertas, batu tinta — semuanya. Ia bahkan membuka ruang teh di dalam studionya untuk membantu menutup biaya operasional. Teman-temannya khawatir melihat betapa lelahnya ia. Tapi Chen terus melangkah, satu goresan demi satu goresan.'
+          ]
+        },
+        {
+          num: 4,
+          title: '300 Siswa dan Tujuh Tahun Kerja Keras',
+          paragraphs: [
+            'Perlahan, murid-muridnya bertambah. Dari satu, menjadi sepuluh, menjadi lima puluh, menjadi ratusan. Lebih dari 300 siswa datang belajar kaligrafi darinya — anak-anak, remaja, orang dewasa yang ingin menemukan ketenangan dalam seni tulis yang kuno namun abadi.',
+            'Tujuh tahun berlalu. Tujuh tahun bekerja dari fajar hingga larut malam. Tujuh tahun menahan lelah dan mengorbankan waktu istirahat. Tujuh tahun membuktikan bahwa kaligrafi — yang dulu diremehkan orang tuanya — bisa menjadi senjata paling ampuh untuk melunasi utang puluhan miliar.',
+            'Pada bulan September, Chen menarik napas panjang. 20 juta Yuan. Lunas. Setiap sen dari setiap les, dari setiap set perlengkapan kaligrafi yang terjual, dari setiap cangkir teh yang dihidangkan — semuanya telah berkontribusi pada momen pembebasan itu.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Hadiah Terbesar: "Kami Bangga Padamu"',
+          paragraphs: [
+            'Bukan uang yang paling ia rasakan saat itu. Bukan beban yang terlepas dari pundaknya — meski itu terasa luar biasa. Tapi kata-kata dari orang tuanya: "Kami bangga padamu." Dan: "Kami akhirnya percaya pada senimu."',
+            'Orang yang dulu paling meragukan jalannya, kini yang paling bangga pada apa yang telah ia capai. Bukan hanya karena ia melunasi utang — tapi karena ia melunasi utang itu dengan cara yang ia pilih sendiri, dengan keahlian yang selama ini mereka ragukan.',
+            'Kisah Chen Zhao mengajarkan bahwa ketika orang lain meragukan jalanmu, jawaban terbaik bukan kata-kata — melainkan hasil. Seorang anak yang memilih kuas di atas buku bisnis. Seorang pemuda yang harus menanggung utang keluarga di usia 24 tahun. Seorang seniman yang bekerja 13 jam sehari selama 7 tahun — dan menang.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Keahlian Spesifik adalah Aset Terkuat: Chen tidak punya bisnis besar, tidak punya modal, tidak punya koneksi — hanya keahlian kaligrafi. Itu sudah cukup untuk melunasi Rp 44 miliar dalam 7 tahun.',
+        'Reputasi Pribadi Tidak Bisa Didelegasikan: Para murid hanya mau belajar langsung dari Chen — ini menunjukkan bahwa membangun reputasi personal jauh lebih berharga daripada membangun brand anonim.',
+        'Diversifikasi Sumber Pendapatan dari Satu Keahlian: Les, jual perlengkapan online, ruang teh — semuanya berakar dari satu keahlian kaligrafi. Satu keahlian bisa menghasilkan banyak arus pendapatan.',
+        'Bukti adalah Jawaban Terbaik atas Keraguan: Chen tidak berdebat dengan orang tuanya tentang masa depan kaligrafi — ia membuktikannya dengan melunasi 20 juta Yuan. Hasil nyata mengakhiri semua perdebatan.'
+      ]
     }
   ],
 
