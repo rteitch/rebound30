@@ -240,6 +240,21 @@ const App = {
     return map[type] || type;
   },
   
+  
+  toggleYesterdayMission(id) {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yKey = yesterday.toISOString().split('T')[0];
+    const missions = this.state.missions[yKey] || [];
+    const m = missions.find(x => x.id === id);
+    if (m) {
+      m.completed = !m.completed;
+      this.save();
+      this.toast(m.completed ? 'Misi kemarin ditandai selesai! ✓' : 'Status misi kemarin diperbarui', 'info');
+      this.renderMissions();
+    }
+  },
+
   toggleMission(id) {
     const today = H.today();
     const missions = this.state.missions[today] || [];
@@ -308,16 +323,27 @@ const App = {
     yesterday.setDate(yesterday.getDate()-1);
     const yKey = yesterday.toISOString().split('T')[0];
     const yMissions = s.missions[yKey] || [];
-    document.getElementById('missions-history').innerHTML = yMissions.length ? yMissions.map(m=>`
-      <div class="mission-card ${m.completed?'completed':''}" style="opacity:0.7">
+    document.getElementById('missions-history').innerHTML = (yMissions.length ? yMissions.map(m=>`
+      <div class="mission-card ${m.completed?'completed':''}" style="opacity:0.85" id="ym-${m.id}">
         <div class="mission-header">
-          <div class="mission-check" style="cursor:default">${m.completed?'✓':''}</div>
-          <div class="mission-content">
-            <div class="mission-title">${H.escHtml(m.title)}</div>
+          <div class="mission-check" onclick="App.toggleYesterdayMission('${m.id}')" title="Klik untuk ubah status misi kemarin">
+            ${m.completed?'✓':''}
+          </div>
+          <div class="mission-content" style="flex:1">
+            <div class="mission-title" style="font-size:13px;">${H.escHtml(m.title)}</div>
+            <div style="font-size:11px;color:var(--color-text-muted);">Misi Kemarin · ${m.completed ? '<span style="color:var(--teal-600);font-weight:600;">Selesai ✓</span>' : '<span style="color:var(--amber-600);">Terlewat (bisa dicentang jika sudah dikerjakan)</span>'}</div>
           </div>
         </div>
       </div>
-    `).join('') : '<div style="font-size:13px;color:var(--color-text-muted);padding:var(--space-3)">Belum ada data kemarin.</div>';
+    `).join('') : '<div style="font-size:13px;color:var(--color-text-muted);padding:var(--space-3)">Belum ada riwayat misi kemarin.</div>') + `
+      <div style="margin-top:var(--space-5);padding:var(--space-4);background:var(--slate-50);border:1px dashed var(--slate-300);border-radius:var(--radius-lg);text-align:center;">
+        <div style="font-size:12.5px;color:var(--slate-600);margin-bottom:8px;">Ingin melihat gambaran target misi di fase-fase berikutnya?</div>
+        <button class="btn btn-secondary btn-sm" onclick="App.navigate('plan')" style="font-size:12px;display:inline-flex;align-items:center;gap:6px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          Lihat Roadmap Lengkap 30 Hari di Menu Rencana →
+        </button>
+      </div>
+    `;
   },
   
   // ---- PLAN ----
