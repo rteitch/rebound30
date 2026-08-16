@@ -552,6 +552,102 @@ const Stories = {
       ]
     },
     {
+      id: 'heppy',
+      featured: false,
+      name: 'Heppy Trenggono',
+      tagline: 'Dari Utang Rp 63 Miliar & Sedekah di Masa Kritis Menjadi Pemilik Kerajaan Bisnis Sawit Rp 7 Triliun',
+      title: 'Dari Utang Rp 63 Miliar dan Sedekah Terakhir, Kini Kerajaan Rp 7 Triliun',
+      subtitle: 'Pendiri United Balimuda Group & Gerakan Beli Indonesia, Batang',
+      origin: 'Batang, Jawa Tengah',
+      ageAtRebound: 'Pengusaha Batang',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 63 M & Sedekah',
+      badge: 'United Balimuda Group & Rp 7 Triliun',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Rp 63 Miliar (Bank Niaga 2005)',
+        age: 'Mantan Direktur Teknik',
+        lowest: 'Sisa Tabungan Rp 1 M & Dianggap Gila Karena Sedekah',
+        action: 'Pivot Brokerage Sawit & Sedekah Ekstrem',
+        result: 'Lunas 3 Thn, 80.000 Ha Sawit & Valuasi Rp 7 Triliun'
+      },
+      timeline: [
+        { year: '2002 — Modal Satu Buldoser', text: 'Mendirikan PT Balimuda Persada bermodal 1 buldoser Rp 500 juta untuk kontraktor land clearing perkebunan sawit.' },
+        { year: '2005 — Utang Rp 63 Miliar', text: 'Ekspansi agresif berujung krisis likuiditas akibat pembayaran macet, terjerat utang Rp 63 miliar di Bank Niaga.' },
+        { year: 'Titik Terendah Sedekah', text: 'Sisa kas hanya Rp 1 miliar; alih-alih panik, ia memilih melipatgandakan sedekah hingga dianggap gila oleh karyawan.' },
+        { year: 'Pivot Brokerage Sawit', text: 'Banting setir dari kontraktor padat modal menjadi broker strategis penghubung korporasi masuk ke bisnis kelapa sawit.' },
+        { year: 'Lunas dalam 3 Tahun', text: 'Arus kas berbalik melimpah, seluruh utang pokok dan bunga Rp 63 miliar terbayar lunas dalam tempo 3 tahun.' },
+        { year: 'Hari Ini — Rp 7 Triliun', text: 'Memimpin United Balimuda Group (12 anak usaha, 3.000 staf, 80.000 ha lahan sawit, pabrik HeppyFoods, dan Gerakan Beli Indonesia).' }
+      ],
+      quote: 'Sedekah merupakan salah satu mentalitas, karakter, dan cara bermain yang harus dimiliki semua pengusaha. Orang yang bersedekah tidak akan miskin; tutupi kesulitanmu dengan kebaikan sebanyak-banyaknya.',
+      quoteAuthor: 'Heppy Trenggono, pendiri United Balimuda Group',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Desa yang Bermimpi Besar',
+          paragraphs: [
+            'Heppy Trenggono lahir di Batang, Jawa Tengah pada 20 April 1967. Lahir dari keluarga sederhana—sang ayah seorang PNS di bidang pendidikan dan sang ibu berjualan di pasar tradisional—pemuda ini tumbuh dengan cita-cita besar di dadanya.',
+            'Dengan tekun ia menempuh pendidikan tinggi hingga meraih gelar S1 Teknik Informatika di Universitas Gunadarma dan S2 Ilmu Komputer di Universitas Indonesia. Karier profesionalnya melesat dari System Analyst di United Tractors, Asisten Manajer di Indomobil, hingga menduduki kursi Direktur Teknik di stasiun televisi nasional LaTivi (sekarang TVOne).',
+            'Namun pencapaian karier mapan sebagai eksekutif tidak memadamkan hasrat wirausahanya. Heppy ingin menciptakan lapangan kerja mandiri yang bermanfaat bagi ribuan orang.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Satu Buldoser, Sebuah Mimpi',
+          paragraphs: [
+            'Tahun 2002, Heppy bersama rekan-rekannya mendirikan PT Balimuda Persada. Modal awal yang mereka miliki hanyalah satu unit buldoser seharga Rp 500 juta.',
+            'Mereka terjun sebagai kontraktor pembukaan lahan perkebunan kelapa sawit (land clearing) di pedalaman Sumatera dan Kalimantan. Dengan kerja keras siang dan malam di tengah belantara, bisnis kecil itu berkembang pesat dan mulai diperhitungkan oleh korporasi perkebunan besar.',
+            'Keberhasilan awal yang diraih dalam waktu relatif singkat memicu rasa percaya diri berlebih. Heppy memutuskan untuk mengambil langkah ekspansi berskala raksasa.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Rp 63 Miliar yang Menggantung',
+          paragraphs: [
+            'Tahun 2005 menjadi tahun petaka. Demi mendanai pembelian puluhan alat berat baru dan ekspansi besar-besaran, Heppy mengajukan pinjaman kredit perbankan dalam jumlah masif ke Bank Niaga.',
+            'Namun krisis likuiditas mendadak menghantam industri perkebunan. Pembayaran tagihan proyek dari klien-klien besar macet total, sementara bunga dan pokok cicilan bank terus berjalan tanpa ampun. PT Balimuda Persada terjerembap dalam kubangan utang sebesar Rp 63 miliar.',
+            'Karyawan mulai resah, tagihan bank menumpuk di meja kerja, dan para penasihat finansial mendesaknya untuk segera melelang seluruh aset perusahaan demi menghindari kebangkrutan total.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Keputusan di Tengah Badai',
+          paragraphs: [
+            'Di titik terendah tersebut, dengan sisa tabungan kas yang hanya tersisa sekitar Rp 1 miliar, Heppy mengambil keputusan spiritual yang mengejutkan banyak pihak: ia memilih untuk melipatgandakan sedekah.',
+            'Bagi orang awam, keputusan itu tampak seperti tindakan bunuh diri finansial. Beberapa karyawan menganggap langkahnya tidak rasional dan memilih mengundurkan diri. Namun Heppy berpegang teguh pada keyakinan batinnya: "Orang yang bersedekah tidak akan pernah miskin. Jika kamu tertimpa kesulitan besar, tutuplah dengan kebaikan sebanyak-banyaknya sebagai asuransi ilahi."',
+            'Ketenangan spiritual yang hadir menyingkirkan kepanikan dan mengembalikan ketajaman logika bisnisnya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Banting Setir Menjadi Broker',
+          paragraphs: [
+            'Heppy melakukan restrukturisasi radikal atas model bisnisnya. Ia menyadari bahwa mempertahankan armada kontraktor alat berat membutuhkan modal kerja yang terlalu besar di masa krisis.',
+            'Ia banting setir menjadi perantara strategis (broker/konsultan) yang menjembatani para investor dan korporasi besar yang hendak mengakuisisi lahan dan masuk ke industri perkebunan kelapa sawit.',
+            'Strategi baru yang minim aset tetap (asset-light) ini menghasilkan margin komisi yang luar biasa besar tanpa risiko beban utang baru. Dalam kurun waktu hanya 3 tahun, seluruh kewajiban utang pokok dan bunga Rp 63 miliar di Bank Niaga berhasil dilunasi 100% tuntas.'
+          ]
+        },
+        {
+          num: 6,
+          title: 'Kerajaan Bisnis Rp 7 Triliun',
+          paragraphs: [
+            'Hari ini, Heppy Trenggono memimpin United Balimuda Group—sebuah konglomerasi perkebunan dan industri dengan 12 anak perusahaan, sekitar 3.000 karyawan, dan estimasi valuasi mencapai Rp 7 triliun.',
+            'Konsesi perkebunan sawitnya terbentang seluas 80.000 hektar di Sumatera dan Kalimantan dengan nilai investasi lebih dari Rp 4 triliun. Ia juga membangun pabrik makanan olahan modern HeppyFoods di BSD City Tangerang dan memelopori gerakan nasional "Beli Indonesia" untuk membangkitkan kemandirian ekonomi bangsa.',
+            'Di kediamannya di kawasan Mampang Prapatan Jakarta, setiap pagi Heppy rutin membagikan sarapan gratis untuk kaum dhuafa, membuktikan bahwa tangan yang gemar memberi akan selalu dilapangkan rezekinya oleh Sang Mahakuasa.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Mentalitas Berbagi di Masa Kritis: Sedekah di tengah kesempitan adalah bukti ketundukan batin yang menghalau kepanikan dan membuka pintu solusi tak terduga.',
+        'Pivot Model Bisnis Asset-Light: Mengubah operasional padat modal menjadi jasa perantara/konsultan strategis membebaskan arus kas dari beban utang operasional.',
+        'Komitmen Melunasi Utang Bank: Hadapi institusi perbankan dengan itikad baik dan disiplin mengalokasikan hasil usaha hingga lunas tuntas.',
+        'Gerakan Ekonomi Berkelanjutan: Menggunakan kesuksesan finansial untuk membangun kemandirian ekonomi bangsa (Gerakan Beli Indonesia) dan memuliakan sesama.'
+      ]
+    },
+    {
       id: 'donanto',
       featured: false,
       name: 'Donanto',
