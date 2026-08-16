@@ -552,6 +552,102 @@ const Stories = {
       ]
     },
     {
+      id: 'duncan',
+      featured: false,
+      name: 'Amber & Ryan Duncan',
+      tagline: 'Dari Bangkrut 40 Properti Hilang Krisis 2008 Menjadi Pendiri "Life After Debt" Berharta Rp 814 Miliar',
+      title: 'Dari Bangkrut di Pengadilan, Kini Jutawan Penyelesaian Utang',
+      subtitle: 'Pendiri Life After Debt, Florida, Amerika Serikat',
+      origin: 'Florida, Amerika Serikat',
+      ageAtRebound: 'Pasutri Hipotek',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'global'],
+      categoryLabel: 'Krisis 2008 & Rp 814 Miliar',
+      badge: 'Jutawan 2 Tahun & Net Worth US$ 50 Juta',
+      theme: 'indigo',
+      accentColor: '#4F46E5',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: 'Bangkrut Total (40 Properti Runtuh)',
+        age: 'Pasangan Suami Istri',
+        lowest: 'Dihina Pengacara di Sidang Pailit 2008',
+        action: 'Mendirikan "Life After Debt" & Negosiasi Utang',
+        result: 'Jutawan 2 Thn & Net Worth Rp 814 Miliar (US$ 50 Jt)'
+      },
+      timeline: [
+        { year: '2007 — Puncak Hipotek', text: 'Memiliki 40 properti sewaan, mobil mewah, dan pendapatan melimpah dari industri kredit perumahan Florida.' },
+        { year: '2008 — Krisis Subprime', text: 'Bank membekukan kredit hipotek, penyewa gagal bayar, arus kas lenyap seketika, dan terpaksa mengajukan pailit di pengadilan.' },
+        { year: 'Titik Terendah Sidang', text: 'Pengacara lawan mencibir dingin "Saya akan bertemu Anda lagi di sini", membakar amarah dan tekad perlawanan Amber.' },
+        { year: 'Lahirnya Life After Debt', text: 'Menyewa rumah kecil dan merintis jasa penyelesaian utang (negosiasi pelunasan 67% pokok) untuk membantu sesama korban utang.' },
+        { year: 'Jutawan dalam 2 Tahun', text: 'Bisnis meledak pesat; dalam setahun membeli rumah kontrakan secara tunai dan mencetak status jutawan dalam tempo 2 tahun.' },
+        { year: 'Hari Ini — Rp 814 Miliar', text: 'Akumulasi kekayaan mencapai US$ 50 juta (Rp 814 Miliar), hidup hemat bebas utang (cash-only), dan Amber lulus sarjana pada 2022.' }
+      ],
+      quote: 'Saya memulai setiap hari seolah-olah saya tidak memiliki apa-apa. Anda bisa bangkit dari keterpurukan tanpa rasa malu dan tidak pernah ada kata terlambat untuk mengejar impian.',
+      quoteAuthor: 'Amber Duncan, pendiri Life After Debt',
+      chapters: [
+        {
+          num: 1,
+          title: 'Kehidupan yang Tampak Sempurna',
+          paragraphs: [
+            'Florida pada tahun 2007 adalah panggung kejayaan bagi pasangan suami istri Amber dan Ryan Duncan. Keduanya berkarier di industri hipotek perumahan—sebuah sektor yang kala itu sedang mengalami pertumbuhan eksplosif di Amerika Serikat.',
+            'Dari hasil kerja kerasnya, mereka berhasil mengumpulkan 40 unit properti sewaan yang mengalirkan pendapatan pasif melimpah setiap bulan. Deretan mobil mewah berjejer di garasi, rumah-rumah megah menjadi aset kebanggaan, dan anak-anak mereka menempuh pendidikan di sekolah swasta terbaik.',
+            'Bagi Amber dan Ryan, mereka adalah perwujudan sempurna dari "American Dream". Tidak pernah terlintas dalam benak mereka bahwa seluruh kemewahan itu berdiri di atas pasir hisap ekonomi makro yang rapuh.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Ketika Badai Subprime Menghantam',
+          paragraphs: [
+            'Tahun 2008, badai Krisis Subprime Mortgage meledak mengguncang seluruh sistem perbankan global. Bank-bank raksasa Amerika Serikat mendadak membekukan seluruh penyaluran kredit hipotek baru.',
+            'Bagi Amber dan Ryan, yang 100% perputaran keuangannya bergantung pada industri kredit perumahan, dampaknya bagai kiamat finansial seketika. Pendapatan utama mereka lenyap dalam hitungan hari. Di saat bersamaan, para penyewa 40 properti mereka kehilangan pekerjaan dan gagal membayar uang sewa.',
+            'Cicilan bank atas puluhan rumah yang mereka miliki menumpuk tak terbayar. Satu per satu aset disita, rekening bank terkuras habis, dan pasangan ini akhirnya harus menempuh jalan paling memalukan dalam hukum perdata Amerika: menyatakan diri bangkrut total di pengadilan.'
+          ]
+        },
+        {
+          num: 3,
+          title: '"Saya Akan Bertemu Anda Lagi"',
+          paragraphs: [
+            'Di ruang sidang pengadilan kebangkrutan yang dingin dan mencekam, Amber dan Ryan duduk dengan kepala tertunduk menatap kehancuran hidup mereka. Seluruh reputasi, tabungan, dan rumah yang dibangun bertahun-tahun dihapus oleh palu hakim.',
+            'Saat proses persidangan usai, seorang pengacara kreditur mendekati Amber dan melontarkan kalimat sinis bernada meremehkan: "Saya yakin saya akan bertemu Anda lagi di kursi pesakitan ini."',
+            'Kata-kata dingin itu bagai minyak yang disiramkan ke kobaran api di dada Amber. Alih-alih meratap, air matanya berubah menjadi tekad baja. "Saya menangis penuh amarah dan bersumpah akan membuktikan bahwa orang itu salah besar," kenang Amber.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Dari Kontrakan ke "Life After Debt"',
+          paragraphs: [
+            'Setelah seluruh harta bendanya disita, Amber dan Ryan menyewa sebuah rumah kontrakan kecil yang sangat sederhana. Di tangan mereka tidak ada lagi modal uang, tetapi mereka masih memiliki modal terbesar yang tak bisa disita siapa pun: keahlian mendalam di bidang negosiasi keuangan.',
+            'Bersama mantan atasan mereka, pasangan ini mendirikan perusahaan rintisan bernama "Life After Debt" (Kehidupan Setelah Utang). Model bisnisnya dirancang khusus untuk memecahkan kepedihan sesama korban krisis: membantu masyarakat berutang menegosiasikan pelunasan diskon hingga hanya membayar sekitar 67% dari total pokok utang ke bank.',
+            'Karena Amber dan Ryan pernah merasakan langsung kepedihan dikejar kreditur, mereka melayani setiap klien dengan empati mendalam dan strategi negosiasi hukum yang tangguh. Permintaan atas jasa mereka meledak di seluruh penjuru negeri.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Jutawan dalam Dua Tahun',
+          paragraphs: [
+            'Pertumbuhan Life After Debt melesat luar biasa. Dalam kurun waktu hanya satu tahun, ketika pemilik rumah kontrakan mereka berniat menjual rumah yang mereka sewa, Amber dan Ryan sanggup membelinya secara TUNAI tanpa cicilan bank.',
+            'Hanya dalam waktu dua tahun sejak duduk di ruang sidang kebangkrutan, pasangan ini telah berhasil mencetak status jutawan (millionaire) baru. Bisnis penyelesaian utang mereka berkembang menjadi korporasi finansial multi-layanan.',
+            'Hari ini, setelah lebih dari satu dekade berlalu, nilai total kekayaan bersih pasangan ini ditaksir mencapai lebih dari US$ 50 juta atau sekitar Rp 814 miliar.'
+          ]
+        },
+        {
+          num: 6,
+          title: 'Hidup Seolah Tidak Memiliki Apa-Apa',
+          paragraphs: [
+            'Kendati telah bergelimang harta ratusan miliar, pengalaman pahit kebangkrutan masa lalu menanamkan filosofi hidup baru yang sangat membumi pada diri Amber. "Saya memulai setiap hari seolah-olah saya tidak memiliki apa-apa," tuturnya.',
+            'Keluarga Duncan memilih gaya hidup di bawah kemampuan finansial mereka: membayar hampir seluruh kebutuhan dengan uang tunai, menolak utang konsumtif, dan mengutamakan ketenangan batin. Pada tahun 2022, Amber bahkan berhasil menuntaskan kuliah sarjananya yang sempat terputus puluhan tahun lalu.',
+            'Amber dan Ryan Duncan membuktikan kepada dunia bahwa kebangkrutan bukanlah garis akhir, melainkan ruang kelas terhebat untuk melahirkan seorang pemenang sejati.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Ubah Cibiran Menjadi Bahan Bakar Kebangkitan: Rasa sakit akibat diremehkan di titik terendah adalah dorongan terkuat untuk membuktikan kemampuan diri.',
+        'Kemas Pengalaman Pahit Menjadi Solusi Berharga: Pengetahuanmu saat melewati krisis keuangan dapat dikembangkan menjadi bisnis jasa yang menolong ribuan orang lain.',
+        'Filosofi Hidup Cash-Only & Rendah Hati: Kekayaan hakiki dipertahankan dengan menanggalkan kesombongan konsumtif dan menghindari jeratan utang baru.',
+        'Tak Ada Kata Terlambat untuk Menyelesaikan Impian: Kesuksesan finansial harus dibarengi dengan pengembangan diri dan pemenuhan janji pada diri sendiri.'
+      ]
+    },
+    {
       id: 'sirivat',
       featured: false,
       name: 'Sirivat Voravetvuthikun',
