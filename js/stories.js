@@ -3043,6 +3043,92 @@ const Stories = {
         'Pertumbuhan Organik Jauh Lebih Tahan Badai: Mengembangkan bisnis berbasis laba ditahan (retained earnings) mungkin terasa lebih lambat di awal, tapi memberikan ketenangan dan ketahanan mutlak.',
         'Disiplin Arus Kas Mengalahkan Ambisi Kosong: Bisnis yang sehat adalah bisnis yang bisa membayar kewajibannya tepat waktu tanpa perlu bergantung pada belas kasihan pinjaman baru.'
       ]
+    },
+    {
+      id: 'mulyono',
+      featured: false,
+      name: 'Mulyono (Pak Mul)',
+      tagline: '17 Tahun Terjebak Utang Rp 40 Miliar demi Menopang Bisnis Pupuk — Lunas Total & Kini Ekspor Pupuk Humic Acid ke Afrika',
+      title: 'Dari 17 Tahun Terjebak Utang, Kini Ekspor ke Afrika',
+      subtitle: 'Pemilik Turrima Agrobiotech, Gemolong, Sragen — Dari Bisnis Keropos Rp 40 Miliar ke Penghargaan Menteri Pertanian Kamerun',
+      origin: 'Gemolong, Sragen, Jawa Tengah',
+      ageAtRebound: '50-an Thn',
+      categories: ['debt', 'business', 'indonesia'],
+      categoryLabel: '17 Tahun Terlilit Utang Rp 40 M',
+      badge: 'Turrima Agrobiotech — Ekspor Afrika & Timur Tengah',
+      theme: 'emerald',
+      accentColor: '#065F46',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Rp 40 Miliar (Terakumulasi 17 Tahun)',
+        age: '50-an Tahun',
+        lowest: 'Bisnis Terlihat Besar Tapi Keropos, Nyaris 3 Dekade Bergantung Pada Utang',
+        action: 'Gabung SyaREA World 2017 + Stop Utang + Uji Coba Riset 2 Tahun Rp 2 M Tanpa Bayaran',
+        result: 'Lunas Total 2018, Panen Padi Kamerun Naik 40%, Penghargaan Menteri Pertanian'
+      },
+      timeline: [
+        { year: '17 Tahun Terjebak', text: 'Menjalankan Turrima Agrobiotech di Gemolong, Sragen. Terlihat sukses dari luar, namun bergantung penuh pada utang yang menggunung hingga Rp 40 miliar.' },
+        { year: '2017 — Titik Balik', text: 'Bergabung dengan SyaREA World. Mendapat coaching bisnis syariah dan mengambil komitmen radikal untuk berhenti berutang.' },
+        { year: '2018 — Bebas Utang', text: 'Dalam waktu satu tahun, seluruh utang Rp 40 miliar berhasil dilunasi secara terstruktur.' },
+        { year: 'Riset & Ekspansi Afrika', text: 'Mengirim pupuk uji coba senilai Rp 2 miliar selama 2 tahun tanpa bayaran ke Kamerun untuk membuktikan efektivitas humic acid.' },
+        { year: 'Hari Ini — Pengakuan Dunia', text: 'Produksi padi di Kamerun meningkat 40%. Menerima penghargaan dari Menteri Pertanian Kamerun Gabriel Mbairobe dan memperluas ekspor ke Timur Tengah.' }
+      ],
+      quote: 'Bisnis yang sehat tidak harus dibangun di atas utang. Keputusan berhenti berutang adalah kado terindah dalam hidup.',
+      quoteAuthor: 'Mulyono (Pak Mul), pendiri Turrima Agrobiotech Gemolong',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pengusaha yang Terlihat Sukses dari Luar',
+          paragraphs: [
+            'Gemolong, Sragen. Selama 17 tahun, Mulyono — yang akrab disapa Pak Mul — menjalankan bisnis pupuk organiknya. Dari luar, ia tampak seperti prototipe pengusaha daerah yang sukses. Perusahaannya, Turrima Agrobiotech, terus beroperasi, pabriknya mengepulkan asap produksi, armada truknya berlalu-lalang, dan pelanggannya terus bertambah.',
+            'Namun di balik gemerlap operasional tersebut, ada rahasia menggerogoti yang ia sembunyikan rapat-rapat: bisnisnya keropos dari dalam. Setiap kali ingin ekspansi pabrik, ia meminjam bank. Setiap kali ada pesanan besar, ia mengajukan kredit modal kerja.',
+            'Siklus pinjaman demi pinjaman ini berlangsung selama hampir dua dekade, menciptakan ilusi pertumbuhan semu yang ditopang oleh tumpukan bunga utang yang kian menjerat.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Rp 40 Miliar yang Menggantung Selama 17 Tahun',
+          paragraphs: [
+            'Puncak dari akumulasi utang selama 17 tahun itu adalah angka yang mencengangkan: Rp 40 miliar. Sebuah angka yang bukan hanya mengancam kelangsungan pabrik di Gemolong, tetapi juga merampas ketenangan batin Pak Mul setiap kali pergantian bulan tiba.',
+            'Ia sadar bahwa perusahaannya bekerja bukan untuk dirinya atau karyawannya, melainkan untuk membayar tagihan bunga kreditur. Jika model bisnis ini diteruskan, kebangkrutan massal tinggal menunggu waktu.',
+            'Di titik kejenuhan mental itulah, ia menyadari perlunya hijrah finansial total sebelum semuanya runtuh tak berbekas.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Tahun 2017: Titik Balik di SyaREA World',
+          paragraphs: [
+            'Tahun 2017 menjadi tonggak perubahan arah hidup Mulyono. Ia bergabung dengan Keluarga Besar SyaREA World, sebuah komunitas pengusaha yang mengampanyekan tata kelola bisnis bebas utang dan berbasis syariah.',
+            'Melalui program coaching intensif, matanya terbuka bahwa utang bukanlah bensin wajib bisnis, melainkan beban yang mengebiri fleksibilitas dan kejernihan strategi.',
+            'Dengan tekad bulat, ia mengambil keputusan paling berani dalam hidupnya: mendeklarasikan penghentian penambahan utang baru dan menyusun rencana pelunasan agresif dari restrukturisasi aset serta efisiensi operasional.'
+          ]
+        },
+        {
+          num: 4,
+          title: '2018: Lunas dan Berhenti Menggunakan Utang',
+          paragraphs: [
+            'Proses pelunasan Rp 40 miliar berjalan sangat intensif selama satu tahun penuh. Mengorbankan ego, menyederhanakan struktur biaya, dan mengalokasikan seluruh likuiditas untuk menutup utang pokok.',
+            'Pada tahun 2018, keajaiban disiplin itu terwujud: seluruh utang Rp 40 miliar dinyatakan lunas total. Beban seberat gunung yang menekan pundaknya selama 17 tahun akhirnya lenyap.',
+            'Pak Mul kini memegang kendali penuh atas perusahaannya tanpa ada lagi ancaman sita jaminan atau tagihan bulanan yang menghantui.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Uji Coba Rp 2 Miliar Tanpa Bayaran dan Sukses di Afrika',
+          paragraphs: [
+            'Dengan pikiran yang jernih dan kas yang sehat tanpa potongan bunga, Pak Mul memfokuskan Turrima Agrobiotech pada keunggulan riset pupuk organik berbasis asam humat (Humic Acid).',
+            'Ia membidik pasar internasional yang haus akan solusi pemulihan tanah kritis di Afrika dan Timur Tengah. Di Kamerun, ia mengambil langkah berani dengan mengirimkan produk pupuk senilai Rp 2 miliar untuk uji coba selama 2 tahun tanpa menerima pembayaran sepeser pun demi membuktikan khasiat produk secara ilmiah.',
+            'Kesabaran itu berbuah manis: hasil panen padi petani Kamerun melonjak hingga 40 persen. Menteri Pertanian Kamerun, Gabriel Mbairobe, secara resmi memberikan penghargaan kepada Turrima Agrobiotech. Dari Gemolong, Sragen, pupuk karya anak bangsa kini menyuburkan lahan-lahan pertanian di benua Afrika secara mandiri tanpa sepeser pun utang.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Bisnis Besar Belum Tentu Sehat Jika Keropos oleh Utang: Omzet besar dan pabrik ramai tidak ada artinya jika seluruh laba habis hanya untuk membayar bunga pinjaman bank.',
+        '17 Tahun Terjebak Bisa Diputus dengan Keputusan Radikal: Tidak ada kata terlambat untuk hijrah finansial. Mulyono membuktikan bahwa ketergantungan belasan tahun bisa diselesaikan dalam 1 tahun dengan komitmen mutlak.',
+        'Investasi pada Validasi Produk Jauh Lebih Berharga (Riset Rp 2 M): Uji coba gratis 2 tahun di Kamerun adalah strategi pembuktian mutu produk (proof-of-concept) yang akhirnya membuka pasar ekspor bernilai ratusan kali lipat.',
+        'Ketenangan Batin Menghasilkan Keputusan Bisnis yang Tajam: Begitu beban utang hilang, fokus dan energi pengusaha bisa dialihkan 100% untuk inovasi produk dan ekspansi pasar global.'
+      ]
     }
   ],
 
