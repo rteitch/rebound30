@@ -2714,6 +2714,83 @@ const Stories = {
         'Diversifikasi Pembeli Mencegah Krisis Piutang Macet: Ketergantungan pada satu supplier China dan Korea menjadi penyebab kolaps. Jangan biarkan lebih dari 30% pendapatan bergantung pada satu pembeli.',
         'Mendahulukan Keyakinan Spiritual di Saat Sulit adalah Pilihan yang Sah: Keputusan umrah di tengah krisis finansial mungkin tidak masuk di akal bisnis konvensional, tapi bagi Ibu Susi itu adalah sumber kekuatan mental yang membuka jalan-jalan yang tidak terduga.'
       ]
+    },
+    {
+      id: 'fepto',
+      featured: false,
+      name: 'Feby Eki Prasetyo (Fepto)',
+      tagline: 'Usia 20 Tahun, Utang Miliaran Rupiah dari Bisnis Kripto — Lunas dalam 3 Bulan, Kini Pimpin Fepto Group Ekspansi ke Pasar Asia',
+      title: 'Dari Utang Miliaran di Usia 20 Tahun, Kini Ekspansi ke Pasar Asia',
+      subtitle: 'Pendiri & CEO Fepto Group, Lampung — Teknologi Pembayaran, Kripto, Gaming & AI',
+      origin: 'Lampung',
+      ageAtRebound: '20 Thn',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Miliaran (Usia 20 Thn)',
+      badge: 'Lunas 3 Bulan — Fepto Group Ekspansi Asia',
+      theme: 'indigo',
+      accentColor: '#3730A3',
+      bgLight: '#EEF2FF',
+      borderLight: '#C7D2FE',
+      stats: {
+        debt: 'Miliaran Rupiah ≈ Rp 2 Miliar (Usia 20 Tahun)',
+        age: '20 Tahun',
+        lowest: 'Portofolio Kripto Lenyap, Terpuruk Finansial di Usia Sangat Muda',
+        action: 'Bangun Fepto Group — Payment Gateway, Kripto, Gaming, AI via Komunitas & Media Sosial',
+        result: 'Lunas 3 Bulan, Ekspansi Jakarta–Bandung–Bali–Asia, Visi Cashless 2030'
+      },
+      timeline: [
+        { year: '2020 — Titik Jatuh', text: 'Di usia 20 tahun, kerugian besar dari bisnis cryptocurrency meninggalkan utang miliaran rupiah.' },
+        { year: 'Memilih Bangkit', text: 'Tidak tenggelam dalam keputusasaan. Membuka diri terhadap peluang baru dengan modal yang nyaris nol.' },
+        { year: 'Bangun Fepto Group', text: 'Mendirikan perusahaan teknologi berfokus pada payment gateway, kripto, digital gaming, dan AI. Memanfaatkan komunitas dan media sosial sebagai mesin pertumbuhan.' },
+        { year: '3 Bulan — Lunas', text: 'Utang miliaran rupiah berhasil dilunasi hanya dalam 3 bulan berkat keterbukaan terhadap setiap peluang.' },
+        { year: 'Hari Ini — Ekspansi Asia', text: 'Fepto Group hadir di Jakarta, Bandung, Lampung, dan Bali. Ekspansi ke pasar Asia. Visi: sistem pembayaran inklusif di era cashless 2030.' }
+      ],
+      quote: 'Tak selamanya berbisnis dimulai dengan Rp 100 juta. Bahkan Rp 100 ribu pun bisa asal ada kemauan dan tekad.',
+      quoteAuthor: 'Feby Eki Prasetyo (Fepto), pendiri & CEO Fepto Group',
+      chapters: [
+        {
+          num: 1,
+          title: 'Jatuh di Era Kripto',
+          paragraphs: [
+            'Lampung, 2020. Feby Eki Prasetyo — yang akrab disapa Fepto — masih sangat muda. Di usianya yang ke-20, ia sudah berani terjun ke dunia investasi yang sedang naik daun: cryptocurrency. Baginya, ini adalah jalan cepat menuju kesuksesan. Dunia digital menjanjikan keuntungan besar. Namun, ia belum cukup berpengalaman untuk melihat risiko di balik janji manis itu.',
+            'Dan kemudian, segalanya runtuh. Kerugian besar melanda portofolionya. Investasi yang ia tumpukkan harapan lenyap dalam sekejap. Yang tersisa hanyalah utang miliaran rupiah.',
+            '"Tahun 2020 menjadi titik balik ketika saya terlilit hutang miliaran rupiah," kenangnya kemudian. Fepto terjatuh. Dunia yang dulu terasa terbuka lebar, kini terasa sesak dan sempit. Ia harus memikirkan bagaimana caranya bangkit dari lubang yang ia gali sendiri — di usia yang seharusnya masih penuh eksplorasi tanpa beban.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Peluang di Tengah Kegagalan — Membangun dari Nol',
+          paragraphs: [
+            'Di titik terendah itulah, Fepto memilih untuk tidak tenggelam dalam keputusasaan. Ia memilih untuk membuka diri terhadap peluang baru. Ia tidak memiliki modal besar untuk memulai. Tapi ia memiliki satu hal yang tak ternilai: kemauan untuk beradaptasi dan belajar dari kegagalan.',
+            'Fepto mulai membangun Fepto Group — sebuah perusahaan teknologi yang berfokus pada solusi di era digital. Ia tidak lagi bermain-main dengan spekulasi semata. Ia membangun sistem, menciptakan nilai, dan fokus pada inovasi nyata: payment gateway, keamanan digital, digital gaming, dan kecerdasan buatan (AI).',
+            '"Tak selamanya berbisnis dimulai dengan Rp 100 juta. Bahkan Rp 100 ribu pun bisa asal ada kemauan dan tekad," tegasnya. Ia memanfaatkan komunitas, forum, dan media sosial sebagai mesin pertumbuhan organik — tanpa modal besar, hanya dengan koneksi dan kepercayaan yang dibangun satu per satu.'
+          ]
+        },
+        {
+          num: 3,
+          title: '3 Bulan yang Mengubah Hidup',
+          paragraphs: [
+            'Dan kemudian, sesuatu yang luar biasa terjadi. Dalam waktu yang sangat singkat — hanya 3 bulan — Fepto berhasil membalikkan keadaannya.',
+            'Utang miliaran rupiah yang dulu menghantuinya, kini lunas. "Berkat keterbukaan terhadap setiap peluang yang ada," katanya. Bukan dari satu sumber pendapatan besar, tapi dari banyak peluang kecil yang ia sambut satu per satu.',
+            'Fepto menarik napas panjang. Beban yang menggantung di pundaknya sejak usia 20 tahun, akhirnya terlepas. Ia tidak hanya bebas dari utang — ia juga memiliki bisnis yang sedang tumbuh, tim yang sedang dibangun, dan visi yang semakin jelas.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Dari Lampung ke Asia — Fepto Group dan Visi 2030',
+          paragraphs: [
+            'Hari ini, Fepto bukan lagi pemuda yang terpuruk dengan utang di usia 20 tahun. Ia adalah pendiri dan CEO Fepto Group, sebuah perusahaan teknologi yang telah hadir di berbagai kota di Indonesia — Jakarta, Bandung, Lampung, dan Bali — dengan rencana ekspansi ke pasar Asia.',
+            'Visi perusahaannya besar dan konkret: mengembangkan sistem pembayaran digital yang inklusif untuk mengantisipasi era tanpa uang tunai di tahun 2030. Sebuah visi yang lahir bukan dari mimpi tanpa dasar, tapi dari seseorang yang pernah merasakan sendiri bagaimana dunia digital bisa menghancurkan — dan kemudian membangun.',
+            '"Visi kami adalah mengembangkan teknologi yang inklusif sambil mendukung inovasi anak muda Indonesia. Mereka butuh dukungan nyata, baik dalam bentuk dana maupun fasilitas," ujarnya. Dari anak muda Lampung yang terjerat kripto, kini ia ingin menjadi jembatan bagi generasi berikutnya.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kripto adalah Investasi Berisiko Tinggi — Bukan Jalan Pintas: Fepto kehilangan miliaran di usia 20 karena masuk tanpa pemahaman risiko yang cukup. Investasi aset digital butuh edukasi mendalam, bukan sekadar ikut tren.',
+        'Kegagalan di Satu Bidang Bisa Jadi Bekal di Bidang Lain: Pengalaman Fepto di kripto — meski berakhir buruk — memberinya pemahaman mendalam tentang teknologi finansial yang kemudian menjadi fondasi Fepto Group.',
+        'Komunitas dan Media Sosial adalah Modal Gratis yang Sering Diabaikan: Tanpa modal besar, Fepto membangun bisnis lewat komunitas dan media sosial. Jangkauan organik yang dibangun dengan konsistensi bisa menggantikan iklan berbayar senilai ratusan juta.',
+        'Usia Muda adalah Keuntungan, Bukan Hambatan: Terpuruk di usia 20 dan lunas dalam 3 bulan, lalu ekspansi ke Asia di usia yang masih sangat muda — Fepto membuktikan bahwa kesalahan di usia muda adalah investasi pengalaman terbaik jika direspons dengan benar.'
+      ]
     }
   ],
 
