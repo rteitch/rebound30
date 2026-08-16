@@ -213,14 +213,15 @@ img { max-width: 100%; }
 }
 .logo-icon {
   width: 36px; height: 36px;
-  background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
   border-radius: var(--radius-md);
   display: flex; align-items: center; justify-content: center;
-  color: white;
-  font-weight: 800;
-  font-size: var(--text-sm);
-  letter-spacing: -0.5px;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.logo-icon img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .logo-text { font-weight: 700; font-size: var(--text-base); color: var(--color-text); }
 .logo-tagline { font-size: var(--text-xs); color: var(--color-text-secondary); }
@@ -1358,7 +1359,9 @@ img { max-width: 100%; }
 <!-- Splash Screen -->
 <div id="splash">
   <div class="splash-content">
-    <div class="splash-logo-big">R30</div>
+    <div class="splash-logo-big">
+      <img src="/favicon.svg" alt="Rebound 30" style="width:72px;height:72px;border-radius:18px;display:block;box-shadow:0 8px 24px rgba(0,0,0,0.2);">
+    </div>
     <div class="splash-name">Rebound 30</div>
     <div class="splash-sub">Pemulihan Finansial 30 Hari</div>
   </div>
@@ -1375,7 +1378,10 @@ img { max-width: 100%; }
     <!-- Step 0: Welcome -->
     <div class="onboarding-step active" id="ob-step-0">
       <div class="welcome-card">
-        <div class="welcome-app-name">Rebound 30</div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <img src="/favicon.svg" alt="R30" style="width:48px;height:48px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.15);flex-shrink:0;">
+          <div class="welcome-app-name" style="margin-bottom:0;">Rebound 30</div>
+        </div>
         <div class="welcome-tagline">
           Kita tidak akan menyelesaikan semuanya hari ini.<br>
           Kita akan mencari langkah pertama.
@@ -1621,7 +1627,7 @@ img { max-width: 100%; }
   <nav id="sidebar">
     <div class="sidebar-logo">
       <div class="logo-mark">
-        <div class="logo-icon">R30</div>
+        <div class="logo-icon"><img src="/favicon.svg" alt="R30"></div>
         <div>
           <div class="logo-text">Rebound 30</div>
           <div class="logo-tagline">Pemulihan Finansial</div>
@@ -1672,7 +1678,7 @@ img { max-width: 100%; }
     <!-- Mobile Header -->
     <header id="mobile-header">
       <div class="mobile-logo">
-        <div class="logo-icon">R30</div>
+        <div class="logo-icon"><img src="/favicon.svg" alt="R30"></div>
         <div class="mobile-page-title" id="mobile-title">Dashboard</div>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
