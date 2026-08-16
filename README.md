@@ -1,7 +1,6 @@
 # 🚀 Rebound 30 — Aplikasi Pendamping Pemulihan Finansial 30 Hari
 
 [![Live App](https://img.shields.io/badge/Live-rebound30.vercel.app-teal?style=for-the-badge&logo=vercel)](https://rebound30.vercel.app/)
-[![ISTQB Certified](https://img.shields.io/badge/ISTQB%20Testing-23%2F23%20PASSED-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-80%2F80%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 
@@ -77,16 +76,16 @@ d:\Project\ui\
 
 ---
 
-## 🧪 Validasi & Pengujian Kualitas (Testing Suite)
+## 🧪 Validasi & Pengujian Otomatis (Automated Testing Suite)
 
-Proyek ini telah melalui pengujian otomatis menyeluruh:
+Seluruh logika perhitungan finansial, alur fase pemulihan, dan antarmuka aplikasi telah melalui pengujian otomatis menyeluruh:
 
-| Uji Kualitas | Metode & Cakupan | Status Hasil |
+| Modul Pengujian | Cakupan Pengujian | Status Hasil |
 | :--- | :--- | :--- |
-| **ISTQB Formal Suite** | *Equivalence Partitioning*, *Boundary Value Analysis*, *State Transitions*, & *Data Resilience*. | **23/23 PASSED (100%)** |
-| **30-Day Simulation** | Simulasi otomatis transisi Hari 1 hingga Hari 30, perhitungan Rebound Score, dan achievement unlock. | **23/23 PASSED (100%)** |
-| **Button & Action Audit** | Verifikasi integritas seluruh 80 atribut `onclick` dan fungsi callback aplikasi. | **80/80 VALID (100%)** |
-| **Daily Mission Audit** | Verifikasi ketersediaan misi, langkah kerja, dan template teks di 30 hari penuh. | **130/130 MISI VALID** |
+| **Financial Engine & Logic** | Pengujian partisi cashflow, pembagian fase, batasan threshold runway, dan ketahanan data. | **23/23 PASSED (100%)** |
+| **30-Day Lifecycle Simulation** | Simulasi otomatis transisi Hari 1 hingga Hari 30, perhitungan Rebound Score, dan pembukaan achievement. | **23/23 PASSED (100%)** |
+| **Interactive Buttons Audit** | Verifikasi integritas seluruh 80 atribut aksi tombol dan fungsi callback antarmuka. | **80/80 VALID (100%)** |
+| **30-Day Daily Mission Audit** | Verifikasi ketersediaan misi harian, panduan langkah, dan template pesan di 30 hari penuh. | **130/130 MISI VALID** |
 
 Untuk menjalankan pengujian secara lokal:
 ```bash
