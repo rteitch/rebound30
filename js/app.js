@@ -2115,6 +2115,47 @@ const App = {
   // SETTINGS
   // ============================================================
   settings: {
+    render() {
+      const p = App.state.profile || {};
+      const empSelect = document.getElementById('settings-profile-employment');
+      const goalSelect = document.getElementById('settings-profile-goal');
+      const incInput = document.getElementById('settings-profile-income');
+      
+      if (empSelect && p.employment) empSelect.value = p.employment;
+      if (goalSelect && p.goal) goalSelect.value = p.goal;
+      if (incInput) incInput.value = p.monthlyIncome || 0;
+      
+      const lastExp = App.state.settings.lastExport;
+      const lastExpEl = document.getElementById('last-export-text');
+      if (lastExpEl) {
+        lastExpEl.textContent = lastExp ? `Terakhir export: ${H.formatDate(lastExp)}` : 'Belum pernah di-export';
+      }
+      
+      const remToggle = document.getElementById('backup-reminder-toggle');
+      if (remToggle) remToggle.checked = App.state.settings.backupReminderEnabled !== false;
+      
+      const daysSelect = document.getElementById('backup-days-select');
+      if (daysSelect) daysSelect.value = String(App.state.settings.backupReminderDays || 7);
+    },
+
+    saveProfileChanges() {
+      const emp = document.getElementById('settings-profile-employment')?.value;
+      const goal = document.getElementById('settings-profile-goal')?.value;
+      const inc = H.parseRp(document.getElementById('settings-profile-income')?.value);
+
+      if (emp) App.state.profile.employment = emp;
+      if (goal) App.state.profile.goal = goal;
+      App.state.profile.monthlyIncome = Math.max(0, inc);
+
+      // Re-generate today's missions with the new profile strategy
+      delete App.state.missions[H.today()];
+      ReboundEngine.generate(App.state);
+
+      App.save();
+      App.toast('Profil & target berhasil diperbarui! Misi telah disinkronkan.', 'success');
+      App.renderDashboard && App.renderDashboard();
+    },
+
     exportData() {
       const data = JSON.stringify(App.state, null, 2);
       const blob = new Blob([data], { type: 'application/json' });
