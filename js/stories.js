@@ -2357,6 +2357,92 @@ const Stories = {
         'Bantuan Datang Bukan Selalu dalam Bentuk yang Kita Harapkan: Rp 2 miliar dari Habib Hasan bukan hibah — itu investasi dengan amanah dakwah. Bersedia menerima bantuan dalam bentuk apa pun, dengan syarat apa pun yang terhormat, adalah kematangan jiwa.',
         'Risiko Bisnis di Usia Muda Harus Disertai Pemahaman Arus Kas: Produksi film memang mahal, tapi tanpa manajemen pembayaran yang jelas kepada kreditur, mimpi besar bisa berakhir di media sosial sebagai berita viral yang memalukan.'
       ]
+    },
+    {
+      id: 'pasek',
+      featured: false,
+      name: 'Pasek Reksa (Gede Pasek Reksa Saputra)',
+      tagline: 'Pandemi, Utang Hampir Rp 500 Juta, Orang Tua Bercerai & Persiapan Pernikahan — Bangkit Lewat Kekuatan Mindset',
+      title: 'Di Tengah Badai, Ia Memilih Melenting',
+      subtitle: 'Pengusaha Muda Singaraja & Ketua WMS 2025–2027 — Properti, Pertanian Puluhan Hektare & Produk Madu',
+      origin: 'Singaraja, Bali',
+      ageAtRebound: '20-an Thn',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Hampir Rp 500 Jt',
+      badge: 'Ketua WMS Singaraja 2025–2027',
+      theme: 'amber',
+      accentColor: '#B45309',
+      bgLight: '#FFFBEB',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Hampir Rp 500 Juta',
+        age: '20-an Tahun',
+        lowest: 'Pandemi COVID, Tidak Punya Kerja, Orang Tua Cerai, Persiapan Nikah',
+        action: 'Ubah Mindset — "Seperti Bola, Ditekan Makin Melenting"',
+        result: 'Properti + Pertanian Puluhan Hektare + Madu + Ketua WMS Singaraja'
+      },
+      timeline: [
+        { year: '2020 — Pandemi', text: 'COVID-19 meluluhkan segalanya sekaligus: kehilangan kerja, utang hampir Rp 500 juta, orang tua bercerai, dan sedang mempersiapkan pernikahan.' },
+        { year: 'Titik Terendah', text: '"Masa yang sangat berat" — empat tekanan berat menghantam dalam waktu bersamaan.' },
+        { year: 'Titik Balik — Mindset', text: 'Memilih mengubah cara pandang: kesulitan bukan untuk dijatuhkan, tapi untuk melenting lebih tinggi seperti bola yang ditekan.' },
+        { year: '1–3 Tahun Pemulihan', text: 'Membangun relasi, membuka peluang baru, keluar perlahan dari tekanan finansial satu per satu.' },
+        { year: 'Hari Ini — Rebound', text: 'Mengembangkan properti, pertanian puluhan hektare, dan produk madu berbasis kemitraan. Terpilih sebagai Ketua WMS Singaraja 2025–2027.' }
+      ],
+      quote: 'Bisnis itu bukan soal uang semata, tapi soal mindset dan keyakinan. Dari situ mental dan kepercayaan diri akan terbentuk.',
+      quoteAuthor: 'Pasek Reksa, pengusaha muda Singaraja & Ketua Wirausahawan Muda Singaraja 2025–2027',
+      chapters: [
+        {
+          num: 1,
+          title: 'Badai yang Datang Sekaligus',
+          paragraphs: [
+            'Singaraja, Bali. Tahun 2020. Pasek Reksa, seorang pengusaha muda di bidang properti, sedang berada di titik yang ia percaya sebagai awal dari kejayaannya. Tapi COVID-19 datang — dan segalanya runtuh dalam sekejap.',
+            'Ia kehilangan pekerjaan. Proyek-proyek propertinya menguap. Dan yang lebih menyakitkan: orang tuanya bercerai. Di saat yang sama, ia sedang mempersiapkan pernikahannya sendiri.',
+            '"Saat COVID, saya punya utang hampir setengah miliar, tidak punya pekerjaan, orang tua bercerai, dan sedang mempersiapkan pernikahan. Itu masa yang sangat berat," kenangnya kemudian. Empat tekanan berat — finansial, pekerjaan, keluarga, dan pernikahan — menghantam dalam waktu yang hampir bersamaan.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Saat Bola Ditekan ke Bawah',
+          paragraphs: [
+            'Di titik terendah itulah, Pasek mengambil keputusan yang mengubah segalanya. Ia memilih untuk tidak tenggelam dalam keputusasaan. Ia memilih untuk mengubah cara pandangnya terhadap masalah yang sedang mengepungnya.',
+            '"Saya memberi arti bahwa ini adalah proses untuk naik level. Seperti bola, semakin ditekan ke bawah, semakin tinggi dia akan melenting," katanya. Analogi sederhana, tapi mengubah cara ia memandang setiap beban yang menekannya.',
+            'Ia mulai menjaga mindset-nya. Ia mulai membangun jaringan pertemanan yang positif dan mendukung — orang-orang yang tidak menghakimi situasinya, tapi yang membantu ia melihat peluang di tengah krisis. Ia percaya bahwa setiap kesulitan adalah peluang — bukan untuk jatuh, tapi untuk melenting lebih tinggi.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Perlahan, Cahaya Mulai Muncul',
+          paragraphs: [
+            'Dengan mindset baru, Pasek mulai bergerak. Ia tidak menunggu kesempatan besar untuk datang sendiri. Ia memulai dari hal-hal kecil. Ia membangun relasi satu per satu. Ia membuka diri pada peluang-peluang baru yang mungkin sebelumnya tidak pernah ia pertimbangkan.',
+            'Butuh waktu. Satu hingga tiga tahun. Tidak ada jalan pintas. Tidak ada mukjizat instan. Hanya konsistensi dan perubahan pola pikir yang dijalankan setiap hari, bahkan di hari-hari paling sulit sekalipun.',
+            'Tapi perlahan, beban utang hampir setengah miliar yang dulu menghantuinya mulai terasa ringan. Satu per satu, ia keluar dari tekanan finansial. Satu per satu, ia membangun kembali usahanya dari nol.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Dari Properti ke Puluhan Hektare Lahan dan Produk Madu',
+          paragraphs: [
+            'Hari ini, Pasek Reksa bukan lagi pemuda yang terpuruk dengan utang di masa pandemi. Ia tidak hanya bergerak di sektor properti. Ia juga mengembangkan usaha di bidang pertanian hingga puluhan hektare lahan, serta mengelola produk madu berbasis kemitraan.',
+            'Model bisnis berbasis kemitraan yang ia bangun memungkinkan pertumbuhan yang lebih organik dan berkelanjutan — tidak bergantung pada satu sumber modal tunggal, tapi pada jaringan dan kepercayaan yang dibangun dengan teliti.',
+            'Ia bahkan terpilih sebagai Ketua Umum Wirausahawan Muda Singaraja (WMS) periode 2025–2027. Sebuah pengakuan atas kepemimpinan, ketangguhan, dan semangatnya dalam mendorong pertumbuhan wirausaha muda di Buleleng. Dari pemuda yang hampir tenggelam dalam utang pandemi, kini ia memimpin komunitas pengusaha muda.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Filosofi Melenting: Setiap Kejadian Tergantung Cara Kita Memberinya Arti',
+          paragraphs: [
+            '"Bisnis itu bukan soal uang semata, tapi soal mindset dan keyakinan. Dari situ mental dan kepercayaan diri akan terbentuk," ujarnya. Ia juga menekankan pentingnya konsistensi dan keberanian mencoba hal baru bagi generasi muda. Kegagalan, menurutnya, bukanlah akhir, melainkan bagian dari proses belajar.',
+            '"Setiap kejadian tergantung bagaimana kita memberi arti. Kalau kita melihatnya sebagai pelajaran, maka itu akan menguatkan kita, bukan menjatuhkan," katanya. Filosofi ini bukan sekadar kata-kata indah — ia lahir dari pengalaman nyata seseorang yang pernah menghadapi empat krisis sekaligus di usia muda.',
+            'Kisah Pasek Reksa mengajarkan bahwa sebelum strategi bisnis, sebelum modal, sebelum koneksi — ada satu hal yang lebih mendasar yang menentukan apakah seseorang akan tenggelam atau melenting: cara ia memberi makna pada apa yang ia alami.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Mindset adalah Modal Pertama: Sebelum cari investor atau pinjaman baru, perbaiki cara pandangmu terhadap masalah. Pasek tidak punya uang tapi ia punya keyakinan bahwa tekanan adalah bahan bakar untuk melenting.',
+        'Empat Krisis Sekaligus Bisa Diatasi Satu per Satu: Utang, kehilangan kerja, keluarga, dan pernikahan — semuanya berat, tapi diselesaikan satu demi satu dengan konsistensi, bukan panik.',
+        'Jaringan Positif adalah Aset yang Tidak Terlihat di Neraca: Komunitas orang-orang yang mendukung secara mental jauh lebih berharga daripada modal uang di saat krisis.',
+        'Model Kemitraan Mengurangi Risiko Tunggal: Pertanian dan madu berbasis kemitraan yang dibangun Pasek menunjukkan bahwa bisnis yang tersebar risikonya jauh lebih tahan terhadap guncangan daripada yang bergantung pada satu sumber.'
+      ]
     }
   ],
 
