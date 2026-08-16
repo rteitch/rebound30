@@ -589,34 +589,127 @@ const App = {
     }
   },
 
-  // ---- PLAN ----
+  // ---- PLAN & INTERACTIVE ROADMAP ----
   renderPlan() {
     const s = this.state;
     const currentDay = H.currentDay(s.meta.startDate);
-    const planData = [
-      { days: [1,2,3,4], phase: 'Survive (Fase 1)', objective: 'Petakan kondisi finansial secara akurat', tasks: ['Catat semua utang', 'Catat pengeluaran esensial', 'Inventaris aset', 'Hitung cashflow bersih'] },
-      { days: [5,6,7,8,9,10,11,12,13,14], phase: 'Create Cash (Fase 2)', objective: 'Hasilkan pemasukan pertama', tasks: ['Hubungi calon klien/pelanggan', 'Kirim lamaran pekerjaan', 'Jual aset aman', 'Follow-up prospek'] },
-      { days: [15,16,17,18,19,20,21], phase: 'Stabilize (Fase 3)', objective: 'Bangun pola pemasukan berulang', tasks: ['Identifikasi klien yang bisa jadi rutin', 'Hubungi kreditur untuk restrukturisasi', 'Susun jadwal kerja', 'Kurangi aktivitas tidak menghasilkan'] },
-      { days: [22,23,24,25,26,27,28,29,30], phase: 'Debt Attack (Fase 4)', objective: 'Eksekusi strategi pelunasan utang', tasks: ['Tentukan prioritas utang', 'Bayar cicilan sesuai kemampuan', 'Track outstanding tiap pembayaran', 'Mulai susun rencana 90 hari'] },
-    ];
     
+    const planPhases = [
+      {
+        phaseNum: 1,
+        title: 'Fase 1: Survive & Pemetaan Total (Hari 1 - 4)',
+        badgeColor: 'var(--rose-600)',
+        bgColor: 'var(--rose-50)',
+        days: [
+          { day: 1, focus: 'Audit Utang Jujur & Buang Gengsi', tasks: ['Catat semua utang tanpa rasa malu', 'Klasifikasikan bunga legal vs ilegal', 'Amankan dokumen & kontak kreditur'] },
+          { day: 2, focus: 'Kunci Pengeluaran Esensial Keluarga', tasks: ['Hitung biaya makan & tempat tinggal', 'Hentikan pengeluaran bocor halus', 'Amankan kebutuhan pangan keluarga'] },
+          { day: 3, focus: 'Stop Gali Lubang Tutup Lubang', tasks: ['Tolak tawaran pinjaman baru', 'Pelajari hak debitur POJK 22/2023', 'Siapkan mental hadapi penagihan'] },
+          { day: 4, focus: 'Inventarisasi Aset & Kalkulasi Cash Runway', tasks: ['Catat barang yang bisa dicairkan', 'Hitung sisa hari bertahan hidup', 'Tentukan prioritas darurat'] },
+        ]
+      },
+      {
+        phaseNum: 2,
+        title: 'Fase 2: Create Cash & Pemasukan Cepat (Hari 5 - 14)',
+        badgeColor: 'var(--teal-600)',
+        bgColor: 'var(--teal-50)',
+        days: [
+          { day: 5, focus: 'Ciptakan Uang Tunai Pertama (Cash Velocity)', tasks: ['Cari peluang kas masuk dlm 24-48 jam', 'Tawarkan jasa cepat atau jual barang', 'Catat setiap rupiah pemasukan'] },
+          { day: 6, focus: 'Hukum Probabilitas Penawaran (Outreach)', tasks: ['Kirim 3 pesan penawaran ke calon klien', 'Follow-up kontak lama yang membutuhkan jasa', 'Catat progres di pipeline peluang'] },
+          { day: 7, focus: 'Monetisasi Aset Menganggur', tasks: ['Iklankan barang non-produktif di marketplace/medsos', 'Gunakan hasil penjualan murni sbg buffer kas', 'Hindari menjual alat kerja utama'] },
+          { day: 8, focus: 'Kualitas & Kejujuran Penawaran', tasks: ['Pastikan layanan/produk bernilai tinggi', 'Minta testimoni dari klien yang puas', 'Cari pelanggan berulang (repeat order)'] },
+          { day: 9, focus: 'Disiplin Waktu & Kerja Produktif', tasks: ['Mulai aktivitas produktif lebih pagi', 'Fokus 80% waktu pada aktivitas menghasilkan uang', 'Hindari scroll medsos tanpa tujuan'] },
+          { day: 10, focus: 'Ekspansi Kanal Pendapatan Tambahan', tasks: ['Daftar platform freelance / pekerjaan sampingan', 'Cari pekerjaan harian atau gig delivery', 'Jaga momentum arus kas masuk'] },
+          { day: 11, focus: 'Follow-up Prospek yang Menunda', tasks: ['Kirim pesan follow-up ramah ke klien lama', 'Tawarkan promo atau diskon pembayaran cepat', 'Tutup kesepakatan tertunda'] },
+          { day: 12, focus: 'Evaluasi Arus Kas Mingguan', tasks: ['Hitung total kas masuk vs biaya hidup minggu ini', 'Sesuaikan strategi jika target belum tercapai', 'Perpanjang napas runway keuangan'] },
+          { day: 13, focus: 'Optimalkan Margin Keuntungan', tasks: ['Kurangi biaya produksi atau operasional', 'Fokus pada jasa/produk dengan margin terbesar', 'Simpan surplus kas di pos aman'] },
+          { day: 14, focus: 'Evaluasi & Refleksi 2 Minggu Pertama', tasks: ['Review seluruh transaksi 14 hari terakhir', 'Rayakan kemenangan kecil & lencana tercapai', 'Persiapkan fase stabilisasi kas'] },
+        ]
+      },
+      {
+        phaseNum: 3,
+        title: 'Fase 3: Stabilize & Pola Rutin (Hari 15 - 21)',
+        badgeColor: 'var(--amber-600)',
+        bgColor: 'var(--amber-50)',
+        days: [
+          { day: 15, focus: 'Pangkas Bocor Halus & Kunci Margin', tasks: ['Cek rekening koran/e-wallet untuk biaya tersembunyi', 'Matikan langganan yang tidak esensial', 'Kunci margin surplus kas minimal 20%'] },
+          { day: 16, focus: 'Konversi Klien Insidental Jadi Klien Rutin', tasks: ['Tawarkan paket retainer / langganan bulanan', 'Bangun hubungan profesional jangka panjang', 'Amankan kepastian pemasukan bulan depan'] },
+          { day: 17, focus: 'Hubungi Kreditur & Negosiasi Pokok Utang', tasks: ['Ajukan perpanjangan tenor / restrukturisasi', 'Minta penghapusan denda & bunga membengkak', 'Gunakan draf surat resmi Rebound 30'] },
+          { day: 18, focus: 'Susun Jadwal Kerja Produktif Harian', tasks: ['Jadwalkan blok waktu pencarian nafkah', 'Hindari distraksi yang membuang energi mental', 'Pertahankan jam tidur & kesehatan fisik'] },
+          { day: 19, focus: 'Bangun Dana Cadangan Darurat Mini', tasks: ['Sisihkan 10% pemasukan ke dana darurat likuid', 'Jangan gunakan uang ini kecuali kondisi medis', 'Tingkatkan ketenangan batin'] },
+          { day: 20, focus: 'Uji Ketahanan Arus Kas Bulanan', tasks: ['Simulasikan skenario jika pemasukan telat 1 minggu', 'Pastikan stok pangan dan sewa tempat aman', 'Kuatkan pondasi sebelum bayar utang'] },
+          { day: 21, focus: 'Kunci Rencana Serangan Pelunasan Utang', tasks: ['Pilih strategi pelunasan: Risk First / Avalanche / Snowball', 'Hitung alokasi dana peluru bulanan', 'Siapkan eksekusi fase terakhir'] },
+        ]
+      },
+      {
+        phaseNum: 4,
+        title: 'Fase 4: Debt Attack & Kebebasan (Hari 22 - 30)',
+        badgeColor: 'var(--indigo-600)',
+        bgColor: 'var(--indigo-50)',
+        days: [
+          { day: 22, focus: 'Serang Utang Target Pertama', tasks: ['Alokasikan surplus kas ke target utang terpilih', 'Bayar hanya cicilan minimum pada utang lain', 'Simpan bukti transfer resmi'] },
+          { day: 23, focus: 'Dokumentasikan Pengurangan Pokok Utang', tasks: ['Catat pembayaran di menu Audit Utang', 'Lihat penurunan total kewajiban', 'Rayakan milestone pengurangan utang'] },
+          { day: 24, focus: 'Tingkatkan Kapasitas Peluru Kas', tasks: ['Cari peluang tambahan untuk memperbesar cicilan pokok', 'Lakukan negosiasi diskon lunas sekaligus (*haircut*)', 'Percepat tempo penyelesaian'] },
+          { day: 25, focus: 'Metode Bola Salju (Fokus 1 Musuh)', tasks: ['Hancurkan utang target sampai lunas tuntas', 'Alihkan alokasi dana ke utang berikutnya', 'Bangun efek bola salju mental'] },
+          { day: 26, focus: 'Cegah Kambuhnya Jebakan Utang', tasks: ['Tutup kartu kredit atau akun pinjol yang lunas', 'Hindari godaan konsumtif gaya hidup', 'Jaga pola hidup sederhana yang tangguh'] },
+          { day: 27, focus: 'Susun Anggaran Keuangan Pasca-30 Hari', tasks: ['Buat proyeksi keuangan untuk 90 hari ke depan', 'Tetapkan target bebas utang total', 'Jaga disiplin pencatatan setiap hari'] },
+          { day: 28, focus: 'Perkuat Jaringan & Hubungan Sosial', tasks: ['Perbaiki hubungan keluarga yang sempat tegang', 'Bantu sesama yang sedang mengalami kesulitan', 'Bangun reputasi dan integritas baru'] },
+          { day: 29, focus: 'Audit Komparasi Sebelum vs Sesudah', tasks: ['Buka menu Laporan: Hari 1 vs Hari 29', 'Lihat lonjakan Rebound Score & ketahanan kas', 'Klaim lencana pencapaian akhir'] },
+          { day: 30, focus: 'Rebound Menjadi Manusia Merdeka & Berbagi', tasks: ['Rayakan keberhasilan menyelesaikan 30 hari penuh', 'Tengok ke belakang dengan rasa syukur mendalam', 'Teruskan kebiasaan finansial tangguh selamanya'] },
+        ]
+      }
+    ];
+
     let html = '';
-    planData.forEach(group => {
-      group.days.forEach(d => {
+    planPhases.forEach(phase => {
+      html += `
+        <div style="margin-bottom:var(--space-5);">
+          <div style="font-size:13.5px;font-weight:800;color:var(--slate-800);margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${phase.badgeColor};"></span>
+            <span>${phase.title}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+      `;
+
+      phase.days.forEach(item => {
+        const d = item.day;
         const isToday = d === currentDay;
         const isDone = d < currentDay;
+        const statusBadge = isDone 
+          ? '<span class="badge badge-success" style="font-size:10.5px;">✓ Telah Dilalui</span>'
+          : isToday 
+            ? '<span class="badge badge-primary" style="font-size:10.5px;animation:pulse 2s infinite;">📍 Hari Ini</span>'
+            : '<span class="badge badge-secondary" style="font-size:10.5px;opacity:0.75;">⏳ Mendatang</span>';
+
         html += `
-          <div class="plan-day-card ${isToday?'today':''} ${isDone?'completed-day':''}">
-            <div class="plan-day-number">${isDone?'✓':d}</div>
-            <div class="plan-day-content">
-              <div class="plan-day-phase">${group.phase}</div>
-              <div class="plan-day-objective">${group.objective}</div>
-              ${isToday ? `<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">${group.tasks.map(t=>`<span class="badge badge-primary">${t}</span>`).join('')}</div>` : ''}
+          <div class="card" style="padding:12px 14px;border:1.5px solid ${isToday ? 'var(--teal-500)' : isDone ? 'var(--slate-200)' : 'var(--slate-200)'};background:${isToday ? 'var(--teal-50)' : '#fff'};border-radius:var(--radius-lg);transition:all 0.2s ease;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="width:26px;height:26px;border-radius:50%;background:${isDone ? 'var(--green-600)' : isToday ? 'var(--teal-600)' : 'var(--slate-200)'};color:${isDone||isToday?'#fff':'var(--slate-600)'};font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  ${isDone ? '✓' : d}
+                </div>
+                <div style="font-size:13px;font-weight:800;color:var(--color-text-primary);">
+                  Hari ke-${d}: ${item.focus}
+                </div>
+              </div>
+              ${statusBadge}
+            </div>
+
+            <!-- Rincian Tugas Harian -->
+            <div style="margin-left:34px;font-size:12px;color:var(--slate-600);line-height:1.5;">
+              <ul style="margin:0;padding-left:14px;">
+                ${item.tasks.map(t => `<li style="margin-bottom:2px;">${t}</li>`).join('')}
+              </ul>
             </div>
           </div>
         `;
       });
+
+      html += `
+          </div>
+        </div>
+      `;
     });
+
     document.getElementById('plan-list').innerHTML = html;
   },
   
