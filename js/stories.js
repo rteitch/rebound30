@@ -5127,6 +5127,93 @@ const Stories = {
         'Pentingnya Model Bisnis Arus Kas Harian (*Cash vs Accounts Receivable*): Bisnis dengan perputaran kas langsung (*cash on delivery/daily payout*) menghilangkan risiko piutang macet yang kerap menenggelamkan UMKM.',
         'Disiplin Kerja Eksekusi Konsisten: Menjaga rutinitas kerja sejak fajar (13–22 trip harian) membuktikan etos kerja gigih akan selalu berbuah pemulihan ekonomi nyata.'
       ]
+    },
+    {
+      id: 'vini',
+      featured: false,
+      name: 'Vini (Riva Cake)',
+      tagline: 'Dari Mie Ayam Palembang Tutup, Adik Wafat & Pulang Kampung Bangkrut — Bangkit Etalase Parkiran Ruko Jadi Pencipta Kue Sarmut Talas Khas Bogor',
+      title: 'Dari Bangkrut dan Kehilangan Aset, Sukses Ciptakan Oleh-Oleh Khas Kue Sarmut Bogor',
+      subtitle: 'Pemilik Riva Cake Cigombong — Mengubah Duka dan Kegagalan Bisnis Menjadi Inovasi Kuliner Olahan Tepung Talas Khas Bogor',
+      origin: 'Bogor, Jawa Barat',
+      ageAtRebound: 'Cigombong, Bogor',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkrut Rantau & Inovasi Talas',
+      badge: 'Oleh-Oleh Khas Bogor — Pencipta Kue Sarmut',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FEF3C7',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Aset Ludes & Modal Habis Pasca Bangkrut',
+        age: 'Cigombong, Bogor',
+        lowest: 'Usaha Mie Ayam Palembang Tutup Total, Adik Wafat, Pulang Kampung Nol Aset & Trauma Toko',
+        action: 'Bazar Ramadan + Etalase Parkir Ruko + Pelatihan Desa Emas + Inovasi Kue Sarmut Tepung Talas',
+        result: 'Pemilik Riva Cake, Kue Sarmut Jadi Oleh-Oleh Khas Cigombong Bogor, Inspirasi Ratusan UMKM'
+      },
+      timeline: [
+        { year: 'Era Usaha Mie Ayam Palembang', text: 'Merantau membuka kedai mie ayam di Palembang bersama pasangan dan sempat berkembang diminati calon mitra.' },
+        { year: 'Duka Keluarga & Bangkrut', text: 'Adik bungsu wafat; terpaksa pulang ke Bogor merawat ibunda, usaha Palembang tutup total dan kehilangan seluruh aset.' },
+        { year: 'Bazar Ramadan & Pivot Cepat', text: 'Diajak ketua RT ikut bazar; jualan burger sepi, lalu pivot ke kue sus, risoles, dan lemper yang ludes sebelum Magrib.' },
+        { year: 'Etalase Parkiran Ruko', text: 'Mengatasi trauma buka toko dengan berjualan di etalase sederhana area parkir ruko sambil menerima pesanan snack box.' },
+        { year: 'Pelatihan Desa Emas & Inovasi Talas', text: 'Bergabung dengan komunitas UMKM & Yayasan Indonesia Setara; meriset komoditas talas unggulan Bogor.' },
+        { year: 'Hari Ini — Oleh-Oleh Khas Cigombong', text: 'Menciptakan "Kue Sarmut" (sarang semut karamel talas); menjadi ikon oleh-oleh khas Cigombong Bogor.' }
+      ],
+      quote: 'Waktu pulang kampung dalam kondisi bangkrut dan kehilangan aset, rasanya sangat berat. Tapi kita tidak boleh berhenti mencoba. Dari etalase kecil di parkiran dan inovasi memanfaatkan bahan lokal, jalan sukses baru terbuka lebar.',
+      quoteAuthor: 'Vini, pendiri Riva Cake dan pencipta Kue Sarmut Bogor',
+      chapters: [
+        {
+          num: 1,
+          title: 'Merantau ke Palembang dan Duka yang Menghentikan Langkah',
+          paragraphs: [
+            'Perjalanan wirausaha Vini berawal dari perantauan ke Palembang bersama pasangannya untuk merintis usaha kedai mie ayam. Bisnis tersebut sempat menunjukkan tren pertumbuhan positif hingga menarik minat beberapa calon mitra kerja sama.',
+            'Namun garis takdir berkehendak lain ketika kabar duka datang mengabarkan adik bungsunya meninggal dunia. Demi mendampingi dan merawat sang ibunda yang terpukul di Bogor, Vini memutuskan menghentikan operasional usahanya di Palembang.',
+            'Penutupan mendadak itu membuatnya pulang ke kampung halaman dengan tangan hampa: seluruh modal dan aset usaha ludes, meninggalkan rasa trauma mendalam atas kegagalan bisnis fisik.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Bazar Ramadan: Kegagalan Burger dan Ledakan Kue Basah',
+          paragraphs: [
+            'Di tengah masa-masa terpuruk, secercah peluang datang saat ketua RT setempat mengajaknya berpartisipasi dalam bazar jajanan bulan Ramadan.',
+            'Pada hari pertama, ia mencoba menjual burger barat namun sepi peminat. Tanpa membuang waktu meratapi kegagalan menu, Vini segera melakukan manuver cepat dengan beralih memproduksi kue basah tradisional: kue sus vla, risoles, dan lemper gurih.',
+            'Hasilnya di luar dugaan: seluruh stok kue basah buatannya ludes terjual bersih bahkan sebelum waktu azan Magrib berkumandang, membangkitkan kembali rasa percaya dirinya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Menaklukkan Trauma di Etalase Parkir Ruko',
+          paragraphs: [
+            'Keberhasilan bazar Ramadan mendorongnya menambah varian kue dan mulai melayani pesanan katering kudapan kantor serta instansi sekolah.',
+            'Kendati bayang-bayang trauma sewa toko masih ada, Vini mencari jalan tengah dengan menempatkan etalase kaca sederhana di area pelataran parkir sebuah ruko di kawasan Cigombong.',
+            'Melalui merek *Riva Cake*, etalase kecil tersebut ramai dikunjungi pelanggan harian yang mencari kudapan basah bercita rasa lezat dan higienis.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Komunitas Desa Emas dan Lahirnya Formulasi Kue Sarmut',
+          paragraphs: [
+            'Langkah transformasi bisnisnya kian terakselerasi saat ia bergabung dengan jejaring komunitas UMKM lokal dan mengikuti program pendampingan "Desa Emas" dari Yayasan Indonesia Setara (YIS).',
+            'Ia tertantang mengeksplorasi potensi komoditas pangan lokal unggulan Bogor: talas. Melalui serangkaian riset dapur dan uji coba tekstur, Vini berhasil memadukan tepung talas organik dengan resep kue karamel sarang semut tradisional.',
+            'Inovasi tersebut melahirkan produk unggulan baru bernilai jual tinggi: **Kue Sarmut** (Sarang Semut Karamel Talas) yang memiliki tekstur kenyal berserat dengan aroma legit khas talas Bogor.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Dari Titik Nol Menjadi Ikon Oleh-Oleh Cigombong Bogor',
+          paragraphs: [
+            'Kue Sarmut buatan Riva Cake berkembang pesat menjadi salah satu ikon oleh-oleh khas Cigombong dan diburu oleh wisatawan yang berkunjung ke kawasan Bogor dan Sukabumi.',
+            'Vini kini aktif membagikan pengalamannya untuk mengedukasi dan memotivasi ratusan pelaku UMKM perempuan tentang pentingnya nilai tambah produk berbasis kearifan lokal.',
+            'Kisah Vini menegaskan bahwa kejatuhan masa lalu hanyalah jeda persiapan untuk karya yang lebih otentik; dengan kepekaan membaca pasar dan keberanian berinovasi, dari sepetak parkiran ruko pun lahir karya kebanggaan daerah.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Fleksibilitas Menu dan Kecepatan Uji Pasar (*Market Validation*): Saat menu burger sepi, pivot cepat ke kue sus dan risoles membuktikan pentingnya mendengar selera nyata konsumen lokal.',
+        'Mengatasi Hambatan Biaya dengan *Low-Cost Location*: Memulai dari etalase di pelataran parkir ruko memangkas risiko beban sewa gedung sebelum arus kas stabil.',
+        'Menciptakan Nilai Tambah Komoditas Lokal (*Local Advantage*): Mengolah tepung talas khas Bogor menjadi kue sarang semut menciptakan diferensiasi unik yang sulit ditiru kompetitor luar.',
+        'Memanfaatkan Pendampingan Komunitas UMKM: Program pelatihan dan jejaring pembinaan membantu UMKM bertransisi dari penjual kue biasa menjadi produsen oleh-oleh berdaya saing.'
+      ]
     }
   ],
 
