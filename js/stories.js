@@ -4779,6 +4779,93 @@ const Stories = {
         'Efisiensi Modal Awal Lewat Aset Bekas: Membeli mesin lelang bekas dan merekayasanya sendiri memangkas biaya *capex* pabrik secara signifikan saat modal terbatas.',
         'Keyakinan Mengalahkan Keraguan Analisis Berlebih (*Analysis Paralysis*): Terkadang terlalu banyak menghitung statistik kegagalan justru mematikan inisiatif wirausaha terbaik.'
       ]
+    },
+    {
+      id: 'mimipane',
+      featured: false,
+      name: 'Mimi Pane',
+      tagline: 'Dari Usaha 6 Tahun Ludes Pandemi, Ditinggal Orang Terdekat & Utang Miliaran — Bangkit dari Cibiran Teman Lewat Salad Buah & Comeback Dekorasi Event',
+      title: 'Dari Utang Miliaran dan Depresi Pandemi, Bangkit Berkat Salad Buah',
+      subtitle: 'Pengusaha Dekorasi Event & Salad Buah Jakarta — Menolak Menyerah di Tengah Badai Perceraian dan Keruntuhan Bisnis',
+      origin: 'Jakarta',
+      ageAtRebound: 'November 2021',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Pandemi COVID & Utang Miliaran',
+      badge: 'Comeback Event Organizer & Kuliner Salad Buah',
+      theme: 'rose',
+      accentColor: '#E11D48',
+      bgLight: '#FFE4E6',
+      borderLight: '#FECDD3',
+      stats: {
+        debt: 'Miliaran Rupiah (Dampak Pandemi COVID-19)',
+        age: 'November 2021 (Titik Balik)',
+        lowest: 'Bisnis 6 Thn Hancur, Tulang Punggung Adik-Adik, Rumah Tangga Bubar, Depresi & Nyaris Mati COVID-19',
+        action: 'Jadikan Cibiran Teman Cambuk + Jualan Salad Buah dari Rumah + Bangun Tim Dekorasi Event Kembali',
+        result: 'Utang Miliaran Berangsur Lunas, Penjualan Salad Buah Melonjak, Sukses Comeback Dekorasi Event'
+      },
+      timeline: [
+        { year: '2014–2020 — Kejayaan Bisnis 6 Thn', text: 'Membangun bisnis dekorasi event dan butik selama 6 tahun hingga mencapai reputasi gemilang.' },
+        { year: '2020 — Pandemi & Utang Miliaran', text: 'Pandemi COVID-19 membekukan seluruh industri event; usaha kolaps dan menyisakan utang miliaran rupiah.' },
+        { year: 'Titik Nadir & Kritis COVID-19', text: 'Aset ludes, rumah tangga hancur, ditinggal lingkaran pertemanan, dan hampir meninggal saat terinfeksi virus COVID-19.' },
+        { year: 'November 2021 — Cambukan Cibiran', text: 'Tersengat komentar pedas rekan yang menyindir daya tahannya; bangkit kembali ke Jakarta dengan mentalitas baja.' },
+        { year: 'Mulai dari Salad Buah Rumahan', text: 'Merintis jualan salad buah higienis dari dapur rumah dan mengaktifkan kembali butik online untuk memutar kas.' },
+        { year: 'Mei 2022 — Comeback Dekorasi Event', text: 'Kembali mengeksekusi proyek dekorasi event skala besar, mencicil pelunasan utang miliaran secara konsisten.' }
+      ],
+      quote: 'Saat kita jatuh ke titik paling bawah, bukan orang lain yang menentukan takdir kita, melainkan diri kita sendiri: apakah kita memilih menyerah atau bangkit melawan rasa takut. Cibiran dan rasa sakit adalah bahan bakar terbaik untuk berdiri tegak kembali.',
+      quoteAuthor: 'Mimi Pane, pengusaha dekorasi event dan kuliner',
+      chapters: [
+        {
+          num: 1,
+          title: 'Enam Tahun Rintisan yang Runtuh Akibat Pandemi',
+          paragraphs: [
+            'Sebelum pandemi COVID-19 melanda, Mimi Pane telah menghabiskan enam tahun kerja keras merintis usaha dekorasi event, butik fashion online, dan aneka lini usaha di Jakarta. Bisnisnya berkembang pesat dan memberinya kemapanan finansial.',
+            'Namun pembatasan sosial berskala besar akibat pandemi mendadak melumpuhkan seluruh perhelatan acara publik dan pesta pernikahan. Pemasukan lenyap seketika, sementara tagihan operasional, vendor, dan kewajiban perbankan terus menumpuk.',
+            'Dalam tempo singkat, imperium usaha enam tahun itu gulung tikar total, meninggalkan tumpukan beban utang hingga mencapai angka miliaran rupiah.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Kehilangan Harta, Teman, Keluarga, dan Ancaman Maut',
+          paragraphs: [
+            'Beban finansial makin menghimpit karena Mimi adalah tulang punggung keluarga yang harus membiayai pendidikan dan kebutuhan adik-adiknya. Seluruh tabungan hidup ludes terkuras dan aset-aset berharganya terpaksa dilego.',
+            'Ujian datang bertubi-tubi: mahligai rumah tangganya kandas, kawan-kawan dekat yang dulu mengelilinginya menjauh satu per satu, dan keluarga besar bersikap acuh tak acuh.',
+            'Kondisi tersebut memicu depresi berat dan kecemasan akut (*anxiety*). Situasi kian kritis saat ia terinfeksi virus COVID-19 dan mengalami masa-masa kritis di ambang maut sebelum akhirnya bertahan hidup.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Cambukan Omongan Pedas yang Membakar Mental Baja',
+          paragraphs: [
+            'Selama satu setengah tahun, Mimi tenggelam dalam kepasrahan dan kebingungan di rumah tanpa arah hidup yang jelas. Namun sebuah peristiwa di November 2021 mengubah segalanya.',
+            'Seorang kenalan melontarkan cibiran pedas yang menyindir: *"Kok si Mimi gak mati-mati ya? Sudah bangkrut, sakit, dan habis-habisan gitu masih aja kuat."*',
+            'Kalimat yang semula bernada merendahkan itu justru menjadi percikan api yang menyalakan kembali harga diri dan daya juangnya. Mimi memutuskan untuk tidak membiarkan nasibnya ditentukan oleh belas kasihan atau cemoohan orang lain.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Langkah Awal: Salad Buah Dapur Rumah dan Butik Online',
+          paragraphs: [
+            'Berbekal tekad baru dan perbaikan spiritual, Mimi kembali ke Jakarta dengan mental pejuang. Menolak menunggu datangnya modal besar, ia memulai usaha dari komoditas yang paling cepat menghasilkan uang tunai: salad buah segar dari dapur rumah.',
+            'Dengan ketelitian memilih buah berkualitas dan racikan saus yang lezat, pesanan salad buahnya mulai diminati konsumen rumahan dan perkantoran.',
+            'Di saat bersamaan, ia mengaktifkan kembali butik online-nya dan mulai merajut silaturahmi dengan rekan-rekan kru dekorasi event yang dulu pernah bekerja bersamanya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Cicilan Terbayar dan Panggung Comeback Dekorasi Event',
+          paragraphs: [
+            'Arus kas dari penjualan harian salad buah dan fashion online memberinya napas untuk mulai mencicil utang miliaran rupiah secara bertahap dan konsisten kepada para kreditur.',
+            'Puncaknya pada Mei 2022, seiring pulihnya industri kreatif pasca pandemi, Mimi sukses melakukan *comeback* besar dengan menangani dekorasi perhelatan event bergengsi secara profesional.',
+            'Kisah Mimi Pane membuktikan bahwa keterpurukan tergelap sekalipun bukan akhir dari cerita; selama seseorang memiliki keberanian untuk bangkit dari dapur kecilnya, martabat dan masa depan gemilang selalu bisa direbut kembali.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Mengonversi Energi Negatif Menjadi Bahan Bakar Kebangkitan: Alih-alih larut dalam sakit hati akibat cemoohan orang lain, gunakan omongan pedas sebagai pemicu motivasi untuk membuktikan kapasitas diri.',
+        'Mulai dari Skala Mikro yang Memberikan Arus Kas Cepat: Menjual salad buah rumahan menciptakan likuiditas harian (*daily cashflow*) untuk membiayai kebutuhan hidup saat bisnis utama lumpuh.',
+        'Menjaga Relasi dan Jejaring Kolaborasi: Menghubungi kembali kru dan rekanan event memastikan kesiapan tim saat peluang proyek besar kembali dibuka pasca krisis.',
+        'Disiplin Pembayaran Bertahap (*Incremental Repayment*): Menghadapi utang miliaran tidak harus langsung lunas sekaligus; cicilan teratur dan konsisten membangun kembali reputasi dan kepercayaan mitra.'
+      ]
     }
   ],
 
