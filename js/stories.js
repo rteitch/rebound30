@@ -5736,6 +5736,93 @@ const Stories = {
         'Memilih Varietas Unggulan Lokal (*Native Advantage*): Budidaya ayam Sentul lokal memberikan keunggulan komparatif dari segi ketahanan penyakit dan harga jual pasar.',
         'Model Bisnis Inklusif Kemitraan Desa: Mengembangkan jejaring kemitraan plasma bersama peternak lain memperbesar kapasitas pasokan dan mengangkat taraf hidup komunitas desa.'
       ]
+    },
+    {
+      id: 'andonipridatama',
+      featured: false,
+      name: 'Andoni Pridatama (Sarang Maduku)',
+      tagline: 'Dari Bankir Gaji Rp 40 Juta Resign Dicap Bodoh Demi Utang Ratusan Juta — Jual Rempeyek Pinggir Jalan, Kini Bos Madu Omzet Miliaran',
+      title: 'Dari Bankir Bergaji Rp 40 Juta, Bangkit Jadi Juragan Madu Beromzet Miliaran',
+      subtitle: 'Pendiri Sarang Maduku Malang — Melepaskan Zona Nyaman Gaji Puluhan Juta Demi Membayar Tuntas Utang Melalui Kemitraan Peternak Lebah',
+      origin: 'Malang, Jawa Timur',
+      ageAtRebound: 'Malang, 2019',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Ex-Bankir Gaji Rp 40 Jt & Bisnis Madu',
+      badge: 'Sarang Maduku — Omzet Miliaran per Tahun',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FEF3C7',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Ratusan Juta Rupiah (Saat Bekerja di Bank)',
+        age: 'Malang, Tahun 2019',
+        lowest: 'Gaji Rp 40 Juta/Bulan Habis Bayar Cicilan, Resign Dicap Bodoh, Jual Rempeyek Pinggir Jalan, Tertipu Rp 30 Juta',
+        action: 'Resign dari Bank + Jual Serabutan + Kemitraan Peternak Lebah Malang + Bangun Brand Sarang Maduku',
+        result: 'Seluruh Utang Ratusan Juta Lunas Total, Sarang Maduku Tembus Omzet Miliaran/Tahun, Ribuan Pelanggan'
+      },
+      timeline: [
+        { year: '2019 — Gaji Rp 40 Jt & Jeratan Utang', text: 'Bekerja sebagai bankir bergaji Rp 40 juta per bulan, namun terjerat utang ratusan juta yang tak kunjung lunas.' },
+        { year: 'Keputusan Resign & Dicibir Bodoh', text: 'Memilih keluar dari zona nyaman bank; dicemooh banyak orang karena melepaskan gaji mapan.' },
+        { year: 'Jual Gamis & Rempeyek Jalanan', text: 'Mencoba berbagai usaha dari jual gamis, durian, hingga menjajakan rempeyek di pinggir jalan.' },
+        { year: 'Peluang Madu & Tertipu Rp 30 Jt', text: 'Menemukan masalah peternak lebah lokal Malang; sempat tertipu Rp 30 juta untuk 20 kotak lebah kosong.' },
+        { year: 'Lahirnya Brand Sarang Maduku', text: 'Bangkit menstandarisasi kemasan madu sarang murni dan memperluas pemasaran daring serta ritel.' },
+        { year: 'Hari Ini — Omzet Miliaran & Utang Lunas', text: 'Melunasi seluruh utang ratusan juta rupiah; Sarang Maduku mencetak omzet miliaran rupiah per tahun.' }
+      ],
+      quote: 'Utang ratusan juta itu saya alami saat masih kerja di bank. Saya memutuskan resign dan sempat dikatain bodoh karena melepas gaji Rp 40 juta. Tapi untuk melunasi beban besar, kita harus berani keluar dari zona nyaman dan menciptakan nilai nyata.',
+      quoteAuthor: 'Andoni Pridatama, pendiri Sarang Maduku Malang',
+      chapters: [
+        {
+          num: 1,
+          title: 'Jas Rapi, Gaji Rp 40 Juta, dan Jeratan Utang',
+          paragraphs: [
+            'Di kota Malang, Jawa Timur pada tahun 2019, Andoni Pridatama menjalani karier profesional yang tampak berkilau di mata banyak orang. Sebagai bankir di sebuah institusi keuangan terkemuka, ia mengantongi gaji bulanan mencapai Rp 40 juta.',
+            'Namun di balik stelan kemeja rapi dan status sosial bergengsi, Andoni terhimpit utang pribadi senilai ratusan juta rupiah. Sebagian besar dari gaji puluhan jutanya habis hanya untuk menutup bunga dan cicilan pokok tanpa pernah tuntas.',
+            'Ia menyadari kenyataan pahit: mengandalkan kenaikan gaji tahunan sebagai karyawan tidak akan pernah mampu membebaskannya dari jeratan utang secara cepat.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Keputusan Gila: Resign dan Dicap Bodoh',
+          paragraphs: [
+            'Andoni mengambil keputusan radikal: mengajukan surat pengunduran diri (*resign*) demi merintis jalur wirausaha mandiri.',
+            'Langkah tersebut memicu gelombang cemoohan dari rekan sejawat dan keluarga besar. Ia dicap "bodoh dan tidak bersyukur" karena melepaskan pekerjaan tetap bergaji puluhan juta di saat sedang menanggung beban utang besar.',
+            'Namun dengan dukungan tulus sang istri, Andoni membulatkan tekad: ia harus memiliki instrumen bisnis dengan potensi pertumbuhan tak terbatas untuk melunasi utang.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Menjual Rempeyek di Tepi Jalan dan Kerugian Rp 30 Juta',
+          paragraphs: [
+            'Memulai dari nol tanpa fasilitas korporat, Andoni membuang jauh gengsi mantan bankir. Ia menjajal berbagai komoditas dagang: memasarkan busana gamis wanita, berjualan buah durian musiman, hingga menjajakan rempeyek di pinggir jalan raya.',
+            'Meski perputaran kasnya kecil, ia terus mencari produk dengan skala ekonomi yang lebih kuat. Peluang muncul saat ia berbincang dengan peternak lebah di pelosok Malang yang mengeluhkan kesulitan memasarkan hasil panen madu mentah.',
+            'Namun langkah awalnya diuji penipuan: ia merugi Rp 30 juta modal simpanan setelah membeli 20 kotak sarang lebah yang ternyata tidak pernah menghasilkan panen madu.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Merajut Kemitraan Lebah dan Lahirnya Sarang Maduku',
+          paragraphs: [
+            'Belajar dari kegagalan tersebut, Andoni memperketat kurasi mitra peternak lebah yang jujur dan profesional di Jawa Timur.',
+            'Ia meluncurkan merek **Sarang Maduku**, mengemas madu murni dan sarang lebah asli (*honeycomb*) dalam wadah makanan higienis berstandar premium yang aman dikirim ke seluruh Indonesia.',
+            'Edukasi nutrisi yang konsisten dan jaminan keaslian 100% membuat produk Sarang Maduku meledak di platform marketplace digital dan menjadi langganan ribuan konsumen.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Omzet Miliaran dan Pembuktian Keberanian Resign',
+          paragraphs: [
+            'Dalam kurun waktu beberapa tahun beroperasi, Sarang Maduku berkembang pesat dengan omzet penjualan menembus miliaran rupiah per tahun.',
+            'Keuntungan usaha yang berlipat ganda sukses melunasi seluruh sisa pokok utang ratusan juta rupiah yang dulu membelenggunya saat menjadi bankir.',
+            'Kisah Andoni Pridatama mengajarkan bahwa terkadang jalan keluar dari krisis utang menuntut keberanian melompat keluar dari zona nyaman; ketika kepasrahan ditukar dengan aksi nyata dan integritas kemitraan, rezeki yang melimpah akan menyambut.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Keberanian Keluar dari Zona Nyaman (*Calculated Leap*): Melepaskan gaji tetap untuk membangun bisnis mandiri saat menyadari kapasitas gaji tidak sebanding dengan target pelunasan utang.',
+        'Menanggalkan Gengsi Profesional: Mantan bankir bergaji Rp 40 juta yang rela menjajakan rempeyek dan durian di tepi jalan membuktikan kerendahhatian adalah modal awal wirausaha.',
+        'Menjembatani Masalah Rantai Pasok Lokal (*Supply Chain Arbitrage*): Menghubungkan peternak lebah lokal yang kesulitan pasar dengan konsumen modern berdaya beli tinggi.',
+        'Branding dan Standardisasi Produk Alami: Mengemas madu sarang lokal dengan standar higienis dan jaminan keaslian menciptakan kepercayaan pasar bernilai miliaran rupiah.'
+      ]
     }
   ],
 
