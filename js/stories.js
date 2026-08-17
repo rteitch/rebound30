@@ -6821,17 +6821,19 @@ const Stories = {
   },
 
   openReader(id) {
+    this.previousViewMode = this.viewMode || 'library';
     this.activeId = id;
     this.viewMode = 'reader';
     if (window.App && window.App.navigate && window.App.currentScreen !== 'stories') {
       window.App.navigate('stories');
+    } else {
+      this.render();
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
-    this.render();
   },
 
   closeReader() {
-    this.viewMode = 'library';
+    this.viewMode = this.previousViewMode || 'library';
     window.scrollTo({ top: 0, behavior: 'instant' });
     this.render();
   },
@@ -6847,11 +6849,11 @@ const Stories = {
   },
 
   openPatterns() {
-    if (window.App && window.App.navigate && window.App.currentScreen !== 'patterns') {
-      window.App.navigate('patterns');
+    this.viewMode = 'patterns';
+    if (window.App && window.App.navigate && window.App.currentScreen !== 'stories') {
+      window.App.navigate('stories');
     } else {
-      const container = document.getElementById('patterns-root') || document.getElementById('screen-patterns');
-      if (container) this.renderPatterns(container);
+      this.render();
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
   },
@@ -6999,6 +7001,8 @@ const Stories = {
 
     if (this.viewMode === 'reader') {
       this.renderReader(container);
+    } else if (this.viewMode === 'patterns') {
+      this.renderPatterns(container);
     } else {
       this.renderLibrary(container);
     }

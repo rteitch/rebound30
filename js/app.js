@@ -271,6 +271,13 @@ const App = {
   },
 
   navigate(screen) {
+    if (screen === 'patterns') {
+      this.navigate('stories');
+      if (typeof Stories !== 'undefined' && Stories.openPatterns) {
+        Stories.openPatterns();
+      }
+      return;
+    }
     this.currentScreen = screen;
     this.closeMobileDrawer();
     
@@ -298,7 +305,7 @@ const App = {
       dashboard: 'Dashboard', missions: 'Misi Harian', debts: 'Audit Utang',
       income: 'Pemasukan', expenses: 'Pengeluaran', assets: 'Aset',
       plan: 'Rencana 30 Hari', reports: 'Laporan', stories: 'Kisah Bangkit',
-      patterns: 'Pola & Grafik 77 Tokoh', settings: 'Pengaturan',
+      settings: 'Pengaturan',
     };
     const title = titles[screen] || screen;
     const el1 = document.getElementById('topbar-title');
@@ -329,7 +336,6 @@ const App = {
       plan: () => this.renderPlan(),
       reports: () => this.renderReports(),
       stories: () => Stories.render(),
-      patterns: () => Stories.renderPatterns(document.getElementById('patterns-root') || document.getElementById('screen-patterns')),
       settings: () => this.renderSettings(),
     };
     if (renders[screen]) renders[screen]();
