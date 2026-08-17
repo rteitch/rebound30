@@ -6606,6 +6606,93 @@ const Stories = {
         'Pemanfaatan Bahan Baku Marjinal (*Value-Added Processing*): Mengolah komoditas jamur yang terbuang menjadi produk camilan bernilai jual tinggi.',
         'Membangun Ekosistem Distribusi Reseller: Melipatgandakan omzet penjualan melalui ribuan reseller aktif di media sosial untuk mempercepat likuiditas pelunasan utang.'
       ]
+    },
+    {
+      id: 'yudiyanto',
+      featured: false,
+      name: 'Yudi Yanto',
+      tagline: 'Dari 30 Kartu Kredit Macet & Utang Rp 3,6 Miliar — Hadapi Penagih Jujur, Bangkit Properti Syariah Depok Aset Rp 50 Miliar',
+      title: 'Dari 30 Kartu Kredit dan Teror Utang Rp 3,6 Miliar, Bangkit Miliki Aset Rp 50 Miliar',
+      subtitle: 'Mantan Pengusaha Briket Kelapa Asal Depok — Mengubah Badai Gali Lubang Tutup Lubang Kartu Kredit Menjadi Pengembang Properti Syariah Beraset Puluhan Miliar',
+      origin: 'Depok, Jawa Barat',
+      ageAtRebound: 'Depok, 2012',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: '30 Kartu Kredit & Properti Syariah',
+      badge: 'Properti Syariah Depok — Aset Rp 50 Miliar',
+      theme: 'teal',
+      accentColor: '#0D9488',
+      bgLight: '#CCFBF1',
+      borderLight: '#99F6E4',
+      stats: {
+        debt: 'Rp 3,6 Miliar (30 Kartu Kredit & Pinjaman Bank)',
+        age: 'Depok, Tahun 2012',
+        lowest: 'Investasi Pabrik Briket Runtuh, Terjebak 30 Kartu Kredit, Rumah Didatangi Penagih Tiap Hari & Aset Ludes',
+        action: 'Hadapi Penagih Tanpa Gengsi + Negosiasi Diskon Pelunasan + Komisi Jual Rumah + Bangun Properti Syariah',
+        result: 'Seluruh Utang Rp 3,6 Miliar Lunas 3 Tahun, Sukses Properti Syariah Bebas Riba Depok, Aset Rp 50 Miliar'
+      },
+      timeline: [
+        { year: '2009 — Ekspansi Pabrik Briket', text: 'Merintis pabrik briket batok kelapa bersama rekan, agresif berinvestasi mesin dan lahan baru.' },
+        { year: '2012 — Perang Harga & 30 Kartu Kredit', text: 'Pembeli minta diskon 40%; beralih menggali lubang tutup lubang hingga memiliki 30 kartu kredit macet Rp 3,6 M.' },
+        { year: 'Teror Penagih & Pasrah Terbuka', text: 'Keluarga diteror penagih; Yudi menghadapi penagih secara terbuka tanpa kabur walau aset telah habis.' },
+        { year: 'Negosiasi Unik & Komisi Pertama', text: 'Mendapat empati penagih yang menalangi cicilan; sukses melunasi utang bank Rp 34 juta lewat nego kas Rp 14 juta.' },
+        { year: 'Lunas 3 Tahun & Rintis Properti', text: 'Fokus memasarkan properti syariah tanpa utang bank; melunasi seluruh kewajiban Rp 3,6 miliar dalam 3 tahun.' },
+        { year: 'Hari Ini — Aset Rp 50 Miliar', text: 'Mengembangkan proyek perumahan syariah terkemuka di Depok dengan portofolio aset mencapai Rp 50 miliar.' }
+      ],
+      quote: 'Tidak ada masalah yang abadi. Saat diteror penagih dan terjebak 30 kartu kredit, saya selalu menanamkan keyakinan: akan datang suatu masa di mana utang saya sama dengan nol. Kuncinya adalah jangan kabur, hadapi dengan jujur apa adanya.',
+      quoteAuthor: 'Yudi Yanto, pengembang properti syariah asal Depok',
+      chapters: [
+        {
+          num: 1,
+          title: 'Kejatuhan Mendadak Pabrik Briket Batok Kelapa',
+          paragraphs: [
+            'Sejak tahun 2009 di Depok, Jawa Barat, Yudi Yanto bersama beberapa rekannya menikmati kesuksesan besar dari industri pengolahan briket arang batok kelapa. Permintaan pasar yang tinggi membuatnya optimis melakukan ekspansi agresif: membeli lahan baru, mendirikan pabrik, dan memesan mesin pengolah canggih.',
+            'Namun pada tahun 2012, pukulan telak melanda usahanya. Pembeli utama yang selama ini menyerap sebagian besar produksi menuntut penurunan harga hingga 40 persen menyusul serbuan produk kompetitor berbiaya rendah.',
+            'Dengan struktur biaya operasional dan cicilan modal investasi yang terlanjur tinggi, Yudi tidak sanggup memenuhi potongan harga tersebut, membuat arus pendapatan pabriknya lumpuh seketika.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Lingkaran Setan Tiga Puluh Kartu Kredit',
+          paragraphs: [
+            'Demi mempertahankan operasional pabrik dan menutup biaya rutin, Yudi mengambil jalan pintas berisiko: menarik dana tunai dari fasilitas perbankan dan membuka puluhan kartu kredit.',
+            'Tanpa disadari, pola gali lubang tutup lubang tersebut membuatnya mengantongi hingga 30 kartu kredit berbeda dengan akumulasi total tagihan macet mencapai Rp 3,6 miliar.',
+            'Rumahnya diserbu penagih utang (*debt collector*) silih berganti setiap hari. Tekanan penagihan merembet hingga meneror anggota keluarga besarnya, sementara seluruh aset berharga miliknya telah habis terjual.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Kejujuran Terbuka di Hadapan Penagih Utang',
+          paragraphs: [
+            'Di titik nadir tersebut, Yudi memilih tidak bersembunyi atau lari dari tanggung jawab. Setiap kali petugas penagih mendatangi rumahnya, ia menyambut dengan tenang dan membuka kondisi keuangannya secara transparan.',
+            '"Saya persilakan bapak mau mengambil apa di rumah ini, karena saya memang sudah tidak memegang uang dan tidak punya apa-apa lagi," ungkap Yudi dengan jujur.',
+            'Sikap kesatria dan keterbukaan tanpa perlawanan emosional tersebut justru meluluhkan kekerasan hati para penagih; salah seorang penagih lapangan bahkan bersimpati hingga bersedia menalangi sisa setoran tertentu dengan skema pengembalian langsung kepadanya secara bertahap.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Keringanan Negosiasi dan Komisi Pertama Penjualan Rumah',
+          paragraphs: [
+            'Yudi memanfaatkan celah negosiasi pelunasan pokok perbankan (*haircut discount*). Pada salah satu kartu kredit dengan tagihan Rp 34 juta, ia bernegosiasi melunasinya dengan sisa kas riil sebesar Rp 14 juta yang disetujui pihak bank sebagai lunas tuntas.',
+            'Untuk membangun kembali mata pencaharian tanpa risiko modal utang, Yudi beralih menjadi perantara penjualan rumah. Transaksi perdananya membuahkan komisi sebesar Rp 10 juta yang menjadi modal likuiditas awalnya.',
+            'Ia memperdalam prinsip transaksi properti syariah murni yang tidak mengandalkan pinjaman berbunga tinggi kepada pihak perbankan konvensional.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Tiga Tahun Pelunasan dan Imperium Aset Lima Puluh Miliar',
+          paragraphs: [
+            'Dengan ketekunan memasarkan unit perumahan syariah di kawasan Depok dan sekitarnya, arus kas komisi dan bagi hasil proyeknya melonjak pesat. Seluruh laba dialokasikan untuk menghabisi tumpukan 30 kartu kredit hingga utang Rp 3,6 miliar lunas tuntas dalam kurun waktu 3 tahun.',
+            'Kini, Yudi Yanto telah bertransformasi menjadi pengembang perumahan syariah terkemuka dengan portofolio aset yang dikelola mencapai Rp 50 miliar.',
+            'Kisah Yudi Yanto membuktikan bahwa tidak ada badai utang yang abadi; keberanian menghadapi penagih secara jujur dan berpindah ke model bisnis yang sehat akan menuntun seseorang menuju kemerdekaan finansial sejati.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Hentikan Skema Gali Lubang Tutup Lubang Kartu Kredit: Membuka puluhan kartu kredit untuk menalangi operasional bisnis yang merugi hanya mempercepat kehancuran modal.',
+        'Kekuatan Keterbukaan di Depan Penagih (*Transparent Integrity*): Menghadapi petugas penagih secara langsung dan jujur tanpa menghindar sering kali membuka jalan negosiasi yang manusiawi.',
+        'Pemanfaatan Diskon Pelunasan Pokok (*Debt Settlement & Haircut*): Menawarkan pembayaran pokok secara tunai dengan diskon untuk menutup kartu kredit yang macet.',
+        'Peralihan ke Model Bisnis Tanpa Utang (*Zero-Debt Business Pivot*): Menekuni bisnis keagenan properti berbasis komisi murni yang minim risiko aset namun berdaya hasil tinggi.'
+      ]
     }
   ],
 
