@@ -192,7 +192,8 @@ Menu baru interaktif yang mengkaji taksonomi dan komparasi empiris dari 77 tokoh
 76. **Bagas Alimpad (Raja Camilan Kediri)** — "Pait Seventeen" Utang Rp 1,3 M Investasi Bodong $\to$ Olah Jamur Sisa Jadi Keripik, Lunas 4 Thn & 12 Merek Camilan Kediri
 77. **Yudi Yanto** — Terjebak 30 Kartu Kredit & Utang Rp 3,6 M $\to$ Hadapi Penagih Jujur & Nego Diskon Bank, Bangkit Properti Syariah Depok Aset Rp 50 M
 
-
+> 📘 **Ingin Menambahkan Kisah Baru?**  
+> Baca panduan standar operasional lengkap di [panduan.md](panduan.md) mengenai struktur data objek `Stories.DATA`, checklist berkas yang wajib diperbarui, dan verifikasi testing otomatis.
 
 ### 8. 📊 Penilaian Kondisi & Prioritas Utang Berbasis Risiko Nyata
 - **Rasio Cicilan terhadap Pemasukan (DTI)** dan **status `NO_INCOME`** sesuai PRD §12, ditampilkan langsung di beranda bersama **kekayaan bersih** dan **sisa hari bertahan**.
