@@ -4953,6 +4953,93 @@ const Stories = {
         'Strategi Jemput Bola Langsung ke Pusat Distribusi: Membawa produk ke distributor besar di ibu kota memotong rantai perantara dan menciptakan volume penjualan berskala masif.',
         'Menghargai Kesetiaan Relasi Sejati di Masa Sulit: Kemitraan yang bertahan di titik minus adalah modal sosial termahal yang mempercepat proses pemulihan usaha.'
       ]
+    },
+    {
+      id: 'amarsunaryo',
+      featured: false,
+      name: 'Amar Sunaryo',
+      tagline: 'Dari Kuli Bangunan, Gagal Tebu Rugi Miliaran & Mau Kabur ke Sumatera — Bangkit Modal Nekat DP Paving Block, Lunas Utang 21 Tahun & Bebas Riba',
+      title: 'Dari Kuli Bangunan dan Rugi Tebu Miliaran, Sukses Jadi Pengusaha Paving Block Bebas Utang',
+      subtitle: 'Pengusaha Paving Block Dumplengan Ngawi — Mengakhiri 21 Tahun Jeratan Utang Bank Lewat Modal Kepercayaan Pelanggan',
+      origin: 'Ngawi, Jawa Timur',
+      ageAtRebound: '59 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Gagal Tebu Miliaran & Bebas Utang 21 Thn',
+      badge: 'Raja Paving Ngawi — Lunas Utang Bank 21 Tahun',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Miliaran Rupiah (Runtuh Tebu & 21 Thn Utang Bank)',
+        age: '59 Tahun (Tahun 2026)',
+        lowest: 'Perusahaan Bangkrut Hanya Dapat Motor Win, Gagal Tebu Miliaran, Niat Jual Aset & Kabur ke Sumatera',
+        action: 'Modal Nekat Paving Block + DP Pembeli Rp 200 Jt & Rp 500 Jt + Jaga Kualitas Presisi Material',
+        result: 'Utang Bank 21 Tahun Lunas Tuntas dalam 2 Tahun, Bisnis Paving Sukses Mapan, Bebas Utang Sejak 2018'
+      },
+      timeline: [
+        { year: '1983–1990 — Dari Kuli ke Pelaksana', text: 'Anak penjaga sekolah yang memulai dari kuli bangunan, tukang cat, hingga koordinator konstruksi bermotor tangki bocor ganjal sabun.' },
+        { year: '1998 — Beli Perusahaan Bangkrut', text: 'Membeli badan usaha konstruksi Rp 65 juta, menjadi kontraktor mandiri hingga memimpin Gapensi Ngawi (2010–2020).' },
+        { year: 'Runtuh Tebu Rugi Miliaran', text: 'Gagal bertubi-tubi di ternak sapi/ikan/udang; usaha perkebunan tebu Bojonegoro rugi miliaran saat panen tahun ke-4 anjlok.' },
+        { year: 'Titik Nadir & Ditolak Bank', text: 'Terlilit utang perbankan yang berjalan 21 tahun; nyaris menjual seluruh aset dan kabur ke Sumatera namun ditahan keluarga.' },
+        { year: '2016 — Keajaiban DP Paving Block', text: 'Ditolak bank, mendapat pesanan paving block dari kawan dengan DP Rp 200 juta, disusul pesanan kedua ber-DP Rp 500 juta.' },
+        { year: '2018–Sekarang — Bebas Utang Total', text: 'Melunasi seluruh utang bank dalam 2 tahun; bisnis mapan dan konsisten hidup bersahaja cangkrukan bersama petani.' }
+      ],
+      quote: 'Sebelumnya selama 21 tahun saya harus berhadapan dengan cicilan bank sampai berkali-kali bangkrut. Sejak 2018 sampai sekarang saya tidak punya utang sepeser pun. Apa yang kita miliki tidak akan kekal, kesederhanaan adalah ketenangan hidup yang sejati.',
+      quoteAuthor: 'Amar Sunaryo, pengusaha paving block Dumplengan Ngawi',
+      chapters: [
+        {
+          num: 1,
+          title: 'Anak Penjaga Sekolah dan Keringat Kuli Bangunan',
+          paragraphs: [
+            'Lahir dari keluarga bersahaja di Ngawi, Jawa Timur dengan ayah seorang penjaga sekolah beranak lima, masa kecil Amar Sunaryo akrab dengan keterbatasan. Biaya sekolah yang minim memaksanya pindah ke STM sembari bekerja paruh waktu di koperasi sejak 1983, mengayuh sepeda ontel dan menyeberang sungai dengan perahu getek setiap subuh.',
+            'Ia merantau ke berbagai daerah dan meniti karier dari kasta terbawah dunia proyek: kuli angkut semen dan pasir. Kegigihan belajar mengangkatnya menjadi tukang cat, asisten pelaksana, hingga koordinator proyek konstruksi.',
+            'Namun setelah 7 tahun mengabdi, perusahaan kontraktor tempatnya bekerja kolaps. Amar hanya dibekali pesangon kenang-kenangan berupa sepeda motor Honda Win tua yang kemudian ia jual seharga Rp 3,5 juta untuk menyambung hidup keluarga kecilnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Kontraktor Mandiri dan Badai Rugi Tebu Miliaran',
+          paragraphs: [
+            'Tahun 1998, dengan keberanian mengambil risiko, Amar membeli entitas perusahaan konstruksi yang bangkrut seharga Rp 65 juta. Usaha pemborong bangunannya berkembang pesat hingga ia dipercaya memimpin asosiasi jasa konstruksi (Gapensi) Kabupaten Ngawi selama satu dekade.',
+            'Namun nafsu ekspansi di bidang agribisnis menyeretnya ke jurang kerugian. Usaha sampingan budidaya ikan air tawar, udang, dan peternakan sapi mengalami kegagalan berturut-turut.',
+            'Puncaknya terjadi pada investasi perkebunan tebu skala ratusan hektar di Bojonegoro. Memasuki tahun keempat, harga komoditas tebu nasional anjlok drastis, memicu kerugian telak miliaran rupiah yang langsung menggerogoti struktur keuangannya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Titik Nadir 21 Tahun Berutang dan Rencana Kabur ke Sumatera',
+          paragraphs: [
+            'Kerugian tebu membuat kewajiban kredit di bank macet total. Selama 21 tahun lamanya sejak merintis usaha, hidup Amar tidak pernah tenang karena terus dibayang-bayangi cicilan bunga bank yang mengikat leher.',
+            'Di titik keputusasaan terdalam, Amar berniat melelang seluruh aset rumah dan tanah yang tersisa untuk melunasi utang, lalu memboyong keluarganya melarikan diri merantau ke pedalaman Sumatera.',
+            'Namun sang istri dan anak-anaknya teguh menahan langkahnya: "Bertahanlah di kampung halaman, kita hadapi bersama-sama."'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Tahun 2016: Keajaiban Uang Muka Rp 700 Juta',
+          paragraphs: [
+            'Tahun 2016, Amar memutuskan memutar haluan dengan membuka usaha percetakan *paving block* di Desa Dumplengan, Kecamatan Pitu, Ngawi. Seluruh lembaga perbankan menolak pengajuan pinjaman modalnya karena skor kredit yang buruk.',
+            'Di saat tidak memiliki uang sepeser pun untuk membeli semen dan pasir, seorang rekan kontraktor menelepon memesan paving block dan langsung mentransfer uang muka (*down payment*) sebesar Rp 200 juta tunai.',
+            'Amar mengerahkan seluruh tenaga menjaga mutu presisi dan kepadatan cetakan. Terpukau oleh kualitasnya, rekan tersebut melakukan pemesanan ulang partai masif dengan suntikan uang muka kedua senilai Rp 500 juta.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas Total, Bebas Riba, dan Filosofi Secangkir Kopi Petani',
+          paragraphs: [
+            'Hanya dalam kurun waktu 2 tahun beroperasi, keuntungan dari perputaran usaha paving block sukses melunasi seluruh sisa pokok utang bank miliaran rupiah. Sejak 2018, Amar resmi menutup seluruh rekening pinjaman bank dan berikrar tidak akan pernah berutang lagi.',
+            'Kini di usia matang, usahanya berdiri kokoh sebagai salah satu sentra produksi paving terbesar di Ngawi. Kendati mapan, ia tetap memilih mengenakan kaus oblong sederhana dan bersenda gurau cangkrukan di warung kopi bersama para petani desa.',
+            '"Apa yang kita miliki saat ini tidak akan pernah kekal menjadi milik kita," tutur Amar Sunaryo, membuktikan bahwa kehormatan sejati bukan terletak pada kemewahan atribut, melainkan ketenangan jiwa yang terbebas dari jerat utang.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Model Bisnis Berbasis Uang Muka Konsumen (*Customer-Funded Growth*): Ketika pinjaman bank tertutup rapat, modal kerja terbaik datang dari uang muka pesanan pelanggan yang percaya pada rekam jejak integritas kita.',
+        'Menghentikan Siklus Ketergantungan Utang Usaha: Belajar dari 21 tahun terikat utang bank yang rentan kolaps saat bisnis sampingan gagal, beralih ke pertumbuhan organik bebas utang memberikan ketahanan finansial mutlak.',
+        'Spesialisasi dan Standar Kualitas Material: Kualitas paving block yang kuat dan presisi menjadi magnet pemesanan berulang (*repeat order*) berskala ratusan juta rupiah.',
+        'Kekayaan Sejati Adalah Ketenangan Jiwa: Gaya hidup bersahaja dan kerendahhatian menjaga pengusaha tetap membumi dan dicintai oleh komunitas lingkungannya.'
+      ]
     }
   ],
 
