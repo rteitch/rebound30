@@ -5301,6 +5301,93 @@ const Stories = {
         'Kritik dan Ulasan Buruk Sebagai Cetak Biru Inovasi: Mengubah komplain konsumen bintang satu menjadi peningkatan formulasi produk menghasilkan varian *best-seller* yang tahan cuaca.',
         'Pentingnya Akselerasi Legalitas dan Standar BPOM: Memprioritaskan sertifikasi resmi BPOM meningkatkan kepercayaan pasar e-commerce dan membuka jalan pendirian pabrik legal.'
       ]
+    },
+    {
+      id: 'ekopujianto',
+      featured: false,
+      name: 'Eko Pujianto',
+      tagline: 'Dari Gagal Suplai Hotel Utang Rp 500 Juta, BB Turun 40 Kg & Aset Disita — Hadapi Kreditur Tanpa Kabur, Bangkit Jadi Bos Duren 1.200 Porsi/Hari',
+      title: 'Dari Utang Rp 500 Juta dan BB Turun 40 Kg, Bangkit Jadi Raja Sop Durian',
+      subtitle: 'Pemilik Kedai Bos Duren Karanganyar — Membuktikan Integritas Menghadapi Kreditur dan Ketekunan Merintis dari Titik Nol',
+      origin: 'Karanganyar, Jawa Tengah',
+      ageAtRebound: 'Karanganyar, 2014',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 500 Jt & Bisnis Kuliner',
+      badge: 'Bos Duren Karanganyar — 1.200 Porsi per Hari',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FEF3C7',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Rp 500 Juta (Gagal Suplai Hotel & Aset Disita)',
+        age: 'Karanganyar, Tahun 2014',
+        lowest: 'Gagal Suplai Hotel Utang Rp500 Jt, Berat Badan Turun 40 Kg Akibat Stres, Teror Kreditur',
+        action: 'Hadapi Kreditur Tanpa Kabur + Negosiasi Cicilan + Rintis Kedai Sop Duren + Sabar 2 Tahun di Karanganyar',
+        result: 'Utang Rp500 Juta Lunas Total, Kedai Bos Duren Tembus 1.200 Porsi/Hari, Berdayakan 20 Karyawan'
+      },
+      timeline: [
+        { year: 'Awal Karier — Bakat Dagang', text: 'Sejak SMP aktif berjualan baju, es, dan aneka minuman untuk melatih insting wirausaha mandiri.' },
+        { year: 'Petaka Suplai Hotel & Utang Rp500 Jt', text: 'Mendirikan bisnis suplai barang hotel; proyek gagal total dan meninggalkan jeratan utang Rp 500 juta.' },
+        { year: 'Titik Nadir: BB Turun 40 Kg & Aset Disita', text: 'Stres berat hingga berat badan susut 40 kg, ketakutan keluar rumah, dan seluruh aset disita kreditur.' },
+        { year: 'Keberanian Menghadapi Kreditur', text: 'Memilih tidak kabur; berani menemui penagih dan bernegosiasi jujur mencicil utang secara bertahap.' },
+        { year: '2014 — Rintis Kedai Sop Duren', text: 'Kembali ke Solo merintis kedai sop durian; gerai pertama tutup, lalu pindah ke rumah dinas kakak di Karanganyar.' },
+        { year: 'Hari Ini — Bos Duren 1.200 Porsi/Hari', text: 'Melunasi seluruh utang Rp 500 juta; kedai "Bos Duren" menjual 1.200 porsi per hari dan mempekerjakan 20 karyawan.' }
+      ],
+      quote: 'Waktu terlilit utang Rp 500 juta, makan tidak enak, tidur tidak nyenyak, mau keluar rumah takut. Tapi saya tidak akan kabur karena uangnya tidak saya makan. Hadapi kreditur dengan jujur dan bersabar merintis dari nol, jalan keluar pasti ada.',
+      quoteAuthor: 'Eko Pujianto, pendiri Kedai Bos Duren Karanganyar',
+      chapters: [
+        {
+          num: 1,
+          title: 'Ambisi Pengusaha Muda dan Runtuhnya Proyek Hotel',
+          paragraphs: [
+            'Memiliki jiwa wirausaha sejak bangku SMP lewat pengalaman berjualan baju hingga minuman kelapa, Eko Pujianto memberanikan diri mengambil langkah besar mendirikan bisnis pengadaan barang (*supplier*) untuk jaringan hotel.',
+            'Namun dinamika bisnis yang keras dan kegagalan manajemen operasional membuat proyek pengadaannya kolaps total. Alih-alih meraup keuntungan besar, Eko mendadak terjerumus ke dalam kubangan utang senilai Rp 500 juta.',
+            'Bagi seorang pemuda, nominal setengah miliar rupiah adalah beban raksasa yang langsung meremukkan stabilitas mental dan finansialnya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Teror Utang, Berat Badan Susut 40 Kg, dan Tekad Pantang Kabur',
+          paragraphs: [
+            'Dampak psikologis dari jeratan utang tersebut sangat destruktif. Eko mengalami depresi berat, insomnia akut, hingga berat badannya merosot drastis sebanyak 40 kilogram.',
+            '"Waktu itu mau ngapa-ngapain susah. Makan nggak enak, tidur nggak nyenyak, mau keluar rumah pun takut luar biasa karena penagih silih berganti datang," kenangnya.',
+            'Namun di tengah ketakutan itu, Eko mengambil prinsip moral yang tegas: menolak melarikan diri. "Saya nggak bakal kabur, kan uangnya juga bukan saya pakai foya-foya," tegasnya berani menghadapi para kreditur.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Integritas Negosiasi dan Aset yang Terlucuti',
+          paragraphs: [
+            'Eko menemui para pihak kreditur dan manajemen hotel dengan kepala tegak untuk melakukan restrukturisasi dan negosiasi skema cicilan.',
+            'Konsekuensinya sangat menyakitkan: hampir seluruh aset berharga miliknya disita dan dilepas demi memangkas pokok kewajiban utang.',
+            'Meski terlucuti hingga titik nol tanpa sisa tabungan, keberaniannya berkomunikasi secara terbuka menjaga reputasi integritasnya tetap utuh di mata para mitra.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Tahun 2014: Dua Tahun Bersabar di Karanganyar',
+          paragraphs: [
+            'Atas dorongan kakaknya, pada tahun 2014 Eko kembali ke kampung halaman untuk menata hidup baru lewat bisnis kuliner olahan buah: Sop Durian.',
+            'Jalan kebangkitan tidak instan. Gerai pertamanya di Solo hanya mampu bertahan satu tahun sebelum akhirnya terpaksa tutup karena sepi pembeli.',
+            'Tanpa patah arang, ia memindahkan kedai ke halaman rumah dinas sang kakak di Karanganyar. Selama dua tahun penuh, Eko bersabar menyempurnakan resep kuah sop duren kental, memilih pasokan daging durian kualitas super, dan konsisten melayani pembeli.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Raja Sop Durian 1.200 Porsi dan 20 Lapangan Kerja',
+          paragraphs: [
+            'Kesabaran dan keuletannya berbuah manis. Kedai **"Bos Duren"** meledak menjadi destinasi kuliner favorit di Karanganyar dan sekitarnya, mampu menjual hingga 1.200 porsi sop durian dalam satu hari.',
+            'Keuntungan operasional yang melimpah sukses melunasi sisa utang Rp 500 juta hingga tuntas tanpa sisa, sekaligus membuka lapangan pekerjaan produktif bagi 20 orang karyawan lokal.',
+            'Kisah Eko Pujianto membuktikan bahwa keberanian untuk tidak lari dari masalah serta kesabaran merintis usaha dari titik nol adalah fondasi terkuat menuju kemenangan sejati.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Prinsip Pantang Kabur Saat Diterpa Utang: Menghadapi kreditur secara terbuka dan jujur jauh lebih menyelamatkan martabat daripada melarikan diri.',
+        'Mengelola Stres dan Menata Ulang Fokus Mental: Keberhasilan keluar dari depresi (berat badan turun 40 kg) dimulai dari penerimaan realitas dan keberanian bertindak nyata.',
+        'Kesabaran Proses (*Two-Year Rule*): Membangun bisnis kuliner dari nol membutuhkan masa inkubasi dan kesabaran (2 tahun) untuk membangun loyalitas pelanggan.',
+        'Dampak Sosial Kebangkitan Ekonomi: Melunasi utang masa lalu membuka pintu rezeki baru untuk memberdayakan puluhan karyawan di lingkungan sekitar.'
+      ]
     }
   ],
 
