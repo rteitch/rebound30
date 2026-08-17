@@ -4692,6 +4692,93 @@ const Stories = {
         'Monetisasi Keterampilan Petualangan & Konten Kreatif: Hobi mendaki dan fotografi dialihfungsikan menjadi motor penggerak ekowisata offroad komersial bernilai tinggi.',
         'Membangun Kolaborasi dan Kemitraan Strategis: Bermitra dengan pemilik destinasi wisata setempat memungkinkan ekspansi bisnis rekreasi tanpa harus memiliki seluruh lahan sendiri.'
       ]
+    },
+    {
+      id: 'coristine',
+      featured: false,
+      name: 'Charles Coristine',
+      tagline: 'Dari Burnout 20 Tahun di Wall Street, Nekat Beli Perusahaan Bangkrut Usia 52 — Bikin Popcorn Minyak Kelapa Diakuisisi Hershey $750 Juta (Rp 12 Triliun)',
+      title: 'Dari Burnout di Wall Street, Beli Bisnis Bangkrut Jadi Unicorn Popcorn Rp 12 Triliun',
+      subtitle: 'CEO LesserEvil Snack Co. — Membalikkan Perusahaan Sekarat Lewat Inovasi Popcorn Minyak Kelapa hingga Diakuisisi The Hershey Company',
+      origin: 'New York, Amerika Serikat',
+      ageAtRebound: '52 Thn',
+      categories: ['bankrupt', 'zero', 'business', 'global'],
+      categoryLabel: 'Burnout Wall Street & LesserEvil',
+      badge: 'Akuisisi Hershey $750 Juta (Rp 12 Triliun)',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FEF3C7',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Beli Perusahaan Rugi & Berutang ke Keluarga/Bank',
+        age: '52 Tahun (Tahun 2011)',
+        lowest: 'Burnout Parah 20 Tahun Pialang Saham, Kuras Tabungan $250k Beli Pabrik Hampir Mati',
+        action: 'Beli Mesin Lelang Bekas + Rekrut Teman & Pelatih Olahraga + Inovasi Popcorn Minyak Kelapa Organik',
+        result: 'Penjualan $103,3 Juta (2023), Diakuisisi The Hershey Company $750 Juta / Rp 12 Triliun (2025)'
+      },
+      timeline: [
+        { year: '1991–2011 — 20 Tahun Wall Street', text: 'Bekerja sebagai pialang saham di Morgan Stanley. Mengalami kejenuhan dan burnout parah meski mencoba meditasi dan kuliah MBA.' },
+        { year: '2011 — Pertemuan di Acara BBQ', text: 'Bertemu pemilik LesserEvil yang hampir bangkrut dan merugi dengan pendapatan di bawah $1 juta. Tertarik pada filosofi namanya.' },
+        { year: 'November 2011 — Pembelian Berisiko', text: 'Membeli LesserEvil seharga $250.000 (Rp 3,85 M) dengan sisa tabungan dan janji utang $100.000 tanpa pengalaman industri pangan.' },
+        { year: 'Mesin Bekas & Tim Tak Biasa', text: 'Menyewa gudang 2.000 m², merakit mesin lelang bekas, merekrut sahabat sekolah dan instruktur wakeboard-nya.' },
+        { year: '2014 — Terobosan Minyak Kelapa', text: 'Meluncurkan popcorn organik berbahan minyak kelapa atas saran ahli gizi; penjualan meledak menyumbang $2 juta.' },
+        { year: '2025 — Akuisisi Hershey $750 Juta', text: 'Penjualan menembus $103,3 juta (2023) hingga resmi diakuisisi raksasa The Hershey Company senilai $750 juta (Rp 12 triliun).' }
+      ],
+      quote: 'Terkadang tidak melakukan riset yang terlalu dalam adalah berkah. Jika saya tahu betapa kecilnya peluang sukses di industri makanan saat itu, saya mungkin tidak akan pernah berani mencoba. Keberanian melompat adalah awal dari segalanya.',
+      quoteAuthor: 'Charles Coristine, CEO LesserEvil',
+      chapters: [
+        {
+          num: 1,
+          title: 'Dua Dekade di Wall Street dan Teror Burnout',
+          paragraphs: [
+            'Selama 20 tahun, Charles Coristine adalah bagian tak terpisahkan dari hiruk-pikuk Wall Street di raksasa investasi Morgan Stanley, New York. Ia terbiasa bangun dini hari memantau bursa saham Tokyo dan London di tengah tekanan target jutaan dolar.',
+            'Namun memasuki usia kepala lima, kejenuhan mental (*burnout*) menghantamnya secara melumpuhkan. Energi hidupnya terasa terkuras habis dan rutinitas finansial kehilangan makna.',
+            'Ia mencoba berbagai cara memulihkan jiwanya: beralih menjadi vegetarian murni, rutin bermeditasi, hingga mengambil program master bisnis (MBA). Namun kehampaan batin tetap menggerogoti setiap harinya.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Obrolan Barbekyu dan Pembelian Perusahaan Bangkrut',
+          paragraphs: [
+            'Sebuah pesta barbekyu santai di musim panas 2011 mengubah arah takdirnya. Ia berbincang dengan pendiri sebuah jenama camilan kecil bernama LesserEvil yang sedang merugi dan di ambang kebangkrutan dengan pendapatan tahunan di bawah $1 juta.',
+            'Tanpa latar belakang kuliner sama sekali, Coristine terpesona oleh nama *LesserEvil* ("kejahatan yang lebih kecil") yang selaras dengan cita-cita gaya hidup sehat dan konsumsi berkesadaran (*mindful eating*).',
+            'Pada November 2011 di usia 52 tahun, ia mempertaruhkan seluruh tabungan hidupnya senilai $250.000 ditambah utang komitmen masa depan $100.000 untuk membeli perusahaan sekarat tersebut.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Pabrik Mesin Bekas dan Tim yang Tak Biasa',
+          paragraphs: [
+            'Karena modal uang yang tersisa sangat tipis, Coristine membentuk manajemen dengan formasi unik dan tidak konvensional: mengajak sahabat masa sekolahnya sebagai COO/CFO dan merekrut instruktur wakeboard pribadinya sebagai kepala pemasaran.',
+            'Mereka menyewa bangunan pabrik tua seluas 2.000 meter persegi di Connecticut, memborong peralatan manufaktur bekas dari tempat pelelangan, dan menggandeng tukang las lokal untuk memodifikasi lini produksi.',
+            'Coristine meminjam dana dari jaringan keluarga dan bank lokal demi menjaga napas arus kas pabrik tetap berdenyut.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Terobosan Minyak Kelapa yang Mengubah Lanskap Makanan Ringan',
+          paragraphs: [
+            'Di tengah kebuntuan formulasi rasa, ahli gizi pribadi Coristine menyodorkan ide revolusioner: mengganti minyak sawit atau canola konvensional dengan minyak kelapa murni (*organic coconut oil*) dalam proses pemanggangan jagung berondong.',
+            'Inovasi tersebut menghasilkan tekstur popcorn yang renyah, gurih alami, dan jauh lebih ramah kesehatan tanpa bahan kimia tambahan.',
+            'Pada tahun 2014, varian popcorn minyak kelapa organik itu meledak di pasar swalayan Amerika Serikat, meraup penjualan lebih dari $2 juta dan menjadi tulang punggung pertumbuhan eksponensial LesserEvil.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Dari $250 Ribu Menuju Akuisisi Hershey $750 Juta',
+          paragraphs: [
+            'Pertumbuhan LesserEvil tak terbendung, menembus rak-rak jaringan ritel raksasa seperti Whole Foods, Target, hingga Costco. Pada tahun 2023, penjualan kotor tahunannya menembus angka fantastis $103,3 juta (sekitar Rp 1,59 triliun).',
+            'Puncaknya pada April 2025, korporasi raksasa cokelat dunia The Hershey Company resmi mengakuisisi LesserEvil dengan valuasi mencapai $750 juta (sekitar Rp 12 triliun) dengan Coristine tetap memegang kendali kepemimpinan CEO.',
+            'Perjalanan Charles Coristine membuktikan bahwa tidak ada kata terlambat untuk merombak jalan hidup; keberanian untuk melompat keluar dari zona nyaman di usia paruh baya sanggup melahirkan mahakarya bernilai triliunan rupiah.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Keberanian Melompat Keluar dari Kejenuhan (*Mid-Life Pivot*): Usia 52 tahun bukan batasan untuk memulai industri baru yang sama sekali belum pernah ditekuni.',
+        'Kekuatan Ceruk Makanan Sehat dan Diferensiasi Bahan Baku: Terobosan minyak kelapa organik mengubah komoditas popcorn biasa menjadi produk premium berdaya saing tinggi.',
+        'Efisiensi Modal Awal Lewat Aset Bekas: Membeli mesin lelang bekas dan merekayasanya sendiri memangkas biaya *capex* pabrik secara signifikan saat modal terbatas.',
+        'Keyakinan Mengalahkan Keraguan Analisis Berlebih (*Analysis Paralysis*): Terkadang terlalu banyak menghitung statistik kegagalan justru mematikan inisiatif wirausaha terbaik.'
+      ]
     }
   ],
 
