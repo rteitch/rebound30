@@ -6171,6 +6171,93 @@ const Stories = {
         'Investasi Mesin Presisi (*Productivity Capital Expenditure*): Membeli mesin pres Rp 50 juta melipatgandakan kapasitas produksi dan memangkas ongkos logistik transportasi.',
         'Dukungan Moral Pasangan dan Misi Sosial: Keyakinan pasangan hidup dan niat memberdayakan warga sekitar melahirkan daya tahan bisnis yang kokoh menghadapi masa krisis.'
       ]
+    },
+    {
+      id: 'banubimo',
+      featured: false,
+      name: 'Banu Bimo Aribowo (Sempak Finch)',
+      tagline: 'Dari Bangkrut Total Utang Miliaran — Jual TV & PlayStation Modal Rp 6 Jt, Bangkit Ternak Burung Finch Sleman Lunas Total',
+      title: 'Dari Utang Miliaran dan Jual TV, Bangkit Lewat Kicauan Burung Finch',
+      subtitle: 'Pemilik Sempak Finch Sleman Yogyakarta — Mengubah Modal Sisa Jual Game Konsol dan Utang Pakan Menjadi Sentra Penangkaran Burung Eksotis Beromzet Ratusan Juta',
+      origin: 'Sleman, DI Yogyakarta',
+      ageAtRebound: 'Sleman, DIY',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Miliaran & Ternak Finch',
+      badge: 'Sempak Finch Sleman — 600 Ekor & Lunas Utang',
+      theme: 'violet',
+      accentColor: '#7C3AED',
+      bgLight: '#EDE9FE',
+      borderLight: '#DDD6FE',
+      stats: {
+        debt: 'Miliaran Rupiah (Kebangkrutan Bisnis Lama)',
+        age: 'Sleman, DI Yogyakarta',
+        lowest: 'Seluruh Aset Ludes, Utang Miliaran Rupiah, Jual TV & PS Demi Modal Rp 6 Jt, Sempat Utang Pakan Rp 45.000',
+        action: 'Jual TV/PS + Riset Potensi Burung Finch + Bangun Penangkaran Sempak Finch + Rawat 600 Indukan Berkualitas',
+        result: 'Seluruh Utang Miliaran Rupiah Lunas Total, Penangkaran 500-600 Ekor Finch, Harga Jual s/d Rp 3 Juta/Ekor'
+      },
+      timeline: [
+        { year: 'Bisnis Lama Bangkrut & Utang Miliaran', text: 'Usaha yang dibangun bertahun-tahun kolaps total; semua aset terjual dan meninggalkan utang miliaran rupiah.' },
+        { year: 'Momen Terbuka Mata di Rumah Paman', text: 'Melihat pembeli bermotor tua membayar tunai Rp 7 juta demi burung finch; menyadari ceruk pasar hobi yang luar biasa.' },
+        { year: 'Jual TV & PlayStation Modal Rp 6 Jt', text: 'Menjual barang elektronik rumah tangga untuk membeli beberapa pasang indukan burung finch di Seyegan, Sleman.' },
+        { year: 'Ujian Tahun Pertama & Utang Pakan', text: 'Tahun pertama minim hasil; sempat terpaksa meminjam uang Rp 45.000 hanya untuk membeli pakan biji-bijian burung.' },
+        { year: 'Populasi 600 Ekor & Nilai Jual Tinggi', text: 'Ketekunan menangkarkan burung menghasilkan 500-600 ekor finch unggulan dengan harga hingga Rp 3 juta per ekor.' },
+        { year: 'Hari Ini — Bebas Utang & Sentra Nasional', text: 'Seluruh utang miliaran rupiah lunas tuntas; Sempak Finch menjadi rujukan pecinta burung hias nasional.' }
+      ],
+      quote: 'Saya ternak burung Finch ini karena terpaksa setelah usaha lama bangkrut dan meninggalkan utang hitungan miliaran. Modal saya cuma jual TV dan PS bekas. Kuncinya adalah sabar dan fokus pada ceruk pasar hobi; ketika ditekuni dengan teliti, burung kecil pun bisa melunasi beban raksasa.',
+      quoteAuthor: 'Banu Bimo Aribowo, pemilik penangkaran Sempak Finch Sleman',
+      chapters: [
+        {
+          num: 1,
+          title: 'Kehancuran Total dan Beban Miliaran Rupiah',
+          paragraphs: [
+            'Banu Bimo Aribowo di Sleman, Daerah Istimewa Yogyakarta pernah merasakan posisi nyaman sebagai pelaku wirausaha. Namun gelombang krisis bisnis menghancurkan seluruh usaha yang telah ia bangun bertahun-tahun.',
+            'Kebangkrutan itu meludeskan seluruh aset bergerak maupun tidak bergerak yang dimilikinya. Yang tersisa hanyalah keputusasaan dan beban utang senilai miliaran rupiah yang mustahil tertutupi dengan kondisi kas yang nol.',
+            'Tekanan mental yang berat membuatnya sempat linglung dan kehilangan arah untuk menyambung hidup keluarga.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Motor Butut dan Pembelian Tunai Tujuh Juta',
+          paragraphs: [
+            'Di tengah masa-masa terpuruk, Banu berkunjung ke kediaman pamannya yang memelihara berbagai jenis burung. Di sana, ia menyaksikan sebuah transaksi tak lazim yang membuka cara pandangnya.',
+            'Seorang pembeli datang mengendarai sepeda motor tua yang tampak lusuh dengan taksiran harga murah. Namun pria tersebut tanpa ragu mengeluarkan uang tunai Rp 7.000.000 untuk membeli beberapa ekor burung Finch (pipit hias eksotis).',
+            'Banu tersentak kagum menyadari adanya kekuatan daya beli luar biasa di segmen komunitas hobi (*niche hobby market*) yang kebal terhadap situasi ekonomi umum.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Menjual Televisi dan Lahirnya Sempak Finch',
+          paragraphs: [
+            'Tanpa modal dana di tangan, Banu memutuskan menjual sisa barang hiburan terakhir di rumahnya: sebuah televisi tabung dan konsol Play Station bekas, terkumpul uang tunai Rp 6.000.000.',
+            'Seluruh uang tersebut ia belanjakan indukan burung finch impor berkualitas dan kandang kawat ram. Ia menamai usaha penangkarannya **Sempak Finch** di Seyegan, Sleman.',
+            'Ia mempelajari secara otodidak siklus kawin, pengaturan suhu kandang, nutrisi biji milet, hingga metode penetasan telur burung pipit hias.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Pahitnya Tahun Pertama dan Utang Pakan Empat Puluh Lima Ribu',
+          paragraphs: [
+            'Tahun pertama penangkaran menghadirkan ujian kesabaran yang luar biasa. Angka kematian anak burung masih tinggi dan hasil penjualan hampir tidak menyisakan keuntungan bersih.',
+            'Banu bahkan sempat berada di titik paling miris saat harus meminjam uang Rp 45.000 kepada tetangga hanya untuk membeli sekantong pakan biji burung agar indukannya tidak mati kelaparan.',
+            'Keluarga sempat memintanya menyerah dan mencari profesi lain, namun Banu tetap bergeming merawat indukannya dengan ketelatenan tinggi.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Enam Ratus Ekor dan Kemerdekaan dari Jeratan Utang',
+          paragraphs: [
+            'Konsistensi riset pemuliaan genetik membuahkan hasil emas. Sempak Finch berhasil membiakkan burung finch mutasi warna eksotis dengan kualitas fisik unggul, membuat populasinya meledak hingga 500 sampai 600 ekor.',
+            'Permintaan mengalir dari para kolektor dan pehobi se-Indonesia dengan rentang harga jual dari ratusan ribu hingga mencapai Rp 3.000.000 per ekor untuk varian langka.',
+            'Keuntungan akumulatif penangkaran tersebut sukses melunasi seluruh utang miliaran rupiah masa lalunya, membuktikan bahwa ketelitian menggarap pasar hobi mampu mengubah keterpurukan total menjadi kejayaan finansial.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Membaca Daya Beli Ceruk Komunitas Hobi (*Niche Passion Economy*): Menyadari bahwa komunitas hobi memiliki elastisitas harga tinggi dan loyalitas belanja yang kuat.',
+        'Mengonversi Barang Konsumtif Menjadi Modal Produktif: Menjual TV dan PlayStation di rumah untuk membeli aset biologis produktif yang mampu menghasilkan arus kas.',
+        'Ketahanan Melewati Lembah Kematian Tahun Pertama (*Surviving the Chasm*): Bertahan melewati masa-masa sulit (bahkan saat utang pakan Rp 45.000) hingga menemukan formula reproduksi yang stabil.',
+        'Spesialisasi dan Pemuliaan Mutu (*Breeding Excellence*): Menghasilkan varian eksotis berkualitas tinggi melipatgandakan harga jual hingga jutaan rupiah per ekor.'
+      ]
     }
   ],
 
