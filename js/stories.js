@@ -5475,6 +5475,93 @@ const Stories = {
         'Disiplin Eksekusi Pembayaran Terfokus (*Aggressive Debt Paydown*): Mengalokasikan mayoritas penghasilan pekerjaan baru secara konsisten mempercepat pelunasan utang miliaran hanya dalam 2 tahun.',
         'Mengonversi Trauma Menjadi Berkah Edukasi: Membagikan pengalaman bangkit dari titik nadir membantu ribuan orang lain yang sedang bergulat dengan keputusasaan finansial.'
       ]
+    },
+    {
+      id: 'muhammadsidoarjo',
+      featured: false,
+      name: 'Muhammad (Elektronik Sidoarjo)',
+      tagline: 'Dari Sisa Uang Rp 15 Ribu, Baru Menikah & Di-PHK — Bangkit Jual Risol & Servis TV Bekas, Kini Bos Toko Elektronik Omzet Rp 1 Miliar/Bulan',
+      title: 'Dari Kantong Sisa Rp 15.000, Bangkit Jadi Bos Elektronik Omzet Rp 1 Miliar',
+      subtitle: 'Pengusaha Toko Elektronik Sidoarjo — Mengubah Sisa Uang Makan Belasan Ribu dan Servis TV Bekas Keliling Menjadi Bisnis Beromzet Miliaran',
+      origin: 'Sidoarjo, Jawa Timur',
+      ageAtRebound: 'Sidoarjo, 2018',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Kantong Rp 15 Ribu & Bisnis Elektronik',
+      badge: 'Toko Elektronik Sidoarjo — Omzet Rp 1 Miliar/Bulan',
+      theme: 'cyan',
+      accentColor: '#0891B2',
+      bgLight: '#ECFEFF',
+      borderLight: '#A5F3FC',
+      stats: {
+        debt: 'Himpitan Cicilan & Sisa Uang Rp 15.000',
+        age: 'Sidoarjo, Tahun 2018',
+        lowest: 'Baru Menikah Di-PHK, Sisa Uang Rp15 Ribu Makan Sembunyi, Istri Sakit Keras & Tertipu Puluhan Juta',
+        action: 'Jual Risol Istri + Servis TV Bekas Rusak + Pinjam Pelanggan Toko + Konten Organik Media Sosial & Sedekah',
+        result: 'Toko Elektronik Berkembang Pesat, Omzet Tembus >Rp 1 Miliar/Bulan, Layanan Tim 24 Jam Sidoarjo'
+      },
+      timeline: [
+        { year: '2018 — PHK & Sisa Rp 15.000', text: 'Baru menikah mendadak di-PHK di tengah cicilan menumpuk; sisa uang di saku Rp 15.000 dan makan sembunyi-sembunyi.' },
+        { year: 'Jual Risol & Servis TV Rusak', text: 'Menjual risol buatan istri dan keliling mencari TV bekas rusak untuk diservis sendiri lalu dijual kembali.' },
+        { year: 'Ditipu & Istri Sakit Keras', text: 'Mengalami penipuan puluhan juta; saat istri sakit keras di RS, ia ditolong pinjaman seorang pembeli toko yang baru dikenal.' },
+        { year: '2023 — Viral Organik Media Sosial', text: 'Membuat konten edukasi dan penawaran elektronik di medsos; pesanan membludak tanpa biaya iklan berbayar.' },
+        { year: 'Sedekah Rutin & Ekspansi', text: 'Menjaga kebiasaan sedekah bersama sang istri dan memperluas stok produk elektronik rumah tangga.' },
+        { year: 'Hari Ini — Omzet >Rp 1 Miliar/Bulan', text: 'Bisnis elektronik mempekerjakan tim layanan pelanggan 24 jam dengan omzet rutin menembus lebih dari Rp 1 miliar per bulan.' }
+      ],
+      quote: 'Waktu pegang uang cuma Rp 15.000 dan bingung bayar cicilan, saya makan sendiri sembunyi-sembunyi agar istri tidak cemas. Kuncinya jangan pernah berhenti ikhtiar, jaga niat jujur, perbanyak sedekah, dan percaya pertolongan Tuhan selalu tepat waktu.',
+      quoteAuthor: 'Muhammad, pemilik usaha ritel elektronik Sidoarjo',
+      chapters: [
+        {
+          num: 1,
+          title: 'Uang Saku Rp 15.000 dan Tanggung Jawab Pengantin Baru',
+          paragraphs: [
+            'Tahun 2018 menghadirkan ujian mahaberat bagi kehidupan Muhammad di Sidoarjo, Jawa Timur. Belum lama mengikat janji suci pernikahan, ia mendadak terkena pemutusan hubungan kerja (PHK) dari perusahaan tempatnya bekerja.',
+            'Kewajiban cicilan bulanan tetap berjalan tanpa kompromi, sementara tabungannya terkuras habis hingga hanya menyisakan uang tunai Rp 15.000 di saku celananya.',
+            'Demi menjaga perasaan dan ketenangan sang istri, Muhammad terpaksa menyembunyikan rasa laparnya dan makan nasi porsi minim seorang diri di luar rumah agar istrinya tidak cemas.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Risol Dapur dan Berburu TV Bekas di Pelosok',
+          paragraphs: [
+            'Di tengah keterbatasan, Muhammad menolak berpangku tangan. Sambil bekerja serabutan di sebuah toko elektronik kecil milik orang lain, ia membantu menjajakan kue risol buatan istrinya setiap pagi.',
+            'Melihat peluang dari keterampilannya mengotak-atik perangkat keras, Muhammad berkeliling mencari televisi bekas yang rusak dari warga sekitar dengan harga miring.',
+            'Di teras rumahnya, ia menyolder dan memperbaiki TV tabung serta LCD rusak tersebut hingga berfungsi normal, lalu menjualnya kembali untuk memutar kas harian keluarga.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Ujian Penipuan dan Pertolongan Tak Terduga di Rumah Sakit',
+          paragraphs: [
+            'Perjalanan merintis usaha elektronik mandiri tidak berjalan mulus. Muhammad sempat beberapa kali mengalami penipuan transaksi barang yang merugikannya hingga puluhan juta rupiah.',
+            'Puncak cobaan terjadi saat sang istri jatuh sakit keras dan harus dilarikan ke rumah sakit dengan tagihan medis yang melampaui kemampuan keuangannya.',
+            'Di ambang keputusasaan, seorang pelanggan yang baru ia kenal di toko tergerak hatinya meminjamkan uang tunai untuk biaya perawatan rumah sakit. Kebaikan tak terduga itu menguatkan tekadnya untuk bangkit melipatgandakan ikhtiar.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Tahun 2023: Ledakan Konten Organik Media Sosial',
+          paragraphs: [
+            'Memasuki tahun 2023, Muhammad mulai aktif mengunggah video penawaran barang elektronik, ulasan jujur kondisi TV dan perkakas rumah tangga, serta tips perawatan di media sosial.',
+            'Tanpa menggunakan anggaran iklan berbayar (*zero-cost ads*), konten videonya yang ramah dan transparan mendadak viral masif dan ditonton jutaan kali di TikTok dan Instagram.',
+            'Pesanan barang elektronik mengalir deras dari berbagai daerah di Jawa Timur dan luar pulau, mentransformasi lapak kecilnya menjadi pusat distribusi elektronik yang ramai.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Omzet Satu Miliar dan Berkah Ketulusan Sedekah',
+          paragraphs: [
+            'Kini, toko elektroniknya di Sidoarjo mencetak omzet fantastis lebih dari Rp 1 miliar setiap bulannya dan didukung oleh tim layanan pelanggan yang bersiaga melayani pembeli 24 jam.',
+            'Muhammad dan istrinya meyakini bahwa kunci utama kelancaran rezekinya adalah konsistensi bersedekah dan menjaga niat membantu pelanggan mendapatkan barang elektronik murah berkualitas.',
+            'Kisah Muhammad membuktikan bahwa ketika seseorang rela berkorban menyembunyikan rasa lapar demi keluarga dan terus tekun mengasah keterampilan, sisa uang belasan ribu rupiah dapat menjadi benih lahirnya kerajaan bisnis miliaran rupiah.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kekuatan Tanggung Jawab dan Ketabahan Kepala Keluarga: Mengelola beban mental di titik terendah (sisa Rp 15.000) tanpa melimpahkan kecemasan kepada keluarga adalah wujud kepemimpinan sejati.',
+        'Monetisasi Keterampilan Teknis (*Skill-Based Arbitrage*): Membeli barang elektronik rusak, memperbaikinya sendiri, dan menjual kembali menghasilkan marjin laba tinggi tanpa modal besar.',
+        'Pemanfaatan Pemasaran Organik Media Sosial: Konten edukasi dan transparansi kondisi barang di media sosial mampu menciptakan ledakan penjualan tanpa biaya iklan berbayar.',
+        'Kedermawanan Sebagai Magnet Rezeki: Menjaga konsistensi sedekah saat kondisi sulit maupun lapang memperluas jejaring berkah dan kemudahan dalam berbisnis.'
+      ]
     }
   ],
 
