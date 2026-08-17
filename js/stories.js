@@ -6084,6 +6084,93 @@ const Stories = {
         'Integritas Timbangan dan Kualitas Segar: Kejujuran bobot timbangan dan kebersihan produk membangun loyalitas pelanggan jangka panjang di pasar tradisional.',
         'Ketabahan dan Disiplin Fajar: Konsistensi bekerja sejak dini hari dan mengelola laba harian dengan disiplin mampu melunasi utang ratusan juta rupiah.'
       ]
+    },
+    {
+      id: 'taofikhidayat',
+      featured: false,
+      name: 'Taofik Hidayat',
+      tagline: 'Dari Tinggal di Rel Kereta Ancol, Diancam Celurit & Ditipu — Bangkit Beli Mesin Press Plastik Rp 50 Jt, Sukses Pabrik Daur Ulang Sukabumi',
+      title: 'Dari Hidup di Rel Kereta dan Teror Celurit, Bangkit Jadi Juragan Daur Ulang Plastik',
+      subtitle: 'Pengusaha Daur Ulang Sampah Plastik — Mengubah Titik Nadir Ancaman Preman dan Tipuan Modal Menjadi Industri Pengolahan Plastik Berdaya',
+      origin: 'Jakarta & Sukabumi',
+      ageAtRebound: 'Jakarta, 2011',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Rel Kereta Ancol & Daur Ulang Plastik',
+      badge: 'Daur Ulang Sampah — Pabrik Sukabumi & Jakarta',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Tekanan Utang Bank & Pinjaman Keluarga',
+        age: 'Jakarta, Tahun 2011',
+        lowest: 'Tinggal di Bantaran Rel Kereta Ancol, Diancam Celurit di Leher, Ditipu DP Plastik & Uang Pinjaman Bank Ludes',
+        action: 'Dukungan Istri Asih + Restrukturisasi Cicilan Bank + Beli Mesin Press Rp 50 Jt + Pabrik Sortasi Sukabumi',
+        result: 'Seluruh Utang Lunas, Usaha Daur Ulang Skala Besar Jakarta-Sukabumi, Pekerjakan Puluhan Warga Lokal'
+      },
+      timeline: [
+        { year: '2011 — Hidup di Bantaran Rel Ancol', text: 'Tinggal di atas bantaran rel kereta api mati kawasan Ancol; hidup di bawah ancaman preman dan todongan celurit di leher.' },
+        { year: 'Melihat Nilai Sampah Plastik', text: 'Mengamati pemulung kolong jembatan; menyadari potensi ekonomi limbah plastik dan mulai mengumpulkan secara mandiri.' },
+        { year: 'Uang Bank Ludes Akibat Tipuan', text: 'Meminjam dana bank dan keluarga; uang muka disetor namun barang tak dikirim oleh rekanan hingga uang ludes tanpa sisa.' },
+        { year: 'Ujian Keyakinan & Penguat Istri', text: 'Sang istri, Asih, menjadi penopang batin utama dan mendukung penuh tekadnya untuk tetap berjuang di industri daur ulang.' },
+        { year: 'Mesin Press Rp 50 Juta & Restrukturisasi', text: 'Bernegosiasi cicilan bank dan membeli mesin press plastik seharga Rp 50 juta untuk menstandarisasi bal plastik.' },
+        { year: 'Hari Ini — Pabrik Sukabumi & Berdayakan Warga', text: 'Membuka fasilitas pengolahan di Sukabumi dan Jakarta, melunasi utang, serta mempekerjakan puluhan warga sekitar.' }
+      ],
+      quote: 'Waktu celurit sudah di leher karena tidak pegang uang dan modal pinjaman bank ludes ditipu, saya tidak menyerah. Sampah yang dibuang orang bisa menjadi berkah jika diolah dengan ketekunan, kejujuran timbangan, dan niat membuka lapangan kerja untuk warga sekitar.',
+      quoteAuthor: 'Taofik Hidayat, pengusaha daur ulang sampah plastik',
+      chapters: [
+        {
+          num: 1,
+          title: 'Bantaran Rel Ancol dan Teror Celurit di Leher',
+          paragraphs: [
+            'Tahun 2011 merekam masa-masa paling kelam dalam perjalanan hidup Taofik Hidayat di Jakarta. Tidak memiliki tempat tinggal layak, ia terpaksa mendirikan gubuk seadanya di atas bantaran rel kereta api non-aktif di kawasan Ancol, Jakarta Utara.',
+            'Kehidupan di lingkungan keras menghadapkannya pada teror premanisme harian. Pada suatu malam, Taofik bahkan menghadapi situasi antara hidup dan mati saat sebilah celurit tajam ditempelkan di lehernya hanya karena ia tidak memegang sepeser pun uang tunai.',
+            'Di tengah keterhimpitan fisik dan batin, pandangannya tertuju pada warga kolong jembatan yang mampu bertahan hidup dari mengumpulkan limbah botol dan sampah plastik. Ia menyadari ada nilai ekonomi berputar di balik benda yang dibuang masyarakat.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Pinjaman Modal yang Lenyap Akibat Penipuan',
+          paragraphs: [
+            'Dengan keberanian besar, Taofik mulai merintis pengepulan sampah plastik mandiri dengan mengajukan pinjaman modal usaha ke pihak perbankan dan keluarga besar.',
+            'Namun dunia perputaran rongsok mengujinya dengan sangat keras. Taofik menjadi korban penipuan berantai oleh rekanan pengepul: uang muka pembayaran telah disetorkan lunas, namun berton-ton sampah plastik yang dijanjikan tidak pernah dikirim.',
+            'Modal pinjaman bank terkuras habis tanpa menyisakan barang, sementara kewajiban bunga dan pokok pinjaman mulai jatuh tempo menuntut pembayaran.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Asih: Ujian Keyakinan dan Doa Penguat Badai',
+          paragraphs: [
+            'Di saat tekanan utang dan keputusasaan nyaris melumpuhkan langkahnya, sang istri, Asih, tampil sebagai benteng penopang yang paling kokoh.',
+            'Asih sempat menguji keteguhan niat suaminya dengan menyarankan beralih membuka usaha pecel ayam gerobak. Ketika melihat mata Taofik yang masih menyala teguh pada potensi daur ulang plastik, Asih memberikan dukungan jiwa dan raga seratus persen.',
+            'Kepercayaan tulus sang istri memulihkan rasa percaya diri Taofik untuk kembali mengumpulkan, mengangkut karung, dan menyortir botol plastik seorang diri dari nol.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Mesin Press Lima Puluh Juta dan Restrukturisasi Bank',
+          paragraphs: [
+            'Taofik mengambil inisiatif proaktif: ia mendatangi pihak bank untuk bernegosiasi secara terbuka mengenai restrukturisasi jadwal cicilan kredit agar sesuai dengan kemampuan arus kas riilnya.',
+            'Dengan sisa dana pinjaman dan tabungan darurat sekitar Rp 50 juta, Taofik membeli sebuah mesin hidrolik pres sampah plastik. Mesin ini mengubah limbah botol plastik bervolume besar menjadi bal padat berbobot ratusan kilogram yang rapi dan efisien dalam biaya angkut logistik.',
+            'Efisiensi tersebut melonjakkan nilai jual plastik ke pabrik-pabrik daur ulang besar dan mempercepat perputaran arus kas hariannya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Ekspansi Sukabumi dan Mengubah Sampah Menjadi Berkah',
+          paragraphs: [
+            'Kini, usaha pengelolaan dan pengepresan sampah plastik Taofik berkembang pesat. Selain fasilitas operasional di Jakarta, ia berhasil membuka cabang pengolahan baru seluas ribuan meter persegi di Sukabumi, Jawa Barat.',
+            'Seluruh beban utang masa lalunya telah lunas terbayar. Usahanya tidak hanya menjaga kelestarian lingkungan dengan mendaur ulang puluhan ton sampah plastik per bulan, tetapi juga membuka lapangan kerja halal bagi puluhan warga lokal di sekitar pabrik.',
+            'Kisah Taofik Hidayat adalah bukti otentik bahwa titik terendah—bahkan ancaman senjata tajam dan kegagalan modal—dapat dikalahkan oleh kegigihan dan komunikasi jujur kepada kreditur; dari gubuk rel kereta lahir industri hijau yang memberdayakan sesama.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Negosiasi Proaktif Restrukturisasi Utang Bank: Mendatangi kreditur secara terbuka untuk menjadwalkan ulang cicilan sesuai kemampuan arus kas lebih baik daripada menghindar.',
+        'Melihat Peluang dari Hal yang Diremehkan (*Waste-to-Value Arbitrage*): Mengolah sampah plastik menjadi komoditas industri bernilai tinggi menciptakan pasar yang tidak pernah mati.',
+        'Investasi Mesin Presisi (*Productivity Capital Expenditure*): Membeli mesin pres Rp 50 juta melipatgandakan kapasitas produksi dan memangkas ongkos logistik transportasi.',
+        'Dukungan Moral Pasangan dan Misi Sosial: Keyakinan pasangan hidup dan niat memberdayakan warga sekitar melahirkan daya tahan bisnis yang kokoh menghadapi masa krisis.'
+      ]
     }
   ],
 
