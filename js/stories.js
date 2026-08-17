@@ -4866,6 +4866,93 @@ const Stories = {
         'Menjaga Relasi dan Jejaring Kolaborasi: Menghubungi kembali kru dan rekanan event memastikan kesiapan tim saat peluang proyek besar kembali dibuka pasca krisis.',
         'Disiplin Pembayaran Bertahap (*Incremental Repayment*): Menghadapi utang miliaran tidak harus langsung lunas sekaligus; cicilan teratur dan konsisten membangun kembali reputasi dan kepercayaan mitra.'
       ]
+    },
+    {
+      id: 'winarto',
+      featured: false,
+      name: 'Winarto (Totok)',
+      tagline: 'Dari Nama Dicatut di 3 Bank & Rumah Mau Dilelang — Bangkit Menjemput Bola ke Jakarta, Jadi Pengusaha Olahan Logam Tangguh Juwana Pati',
+      title: 'Dari Utang Catut Nama 3 Bank dan Rumah Hendak Dilelang, Bangkit Jadi Pengusaha Logam Juwana',
+      subtitle: 'Pengusaha Kerajinan Logam & Handel Pintu Pati — Mengubah 3 Tahun Terpuruk Jadi Pembuktian Mental Baja di Ibu Kota',
+      origin: 'Pati, Jawa Tengah',
+      ageAtRebound: '43 Thn (2023)',
+      categories: ['debt', 'bankrupt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Catut Nama & Rumah Dilelang',
+      badge: 'Pengusaha Logam Juwana — Klien Distributor Besar',
+      theme: 'cyan',
+      accentColor: '#0891B2',
+      bgLight: '#ECFEFF',
+      borderLight: '#A5F3FC',
+      stats: {
+        debt: 'Kredit Macet 3 Bank (Nama Dicatut Relasi)',
+        age: '43 Tahun (Tahun 2023)',
+        lowest: 'Nama Dipakai Penjamin Tanpa Izin, Relasi Kabur, Ibu Sakit, Rumah Masuk Selebaran Lelang Koran',
+        action: 'Mental Baja Tidak Menyerah + Kolaborasi Relasi Setia + Jemput Bola ke Jakarta Tembus Distributor Besar',
+        result: 'Rumah Selamat dari Lelang, Bengkel Logam Juwana Beroperasi Stabil & Pasok Partai Besar ke Jakarta'
+      },
+      timeline: [
+        { year: 'Sebelum 2011 — Membangun Bengkel', text: 'Merintis rumah produksi olahan logam dan handel pintu di Desa Growong Kidul, Juwana, Pati.' },
+        { year: '2011 — Bencana Catut Nama di 3 Bank', text: 'Namanya dipakai relasi bisnis sebagai penjamin pinjaman di 3 bank; relasi kabur dan beban utang jatuh padanya.' },
+        { year: 'Titik Terendah 3 Tahun & Ibu Sakit', text: 'Terpuruk selama 3 tahun tanpa kepastian, menghadapi penagihan perbankan di tengah merawat sang ibu yang sakit.' },
+        { year: '2015 — Ancaman Lelang Rumah di Koran', text: 'Melihat selebaran lelang rumahnya di surat kabar; memantapkan tekad baja untuk tidak boleh mundur selangkah pun.' },
+        { year: 'Jemput Bola ke Jakarta Bersama Relasi Setia', text: 'Bersama seorang rekan yang setia, nekat berangkat ke Jakarta mencari pemesan langsung ke distributor besar.' },
+        { year: 'Hari Ini — Pengusaha Logam Berdaya', text: 'Mengamankan kontrak pasokan rutin partai besar ke Jakarta; bengkel logam Juwana pulih dan beroperasi stabil.' }
+      ],
+      quote: 'Waktu selebaran lelang rumah saya keluar di koran, saya tidak putus asa karena saya merasa masih muda dan harus bertanggung jawab. Saya tidak boleh mundur. Dengan tekad baja dan kerja keras, jalan keluar selalu terbuka.',
+      quoteAuthor: 'Winarto (Totok), pengusaha pengolahan logam Juwana Pati',
+      chapters: [
+        {
+          num: 1,
+          title: 'Nama yang Dicatut dan Jeratan Tiga Bank',
+          paragraphs: [
+            'Di sentra industri kuningan Desa Growong Kidul, Kecamatan Juwana, Kabupaten Pati, Winarto (Totok) merintis usaha bengkel pengolahan logam yang memproduksi handel pintu dan aneka kerajinan estetis.',
+            'Namun kepercayaan buta kepada rekan bisnis berbuah petaka besar. Tanpa sepengetahuannya, identitas dan namanya dicatut sebagai penjamin kredit perbankan oleh seorang relasi yang kemudian kabur tidak bertanggung jawab.',
+            'Bukan hanya satu lembaga keuangan, Winarto mendadak dihadapkan pada surat penagihan kredit macet dari tiga bank berbeda sekaligus yang menuntut pelunasan utang yang tidak pernah ia nikmati.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Ketika Relasi Kabur dan Ibu Jatuh Sakit',
+          paragraphs: [
+            'Kejatuhan finansial tersebut mengguncang kehidupannya secara menyeluruh. Relasi-relasi yang selama ini bermitra dengannya menghilang satu per satu tanpa memenuhi kewajiban pembayaran nota barang.',
+            'Beban batin makin menggunung tatkala sang ibunda tercinta jatuh sakit parah dan membutuhkan perawatan intensif. Winarto harus membagi fokus antara merawat orang tua dan menghadapi tekanan pihak bank.',
+            'Selama lebih dari tiga tahun, ia terpuruk dalam ketidakberdayaan. Namun ia menolak membalas dengan dendam: "Saya menuntut juga tidak, sekadar mendoakan semoga mereka ingat kalau punya utang."'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Selebaran Lelang Koran dan Tekad Pantang Mundur',
+          paragraphs: [
+            'Tahun 2015 menjadi titik paling kritis dalam hidupnya. Lewat selebaran lelang sita jaminan yang disisipkan di surat kabar lokal, Winarto membaca bahwa rumah tinggal keluarganya segera dilelang oleh bank.',
+            'Pemberitahuan itu menyadarkannya bahwa waktu untuk meratapi keadaan telah habis. Alih-alih putus asa, keberanian batinnya justru membara.',
+            '"Waktu itu saya berpikir, saya masih cukup muda dan punya tenaga. Saya tidak boleh mundur!" tegasnya menolak menyerahkan takdir rumahnya begitu saja.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Jemput Bola ke Ibu Kota Bersama Sahabat Sejati',
+          paragraphs: [
+            'Di tengah eksodus rekan-rekannya, ada satu relasi setia yang tetap bertahan mendampinginya meski relasi tersebut juga masih memiliki piutang nota kepada Winarto.',
+            'Keduanya menyatukan tekad untuk "jemput bola" melakukan ekspedisi dagang ke Jakarta. Berbekal sampel handel pintu dan kerajinan logam terbaik, mereka keluar-masuk kawasan pertokoan bahan bangunan ibu kota.',
+            'Kegigihan itu mempertemukannya dengan seorang distributor besar di Jakarta yang terpukau oleh presisi dan kualitas olahan logam Juwana, lalu langsung memberikan pesanan dalam partai besar.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Bengkel Logam Juwana Kembali Berdentang',
+          paragraphs: [
+            'Pesanan rutin dari distributor Jakarta tersebut mengalirkan likuiditas segar yang menyelamatkan rumah Winarto dari meja eksekusi lelang.',
+            'Suara tempaan palu dan deru mesin di bengkel kerjanya di Growong Kidul kembali berdentang ramai, menyerap tenaga kerja lokal dan memulihkan reputasi bisnisnya di sentra Juwana.',
+            'Kisah Winarto membuktikan pepatah bahwa arang bisa hancur, namun besi baja akan semakin kuat saat ditempa api; keteguhan sikap pantang mundur mampu mengubah ancaman kebangkrutan menjadi panggung kebangkitan sejati.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kewaspadaan Ketat Terhadap Pencatutan Identitas Finansial: Jangan pernah membiarkan identitas pribadi atau bisnis dipakai sebagai penjamin kredit pihak lain tanpa pengawasan hukum ketat.',
+        'Sikap Pantang Menyerah Saat Aset Terancam Sita: Menghadapi ancaman lelang bank dengan inisiatif mencari pasar baru lebih efektif daripada sekadar pasrah menunggu keajaiban.',
+        'Strategi Jemput Bola Langsung ke Pusat Distribusi: Membawa produk ke distributor besar di ibu kota memotong rantai perantara dan menciptakan volume penjualan berskala masif.',
+        'Menghargai Kesetiaan Relasi Sejati di Masa Sulit: Kemitraan yang bertahan di titik minus adalah modal sosial termahal yang mempercepat proses pemulihan usaha.'
+      ]
     }
   ],
 
