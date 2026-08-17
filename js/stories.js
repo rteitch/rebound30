@@ -6432,6 +6432,93 @@ const Stories = {
         'Pemanfaatan Model Bisnis Berdaya Ungkit (*Leveraged Distribution*): Memilih model kemitraan distribusi produk yang minim risiko inventaris namun berpotensi omzet tak terbatas.',
         'Disiplin Eksekusi Pelunasan Utang: Fokus mengalokasikan lonjakan penghasilan baru untuk melunasi utang miliaran sebelum meningkatkan gaya hidup.'
       ]
+    },
+    {
+      id: 'buluksuperglad',
+      featured: false,
+      name: 'Buluk Superglad',
+      tagline: 'Dari Harta Ludes, Utang Bank & Nyaris Akhiri Hidup — Hijrah Tafakur, Bangkit Bisnis Ikan Cupang Lunas Total Utang Bank',
+      title: 'Dari Titik Kritis Nyaris Mengakhiri Hidup, Bangkit Lewat Ikan Cupang',
+      subtitle: 'Musisi & Vokalis Superglad — Menemukan Hidup Baru Melalui Tafakur Batin, Meninggalkan Alkohol, dan Melunasi Utang Bank dari Jual Beli Ikan Hias',
+      origin: 'Jakarta',
+      ageAtRebound: 'Jakarta',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Bank & Bisnis Cupang',
+      badge: 'Lunas Utang Bank — Transformasi Spiritual & Bisnis',
+      theme: 'cyan',
+      accentColor: '#0891B2',
+      bgLight: '#ECFEFF',
+      borderLight: '#A5F3FC',
+      stats: {
+        debt: 'Utang Perbankan & Kebangkrutan Total',
+        age: 'Jakarta',
+        lowest: 'Kehilangan Seluruh Harta, Terlilit Utang Bank, Tenggak 16 Butir Obat & Racun Serangga karena Depresi',
+        action: 'Selamat dari Kematian + Tafakur & Hijrah Alkohol + Jual Beli Ikan Cupang + Bersyukur Tiada Henti',
+        result: 'Seluruh Utang Bank Lunas Total, Pindah ke Hunian Layak, Finansial Sehat & Kembali Berkarya'
+      },
+      timeline: [
+        { year: 'Puncak Popularitas & Salah Kelola', text: 'Meraih popularitas sebagai musisi rock, namun salah kelola keuangan membuat seluruh harta dan aset ludes.' },
+        { year: 'Utang Bank & Titik Kritis Depresi', text: 'Terjerat utang bank dan tekanan sosial berat; mengalami depresi akut hingga melakukan percobaan bunuh diri.' },
+        { year: 'Keajaiban Selamat & Hijrah Total', text: 'Selamat dari maut; menjalani tafakur batin, berhenti total dari alkohol, dan menata ulang niat hidup.' },
+        { year: 'Mulai Bisnis Ikan Cupang Hias', text: 'Memulai usaha jual beli dan budidaya ikan cupang (*betta fish*) dari petakan kontrakan sempit.' },
+        { year: 'Utang Bank Lunas Bertahap', text: 'Seluruh perputaran laba penjualan ikan cupang disetorkan secara tertib untuk melunasi utang perbankan hingga tuntas.' },
+        { year: 'Hari Ini — Hidup Penuh Rasa Syukur', text: 'Kondisi finansial pulih, menempati hunian yang lebih layak, dan kembali aktif memandu acara serta bermusik.' }
+      ],
+      quote: 'Dulu saya kehilangan segalanya dan sempat menenggak racun serangga karena putus asa terlilit utang bank. Setelah diberi kesempatan hidup kedua, saya berhenti mengeluh dan fokus bersyukur. Dari jualan ikan cupang, utang bank lunas dan rezeki terus mengalir.',
+      quoteAuthor: 'Lukman Laksmana (Buluk), musisi dan vokalis Superglad',
+      chapters: [
+        {
+          num: 1,
+          title: 'Kehancuran Finansial di Balik Gemerlap Panggung',
+          paragraphs: [
+            'Di panggung musik nasional, Lukman Laksmana atau yang akrab disapa Buluk Superglad menikmati popularitas dan penghasilan besar sebagai vokalis grup band rock terkemuka.',
+            'Namun minimnya literasi pengelolaan uang dan gaya hidup impulsif perlahan menggerogoti stabilitas keuangannya. Dalam kurun waktu beberapa tahun, seluruh aset dan tabungan yang dikumpulkannya habis tak bersisa.',
+            'Kondisi semakin parah saat kewajiban utang pinjaman perbankan menumpuk dan jatuh tempo, menjatuhkannya dari puncak kenyamanan ke jurang kebangkrutan total.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Titik Paling Gelap: Enam Belas Butir Obat dan Racun',
+          paragraphs: [
+            'Himpitan tagihan bank, rasa malu terhadap keluarga, dan hilangnya status sosial menjerumuskan Buluk ke dalam depresi klinis yang sangat berat.',
+            'Dalam puncak keputusasaan yang melumpuhkan akal sehat, Buluk nekat menenggak 16 butir obat pereda nyeri dicampur segelas cairan racun serangga untuk mengakhiri hidupnya.',
+            'Secara ajaib, ia berhasil diselamatkan dan siuman di rumah sakit. Pengalaman melewati batas antara hidup dan mati tersebut menyentakkan kesadarannya bahwa Tuhan masih memberinya amanah hidup yang harus diperbaiki.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Tafakur Jiwa dan Menanggalkan Kebiasaan Buruk',
+          paragraphs: [
+            'Memulai lembaran hidup kedua, Buluk melakukan introspeksi batin (*tafakur*) secara mendalam. Ia memutuskan hijrah total dengan menghentikan kebiasaan minum alkohol harian dan menjauhi pergaulan toksik yang merusak mentalnya.',
+            'Ia menata kembali spiritualitasnya dengan merombak cara berdoa: alih-alih terus menuntut permohonan materi, ia memusatkan hati pada rasa syukur atas napas hidup yang masih tersisa.',
+            'Kerendahan hati tersebut membuatnya menerima realitas tinggal di kamar kontrakan petak sempit tanpa rasa gengsi mantan bintang rock.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Toples Kaca Ikan Cupang dan Pelunasan Utang Bank',
+          paragraphs: [
+            'Untuk membangun kembali arus kas dari nol, Buluk menekuni hobi pemeliharaan dan jual beli ikan cupang hias (*betta fish*) dengan modal kecil.',
+            'Dari deretan toples kaca sederhana di kamar kontrakannya, ia merawat, menyortir warna, dan memasarkan ikan cupang hias secara daring ke komunitas pehobi ikan di Jakarta dan sekitarnya.',
+            'Perputaran transaksi ikan hias yang lancar dikelola dengan disiplin ketat: setiap laba penjualan disetorkan secara rutin ke bank untuk mengikis utang pinjamannya hingga lunas tuntas seratus persen.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Kekuatan Rasa Syukur dan Hunian yang Lebih Lapang',
+          paragraphs: [
+            'Seiring lunasnya beban utang perbankan dan pulihnya kesehatan mental, pintu rezeki baru terbuka lebar. Buluk kembali dipercaya menjadi pembawa acara (MC), pengisi siniar (*podcast*), serta kembali bermusik dengan energi positif.',
+            'Kini ia telah mampu menyewa kontrakan dua kamar yang jauh lebih luas dan nyaman untuk keluarganya, menjalani hidup dengan ketenteraman batin yang tidak pernah ia rasakan di masa lalu.',
+            'Kisah Buluk Superglad mengajarkan bahwa titik terkelam keputusasaan bukanlah akhir cerita; ketika seseorang berani melepaskan kebiasaan destruktif, bertafakur, dan bersyukur atas hal kecil, hidup baru yang mulia akan menyambut.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kesehatan Jiwa dan Penolakan Terhadap Keputusasaan: Menyadari bahwa mengakhiri hidup bukan solusi; badai utang selalu memiliki jalan keluar jika dihadapi satu hari demi satu hari.',
+        'Transformasi Spiritual dan Gaya Hidup (*Habit Overhaul*): Menghentikan ketergantungan alkohol dan pergaulan buruk menjadi kunci pemulihan kejernihan pikiran dalam mencari nafkah.',
+        'Kekuatan Afirmasi Syukur Harian: Menggeser fokus pikiran dari kecemasan utang ke rasa syukur atas rezeki harian terbukti membuka peluang-peluang baru secara tak terduga.',
+        'Merintis Arus Kas Mikro dari Komunitas Hobi: Berjualan ikan cupang dari kontrakan petak membuktikan bahwa sumber rezeki pelunas utang bisa bermula dari komoditas yang sangat sederhana.'
+      ]
     }
   ],
 
