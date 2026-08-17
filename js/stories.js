@@ -6258,6 +6258,93 @@ const Stories = {
         'Ketahanan Melewati Lembah Kematian Tahun Pertama (*Surviving the Chasm*): Bertahan melewati masa-masa sulit (bahkan saat utang pakan Rp 45.000) hingga menemukan formula reproduksi yang stabil.',
         'Spesialisasi dan Pemuliaan Mutu (*Breeding Excellence*): Menghasilkan varian eksotis berkualitas tinggi melipatgandakan harga jual hingga jutaan rupiah per ekor.'
       ]
+    },
+    {
+      id: 'kiswanto',
+      featured: false,
+      name: 'Kiswanto / Cik One (Raja Matoa Pati)',
+      tagline: 'Dari Gaya Hidup Konsumtif & Blacklist Bank — Dibina Mantri Modal Rp 20 Jt, Bangkit Jadi Penyuplai 2 Ton Buah Matoa/Hari ke Kramat Jati',
+      title: 'Dari Blacklist Perbankan, Bangkit Jadi Raja Buah Matoa Tayu Pati',
+      subtitle: 'Pengepul & Pemasok Buah Matoa Desa Kedungsari Tayu — Mengubah Riwayat Kredit Macet Menjadi Rantai Distribusi Pasokan 2 Ton Matoa Per Hari ke Jakarta',
+      origin: 'Pati, Jawa Tengah',
+      ageAtRebound: 'Pati, 2015',
+      categories: ['debt', 'bankrupt', 'business', 'indonesia'],
+      categoryLabel: 'Blacklist Bank & Pemasok Matoa',
+      badge: 'Raja Matoa Tayu — Pasok 2 Ton/Hari ke Jakarta',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Kredit Macet & Masuk Daftar Hitam (Blacklist) Bank',
+        age: 'Pati, Tahun 2015',
+        lowest: 'Gaya Hidup Boros "Besar Pasak", Usaha Bangkrut, Kredit Macet di Berbagai Lembaga, Masuk Blacklist Bank',
+        action: 'Edukasi Mantri Bank + Pinjaman Pemulihan Rp 20 Jt + Penebasan & Pengepulan Buah Matoa + Pasok Pasar Induk Kramat Jati',
+        result: 'Kredit & Reputasi Pulih 100%, Pemasok Terbesar 2 Ton Matoa/Hari ke Jakarta, Berdayakan Ratusan Petani Desa'
+      },
+      timeline: [
+        { year: '2015 — Boros & Blacklist Bank', text: 'Gaya hidup konsumtif menghabiskan modal; bisnis buah kolaps dan masuk daftar hitam (blacklist) perbankan akibat kredit macet.' },
+        { year: 'Pendampingan Mantri & Pinjaman Rp 20 Jt', text: 'Didampingi Mantri perbankan melalui program pemulihan nasabah eks-DH; mendapat pinjaman awal Rp 20 juta.' },
+        { year: 'Disiplin Cicilan & Pulihkan Skor Kredit', text: 'Mengalokasikan kas dengan ketat, membayar angsuran tepat waktu hingga skor kolektibilitas perbankan kembali bersih.' },
+        { year: 'Fokus Komoditas Unggulan Matoa', text: 'Mengoptimalkan potensi pohon matoa di pekarangan warga Desa Kedungsari Tayu melalui sistem penebasan dan sewa pohon.' },
+        { year: 'Pasok 2 Ton/Hari ke Kramat Jati', text: 'Saat panen raya Agustus-Oktober, rutin mengirimkan lebih dari 2 ton buah matoa segar per hari ke Pasar Induk Jakarta.' },
+        { year: 'Hari Ini — Pemasok Terbesar & Berdaya', text: 'Seluruh utang lama lunas tuntas; menjadi penyuplai matoa terbesar yang menopang ekonomi ratusan keluarga desa.' }
+      ],
+      quote: 'Dulu saya bangkrut dan masuk blacklist bank karena gaya hidup besar pasak daripada tiang. Harapan kembali saat ada pihak yang memberi kepercayaan kedua. Kuncinya adalah menjaga amanah itu mati-matian, disiplin bayar cicilan, dan fokus mengangkat komoditas lokal desa.',
+      quoteAuthor: 'Kiswanto (Cik One), penyuplai buah matoa Desa Kedungsari Tayu Pati',
+      chapters: [
+        {
+          num: 1,
+          title: 'Besar Pasak daripada Tiang dan Daftar Hitam Bank',
+          paragraphs: [
+            'Sekitar tahun 2015 di Kecamatan Tayu, Kabupaten Pati, Jawa Tengah, Kiswanto yang akrab disapa Cik One mengalami titik kejatuhan terberat dalam hidupnya. Usaha perdagangan buah yang sempat dirintisnya mengalami kehancuran akibat pola pengelolaan kas yang buruk.',
+            'Pengeluaran pribadi yang konsumtif demi gengsi gaya hidup jauh melebihi perolehan laba usaha riil. Arus modal dagang tergerus habis hingga ia tidak mampu membayar kewajiban angsuran di berbagai lembaga keuangan.',
+            'Puncaknya, identitas Kiswanto dimasukkan ke dalam daftar hitam (*blacklist*) sistem informasi debitur perbankan dengan status kredit macet, menutup seluruh akses permodalan formal.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Secercah Harapan Pemulihan dari Sang Mantri',
+          paragraphs: [
+            'Setelah melalui masa terpuruk dan merenungi kekeliruannya, Kiswanto bertekad bangkit merintis usaha dari awal. Namun kendala terbesar menghadang: ia membutuhkan suntikan likuiditas permodalan kerja di tengah status debitur bermasalah.',
+            'Pintu harapan terbuka saat ia bertemu dengan seorang Mantri BRI yang bertindak sebagai pembina finansial lapangan. Mantri tersebut mengedukasi skema program pemulihan kredit bagi nasabah eks-Daftar Hitam yang memiliki prospek usaha riil dan komitmen tobat finansial.',
+            'Dengan penuh kehati-hatian, Kiswanto disetujui memperoleh fasilitas pinjaman permodalan awal sebesar Rp 20.000.000.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Dua Puluh Juta Pertama dan Disiplin Amanah',
+          paragraphs: [
+            'Memegang dana amanah Rp 20 juta, Kiswanto merombak total kebiasaan hidupnya. Ia memangkas seluruh pengeluaran non-esensial dan mencatat setiap pergerakan rupiah dalam pembukuan sederhana.',
+            'Modal tersebut diputar untuk membeli komoditas buah lokal secara tunai. Setiap menerima pembayaran hasil panen, prioritas pertama yang disisihkannya adalah dana setoran cicilan bank tepat waktu sebelum jatuh tempo.',
+            'Disiplin pembayaran tanpa cacat tersebut berhasil melunasi pinjaman awal, memulihkan skor kredit perbankannya menjadi bersih, serta membuka plafon modal kerja yang lebih besar.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Pohon Matoa Kedungsari dan Pengiriman Dua Ton ke Ibukota',
+          paragraphs: [
+            'Kiswanto memfokuskan ekspansinya pada komoditas khas yang melimpah di desanya, yaitu **buah matoa** (*Pometia pinnata*) di Desa Kedungsari. Hampir setiap pekarangan rumah warga memiliki pohon matoa produktif.',
+            'Ia menerapkan sistem kemitraan komprehensif: menjadi penebas buah langsung di pohon, menyewa pohon matoa musiman dari warga, hingga menampung panen petani sekitar dengan harga yang adil dan timbangan transparan.',
+            'Saat musim panen raya tiba pada rentang Agustus hingga Oktober, armada logistik Kiswanto secara rutin mengirimkan lebih dari **2 ton buah matoa segar per hari** ke sentra perdagangan buah nasional di Pasar Induk Kramat Jati, Jakarta.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Pulihnya Kepercayaan dan Kejayaan Komoditas Lokal',
+          paragraphs: [
+            'Kini, Kiswanto telah dinobatkan sebagai salah satu penyuplai buah matoa terbesar dan paling terpercaya di seluruh Kabupaten Pati.',
+            'Seluruh sisa utang masa lalunya telah lunas tuntas, riwayat perbankannya pulih dengan peringkat prima, dan perputaran bisnisnya menjadi motor penggerak pendapatan bagi ratusan pemilik pohon matoa di desanya.',
+            'Kisah Kiswanto (Cik One) memberikan pelajaran berharga bahwa status blacklist bank bukanlah vonis mati; saat seseorang berani mengakui kesalahan gaya hidup, menjaga amanah cicilan dengan disiplin, dan memajukan potensi desa, pintu kemakmuran akan kembali terbuka lebar.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Evaluasi Radikal Gaya Hidup Konsumtif: Menghentikan pola "besar pasak daripada tiang" dan memisahkan secara mutlak kas pribadi dari modal usaha.',
+        'Pemulihan Rekam Jejak Kredit (*Credit Score Rehabilitation*): Memanfaatkan kesempatan kedua perbankan dengan membayar cicilan secara presisi dan tepat waktu.',
+        'Mengangkat Komoditas Unggulan Lokal (*Village Specialty Focus*): Fokus membesarkan potensi buah matoa desa pekarangan menjadi rantai pasok bernilai miliaran rupiah.',
+        'Membangun Ekosistem Kemitraan yang Adil: Memberikan harga tebas panen yang wajar kepada petani warga desa menciptakan pasokan bahan baku yang stabil dan loyal.'
+      ]
     }
   ],
 

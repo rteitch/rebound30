@@ -7,7 +7,7 @@
 [![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 
-> **Rebound 30** adalah aplikasi web pendamping pemulihan finansial mandiri (*offline-first* PWA) yang memadukan **5 Pilar Arus Kas Real-Time**, **perlindungan hukum konsumen (POJK 22/2023 & UU HAM)**, **pendampingan psikologis anti-panik**, **peta jalan 30 hari interaktif**, dan **arsip inspirasi 72 kisah nyata tokoh yang bangkit dari titik nol**.
+> **Rebound 30** adalah aplikasi web pendamping pemulihan finansial mandiri (*offline-first* PWA) yang memadukan **5 Pilar Arus Kas Real-Time**, **perlindungan hukum konsumen (POJK 22/2023 & UU HAM)**, **pendampingan psikologis anti-panik**, **peta jalan 30 hari interaktif**, dan **arsip inspirasi 73 kisah nyata tokoh yang bangkit dari titik nol**.
 
 ---
 
@@ -78,8 +78,8 @@ Sistem mengolah keputusan profil awal secara terpadu tanpa *gap* logika, diverif
 - **Target Utama 30 Hari (*Primary Goal Driver*)**:
   - Mengarahkan prioritas `CRITICAL` ke misi yang sesuai target (`Pemasukan Pertama`, `Dapat Kerja`, `Kurangi Utang`, `Pemasukan Rutin`, atau `Bantu Keluarga`).
 
-### 7. 📚 Perpustakaan 72 Kisah Nyata Bangkit dari Utang (*72 Real-Life Recovery Stories*)
-Arsip kurasi 72 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian:
+### 7. 📚 Perpustakaan 73 Kisah Nyata Bangkit dari Utang (*73 Real-Life Recovery Stories*)
+Arsip kurasi 73 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian:
 
 1. **Shao Baoling (邵宝玲)** — Ratu Koper Yiwu $\to$ Pemilik 3 Toko Bakpao (Utang > Rp 220 M)
 2. **Tang Jian (唐健)** — Raja Restoran Qingdao $\to$ Kios Sosis Panggang 25 m² (Utang Rp 100 M)
@@ -153,6 +153,7 @@ Arsip kurasi 72 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazin
 70. **Ramidi (Pedagang Ayam Filet Ciputat)** — Kuli Pasar Jual Emas Istri Rp 1,5 Jt & Utang Ratusan Juta $\to$ Bangkit Sabar Filet Ayam Pasar Cimanggis, Lunas & Laba Rp 1 Jt/Hari
 71. **Taofik Hidayat** — Tinggal di Rel Ancol & Diancam Celurit $\to$ Ditipu Pinjaman Bank Ludes, Beli Mesin Press Rp 50 Jt & Pabrik Daur Ulang Plastik Sukabumi
 72. **Banu Bimo Aribowo (Sempak Finch)** — Usaha Bangkrut Utang Miliaran $\to$ Jual TV & PS Modal Rp 6 Jt, Penangkaran Burung Finch Sleman Lunas Total
+73. **Kiswanto / Cik One** — Gaya Hidup Boros & Blacklist Bank $\to$ Bimbingan Mantri Modal Rp 20 Jt, Raja Buah Matoa Tayu Pati Pasok 2 Ton/Hari ke Kramat Jati
 
 
 
@@ -212,7 +213,7 @@ d:\Project\ui\
 │   ├── finance.js          # Assessment (DTI, runway), prioritas utang, laporan bulanan, rencana 90 hari
 │   ├── notify.js           # Pusat pengingat in-app (jatuh tempo, follow-up, kas kritis)
 │   ├── exporter.js         # Ekspor CSV & laporan cetak/PDF tanpa pustaka eksternal
-│   ├── stories.js          # Controller Perpustakaan Kisah & Reader Interaktif (72 Tokoh)
+│   ├── stories.js          # Controller Perpustakaan Kisah & Reader Interaktif (73 Tokoh)
 │   ├── app.js              # Router utama, lifecycle controller, 5-Pillar Sync, CRUD & modal SOS
 │   └── screens.js          # Modul layar tambahan: pengingat, review mingguan, rencana 90 hari,
 │                           #   mode darurat, laporan bulanan, aksesibilitas, install PWA
