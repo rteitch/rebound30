@@ -5823,6 +5823,93 @@ const Stories = {
         'Menjembatani Masalah Rantai Pasok Lokal (*Supply Chain Arbitrage*): Menghubungkan peternak lebah lokal yang kesulitan pasar dengan konsumen modern berdaya beli tinggi.',
         'Branding dan Standardisasi Produk Alami: Mengemas madu sarang lokal dengan standar higienis dan jaminan keaslian menciptakan kepercayaan pasar bernilai miliaran rupiah.'
       ]
+    },
+    {
+      id: 'zhangliangwei',
+      featured: false,
+      name: 'Zhang Liangwei (张良伟)',
+      tagline: 'Dari Veteran Militer Usia 30 Utang 1,7 Juta Yuan (Rp 3,8 M) — Didampingi Istri Lulusan Master Inggris, Bangkit Jualan Pangsit Handmade Lunas 2 Tahun',
+      title: 'Dari Mantan Tentara Terlilit Utang Rp 3,8 Miliar, Bangkit Berkat Pangsit Handmade',
+      subtitle: 'Mantan Tentara Asal Shandong — Melepas Gengsi Membuka Kedai Jiaozi Bersama Istri Lulusan Master Nottingham Hingga Lunas Total dalam 2 Tahun',
+      origin: 'Shandong, Tiongkok',
+      ageAtRebound: '30 Tahun (2018)',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'global'],
+      categoryLabel: 'Utang 1,7 Juta Yuan & Kedai Pangsit',
+      badge: 'Lunas Rp 3,8 Miliar dalam 2 Tahun — Shandong',
+      theme: 'rose',
+      accentColor: '#E11D48',
+      bgLight: '#FFE4E6',
+      borderLight: '#FECDD3',
+      stats: {
+        debt: '1,7 Juta Yuan / Rp 3,8 Miliar (Gagal Pusat Gym)',
+        age: '30 Tahun (Tahun 2018)',
+        lowest: 'Bisnis Gym Bangkrut Rugi 4,6 Juta Yuan, Utang Pribadi 1,7 Juta Yuan, Teror Penagih Siang Malam',
+        action: 'Dukungan Istri Master Nottingham + Buang Gengsi + Bangun Jam 4 Pagi Racik Pangsit Segar + Konten Medsos',
+        result: 'Seluruh Utang 1,7 Juta Yuan (Rp 3,8 Miliar) Lunas Tuntas 2 Tahun, Kedai Pangsit Ramai Pelanggan'
+      },
+      timeline: [
+        { year: '2018 — Pensiun Militer & Bisnis Gym', text: 'Pensiun dari dinas militer dan membuka pusat kebugaran (fitness center) bersama mitra di Shandong.' },
+        { year: 'Kolaps & Utang 1,7 Juta Yuan', text: 'Ekspansi agresif dan pergeseran pasar membuat proyek rugi 4,6 juta Yuan; menanggung utang pribadi 1,7 juta Yuan (Rp 3,8 M).' },
+        { year: 'Kesetiaan Istri & Pengorbanan Tabungan', text: 'Calon istri lulusan Master Universitas Nottingham Inggris memilih setia dan menyerahkan seluruh tabungan untuk modal baru.' },
+        { year: 'Buka Kedai Pangsit Handmade', text: 'Membuang gengsi membuka kedai jiaozi; Zhang bangun jam 4 pagi menguleni kulit dan daging segar tanpa bahan beku.' },
+        { year: 'Pembagian Peran & Viral Medsos', text: 'Sang istri mengelola pembukuan keuangan dan konten media sosial; kisah perjuangan autentik mereka viral masif.' },
+        { year: 'Lunas Total dalam 2 Tahun', text: 'Penjualan harian ribuan porsi melunasi utang 1,7 juta Yuan dalam kurun waktu 2 tahun; hidup merdeka dan bahagia.' }
+      ],
+      quote: '放下体面，踏实赚钱才是最大的底气 (Melepas gengsi dan bekerja keras mencari uang yang halal adalah fondasi kepercayaan diri yang terbesar). Disiplin militer dan kesetiaan istri mengubah adonan tepung menjadi jalan pembebasan utang.',
+      quoteAuthor: 'Zhang Liangwei (张良伟), veteran militer dan pengusaha kedai pangsit Shandong',
+      chapters: [
+        {
+          num: 1,
+          title: 'Ambisi Pusat Kebugaran dan Jeratan 1,7 Juta Yuan',
+          paragraphs: [
+            'Setelah menyelesaikan masa pengabdian dan pensiun dari dinas militer Tiongkok pada tahun 2018, Zhang Liangwei di usia 30 tahun memutuskan terjun ke sektor kebugaran dengan membuka fasilitas gym modern di Provinsi Shandong bersama seorang mitra.',
+            'Namun ekspansi yang tergesa-gesa, ketidaksesuaian lokasi sewa, dan perubahan iklim pasar menyebabkan proyek kebugaran tersebut merugi masif hingga 4,6 juta Yuan.',
+            'Berdasarkan klausul kemitraan, Zhang memikul tanggung jawab utang pribadi senilai 1,7 juta Yuan (sekitar Rp 3,8 miliar). Panggilan telepon penagih utang yang berdering tanpa henti siang dan malam memaksanya hidup dalam kecemasan akut.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Kesetiaan Master Nottingham di Tengah Badai Teror',
+          paragraphs: [
+            'Banyak rekan menyarankan Zhang untuk menyerah, mengajukan kepailitan, atau melarikan diri ke luar kota untuk menghindari utang raksasa tersebut.',
+            'Namun di titik nadir tersebut, calon istrinya—seorang akademisi berprestasi lulusan program magister Universitas Nottingham Inggris dengan karier korporat mapan—mengambil sikap berani: memilih setia mendampingi.',
+            'Ia menyerahkan seluruh tabungan pribadi yang telah dikumpulkannya selama bertahun-tahun sebagai modal kerja baru, berikrar menghadapi badai finansial tersebut bersama-sama hingga tuntas.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Melepas Gengsi: Dari Senjata Militer ke Adonan Tepung',
+          paragraphs: [
+            'Menyadari bahwa bisnis besar berisiko tinggi bukan solusi tepat saat terlilit utang, pasangan ini memilih model usaha makanan rakyat dengan perputaran kas harian: kedai pangsit buatan tangan (*handmade jiaozi*).',
+            'Banyak orang mencibir: "Bagaimana mungkin utang miliaran bisa lunas hanya dengan berjualan pangsit murah?"',
+            'Zhang menepis seluruh rasa gengsi mantan prajurit militer: "放下体面，踏实赚钱才是最大的底气" (Menanggalkan gengsi dan tekun mencari nafkah halal adalah sumber harga diri tertinggi).'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Disiplin Fajar Jam Empat dan Manajemen Modern',
+          paragraphs: [
+            'Mereka menerapkan pembagian peran kerja yang sangat terstruktur. Sang istri memanfaatkan latar belakang analisis manajemennya untuk mengontrol arus kas, efisiensi bahan baku, dan strategi konten media sosial.',
+            'Sementara itu, Zhang menerapkan disiplin militer di dapur: bangun pukul 4 subuh setiap hari untuk berbelanja sayur dan daging segar ke pasar induk, menolak memakai bahan olahan beku, serta menguleni kulit pangsit satu per satu secara manual.',
+            'Konsistensi mutu rasa yang lezat dan higienis membuat kedai kecil mereka dibanjiri pelanggan setia dari berbagai distrik kota.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Dua Tahun Menembus Angka 1,7 Juta Yuan',
+          paragraphs: [
+            'Dokumentasi video kejujuran mereka merintis usaha dari dapur kecil menarik simpati jutaan warganet di platform Douyin/Kuaishou, mendorong pesanan membludak ratusan porsi per hari.',
+            'Tanpa mengambil jalan pintas, akumulasi laba harian disetorkan secara teratur kepada para kreditur. Tepat dalam waktu dua tahun, seluruh utang 1,7 juta Yuan (Rp 3,8 miliar) berhasil dilunasi seratus persen.',
+            'Kisah Zhang Liangwei dan sang istri membuktikan bahwa kehormatan sejati bukanlah status masa lalu, melainkan keberanian menundukkan ego, bangun di kala fajar, dan bertarung bersama pasangan demi merebut kembali kemerdekaan hidup.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Prinsip Menanggalkan Gengsi (*放下体面*): Membuang gengsi profesi masa lalu demi merintis usaha kecil berputaran kas harian adalah kunci pemulihan finansial tercepat.',
+        'Sinergi Pasangan di Titik Terendah: Memadukan keahlian operasional fisik suami dan manajemen analitis istri menciptakan fondasi bisnis yang tangguh.',
+        'Kualitas Tanpa Kompromi (*Fresh Quality Standard*): Bangun subuh dan memilih bahan baku segar alami tanpa jalan pintas membangun reputasi produk yang viral secara organik.',
+        'Disiplin Eksekusi Bertahap: Melunasi utang miliaran tidak memerlukan keajaiban spekulatif, melainkan konsistensi mengumpulkan laba harian dari ribuan transaksi kecil.'
+      ]
     }
   ],
 
