@@ -5649,6 +5649,93 @@ const Stories = {
         'Disiplin Eksekusi Alokasi Laba (*Strict Cash Allocation*): Memisahkan modal putaran dan memfokuskan keuntungan untuk membayar angsuran mempercepat pelunasan utang keluarga.',
         'Membangun Aset Produktif dari Krisis: Perjuangan melunasi utang justru melahirkan unit bisnis mandiri yang terus menghasilkan pendapatan berkelanjutan pasca krisis.'
       ]
+    },
+    {
+      id: 'konimanafiafanti',
+      featured: false,
+      name: 'Koni Manafiafanti',
+      tagline: 'Dari Warisan Utang Sapi Rp 160 Juta & Dicemooh Keluarga — Bangkit Modal Rp 1 Juta & Inovasi Pakan Hayati, Sukses Budidaya Ayam Sentul',
+      title: 'Dari Warisan Utang Rp 160 Juta dan Cemoohan, Sukses Jadi Peternak Ayam Sentul',
+      subtitle: 'Peternak & Pembudidaya Ayam Sentul — Menepis Keraguan Keluarga Lewat Inovasi Pakan Hayati Murah dan Kemitraan Peternak Desa',
+      origin: 'Ciamis, Jawa Barat',
+      ageAtRebound: 'Jawa Barat',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 160 Jt & Peternakan Ayam',
+      badge: 'Peternak Ayam Sentul — Inovasi Pakan Hayati',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Rp 160 Juta (Warisan Gagal Ternak Sapi Ayah)',
+        age: 'Jawa Barat',
+        lowest: 'Ternak Sapi Keluarga Kolaps, Utang Rp160 Juta, Dicemooh Keluarga "Tak Punya Potensi"',
+        action: 'Modal Nekat Rp 1 Juta + Ternak Ayam Sentul + Inovasi Pakan Hayati Limbah Talas + Kemitraan Peternak',
+        result: 'Utang Rp160 Juta Lunas Total, Omzet Puluhan Juta/Bulan, Kemitraan Plasma Puluhan Peternak Desa'
+      },
+      timeline: [
+        { year: 'Ternak Sapi Kolaps & Utang Rp160 Jt', text: 'Usaha peternakan sapi ayahnya bangkrut, meninggalkan warisan utang Rp 160 juta yang harus ditanggung keluarga.' },
+        { year: 'Cemoohan Keluarga & Modal Rp 1 Juta', text: 'Dicibir tidak memiliki potensi; Koni menepis keraguan dengan nekat memulai ternak ayam bermodal awal Rp 1.000.000.' },
+        { year: 'Fokus Budidaya Ayam Sentul', text: 'Memilih ras ayam Sentul khas lokal Jawa Barat yang memiliki ketahanan tubuh tinggi dan daging padat berkualitas.' },
+        { year: 'Inovasi Pakan Hayati Limbah', text: 'Meracik formula pakan fermentasi dari batang talas dan limbah sayuran pasar, memangkas biaya pakan secara drastis.' },
+        { year: 'Permintaan Meluas & Utang Lunas', text: 'Mendistribusikan ayam ke jejaring kota; keuntungan operasional sukses melunasi seluruh utang Rp 160 juta.' },
+        { year: 'Hari Ini — Kemitraan Puluhan Peternak', text: 'Mencetak omzet puluhan juta per bulan dan membina kemitraan plasma bersama puluhan peternak di desanya.' }
+      ],
+      quote: 'Waktu harus menanggung utang Rp 160 juta dan dicemooh keluarga sendiri, saya memilih membuktikan lewat karya nyata. Modal satu juta dan limbah pertanian di sekitar kita bisa menjadi sumber kekuatan jika kita mau berinovasi dan tidak menyerah.',
+      quoteAuthor: 'Koni Manafiafanti, pengusaha peternakan Ayam Sentul',
+      chapters: [
+        {
+          num: 1,
+          title: 'Warisan Beban Utang dan Keraguan Keluarga',
+          paragraphs: [
+            'Kepulangan Koni Manafiafanti ke kampung halamannya di Jawa Barat disambut oleh kenyataan pahit. Usaha peternakan sapi yang dirintis sang ayah mengalami kebangkrutan total, meninggalkan tumpukan kewajiban utang sebesar Rp 160 juta.',
+            'Tekanan mental kian berat tatkala cibiran dan cemoohan datang dari lingkaran keluarga terdekat. Koni diremehkan sebagai perempuan yang tidak memiliki potensi wirausaha dan disarankan untuk sekadar pasrah mencari pasangan hidup.',
+            'Alih-alih patah arang, kata-kata yang meremehkan itu justru membakar tekad batinnya untuk membuktikan bahwa kemandirian perempuan mampu menjadi penyelamat ekonomi keluarga.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Modal Satu Juta dan Pilihan pada Ayam Sentul',
+          paragraphs: [
+            'Berbekal sisa uang simpanan sebesar Rp 1.000.000 (satu juta rupiah), Koni memutuskan terjun ke sektor peternakan unggas secara mandiri.',
+            'Ia memilih membudidayakan **Ayam Sentul**—galur ayam kampung lokal unggulan asal Ciamis, Jawa Barat yang dikenal memiliki laju pertumbuhan cepat, daya tahan tubuh prima, dan tekstur daging yang lezat.',
+            'Ia membangun kandang sederhana di pekarangan rumah dan merawat anak ayam (*DOC*) dengan dedikasi tinggi siang dan malam.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Inovasi Fermentasi Pakan Hayati dari Batang Talas',
+          paragraphs: [
+            'Tantangan terbesar peternakan unggas adalah tingginya harga pakan konsentrat pabrikan yang seringkali mengikis habis marjin keuntungan peternak kecil.',
+            'Koni menolak menyerah pada keterbatasan biaya. Ia mengamati potensi limbah pertanian di sekeliling desanya: batang pohon talas liar dan sisa-sisa sayuran pasar yang melimpah dan tidak terpakai.',
+            'Melalui riset fermentasi sederhana, Koni mencacah batang talas dan dedaunan hijauan, mencampurnya dengan dedak dan probiotik alami menjadi pakan hayati bernutrisi tinggi yang mampu memangkas ongkos pakan hingga lebih dari 60%.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Panen Berkualitas dan Pelunasan Utang Rp 160 Juta',
+          paragraphs: [
+            'Pemberian pakan hayati organik menghasilkan ayam Sentul yang berbobot padat, lincah, bebas bahan kimia sintetis, dan memiliki cita rasa daging gurih alami.',
+            'Koni memanfaatkan jejaring rekanan lamanya di perkotaan untuk memasarkan ayam Sentul ke restoran, warung makan tradisional, dan konsumen rumahan dengan harga premium.',
+            'Arus kas yang mengalir lancar dari panen berkala dialokasikan secara disiplin untuk melunasi cicilan utang keluarga hingga beban Rp 160 juta lunas tuntas seratus persen.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Membangun Kemitraan dan Mengangkat Ekonomi Desa',
+          paragraphs: [
+            'Kini, usaha peternakan Koni mencetak omzet puluhan juta rupiah setiap bulan dan menjadi pusat percontohan budidaya unggas mandiri di wilayahnya.',
+            'Ia tidak menikmati kesuksesan seorang diri; Koni membentuk pola kemitraan plasma dengan merangkul puluhan warga dan peternak desa sekitar, menyuplai bibit serta formula pakan hayati untuk memberdayakan ekonomi masyarakat.',
+            'Kisah Koni Manafiafanti membuktikan bahwa cemoohan dan keraguan orang lain hanyalah angin lalu bagi jiwa yang berani berinovasi; dari pekarangan desa dan modal satu juta rupiah, lahir pemimpin wirausaha yang membawa kemakmuran bersama.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Mengonversi Keraguan Lingkungan Menjadi Bahan Bakar Prestasi: Menjawab cemoohan dengan karya nyata dan ketekunan eksekusi jauh lebih bernilai daripada berdebat.',
+        'Efisiensi Biaya Melalui Inovasi Pakan Lokal (*Low-Cost Biofeed*): Memanfaatkan batang talas dan limbah sayuran untuk pakan fermentasi memangkas beban biaya pakan secara signifikan.',
+        'Memilih Varietas Unggulan Lokal (*Native Advantage*): Budidaya ayam Sentul lokal memberikan keunggulan komparatif dari segi ketahanan penyakit dan harga jual pasar.',
+        'Model Bisnis Inklusif Kemitraan Desa: Mengembangkan jejaring kemitraan plasma bersama peternak lain memperbesar kapasitas pasokan dan mengangkat taraf hidup komunitas desa.'
+      ]
     }
   ],
 
