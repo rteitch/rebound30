@@ -5214,6 +5214,93 @@ const Stories = {
         'Menciptakan Nilai Tambah Komoditas Lokal (*Local Advantage*): Mengolah tepung talas khas Bogor menjadi kue sarang semut menciptakan diferensiasi unik yang sulit ditiru kompetitor luar.',
         'Memanfaatkan Pendampingan Komunitas UMKM: Program pelatihan dan jejaring pembinaan membantu UMKM bertransisi dari penjual kue biasa menjadi produsen oleh-oleh berdaya saing.'
       ]
+    },
+    {
+      id: 'mrepple',
+      featured: false,
+      name: 'Marcellino & Eprilia (Mr. Epple)',
+      tagline: 'Dari 2 Bisnis Runtuh Bersamaan & Rumah Ortu Nyaris Disita Bank — Bangkit Dapur Rumah Modal Ratusan Ribu, Kini Pabrik Skincare BPOM 6.000 Pcs/Bulan',
+      title: 'Dari Dapur Rumah dan Dua Bisnis Runtuh, Bangkit Bangun Pabrik Skincare BPOM',
+      subtitle: 'Pendiri Mr. Epple Solo — Mengubah Resep Sugar Waxing Rumahan Menjadi Brand Perawatan Tubuh Bersertifikat BPOM dengan Pabrik Sendiri',
+      origin: 'Solo, Jawa Tengah',
+      ageAtRebound: 'Solo, 2020',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: '2 Bisnis Kolaps & Inovasi Skincare',
+      badge: 'Pabrik Skincare BPOM — Penjualan 6.000 Pcs/Bulan',
+      theme: 'pink',
+      accentColor: '#DB2777',
+      bgLight: '#FDF2F8',
+      borderLight: '#FBCFE8',
+      stats: {
+        debt: 'Rumah Orang Tua Hampir Disita Bank',
+        age: 'Solo, Tahun 2020',
+        lowest: 'Bisnis Kuliner Bangkrut, Studio Lash Extension Tutup Pandemi, Kas Habis & Rumah Terancam Sita',
+        action: 'Eksperimen Sugar Wax Dapur + Modal Ratusan Ribu + Skala E-Commerce Shopee + Sertifikasi BPOM & Bangun Pabrik',
+        result: 'Pabrik Sendiri Standar BPOM di Solo, 6.000+ Produk Terjual/Bulan, Rumah Selamat dari Sitaan Bank'
+      },
+      timeline: [
+        { year: 'Awal 2020 — Dua Bisnis Runtuh', text: 'Bisnis kuliner Marcel bangkrut dan studio lash extension Eprilia tutup akibat pandemi; dua sumber nafkah hilang bersamaan.' },
+        { year: 'Ancaman Sita Rumah & Uang Ratusan Ribu', text: 'Rumah orang tua nyaris disita bank karena beban finansial; nekat memutar modal awal ratusan ribu rupiah di dapur rumah.' },
+        { year: '2020 — Lahirnya Mr. Epple di Dapur', text: 'Bereksperimen membuat formulasi sugar waxing berbahan alami gula (nama Mr. Epple: Marcel, April, Renando).' },
+        { year: '2021 — Ledakan Penjualan di Shopee', text: 'Ekspansi ke marketplace online; mengubah kritik ulasan bintang 1 menjadi inovasi varian honey, vanilla, dan beet sugar wax.' },
+        { year: '2022 — Sertifikasi BPOM Resmi', text: 'Menuntaskan seluruh legalitas dan uji sertifikasi BPOM untuk waxing kit, serum after-wax, dan deodoran gel.' },
+        { year: 'Hari Ini — Pabrik Mandiri 6.000 Pcs/Bln', text: 'Mendirikan pabrik produksi sendiri berstandar BPOM di Solo dengan omzet ribuan unit per bulan dan selamatkan aset keluarga.' }
+      ],
+      quote: 'Untuk sampai di titik ini, kami hampir kehilangan rumah orang tua karena disita bank. Tapi kami terus berusaha menata sistem produksi dari dapur hingga akhirnya bisa mendirikan pabrik sendiri dengan sertifikasi BPOM.',
+      quoteAuthor: 'Marcellino Radiktya Kesdu, pendiri Mr. Epple Solo',
+      chapters: [
+        {
+          num: 1,
+          title: 'Dua Pintu Rezeki yang Tertutup Bersamaan',
+          paragraphs: [
+            'Awal tahun 2020 menjadi periode paling kelam bagi pasangan muda asal Solo, Marcellino Radiktya Kesdu (Marcel) dan sang istri, Eprilia. Sebelum pandemi, Marcel mengelola bisnis kuliner sementara Eprilia merintis studio kecantikan *eyelash extension*.',
+            'Ketika gelombang pandemi COVID-19 menghantam, bisnis kuliner Marcel bangkrut total. Pada saat bersamaan, pembatasan fisik memaksa studio kecantikan Eprilia berhenti beroperasi tanpa pemasukan.',
+            'Keluarga kecil ini terjerumus ke titik minus: tabungan terkuras habis, sementara kewajiban perbankan yang menumpuk membuat rumah tinggal orang tua mereka di Solo di ambang penyitaan oleh pihak bank.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Laboratorium Dapur dan Nama yang Sarat Makna',
+          paragraphs: [
+            'Menolak pasrah menunggu keajaiban, Eprilia memanfaatkan pengalamannya di dunia perawatan kecantikan untuk meracik produk perawatan tubuh mandiri di rumah (*home self-care*).',
+            'Ia mulai bereksperimen di atas kompor dapur rumah dengan mengolah karamelisasi gula, perasan lemon, dan madu murni menjadi gel pencabut bulu (*sugar wax*). Marcel ikut turun tangan mengaduk adonan dan menguji konsistensi resep.',
+            'Dari dapur sederhana itulah lahir merek **Mr. Epple**—sebuah akronim penuh cinta keluarga yang menggabungkan nama Marcel, April (panggilan akrab Eprilia), dan putra tercinta mereka, Renando.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Menggulung Modal Ratusan Ribu Tanpa Investor',
+          paragraphs: [
+            'Mr. Epple dimulai tanpa sokongan investor besar maupun pinjaman modal awal. Mereka memulai produksi batch pertama dengan modal sisa tabungan ratusan ribu rupiah.',
+            'Setiap keuntungan receh yang diperoleh dari penjualan kit waxing kepada pelanggan loyal studio kecantikan tidak digunakan untuk konsumsi pribadi, melainkan digulung kembali (*reinvested*) 100% untuk membeli toples kemasan dan bahan baku tambahan.',
+            'Strategi perputaran kas disiplin ini membuat volume produksi meningkat secara bertahap dari belasan toples per minggu menjadi ratusan toples tanpa menciptakan utang baru.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Ulasan Bintang Satu yang Menjadi Tangga Inovasi',
+          paragraphs: [
+            'Tahun 2021, Mr. Epple melakukan ekspansi ke platform e-commerce Shopee dan menjangkau ribuan konsumen di seluruh penjuru Indonesia dari Jabodetabek hingga Kalimantan.',
+            'Tantangan datang ketika beberapa pembeli memberikan ulasan bintang satu akibat tekstur sugar wax yang mengeras saat cuaca dingin. Alih-alih membantah kritik, Marcel dan Eprilia justru menjadikan masukan tersebut sebagai dasar riset formula.',
+            'Mereka menyempurnakan kelembutan tekstur tanpa perlu dipanaskan dan meluncurkan tiga varian unggulan: *Honey Sugar Wax*, *Vanilla Sugar Wax*, dan *Beet Sugar Wax*, dilengkapi *deodorant gel* dan *after-wax soothing serum*.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Pabrik Berstandar BPOM dan Penyelamatan Rumah Keluarga',
+          paragraphs: [
+            'Tahun 2022, Mr. Epple berhasil melewati seluruh tahapan uji laboratorium ketat dan resmi mengantongi izin edar notifikasi BPOM untuk seluruh lini produknya.',
+            'Marcel dan Eprilia mendirikan fasilitas pabrik kosmetik sendiri berstandar Cara Pembuatan Kosmetika yang Baik (CPKB) di Solo, mempekerjakan tenaga kerja lokal dan mencetak penjualan stabil lebih dari 6.000 produk setiap bulannya.',
+            'Keberhasilan ini menyelamatkan rumah orang tua dari ancaman lelang bank. Kisah Mr. Epple membuktikan bahwa dapur rumah dan modal ratusan ribu rupiah bisa menjelma menjadi industri manufaktur legal berstandar nasional bila dibarengi kekompakan suami istri dan keterbukaan terhadap kritik konsumen.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kekuatan Kolaborasi Rumah Tangga di Titik Kritis: Menyinergikan keahlian produk istri dan operasional suami mampu melahirkan solusi bisnis cepat di masa darurat.',
+        'Metode Penggulungan Modal Organik (*Profit Reinvestment*): Memutar 100% laba operasional dari modal ratusan ribu rupiah menghindarkan bisnis dari jerat utang saat merintis.',
+        'Kritik dan Ulasan Buruk Sebagai Cetak Biru Inovasi: Mengubah komplain konsumen bintang satu menjadi peningkatan formulasi produk menghasilkan varian *best-seller* yang tahan cuaca.',
+        'Pentingnya Akselerasi Legalitas dan Standar BPOM: Memprioritaskan sertifikasi resmi BPOM meningkatkan kepercayaan pasar e-commerce dan membuka jalan pendirian pabrik legal.'
+      ]
     }
   ],
 
