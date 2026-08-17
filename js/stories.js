@@ -5910,6 +5910,93 @@ const Stories = {
         'Kualitas Tanpa Kompromi (*Fresh Quality Standard*): Bangun subuh dan memilih bahan baku segar alami tanpa jalan pintas membangun reputasi produk yang viral secara organik.',
         'Disiplin Eksekusi Bertahap: Melunasi utang miliaran tidak memerlukan keajaiban spekulatif, melainkan konsistensi mengumpulkan laba harian dari ribuan transaksi kecil.'
       ]
+    },
+    {
+      id: 'tobittipat',
+      featured: true,
+      name: 'Tob Ittipat (Tao Kae Noi)',
+      tagline: 'Dari Rumah Disita & Utang Keluarga 40 Juta Baht (Rp 16 M) Usia 19 — Drop Out Kuliah, Ciptakan Rumput Laut Tao Kae Noi Lunas 2 Tahun',
+      title: 'Dari Utang Rp 16 Miliar di Usia 19 Tahun, Bangkit Jadi Raja Rumput Laut Dunia',
+      subtitle: 'Pendiri Tao Kae Noi Thailand — Mengubah Resep Rumput Laut Krispi dan Kemitraan 7-Eleven Menjadi Pelunasan Utang Rp 16 Miliar dalam 2 Tahun',
+      origin: 'Bangkok, Thailand',
+      ageAtRebound: '19 Tahun (2003)',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'global'],
+      categoryLabel: 'Utang 40 Juta Baht & Rumput Laut Global',
+      badge: 'Tao Kae Noi — Lunas Rp 16 Miliar Usia 21',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: '40 Juta Baht / Rp 16 Miliar (Utang Keluarga & Rumah Disita)',
+        age: '19 Tahun (Tahun 2003)',
+        lowest: 'Rumah Keluarga Disita Bank, Orang Tua Mengungsi ke China, Usia 19 Drop Out Kuliah, Gerai Kacang Diusir Mal',
+        action: 'Drop Out Kuliah + Eksperimen Goreng Nori Dapur + Kemasan Standar 7-Eleven + Bangun Pabrik Standar GMP',
+        result: 'Seluruh Utang 40 Juta Baht Lunas 2 Tahun, Beli Kembali Rumah Keluarga, Tao Kae Noi Terjual di 40 Negara'
+      },
+      timeline: [
+        { year: '2003 — Rumah Disita & Utang Rp 16 M', text: 'Bisnis keluarga kolaps terbelit utang 40 juta Baht (Rp 16 M); rumah disita bank dan orang tua mengungsi ke China.' },
+        { year: 'Usia 19 Drop Out Kuliah', text: 'Menolak kabur; Tob memilih tinggal di Bangkok bersama pamannya dan berhenti kuliah demi melunasi utang keluarga.' },
+        { year: 'Gerai Kacang & Penolakan Mal', text: 'Membuka stan kacang panggang kastanye di mal, namun diusir manajemen mal karena asap pemanggang merusak plafon.' },
+        { year: 'Aha! Moment Rumput Laut Nori', text: 'Mencicipi camilan nori dari pacar; bereksperimen menggoreng rumput laut di dapur hingga menemukan formula krispi tahan lama.' },
+        { year: 'Tembus Audit Jaringan 7-Eleven', text: 'Menstandarisasi kemasan dan merombak dapur menjadi pabrik mini bersertifikasi GMP demi masuk ke 3.000 gerai 7-Eleven.' },
+        { year: 'Lunas 2 Tahun & Mendunia di 40 Negara', text: 'Seluruh utang Rp 16 M lunas tuntas dalam 2 tahun; menebus rumah keluarga dan mengantar Tao Kae Noi mendunia.' }
+      ],
+      quote: 'Waktu rumah kami disita dan utang 40 juta Baht menumpuk di pundak saya di usia 19 tahun, saya berjanji tidak akan menyerah. Jangan biarkan rasa takut menghentikan langkahmu; ketika kamu terus mencoba satu kali lagi setelah gagal, pintu keajaiban akan terbuka.',
+      quoteAuthor: 'Aitthipat Kulapongvanich (Tob Ittipat), pendiri Tao Kae Noi Thailand',
+      chapters: [
+        {
+          num: 1,
+          title: 'Penyegelan Rumah dan Beban 40 Juta Baht',
+          paragraphs: [
+            'Tahun 2003 menjadi titik terkelam bagi keluarga Tob Ittipat di Bangkok, Thailand. Usaha konstruksi dan investasi sang ayah mengalami kebangkrutan parah pascakrisis moneter, menyisakan tumpukan utang senilai 40 juta Baht (sekitar Rp 16 miliar).',
+            'Rumah mewah tempat mereka bernaung disegel dan disita oleh pihak perbankan. Dalam kondisi tertekan dan terancam tuntutan hukum, kedua orang tuanya terpaksa mengungsi ke China.',
+            'Tob yang saat itu baru menginjak usia 19 tahun menolak ikut melarikan diri. Ditemani sang paman yang setia, Tob berikrar akan tetap bertahan di tanah kelahirannya untuk melunasi seluruh kewajiban utang keluarganya secara mandiri.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Drop Out Kuliah dan Kepulan Asap Gerai Kastanye',
+          paragraphs: [
+            'Demi memusatkan seluruh waktu dan tenaganya pada penciptaan arus kas, Tob mengambil keputusan berani untuk mengundurkan diri (*drop out*) dari bangku universitas.',
+            'Ia menjajal bisnis kacang kastanye panggang (*Tori Fried Chestnuts*) di beberapa pusat perbelanjaan Bangkok. Namun keberhasilan awalnya terganjal aturan: asap mesin pemanggang menghitamkan atap mal, menyebabkan gerainya ditutup paksa oleh pengelola gedung.',
+            'Kehilangan lokasi usaha membuatnya kembali terlempar ke titik nol dengan bunga utang yang terus bertambah setiap hari.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Sebungkus Nori dan Puluhan Wajan Dapur yang Gosong',
+          paragraphs: [
+            'Titik balik muncul saat sang kekasih membawakannya oleh-oleh camilan rumput laut goreng dari luar kota. Terpantik ide bahwa camilan tersebut memiliki cita rasa unik yang belum diproduksi secara massal di pasar lokal, Tob memutuskan beralih fokus.',
+            'Ia menghabiskan ribuan lembar rumput laut nori impor untuk bereksperimen di dapur bersama pamannya. Ratusan wajan gosong dan tumpukan produk basi yang terbuang sempat menguras sisa uang simpanannya.',
+            'Ketekunan tanpa batas akhirnya melahirkan formula penggorengan suhu presisi: rumput laut yang renyah gurih, harum, dan memiliki masa simpan lama tanpa bahan pengawet berlebih. Ia menamai mereknya **Tao Kae Noi** (Sang Bos Kecil).'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Pertaruhan Standarisasi Pabrik Demi Jaringan 7-Eleven',
+          paragraphs: [
+            'Menyadari bahwa penjualan gerai kaki lima tidak akan mampu mengejar utang belasan miliar rupiah, Tob memberanikan diri mengajukan proposal kemitraan ke manajemen ritel raksasa **7-Eleven Thailand** yang memiliki lebih dari 3.000 gerai.',
+            'Proposal pertamanya sempat ditolak karena desain kemasan yang belum memenuhi standar ritel modern. Tak patah arang, Tob mendesain ulang kemasan vakum kedap udara dan menggadaikan sisa aset terakhir demi merombak bangunan tua menjadi fasilitas pabrik higienis berstandar GMP (*Good Manufacturing Practice*).',
+            'Audit ketat 7-Eleven berhasil lolos dengan predikat memuaskan, membuka gerbang distribusi nasional bagi Tao Kae Noi.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Dua Puluh Empat Bulan Menuju Kemerdekaan Finansial',
+          paragraphs: [
+            'Begitu produk Tao Kae Noi terpajang di rak-rak 7-Eleven di seluruh Thailand, animo masyarakat meledak luar biasa. Permintaan pasar melesat jutaan bungkus per bulan.',
+            'Tepat dalam waktu **dua tahun** sejak kemitraan nasional tersebut berjalan, Tob berhasil melunasi seluruh pokok utang keluarga senilai 40 juta Baht (Rp 16 miliar) seratus persen tanpa sisa.',
+            'Ia menebus kembali rumah keluarga yang dulu disita bank, membawa orang tuanya pulang ke Bangkok dengan penuh kehormatan, dan mengembangkan Tao Kae Noi menjadi raksasa makanan ringan dunia yang kini diekspor ke lebih dari 40 negara.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Tanggung Jawab Pemimpin Muda: Menolak lari dari musibah keluarga dan memilih bertahan menyelesaikan utang Rp 16 miliar di usia 19 tahun adalah manifestasi ketangguhan mental mutlak.',
+        'Sensitivitas Menangkap Peluang Produk (*Product-Market Fit*): Mengubah oleh-oleh rumput laut biasa menjadi komoditas camilan massal dengan riset formulasi dapur yang gigih.',
+        'Keberanian Menembus Distribusi Ritel Skala Besar: Membangun standarisasi pabrik dan kemasan agar lolos kurasi jaringan 7-Eleven untuk mendongkrak omzet secara eksponensial.',
+        'Keuletan Mengatasi Serangkaian Penolakan: Menganggap penutupan gerai dan penolakan proposal awal sebagai koreksi teknis, bukan akhir dari impian kebangkitan.'
+      ]
     }
   ],
 
