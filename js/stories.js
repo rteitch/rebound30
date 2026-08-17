@@ -5480,7 +5480,7 @@ const Stories = {
       id: 'muhammadsidoarjo',
       featured: false,
       name: 'Muhammad (Elektronik Sidoarjo)',
-      tagline: 'Dari Sisa Uang Rp 15 Ribu, Baru Menikah & Di-PHK — Bangkit Jual Risol & Servis TV Bekas, Kini Bos Toko Elektronik Omzet Rp 1 Miliar/Bulan',
+      tagline: 'Dari Sisa Uang Rp 15 Ribu, Baru Menikah & Kehilangan Pekerjaan — Bangkit Jual Risol & Servis TV Bekas, Kini Bos Toko Elektronik Omzet Rp 1 Miliar/Bulan',
       title: 'Dari Kantong Sisa Rp 15.000, Bangkit Jadi Bos Elektronik Omzet Rp 1 Miliar',
       subtitle: 'Pengusaha Toko Elektronik Sidoarjo — Mengubah Sisa Uang Makan Belasan Ribu dan Servis TV Bekas Keliling Menjadi Bisnis Beromzet Miliaran',
       origin: 'Sidoarjo, Jawa Timur',
@@ -5495,12 +5495,12 @@ const Stories = {
       stats: {
         debt: 'Himpitan Cicilan & Sisa Uang Rp 15.000',
         age: 'Sidoarjo, Tahun 2018',
-        lowest: 'Baru Menikah Di-PHK, Sisa Uang Rp15 Ribu Makan Sembunyi, Istri Sakit Keras & Tertipu Puluhan Juta',
+        lowest: 'Baru Menikah Kehilangan Pekerjaan, Sisa Uang Rp15 Ribu Makan Sembunyi, Istri Sakit Keras & Tertipu Puluhan Juta',
         action: 'Jual Risol Istri + Servis TV Bekas Rusak + Pinjam Pelanggan Toko + Konten Organik Media Sosial & Sedekah',
         result: 'Toko Elektronik Berkembang Pesat, Omzet Tembus >Rp 1 Miliar/Bulan, Layanan Tim 24 Jam Sidoarjo'
       },
       timeline: [
-        { year: '2018 — PHK & Sisa Rp 15.000', text: 'Baru menikah mendadak di-PHK di tengah cicilan menumpuk; sisa uang di saku Rp 15.000 dan makan sembunyi-sembunyi.' },
+        { year: '2018 — Kehilangan Pekerjaan & Sisa Rp 15.000', text: 'Baru menikah mendadak kehilangan pekerjaan tetap di tengah cicilan menumpuk; sisa uang di saku Rp 15.000 dan makan sembunyi-sembunyi.' },
         { year: 'Jual Risol & Servis TV Rusak', text: 'Menjual risol buatan istri dan keliling mencari TV bekas rusak untuk diservis sendiri lalu dijual kembali.' },
         { year: 'Ditipu & Istri Sakit Keras', text: 'Mengalami penipuan puluhan juta; saat istri sakit keras di RS, ia ditolong pinjaman seorang pembeli toko yang baru dikenal.' },
         { year: '2023 — Viral Organik Media Sosial', text: 'Membuat konten edukasi dan penawaran elektronik di medsos; pesanan membludak tanpa biaya iklan berbayar.' },
@@ -5514,7 +5514,7 @@ const Stories = {
           num: 1,
           title: 'Uang Saku Rp 15.000 dan Tanggung Jawab Pengantin Baru',
           paragraphs: [
-            'Tahun 2018 menghadirkan ujian mahaberat bagi kehidupan Muhammad di Sidoarjo, Jawa Timur. Belum lama mengikat janji suci pernikahan, ia mendadak terkena pemutusan hubungan kerja (PHK) dari perusahaan tempatnya bekerja.',
+            'Tahun 2018 menghadirkan ujian mahaberat bagi kehidupan Muhammad di Sidoarjo, Jawa Timur. Belum lama mengikat janji suci pernikahan, ia mendadak mengalami pemutusan hubungan kerja dari perusahaan tempatnya bekerja.',
             'Kewajiban cicilan bulanan tetap berjalan tanpa kompromi, sementara tabungannya terkuras habis hingga hanya menyisakan uang tunai Rp 15.000 di saku celananya.',
             'Demi menjaga perasaan dan ketenangan sang istri, Muhammad terpaksa menyembunyikan rasa laparnya dan makan nasi porsi minim seorang diri di luar rumah agar istrinya tidak cemas.'
           ]
