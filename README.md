@@ -284,6 +284,7 @@ Seluruh logika perhitungan finansial, alur fase pemulihan, dan antarmuka aplikas
 | **Fitur Pemulihan Lanjutan** | Prioritas utang berbasis agunan & risiko hukum, rasio DTI, status `NO_INCOME`, pengingat follow-up, laporan bulanan, review mingguan, rencana 90 hari, integritas ekspor CSV. | **82/82 PASSED (100%)** |
 | **Pencarian Kisah Bangkit** | Kontrak DOM (mengetik tidak boleh membangun ulang kotak pencarian), cakupan field termasuk kota, pencocokan banyak kata (AND), dan padanan kosakata sehari-hari. | **39/39 PASSED (100%)** |
 | **Tata Letak & Target Sentuh** | Minimum 44px pada perangkat sentuh beserta urutan cascade-nya, grid statistik bebas pemaksaan `!important`, lebar dropdown, panjang label opsi, dan label kategori berbahasa Indonesia. | **32/32 PASSED (100%)** |
+| **Pola & Grafik Analisis 77 Tokoh** | Verifikasi pemetaan 77 tokoh ke 6 klaster masalah, 5 strategi titik balik, matriks skala utang, dan pengalihan filter interaktif. | **169/169 PASSED (100%)** |
 | **Pembaruan PWA & Luring** | Strategi jaringan-dulu untuk kode aplikasi, cache-dulu untuk font, ketahanan pemasangan terhadap berkas gagal, tawaran muat ulang, dan header hosting `sw.js`. | **30/30 PASSED (100%)** |
 | **Decision Matrix Gap Audit** | Sapuan 1.440 permutasi variabel (Pekerjaan × Target × Keahlian × Hari × Kondisi Keuangan), 11 kaidah per permutasi. | **0 GAP / 100% COVERED** |
 
@@ -304,6 +305,7 @@ node tests/search_test.js
 node tests/layout_test.js
 node tests/pwa_update_test.js
 node tests/deep_gap_audit.js
+node tests/patterns_test.js
 ```
 
 ### 🛡️ Kaidah Rekayasa yang Dijaga Suite Ini
