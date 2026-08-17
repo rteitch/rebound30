@@ -6519,6 +6519,93 @@ const Stories = {
         'Kekuatan Afirmasi Syukur Harian: Menggeser fokus pikiran dari kecemasan utang ke rasa syukur atas rezeki harian terbukti membuka peluang-peluang baru secara tak terduga.',
         'Merintis Arus Kas Mikro dari Komunitas Hobi: Berjualan ikan cupang dari kontrakan petak membuktikan bahwa sumber rezeki pelunas utang bisa bermula dari komoditas yang sangat sederhana.'
       ]
+    },
+    {
+      id: 'bagasalimpad',
+      featured: false,
+      name: 'Bagas Alimpad (Raja Camilan Kediri)',
+      tagline: 'Dari "Pait Seventeen" Utang Rp 1,3 Miliar Usia 17 — Olah Jamur Sisa Paman Jadi Keripik, Lunas 4 Tahun & 12 Merek Camilan',
+      title: 'Dari "Pait Seventeen" dan Utang Rp 1,3 Miliar, Bangkit Jadi Raja Keripik',
+      subtitle: 'Pengusaha Camilan Asal Kediri — Mengubah Bencana Investasi Ponzi Usia Remaja Menjadi Imperium 12 Merek Camilan dengan Ribuan Reseller',
+      origin: 'Kediri, Jawa Timur',
+      ageAtRebound: '17 Tahun (2015)',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 1,3 M Usia 17 & Keripik Jamur',
+      badge: 'Raja Camilan Kediri — 12 Merek & Lunas Usia 21',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FEF3C7',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Rp 1,3 Miliar (Dana 14 Investor Money Game Ponzi)',
+        age: '17 Tahun (Tahun 2015)',
+        lowest: 'Situs Investasi Diblokir Pemerintah, Uang Rp 1,3 M Lenyap, Diteror & Dicaci Investor Dewasa Setiap Hari',
+        action: 'Tanggung Jawab Tidak Kabur + Olah Jamur Sisa Paman Jadi Keripik + Pemasaran Medsos + Bangun 12 Merek Camilan',
+        result: 'Seluruh Utang Rp 1,3 Miliar Lunas Tuntas 2019, 12 Brand Camilan, Ribuan Reseller Se-Indonesia, Omzet Ratusan Juta'
+      },
+      timeline: [
+        { year: '2015 — "Pait Seventeen" & Rp 1,3 M', text: 'Mengelola dana 14 investor di money game saat SMA; situs diblokir pemerintah hingga dana Rp 1,3 miliar lenyap.' },
+        { year: 'Teror Harian & Komitmen Tanggung Jawab', text: 'Dicaci maki investor dewasa setiap hari; Bagas menolak lari dan berkomitmen melunasi seluruh dana investor.' },
+        { year: 'Inovasi Keripik Jamur Sisa Paman', text: 'Mengolah jamur tiram paman yang menumpuk tak laku menjadi keripik jamur krispi dalam kemasan kekinian.' },
+        { year: 'Pemasaran Medsos & Belajar Bisnis', text: 'Memanfaatkan media sosial, rajin mengikuti seminar bisnis, dan menjalin kemitraan dengan distributor profesional.' },
+        { year: '2019 — Lunas Total dalam 4 Tahun', text: 'Tepat dalam waktu 4 tahun (usia 21 tahun), seluruh utang Rp 1,3 miliar lunas seratus persen dari keuntungan keripik.' },
+        { year: 'Hari Ini — 12 Brand & Ribuan Reseller', text: 'Menaungi 12 merek camilan (pisang, singkong, makaroni) dengan ribuan reseller di seluruh penjuru tanah air.' }
+      ],
+      quote: 'Kalau anak muda lain merasakan jatuh cinta baper di usia 17 tahun, saya merasakan jatuh tempo. Dunia siang bolong pun terasa gelap diteror investor. Tapi kegagalan itu bukan akhir; ketika kita bertanggung jawab dan terus berinovasi, beban miliaran rupiah bisa lunas terbayar.',
+      quoteAuthor: 'Bagas Alimpad, pendiri imperium camilan Kediri',
+      chapters: [
+        {
+          num: 1,
+          title: 'Ujian Nasional, Money Game, dan Bencana 1,3 Miliar',
+          paragraphs: [
+            'Tahun 2015 di Kediri, Jawa Timur, Bagas Alimpad masih duduk di bangku kelas 3 SMA menjelang ujian akhir sekolah. Tergiur oleh iming-iming keuntungan finansial kilat, pemuda berusia 17 tahun ini memberanikan diri mengelola dana dari 14 investor dewasa dalam skema perputaran uang daring (*money game/forex ponzi*).',
+            'Pada awalnya aliran dana berjalan mulus, namun petaka datang tanpa peringatan saat regulator pemerintah resmi memblokir situs investasi tersebut.',
+            'Dalam hitungan detik, seluruh dana titipan investor senilai Rp 1,3 miliar menguap tanpa jejak. Di usia yang seharusnya merayakan masa remaja (*sweet seventeen*), Bagas mendapati dirinya terjebak dalam "pait seventeen" yang mencekam.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Teror Siang Malam dan Janji untuk Tidak Melarikan Diri',
+          paragraphs: [
+            'Hari-hari Bagas berubah menjadi mimpi buruk. Para pemilik modal yang emosional mendatangi rumahnya silih berganti, melontarkan teror, ancaman, dan cacian kasar: "Kamu masih anak kecil tapi sudah berani menipu orang tua!"',
+            'Bagi Bagas, siang yang terik sekalipun terasa gelap gulita karena beban mental yang menindih jiwanya. Banyak orang seusianya mungkin akan memilih kabur atau menyalahkan keadaan.',
+            'Namun Bagas mengambil sikap kesatria: ia menandatangani surat komitmen di hadapan para investor bahwa ia akan bertanggung jawab penuh melunasi seluruh rupiah yang hilang hingga tuntas.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Menyelamatkan Jamur Paman yang Terbuang',
+          paragraphs: [
+            'Untuk mencari sumber penghasilan riil, Bagas mengamati usaha budidaya jamur tiram milik pamannya di Kediri. Saat harga komoditas jamur jatuh di pasaran, berton-ton jamur tiram segar membusuk dan terbuang sia-sia.',
+            'Melihat celah tersebut, Bagas berinisiatif meminta jamur-jamur tak laku itu untuk diolah menjadi produk bernilai tambah: keripik jamur krispi aneka rasa gurih pedas.',
+            'Ia menggoreng dan meracik bumbu sendiri di dapur, mendesain kemasan aluminium foil yang menarik, lalu memasarkannya secara agresif melalui platform media sosial.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Belajar Cepat, Ekspansi Produk, dan Jaringan Reseller',
+          paragraphs: [
+            'Menyadari kelemahan ilmunya di masa lalu, Bagas menginvestasikan waktu untuk mengikuti seminar-seminar kewirausahaan dan berkonsultasi dengan praktisi bisnis senior.',
+            'Ia memperluas varian produknya dari keripik jamur ke olahan keripik pisang cokelat lumer, keripik singkong pedas renyah, hingga makaroni goreng gurih.',
+            'Dengan membangun sistem kemitraan keagenan dan merekrut ribuan *reseller* aktif dari kalangan mahasiswa dan ibu rumah tangga di berbagai kota, volume penjualan camilannya melonjak puluhan ribu bungkus per bulan.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Tahun 2019: Kemerdekaan Usia Dua Puluh Satu',
+          paragraphs: [
+            'Hasil dari kerja keras tanpa henti membuahkan hasil bersejarah. Pada tahun 2019, tepat empat tahun sejak musibah tersebut dan di usianya yang baru menginjak 21 tahun, Bagas berhasil melunasi seluruh utang Rp 1,3 miliar kepada 14 investor secara lunas seratus persen.',
+            'Kini, imperium bisnisnya telah menaungi 12 merek camilan nasional dengan perolehan omzet ratusan juta rupiah per bulan.',
+            'Kisah Bagas Alimpad membuktikan bahwa keberanian memikul tanggung jawab di usia muda dan mengubah limbah jamur menjadi komoditas unggulan mampu menghapus noda utang miliaran menjadi cerita kebangkitan yang agung.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Tanggung Jawab Mutlak Pemimpin (*Extreme Ownership*): Menolak lari dan berkomitmen mengembalikan dana investor Rp 1,3 miliar di usia 17 tahun adalah teladan integritas sejati.',
+        'Waspada Terhadap Skema Cepat Kaya (*Ponzi Scheme Literacy*): Memahami bahwa skema money game tanpa fundamental bisnis riil selalu berakhir pada kerugian besar.',
+        'Pemanfaatan Bahan Baku Marjinal (*Value-Added Processing*): Mengolah komoditas jamur yang terbuang menjadi produk camilan bernilai jual tinggi.',
+        'Membangun Ekosistem Distribusi Reseller: Melipatgandakan omzet penjualan melalui ribuan reseller aktif di media sosial untuk mempercepat likuiditas pelunasan utang.'
+      ]
     }
   ],
 
