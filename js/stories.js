@@ -4518,6 +4518,93 @@ const Stories = {
         'Spesialisasi dan Keragaman Produk (*Product Depth*): Menawarkan 40 varietas mangga menciptakan keunggulan kompetitif unik yang membedakan tokonya dari pedagang tanaman biasa.',
         'Memaksimalkan Aset Ruang yang Ada: Pekarangan sempit di depan rumah cukup menjadi landasan awal untuk menghasilkan perputaran omzet ratusan juta rupiah.'
       ]
+    },
+    {
+      id: 'mukhlis',
+      featured: false,
+      name: 'Mukhlis Syamaun',
+      tagline: 'Dari Profit 100x Lipat Runtuh Utang Rp 300 Juta & Tersisa 1 Gerai — Bangkit Jalan Sedekah Ekstrem, Miliki 100+ Karyawan & Beli 2-4 Rumah per Tahun',
+      title: 'Dari Utang Rp 300 Juta dan Gerai Tersisa Satu, Bangkit Berkat Sedekah Ekstrem',
+      subtitle: 'Pengusaha Ritel & Pameran Jakarta Timur — Mengubah Keruntuhan 9 Gerai Menjadi Keberkahan Finansial Lewat Sedekah Harian',
+      origin: 'Jakarta Timur',
+      ageAtRebound: 'Tahun 2007',
+      categories: ['debt', 'bankrupt', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 300 Jt & Sedekah Ekstrem',
+      badge: '100+ Karyawan — Pembeli 2–4 Rumah/Tahun',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FEF3C7',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Rp 300 Juta (9 Gerai Mal Kolaps)',
+        age: 'Tahun 2007 (Bangkit Pasca Krisis)',
+        lowest: '10 Gerai Runtuh Tersisa 1 Gerai di Jatinegara, Rumah Ngontrak Pindah-Pindah, Minus Rp 300 Jt',
+        action: 'Introspeksi Total + Sedekah Ekstrem (Omzet Harian, Cincin Nikah Ibu, Barang Rumah) + Dawam Sedekah',
+        result: 'Utang Lunas Total, Umrah, Miliki 100+ Karyawan & Beli 2-4 Unit Rumah Setiap Tahun'
+      },
+      timeline: [
+        { year: '2001 — Puncak Kejayaan Mal', text: 'Membuka pameran ritel di Mal Senen Jakarta Pusat dengan profit berlipat 100x lipat per hari dan membuka 10 gerai.' },
+        { year: '2007 — Bangkrut & Utang Rp 300 Jt', text: 'Bisnis kolaps tiba-tiba, 9 gerai tutup dan menyisakan beban utang Rp 300 juta. Tersisa 1 gerai kecil di Jatinegara.' },
+        { year: 'Introspeksi & Perubahan Mindset', text: 'Menyadari kelalaian berbagi saat kaya raya; bertekad mengutamakan hak orang lain lewat sedekah harian.' },
+        { year: 'Praktik Sedekah Ekstrem', text: 'Menyedekahkan seluruh omzet harian setelah cukup untuk dapur, melego komputer hingga cincin nikah warisan ibu.' },
+        { year: 'Pemulihan Arus Kas & Lunas', text: 'Perputaran modal terbuka lebar, utang Rp 300 juta lunas bertahap, dan mampu menunaikan ibadah umrah.' },
+        { year: 'Hari Ini — 100+ Karyawan', text: 'Mempekerjakan lebih dari 100 staf, keluar dari kontrakan, dan rutin membeli 2 hingga 4 properti rumah per tahun.' }
+      ],
+      quote: 'Ketika saya bangkrut dan punya utang Rp 300 juta, saya mengubah pola pikir. Dari omzet gerai yang tersisa, setelah cukup buat makan dapur hari itu, semuanya saya sedekahkan. Ketika kita mendawamkan sedekah setiap hari, pintu rezeki yang terkunci dibuka lebar.',
+      quoteAuthor: 'Mukhlis Syamaun, pengusaha ritel Jakarta Timur',
+      chapters: [
+        {
+          num: 1,
+          title: 'Kejayaan Instan di Mal Senen dan Peringatan Kebangkrutan',
+          paragraphs: [
+            'Awal era 2000-an menjadi saksi lonjakan kesuksesan Mukhlis Syamaun di industri ritel ibu kota. Melalui gerai pameran produk di salah satu pusat perbelanjaan di kawasan Senen, Jakarta Pusat, usahanya mendulang profit luar biasa hingga 100 kali lipat per hari.',
+            'Keberhasilan itu mendorongnya membuka 10 gerai sekaligus di berbagai pusat perbelanjaan. Uang mengalir deras, namun di balik kelimpahan materi tersebut, ia mengakui lalai menyisihkan hak sesama dan kurang mengakar pada nilai-nilai keberkahan spiritual.',
+            'Tahun 2007, roda nasib berputar drastis. Bisnisnya kolaps seketika akibat mismanagement dan kebocoran modal: sembilan dari sepuluh gerainya gulung tikar, menyisakan tumpukan utang senilai Rp 300 juta.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Tersisa Satu Gerai di Jatinegara dan Utang Rp 300 Juta',
+          paragraphs: [
+            'Kejatuhan tersebut merenggut status mapannya. Mukhlis terpaksa memboyong keluarganya tinggal di rumah kontrakan sempit dan berpindah-pindah tempat karena kesulitan membayar uang sewa tahunan.',
+            'Dari imperium sepuluh toko, kini ia hanya menggantungkan napas ekonomi pada satu-satunya gerai kecil yang tersisa di kawasan Jatinegara, Jakarta Timur dengan omzet pas-pasan yang nyaris tak cukup untuk makan.',
+            '"Saya benar-benar bangkrut di bawah minus Rp 300 juta lebih. Saya heran dari mana utang sebesar itu bisa datang padahal omzet dulunya sangat banyak," kenang Mukhlis merenungi hari-hari terkelamnya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Introspeksi Spiritual dan Keputusan Sedekah Ekstrem',
+          paragraphs: [
+            'Alih-alih menyalahkan keadaan atau menghindar dari kreditur, Mukhlis memilih jalan perenungan batin dan taubat nasuha. Ia menyimpulkan bahwa modal utama yang hilang dari bisnisnya bukanlah uang, melainkan keberkahan.',
+            'Ia mengambil keputusan radikal yang di luar nalar akal kalkulasi bisnis konvensional: mempraktikkan sedekah ekstrem (*radical giving*).',
+            'Berapa pun penghasilan yang diperoleh dari satu-satunya gerai di Jatinegara, setelah disisihkan sekadar untuk kebutuhan makan pokok dapur hari itu, seluruh sisa uang kas langsung disedekahkan habis kepada kaum duafa dan anak yatim.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Cincin Nikah Ibu, Komputer, dan Aliran Rezeki Tak Terduga',
+          paragraphs: [
+            'Komitmen sedekah itu dijalankannya secara konsisten bersama sang istri tercinta. Ketika tidak ada sisa uang tunai di dompet, mereka mencari barang-barang berharga di rumah untuk disedekahkan.',
+            'Mulai dari perangkat komputer kerja hingga cincin kawin emas warisan almarhumah ibundanya direlakan untuk disedekahkan demi membantu orang yang lebih membutuhkan.',
+            'Pengorbanan tulus itu membuka pintu-pintu pertolongan tak terduga: transaksi di gerai Jatinegara mendadak ramai kembali, pelanggan grosir baru berdatangan, dan arus kas perputaran barangnya membesar berlipat ganda.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas Total, Ratusan Karyawan, dan Beli 4 Rumah per Tahun',
+          paragraphs: [
+            'Berkat ketekunan mendawamkan sedekah harian dan tata kelola bisnis yang bersih, seluruh utang Rp 300 juta lunas terbayar tuntas. Mukhlis bahkan mampu memberangkatkan keluarga beribadah umrah ke Tanah Suci.',
+            'Skala usahanya kini bertransformasi menjadi korporasi yang mempekerjakan lebih dari 100 orang karyawan. Dari yang semula harus berpindah kontrakan, kini ia mampu berinvestasi membeli 2 hingga 4 unit rumah setiap tahunnya.',
+            'Kisah Mukhlis Syamaun membuktikan bahwa tangan yang berada di atas tidak akan pernah kekurangan, dan berbagi dengan ikhlas adalah tuas pengungkit rezeki terkuat di alam semesta.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Hukum Memberi Sebagai Pengungkit Keberkahan Finansial: Melepaskan keterikatan tamak terhadap materi dan mendawamkan sedekah harian membuka pintu kelancaran arus kas.',
+        'Introspeksi Diri Saat Bisnis Kolaps: Mencari akar kegagalan moral dan spiritual jauh lebih mendasar daripada sekadar meratapi angka kerugian di atas kertas.',
+        'Kompak Bersama Pasangan dalam Keputusan Darurat: Kesediaan istri menyedekahkan cincin nikah membuktikan kekuatan sinergi keluarga sebagai fondasi kebangkitan.',
+        'Mentalitas Berbagi Sejak dari Titik Minus: Bersedekah tidak perlu menunggu kaya; memulainya saat serba terbatas melatih mentalitas kelimpahan (*abundance mindset*).'
+      ]
     }
   ],
 
