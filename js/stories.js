@@ -5388,6 +5388,93 @@ const Stories = {
         'Kesabaran Proses (*Two-Year Rule*): Membangun bisnis kuliner dari nol membutuhkan masa inkubasi dan kesabaran (2 tahun) untuk membangun loyalitas pelanggan.',
         'Dampak Sosial Kebangkitan Ekonomi: Melunasi utang masa lalu membuka pintu rezeki baru untuk memberdayakan puluhan karyawan di lingkungan sekitar.'
       ]
+    },
+    {
+      id: 'edrickchang',
+      featured: false,
+      name: 'Edrick Chang',
+      tagline: 'Dari Ditipu Rekan Bisnis Utang Miliaran & Nyaris Akhiri Hidup — Tanggalkan Gengsi Jual Barang Rumah & Makelar, Lunas Total dalam 2 Tahun',
+      title: 'Dari Nyaris Mengakhiri Hidup Akibat Utang Miliaran, Bangkit Lunas Total 2 Tahun',
+      subtitle: 'Pengusaha Muda & Content Creator — Mengubah Titik Tergelap Keputusasaan Menjadi Pembuktian Kerja Keras dan Kebebasan Finansial',
+      origin: 'Jakarta',
+      ageAtRebound: 'Jakarta, 2017',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Ditipu Miliaran & Titik Kritis Mental',
+      badge: 'Lunas Total 2 Tahun — Pengusaha Multi-Lini',
+      theme: 'violet',
+      accentColor: '#7C3AED',
+      bgLight: '#EDE9FE',
+      borderLight: '#DDD6FE',
+      stats: {
+        debt: 'Miliaran Rupiah (Ditipu Rekan Bisnis)',
+        age: 'Jakarta, Tahun 2017',
+        lowest: 'Seluruh Harta Habis, Utang Miliaran, Depresi Berat Nyaris Bunuh Diri, Jual Barang Rumah',
+        action: 'Stop Kebiasaan Buruk + Jual Perabot + Makelar Mobil & Sewa Properti + Kerja Tekun Alokasi Gaji 2 Tahun',
+        result: 'Utang Miliaran Lunas 100% dalam 2 Tahun, Bisnis Properti & Otomotif Berkembang, Hidup Bahagia'
+      },
+      timeline: [
+        { year: 'Puncak Kejayaan & Dikhianati', text: 'Menjalankan bisnis dengan gaya hidup mewah; ditipu oleh rekan bisnis hingga menanggung utang miliaran rupiah.' },
+        { year: 'Titik Nadir: Depresi & Nyaris Akhiri Hidup', text: 'Kehilangan seluruh kekayaan; mengalami depresi berat hingga terbersit niat mengakhiri hidup akibat rasa malu dan beban utang.' },
+        { year: 'Momen Sadar & Tanggalkan Gengsi', text: 'Tersadar dari keputusasaan; menjual perabotan rumah tangga dan memotong total gaya hidup mewah demi bertahan hidup.' },
+        { year: 'Rintis Usaha Serabutan', text: 'Memulai dari nol tanpa rasa malu: menjadi makelar jual beli mobil bekas, persewaan apartemen, hingga jualan makanan.' },
+        { year: '2017 — Pekerjaan Baru & Disiplin Pelunasan', text: 'Mendapatkan pekerjaan tetap impian; konsisten menyisihkan mayoritas penghasilan untuk mencicil utang.' },
+        { year: 'Lunas Total 2 Tahun — Bebas Finansial', text: 'Melunasi seluruh kewajiban utang miliaran dalam kurun waktu 2 tahun; kini hidup mapan, berkecukupan, dan damai.' }
+      ],
+      quote: 'Waktu kehilangan segalanya dan terjebak utang miliaran, saya nyaris mengakhiri hidup. Tapi kegelapan bukan akhir. Saya buang gengsi, jual apa yang ada, dan cicil sedikit demi sedikit. Selama masih bernapas, selalu ada kesempatan untuk bangkit dan menemukan kebahagiaan sejati.',
+      quoteAuthor: 'Edrick Chang, pengusaha muda dan praktisi properti/otomotif',
+      chapters: [
+        {
+          num: 1,
+          title: 'Kepercayaan yang Berbuah Pengkhianatan Miliaran',
+          paragraphs: [
+            'Di masa mudanya, Edrick Chang menikmati kesuksesan finansial yang gemilang. Dikelilingi gaya hidup mewah dan pergaulan kelas atas, ia menaruh keyakinan penuh kepada rekan bisnisnya untuk mengelola proyek bersama.',
+            'Namun kepercayaan tersebut dibalas pengkhianatan fatal. Rekan bisnisnya melakukan penipuan dan penggelapan dana secara masif, lalu kabur melarikan diri meninggalkan Edrick sendirian.',
+            'Bukan hanya seluruh akumulasi tabungannya yang ludes, Edrick mendadak harus memikul tumpukan utang vendor dan lembaga keuangan senilai miliaran rupiah yang jatuh tempo serentak.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Titik Nadir: Ketika Kegelapan Mendorong ke Ujung Batas',
+          paragraphs: [
+            'Kejatuhan drastis dari puncak kemewahan ke dasar jurang kemiskinan meremukkan kesehatan mental Edrick. Tekanan penagihan, tuntutan hukum, dan rasa malu sosial memicu depresi klinis yang sangat parah.',
+            'Dalam keputusasaan yang mencekam, Edrick merasa dunianya telah tamat dan sempat berpikir untuk mengakhiri hidupnya sendiri.',
+            'Namun di detik-detik paling kritis, secercah kesadaran spiritual dan nurani batin menyentakkan jiwanya: mengakhiri hidup bukanlah jalan keluar, ia harus bertanggung jawab dan memenangkan kembali masa depannya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Menjual Perabotan Rumah dan Menanggalkan Gengsi',
+          paragraphs: [
+            'Langkah pertama pemulihannya adalah merombak total gaya hidup. Edrick menghentikan kebiasaan konsumtif dan menjual barang-barang yang tersisa di rumahnya—dari pakaian bermerek, jam tangan, hingga perabotan rumah—demi menyambung hidup harian.',
+            'Ia menanggalkan seluruh rasa gengsi mantan pengusaha sukses. Ia mulai bekerja serabutan apa saja yang menghasilkan uang halal: menjadi perantara jual beli mobil bekas (*makelar mobil*), mengelola sewa-menyewa apartemen orang lain, hingga berdagang makanan skala kecil.',
+            'Setiap nominal kecil yang ia peroleh ia kumpulkan dengan disiplin tanpa malu terhadap pandangan orang lain.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Tahun 2017: Disiplin Dua Tahun Melunasi Beban',
+          paragraphs: [
+            'Titik terang profesional terbuka pada tahun 2017 ketika Edrick berhasil mendapatkan pekerjaan profesional yang sesuai dengan kapasitas dan aspirasinya.',
+            'Dengan etos kerja keras yang tak kenal lelah, ia mengalokasikan mayoritas penghasilannya secara ketat untuk melunasi cicilan utang miliaran rupiah kepada para krediturnya.',
+            'Konsistensi dan ketabahan itu membuahkan hasil spektakuler: tepat dalam waktu dua tahun, seluruh utang miliaran rupiah yang membelenggunya lunas 100% tanpa sisa.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Menemukan Kembali Cahaya dan Kebebasan Sejati',
+          paragraphs: [
+            'Setelah terbebas total dari utang, Edrick kembali mengembangkan sayap bisnisnya di sektor otomotif, investasi properti, kuliner, serta menjadi kreator konten inspiratif di media sosial.',
+            'Ia membagikan kisahnya secara terbuka agar masyarakat yang sedang tertekan utang tidak mengambil jalan pintas yang fatal.',
+            'Kisah Edrick Chang adalah monumen pengingat bahwa titik tergelap dalam hidup bukanlah akhir cerita; ketika seseorang berani melepaskan gengsi dan berjuang langkah demi langkah, kebebasan dan kebahagiaan hakiki akan menyambut di ujung perjuangan.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kesehatan Mental Adalah Prioritas Mutlak Saat Krisis: Jangan pernah menyerah pada pikiran destruktif saat terlilit utang; cari bantuan, terima realitas, dan fokus pada solusi satu hari demi satu hari.',
+        'Menanggalkan Gengsi dan Memangkas Gaya Hidup Ekstrem: Menjual barang pribadi dan berani melakukan pekerjaan perantara (makelar mobil/properti) adalah langkah realistis mengumpulkan likuiditas darurat.',
+        'Disiplin Eksekusi Pembayaran Terfokus (*Aggressive Debt Paydown*): Mengalokasikan mayoritas penghasilan pekerjaan baru secara konsisten mempercepat pelunasan utang miliaran hanya dalam 2 tahun.',
+        'Mengonversi Trauma Menjadi Berkah Edukasi: Membagikan pengalaman bangkit dari titik nadir membantu ribuan orang lain yang sedang bergulat dengan keputusasaan finansial.'
+      ]
     }
   ],
 
