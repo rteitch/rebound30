@@ -5040,6 +5040,93 @@ const Stories = {
         'Spesialisasi dan Standar Kualitas Material: Kualitas paving block yang kuat dan presisi menjadi magnet pemesanan berulang (*repeat order*) berskala ratusan juta rupiah.',
         'Kekayaan Sejati Adalah Ketenangan Jiwa: Gaya hidup bersahaja dan kerendahhatian menjaga pengusaha tetap membumi dan dicintai oleh komunitas lingkungannya.'
       ]
+    },
+    {
+      id: 'bambangprasetyo',
+      featured: false,
+      name: 'Bambang Prasetyo',
+      tagline: 'Dari Pengusaha Percetakan 25 Tahun Bangkrut Miliaran & Jual Aset Demi Gaji Karyawan — Tanggalkan Gengsi Jadi Driver Online, Antar Anak Lulus S2 IPB',
+      title: 'Dari Pengusaha Percetakan 25 Tahun, Bangkit Jadi Driver Ojol Demi Kuliah S2 Anak',
+      subtitle: 'Mantan Pemilik Percetakan Jakarta — Menaklukkan Badai Kebangkrutan Miliaran Rupiah Lewat Arus Kas Harian GrabCar',
+      origin: 'Jakarta',
+      ageAtRebound: '54 Thn (2018)',
+      categories: ['bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Bangkrut Percetakan & Driver Harian',
+      badge: 'Driver Terbaik — Biayai Kuliah S2 Anak di IPB',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Miliaran Rupiah (Ekspansi Macet & Tertipu)',
+        age: '54 Tahun (Tahun 2018)',
+        lowest: 'Percetakan 25 Tahun Kolaps, Seluruh Mesin Dijual Demi Bayar Karyawan, Nol Penghasilan',
+        action: 'Tanggalkan Gengsi + Jadi Driver GrabCar Usai Subuh (13-22 Trip/Hari) + Manfaatkan Kas Tunai Harian',
+        result: 'Finansial Keluarga Pulih, Antar Anak Lulus S2 IPB Berprestasi, Mitra Driver Terbaik'
+      },
+      timeline: [
+        { year: '1989–2014 — 25 Tahun Percetakan', text: 'Merintis dan membesarkan bisnis percetakan di Jakarta selama seperempat abad hingga mempekerjakan puluhan karyawan.' },
+        { year: '2014 — Ekspansi Macet & Tertipu', text: 'Mengalami penipuan proyek skala besar dan kesalahan perhitungan ekspansi hingga merugi miliaran rupiah.' },
+        { year: 'Jual Mesin Demi Karyawan', text: 'Menjual seluruh mesin cetak dan aset usaha demi melunasi hak gaji karyawan; jatuh miskin tanpa sisa tabungan.' },
+        { year: 'Panggilan Kuliah S2 Anak di IPB', text: 'Sang anak berprestasi di Institut Pertanian Bogor dan lolos program percepatan S2; Bambang terpacu mencari nafkah instan.' },
+        { year: 'Juli 2018 — Banting Setir GrabCar', text: 'Mendaftar driver online; menyukai perputaran uang kas harian tanpa risiko piutang macet berbulan-bulan.' },
+        { year: 'Hari Ini — Lulus S2 & Driver Teladan', text: 'Menuntaskan 13–22 trip setiap hari sejak usai Subuh; berhasil membiayai kuliah magister anaknya hingga lulus dan jadi driver terbaik.' }
+      ],
+      quote: 'Di taksi online ini saya merasa nyaman karena hari ini kerja ya hari ini uangnya langsung masuk. Cash, tidak ada istilah ngutang atau tunggu termin proyek 3 bulan. Tidak ada pekerjaan yang hina selama halal demi pendidikan anak.',
+      quoteAuthor: 'Bambang Prasetyo, mantan pengusaha percetakan dan mitra driver online Jakarta',
+      chapters: [
+        {
+          num: 1,
+          title: 'Seperempat Abad Rintisan Percetakan yang Runtuh',
+          paragraphs: [
+            'Selama 25 tahun, Bambang Prasetyo mendedikasikan hidupnya membangun industri percetakan di Jakarta. Dari bengkel sablon kecil, usahanya bertransformasi menjadi percetakan mapan yang melayani berbagai instansi dan perusahaan besar.',
+            'Namun petaka menghantam pada tahun 2014 ketika ia melakukan ekspansi mesin berbiaya tinggi yang bertepatan dengan jebakan penipuan invoice oleh mitra bisnis nakal.',
+            'Kerugian tak terhindarkan menembus angka miliaran rupiah. Bisnis yang dirawat dengan cucuran keringat selama 25 tahun itu kolaps seketika tanpa ampun.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Integritas Menjual Seluruh Aset Demi Gaji Karyawan',
+          paragraphs: [
+            'Di tengah kebangkrutan yang memilukan, Bambang menunjukkan integritas moral luar biasa. Ia menolak lari dari tanggung jawab terhadap staf dan karyawannya yang telah setia mendampingi.',
+            'Ia melelang seluruh aset berharga miliknya: mesin percetakan offset, komputer desain, hingga inventaris kantor demi melunasi hak pesangon dan gaji seluruh pekerjanya.',
+            'Semua karyawan terbayar penuh, namun konsekuensinya Bambang jatuh ke titik nadir: kehilangan seluruh modal, tabungan terkuras habis, dan tidak memiliki sisa aset produktif sama sekali.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Prestasi Anak di IPB dan Desakan Biaya Magister',
+          paragraphs: [
+            'Di tengah kebingungan mencari arah hidup di usia 54 tahun, kabar membanggakan datang dari sang buah hati yang menempuh pendidikan sarjana di Institut Pertanian Bogor (IPB).',
+            'Berkat prestasinya yang cemerlang, anaknya terpilih masuk program *fast-track* magister (S2) sejak semester enam. Peluang emas tersebut menuntut biaya pendidikan lanjutan yang harus segera dipenuhi.',
+            'Sebagai seorang ayah, Bambang bersumpah tidak akan membiarkan masa depan anaknya terhenti karena kegagalan bisnis masa lalu: "Saya harus bergerak lebih cepat dan mencari jalan menghasilkan uang tunai."'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Juli 2018: Menanggalkan Gengsi di Balik Kemudi Mobil',
+          paragraphs: [
+            'Pada Juli 2018, Bambang mengambil langkah berani dengan membuang jauh-jauh ego mantan bos percetakan 25 tahun: mendaftarkan diri sebagai mitra pengemudi GrabCar.',
+            'Ia menemukan keunggulan struktural yang membedakan bisnis transportasi online dari percetakan: likuiditas kas harian murni (*instant cash settlement*).',
+            '"Dulu waktu di percetakan, termin pembayaran proyek besar bisa cair 3 bulan setelah pengerjaan dan rawan macet. Sementara di sini, hari ini narik ya hari ini uang masuk dompet, bersih tanpa piutang," kenangnya.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Disiplin Subuh, 22 Trip Sehari, dan Toga Magister Anak',
+          paragraphs: [
+            'Dengan disiplin kerja keras seorang mantan pengusaha, Bambang memanaskan mesin mobilnya setiap hari usai salat Subuh. Ia konsisten menyelesaikan 13 hingga 22 trip perjalanan melintasi rimba kemacetan Jakarta.',
+            'Ketekunan tanpa mengeluh itu berhasil menghantarkan sang anak meraih gelar Magister Sains di IPB dengan predikat membanggakan, sekaligus menempatkan Bambang sebagai salah satu mitra pengemudi teladan bintang lima.',
+            'Kisah Bambang Prasetyo mengajarkan bahwa kehormatan sejati seseorang tidak diukur dari jabatan masa lalu yang telah hilang, melainkan kerendahhatian untuk bekerja keras demi memuliakan keluarga.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Keutamaan Menjaga Integritas dan Hak Pekerja: Mengorbankan aset pribadi demi membayar tuntas hak karyawan membangun reputasi batin yang bersih dan lapang.',
+        'Menanggalkan Ego Masa Lalu Demi Tanggung Jawab Keluarga: Menghilangkan rasa gengsi mantan pimpinan usaha adalah kunci adaptasi tercepat saat harus memulai kembali dari nol.',
+        'Pentingnya Model Bisnis Arus Kas Harian (*Cash vs Accounts Receivable*): Bisnis dengan perputaran kas langsung (*cash on delivery/daily payout*) menghilangkan risiko piutang macet yang kerap menenggelamkan UMKM.',
+        'Disiplin Kerja Eksekusi Konsisten: Menjaga rutinitas kerja sejak fajar (13–22 trip harian) membuktikan etos kerja gigih akan selalu berbuah pemulihan ekonomi nyata.'
+      ]
     }
   ],
 
