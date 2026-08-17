@@ -5562,6 +5562,93 @@ const Stories = {
         'Pemanfaatan Pemasaran Organik Media Sosial: Konten edukasi dan transparansi kondisi barang di media sosial mampu menciptakan ledakan penjualan tanpa biaya iklan berbayar.',
         'Kedermawanan Sebagai Magnet Rezeki: Menjaga konsistensi sedekah saat kondisi sulit maupun lapang memperluas jejaring berkah dan kemudahan dalam berbisnis.'
       ]
+    },
+    {
+      id: 'sukanti',
+      featured: false,
+      name: 'Sukanti (Keripik Pare Khanza)',
+      tagline: 'Dari Mertua Ditipu Arisan Ratusan Juta — Bakti Menantu Olah Pare Pahit Jadi Keripik Gurih Renyah Khanza, Lunas Total Seluruh Utang',
+      title: 'Dari Utang Mertua Ratusan Juta, Bangkit Lewat Gurihnya Keripik Pare Khanza',
+      subtitle: 'Produsen Keripik Pare Khanza Blitar — Mengubah Sayuran Pahit Menjadi Camilan Gurih Bernilai Ekonomi Tinggi Demi Melunasi Utang Keluarga',
+      origin: 'Blitar, Jawa Timur',
+      ageAtRebound: 'Blitar, Jawa Timur',
+      categories: ['debt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Ratusan Juta & Olahan Pare',
+      badge: 'Keripik Pare Khanza — Lunas Utang Keluarga',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Ratusan Juta Rupiah (Mertua Tertipu Arisan)',
+        age: 'Blitar, Jawa Timur',
+        lowest: 'Ibu Mertua Ditipu Arisan Bodong, Utang Ratusan Juta Jatuh Tempo, Terancam Runtuh Finansial',
+        action: 'Bakti Menantu + Eksperimen Hilangkan Pahit Pare + Produksi Rumahan Keripik Khanza + Distribusi Pasar',
+        result: 'Seluruh Utang Ratusan Juta Lunas Total, Usaha Keripik Pare Mandiri & Jadi Ikon Camilan Blitar'
+      },
+      timeline: [
+        { year: 'Musibah Penipuan Arisan', text: 'Ibu mertua menjadi korban penipuan arisan bodong hingga meninggalkan utang ratusan juta rupiah yang mengancam keluarga.' },
+        { year: 'Bakti & Eksperimen Dapur', text: 'Sukanti berinisiatif membantu; bereksperimen di dapur rumah mengolah pare pahit menjadi keripik renyah bebas pahit.' },
+        { year: 'Lahirnya Keripik Pare Khanza', text: 'Meluncurkan merek "Khanza"; memproduksi mandiri mulai dari memotong, membumbui, hingga menggoreng renyah.' },
+        { year: 'Penjualan Meluas & Repeat Order', text: 'Pesanan meluas dari tetangga ke toko oleh-oleh, pusat camilan Jawa Timur, dan pesanan daring.' },
+        { year: 'Utang Lunas Bertahap', text: 'Menyisihkan seluruh keuntungan usaha untuk mencicil utang mertua hingga lunas seratus persen.' },
+        { year: 'Hari Ini — Pengusaha Keripik Mandiri', text: 'Memiliki bisnis camilan stabil yang memulihkan martabat keluarga dan menjadi sumber penghasilan berdaya.' }
+      ],
+      quote: 'Melihat ibu mertua menanggung utang ratusan juta karena ditipu, saya tidak bisa tinggal diam. Dari dapur kecil dan sayur pare yang pahit, saya percaya jika niat kita tulus berbakti dan tekun berusaha, rasa pahit kehidupan pun bisa diubah menjadi manisnya keberhasilan.',
+      quoteAuthor: 'Sukanti, pendiri Keripik Pare Khanza Blitar',
+      chapters: [
+        {
+          num: 1,
+          title: 'Musibah Penipuan Arisan dan Beban Ratusan Juta',
+          paragraphs: [
+            'Kehidupan keluarga Sukanti di Blitar, Jawa Timur awalnya berlangsung tenang dan bersahaja. Namun ketenteraman itu runtuh seketika saat sang ibu mertua yang sangat dihormatinya terjerat musibah penipuan berkedok arisan bodong.',
+            'Pelaku penipuan kabur melarikan dana, sementara beban kewajiban utang ratusan juta rupiah jatuh sepenuhnya ke pundak keluarga mertua dengan ancaman penagihan yang bertubi-tubi.',
+            'Melihat kesedihan dan keputusasaan yang melanda keluarga besarnya, Sukanti menolak menjadi penonton pasif. Ia berikrar akan berjuang sekuat tenaga membantu melunasi kewajiban tersebut demi membela kehormatan keluarga.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Menemukan Harapan di Balik Pahitnya Sayur Pare',
+          paragraphs: [
+            'Tanpa modal dana segar untuk memulai bisnis besar, Sukanti mengamati potensi bahan pangan di sekitarnya. Pandangannya tertuju pada sayur pare—komoditas hasil kebun yang melimpah dan murah, namun dijauhi banyak orang karena rasa pahitnya yang pekat.',
+            'Sukanti melihat celah inovasi: jika rasa pahit pare bisa dihilangkan dan diolah menjadi camilan gurih yang renyah, produk ini akan memiliki nilai tambah (*value-added*) yang sangat tinggi di pasar kuliner.',
+            'Ia mulai melakukan serangkaian eksperimen di dapur rumahnya, mencoba berbagai teknik perendaman garam alami dan racikan tepung berbumbu rempah nusantara.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Keringat Dapur dan Lahirnya Merek Khanza',
+          paragraphs: [
+            'Setelah melalui puluhan kali uji coba, Sukanti berhasil menemukan formula ideal yang membuat tekstur keripik pare menjadi renyah krispi tanpa menyisakan rasa pahit sama sekali.',
+            'Ia memberi label produknya **Keripik Pare Khanza**. Seluruh tahapan produksi—mulai dari mencuci, mengiris tipis secara manual, membalur bumbu, hingga menggoreng di wajan besar—dikerjakannya sendiri dengan penuh ketelitian.',
+            'Produknya segera menyebar dari pesanan tetangga desa, arisan ibu-ibu, hingga merambah jaringan toko oleh-oleh dan pusat camilan di kawasan Blitar dan kota-kota sekitarnya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Menyisihkan Setiap Lembar Rupiah Demi Pelunasan',
+          paragraphs: [
+            'Dengan manajemen keuangan yang sangat disiplin, Sukanti memisahkan secara ketat antara modal kerja untuk membeli bahan baku pare dan keuntungan bersih penjualan.',
+            'Setiap lembar keuntungan yang terkumpul tidak dihamburkan, melainkan langsung disetorkan untuk mengangsur utang ratusan juta rupiah yang membelenggu mertuanya secara konsisten.',
+            'Ketekunan luar biasa itu berbuah kebebasan: setelah perjuangan panjang tanpa henti, seluruh utang penipuan ratusan juta rupiah tersebut berhasil dilunasi tuntas seratus persen.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Bakti Berbuah Manis dan Martabat yang Pulih',
+          paragraphs: [
+            'Kini, Keripik Pare Khanza telah menjelma menjadi salah satu produk camilan UMKM kebanggaan Blitar dengan pasokan rutin ke berbagai gerai kuliner modern dan e-commerce.',
+            'Bakti tulus Sukanti bukan hanya melenyapkan utang yang menghantui keluarga, melainkan juga melahirkan unit usaha mandiri yang menopang kesejahteraan ekonomi rumah tangganya.',
+            'Kisah Sukanti adalah teladan agung bahwa ketulusan berbakti kepada keluarga dan kreativitas mengolah keterbatasan mampu mengubah bahan yang paling pahit sekalipun menjadi ladang rezeki yang penuh keberkahan.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kekuatan Niat Berbakti Sebagai Energi Usaha: Ketulusan membantu keluarga keluar dari krisis finansial menjadi pemicu daya juang yang melampaui rasa lelah.',
+        'Inovasi Pengolahan Komoditas Marjinal: Mengubah bahan baku murah dan pahit (sayur pare) menjadi camilan krispi bernilai ekonomi tinggi menciptakan diferensiasi pasar yang kuat.',
+        'Disiplin Eksekusi Alokasi Laba (*Strict Cash Allocation*): Memisahkan modal putaran dan memfokuskan keuntungan untuk membayar angsuran mempercepat pelunasan utang keluarga.',
+        'Membangun Aset Produktif dari Krisis: Perjuangan melunasi utang justru melahirkan unit bisnis mandiri yang terus menghasilkan pendapatan berkelanjutan pasca krisis.'
+      ]
     }
   ],
 
