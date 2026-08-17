@@ -4605,6 +4605,93 @@ const Stories = {
         'Kompak Bersama Pasangan dalam Keputusan Darurat: Kesediaan istri menyedekahkan cincin nikah membuktikan kekuatan sinergi keluarga sebagai fondasi kebangkitan.',
         'Mentalitas Berbagi Sejak dari Titik Minus: Bersedekah tidak perlu menunggu kaya; memulainya saat serba terbatas melatih mentalitas kelimpahan (*abundance mindset*).'
       ]
+    },
+    {
+      id: 'rinjani',
+      featured: false,
+      name: 'Luchiana Rinjani',
+      tagline: 'Dari Ditinggal Mantan Suami dengan Utang Rp 980 Juta, Anak Diambil Paksa & Jual Rumah Ortu — Bangkit Tanpa Dendam Jadi Penggerak Wisata Offroad Sumedang',
+      title: 'Dari Utang Rp 980 Juta dan Kehilangan Anak, Kini Penggerak Wisata Sumedang',
+      subtitle: 'Ibu Tunggal 4 Anak & Inisiator Fun Offroad Sumedang — Menaklukkan Titik Nadir Perceraian Lewat Kreativitas Alam, Fotografi & Rekonsiliasi Batin',
+      origin: 'Sumedang, Jawa Barat',
+      ageAtRebound: '35 Thn',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 980 Jt & Ekowisata Offroad',
+      badge: 'Penggerak Ekowisata — Offroad Sumedang',
+      theme: 'emerald',
+      accentColor: '#059669',
+      bgLight: '#ECFDF5',
+      borderLight: '#A7F3D0',
+      stats: {
+        debt: 'Rp 980 Juta (Usaha Material Tol Mantan Suami)',
+        age: '35 Tahun (2025)',
+        lowest: 'Ditinggal Suami dengan Utang Nyaris Rp 1 M, Anak Dibawa Paksa 2 Tahun, Rumah Orang Tua Dijual Murah',
+        action: 'Lepas Dendam + Perjuangan Hak Asuh Anak via Hukum + Monetisasi Hobi Alam & Fotografi + Mitra Offroad',
+        result: 'Penggerak Ekowisata Offroad Sumedang (Saung Situraja, Kebun Durian, Tanjung Duriat), Anak Kembali'
+      },
+      timeline: [
+        { year: '2019 — Titik Nadir & Utang Rp 980 Jt', text: 'Mantan suami ditipu di proyek Tol Cisumdawu dan pergi meninggalkan warisan utang Rp 980 juta untuk ditanggung sendiri.' },
+        { year: 'Ujian Kehilangan Anak', text: 'Anak dibawa paksa keluarga mantan suami tanpa izin; berjuang 2 tahun menempuh jalur hukum hingga difasilitasi Polda Jabar.' },
+        { year: 'Jual Rumah Orang Tua', text: 'Terpaksa menjual rumah orang tua di Cimalaka di bawah harga pasar demi menutup desakan utang dan diniatkan ibadah.' },
+        { year: '2022 — Melepas Dendam', text: 'Memulihkan kesehatan mental dengan ikhlas memaafkan mantan suami dan berfokus penuh pada masa depan 4 anaknya.' },
+        { year: 'Monetisasi Hobi Alam & Foto', text: 'Dipercaya pemilik Saung Situraja mengelola wisata alam berbekal hobi naik gunung, foto, dan videografi.' },
+        { year: 'Hari Ini — Penggerak Offroad', text: 'Membangun aliansi fun offroad Sumedang di Kebun Durian dan Tanjung Duriat, berkarya bersama anak-anaknya.' }
+      ],
+      quote: 'Setelah kondisi mental pulih, saya bangkit dengan tidak lagi menyimpan dendam pada siapa pun termasuk mantan suami. Setiap cobaan adalah ruang belajar termahal. Justru berkat semua kepedihan itu, saya bisa menjadi versi terbaik diri saya hari ini.',
+      quoteAuthor: 'Luchiana Rinjani, ibu tunggal dan penggerak ekowisata Sumedang',
+      chapters: [
+        {
+          num: 1,
+          title: 'Ketika Suami Pergi dan Mewariskan Utang Rp 980 Juta',
+          paragraphs: [
+            'Tahun 2019 di Cimalaka, Sumedang, Jawa Barat, kehidupan Luchiana Rinjani hancur dalam sekejap. Bisnis pemasok material alam milik mantan suaminya untuk proyek jalan Tol Cisumdawu tertipu hingga bangkrut total.',
+            'Alih-alih bersama menghadapi persoalan, sang suami memilih melarikan diri dan meninggalkan perceraian dengan mewariskan tumpukan utang senilai Rp 980 juta di pundak Rinjani sendirian.',
+            'Sebagai ibu tunggal dari empat orang anak yang masih kecil, ia dipaksa menelan kenyataan pahit ditagih ratusan juta rupiah atas kesalahan yang tidak pernah ia perbuat.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Dua Tahun Perjuangan Rebut Kembali Anak Tercinta',
+          paragraphs: [
+            'Pukulan terberat datang ketika salah seorang buah hatinya dibawa kabur secara sepihak oleh pihak keluarga mantan suami tanpa izin dan menolak mengembalikannya.',
+            'Selama dua tahun lamanya, Rinjani hidup dalam kepedihan batin tak berujung: menangis tiap malam sembari terus berjuang menyuarakan hak asuhnya di media sosial dan menempuh jalur hukum resmi.',
+            'Berkat keteguhan dan bantuan fasilitasi dari tim Polda Jawa Barat, setelah 24 bulan terpisah, sang anak akhirnya berhasil dipeluk kembali ke pangkuannya.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Keikhlasan Menjual Rumah Orang Tua Demi Pelunasan',
+          paragraphs: [
+            'Demi meredam desakan para kreditur material, Rinjani dan kedua orang tuanya mengambil keputusan berat: menjual rumah keluarga di Cimalaka jauh di bawah harga pasaran.',
+            'Meskipun perih melepas tanah kelahiran, ia menata niatnya murni sebagai ibadah dan pertanggungjawaban moral, terlebih pembeli berniat mewakafkan bangunan tersebut menjadi pesantren.',
+            'Keikhlasan menanggalkan rasa kepemilikan materi menjadi awal pembersihan energi negatif dalam kehidupannya.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Titik Balik: Melepas Belenggu Dendam dan Membuka Hati',
+          paragraphs: [
+            'Memasuki kurun waktu 2022–2024, Rinjani mengambil keputusan paling menentukan: memaafkan mantan suaminya seutuhnya dan menolak menyimpan racun dendam di dalam hati.',
+            'Ia menggali kembali potensi diri yang lama terpendam sejak masa kuliah, yaitu kecintaan pada alam bebas, mendaki gunung, fotografi lanskap, dan videografi kreatif.',
+            'Keahlian visual dan kecintaannya pada alam mempertemukannya dengan investor pemilik destinasi wisata Saung Situraja yang memberinya kepercayaan penuh untuk mengelola konsep pariwisata petualangan.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Dari Hobi Alam Menjadi Ratu Ekowisata Offroad Sumedang',
+          paragraphs: [
+            'Rinjani menginisiasi aliansi operator wisata *Fun Offroad Sumedang*, menghubungkan rute jalur ekstrem melintasi Kebun Durian dan panorama eksotis Tanjung Duriat Waduk Jatigede.',
+            'Paket wisatanya viral dan menjadi primadona wisatawan regional hingga nasional. Ia juga mengajak anak-anaknya membuat konten kreatif di media sosial sebagai sarana pemulihan psikologis (*healing*) sekaligus promosi pariwisata.',
+            'Kisah Luchiana Rinjani adalah bukti nyata martabat seorang ibu: bahwa sebesar apa pun badai utang dan kepedihan yang ditinggalkan orang lain, keikhlasan memaafkan dan keberanian berkarya mampu melahirkan wanita yang jauh lebih berdaya.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Melepaskan Dendam Adalah Kunci Pemulihan Energi: Membenci pihak yang meninggalkan utang hanya menguras energi mental; mengikhlaskan membuka ruang untuk fokus membangun masa depan.',
+        'Keteguhan Memperjuangkan Hak Keluarga: Dua tahun memperjuangkan kembalinya anak membuktikan bahwa ketabahan hukum dan doa ibu tidak akan pernah sia-sia.',
+        'Monetisasi Keterampilan Petualangan & Konten Kreatif: Hobi mendaki dan fotografi dialihfungsikan menjadi motor penggerak ekowisata offroad komersial bernilai tinggi.',
+        'Membangun Kolaborasi dan Kemitraan Strategis: Bermitra dengan pemilik destinasi wisata setempat memungkinkan ekspansi bisnis rekreasi tanpa harus memiliki seluruh lahan sendiri.'
+      ]
     }
   ],
 
