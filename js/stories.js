@@ -6345,6 +6345,93 @@ const Stories = {
         'Mengangkat Komoditas Unggulan Lokal (*Village Specialty Focus*): Fokus membesarkan potensi buah matoa desa pekarangan menjadi rantai pasok bernilai miliaran rupiah.',
         'Membangun Ekosistem Kemitraan yang Adil: Memberikan harga tebas panen yang wajar kepada petani warga desa menciptakan pasokan bahan baku yang stabil dan loyal.'
       ]
+    },
+    {
+      id: 'liansonagar',
+      featured: false,
+      name: 'Lian Sonagar',
+      tagline: 'Dari Pegawai BUMN Utang Rp 1 Miliar, Makan Sekali Sehari & Jalan Kaki — Bangkit Bisnis Distribusi Pansaka, Lunas Total & Raih Ratusan Juta',
+      title: 'Dari Pegawai BUMN Terlilit Utang Rp 1 Miliar, Bangkit Raih Ratusan Juta',
+      subtitle: 'Mantan Pegawai BUMN Asal Bandung — Mengubah Masa Kritis Berjalan Kaki ke Kantor dan Makan Sekali Sehari Menjadi Ekosistem Bisnis Beromzet Ratusan Juta',
+      origin: 'Bandung, Jawa Barat',
+      ageAtRebound: '34 Tahun (2022)',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Utang Rp 1 Miliar & Bisnis Pansaka',
+      badge: 'Lunas Rp 1 Miliar — Pebisnis Mandiri Bandung',
+      theme: 'violet',
+      accentColor: '#7C3AED',
+      bgLight: '#EDE9FE',
+      borderLight: '#DDD6FE',
+      stats: {
+        debt: 'Rp 1 Miliar (Kegagalan Rangkaian Bisnis Sampingan)',
+        age: '34 Tahun (Tahun 2022)',
+        lowest: 'Gaji BUMN Terkuras Cicilan, Makan 1x Sehari, Jalan Kaki ke Kantor Tanpa Ongkos, Nyaris Menyerah',
+        action: 'Mental Pantang Mundur + Bangun Tim Distribusi Pansaka + Pemasaran Produk Kesehatan/Kecantikan + Disiplin Finansial',
+        result: 'Seluruh Utang Rp 1 Miliar Lunas Tuntas, Penghasilan Ratusan Juta Rupiah/Bulan, Finansial Merdeka'
+      },
+      timeline: [
+        { year: 'Karier BUMN & Bisnis Sampingan', text: 'Bekerja sebagai pegawai BUMN sambil merintis berbagai usaha sampingan seperti warnet dan dropshipping.' },
+        { year: 'Bisnis Kolaps & Utang Rp 1 Miliar', text: 'Usaha sampingan gagal total akibat kendala waktu dan manajemen, meninggalkan tumpukan utang Rp 1 miliar.' },
+        { year: 'Makan Sekali Sehari & Jalan Kaki', text: 'Gaji habis untuk cicilan; bertahan hidup dengan makan sekali sehari dan berjalan kaki ke tempat kerja.' },
+        { year: 'Titik Balik Bersama Pansaka', text: 'Menemukan peluang distribusi produk kesehatan dan kecantikan; membangun tim kemitraan secara tekun dan disiplin.' },
+        { year: 'Profit Ratusan Juta & Utang Lunas', text: 'Penjualan jaringan melesat, menghasilkan profit ratusan juta per bulan hingga utang Rp 1 miliar lunas tuntas.' },
+        { year: 'Hari Ini — Mandiri & Membina Mitra', text: 'Meraih kebebasan finansial penuh dan aktif membimbing ratusan wirausahawan baru untuk bangkit dari kesulitan.' }
+      ],
+      quote: 'Dulu waktu terlilit utang Rp 1 miliar, saya hanya sanggup makan sekali sehari dan harus jalan kaki ke kantor karena tak punya ongkos. Saya sempat ingin menyerah, tapi sadar bahwa utang tidak akan pernah lunas kalau kita berhenti. Bangkitlah dan coba sekali lagi.',
+      quoteAuthor: 'Lian Sonagar, pebisnis mandiri asal Bandung',
+      chapters: [
+        {
+          num: 1,
+          title: 'Pegawai BUMN yang Terjebak Rangkaian Kegagalan',
+          paragraphs: [
+            'Di kota Bandung, Jawa Barat, Lian Sonagar mengawali kariernya sebagai pegawai di sebuah perusahaan BUMN. Memiliki penghasilan rutin bulanan tidak memadamkan ambisi besarnya untuk mandiri sebagai pemilik usaha.',
+            'Di sela-sela jam kerja kedinasan, Lian mencoba peruntungan merintis aneka bisnis sampingan: mulai dari membuka gerai warung internet (warnet) hingga sistem perdagangan dropshipping barang daring.',
+            'Namun keterbatasan fokus waktu dan manajemen permodalan yang belum matang membuat satu per satu unit usahanya kolaps dan meninggalkan akumulasi utang modal yang membengkak hingga menyentuh angka Rp 1 miliar.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Satu Miliar Utang, Satu Kali Makan Sehari',
+          paragraphs: [
+            'Beban utang sebesar satu miliar rupiah menghadirkan tekanan luar biasa bagi seorang karyawan berpenghasilan tetap. Seluruh gaji bulanannya terserap habis tanpa sisa hanya untuk melunasi bunga dan angsuran pinjaman.',
+            'Demi menghemat pengeluaran hidup ke titik paling ekstrem, Lian memangkas kebutuhan dasarnya: ia hanya sanggup makan nasi satu kali dalam sehari.',
+            'Karena tidak lagi memiliki uang tunai untuk membayar tarif angkutan umum atau bensin kendaraan, Lian terpaksa berjalan kaki berkilo-kilometer setiap hari untuk berangkat dan pulang dari kantor.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Menolak Menyerah di Titik Paling Gelap',
+          paragraphs: [
+            'Rasa lelah fisik dan kepenatan psikologis yang menumpuk sempat membawa Lian ke jurang keputusasaan. Ia sempat terbersit pikiran untuk menyerah dan pasrah pada kebangkrutan hidupnya.',
+            'Namun dalam keheningan batin, ia menyadari logika paling fundamental: menyerah tidak akan pernah melenyapkan angka utang satu miliar rupiah tersebut.',
+            'Ia memilih bangkit kembali, melipatgandakan jam belajar bisnis, dan mencari instrumen usaha yang memiliki daya ungkit pasar (*leverage*) tinggi tanpa membutuhkan modal inventaris besar.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Jalan Terang Jaringan Distribusi Produk Berkualitas',
+          paragraphs: [
+            'Pintu terobosan terbuka saat Lian bergabung dalam ekosistem bisnis distribusi produk kesehatan dan perawatan tubuh bersama Pansaka.',
+            'Dengan etos kerja keras yang tak kenal lelah, Lian mengoptimalkan pemasaran digital dan membangun kemitraan jaringan distribusi dari kota ke kota.',
+            'Komitmen memberikan bimbingan intensif kepada tim penjualannya membuahkan ledakan omzet; arus kas komisi dan bagi hasil bisnisnya melesat berkali-kali lipat hingga mencapai angka ratusan juta rupiah per bulan.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas Total dan Lahirnya Kemerdekaan Finansial',
+          paragraphs: [
+            'Melalui pengelolaan kas yang sangat ketat, seluruh laba usaha yang diperoleh dialokasikan untuk melunasi pokok utang kepada para kreditur secara sistematis hingga beban Rp 1 miliar lunas tuntas seratus persen.',
+            'Lian Sonagar kini menikmati kemerdekaan finansial sejati, meninggalkan masa-masa kelam makan sekali sehari, dan aktif mendedikasikan waktunya melatih ribuan pelaku UMKM pemula.',
+            'Kisah Lian Sonagar adalah bukti nyata bahwa seberat apa pun beban utang karyawan, selama seseorang menolak menyerah dan berani mencoba kembali dengan model bisnis yang tepat, masa depan cerah akan selalu dapat diraih.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Evaluasi Risiko Usaha Sampingan (*Side-Hustle Management*): Menyadari pentingnya fokus manajemen waktu agar usaha sampingan tidak berubah menjadi jebakan utang modal.',
+        'Ketahanan Ekstrem di Masa Krisis Arus Kas: Kerelaan memangkas pengeluaran pribadi (makan sekali sehari, berjalan kaki) demi menjaga likuiditas bertahan hidup.',
+        'Pemanfaatan Model Bisnis Berdaya Ungkit (*Leveraged Distribution*): Memilih model kemitraan distribusi produk yang minim risiko inventaris namun berpotensi omzet tak terbatas.',
+        'Disiplin Eksekusi Pelunasan Utang: Fokus mengalokasikan lonjakan penghasilan baru untuk melunasi utang miliaran sebelum meningkatkan gaya hidup.'
+      ]
     }
   ],
 
