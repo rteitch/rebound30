@@ -5997,6 +5997,93 @@ const Stories = {
         'Keberanian Menembus Distribusi Ritel Skala Besar: Membangun standarisasi pabrik dan kemasan agar lolos kurasi jaringan 7-Eleven untuk mendongkrak omzet secara eksponensial.',
         'Keuletan Mengatasi Serangkaian Penolakan: Menganggap penutupan gerai dan penolakan proposal awal sebagai koreksi teknis, bukan akhir dari impian kebangkitan.'
       ]
+    },
+    {
+      id: 'ramidi',
+      featured: false,
+      name: 'Ramidi (Pedagang Ayam Filet Ciputat)',
+      tagline: 'Dari Kuli Pasar Jual Emas Istri Rp 1,5 Jt & Utang Ratusan Juta — Bangkit Sabar Filet Ayam Pasar Cimanggis, Laba Bersih Rp 1 Juta/Hari',
+      title: 'Dari Kuli Pasar dan Utang Ratusan Juta, Bangkit Raup Untung Jutaan Rupiah Sehari',
+      subtitle: 'Pedagang Daging Ayam Filet Pasar Cimanggis Ciputat — Mengubah Modal Nekat Jual Emas Istri dan Pasang Surut Utang Menjadi Bisnis Pasokan Daging yang Kokoh',
+      origin: 'Ciputat, Tangerang Selatan',
+      ageAtRebound: '43 Tahun (2023)',
+      categories: ['debt', 'bankrupt', 'zero', 'business', 'indonesia'],
+      categoryLabel: 'Ex-Kuli Pasar & Filet Ayam',
+      badge: 'Pasar Cimanggis — Untung Bersih Rp 1 Jt/Hari',
+      theme: 'amber',
+      accentColor: '#D97706',
+      bgLight: '#FEF3C7',
+      borderLight: '#FDE68A',
+      stats: {
+        debt: 'Ratusan Juta Rupiah (Pasang Surut Usaha Dagang)',
+        age: '43 Tahun (Tahun 2023)',
+        lowest: 'Mantan Kuli Angkut Pasar, Jual Emas Istri Rp 1,5 Jt, Usaha Sempat Terpuruk & Terlilit Utang Ratusan Juta',
+        action: 'Disiplin Fajar Pasar + Fokus Ayam Filet Segar + Pasok Pengusaha Bakso/Dimsum + Manajemen Sabar',
+        result: 'Seluruh Utang Ratusan Juta Lunas Total, Laba Bersih Rp 800 Ribu – Rp 1 Juta/Hari, Pekerjakan Karyawan'
+      },
+      timeline: [
+        { year: 'Awal Karier Kuli Angkut Pasar', text: 'Bekerja kasar sebagai kuli angkut barang di pasar tradisional dengan penghasilan harian yang sangat minim.' },
+        { year: 'Jual Emas Istri Modal Rp 1,5 Jt', text: 'Memberanikan diri merintis dagang ayam dengan modal nekat hasil menjual perhiasan emas istri senilai Rp 1.500.000.' },
+        { year: 'Pasang Surut & Utang Ratusan Juta', text: 'Dihantam fluktuasi harga unggas dan kredit macet hingga terlilit beban utang ratusan juta rupiah.' },
+        { year: 'Fokus Daging Filet & Pelanggan Kuliner', text: 'Mengubah strategi dengan menyuplai daging ayam filet segar higienis ke pedagang bakso, sate, mi ayam, dan dimsum.' },
+        { year: 'Lunas Total & Arus Kas Stabil', text: 'Konsistensi bangun dini hari membuahkan laba bersih Rp 800 ribu hingga Rp 1 juta per hari; seluruh utang lunas tuntas.' },
+        { year: 'Hari Ini — Berdayakan Karyawan & Keluarga', text: 'Memiliki usaha mapan di Pasar Cimanggis, merekrut karyawan, serta mampu menabung dan menopang ekonomi keluarga besar.' }
+      ],
+      quote: 'Saya pernah jadi kuli pasar dan terlilit utang ratusan juta rupiah. Kuncinya hanya satu: sabar, ikhlas menjalani proses dari bawah, dan jaga kejujuran kualitas timbangan dengan pembeli. Rezeki halal pasti membawa keberkahan.',
+      quoteAuthor: 'Ramidi, pedagang daging ayam filet Pasar Cimanggis Ciputat',
+      chapters: [
+        {
+          num: 1,
+          title: 'Keringat Kuli Angkut dan Pengorbanan Cincin Emas',
+          paragraphs: [
+            'Latar belakang kehidupan Ramidi di Ciputat, Tangerang Selatan bermula dari lapisan terbawah. Selama bertahun-tahun ia mengandalkan kekuatan fisik sebagai kuli panggul dan buruh angkut di lorong-lorong pasar tradisional demi menyambung nafkah harian.',
+            'Didorong keinginan kuat untuk mengubah nasib keluarga, Ramidi dan sang istri mengambil keputusan berani: menjual satu-satunya simpanan perhiasan emas istri seharga Rp 1.500.000 sebagai modal awal merintis lapak daging ayam.',
+            'Dengan modal terbatas itu, ia membeli beberapa ekor ayam hidup, memotongnya sendiri, dan menjajakannya di sudut Pasar Cimanggis, Ciputat.'
+          ]
+        },
+        {
+          num: 2,
+          title: 'Badai Fluktuasi Pasar dan Jeratan Utang Ratusan Juta',
+          paragraphs: [
+            'Dunia perdagangan pasar tradisional penuh dengan dinamika tajam. Fluktuasi harga pasokan ayam broiler, persaingan ketat, dan pembayaran piutang pelanggan yang macet sempat menghantam perputaran kas usahanya.',
+            'Situasi memburuk hingga Ramidi terjerat kewajiban utang dagang yang membengkak mencapai ratusan juta rupiah. Beban angsuran harian yang menuntut pelunasan sempat membuat ritme hidupnya terguncang.',
+            'Namun alih-alih melarikan diri atau menyalahkan keadaan, Ramidi memegang teguh prinsip kesabaran batin dan tetap tegak melayani pelanggan di pasar setiap dini hari.'
+          ]
+        },
+        {
+          num: 3,
+          title: 'Menemukan Celah Daging Filet untuk Pengusaha Kuliner',
+          paragraphs: [
+            'Melihat bahwa penjualan karkas ayam utuh memiliki marjin laba tipis, Ramidi melakukan diferensiasi produk: ia fokus pada penyediaan daging ayam tanpa tulang (*filet dada dan paha*) serta tetelan segar siap olah.',
+            'Kebutuhan daging ayam filet sangat tinggi di kalangan pelaku usaha kuliner UMKM—seperti pedagang bakso urat, sate ayam Madura, mi ayam gerobak, hingga produsen dimsum rumahan di kawasan Tangerang Selatan dan Jakarta Selatan.',
+            'Ramidi menjamin kebersihan potongan, kesegaran daging tanpa bahan pengawet, serta timbangan yang jujur dan presisi, sehingga para juragan kuliner menjadikannya pemasok utama langganan tetap.'
+          ]
+        },
+        {
+          num: 4,
+          title: 'Disiplin Dini Hari dan Laba Satu Juta Per Hari',
+          paragraphs: [
+            'Setiap hari dimulai sejak pukul 01.00 dini hari ketika pasar masih sunyi. Ramidi memotong dan memfilet puluhan kilogram daging ayam dengan ketelitian tinggi agar siap dikirim saat fajar menyingsing.',
+            'Volume penjualan yang terus meningkat mendongkrak perolehan keuntungan bersih hariannya secara konsisten di angka Rp 800.000 hingga Rp 1.000.000 per hari (setara Rp 25 juta sampai Rp 30 juta per bulan).',
+            'Aliran kas harian yang sehat tersebut disisihkan secara teratur untuk melunasi utang ratusan juta rupiah kepada para pemasok dan kreditur hingga tuntas tanpa sisa.'
+          ]
+        },
+        {
+          num: 5,
+          title: 'Lunas Tuntas, Tabungan Masa Depan, dan Berkah Berbagi',
+          paragraphs: [
+            'Kini, lapak dagang Ramidi di Pasar Cimanggis telah beroperasi dengan sangat stabil dan didukung oleh satu orang tenaga kerja tetap yang ia gaji secara layak.',
+            'Selain berhasil melunasi seluruh beban utang masa lalunya, Ramidi kini telah memiliki tabungan keluarga yang mapan dan aktif menyisihkan sebagian rezekinya untuk membantu biaya hidup serta pendidikan sanak saudaranya.',
+            'Kisah Ramidi membuktikan bahwa asal-usul sebagai kuli pasar bukanlah penghalang untuk menjadi juragan sukses; lewat kesabaran, kerja keras sebelum fajar, dan integritas dalam berdagang, kebangkitan finansial yang kokoh dapat diraih.'
+          ]
+        }
+      ],
+      takeaways: [
+        'Kekuatan Pengorbanan Modal Awal (*Sacrifice to Start*): Rela menjual perhiasan keluarga demi memulai usaha mandiri menunjukkan komitmen kuat mengubah nasib.',
+        'Spesialisasi dan Diferensiasi Produk (*Value-Added Processing*): Beralih dari ayam utuh ke daging ayam filet bersih meningkatkan marjin laba dan mengikat pelanggan bisnis kuliner (B2B UMKM).',
+        'Integritas Timbangan dan Kualitas Segar: Kejujuran bobot timbangan dan kebersihan produk membangun loyalitas pelanggan jangka panjang di pasar tradisional.',
+        'Ketabahan dan Disiplin Fajar: Konsistensi bekerja sejak dini hari dan mengelola laba harian dengan disiplin mampu melunasi utang ratusan juta rupiah.'
+      ]
     }
   ],
 
