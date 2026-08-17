@@ -21,6 +21,7 @@ const SUITES = [
   ['layout_test.js',           'Tata letak: target sentuh, grid, dropdown, label'],
   ['pwa_update_test.js',       'Pembaruan PWA: strategi cache, tawaran muat ulang, luring'],
   ['deep_gap_audit.js',        'Matriks keputusan — audit gap menyeluruh'],
+  ['patterns_test.js',         'Pola & Grafik: taksonomi masalah, solusi, skala utang'],
 ];
 
 console.log('############################################################################');

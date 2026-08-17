@@ -1,8 +1,8 @@
 # 🚀 Rebound 30 — Aplikasi Pendamping Pemulihan Finansial 30 Hari
 
 [![Live App](https://img.shields.io/badge/Live-rebound30.vercel.app-teal?style=for-the-badge&logo=vercel)](https://rebound30.vercel.app/)
-[![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-110%2F110%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
-[![Tests](https://img.shields.io/badge/Automated%20Tests-425%2F425%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-112%2F112%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Tests](https://img.shields.io/badge/Automated%20Tests-594%2F594%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Gap Audit](https://img.shields.io/badge/Decision%20Matrix-1440%20Permutasi%20%C2%B7%200%20Gap-blueviolet?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
@@ -79,7 +79,40 @@ Sistem mengolah keputusan profil awal secara terpadu tanpa *gap* logika, diverif
   - Mengarahkan prioritas `CRITICAL` ke misi yang sesuai target (`Pemasukan Pertama`, `Dapat Kerja`, `Kurangi Utang`, `Pemasukan Rutin`, atau `Bantu Keluarga`).
 
 ### 7. 📚 Perpustakaan 77 Kisah Nyata Bangkit dari Utang (*77 Real-Life Recovery Stories*)
-Arsip kurasi 77 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian:
+Arsip kurasi 77 tokoh nyata dengan antarmuka majalah digital (*Dedicated Magazine Reader*), garis waktu kejatuhan & kebangkitan, fakta finansial, kutipan emas, dan jembatan aksi misi harian.
+
+### 8. 📊 Pola Masalah & Penyelesaian dalam Bentuk Grafik Responsif (*Empirical Pattern Analytics*)
+Menu baru interaktif yang mengkaji taksonomi dan komparasi empiris dari 77 tokoh nyata menggunakan visualisasi grafik murni (Pure SVG & CSS):
+- **Grafik 1 — Pola Akar Masalah Finansial (*Problem Archetypes Progress Chart*)**:
+  - *Gagal Bisnis, Over-Ekspansi & Arus Kas* (22 Tokoh · 28.6%)
+  - *Penipuan Rekanan, Supplier Fiktif & Arisan Bodong* (15 Tokoh · 19.5%)
+  - *Kehilangan Pekerjaan (PHK) & Keterbatasan Modal Nol* (15 Tokoh · 19.5%)
+  - *30+ Kartu Kredit Macet & Blacklist Perbankan* (11 Tokoh · 14.3%)
+  - *Krisis Makroekonomi, Moneter 1998 & Resesi* (9 Tokoh · 11.7%)
+  - *Investasi Bodong, Robot Trading & Skema Ponzi* (5 Tokoh · 6.5%)
+- **Grafik 2 — Pola Strategi Titik Balik (*Interactive SVG Donut Chart & Legend Cards*)**:
+  - *Pengolahan Nilai Tambah & Kuliner Putaran Cepat* (27 Tokoh · 35.1%)
+  - *Ceruk Pasar Hobi Eksotis & Komoditas Spesifik* (16 Tokoh · 20.8%)
+  - *Keagenan Jasa, Reseller & Perantara Tanpa Beban Aset* (14 Tokoh · 18.2%)
+  - *Restrukturisasi Proaktif, Diskon Pokok (Haircut) & Negosiasi Bank* (12 Tokoh · 15.6%)
+  - *Likuidasi Aset Konsumtif Mandiri Demi Modal Produksi Awal* (8 Tokoh · 10.4%)
+- **Grafik 3 — Distribusi Skala Beban Utang vs Estimasi Waktu Pelunasan**:
+  - `< Rp 50 Juta` (12 Tokoh · 15.6%): Rata-rata 6 – 12 Bulan
+  - `Rp 50 Jt – Rp 250 Juta` (18 Tokoh · 23.4%): Rata-rata 1 – 2 Tahun
+  - `Rp 250 Jt – Rp 1 Miliar` (20 Tokoh · 26.0%): Rata-rata 2 – 3 Tahun
+  - `Rp 1 Miliar – Rp 10 Miliar` (16 Tokoh · 20.8%): Rata-rata 3 – 5 Tahun
+  - `> Rp 10 Miliar (Korporasi)` (11 Tokoh · 14.3%): Rata-rata 5 – 10 Tahun
+- **Grafik 4 — 4 Konstanta Transformasi Mentalitas**:
+  - *100% Menghadapi Kreditur Terbuka* (0% yang berhasil dengan kabur/ghosting)
+  - *93.5% Meruntuhkan Gengsi Sosial* (Bersedia mulai dari level nol/kasar)
+  - *77.9% Dukungan Inti Pasangan & Keluarga*
+  - *85.7% Disiplin Arus Kas & Afirmasi Syukur*
+- **Eksplorasi Tokoh Interaktif (*Interactive Filter & Story Explorer*)**:
+  - 12 Filter Chips instan untuk menyaring tokoh berdasarkan kategori masalah atau strategi solusi, lengkap dengan tombol langsung menuju bacaan majalah digital tokoh tersebut.
+
+---
+
+### 📖 Daftar 77 Tokoh Nyata dalam Perpustakaan:
 
 1. **Shao Baoling (邵宝玲)** — Ratu Koper Yiwu $\to$ Pemilik 3 Toko Bakpao (Utang > Rp 220 M)
 2. **Tang Jian (唐健)** — Raja Restoran Qingdao $\to$ Kios Sosis Panggang 25 m² (Utang Rp 100 M)
