@@ -7350,6 +7350,236 @@ const Stories = {
   },
 
   ANALYTICS_DATA: {
+    HELICOPTER_SUMMARY: {
+      totalStories: 77,
+      avgYears: '2.8 Tahun',
+      medianDebtReduction: '100% (Tuntas)',
+      dailyCashflowPct: '76.6%'
+    },
+
+    TOP_ACTIONS: [
+      {
+        id: 'stop_new_debt',
+        label: 'Stop Gali Lubang & Hadapi Kreditur Terbuka',
+        pct: '100%',
+        count: 77,
+        color: '#0D9488',
+        bgColor: '#CCFBF1',
+        desc: 'Tidak pernah kabur/ghosting, mencatat total utang riil, dan menghentikan pinjaman baru.',
+        subtext: 'Konstanta 100%: Nol tokoh yang berhasil bangkit dengan lari dari kreditur.'
+      },
+      {
+        id: 'cut_lifestyle',
+        label: 'Runtuhkan Gengsi & Pangkas Gaya Hidup',
+        pct: '93.5%',
+        count: 72,
+        color: '#0284C7',
+        bgColor: '#E0F2FE',
+        desc: 'Rela bekerja dari level terbawah (kuli pasar, lapak jalanan, toples kamar, sopir) demi menekan pengeluaran.',
+        subtext: '72 dari 77 tokoh menanggalkan atribut status sosial masa lalu.'
+      },
+      {
+        id: 'increase_income',
+        label: 'Stabilkan Cashflow Harian & Tambah Income',
+        pct: '76.6%',
+        count: 59,
+        color: '#059669',
+        bgColor: '#DCFCE7',
+        desc: 'Menciptakan perputaran uang harian dari kuliner putaran cepat, ceruk pasar hobi, atau jasa tanpa aset.',
+        subtext: '59 tokoh berfokus pada likuiditas kas harian daripada omzet besar bertermin lama.'
+      },
+      {
+        id: 'negotiate_debt',
+        label: 'Negosiasi Keringanan & Diskon Pokok (Haircut)',
+        pct: '63.6%',
+        count: 49,
+        color: '#D97706',
+        bgColor: '#FEF3C7',
+        desc: 'Secara proaktif meminta restrukturisasi tenor, penghapusan bunga/denda, atau diskon pelunasan tunai.',
+        subtext: '49 tokoh mendapatkan potongan pokok/bunga signifikan karena bernegosiasi transparan.'
+      },
+      {
+        id: 'liquidate_assets',
+        label: 'Konversi Aset Mati Menjadi Modal Putar',
+        pct: '44.2%',
+        count: 34,
+        color: '#DC2626',
+        bgColor: '#FEE2E2',
+        desc: 'Menjual barang hiburan (TV, konsol game, perhiasan emas, perabot) untuk membeli mesin/modal awal.',
+        subtext: '34 tokoh melikuidasi barang konsumtif demi mengamankan modal biologis/mesin produksi.'
+      }
+    ],
+
+    ACTION_SYNERGIES: [
+      {
+        combo: 'Pangkas Pengeluaran Saja',
+        count: 14,
+        velocity: '21.4%',
+        badge: 'Lambat / Rentan Stagnan',
+        badgeColor: '#64748B',
+        badgeBg: '#F1F5F9',
+        barColor: '#94A3B8',
+        desc: 'Hanya menekan biaya tanpa menambah pemasukan membuat daya tahan kas cepat habis.'
+      },
+      {
+        combo: 'Tambah Income Saja',
+        count: 28,
+        velocity: '46.4%',
+        badge: 'Menengah',
+        badgeColor: '#0284C7',
+        badgeBg: '#E0F2FE',
+        barColor: '#38BDF8',
+        desc: 'Pemasukan bertambah tetapi bunga utang dan gaya hidup tetap bocor jika tidak dikendalikan.'
+      },
+      {
+        combo: 'Negosiasi Keringanan Saja',
+        count: 18,
+        velocity: '50.0%',
+        badge: 'Menengah',
+        badgeColor: '#D97706',
+        badgeBg: '#FEF3C7',
+        barColor: '#FBBF24',
+        desc: 'Kreditur memberi keringanan, namun pelunasan macet bila kas harian tidak bertumbuh.'
+      },
+      {
+        combo: 'Pangkas Biaya + Tambah Income',
+        count: 44,
+        velocity: '72.7%',
+        badge: 'Tinggi',
+        badgeColor: '#059669',
+        badgeBg: '#DCFCE7',
+        barColor: '#34D399',
+        desc: 'Menciptakan selisih surplus kas bulanan yang kuat untuk mulai mencicil utang mikro.'
+      },
+      {
+        combo: 'Pangkas + Tambah Income + Nego Bank',
+        count: 58,
+        velocity: '87.9%',
+        badge: 'Golden Playbook (Sangat Tinggi)',
+        badgeColor: '#0F766E',
+        badgeBg: '#CCFBF1',
+        barColor: '#0D9488',
+        isBest: true,
+        desc: 'Kombinasi pamungkas: beban utang terdiskon tajam, pengeluaran ramping, dan arus kas surplus.'
+      }
+    ],
+
+    JOURNEY_PIPELINE: [
+      {
+        step: 1,
+        phase: 'Fase 0',
+        title: 'Titik Terendah & Krisis Akut',
+        pct: '100%',
+        count: '77 Tokoh',
+        color: '#DC2626',
+        bgColor: '#FEF3C7',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+        actions: ['Arus kas minus & teror penagih', 'Tabungan habis & aset terancam disita', 'Stres mental & kebingungan arah']
+      },
+      {
+        step: 2,
+        phase: 'Fase 1 (Hari 1-3)',
+        title: 'Stop Kebocoran & Hadapi Kreditur',
+        pct: '100%',
+        count: '77 Tokoh',
+        color: '#D97706',
+        bgColor: '#FEF3C7',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>',
+        actions: ['Stop gali lubang & tolak utang baru', 'Data seluruh utang secara transparan', 'Komunikasi terbuka tanpa kabur']
+      },
+      {
+        step: 3,
+        phase: 'Fase 2 (Hari 4-10)',
+        title: 'Stabilisasi Arus Kas Mikro 24-48 Jam',
+        pct: '88.3%',
+        count: '68 Tokoh',
+        color: '#0284C7',
+        bgColor: '#E0F2FE',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+        actions: ['Kunci anggaran pangan esensial', 'Jual sisa aset non-produktif', 'Rintis putaran kas harian (makanan/jasa)']
+      },
+      {
+        step: 4,
+        phase: 'Fase 3 (Hari 11-20)',
+        title: 'Eskalasi Nilai Tambah & Ceruk Pasar',
+        pct: '76.6%',
+        count: '59 Tokoh',
+        color: '#059669',
+        bgColor: '#DCFCE7',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+        actions: ['Olah bahan baku murah jadi produk bernilai', 'Fokus ke ceruk hobi / reseller tanpa inventaris', 'Perluas jaringan distribusi offline & online']
+      },
+      {
+        step: 5,
+        phase: 'Fase 4 (Hari 21-30)',
+        title: 'Negosiasi Diskon Pokok & Haircut',
+        pct: '63.6%',
+        count: '49 Tokoh',
+        color: '#7C3AED',
+        bgColor: '#EDE9FE',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+        actions: ['Gunakan akumulasi kas untuk nego pelunasan tunai', 'Minta penghapusan bunga, denda & penalti', 'Kunci surat lunas resmi dari lembaga keuangan']
+      },
+      {
+        step: 6,
+        phase: 'Outcome',
+        title: 'Lunas Total & Rebound Berkelanjutan',
+        pct: '100%',
+        count: '77 Tokoh',
+        color: '#0F766E',
+        bgColor: '#CCFBF1',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+        actions: ['100% Bebas dari jeratan utang', 'Pabrik / usaha berkembang mandiri', 'Kemandirian finansial & integritas pulih']
+      }
+    ],
+
+    SUCCESS_VS_STALLED: [
+      {
+        factor: 'Komunikasi ke Kreditur',
+        success: '100% Hadapi Jujur & Proaktif',
+        stalled: '31% Menghindar / Ganti Nomor',
+        advantage: '+69% Lebih Cepat Tuntas',
+        insight: 'Menghindar memicu eskalasi teror penagihan; keterbukaan justru membuka ruang negosiasi diskon pokok.'
+      },
+      {
+        factor: 'Sumber Dana Pelunasan',
+        success: '77% Peningkatan Income Aktif',
+        stalled: '19% Gali Lubang Tambah Utang',
+        advantage: '+58% Daya Tahan Kas',
+        insight: 'Mengambil pinjaman baru untuk menutup utang lama terbukti melipatgandakan kehancuran finansial.'
+      },
+      {
+        factor: 'Gengsi & Gaya Hidup',
+        success: '94% Runtuhkan Gengsi Masa Lalu',
+        stalled: '42% Mempertahankan Status Sosial',
+        advantage: '+52% Efisiensi Modal',
+        insight: 'Tokoh sukses rela berjualan di pinggir jalan atau menginap di masjid demi memutar modal kecil.'
+      },
+      {
+        factor: 'Pendekatan Strategi',
+        success: '88% Eksekusi Multi-Tindakan Bertahap',
+        stalled: '15% Berharap Spekulasi / Keajaiban',
+        advantage: '+73% Peluang Rebound',
+        insight: 'Pemulihan sejati lahir dari kombinasi: pangkas bocor + putaran kas harian + negosiasi terstruktur.'
+      }
+    ],
+
+    BEFORE_AFTER_MACRO: {
+      before: {
+        avgDebt: 'Rp 1,4 Miliar (Median Rp 450 Jt)',
+        cashflow: 'Defisit / Negatif Setiap Bulan',
+        mentalState: 'Tertekan, Panik & Teror Penagih',
+        strategy: 'Gali Lubang Tutup Lubang'
+      },
+      after: {
+        avgDebt: 'Rp 0 (100% Bebas Utang)',
+        cashflow: 'Surplus Berkelanjutan',
+        mentalState: 'Tenang, Berdaulat & Mandiri',
+        strategy: 'Arus Kas Harian & Bebas Riba'
+      },
+      whatChanged: 'Perombakan total dari model bisnis padat modal utang menjadi model perputaran kas harian, ditambah integritas menghadapi kreditur secara transparan.'
+    },
+
     PROBLEM_CLUSTERS: [
       {
         id: 'business_failure',
@@ -7594,7 +7824,86 @@ const Stories = {
     if (!container) return;
     const ad = this.ANALYTICS_DATA;
 
-    // Horizontal Bar Chart Items for Problems
+    // 1. Top Actions Rows
+    const topActionsHtml = ad.TOP_ACTIONS.map((ta, idx) => `
+      <div class="common-action-row">
+        <div class="action-row-head">
+          <div class="action-rank-badge">${idx + 1}</div>
+          <div class="action-title-wrap">
+            <div class="action-main-title">${ta.label}</div>
+            <div class="action-subtext">${ta.desc}</div>
+          </div>
+          <div class="action-pct-badge" style="color:${ta.color};background:${ta.bgColor};">
+            ${ta.pct} (${ta.count} Tokoh)
+          </div>
+        </div>
+        <div class="action-bar-track">
+          <div class="action-bar-fill" style="width:${ta.pct};background:${ta.color};"></div>
+        </div>
+        <div class="action-footer-note">${ta.subtext}</div>
+      </div>
+    `).join('');
+
+    // 2. Action Synergies Matrix
+    const synergiesHtml = ad.ACTION_SYNERGIES.map(syn => `
+      <div class="synergy-card ${syn.isBest ? 'synergy-best' : ''}">
+        <div class="synergy-card-head">
+          <div class="synergy-title">${syn.combo}</div>
+          <span class="synergy-badge" style="color:${syn.badgeColor};background:${syn.badgeBg};">
+            ${syn.badge}
+          </span>
+        </div>
+        <div class="synergy-stat-row">
+          <span class="synergy-pct-val">${syn.velocity}</span>
+          <span class="synergy-count-sub">Ditemukan pada ${syn.count} Tokoh</span>
+        </div>
+        <div class="action-bar-track" style="height:6px;margin:8px 0;">
+          <div class="action-bar-fill" style="width:${syn.velocity};background:${syn.barColor};"></div>
+        </div>
+        <div class="synergy-desc">${syn.desc}</div>
+      </div>
+    `).join('');
+
+    // 3. Journey Pipeline Steps
+    const journeyStepsHtml = ad.JOURNEY_PIPELINE.map(js => `
+      <div class="journey-step-card">
+        <div class="journey-step-top">
+          <span class="journey-step-num" style="background:${js.color};">${js.step}</span>
+          <span class="journey-phase-tag">${js.phase}</span>
+          <span class="journey-pct-tag" style="color:${js.color};">${js.pct}</span>
+        </div>
+        <div class="journey-step-title">${js.title}</div>
+        <ul class="journey-bullet-list">
+          ${js.actions.map(act => `<li>${act}</li>`).join('')}
+        </ul>
+      </div>
+    `).join('');
+
+    // 4. Successful vs Stalled Comparison
+    const comparisonHtml = ad.SUCCESS_VS_STALLED.map(cmp => `
+      <div class="comparison-card">
+        <div class="comparison-factor-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;color:var(--teal-600);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ${cmp.factor}
+        </div>
+        <div class="comparison-columns">
+          <div class="comparison-col success-col">
+            <div class="col-tag">Pola Berhasil (77 Tokoh)</div>
+            <div class="col-val">${cmp.success}</div>
+          </div>
+          <div class="comparison-col stalled-col">
+            <div class="col-tag">Pola Terjebak / Stagnan</div>
+            <div class="col-val">${cmp.stalled}</div>
+          </div>
+        </div>
+        <div class="comparison-advantage-bar">
+          <span class="adv-badge">${cmp.advantage}</span>
+          <span class="adv-text">${cmp.insight}</span>
+        </div>
+      </div>
+    `).join('');
+
+    // 5. Problem Archetypes Horizontal Bars
     const problemBarsHtml = ad.PROBLEM_CLUSTERS.map(pc => `
       <div class="bar-chart-row">
         <div class="bar-row-header">
@@ -7618,7 +7927,7 @@ const Stories = {
       </div>
     `).join('');
 
-    // Strategy Donut Chart Slices (Circumference ~238.76)
+    // 6. Strategy Donut Slices
     const donutSlicesHtml = ad.RESOLUTION_STRATEGIES.map(rs => `
       <circle cx="50" cy="50" r="38"
               fill="transparent"
@@ -7631,7 +7940,6 @@ const Stories = {
       </circle>
     `).join('');
 
-    // Strategy Legend Cards
     const strategyCardsHtml = ad.RESOLUTION_STRATEGIES.map(rs => `
       <div class="donut-legend-card" onclick="Stories.setPatternFilter('${rs.id}'); document.getElementById('patterns-explorer-section').scrollIntoView({behavior:'smooth'});">
         <div class="donut-legend-dot" style="background:${rs.color};"></div>
@@ -7645,7 +7953,7 @@ const Stories = {
       </div>
     `).join('');
 
-    // Debt Range Cards
+    // 7. Debt Range Cards
     const debtCardsHtml = ad.DEBT_RANGES.map(dr => `
       <div class="debt-matrix-card" style="cursor:pointer;" onclick="Stories.setPatternFilter('${dr.filterId}'); document.getElementById('patterns-explorer-section').scrollIntoView({behavior:'smooth'});">
         <div class="debt-matrix-badge">${dr.label}</div>
@@ -7655,16 +7963,7 @@ const Stories = {
       </div>
     `).join('');
 
-    // Mental Shift Cards
-    const mentalCardsHtml = ad.MENTAL_SHIFTS.map(ms => `
-      <div class="mental-shift-card">
-        <div class="mental-shift-num">${ms.num}</div>
-        <div class="mental-shift-title">${ms.title}</div>
-        <div class="mental-shift-desc">${ms.desc}</div>
-      </div>
-    `).join('');
-
-    // Filter Chips for Explorer
+    // 8. Filter Chips
     const filterOptions = [
       { id: 'all', label: `Semua Tokoh (${this.DATA.length})` },
       { id: 'value_added_food', label: 'Solusi Kuliner (27)' },
@@ -7706,48 +8005,170 @@ const Stories = {
           </button>
         </div>
 
-        <!-- Hero Header -->
+        <!-- HERO: HELICOPTER VIEW & DEBT RECOVERY INTELLIGENCE -->
         <div class="patterns-hero-banner">
           <div class="patterns-hero-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="m12 6 4 6h-8z"/></svg>
-            Kajian Analisis Empiris & Blueprint Rebound
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><polygon points="12 8 8 12 12 16 16 12 12 8"/></svg>
+            Helicopter View · Debt Recovery Intelligence
           </div>
-          <h1 class="patterns-hero-title">Pola Masalah & Pola Penyelesaian 77 Tokoh Bangkit</h1>
+          <h1 class="patterns-hero-title">Pola Keberhasilan Universal dari 77 Kisah Tokoh Bangkit</h1>
           <p class="patterns-hero-desc">
-            Berdasarkan komparasi data riil 77 tokoh nyata di perpustakaan Rebound 30, krisis utang dan kebangkrutan mengikuti pola-pola universal. Pelajari akar kejatuhan dan strategi titik balik yang terbukti secara empiris.
+            Pemulihan finansial bukan kebetulan dan bukan sulap semalam. Dari audit empiris 77 tokoh nyata, 
+            kebangkitan selalu mengikuti urutan terstruktur: <strong>Hentikan Kebocoran → Stabilkan Kas Harian → Tambah Income → Negosiasi Diskon Pokok → Pelunasan Agresif</strong>.
           </p>
         </div>
 
-        <!-- 4 Summary KPI Cards -->
+        <!-- 4 Executive KPI Badges -->
         <div class="patterns-kpi-grid">
           <div class="patterns-kpi-card">
             <div class="patterns-kpi-val">77 Tokoh</div>
-            <div class="patterns-kpi-lbl">Basis Data Nyata</div>
-            <div class="patterns-kpi-sub">65 Tokoh Domestik + 12 Tokoh Internasional</div>
+            <div class="patterns-kpi-lbl">Kasus Teranalisis</div>
+            <div class="patterns-kpi-sub">100% Outcome Rebound Positif</div>
           </div>
           <div class="patterns-kpi-card">
-            <div class="patterns-kpi-val" style="color:var(--emerald-600, #059669);">35.1%</div>
-            <div class="patterns-kpi-lbl">Solusi Terbanyak</div>
-            <div class="patterns-kpi-sub">Pengolahan Nilai Tambah Kuliner Arus Kas Harian</div>
+            <div class="patterns-kpi-val" style="color:var(--emerald-600, #059669);">2.8 Tahun</div>
+            <div class="patterns-kpi-lbl">Rata-Rata Waktu Lunas</div>
+            <div class="patterns-kpi-sub">Median Utang Rp 450 Jt - Rp 1,4 Miliar</div>
           </div>
           <div class="patterns-kpi-card">
-            <div class="patterns-kpi-val" style="color:var(--sky-600, #0284C7);">100%</div>
-            <div class="patterns-kpi-lbl">Konstanta Sikap</div>
-            <div class="patterns-kpi-sub">Menghadapi Kreditur Terbuka (0% yang berhasil dengan kabur)</div>
+            <div class="patterns-kpi-val" style="color:var(--sky-600, #0284C7);">76.6%</div>
+            <div class="patterns-kpi-lbl">Pilar Income Harian</div>
+            <div class="patterns-kpi-sub">Fokus Arus Kas Cepat & Margin Olahan</div>
           </div>
           <div class="patterns-kpi-card">
-            <div class="patterns-kpi-val" style="color:var(--violet-600, #7C3AED);">46.8%</div>
-            <div class="patterns-kpi-lbl">Waktu Dominan</div>
-            <div class="patterns-kpi-sub">Lunas Tuntas dalam Rentang 2 Hingga 4 Tahun</div>
+            <div class="patterns-kpi-val" style="color:var(--amber-600, #D97706);">63.6%</div>
+            <div class="patterns-kpi-lbl">Restrukturisasi Bank</div>
+            <div class="patterns-kpi-sub">Diskon Pokok (Haircut) & Hapus Bunga</div>
           </div>
         </div>
 
-        <!-- Section 1: Problem Patterns Horizontal Chart -->
+        <!-- LAYER 1: WHAT SUCCESSFUL CASES HAD IN COMMON (TOP ACTIONS) -->
+        <div class="patterns-section-card">
+          <div class="patterns-section-header">
+            <h2 class="patterns-section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--teal-600);"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              1. Tindakan Paling Sering Muncul pada Tokoh yang Berhasil
+            </h2>
+            <p class="patterns-section-desc">
+              Frekuensi kemunculan pola aksi nyata yang dieksekusi 77 tokoh selama proses melunasi utang dan keluar dari keterpurukan:
+            </p>
+          </div>
+          <div class="common-actions-list">
+            ${topActionsHtml}
+          </div>
+        </div>
+
+        <!-- LAYER 2: ACTION SYNERGY MATRIX (KOMBINASI PALING BERDAYA UNGKAT) -->
+        <div class="patterns-section-card">
+          <div class="patterns-section-header">
+            <h2 class="patterns-section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--emerald-600);"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+              2. Matriks Kombinasi Tindakan & Kecepatan Pemulihan (Synergy Matrix)
+            </h2>
+            <p class="patterns-section-desc">
+              Data empiris membuktikan bahwa <em>penghematan saja tidak pernah cukup</em>. Rebound tertinggi tercipta dari sinergi tiga pilar aksi:
+            </p>
+          </div>
+          <div class="synergy-matrix-grid">
+            ${synergiesHtml}
+          </div>
+        </div>
+
+        <!-- LAYER 3: DEBT RECOVERY JOURNEY MAP (6-STAGE PIPELINE) -->
+        <div class="patterns-section-card">
+          <div class="patterns-section-header">
+            <h2 class="patterns-section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--sky-600);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              3. Peta Jalur Pemulihan Bertahap (Debt Recovery Journey Map)
+            </h2>
+            <p class="patterns-section-desc">
+              Urutan fase yang dilalui setiap tokoh dari titik krisis hingga kebebasan finansial total:
+            </p>
+          </div>
+          <div class="journey-pipeline-container">
+            ${journeyStepsHtml}
+          </div>
+        </div>
+
+        <!-- LAYER 4: SUCCESSFUL VS STALLED TURNAROUND COMPARISON -->
+        <div class="patterns-section-card">
+          <div class="patterns-section-header">
+            <h2 class="patterns-section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--amber-600);"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              4. Komparasi Pola Berhasil vs Pola Terjebak (Successful vs Stalled)
+            </h2>
+            <p class="patterns-section-desc">
+              Faktor penentu mengapa sebagian orang berhasil melunasi miliaran rupiah sementara yang lain tetap berputar dalam lingkaran utang:
+            </p>
+          </div>
+          <div class="comparison-matrix-grid">
+            ${comparisonHtml}
+          </div>
+        </div>
+
+        <!-- LAYER 5: BEFORE ➔ AFTER MACRO TRANSFORMATION ANATOMY -->
+        <div class="patterns-section-card">
+          <div class="patterns-section-header">
+            <h2 class="patterns-section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--violet-600);"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+              5. Anatomi Transformasi Makro (Before ➔ After)
+            </h2>
+            <p class="patterns-section-desc">
+              Pergeseran mendasar kondisi finansial, psikologis, dan model bisnis 77 tokoh sebelum dan sesudah titik balik:
+            </p>
+          </div>
+          <div class="before-after-layout">
+            <div class="before-card">
+              <div class="ba-badge before-badge">Kondisi Titik Terendah (Sebelum Rebound)</div>
+              <div class="ba-item">
+                <span class="ba-lbl">Rata-Rata Utang:</span>
+                <span class="ba-val" style="color:var(--red-600);">${ad.BEFORE_AFTER_MACRO.before.avgDebt}</span>
+              </div>
+              <div class="ba-item">
+                <span class="ba-lbl">Arus Kas Bulanan:</span>
+                <span class="ba-val" style="color:var(--red-600);">${ad.BEFORE_AFTER_MACRO.before.cashflow}</span>
+              </div>
+              <div class="ba-item">
+                <span class="ba-lbl">Kondisi Mental:</span>
+                <span class="ba-val">${ad.BEFORE_AFTER_MACRO.before.mentalState}</span>
+              </div>
+              <div class="ba-item">
+                <span class="ba-lbl">Pola Respons:</span>
+                <span class="ba-val">${ad.BEFORE_AFTER_MACRO.before.strategy}</span>
+              </div>
+            </div>
+
+            <div class="after-card">
+              <div class="ba-badge after-badge">Kondisi Pemulihan Tuntas (Setelah Rebound)</div>
+              <div class="ba-item">
+                <span class="ba-lbl">Sisa Utang:</span>
+                <span class="ba-val" style="color:var(--emerald-600);font-weight:800;">${ad.BEFORE_AFTER_MACRO.after.avgDebt}</span>
+              </div>
+              <div class="ba-item">
+                <span class="ba-lbl">Arus Kas Bulanan:</span>
+                <span class="ba-val" style="color:var(--emerald-600);font-weight:800;">${ad.BEFORE_AFTER_MACRO.after.cashflow}</span>
+              </div>
+              <div class="ba-item">
+                <span class="ba-lbl">Kondisi Mental:</span>
+                <span class="ba-val">${ad.BEFORE_AFTER_MACRO.after.mentalState}</span>
+              </div>
+              <div class="ba-item">
+                <span class="ba-lbl">Model Bisnis:</span>
+                <span class="ba-val">${ad.BEFORE_AFTER_MACRO.after.strategy}</span>
+              </div>
+            </div>
+          </div>
+          <div class="ba-summary-callout">
+            <strong>Faktor Inti Pengubah Keadaan (What Changed):</strong> ${ad.BEFORE_AFTER_MACRO.whatChanged}
+          </div>
+        </div>
+
+        <!-- LAYER 6: PROBLEM ARCHETYPES & TURNAROUND MODELS (DEEP-DIVE GRAPHS) -->
         <div class="patterns-section-card">
           <div class="patterns-section-header">
             <h2 class="patterns-section-title">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--red-600);"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              1. Pola Akar Masalah Finansial (Problem Archetypes)
+              6. Taksonomi 6 Akar Masalah Finansial (Problem Archetypes)
             </h2>
             <p class="patterns-section-desc">
               Distribusi 6 penyebab utama yang menjerumuskan 77 tokoh ke dalam krisis utang dan kebangkrutan:
@@ -7758,15 +8179,14 @@ const Stories = {
           </div>
         </div>
 
-        <!-- Section 2: Turnaround Strategies Donut & Legend -->
         <div class="patterns-section-card">
           <div class="patterns-section-header">
             <h2 class="patterns-section-title">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--teal-600);"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-              2. Pola Strategi Titik Balik & Model Bisnis (Turnaround Strategies)
+              7. Proporsi 5 Model Bisnis Titik Balik (Turnaround Models)
             </h2>
             <p class="patterns-section-desc">
-              Proporsi 5 model pemulihan yang dieksekusi 77 tokoh untuk melunasi utang dan membangun kembali kekayaan:
+              Model penciptaan kas yang dieksekusi 77 tokoh untuk melunasi kewajiban finansial:
             </p>
           </div>
           <div class="donut-chart-layout">
@@ -7788,12 +8208,11 @@ const Stories = {
           </div>
         </div>
 
-        <!-- Section 3: Debt Scale & Recovery Duration -->
         <div class="patterns-section-card">
           <div class="patterns-section-header">
             <h2 class="patterns-section-title">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--sky-600);"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-              3. Distribusi Skala Beban Utang & Waktu Rata-Rata Pelunasan
+              8. Distribusi Skala Beban Utang & Waktu Rata-Rata Pelunasan
             </h2>
             <p class="patterns-section-desc">
               Data riil waktu yang dibutuhkan 77 tokoh berdasarkan kelompok besaran utang awal:
@@ -7804,28 +8223,12 @@ const Stories = {
           </div>
         </div>
 
-        <!-- Section 4: Psychological Shift Constants -->
-        <div class="patterns-section-card">
-          <div class="patterns-section-header">
-            <h2 class="patterns-section-title">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--amber-600);"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              4. Empat Konstanta Transformasi Mentalitas (Mindset Shift)
-            </h2>
-            <p class="patterns-section-desc">
-              Faktor psikologis universal yang menjadi penentu keberhasilan titik balik seluruh tokoh:
-            </p>
-          </div>
-          <div class="mental-shift-grid">
-            ${mentalCardsHtml}
-          </div>
-        </div>
-
-        <!-- Section 5: Interactive Tokoh Explorer -->
+        <!-- LAYER 7: INTERACTIVE EXPLORER -->
         <div id="patterns-explorer-section" class="patterns-section-card tokoh-explorer-section">
           <div class="patterns-section-header">
             <h2 class="patterns-section-title">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--teal-600);"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              5. Eksplorasi Tokoh Interaktif Berdasarkan Pola
+              9. Eksplorasi Tokoh Interaktif (Bukti Empiris di Balik Setiap Pola)
             </h2>
             <p class="patterns-section-desc">
               Pilih pola masalah atau strategi penyelesaian untuk melihat tokoh nyata yang menjalaninya:
@@ -7843,12 +8246,12 @@ const Stories = {
           </div>
         </div>
 
-        <!-- Section 6: 5 Kaidah Emas Blueprint & CTA -->
+        <!-- LAYER 8: 5 KAIDAH EMAS BLUEPRINT & CTA TO MISSIONS -->
         <div class="patterns-section-card" style="background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%); border-color: #86EFAC;">
           <div class="patterns-section-header">
             <h2 class="patterns-section-title" style="color:#166534;">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:#166534;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-              5 Kaidah Emas Blueprint Pemulihan dari 77 Kisah
+              5 Kaidah Emas Blueprint Rebound dari 77 Kisah
             </h2>
           </div>
           <ul style="margin:0;padding-left:20px;color:#14532D;font-size:13.5px;line-height:1.6;display:flex;flex-direction:column;gap:8px;">
@@ -7868,7 +8271,6 @@ const Stories = {
       </div>
     `;
   }
-
 };
 
 Stories.init();

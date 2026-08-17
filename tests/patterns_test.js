@@ -104,7 +104,15 @@ assert(typeof Stories.renderPatterns === 'function', 'Stories.renderPatterns ada
 assert(typeof Stories.openPatterns === 'function', 'Stories.openPatterns adalah fungsi yang valid');
 assert(typeof Stories.setPatternFilter === 'function', 'Stories.setPatternFilter adalah fungsi yang valid');
 
-// 2. Problem Clusters Mapping Coverage
+// 2. Helicopter View & Intelligence Data Structures
+assert(Stories.ANALYTICS_DATA.HELICOPTER_SUMMARY.totalStories === 77, 'HELICOPTER_SUMMARY mencatat 77 tokoh');
+assert(Stories.ANALYTICS_DATA.TOP_ACTIONS.length === 5, 'TOP_ACTIONS memiliki 5 aksi berulang teratas');
+assert(Stories.ANALYTICS_DATA.ACTION_SYNERGIES.length === 5, 'ACTION_SYNERGIES memiliki 5 kombinasi aksi');
+assert(Stories.ANALYTICS_DATA.JOURNEY_PIPELINE.length === 6, 'JOURNEY_PIPELINE memiliki 6 tahapan pemulihan');
+assert(Stories.ANALYTICS_DATA.SUCCESS_VS_STALLED.length === 4, 'SUCCESS_VS_STALLED memiliki 4 faktor komparasi');
+assert(!!Stories.ANALYTICS_DATA.BEFORE_AFTER_MACRO.before && !!Stories.ANALYTICS_DATA.BEFORE_AFTER_MACRO.after, 'BEFORE_AFTER_MACRO memiliki data sebelum dan sesudah');
+
+// 3. Problem Clusters Mapping Coverage
 const allDataIds = new Set(Stories.DATA.map(s => s.id));
 let totalProblemIds = 0;
 Stories.ANALYTICS_DATA.PROBLEM_CLUSTERS.forEach(pc => {
@@ -115,7 +123,7 @@ Stories.ANALYTICS_DATA.PROBLEM_CLUSTERS.forEach(pc => {
 });
 assert(totalProblemIds === 77, `Total pemetaan akar masalah adalah 77 tokoh (saat ini: ${totalProblemIds})`);
 
-// 3. Resolution Strategies Mapping Coverage
+// 4. Resolution Strategies Mapping Coverage
 let totalResolutionIds = 0;
 Stories.ANALYTICS_DATA.RESOLUTION_STRATEGIES.forEach(rs => {
   totalResolutionIds += rs.ids.length;
@@ -125,18 +133,22 @@ Stories.ANALYTICS_DATA.RESOLUTION_STRATEGIES.forEach(rs => {
 });
 assert(totalResolutionIds === 77, `Total pemetaan strategi penyelesaian adalah 77 tokoh (saat ini: ${totalResolutionIds})`);
 
-// 4. Test renderPatterns output HTML
+// 5. Test renderPatterns output HTML
 const container = mockElement('patterns-root');
 Stories.renderPatterns(container);
 assert(container.innerHTML.includes('patterns-hero-title'), 'renderPatterns menghasilkan hero banner');
 assert(container.innerHTML.includes('patterns-kpi-grid'), 'renderPatterns menghasilkan 4 KPI summary cards');
+assert(container.innerHTML.includes('common-actions-list'), 'renderPatterns menghasilkan daftar aksi berulang tertinggi (What Successful People Had In Common)');
+assert(container.innerHTML.includes('synergy-matrix-grid'), 'renderPatterns menghasilkan matriks sinergi kombinasi tindakan');
+assert(container.innerHTML.includes('journey-pipeline-container'), 'renderPatterns menghasilkan peta jalur pemulihan 6 tahap (Journey Map)');
+assert(container.innerHTML.includes('comparison-matrix-grid'), 'renderPatterns menghasilkan komparasi Successful vs Stalled');
+assert(container.innerHTML.includes('before-after-layout'), 'renderPatterns menghasilkan anatomi transformasi Before vs After');
 assert(container.innerHTML.includes('horizontal-bar-chart'), 'renderPatterns menghasilkan grafik batang akar masalah');
 assert(container.innerHTML.includes('donut-svg-wrap'), 'renderPatterns menghasilkan grafik donat SVG strategi');
 assert(container.innerHTML.includes('debt-matrix-grid'), 'renderPatterns menghasilkan matriks skala utang & durasi');
-assert(container.innerHTML.includes('mental-shift-grid'), 'renderPatterns menghasilkan 4 konstanta transformasi mental');
 assert(container.innerHTML.includes('patterns-explorer-cards'), 'renderPatterns menghasilkan bagian interactive explorer');
 
-// 5. Test Filter Switching
+// 6. Test Filter Switching
 const allCardsHtml = Stories.buildPatternCardsHtml('all');
 assert(allCardsHtml.includes('explorer-card'), 'buildPatternCardsHtml("all") menghasilkan kartu tokoh');
 const foodCardsHtml = Stories.buildPatternCardsHtml('value_added_food');

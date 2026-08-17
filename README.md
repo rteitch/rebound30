@@ -1,8 +1,8 @@
 # 🚀 Rebound 30 — Aplikasi Pendamping Pemulihan Finansial 30 Hari
 
 [![Live App](https://img.shields.io/badge/Live-rebound30.vercel.app-teal?style=for-the-badge&logo=vercel)](https://rebound30.vercel.app/)
-[![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-112%2F112%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
-[![Tests](https://img.shields.io/badge/Automated%20Tests-594%2F594%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Buttons Functional](https://img.shields.io/badge/Buttons%20Audit-110%2F110%20(100%25)-blue?style=for-the-badge)](https://github.com/rteitch/rebound30)
+[![Tests](https://img.shields.io/badge/Automated%20Tests-604%2F604%20PASSED-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Gap Audit](https://img.shields.io/badge/Decision%20Matrix-1440%20Permutasi%20%C2%B7%200%20Gap-blueviolet?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Financial Sync](https://img.shields.io/badge/Financial%20Sync-5--Pillar%20Real--Time-success?style=for-the-badge)](https://github.com/rteitch/rebound30)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-emerald?style=for-the-badge)](https://github.com/rteitch/rebound30)
@@ -284,7 +284,7 @@ Seluruh logika perhitungan finansial, alur fase pemulihan, dan antarmuka aplikas
 | **Fitur Pemulihan Lanjutan** | Prioritas utang berbasis agunan & risiko hukum, rasio DTI, status `NO_INCOME`, pengingat follow-up, laporan bulanan, review mingguan, rencana 90 hari, integritas ekspor CSV. | **82/82 PASSED (100%)** |
 | **Pencarian Kisah Bangkit** | Kontrak DOM (mengetik tidak boleh membangun ulang kotak pencarian), cakupan field termasuk kota, pencocokan banyak kata (AND), dan padanan kosakata sehari-hari. | **39/39 PASSED (100%)** |
 | **Tata Letak & Target Sentuh** | Minimum 44px pada perangkat sentuh beserta urutan cascade-nya, grid statistik bebas pemaksaan `!important`, lebar dropdown, panjang label opsi, dan label kategori berbahasa Indonesia. | **32/32 PASSED (100%)** |
-| **Pola & Grafik Analisis 77 Tokoh** | Verifikasi pemetaan 77 tokoh ke 6 klaster masalah, 5 strategi titik balik, matriks skala utang, dan pengalihan filter interaktif. | **169/169 PASSED (100%)** |
+| **Pola & Grafik Analisis 77 Tokoh (Helicopter View & Intelligence)** | Verifikasi pemetaan 77 tokoh ke Helicopter View (Top Actions, Synergy Matrix, Journey Pipeline, Successful vs Stalled, Before-After, Problem & Strategy Archetypes). | **179/179 PASSED (100%)** |
 | **Pembaruan PWA & Luring** | Strategi jaringan-dulu untuk kode aplikasi, cache-dulu untuk font, ketahanan pemasangan terhadap berkas gagal, tawaran muat ulang, dan header hosting `sw.js`. | **30/30 PASSED (100%)** |
 | **Decision Matrix Gap Audit** | Sapuan 1.440 permutasi variabel (Pekerjaan × Target × Keahlian × Hari × Kondisi Keuangan), 11 kaidah per permutasi. | **0 GAP / 100% COVERED** |
 
